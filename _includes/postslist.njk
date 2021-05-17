@@ -1,12 +1,33 @@
-<ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-{% for post in postslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-    {% for tag in post.data.tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-    {% endfor %}
-  </li>
-{% endfor %}
-</ol>
+
+<section class="mt-6 px-6 lg:px-0">
+  {% set postslist = collections.post %}
+  {% for post in postslist | reverse %}
+    <article class="my-8 flex space-x-6">
+      <div class="w-32 h-32 bg-blueGray-400 rounded bg-cover bg-position-center shadow-xl" style="background-image: url({{ post.data.image }})"></div>
+      <div>
+        <h2 class="font-bold text-2xl text-gray-200 hover:text-gray-200 hover:underline mb-2">
+            <a href="{{ post.url | url }}">
+                {% if post.data.title %}
+                    {{ post.data.title }}
+                {% else %}
+                    Untitled
+                {% endif %}
+            </a>
+        </h2>
+        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+          <time>{{ post.date | readableDate }}</time>
+        </span>
+        {% if post.data.description %}
+            <p class="text-base text-gray-300 mb-3">
+                {{ post.data.description }}
+            </p>
+        {% endif %}
+        <p>
+            <a href="{{ post.url | url }}" class="text-pink-400 font-bold text-lg">
+                Read more →
+            </a>
+        </p>
+      </div>
+    </article>
+  {% endfor %}
+</section>

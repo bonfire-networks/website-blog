@@ -2,17 +2,47 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
+<div class="max-w-screen-lg mx-auto mt-0 lg:px-0 px-6">
+  <div class="mx-auto max-w-screen-md py-8 pb-8">
+    <a class="block w-36 mx-auto items-center place-content-center lg:place-content-start" href="/">
+      <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span class="text-sm text-gray-300 font-medium">Back to blog</span>
+      </div>
+    </a>
+    <div class="grid grid-cols-2 items-center">
+      <h1 class="text-gray-200 text-4xl lg:text-5xl text-left lg:text-center col-span-2 z-10 font-extrabold leading-snug lg:leading-normal tracking-wide lg:tracking-widest">{{title}}</h1>
+      <div  style="background-image: url({{ image }});" class="bg-no-repeat bg-cover bg-center bg-gray-200 col-span-2 mt-4 rounded h-80 {{ image_position }}"></div>
+      <span class="flex items-center space-x-3 mt-4 py-0.5 text-sm font-medium text-pink-500">
+          <time>Published on {{ date | readableDate }}</time>
+          {%- for tag in tags | filterTagList -%}
+          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+            <a href="{{ tagUrl | url }}">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+              <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                <circle cx="4" cy="4" r="3" />
+              </svg>
+              {{ tag }}
+            </span>
+            </a>
+          {%- endfor %}
+      </span>
+      
+    </div>
+  </div>
 
-{{ content | safe }}
+  <article class="mx-auto max-w-screen-md mt-8">
+    <div class="mt-8 prose mx-auto prose-light max-w-screen-md lg:prose-xl">
+    {{ content | safe }}
+    </div>
+  </article>
 
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+</div>
+
+{# {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {%- if nextPost or previousPost %}
 <hr>
@@ -20,4 +50,4 @@ templateClass: tmpl-post
   {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
   {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
 </ul>
-{%- endif %}
+{%- endif %} #}

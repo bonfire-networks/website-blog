@@ -4,11 +4,16 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-{% set maxPosts = collections.posts.length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
+{% set maxPosts = collections.posts.length  %}
 
-{% set postslist = collections.posts | head(-3) %}
+<span class="mt-16 block bg-cover bg-no-repeat bg-center" style="width: 317px; height: 75px; background-image: url(../img/logo.png);"></span>
+<h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
+  Blog
+</h1>
+
+<h2 class="mt-16 -mb-4 uppercase text-gray-400 font-regular text-sm tracking-wide">Latest Posts</h2>
+
+{% set postslist = collections.posts  %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
