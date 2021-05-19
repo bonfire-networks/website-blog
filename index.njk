@@ -4,16 +4,60 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-{% set maxPosts = collections.posts.length  %}
+<span class="mt-16 block bg-cover bg-no-repeat bg-center" style="width: 317px; height: 75px; background-image: url(/img/logo.png);"></span>
+    <h1 class="text-blueGray-100 leading-relaxed tracking-wider text-3xl font-bold mt-6 prose">A federated social network for individuals and communities to design, operate and control their own digital lives.</h1>
+    <div class="lg:flex items-center lg:space-x-8 my-8">
+      <div class="flex items-center space-x-2 pb-3 lg:pb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span class="flex-1 font-regular text-base lg:text-sm text-blueGray-200">Free/libre software</span>
+      </div>
+      <div class="flex items-center space-x-2 pb-3 lg:pb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span class="flex-1 font-regular text-base lg:text-sm text-blueGray-200">Configurable</span>
+      </div>
+      <div class="flex items-center space-x-2 pb-3 lg:pb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span class="flex-1 font-regular text-base lg:text-sm text-blueGray-200">Federated</span>
+      </div>
+    </div>
+    <div class="mt-6 prose prose-light text-blueGray-300">
 
-<span class="mt-16 block bg-cover bg-no-repeat bg-center" style="width: 317px; height: 75px; background-image: url(../img/logo.png);"></span>
-<h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
-  Blog
-</h1>
+    <p> Bonfire builds upon <a href="http://activitypub.rocks" target="_blank">ActivityPub</a> -  a W3C standard protocol – so it can be assembled and configured bottom-up. In this way, each Bonfire instance can reflect each community’s needs and vision whilst still being able to communicate with the rest of the 'fediverse', a virtual decentralised social space. </p>
 
-<h2 class="mt-16 -mb-4 uppercase text-gray-400 font-regular text-sm tracking-wide">Latest Posts</h2>
+    <p>The beauty of the fediverse - besides allowing users from many different open source platforms to interconnect - is its diversity of communities and media. However, this diversity has tended to force users to adopt multiple accounts in order to participate in a federated environment, as well as having to spend more time going back and forth between multiple apps.
 
-{% set postslist = collections.posts  %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
+    <p>The aim of Bonfire is to ensure that with one login a user can receive updates from all the other users and topics they follow, independent of the platform they were originally created and posted on. </p>
+ 
+  <p>The team at Bonfire are also currently developing a whole range of extensions to expand the possibilities of the fediverse, including circular economies (using <a href="http://valueflo.ws" target="_blank">ValueFlows</a>) and community coordination. We think mixing social and economic activities together in a federated social network can unlock a whole new range of unexplored possibilities: offers and needs listings with geolocation; creating, discussing and voting on proposals; coordinating labour and distributing outcomes among participants; timebanking or mutual credit communities; collaborative budgets; as well as crowdfunding campaigns.</p> 
+
+       <div class="flex items-center space-x-4">
+          <a href="apps.html" class="flex flex-1">
+          <div class="bg-white shadow-xl flex items-center hover:bg-blueGray-100 cursor-pointer rounded-xl p-3 flex-1">
+            <div class="text-base text-gray-700 font-bold flex-1">View our apps</div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+          </a>
+          <a href="extensions.html" class="flex flex-1">
+          <div class="bg-white shadow-xl rounded-xl hover:bg-blueGray-100 cursor-pointer flex items-center p-3 flex-1">
+            <div class="text-base text-gray-700 font-bold flex-1">View our extensions</div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+          </a>
+       </div>
+      <p>We want to partner with communities, progressive municipalities, cooperatives and grassroots movements. Please get in touch! </p>
+    </div>
+    <div class="text-lg mt-8 text-blueGray-100">
+      <p class="font-semibold">Want to discuss a potential use case?</p>
+      <p class="text-base">Drop us a line at team [at] bonfire.cafe</p>
+    </div>
 

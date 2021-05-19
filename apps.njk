@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+---
+
+<div>
+  <h1 class="text-3xl font-bold text-blueGray-100">Apps</h1>
+  <div class="prose-light mt-4 text-blueGray-300 prose prose-sm w-full">Apps (or <b>flavours</b> of Bonfire as we call them) are made up of several extensions glued together with some specific configuration.</div>
+  
+  <h2 class="mt-6 text-xl font-bold text-blueGray-200">Bonfire apps</h2>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-6">
+    {% for item in apps %}
+      <a href={{ item.slug }}> 
+        <div class="p-3 rounded-xl shadow-lg bg-white cursor-pointer hover:shadow-2xl hover:bg-blueGray-50 transform transition-colors">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>{{item.status}}</span>
+          </span>
+          <div class="flex items-center space-x-3 mt-2">
+            <div style="background-image: url({{item.icon}})" class="w-24 h-24 bg-contain bg-no-repeat bg-center rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-gray-700">{{item.name}}</h2>
+              <p class="text-gray-700 text-sm">{{item.description}}.</p>
+              </div>
+          </div>
+        </div>  
+      </a>
+    {% endfor %}
+    
+  </div>
+
+  <h2 class="mt-12 text-xl font-bold text-blueGray-200">Other apps based on Bonfire</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-6">
+    {% for item in externals %}
+      <a target="blank" href={{ item.repository }}> 
+        <div class="p-3 rounded-xl shadow-lg bg-white cursor-pointer hover:shadow-2xl hover:bg-blueGray-50 transform transition-colors">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>{{item.status}}</span>
+          </span>
+          <div class="flex items-center space-x-3 mt-2">
+            <div style="background-image: url({{item.icon}})" class="w-24 h-24 bg-contain bg-no-repeat bg-center rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-gray-700">{{item.name}}</h2>
+              <p class="text-gray-700 text-sm">{{item.description}}.</p>
+              </div>
+          </div>
+        </div>  
+      </a>
+    {% endfor %}
+  </div>
+</div>
+<h1></h1>
