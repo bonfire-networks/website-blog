@@ -1,10 +1,10 @@
 
-<section class="mt-6 px-6 lg:px-0">
+<section class="mt-6 lg:px-0">
   {% set postslist = collections.post %}
   {% for post in postslist | reverse %}
     <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-gray-400 rounded bg-cover bg-position-center shadow-xl" style="background-image: url({{ post.data.image }})"></div>
-      <div>
+      <div class="w-32 h-32 bg-gray-400 rounded sm:bg-contain bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url({{ post.data.image }})"></div>
+      <div class="flex-1">
         <h2 class="font-bold text-2xl text-gray-200 hover:text-gray-200 hover:underline mb-2">
             <a href="{{ post.url | url }}">
                 {% if post.data.title %}
