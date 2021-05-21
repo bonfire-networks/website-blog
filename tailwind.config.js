@@ -10,9 +10,6 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {
-        blueGray: colors.blueGray
-      },
       typography: (theme) => ({
         light: {
           css: [
