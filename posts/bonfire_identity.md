@@ -10,7 +10,7 @@ layout: layouts/post.njk
 
 > Everyone carries a history of contamination, purity is not an option.
 
-This short sentence by [Anna Tsing](https://en.wikipedia.org/wiki/Anna_Tsing) wrote in [Mushroom at the end of the world](https://en.wikipedia.org/wiki/The_Mushroom_at_the_End_of_the_World) encompasses a lot of the visions and needs that inspired our work on Bonfire.
+This short statement by [Anna Tsing](https://en.wikipedia.org/wiki/Anna_Tsing) in [Mushroom at the end of the world](https://en.wikipedia.org/wiki/The_Mushroom_at_the_End_of_the_World) encompasses a lot of the visions and needs that inspired our work on Bonfire.
 
 We are building this piece of software for us and for the diverse communities we care about, so we strive for diversity and flexibility in every aspect of the Bonfire codebase. 
 
@@ -30,7 +30,7 @@ We asked Rocco to work on our visual identity primarly because of the style and 
 
 
 ![](https://assets.bigcartel.com/product_images/287784678/Squirrels.jpg?auto=format&fit=max&w=600)
-<figcaption class="-mt-6 italic text-gray-400 text-base block">"Squirrels on the air" - Illustration by Rocco Lombardi - <a href="https://roccolombardi.bigcartel.com/product/squirrels-on-the-air" target="blank">Link</a></figcaption>
+<figcaption class="-mt-6 italic text-blueGray-400 text-base block">"Squirrels on the air" - Illustration by Rocco Lombardi - <a href="https://roccolombardi.bigcartel.com/product/squirrels-on-the-air" target="blank">Link</a></figcaption>
 
 
 The end result is very much in tune with our expectations, and we hope you like it too.

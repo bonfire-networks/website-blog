@@ -6,15 +6,15 @@ templateClass: tmpl-post
 <div class="max-w-screen-lg mx-auto mt-0 lg:px-0 px-6">
   <div class="mx-auto max-w-screen-md py-8 pb-8">
     <a class="block w-36 mx-auto items-center place-content-center lg:place-content-start" href="/blog">
-      <div class="inline-flex mb-6 cursor-pointer hover:bg-gray-600 rounded-full bg-gray-700 px-3 py-1.5  items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
-        <span class="text-sm text-gray-300 font-medium">Back to blog</span>
+        <span class="text-sm text-blueGray-300 font-medium">Back to blog</span>
       </div>
     </a>
     <div class="">
-      <h1 class="text-gray-200 text-4xl lg:text-5xl text-left lg:text-center col-span-2 z-10 font-extrabold leading-snug lg:leading-normal tracking-wide lg:tracking-widest">{{title}}</h1>
+      <h1 class="text-blueGray-200 text-4xl lg:text-5xl text-left lg:text-center col-span-2 z-10 font-extrabold leading-snug lg:leading-normal tracking-wide lg:tracking-widest">{{title}}</h1>
       <img src="{{image}}" alt="post image" class="mt-4 rounded-lg shadow-xl" />
       <span class="flex w-full items-center space-x-3 mt-4 py-0.5 text-sm font-medium text-pink-500">
           <time>Published on {{ date | readableDate }}</time>
@@ -35,7 +35,7 @@ templateClass: tmpl-post
   </div>
 
   <article class="mx-auto max-w-screen-md mt-8">
-    <div class="mt-8 prose mx-auto prose-light text-gray-300 max-w-screen-md lg:prose-xl">
+    <div class="mt-8 prose mx-auto prose-light text-blueGray-300 max-w-screen-md lg:prose-xl">
     {{ content | safe }}
     </div>
   </article>

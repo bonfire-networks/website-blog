@@ -3,9 +3,9 @@
   {% set postslist = collections.post %}
   {% for post in postslist | reverse %}
     <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-gray-400 rounded sm:bg-contain bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url({{ post.data.image }})"></div>
+      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url({{ post.data.image }})"></div>
       <div class="flex-1">
-        <h2 class="font-bold text-2xl text-gray-200 hover:text-gray-200 hover:underline mb-2">
+        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
             <a href="{{ post.url | url }}">
                 {% if post.data.title %}
                     {{ post.data.title }}
@@ -18,7 +18,7 @@
           <time>{{ post.date | readableDate }}</time>
         </span>
         {% if post.data.description %}
-            <p class="text-base text-gray-300 mb-3">
+            <p class="text-base text-blueGray-300 mb-3">
                 {{ post.data.description }}
             </p>
         {% endif %}
