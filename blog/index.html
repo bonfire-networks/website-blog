@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="stylesheet" href="/css/output.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Bonfire">
+  </head>
+  <body class="bg-blueGray-800 w-full"> 
+    <header x-data="{open: false}" class="sticky z-20 bg-blueGray-800 top-0 h-16  border-b border-blueGray-600">
+      <div class="lg:max-w-screen-xl h-16 mx-auto flex items-center px-4">
+        <div class="inset-y-0 left-0 flex items-center sm:hidden">
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-blueGray-400 hover:text-white hover:bg-blueGray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+            <span class="sr-only">Open main menu</span>
+            <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="h-6 w-6 block" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="h-6 w-6 hidden" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="/" class="block bg-cover bg-no-repeat bg-center" style="width: 32px; height: 40px; background-image: url(/img/bonfire.png);"></a>
+          </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <a href="/apps" class=" flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-xs">Apps</span>
+              </a>
+              <a href="/extensions" class=" flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-xs">Extensions</span>
+              </a>
+              <a href="/faq" class=" flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-xs">FAQ</span>
+              </a>
+              <a href="/blog" class="bg-blueGray-600 flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                  <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+                </svg>
+                <span class="text-xs">Blog</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="">
+          <a target="blank" href="https://github.com/bonfire-networks" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-blueGray-200 bg-blueGray-700 hover:bg-blueGray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blueGray-500">
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-2 hidden lg:block">View the code</span>
+          </a>
+        </div>
+      </div>    
+      <div x-description="Mobile menu, show/hide based on menu state." class="sm:hidden" id="mobile-menu" x-show="open" style="display: none;">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-blueGray-700">
+          
+          <a href="/apps" class=" flex items-center hover:bg-blueGray-700 rounded py-4 px-3 cursor-pointer space-x-2 text-blueGray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm">Apps</span>
+          </a>
+          <a href="/extensions" class=" flex items-center hover:bg-blueGray-700 rounded py-4 px-3 cursor-pointer space-x-2 text-blueGray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm">Extensions</span>
+          </a>
+          <a href="/faq" class=" flex items-center hover:bg-blueGray-700 rounded py-4 px-3 cursor-pointer space-x-2 text-blueGray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-sm">FAQ</span>
+          </a>
+          <a href="/blog" class="bg-blueGray-600 flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+              <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+            </svg>
+            <span class="text-xs">Blog</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <main class="max-w-screen-lg mt-6 mx-4 lg:mx-auto">
+      
+
+<span class="mt-16 block bg-cover bg-no-repeat bg-center" style="width: 317px; height: 75px; background-image: url(../img/logo.png);"></span>
+<h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
+  Blog
+</h1>
+
+<h2 class="mt-16 -mb-4 uppercase text-blueGray-400 font-regular text-sm tracking-wide">Latest Posts</h2>
+
+
+
+
+<section class="mt-6 lg:px-0">
+  
+  
+    <article class="my-8 flex space-x-6">
+      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/brand.png)"></div>
+      <div class="flex-1">
+        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+            <a href="/posts/bonfire_identity/">
+                
+                    The story of Bonfire&#39;s visual identity
+                
+            </a>
+        </h2>
+        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+          <time>21 May 2021</time>
+        </span>
+        
+            <p class="text-base text-blueGray-300 mb-3">
+                Our journey through brainstorming and creating the bonfire logo and font
+            </p>
+        
+        <p>
+            <a href="/posts/bonfire_identity/" class="text-pink-400 font-bold text-lg">
+                Read more →
+            </a>
+        </p>
+      </div>
+    </article>
+  
+</section>
+
+
+
+
+    <footer class="mx-3 lg:mx-0">
+      <span class="mx-auto my-8 block bg-cover bg-no-repeat bg-center" style="width: 45px; height: 56px; background-image: url(./bonfire.png);"></span>
+      <div class="flex flex-1 items-center my-4 pt-4 border-t border-blueGray-600">
+        <div class="flex-1 flex items-center space-x-6">
+        <div class="flex items-center space-x-2 text-blueGray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-xs">team [at] bonfire.cafe </span>
+        </div>
+        <a href="https://indieweb.social/@bonfire" target="blank" class="flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+          </svg>
+          <span class="text-xs">indieweb.social/@bonfire</span>
+        </a>
+      </div>
+        <a target="blank" href="https://github.com/bonfire-networks" class=" hidden  lg:flex items-center hover:bg-blueGray-700 rounded py-2 px-3 cursor-pointer space-x-2 text-blueGray-300">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-xs">View the code</span>
+        </a>
+      </div>
+    </footer>
+    </main>
+
+
+    <!-- Current page: /blog/ -->
+  </body>
+</html>
