@@ -1,5 +1,5 @@
 ---
-title: Federated Project Coordination
+title: First steps toward federated project coordination
 description: In March 2021, the Bonfire project was fortunate enough to be chosen for a “Next Generation Search & Discovery” grant from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of content on the fediverse.
 date: 2021-07-14
 tags: [flavour, coordination, valueflows]
