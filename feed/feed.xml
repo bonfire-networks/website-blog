@@ -5,12 +5,53 @@
 	
 	<link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
 	<link href="https://bonfirenetworks.org/"/>
-	<updated>2021-05-21T00:00:00Z</updated>
+	<updated>2021-07-14T00:00:00Z</updated>
 	<id>https://bonfirenetworks.org/</id>
 	<author>
 		<name>bonfire</name>
 		<email>team@bonfire.cafe</email>
 	</author>
+	
+	<entry>
+		<title>Federated Project Coordination</title>
+		<link href="https://bonfirenetworks.org/posts/bonfire_coordination/"/>
+		<updated>2021-07-14T00:00:00Z</updated>
+		<id>https://bonfirenetworks.org/posts/bonfire_coordination/</id>
+		<content type="html">&lt;h3 id=&quot;tl%3Bdr&quot;&gt;tl;dr &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#tl%3Bdr&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In March 2021, the Bonfire project was fortunate enough to be chosen for a &lt;a href=&quot;https://nlnet.nl/discovery/&quot;&gt;&amp;quot;Next Generation Search &amp;amp; Discovery&amp;quot; grant&lt;/a&gt; from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of content on the fediverse.&lt;/p&gt;
+&lt;p&gt;This is the first of a series of posts discussing the development process, work coordination strategies and the challenges we are currently facing.&lt;/p&gt;
+&lt;p&gt;One of the funded &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/milestone/7&quot;&gt;milestones&lt;/a&gt; led us to build a project coordination app as a bonfire extension and &lt;a href=&quot;https://bonfirenetworks.org/apps/&quot;&gt;flavour&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;but-wait%3A-why-are-you-building-another-project-coordination-app%3F&quot;&gt;But wait: why are you building another project coordination app? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#but-wait%3A-why-are-you-building-another-project-coordination-app%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/VFz9YMY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Our coordination tool shares a lot of functionality with most to-do apps out there - you can create lists, add tasks to lists, commit to complete work, set a due date, and so on...&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;So how is this different?&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1)-we-want-to-federate-coordination-between-many-people%2C-groups-and-organisations-on-different-instances&quot;&gt;1) We want to federate coordination between many people, groups and organisations on different instances &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#1)-we-want-to-federate-coordination-between-many-people%2C-groups-and-organisations-on-different-instances&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;On top of the usual features like writing posts, following users and browsing feeds, a Bonfire instance using the coordination extension will make it possible to create lists and tasks. Users can then favourite, boost, comment, flag and adjust the visibility settings (or in the case of a Bonfire instance, choose the boundaries and circles their lists and tasks are published to).&lt;/p&gt;
+&lt;p&gt;As soon as users start publishing tasks, a new type of activity appears in the feeds like below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/E2Gu7s6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Users can interact with such activities by assigning a task to themselves, searching for tasks that fit with their skills or interests, or following a task to be notified about future discussions or progress.&lt;/p&gt;
+&lt;p&gt;Users from any instance can thus start &lt;strong&gt;planning&lt;/strong&gt; together: sofware projects, events, creative collaborations, peer production, etc - without having to leave the app and with the same account they already use.&lt;/p&gt;
+&lt;p&gt;A user can decide to create a private list to share with specific people, or open it to all users of their instance or beyond. At every point the user will be able to control both the visibility (who can see todos or comments), as well as the permissions and roles for each list and task (who can add/edit/comment/vote/assign/etc).&lt;/p&gt;
+&lt;h3 id=&quot;2)-we-needed-it&quot;&gt;2) We needed it &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#2)-we-needed-it&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We are always seeking to improve the coordination between  contributors and the various projects linked to Bonfire. We aim to iterate on the design and build a p2p coordination system that we are happy to work with and would welcome other non-hierarchical and cooperative-minded groups to join us in designing and building these tools together.&lt;/p&gt;
+&lt;h3 id=&quot;3)-interoperability&quot;&gt;3) Interoperability &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#3)-interoperability&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;powered-by-valueflows&quot;&gt;Powered by ValueFlows &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#powered-by-valueflows&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;We are building upon a well designed and tested &lt;a href=&quot;https://valueflo.ws/&quot;&gt;vocabulary&lt;/a&gt; to bring p2p coordination to a whole new level. In short, ValueFlows does for economic activities what &lt;a href=&quot;https://www.w3.org/TR/activitystreams-core/#introduction&quot;&gt;ActivityStreams&lt;/a&gt; (the main vocabulary of the &lt;a href=&quot;https://activitypub.rocks/&quot;&gt;ActivityPub&lt;/a&gt;-powered fediverse) does for social activities. Using these standard vocabularies means that every feature and user interaction can federate not only with other Bonfire instances, but also with instances of other software which implement them.&lt;/p&gt;
+&lt;p&gt;Lists (which can represent projects or milestones within a larger project) can include dependencies from other lists, as well as tracking work, but also resources, shared inventories and needs (this ties in to our work around mutual aid, which will be the topic of a future blog post).&lt;/p&gt;
+&lt;p&gt;Users can have discussions around a task, as well as record different kinds of economic activities to keep track of physical or digital resources. They can also simply log the amount of hours or the outputs (eg. git commits) of their work on a specific task.&lt;/p&gt;
+&lt;p&gt;Furthermore, it will be possible to define formulas (aka &lt;a href=&quot;https://valueflo.ws/appendix/equations.html&quot;&gt;value equations&lt;/a&gt;) to help calculate the distribution of value generated by a project to all of its participants, based on their recorded contributions and previous agreements.&lt;/p&gt;
+&lt;p&gt;So what looks on the surface like another to-do list app, is actually a small UI layer (the &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_coordination&quot;&gt;bonfire_ui_coordination&lt;/a&gt; extension, with only 1110 lines of code) on top of larger and more general economic extensions which are poised to be used for many different kinds of applications. These are &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_valueflows&quot;&gt;bonfire_ui_valueflows&lt;/a&gt; (which currently has over 2500 lines of reusable UI components) and &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_valueflows&quot;&gt;bonfire_valueflows&lt;/a&gt; (sitting at a whopping 16150 lines of database and API schemas and logic), and &lt;a href=&quot;https://bonfirenetworks.org/extensions/&quot;&gt;many more&lt;/a&gt;...&lt;/p&gt;
+&lt;h4 id=&quot;forgefed&quot;&gt;ForgeFed &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#forgefed&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Besides ValueFlows, we plan to participate in the &lt;a href=&quot;https://forgefed.peers.community/&quot;&gt;ForgeFed&lt;/a&gt; effort.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ForgeFed is an upcoming federation protocol for enabling interoperability between version control services. It is built as an extension to the ActivityPub protocol, allowing users of any ForgeFed-compliant service to interact with the repositories hosted on other instances.&lt;br /&gt;
+The goal of the project is to support all of the major activities connected to project management, including bug reports, merge requests and notifications across instances.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Given that we are coordinating our development using this tool, it makes sense to connect the dots between issue reporting and work coordination, code contributions (version control and merge requests) and economic contributions (along with the related value calculations). We hope to implement ForgeFed functionality to do more of this and interoperate with other tools in the near future.&lt;/p&gt;
+&lt;h2 id=&quot;join-us!&quot;&gt;Join us! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#join-us!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Would you be interested in trying alpha-stage software and participate in its design and creation process? These tools are still missing some important features, several of which we&#39;ve committed to build as part of other milestones, and we greatly appreciate your input about how to design and build it futher according to your needs. Please get in touch.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>The story of Bonfire&#39;s visual identity</title>
