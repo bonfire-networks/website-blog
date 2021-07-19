@@ -3,8 +3,8 @@ layout: layouts/post.njk
 title: About Me
 templateClass: tmpl-post
 eleventyNavigation:
-  key: About Me
+  key: About
   order: 3
 ---
 
-I am a person that writes stuff.
+A federated social network for individuals and communities to design, operate and control their own digital lives.
