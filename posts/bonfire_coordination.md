@@ -9,7 +9,7 @@ layout: layouts/post.njk
 
 
 ### tl;dr
-In March 2021, the Bonfire project was fortunate enough to be chosen for a ["Next Generation Search & Discovery" grant](https://nlnet.nl/discovery/) from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of content on the fediverse. 
+In March 2021, the Bonfire project was awarded a ["Next Generation Search & Discovery" grant](https://nlnet.nl/discovery/) from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of federated software. 
 
 This is the first of a series of posts discussing the development process, work coordination strategies and the challenges we are currently facing.
 
