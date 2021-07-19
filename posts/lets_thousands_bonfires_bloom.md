@@ -3,7 +3,7 @@ title: Let's thousand bonfires bloom
 description: In March 2021, the Bonfire project was fortunate enough to be chosen for a “Next Generation Search & Discovery” grant from NLNet Foundation...
 date: 2021-07-20
 tags: [flavour, coordination, valueflows]
-image: /img/my_tasks.png
+image: /img/flowers.png
 layout: layouts/post.njk
 ---
 
