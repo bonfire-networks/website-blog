@@ -1,6 +1,6 @@
 ---
 title: First steps toward federated project coordination
-description: In March 2021, the Bonfire project was fortunate enough to be chosen for a “Next Generation Search & Discovery” grant from NLNet Foundation...
+description: We are building a coordination tool that shares a lot of functionality with most to-do apps out there. But how is it different?
 date: 2021-07-14
 tags: [flavour, coordination, nlnet, valueflows]
 image: /img/my_tasks.png

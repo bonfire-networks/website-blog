@@ -1,6 +1,6 @@
 ---
 title: Let a thousand bonfires bloom
-description: In March 2021, the Bonfire project was fortunate enough to be chosen for a “Next Generation Search & Discovery” grant from NLNet Foundation...
+description: Dopamine and attention manipulation are not inherent properties of a social network. It is time to reconsider some fundamental questions.
 date: 2021-07-20
 tags: [flavour, nlnet, valueflows]
 image: /img/flowers.png
