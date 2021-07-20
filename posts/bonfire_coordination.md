@@ -2,7 +2,7 @@
 title: First steps toward federated project coordination
 description: In March 2021, the Bonfire project was fortunate enough to be chosen for a “Next Generation Search & Discovery” grant from NLNet Foundation...
 date: 2021-07-14
-tags: [flavour, coordination, valueflows]
+tags: [flavour, coordination, nlnet, valueflows]
 image: /img/my_tasks.png
 layout: layouts/post.njk
 ---
