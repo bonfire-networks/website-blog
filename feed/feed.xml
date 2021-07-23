@@ -5,12 +5,56 @@
 	
 	<link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
 	<link href="https://bonfirenetworks.org/"/>
-	<updated>2021-07-20T00:00:00Z</updated>
+	<updated>2021-07-23T00:00:00Z</updated>
 	<id>https://bonfirenetworks.org/</id>
 	<author>
 		<name>bonfire</name>
 		<email>team@bonfire.cafe</email>
 	</author>
+	
+	<entry>
+		<title>Our UI toolbox for customizable social network apps</title>
+		<link href="https://bonfirenetworks.org/posts/bonfire_ui_social/"/>
+		<updated>2021-07-23T00:00:00Z</updated>
+		<id>https://bonfirenetworks.org/posts/bonfire_ui_social/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social&quot;&gt;Bonfire:UI:Social&lt;/a&gt; is an extension that includes the main User Interfaces ( both assembled pages and single components ) required to have a fully working federated social network app.&lt;/p&gt;
+&lt;p&gt;The UI:Social extension is meant to be used by extensions like &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_social&quot;&gt;Bonfire:Social&lt;/a&gt; and &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_me&quot;&gt;Bonfire:Me&lt;/a&gt;, which both provide logic for the UI to work with, and define the routes and top-level views which in turn embed UI:Social components.&lt;/p&gt;
+&lt;p&gt;UI:Social also provides components used by other extensions including: &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_common&quot;&gt;Bonfire:Common&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_search&quot;&gt;Bonfire:Search&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_tag&quot;&gt;Bonfire:Tag&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_boundaries&quot;&gt;Bonfire:Boundaries&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;stack&quot;&gt;Stack &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#stack&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Current Bonfire UI extensions are built with the PETALS Stack, which means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.phoenixframework.org/&quot;&gt;Phoenix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://elixir-lang.org/&quot;&gt;Elixir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://tailwindcss.com/&quot;&gt;TailwindCSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alpinejs.dev/&quot;&gt;Alpine.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hex.pm/packages/phoenix_live_view&quot;&gt;LiveView&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Surface&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&#39;re currently in the middle of a refactor to convert all components and templates from bare LiveView to &lt;a href=&quot;https://surface-ui.org/&quot;&gt;Surface&lt;/a&gt;.&lt;br /&gt;
+Surface is a server-side rendering component library that extends LiveView, it inherites a lot of design patterns from popular js framework like Vue.js and React, while leveraging LiveView to keep the webapp fast and reactive, and almost javascript-free compared to common SPAs.&lt;/p&gt;
+&lt;h3 id=&quot;scaffolding&quot;&gt;Scaffolding &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#scaffolding&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The relevant folders are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/components&quot;&gt;Components&lt;/a&gt;: Surface stateless and stateful components.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/layout&quot;&gt;Layout&lt;/a&gt;: Main app templates, they include guest, logged or specific view templates (eg. the setting layout)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/views&quot;&gt;Views&lt;/a&gt;: The main pages that are rendered when navigating to a specific route&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/test&quot;&gt;Test&lt;/a&gt;: All the unit tests for the specific module.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;todo&quot;&gt;TODO &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#todo&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[x] Port all components over surface&lt;/li&gt;
+&lt;li&gt;[x] Localisation&lt;/li&gt;
+&lt;li&gt;[ ] Complete all unit tests&lt;/li&gt;
+&lt;li&gt;[ ] Port views over surface&lt;/li&gt;
+&lt;li&gt;[ ] Setup the component library&lt;/li&gt;
+&lt;li&gt;[ ] a11y&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other-resources&quot;&gt;Other resources &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#other-resources&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/&quot;&gt;A blog post that introduces the concept of themeable bonfire apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Let a thousand bonfires bloom</title>
