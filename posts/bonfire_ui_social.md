@@ -1,13 +1,13 @@
 ---
-title: Our UI toolbox for customizable social network apps
-description: Bonfire:UI:Social is an extension that includes the main User Interfaces ( both assembled pages and single components ) required to have a fully working federated social network app
+title: A UI toolbox for customizable social network apps
+description: Bonfire:UI:Social is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app
 date: 2021-07-23
 tags: [visual identity, UI, UX, liveview, surface]
 image: https://i.imgur.com/XoQvDCW.png
 layout: layouts/post.njk
 ---
 
-[Bonfire:UI:Social](https://github.com/bonfire-networks/bonfire_ui_social) is an extension that includes the main User Interfaces ( both assembled pages and single components ) required to have a fully working federated social network app.
+[Bonfire:UI:Social](/extensions/ui_social.html) is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.
 
 The UI:Social extension is meant to be used by extensions like [Bonfire:Social](https://github.com/bonfire-networks/bonfire_social) and [Bonfire:Me](https://github.com/bonfire-networks/bonfire_me), which both provide logic for the UI to work with, and define the routes and top-level views which in turn embed UI:Social components.
 
@@ -15,17 +15,16 @@ UI:Social also provides components used by other extensions including: [Bonfire:
 
 ### Stack
 
-Current Bonfire UI extensions are built with the PETALS Stack, which means:
+So far, Bonfire UI extensions are built with the PETALS stack (note that is not a requirement), which means:
 
 - [Phoenix](https://www.phoenixframework.org/)
 - [Elixir](https://elixir-lang.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Alpine.js](https://alpinejs.dev/)
-- [LiveView](https://hex.pm/packages/phoenix_live_view)
-- Surface
+- [LiveView](https://github.com/phoenixframework/phoenix_live_view#readme)
+- [Surface](https://surface-ui.org/)
 
-We're currently in the middle of a refactor to convert all components and templates from bare LiveView to [Surface](https://surface-ui.org/).
-Surface is a server-side rendering component library that extends LiveView, it inherites a lot of design patterns from popular js framework like Vue.js and React, while leveraging LiveView to keep the webapp fast and reactive, and almost javascript-free compared to common SPAs.  
+We're currently in the middle of a refactor to convert all components and templates from LiveView to Surface, which is a server-side rendering component library (built on top of Phoenix and LiveView) that inherits a lot of design patterns from popular JS framework like Vue.js and React, while being almost JavaScript-free compared to common SPAs.  
 
 ### Scaffolding
 The relevant folders are:
@@ -33,15 +32,6 @@ The relevant folders are:
 - [Layout](https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/layout): Main app templates, they include guest, logged or specific view templates (eg. the setting layout)
 - [Views](https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/views): The main pages that are rendered when navigating to a specific route
 - [Test](https://github.com/bonfire-networks/bonfire_ui_social/tree/main/test): All the unit tests for the specific module.
-
-
-### TODO
-- [x] Port all components over surface
-- [x] Localisation
-- [ ] Complete all unit tests
-- [ ] Port views over surface
-- [ ] Setup the component library
-- [ ] a11y
 
 ### Other resources
 - [A blog post that introduces the concept of themeable bonfire apps](https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/)
