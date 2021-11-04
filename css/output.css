@@ -2150,6 +2150,23 @@ html {
   border-bottom-color: #52525b;
 }
 
+.avatar {
+  display: inline-flex;
+  position: relative;
+}
+
+.avatar>div {
+  display: block;
+  overflow: hidden;
+}
+
+.avatar img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -2573,6 +2590,19 @@ html {
   outline: 2px solid transparent;
   outline-offset: 2px;
   box-shadow: 0 0 0 2px hsl(var(--b1)),0 0 0 4px hsla(var(--bc)/.2);
+}
+
+.avatar-group {
+  display: flex;
+  overflow: hidden;
+}
+
+.avatar-group .avatar {
+  --tw-border-opacity: 1;
+  border-color: hsla(var(--b1)/var(--tw-border-opacity,1));
+  border-radius: 9999px;
+  border-width: 4px;
+  overflow: hidden;
 }
 
 .btn .badge {
@@ -3214,6 +3244,36 @@ html {
 
 .btn-wide {
   width: 16rem;
+}
+
+.avatar.online:before {
+  content: "";
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--su)/var(--tw-bg-opacity,1));
+  border-radius: 9999px;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  width: 15%;
+  height: 15%;
+  top: 7%;
+  right: 7%;
+  box-shadow: 0 0 0 2px hsl(var(--b1));
+}
+
+.avatar.offline:before {
+  content: "";
+  --tw-bg-opacity: 1;
+  background-color: hsla(var(--b3)/var(--tw-bg-opacity,1));
+  border-radius: 9999px;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  width: 15%;
+  height: 15%;
+  top: 7%;
+  right: 7%;
+  box-shadow: 0 0 0 2px hsl(var(--b1));
 }
 
 .badge-primary {
