@@ -4,8 +4,8 @@ eleventyNavigation:
   key: docs
   order: 1
 ---
-
-<div class="hero p-16 bg-primary w-full rounded-box">
+<section x-data="{tab: 'start'}" >
+<div  class="hero p-16 bg-primary w-full rounded-box">
   <div class="text-center hero-content ">
     <div class="max-w-md mx-auto">
       <h1 class="mb-5 text-5xl font-bold">Documentation</h1> 
@@ -13,31 +13,43 @@ eleventyNavigation:
     </div>
   </div>
 </div>
-<div class="flex space-x-8 mt-12">
+<div class="flex space-x-8 items-start mt-12">
   <ul class="menu py-3 w-64 shadow-lg bg-base-100 rounded-box">
-    <li class="menu-title">
-      <span>Menu Title</span>
+    <li class="menu-title uppercase">
+      <span>sections</span>
     </li> 
     <li>
-      <a>Introduction</a>
+      <a @click="tab='start'">Getting started</a>
     </li> 
     <li>
-      <a>Appearence</a>
+      <a @click="tab='architecture'">Architecture</a>
     </li> 
     <li>
-      <a>Features</a>
+      <a @click="tab='deploy'">Deploy</a>
     </li> 
     <li>
-      <a>Behaviours</a>
+      <a @click="tab='graphql'">GraphQL guide</a>
     </li> 
-    <li>
-      <a>Alghoritms</a>
-    </li> 
-    
-    
   </ul>
-  <div class="prose">
-    <h2>Introduction</h2>
-    <p>Once you installed daisyUI, you can use component classes like btn, card, etc...So instead of making a button like this:</p>
+  <div x-show="tab === 'start'" class="prose">
+    {% markdown %}
+        {%- include "./getting_started.md" -%}
+    {% endmarkdown %}
+  </div>
+  <div x-show="tab === 'architecture'" class="prose">
+    {% markdown %}
+        {%- include "./architecture.md" -%}
+    {% endmarkdown %}
+  </div>
+  <div x-show="tab === 'deploy'" class="prose">
+    {% markdown %}
+        {%- include "./deploy.md" -%}
+    {% endmarkdown %}
+  </div>
+  <div x-show="tab === 'graphql'" class="prose">
+    {% markdown %}
+        {%- include "./graphql.md" -%}
+    {% endmarkdown %}
   </div>
 </div>
+</section>

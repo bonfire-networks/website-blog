@@ -72,6 +72,13 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
+  
+  
+  eleventyConfig.addPairedShortcode("markdown", (content) => {
+    return markdownLibrary.render(content);
+  });
+
+ 
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
