@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 pagination:
-    data: apps
+    data: externals
     size: 1
     alias: apps
 permalink: "apps/{{apps.slug}}"
@@ -24,9 +24,9 @@ permalink: "apps/{{apps.slug}}"
           <a href="{{apps.repository}}" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Contribute
           </a>
-          <a href="https://opencollective.com/bonfire-networks" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          {# <a href="https://opencollective.com/bonfire-networks" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Donate
-          </a>
+          </a> #}
         </div>
         
     </div>
@@ -61,6 +61,8 @@ permalink: "apps/{{apps.slug}}"
         {% endfor %}
         </dd>
       </div>
+
+      {% if apps.supported_by %}
       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
         <dt class="text-sm font-medium text-blueGray-400">
           Supported by
@@ -73,13 +75,9 @@ permalink: "apps/{{apps.slug}}"
           </span></a>
           {% endfor %}
           
-          <a href="https://opencollective.com/bonfire-networks" target="_blank">
-            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-              Support the project
-            </span>
-          </a>
         </dd>
       </div>
+      {% endif %}
       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
         <dt class="text-sm font-medium text-blueGray-400">
           Developed by
@@ -93,11 +91,6 @@ permalink: "apps/{{apps.slug}}"
             </a>
           {% endfor %}
           
-          <a href="{{apps.repository}}" target="_blank">
-            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-              Participate
-            </span>
-          </a>
         </dd>
       </div>
     </dl>
