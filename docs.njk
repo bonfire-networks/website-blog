@@ -31,22 +31,22 @@ eleventyNavigation:
       <a x-bind:class="{'bg-primary text-base-content' : tab === 'graphql'}" @click="tab='graphql'">GraphQL guide</a>
     </li> 
   </ul>
-  <div x-show="tab === 'start'" class="prose">
+  <div x-show="tab === 'start'" class="prose prose-lg max-w-prose">
     {% markdown %}
         {%- include "./getting_started.md" -%}
     {% endmarkdown %}
   </div>
-  <div x-show="tab === 'architecture'" class="prose">
+  <div x-show="tab === 'architecture'" class="prose prose-lg max-w-prose">
     {% markdown %}
         {%- include "./architecture.md" -%}
     {% endmarkdown %}
   </div>
-  <div x-show="tab === 'deploy'" class="prose">
+  <div x-show="tab === 'deploy'" class="prose prose-lg max-w-prose">
     {% markdown %}
         {%- include "./deploy.md" -%}
     {% endmarkdown %}
   </div>
-  <div x-show="tab === 'graphql'" class="prose">
+  <div x-show="tab === 'graphql'" class="prose prose-lg max-w-prose">
     {% markdown %}
         {%- include "./graphql.md" -%}
     {% endmarkdown %}

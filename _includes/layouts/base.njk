@@ -16,7 +16,7 @@
   <body class="w-full"> 
     <header 
       x-data="{open: false}" 
-      class="sticky top-0 relative z-20 items-center bg-base-200 mx-auto  lg:h-20 border-b border-base-300">
+      class="relative sticky top-0 z-20 items-center mx-auto border-b bg-base-200 lg:h-20 border-base-300">
       <div class="flex items-center w-full h-full px-4">
         <div class="flex items-center flex-1">
           <div class="inset-y-0 left-0 flex items-center sm:hidden">
@@ -43,12 +43,12 @@
                 </a>
                 <a href="/customize" class="{{ 'bg-primary' if '/customize' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
 
-                  <span class="text-base font-regular capitalize">customize</span>
+                  <span class="text-base capitalize font-regular">customize</span>
                 </a>
                 <div class="dropdown dropdown-end">
                   <div tabindex="0" class="{{ 'bg-primary' if '/faq' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
                     <span class="text-base font-regular">Learn</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -118,7 +118,7 @@
       </div>
     </header>
     
-    <main class="xl:max-w-screen-xl max-w-screen-lg mx-4 mt-6 lg:mx-auto">
+    <main class="max-w-screen-lg mx-4 mt-6 xl:max-w-screen-xl lg:mx-auto">
       {{ content | safe }}
 
     <footer class="mx-3 lg:mx-0">
