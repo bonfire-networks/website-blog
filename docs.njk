@@ -1,0 +1,55 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: docs
+  order: 1
+---
+<section x-data="{tab: 'start'}" >
+<div  class="hero p-16 bg-primary w-full rounded-box">
+  <div class="text-center hero-content ">
+    <div class="max-w-md mx-auto">
+      <h1 class="mb-5 text-5xl font-bold">Documentation</h1> 
+      <p class="mb-5">Discover how bonfire can be tailored to resonate with your community needs and visions.</p> 
+    </div>
+  </div>
+</div>
+<div class="flex space-x-8 items-start mt-12">
+  <ul class="menu py-3 w-64 shadow-lg bg-base-100 rounded-box">
+    <li class="menu-title uppercase">
+      <span>sections</span>
+    </li> 
+    <li>
+      <a @click="tab='start'">Getting started</a>
+    </li> 
+    <li>
+      <a @click="tab='architecture'">Architecture</a>
+    </li> 
+    <li>
+      <a @click="tab='deploy'">Deploy</a>
+    </li> 
+    <li>
+      <a @click="tab='graphql'">GraphQL guide</a>
+    </li> 
+  </ul>
+  <div x-show="tab === 'start'" class="prose">
+    {% markdown %}
+        {%- include "./getting_started.md" -%}
+    {% endmarkdown %}
+  </div>
+  <div x-show="tab === 'architecture'" class="prose">
+    {% markdown %}
+        {%- include "./architecture.md" -%}
+    {% endmarkdown %}
+  </div>
+  <div x-show="tab === 'deploy'" class="prose">
+    {% markdown %}
+        {%- include "./deploy.md" -%}
+    {% endmarkdown %}
+  </div>
+  <div x-show="tab === 'graphql'" class="prose">
+    {% markdown %}
+        {%- include "./graphql.md" -%}
+    {% endmarkdown %}
+  </div>
+</div>
+</section>
