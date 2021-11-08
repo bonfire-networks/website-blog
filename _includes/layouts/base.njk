@@ -37,7 +37,7 @@
               <a href="/" class="my-2 block bg-center bg-no-repeat bg-cover lg:hidden" style="width: 50px; height: 60px; background-image: url(/img/bonfire.png);"></a>
             </div>
             <div class="hidden sm:block sm:ml-6">
-              <div class="flex space-x-4">
+              <div class="flex h-full items-center space-x-4">
                 <a href="/use-bonfire" class="{{ 'bg-primary' if '/use-bonfire' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
                   <span class="text-base font-regular">Use bonfire</span>
                 </a>
@@ -87,31 +87,21 @@
         </div>
       </div>    
       <div x-description="Mobile menu, show/hide based on menu state." class="sm:hidden" id="mobile-menu" x-show="open" style="display: none;">
-        <div class="px-2 pt-2 pb-3 space-y-1 bg-base-300">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-base-100">
           
-          <a href="/apps" class="{{ 'bg-primary' if '/apps' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-base font-medium">Apps</span>
+          <a href="/use-bonfire" class="{{ 'bg-primary' if '/use-bonfire' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">Use bonfire</span>
           </a>
-          <a href="/extensions" class="{{ 'bg-primary' if '/extensions' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-base font-medium">Extensions</span>
+          <a href="/features" class="{{ 'bg-primary' if '/features' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">Features</span>
+          </a>
+          <a href="/docs" class="{{ 'bg-primary' if '/docs' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">Documentation</span>
           </a>
           <a href="/faq" class="{{ 'bg-primary' if '/faq' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-            </svg>
             <span class="text-base font-medium">FAQ</span>
           </a>
           <a href="/blog" class="{{ 'bg-primary' if '/blog' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-              <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-            </svg>
             <span class="text-base font-medium">Blog</span>
           </a>
         </div>
