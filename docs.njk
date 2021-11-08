@@ -3,18 +3,11 @@ layout: layouts/pages.njk
 eleventyNavigation:
   key: docs
   order: 1
+title: "Documentation"
+description: "Discover how bonfire can be tailored to resonate with your community needs and visions."
 ---
 
-<div  class="w-full p-12 hero bg-primary">
-  <div class="text-center hero-content ">
-    <div class="max-w-md mx-auto">
-      <h1 class="mb-5 text-5xl font-bold">Documentation</h1> 
-      <p class="mb-5">Discover how bonfire can be tailored to resonate with your community needs and visions.</p> 
-    </div>
-  </div>
-</div>
-<main class="max-w-screen-lg mx-4 mt-12 xl:max-w-screen-xl lg:mx-auto">
-    <div x-data="{tab: 'start'}" class="flex relative items-start space-x-8">
+<div x-data="{tab: 'start'}" class="flex relative items-start space-x-8">
     <ul class="w-64 py-3 sticky self-start top-24 shadow-lg menu bg-base-100 rounded-box">
         <li class="uppercase menu-title">
         <span>sections</span>
@@ -52,5 +45,5 @@ eleventyNavigation:
             {%- include "./graphql.md" -%}
         {% endmarkdown %}
     </div>
-    </div>
-</main>
+</div>
+
