@@ -1,11 +1,11 @@
 ---
-layout: layouts/home.njk
+layout: layouts/pages.njk
 eleventyNavigation:
   key: docs
   order: 1
 ---
-<section x-data="{tab: 'start'}" >
-<div  class="w-full p-16 hero bg-primary rounded-box">
+
+<div  class="w-full p-12 hero bg-primary">
   <div class="text-center hero-content ">
     <div class="max-w-md mx-auto">
       <h1 class="mb-5 text-5xl font-bold">Documentation</h1> 
@@ -13,43 +13,44 @@ eleventyNavigation:
     </div>
   </div>
 </div>
-<div class="flex items-start mt-12 space-x-8">
-  <ul class="w-64 py-3 shadow-lg menu bg-base-100 rounded-box">
-    <li class="uppercase menu-title">
-      <span>sections</span>
-    </li> 
-    <li>
-      <a x-bind:class="{'bg-primary text-base-content' : tab === 'start'}" @click="tab='start'">Getting started</a>
-    </li> 
-    <li>
-      <a x-bind:class="{'bg-primary text-base-content' : tab === 'architecture'}" @click="tab='architecture'">Architecture</a>
-    </li> 
-    <li>
-      <a x-bind:class="{'bg-primary text-base-content' : tab === 'deploy'}" @click="tab='deploy'">Deploy</a>
-    </li> 
-    <li>
-      <a x-bind:class="{'bg-primary text-base-content' : tab === 'graphql'}" @click="tab='graphql'">GraphQL guide</a>
-    </li> 
-  </ul>
-  <div x-show="tab === 'start'" class="prose prose-lg max-w-prose">
-    {% markdown %}
-        {%- include "./getting_started.md" -%}
-    {% endmarkdown %}
-  </div>
-  <div x-show="tab === 'architecture'" class="prose prose-lg max-w-prose">
-    {% markdown %}
-        {%- include "./architecture.md" -%}
-    {% endmarkdown %}
-  </div>
-  <div x-show="tab === 'deploy'" class="prose prose-lg max-w-prose">
-    {% markdown %}
-        {%- include "./deploy.md" -%}
-    {% endmarkdown %}
-  </div>
-  <div x-show="tab === 'graphql'" class="prose prose-lg max-w-prose">
-    {% markdown %}
-        {%- include "./graphql.md" -%}
-    {% endmarkdown %}
-  </div>
-</div>
-</section>
+<main class="max-w-screen-lg mx-4 mt-12 xl:max-w-screen-xl lg:mx-auto">
+    <div x-data="{tab: 'start'}" class="flex relative items-start space-x-8">
+    <ul class="w-64 py-3 sticky self-start top-24 shadow-lg menu bg-base-100 rounded-box">
+        <li class="uppercase menu-title">
+        <span>sections</span>
+        </li> 
+        <li>
+        <a x-bind:class="{'bg-primary text-base-content' : tab === 'start'}" @click="tab='start'">Getting started</a>
+        </li> 
+        <li>
+        <a x-bind:class="{'bg-primary text-base-content' : tab === 'architecture'}" @click="tab='architecture'">Architecture</a>
+        </li> 
+        <li>
+        <a x-bind:class="{'bg-primary text-base-content' : tab === 'deploy'}" @click="tab='deploy'">Deploy</a>
+        </li> 
+        <li>
+        <a x-bind:class="{'bg-primary text-base-content' : tab === 'graphql'}" @click="tab='graphql'">GraphQL guide</a>
+        </li> 
+    </ul>
+    <div x-show="tab === 'start'" class="prose prose-lg max-w-prose">
+        {% markdown %}
+            {%- include "./getting_started.md" -%}
+        {% endmarkdown %}
+    </div>
+    <div x-show="tab === 'architecture'" class="prose prose-lg max-w-prose">
+        {% markdown %}
+            {%- include "./architecture.md" -%}
+        {% endmarkdown %}
+    </div>
+    <div x-show="tab === 'deploy'" class="prose prose-lg max-w-prose">
+        {% markdown %}
+            {%- include "./deploy.md" -%}
+        {% endmarkdown %}
+    </div>
+    <div x-show="tab === 'graphql'" class="prose prose-lg max-w-prose">
+        {% markdown %}
+            {%- include "./graphql.md" -%}
+        {% endmarkdown %}
+    </div>
+    </div>
+</main>
