@@ -34,16 +34,12 @@
           <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
             <div class="flex items-center flex-shrink-0">
               <a href="/" class="hidden bg-center bg-no-repeat bg-cover lg:block" style="width: 32px; height: 40px; background-image: url(/img/bonfire.png);"></a>
-              <a href="/" class="my-2 block bg-center bg-no-repeat bg-cover lg:hidden" style="width: 50px; height: 60px; background-image: url(/img/bonfire.png);"></a>
+              <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 50px; height: 60px; background-image: url(/img/bonfire.png);"></a>
             </div>
             <div class="hidden sm:block sm:ml-6">
-              <div class="flex h-full items-center space-x-4">
+              <div class="flex items-center h-full space-x-4">
                 <a href="/use-bonfire" class="{{ 'bg-primary' if '/use-bonfire' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
                   <span class="text-base font-regular">Use bonfire</span>
-                </a>
-                <a href="/features" class="{{ 'bg-primary' if '/features' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
-
-                  <span class="text-base capitalize font-regular">Features</span>
                 </a>
                 <div class="dropdown dropdown-end">
                   <div tabindex="0" class="{{ 'bg-primary' if '/faq' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
@@ -92,9 +88,6 @@
           <a href="/use-bonfire" class="{{ 'bg-primary' if '/use-bonfire' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
             <span class="text-base font-medium">Use bonfire</span>
           </a>
-          <a href="/features" class="{{ 'bg-primary' if '/features' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <span class="text-base font-medium">Features</span>
-          </a>
           <a href="/docs" class="{{ 'bg-primary' if '/docs' in page.url }} flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
             <span class="text-base font-medium">Documentation</span>
           </a>
@@ -111,7 +104,7 @@
 
       {{ content | safe }}
 
-    <footer class="max-w-screen-lg 2xl:max-w-screen-xl lg:mx-auto mx-4">
+    <footer class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
       <span class="block mx-auto my-8 bg-center bg-no-repeat bg-cover" style="width: 45px; height: 56px; background-image: url(/img/bonfire.png)"></span>
       <div class="flex items-center flex-1 pt-4 my-4 border-t border-base-300">
         <div class="flex flex-col items-center flex-1 space-x-6 lg:flex-row">
