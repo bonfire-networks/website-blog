@@ -4,11 +4,13 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
+<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
 {% include "hero.njk" %}
+</div>
+
 {% include "cta.njk" %}
-{% include "flavours.njk" %}
-<div class="container max-w-screen-xl px-6 py-10 mx-auto rubik lg:px-0">
+<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
+  {% include "flavours.njk" %}
   {% include "configure.njk" %}
   {% include "appspreview.njk" %}
   <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
@@ -26,5 +28,5 @@ eleventyNavigation:
   </div>
   {% include "roadmap.njk" %}
   {% include "joinus.njk" %}
-
+</div>
 
