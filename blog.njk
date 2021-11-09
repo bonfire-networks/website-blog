@@ -5,15 +5,17 @@ eleventyNavigation:
   order: 1
 ---
 {% set maxPosts = collections.posts.length  %}
+<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
 
-<span class="mt-16 block bg-cover bg-no-repeat bg-center" style="width: 317px; height: 75px; background-image: url(../img/logo.png);"></span>
+<span class="block mt-16 bg-center bg-no-repeat bg-cover" style="width: 317px; height: 75px; background-image: url(../img/logo.png);"></span>
 <h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
   Blog
 </h1>
 
-<h2 class="mt-16 -mb-4 uppercase text-blueGray-400 font-regular text-sm tracking-wide">Latest Posts</h2>
+<h2 class="mt-16 -mb-4 text-sm tracking-wide uppercase text-blueGray-400 font-regular">Latest Posts</h2>
 
 {% set postslist = collections.posts  %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 
+</div>
