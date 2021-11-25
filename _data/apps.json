@@ -1,10 +1,11 @@
  [
     {
         "name": "Bonfire Social",
-        "slug": "bonfire.html",
+        "slug": "bonfire_social.html",
         "contribute": true,
-        "status": "In development",
-        "description": "Federated social network. Included every Bonfire flavour.",
+        "flavours": ["All flavours"],
+        "status": "Alpha",
+        "description": "Federated social network. Included in every Bonfire flavour.",
         "icon": "/img/bonfire.png",
         "license": "AGPL",
         "repository": "https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/classic",
@@ -73,8 +74,9 @@
         "name": "Bonfire Kanban",
         "slug": "bonfire_kanban.html",
         "contribute": true,
+        "flavours": ["Coordination"],
         "status": "In development",
-        "description": "Federated and collaborative kanban and task list powered by ValueFlows. Part of the Cooperation flavour of Bonfire.",
+        "description": "Federated and collaborative kanban and task list powered by ValueFlows. ",
         "icon": "/img/coordination.png",
         "license": "AGPL",
         "repository": "https://github.com/bonfire-networks/bonfire_kanban",
@@ -121,10 +123,6 @@
                 "link": "/extensions/classify.html"
             },
             {
-                "name": "Geolocate",
-                "link": "/extensions/geolocate.html"
-            },
-            {
                 "name": "Common",
                 "link": "/extensions/common.html" 
             },
@@ -137,10 +135,6 @@
                 "link": "/extensions/social.html" 
             },
             {
-                "name": "UI:Social",
-                "link": "/extensions/ui_social.html" 
-            },
-            {
                 "name": "Boundaries",
                 "link": "/extensions/boundaries.html" 
             },
@@ -148,7 +142,6 @@
                 "name": "Federate:ActivityPub",
                 "link": "/extensions/federate_activitypub.html" 
             },
-            
             {
                 "name": "Search",
                 "link": "/extensions/search.html" 
@@ -157,7 +150,6 @@
                 "name": "Files",
                 "link": "/extensions/files.html" 
             },
-            
             {
                 "name": "API:Graphql",
                 "link": "/extensions/api_graphql.html" 
@@ -165,11 +157,12 @@
         ]
     },
     {
-        "name": "Bonfire Bullettin",
-        "slug": "bullettin.html",
+        "name": "Bonfire Bulletin",
+        "slug": "bulletin.html",
         "contribute": true,
+        "flavours": ["Coordination"],
         "status": "In development",
-        "description": "Mutual aid tools for local communities, such as sharing needs and offers. Part of the Cooperation flavour of Bonfire.",
+        "description": "Mutual aid tools for local communities, such as sharing needs and offers.",
         "icon": "/img/breadpub.png",
         "license": "AGPL",
         "repository": "https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/cooperation",
@@ -188,8 +181,8 @@
         ],
         "extensions": [
             {
-                "name": "Common",
-                "link": "/extensions/common.html" 
+                "name": "Breadpub",
+                "link": "/extensions/breadpub.html"
             },
             {
                 "name": "Me",
@@ -250,10 +243,14 @@
             {
                 "name": "ValueFlow:Observe",
                 "link": "/extensions/valueflows_observe.html" 
-            },
+            }, 
             {
                 "name": "API:Graphql",
                 "link": "/extensions/api_graphql.html" 
+            },
+            {
+                "name": "Common",
+                "link": "/extensions/common.html"
             }
         ]
     }

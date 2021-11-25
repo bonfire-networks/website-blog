@@ -15,7 +15,7 @@ description: "Discover how bonfire can be tailored to resonate with your communi
         <li>
         <a x-bind:class="{'bg-primary text-base-content' : tab === 'start'}" @click="tab='start'">Getting started</a>
         </li> 
-        <li>
+        {# <li>
         <a x-bind:class="{'bg-primary text-base-content' : tab === 'architecture'}" @click="tab='architecture'">Architecture</a>
         </li> 
         <li>
@@ -23,11 +23,32 @@ description: "Discover how bonfire can be tailored to resonate with your communi
         </li> 
         <li>
         <a x-bind:class="{'bg-primary text-base-content' : tab === 'graphql'}" @click="tab='graphql'">GraphQL guide</a>
+        </li>  #}
+        <li>
+            <a href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank">Setup an instance</a>
         </li> 
+        <li>
+            <a href="https://doc.bonfirenetworks.org/hacking.html#content" target="_blank">Hacking on Bonfire</a>
+        </li> 
+        <li>
+            <a href="https://doc.bonfirenetworks.org/api-reference.html#content" target="_blank">Code reference</a>
+        </li> 
+        <li>  
+            <a href="https://github.com/bonfire-networks/bonfire-app/issues" target="_blank">Issue tracker</a>
+        </li>
+        <li>  
+            <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank">Community chat</a>
+        </li>
     </ul>
     <div x-show="tab === 'start'" class="prose prose-lg max-w-prose">
         {% markdown %}
             {%- include "./getting_started.md" -%}
+        {% endmarkdown %}
+    </div>
+    {# 
+    <div x-show="tab === 'develop'" class="prose prose-lg max-w-prose">
+        {% markdown %}
+            {%- include "./hacking.md" -%}
         {% endmarkdown %}
     </div>
     <div x-show="tab === 'architecture'" class="prose prose-lg max-w-prose">
@@ -44,6 +65,6 @@ description: "Discover how bonfire can be tailored to resonate with your communi
         {% markdown %}
             {%- include "./graphql.md" -%}
         {% endmarkdown %}
-    </div>
+    </div> #}
 </div>
 

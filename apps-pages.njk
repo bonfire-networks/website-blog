@@ -7,7 +7,7 @@ pagination:
 permalink: "apps/{{apps.slug}}"
 ---
 
-<a class="flex place-content-center lg:place-content-start" href="/apps">
+<a class="flex place-content-center lg:place-content-start" href="/use-bonfire">
   <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -33,6 +33,21 @@ permalink: "apps/{{apps.slug}}"
 </div>
 <div class="border-t border-blueGray-600 mt-12 py-5 sm:p-0">
     <dl class="sm:divide-y sm:divide-blueGray-600">
+
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+        <dt class="text-sm font-medium text-blueGray-400">
+          Include in flavours
+        </dt>
+        <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+            {% for f in apps.flavours %}
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+              <span>{{f}}</span>
+          </span>
+          {% endfor %}
+          </span>
+        </dd>
+      </div>
       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
         <dt class="text-sm font-medium text-blueGray-400">
           License
@@ -45,7 +60,7 @@ permalink: "apps/{{apps.slug}}"
       </div>
       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
         <dt class="text-sm font-medium text-blueGray-400">
-          Repository
+          Code repository
         </dt>
         <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
           <a class="font-bold underline" href="{{apps.repository}}">{{apps.repo_name}}</a>
@@ -53,7 +68,7 @@ permalink: "apps/{{apps.slug}}"
       </div>
       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
         <dt class="text-sm font-medium text-blueGray-400">
-          Extensions
+          Uses extensions
         </dt>
         <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
         {% for item in apps.extensions %}
