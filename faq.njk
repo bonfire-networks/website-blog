@@ -1,12 +1,12 @@
 ---
 layout: layouts/base.njk
 ---
-<span class="mt-16 block mx-auto bg-cover bg-no-repeat bg-center" style="width: 317px; height: 75px; background-image: url(/img/logo.png);"></span>
+<span class="block mx-auto mt-16 bg-center bg-no-repeat bg-cover" style="width: 317px; height: 75px; background-image: url(/img/bonfire_brand.png);"></span>
   <div
       x-data="{ openPanel: 0 }"
-      class="rubik prose-light max-w-screen-lg container mx-auto px-4 py-16 pt-6 sm:px-6 lg:px-8">
+      class="container max-w-screen-lg px-4 py-16 pt-6 mx-auto rubik prose-light sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto divide-y-2 divide-blueGray-200">
-      <h2 class="text-center text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
+      <h2 class="text-3xl font-extrabold text-center text-blueGray-300 sm:text-4xl">
           Frequently asked questions
       </h2>
       <dl class="mt-6 space-y-6 divide-y divide-blueGray-200">
@@ -16,17 +16,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 0 ? null : 0)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Is bonfire open source?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 0, 'rotate-0': !(openPanel === 0) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 0"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
               Yes, it is free/libre open source software, licensed primarly under the <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="blank">AGPL</a>, meaning the source code is available and can be modified, and that all such changes, improvements, or additions should be contributed back to the community. Some Bonfire extensions or dependencies have other <a href="https://github.com/bonfire-ecosystem/bonfire-app/blob/main/DEPENDENCIES.m" target="blank">open source licenses</a>.
               </div>
@@ -52,17 +52,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 1 ? null : 1)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Is it free to use?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -75,7 +75,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 1"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
               <ul>
                   <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). </li>
@@ -92,17 +92,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 2 ? null : 2)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Will there be any ads, tracking, or sponsored content?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -115,7 +115,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 2"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
               No, the software or services provided by the Bonfire team will never include any type of advertisement or spy on users. If third party developers try to include any ads, Bonfire users will always have the freedom to use an alternative extension or fork it. Similarly, if a user or instance were used to post sponsored content, you could simply block them (we may also implement shared blocklists in future to help with this).
               </div>
@@ -128,17 +128,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 3 ? null : 3)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Who can see my data?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -151,7 +151,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 3"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
               One of our main goals is for users to be in control so that they always know and decide who can see (or interact with) something before you post. We are working on tools such as <a href="extensions/boundaries.html">boundaries and circles</a> to help with this.
               </div>
@@ -164,17 +164,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 5 ? null : 5)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Does an algorithm control what I see?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -187,7 +187,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 5"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
                   <ul>
                       <li>No, there are no algorithms or biased recommendation engines to keep you online for hours on end. Content is simply shown in reverse chronological order, or any other order chosen by you.</li>
@@ -204,17 +204,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 8 ? null : 8)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Federated? What does that mean?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 8, 'rotate-0': !(openPanel === 8) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -227,7 +227,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 8"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
 
               <div class="prose prose-light text-blueGray-300">
                   <ul>
@@ -255,17 +255,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 12 ? null : 12)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Modular ecosystem? What does that mean?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 12, 'rotate-0': !(openPanel === 12) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -278,7 +278,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 12"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
                   <ul>
                   <li>Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.</li>
@@ -294,17 +294,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 9 ? null : 9)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Do I need to get a special device?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 9, 'rotate-0': !(openPanel === 9) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -317,7 +317,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 9"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
                   <ul>
                   <li>The Bonfire team is preparing to launch a device that will put your apps and data in your hands (literally), but you’ll still be able to host apps on your own device or server or in the cloud if you prefer.</li>
@@ -341,17 +341,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 10 ? null : 10)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Can I have a nomadic identity? How do I sync with the fediverse?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 10, 'rotate-0': !(openPanel === 10) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -364,7 +364,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 10"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
                   <ul>
                   <li>The Bonfire team is preparing to launch a hosted service that will host your fediverse identity and sync your Bonfire apps with the fediverse.
@@ -388,17 +388,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 4 ? null : 4)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   What features are available?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -411,7 +411,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 4"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
               <ul>
                   <li>The Bonfire ecosystem is made up of people and projects cooperating to build interoperable and extensible apps, that can easily plug and play with each other.
@@ -431,17 +431,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 7 ? null : 7)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Who runs Bonfire?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 7, 'rotate-0': !(openPanel === 7) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -454,7 +454,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 7"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
 
               <div class="prose prose-light text-blueGray-300">
               <ul>
@@ -475,17 +475,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 11 ? null : 11)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   Who is building Bonfire?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 11, 'rotate-0': !(openPanel === 11) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -498,7 +498,7 @@ layout: layouts/base.njk
           </dt>
           <dd
               x-show="openPanel === 11"
-              class="mt-2 pr-12">
+              class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
                   <ul>
                   <li>The core team is a small collective of designers and developers who has been cooperating in various forms (and various names, the project was previously known as CommonsPub, itself a fork of what was to be MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.</li>
@@ -514,17 +514,17 @@ layout: layouts/base.njk
               <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 13 ? null : 13)"
-              class="text-left w-full flex justify-between items-start text-blueGray-400">
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
                   How does bonfire compare other apps I may be using?
               </span>
-              <span class="ml-6 h-7 flex items-center">
+              <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === 13, 'rotate-0': !(openPanel === 13) }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -538,7 +538,7 @@ layout: layouts/base.njk
           <dd
               x-show="openPanel === 13"
               class="mt-2">
-              <div class="prose prose-light text-blueGray-300 max-w-full">
+              <div class="max-w-full prose prose-light text-blueGray-300">
               <table class="part" data-startline="148" data-endline="158">
                   <thead>
                   <tr>
