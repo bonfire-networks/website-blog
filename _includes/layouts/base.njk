@@ -34,8 +34,8 @@
           <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
             <div class="flex items-center flex-shrink-0">
               <a href="/" class="hidden lg:block">
-                <span class="bg-center bg-no-repeat bg-cover inline-block" style="width: 32px; height: 40px; background-image: url(/img/bonfire.png);"></span>
-                {# <span class="inline-block ml-2 py-2 text-base">Bonfire</span> #}
+                <span class="inline-block bg-center bg-no-repeat bg-cover" style="width: 32px; height: 40px; background-image: url(/img/bonfire.png);"></span>
+                {# <span class="inline-block py-2 ml-2 text-base">Bonfire</span> #}
               </a>
               <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 50px; height: 60px; background-image: url(/img/bonfire.png);"></a>
             </div>
@@ -45,21 +45,17 @@
 
                 <div class="dropdown dropdown-start">
                   <div tabindex="0" class="{{ 'bg-primary' if '/faq' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
-                    <span class="text-base font-regular">Bonfire</span>
+                    <span class="text-base font-regular">Use bonfire</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                   <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-                  <li><a href="/use-bonfire">
-                  Apps & extensions
-                  </a></li>
                     <li>
-                      <a href="/docs">Documentation</a>
-                    </li> 
-                    <li>
-                      <a href="/faq">FAQ</a>
-                    </li> 
+                      <a href="/use-bonfire">
+                        Apps & extensions
+                      </a>
+                    </li>
                     <li>
                       <a href="/#why">Why Bonfire?</a>
                     </li> 
@@ -68,6 +64,23 @@
                     </li> 
                     <li>
                       <a href="/#roadmap">Roadmap</a>
+                    </li> 
+                  </ul>
+                </div>
+
+                <div class="dropdown dropdown-start">
+                  <div tabindex="0" class="{{ 'bg-primary' if '/faq' in page.url }} flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+                    <span class="text-base font-regular">Learn</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                    <li>
+                      <a href="/docs">Documentation</a>
+                    </li> 
+                    <li>
+                      <a href="/faq">FAQ</a>
                     </li> 
                     <li>
                       <a href="https://github.com/bonfire-networks/" target="_blank">Get the code</a>
