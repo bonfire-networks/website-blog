@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" class="bg-base-200" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire apps &amp; extensions</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="stylesheet" href="/css/output.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@1.16.1/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Bonfire">
+  </head>
+  <body class="w-full"> 
+    <header 
+      x-data="{open: false}" 
+      class="sticky top-0 z-20 items-center mx-auto border-b bg-base-200 lg:h-20 border-base-300">
+      <div class="flex items-center w-full h-full px-4">
+        <div class="flex items-center flex-1">
+          <div class="inset-y-0 left-0 flex items-center sm:hidden">
+            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+              <span class="sr-only">Open main menu</span>
+              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-8 h-8" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-8 h-8" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+  
+          <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
+            <div class="flex items-center flex-shrink-0">
+              <a href="/" class="hidden lg:block">
+                <span class="inline-block bg-center bg-no-repeat bg-cover" style="width: 32px; height: 40px; background-image: url(/img/bonfire.png);"></span>
+                
+              </a>
+              <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 50px; height: 60px; background-image: url(/img/bonfire.png);"></a>
+            </div>
+            <div class="hidden sm:block sm:ml-6">
+              <div class="flex items-center h-full space-x-4">
+
+
+                <div class="dropdown dropdown-start">
+                  <div tabindex="0" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+                    <span class="text-base font-regular">Discover</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                    
+                    <li>
+                      <a href="/#why">Why Bonfire?</a>
+                    </li> 
+                    <li>
+                      <a href="/#what">What for?</a>
+                    </li> 
+                    <li>
+                      <a href="/#roadmap">Roadmap</a>
+                    </li> 
+
+                    <li class="border-t">
+                      <a href="/use-bonfire">
+                        Apps & Extensions
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/bonfire_classic">
+                        Bonfire Classic
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/bonfire_cooperation">
+                        Bonfire Cooperation
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+
+                <div class="dropdown dropdown-start">
+                  <div tabindex="0" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+                    <span class="text-base font-regular">Get started</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+                    <li>
+                      <a href="/docs">Documentation</a>
+                    </li> 
+                    <li>
+                      <a href="/faq">FAQ</a>
+                    </li> 
+                    <li>
+                      <a href="https://github.com/bonfire-networks/" target="_blank">Get the code</a>
+                    </li>
+                  </ul>
+                </div>
+                
+
+                
+                <a href="/blog" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+                  <span class="text-base font-regular">Blog</span>
+                </a>
+
+                <a target="_blank" href="https://opencollective.com/bonfire-networks" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+                  <span class="text-base font-regular">Support the project</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="">
+
+         
+
+          <a target="blank" href="https://github.com/bonfire-networks" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-sm font-medium rounded-lg text-base-content border-base-300 hover:bg-base-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-base-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+            </svg>
+            <span class="hidden ml-2 lg:block">Get the code</span>
+          </a>
+        </div>
+
+      </div>    
+      <div x-description="Mobile menu, show/hide based on menu state." class="sm:hidden" id="mobile-menu" x-show="open" style="display: none;">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-base-100">
+          
+          <a href="/use-bonfire" class="bg-primary flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">Use bonfire</span>
+          </a>
+          <a href="/docs" class=" flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">Documentation</span>
+          </a>
+          <a href="/faq" class=" flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">FAQ</span>
+          </a>
+          <a href="/blog" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+            <span class="text-base font-medium">Blog</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+
+      <div class="">
+<div  class="w-full p-12 hero bg-primary">
+  <div class="text-center hero-content ">
+    <div class="max-w-xl mx-auto">
+      <h1 class="mb-5 text-5xl font-bold">Bonfire apps &amp; extensions</h1> 
+      <p class="mb-5"></p> 
+    </div>
+  </div>
+</div>
+<main class="max-w-screen-lg mx-4 mt-12 2xl:max-w-screen-xl lg:mx-auto">
+    
+<div>
+  <div class="w-32 h-2 my-4 transform rounded-full bg-gradient-to-r from-pink-600 to-indigo-600 "></div>
+  <div class="w-full max-w-full mt-4 prose prose-xl">We're almost ready to start beta testing some initial Bonfire apps & extensions. 
+  <br/>Feel up for setting an instance and playing with it? <a class="link" href="/docs">Read the getting started guide</a>. 
+  <br/>Want to be involved in our meetings and chat with us? <a class="link" href="https://matrix.to/#/%23bonfire-networks:matrix.org">Join our matrix channel</a>.</div>
+  <!-- <h2 class="mt-12 text-lg font-bold uppercase text-opacity-80 text-base-content">Bonfire supported configurations</h2> -->
+  <div class="my-12 mt-24">
+    <div class="text-base font-semibold uppercase divider">Bonfire supported configurations</div> 
+  </div>
+    <div class="prose-lg text-gray-300">Do you need a ready-to-use solution for your community to install and start using, while still being able to customise at any time? We have two flavours to choose from. </div>
+    <div class="grid grid-cols-1 gap-4 mt-6 lg:grid-cols-2 md:grid-cols-2">
+      <a href="/bonfire_classic"> 
+        <div class="h-38 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+          
+          <div class="flex items-center mt-1 space-x-3">
+            
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700 inline-flex items-center">
+                <svg width="14" height="14" class="mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><g transform="matrix(1 0 0 -1 0 1920)"><path d="M293.4,1749.4c1.3,21.9,6.5,42.7,15.8,62.6c9.3,19.9,21.4,36.9,36.4,51.3c15,14.3,32.5,25.7,52.8,34.1c20.2,8.4,41.5,12.6,63.9,12.6c22.9,0,44.6-4.3,65.2-13s38.6-20.7,54.1-36c15.5-15.3,27.5-33,36-53.1l-4.5,0.4c-13.6,0-27-1.3-40.3-3.8c-13.3-2.5-26-6.1-38.1-10.7c-12.1-4.6-23.6-10.4-34.5-17.1c-10.9-6.8-21.3-14.3-31.1-22.6c-27.1,11.1-54.5,16.6-82.2,16.6C354.5,1770.5,323.3,1763.5,293.4,1749.4z M597.6,1495.4c5.3,19.9,7.9,38.7,7.9,56.5c0,35.4-8,68.6-24.1,99.5c-16.1,30.9-37.9,56.5-65.6,76.9c29.4,20.6,61.8,30.9,97.2,30.9c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1s13.4-42.8,13.4-66c0-34.4-9.5-65.8-28.6-94.2H597.6z M227.9,1495.4c-7,19.6-10.6,38.4-10.6,56.5c0,18.3,2.8,36.2,8.5,53.5c5.7,17.3,13.8,32.9,24.3,46.7c10.6,13.8,22.7,26,36.6,36.6c13.8,10.6,29.4,18.7,46.7,24.3c17.3,5.7,35.2,8.5,53.5,8.5c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1c8.9-20.9,13.4-42.8,13.4-66c0-18.1-3.5-36.9-10.6-56.5H227.9z M500,930c-4.5,0-9,1.7-13.6,5.1c-4.5,3.4-7.8,7.6-9.8,12.6l-164.3,434.6h-24.9l-32.4,75.4h490l-32.4-75.4h-24.9L523.4,947.7c-2-5-5.3-9.2-9.8-12.6C509,931.7,504.5,930,500,930z"/></g></g></svg>
+                <span>Classic</span>
+                </h2>
+              <p class="text-sm text-blueGray-700">An easy to setup and customize a social network, to use within your community or to connect to the fediverse.</p>
+              </div>
+          </div>
+          <span class="inline-flex items-center mt-3 px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>Coming soon</span>
+          </span>
+        </div>  
+      </a>
+      <a href="/bonfire_cooperation"> 
+        <div class="h-38 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+          
+          <div class="flex items-center mt-1 space-x-3">
+            
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700 inline-flex items-center">
+                <svg width="14" height="14" class="mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><g transform="matrix(1 0 0 -1 0 1920)"><path d="M293.4,1749.4c1.3,21.9,6.5,42.7,15.8,62.6c9.3,19.9,21.4,36.9,36.4,51.3c15,14.3,32.5,25.7,52.8,34.1c20.2,8.4,41.5,12.6,63.9,12.6c22.9,0,44.6-4.3,65.2-13s38.6-20.7,54.1-36c15.5-15.3,27.5-33,36-53.1l-4.5,0.4c-13.6,0-27-1.3-40.3-3.8c-13.3-2.5-26-6.1-38.1-10.7c-12.1-4.6-23.6-10.4-34.5-17.1c-10.9-6.8-21.3-14.3-31.1-22.6c-27.1,11.1-54.5,16.6-82.2,16.6C354.5,1770.5,323.3,1763.5,293.4,1749.4z M597.6,1495.4c5.3,19.9,7.9,38.7,7.9,56.5c0,35.4-8,68.6-24.1,99.5c-16.1,30.9-37.9,56.5-65.6,76.9c29.4,20.6,61.8,30.9,97.2,30.9c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1s13.4-42.8,13.4-66c0-34.4-9.5-65.8-28.6-94.2H597.6z M227.9,1495.4c-7,19.6-10.6,38.4-10.6,56.5c0,18.3,2.8,36.2,8.5,53.5c5.7,17.3,13.8,32.9,24.3,46.7c10.6,13.8,22.7,26,36.6,36.6c13.8,10.6,29.4,18.7,46.7,24.3c17.3,5.7,35.2,8.5,53.5,8.5c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1c8.9-20.9,13.4-42.8,13.4-66c0-18.1-3.5-36.9-10.6-56.5H227.9z M500,930c-4.5,0-9,1.7-13.6,5.1c-4.5,3.4-7.8,7.6-9.8,12.6l-164.3,434.6h-24.9l-32.4,75.4h490l-32.4-75.4h-24.9L523.4,947.7c-2-5-5.3-9.2-9.8-12.6C509,931.7,504.5,930,500,930z"/></g></g></svg>
+                <span>Cooperation</span></h2>
+              <p class="text-sm text-blueGray-700">A preconfigured solution that includes different extensions and features to empower human coordination and cooperation.</p>
+              </div>
+          </div>
+          <span class="inline-flex items-center mt-3 px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>In development</span>
+          </span>
+        </div>  
+      </a>
+    </div>
+
+
+    <!-- <h2 class="mt-20 text-lg font-bold uppercase text-opacity-80 text-base-content">Bonfire extensions</h2> -->
+    <div class="my-20 mb-12">
+      <div class="text-base font-semibold uppercase divider ">Bonfire apps & extensions</div> 
+    </div>
+    <div class="prose-lg text-gray-300">Extensions are like plugins that admins can enable or remove from an instances, to empower the community with specific features. There are <a class="link" href="/extensions/">dozens of extensions available</a>, and several main apps.
+</div>
+
+  <div class="grid grid-cols-1 gap-4 mt-6 lg:grid-cols-3 md:grid-cols-2">
+    
+      <a href=/apps/social.html>  
+        <div class="h-40 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+        
+    
+          <div class="flex items-center mt-1 space-x-3">
+            <div style="background-image: url(/img/bonfire.png)" class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700">Bonfire Social</h2>
+              <p class="text-sm text-blueGray-700">A customizable federated social network, to follow people, make posts, have discussion, etc... </p>
+              </div>
+          </div>
+
+          <span class="inline-flex items-center mt-3 px-2 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>Coming soon</span>
+          </span>
+
+          
+          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><g transform="matrix(1 0 0 -1 0 1920)"><path d="M293.4,1749.4c1.3,21.9,6.5,42.7,15.8,62.6c9.3,19.9,21.4,36.9,36.4,51.3c15,14.3,32.5,25.7,52.8,34.1c20.2,8.4,41.5,12.6,63.9,12.6c22.9,0,44.6-4.3,65.2-13s38.6-20.7,54.1-36c15.5-15.3,27.5-33,36-53.1l-4.5,0.4c-13.6,0-27-1.3-40.3-3.8c-13.3-2.5-26-6.1-38.1-10.7c-12.1-4.6-23.6-10.4-34.5-17.1c-10.9-6.8-21.3-14.3-31.1-22.6c-27.1,11.1-54.5,16.6-82.2,16.6C354.5,1770.5,323.3,1763.5,293.4,1749.4z M597.6,1495.4c5.3,19.9,7.9,38.7,7.9,56.5c0,35.4-8,68.6-24.1,99.5c-16.1,30.9-37.9,56.5-65.6,76.9c29.4,20.6,61.8,30.9,97.2,30.9c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1s13.4-42.8,13.4-66c0-34.4-9.5-65.8-28.6-94.2H597.6z M227.9,1495.4c-7,19.6-10.6,38.4-10.6,56.5c0,18.3,2.8,36.2,8.5,53.5c5.7,17.3,13.8,32.9,24.3,46.7c10.6,13.8,22.7,26,36.6,36.6c13.8,10.6,29.4,18.7,46.7,24.3c17.3,5.7,35.2,8.5,53.5,8.5c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1c8.9-20.9,13.4-42.8,13.4-66c0-18.1-3.5-36.9-10.6-56.5H227.9z M500,930c-4.5,0-9,1.7-13.6,5.1c-4.5,3.4-7.8,7.6-9.8,12.6l-164.3,434.6h-24.9l-32.4,75.4h490l-32.4-75.4h-24.9L523.4,947.7c-2-5-5.3-9.2-9.8-12.6C509,931.7,504.5,930,500,930z"/></g></g></svg>
+                <span>Social</span>
+          </span>
+      
+          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><g transform="matrix(1 0 0 -1 0 1920)"><path d="M293.4,1749.4c1.3,21.9,6.5,42.7,15.8,62.6c9.3,19.9,21.4,36.9,36.4,51.3c15,14.3,32.5,25.7,52.8,34.1c20.2,8.4,41.5,12.6,63.9,12.6c22.9,0,44.6-4.3,65.2-13s38.6-20.7,54.1-36c15.5-15.3,27.5-33,36-53.1l-4.5,0.4c-13.6,0-27-1.3-40.3-3.8c-13.3-2.5-26-6.1-38.1-10.7c-12.1-4.6-23.6-10.4-34.5-17.1c-10.9-6.8-21.3-14.3-31.1-22.6c-27.1,11.1-54.5,16.6-82.2,16.6C354.5,1770.5,323.3,1763.5,293.4,1749.4z M597.6,1495.4c5.3,19.9,7.9,38.7,7.9,56.5c0,35.4-8,68.6-24.1,99.5c-16.1,30.9-37.9,56.5-65.6,76.9c29.4,20.6,61.8,30.9,97.2,30.9c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1s13.4-42.8,13.4-66c0-34.4-9.5-65.8-28.6-94.2H597.6z M227.9,1495.4c-7,19.6-10.6,38.4-10.6,56.5c0,18.3,2.8,36.2,8.5,53.5c5.7,17.3,13.8,32.9,24.3,46.7c10.6,13.8,22.7,26,36.6,36.6c13.8,10.6,29.4,18.7,46.7,24.3c17.3,5.7,35.2,8.5,53.5,8.5c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1c8.9-20.9,13.4-42.8,13.4-66c0-18.1-3.5-36.9-10.6-56.5H227.9z M500,930c-4.5,0-9,1.7-13.6,5.1c-4.5,3.4-7.8,7.6-9.8,12.6l-164.3,434.6h-24.9l-32.4,75.4h490l-32.4-75.4h-24.9L523.4,947.7c-2-5-5.3-9.2-9.8-12.6C509,931.7,504.5,930,500,930z"/></g></g></svg>
+                <span>Cooperation</span>
+          </span>
+      
+        </div>  
+      </a>
+    
+      <a href=/apps/kanban.html>  
+        <div class="h-40 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+        
+    
+          <div class="flex items-center mt-1 space-x-3">
+            <div style="background-image: url(/img/coordination.png)" class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700">Bonfire Kanban</h2>
+              <p class="text-sm text-blueGray-700">Federated and collaborative kanban and task list for p2p project coordination. </p>
+              </div>
+          </div>
+
+          <span class="inline-flex items-center mt-3 px-2 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>In development</span>
+          </span>
+
+          
+          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><g transform="matrix(1 0 0 -1 0 1920)"><path d="M293.4,1749.4c1.3,21.9,6.5,42.7,15.8,62.6c9.3,19.9,21.4,36.9,36.4,51.3c15,14.3,32.5,25.7,52.8,34.1c20.2,8.4,41.5,12.6,63.9,12.6c22.9,0,44.6-4.3,65.2-13s38.6-20.7,54.1-36c15.5-15.3,27.5-33,36-53.1l-4.5,0.4c-13.6,0-27-1.3-40.3-3.8c-13.3-2.5-26-6.1-38.1-10.7c-12.1-4.6-23.6-10.4-34.5-17.1c-10.9-6.8-21.3-14.3-31.1-22.6c-27.1,11.1-54.5,16.6-82.2,16.6C354.5,1770.5,323.3,1763.5,293.4,1749.4z M597.6,1495.4c5.3,19.9,7.9,38.7,7.9,56.5c0,35.4-8,68.6-24.1,99.5c-16.1,30.9-37.9,56.5-65.6,76.9c29.4,20.6,61.8,30.9,97.2,30.9c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1s13.4-42.8,13.4-66c0-34.4-9.5-65.8-28.6-94.2H597.6z M227.9,1495.4c-7,19.6-10.6,38.4-10.6,56.5c0,18.3,2.8,36.2,8.5,53.5c5.7,17.3,13.8,32.9,24.3,46.7c10.6,13.8,22.7,26,36.6,36.6c13.8,10.6,29.4,18.7,46.7,24.3c17.3,5.7,35.2,8.5,53.5,8.5c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1c8.9-20.9,13.4-42.8,13.4-66c0-18.1-3.5-36.9-10.6-56.5H227.9z M500,930c-4.5,0-9,1.7-13.6,5.1c-4.5,3.4-7.8,7.6-9.8,12.6l-164.3,434.6h-24.9l-32.4,75.4h490l-32.4-75.4h-24.9L523.4,947.7c-2-5-5.3-9.2-9.8-12.6C509,931.7,504.5,930,500,930z"/></g></g></svg>
+                <span>Cooperation</span>
+          </span>
+      
+        </div>  
+      </a>
+    
+      <a href=/apps/bulletin.html>  
+        <div class="h-40 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+        
+    
+          <div class="flex items-center mt-1 space-x-3">
+            <div style="background-image: url(/img/breadpub.png)" class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700">Bonfire Bulletin</h2>
+              <p class="text-sm text-blueGray-700">Mutual aid tools for local communities, such as sharing needs and offers.</p>
+              </div>
+          </div>
+
+          <span class="inline-flex items-center mt-3 px-2 py-0.5 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>In development</span>
+          </span>
+
+          
+          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800">
+              <svg width="14" height="14" class="mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><g transform="matrix(1 0 0 -1 0 1920)"><path d="M293.4,1749.4c1.3,21.9,6.5,42.7,15.8,62.6c9.3,19.9,21.4,36.9,36.4,51.3c15,14.3,32.5,25.7,52.8,34.1c20.2,8.4,41.5,12.6,63.9,12.6c22.9,0,44.6-4.3,65.2-13s38.6-20.7,54.1-36c15.5-15.3,27.5-33,36-53.1l-4.5,0.4c-13.6,0-27-1.3-40.3-3.8c-13.3-2.5-26-6.1-38.1-10.7c-12.1-4.6-23.6-10.4-34.5-17.1c-10.9-6.8-21.3-14.3-31.1-22.6c-27.1,11.1-54.5,16.6-82.2,16.6C354.5,1770.5,323.3,1763.5,293.4,1749.4z M597.6,1495.4c5.3,19.9,7.9,38.7,7.9,56.5c0,35.4-8,68.6-24.1,99.5c-16.1,30.9-37.9,56.5-65.6,76.9c29.4,20.6,61.8,30.9,97.2,30.9c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1s13.4-42.8,13.4-66c0-34.4-9.5-65.8-28.6-94.2H597.6z M227.9,1495.4c-7,19.6-10.6,38.4-10.6,56.5c0,18.3,2.8,36.2,8.5,53.5c5.7,17.3,13.8,32.9,24.3,46.7c10.6,13.8,22.7,26,36.6,36.6c13.8,10.6,29.4,18.7,46.7,24.3c17.3,5.7,35.2,8.5,53.5,8.5c23.1,0,45.1-4.5,66-13.4c20.9-8.9,38.9-21,54.1-36.2c15.2-15.2,27.3-33.2,36.2-54.1c8.9-20.9,13.4-42.8,13.4-66c0-18.1-3.5-36.9-10.6-56.5H227.9z M500,930c-4.5,0-9,1.7-13.6,5.1c-4.5,3.4-7.8,7.6-9.8,12.6l-164.3,434.6h-24.9l-32.4,75.4h490l-32.4-75.4h-24.9L523.4,947.7c-2-5-5.3-9.2-9.8-12.6C509,931.7,504.5,930,500,930z"/></g></g></svg>
+                <span>Cooperation</span>
+          </span>
+      
+        </div>  
+      </a>
+    
+    
+  </div>
+
+<div class="p-4 mt-8 rounded-md bg-gradient-to-r from-pink-600 to-indigo-600 ">
+<div class="mt-8 text-3xl font-extrabold text-center text-white">Do you want to play with one of the existing apps?</div>
+<div class="flex items-center my-6 place-content-center">
+    <a href="/docs" class="btn btn-outline ">Set up an instance</a>
+</div>
+</div>
+
+  <div class="my-20 mb-12">
+    <div class="text-base font-semibold uppercase divider ">Other apps based on bonfire</div> 
+  </div>
+  <div class="prose-lg text-gray-300">Discover how other organizations are using bonfire to build their own solution and benefit from all the efforts</div>
+  <div class="grid grid-cols-1 gap-4 mt-6 lg:grid-cols-3 md:grid-cols-2">
+    
+      <a href=/apps/reflow.html> 
+        <div class="h-40 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+          
+          <div class="flex items-center mt-1 space-x-3">
+            <div style="background-image: url(/img/reflow.png)" class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700">Reflow</h2>
+              <p class="text-sm text-blueGray-700">Organisations can keep track of resources as part of interconnected networks in the circular economy..</p>
+              </div>
+          </div>
+
+          <span class="inline-flex items-center mt-3 px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>In development</span>
+          </span>
+        </div>  
+      </a>
+    
+      <a href=/apps/haha.html> 
+        <div class="h-40 p-3 transition-colors transform bg-white shadow-lg cursor-pointer rounded-xl hover:shadow-2xl hover:bg-blueGray-50">
+          
+          <div class="flex items-center mt-1 space-x-3">
+            <div style="background-image: url(https://haha.academy/images/human-knowledge-graph.png)" class="w-24 h-24 bg-center bg-no-repeat bg-contain rounded-3xl"></div>
+              <div class="flex-1">
+              <h2 class="text-base font-bold text-blueGray-700">Haha Academy</h2>
+              <p class="text-sm text-blueGray-700">A crowdsourced course of study for every branch of human knowledge.</p>
+              </div>
+          </div>
+
+          <span class="inline-flex items-center mt-3 px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800">
+              <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
+              <span>In development</span>
+          </span>
+        </div>  
+      </a>
+    
+  </div>
+</div>
+
+
+<div class="pb-12 mt-16 border-t  border-base-100 border-opacity-60">
+  <div class="mt-4 text-sm tracking-widest uppercase text-base-content text-opacity-90"> Organisations using bonfire</div>
+ 
+  <div class="grid items-center grid-cols-2 gap-8 mt-16 lg:grid-cols-4">
+    <a href="https://learndeep.org" target="_blank" class="block flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
+      <img class="h-20" src="../img/msoe.png" alt="MSOE">
+    </a>
+    <a href="https://reflowproject.eu" target="_blank" class="block flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
+      <img class="h-16" src="../img/reflowlogo.png" alt="reflow">
+    </a>
+    <a href="https://disco.coop" target="_blank" class="block flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
+      <img class="h-8" src="../img/DIsCO.png" alt="disco.coop">
+    </a>
+    <a href="https://zo.team" target="_blank" class="block flex justify-center col-span-1 md:col-span-2 lg:col-span-1">
+      <img class="h-8" src="../img/zo.png" alt="zo.team">
+    </a>
+ 
+  </div>
+</div>
+
+
+<div class="p-4 mt-8 rounded-md bg-gradient-to-r from-pink-600 to-indigo-600 ">
+<div class="mt-8 text-3xl font-extrabold text-center text-white">Do you need a specific app or extension for your community?</div>
+<div class="flex items-center my-6 place-content-center">
+    <a href="/#join-us" class="btn btn-outline ">Let's build it together</a>
+</div>
+</div>
+</main>
+</div>
+
+    <footer class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
+      <span class="block mx-auto my-8 bg-center bg-no-repeat bg-cover" style="width: 45px; height: 56px; background-image: url(/img/bonfire.png)"></span>
+      <div class="flex items-center flex-1 pt-4 my-4 border-t border-base-300">
+        <div class="flex flex-col items-center flex-1 space-x-6 lg:flex-row">
+        <div class="flex items-center space-x-2 text-base-content text-opacity-80">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-base font-medium">team [at] bonfire.cafe </span>
+        </div>
+        <a href="https://indieweb.social/@bonfire" target="blank" class="flex items-center px-3 py-2 space-x-2 rounded cursor-pointer hover:bg-base-300 text-base-content text-opacity-80">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+          </svg>
+          <span class="text-base font-medium">indieweb.social/@bonfire</span>
+        </a>
+      </div>
+        <a target="blank" href="https://github.com/bonfire-networks" class="items-center hidden px-3 py-2 space-x-2 rounded cursor-pointer lg:flex hover:bg-base-300 text-base-content text-opacity-80">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-sm">View the code</span>
+        </a>
+      </div>
+    </footer>
+    
+
+
+    <!-- Current page: /use-bonfire/ -->
+  </body>
+</html>
