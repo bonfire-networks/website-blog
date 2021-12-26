@@ -22,7 +22,7 @@ For the time being we prefer to [stay with ambiguity](https://dougbelshaw.com/am
 
 ## How to follow zappa development?
 - We will keep track of our work and deliverables on [github milestones](https://github.com/bonfire-networks/bonfire-app/milestones).
-- Feedbacks and open discussions will take place on the [zappa topic]() on the socialhub forum (we may create several topics when needed)
+- Feedbacks and open discussions will take place on the [zappa topic](https://socialhub.activitypub.rocks/t/discussing-zappa-a-bonfire-extension-to-deal-with-online-misinformation/2187) on the socialhub forum (we may create several topics when needed)
 - You are welcome to join the [Bonfire public chat](https://matrix.to/#/#bonfire-networks:matrix.org) and engage with us
 
 As always, we will report progresses and news here on the bonfire blog, so stay tuned!
