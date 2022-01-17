@@ -7,39 +7,110 @@ title: "Documentation"
 description: "Discover how Bonfire can be tailored for your community needs and goals."
 ---
 
-<div x-data="{tab: 'start'}" class="flex relative items-start space-x-8">
-    <ul class="w-64 py-3 sticky self-start top-24 shadow-lg menu bg-base-100 rounded-box">
-        <li class="uppercase menu-title">
-        <span>sections</span>
-        </li> 
-        <li>
-        <a x-bind:class="{'bg-primary text-base-content' : tab === 'start'}" @click="tab='start'">Getting started</a>
-        </li> 
-        {# <li>
-        <a x-bind:class="{'bg-primary text-base-content' : tab === 'architecture'}" @click="tab='architecture'">Architecture</a>
-        </li> 
-        <li>
-        <a x-bind:class="{'bg-primary text-base-content' : tab === 'deploy'}" @click="tab='deploy'">Deploy</a>
-        </li> 
-        <li>
-        <a x-bind:class="{'bg-primary text-base-content' : tab === 'graphql'}" @click="tab='graphql'">GraphQL guide</a>
-        </li>  #}
-        <li>
-            <a href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank">Setup an instance</a>
-        </li> 
-        <li>
-            <a href="https://doc.bonfirenetworks.org/hacking.html#content" target="_blank">Hacking on Bonfire</a>
-        </li> 
-        <li>
-            <a href="https://doc.bonfirenetworks.org/api-reference.html#content" target="_blank">Code reference</a>
-        </li> 
-        <li>  
-            <a href="https://github.com/bonfire-networks/bonfire-app/issues" target="_blank">Issue tracker</a>
-        </li>
-        <li>  
-            <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank">Community chat</a>
-        </li>
-    </ul>
+
+
+
+<h1 class="text-xl font-medium">Here you'll find some work-in-progress guides to get up and running.</h1> 
+<p class="mt-2">
+    Please ask questions in <a class="link" href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank">our matrix channel</a> or <a href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="link" target="_blank">open an issue</a> if you encounter a bug.
+</p>
+
+<ul class="flex flex-col mt-4 space-y-3">
+    <li class="rounded shadow bg-base-100 hover:shadow-2xl">
+        <a class="block p-3" href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank">
+            <div class="flex flex-col space-y-2">
+              <div class="text-lg font-bold tracking-wider">
+                Setup an instance
+              </div>
+              <div class="flex items-center space-x-2 font-semibold text-accent">
+                <span>Read more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+              </div>
+            </div>
+        </a>
+    </li> 
+    <li class="rounded shadow bg-base-100 hover:shadow-2xl">
+        <a class="block p-3" href="https://doc.bonfirenetworks.org/hacking.html#content" target="_blank">
+            <div class="flex flex-col space-y-2">
+              <div class="text-lg font-bold tracking-wider">
+                Hacking on Bonfire
+              </div>
+              <div class="flex items-center space-x-2 font-semibold text-accent">
+                <span>Read more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+              </div>
+            </div>
+        </a>
+    </li> 
+    <li class="rounded shadow bg-base-100 hover:shadow-2xl">
+        <a class="block p-3" href="https://doc.bonfirenetworks.org/api-reference.html#content" target="_blank">
+            <div class="flex flex-col space-y-2">
+              <div class="text-lg font-bold tracking-wider">
+                Code reference
+              </div>
+              <div class="flex items-center space-x-2 font-semibold text-accent">
+                <span>Read more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+              </div>
+            </div>
+        </a>
+    </li> 
+    <li class="rounded shadow bg-base-100 hover:shadow-2xl">  
+        <a class="block p-3" href="https://github.com/bonfire-networks/bonfire-app/issues" target="_blank">
+            <div class="flex flex-col space-y-2">
+              <div class="text-lg font-bold tracking-wider">
+                Issue tracker
+              </div>
+              <div class="flex items-center space-x-2 font-semibold text-accent">
+                <span>Read more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+              </div>
+            </div>
+        </a>
+    </li>
+    <li class="rounded shadow bg-base-100 hover:shadow-2xl">  
+        <a class="block p-3" href="https://github.com/bonfire-networks/governance/blob/main/governance.md" target="_blank">
+            <div class="flex flex-col space-y-2">
+              <div class="text-lg font-bold tracking-wider">
+                Our governance
+              </div>
+              <div class="flex items-center space-x-2 font-semibold text-accent">
+                <span>Read more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+              </div>
+            </div>
+        </a>
+    </li>
+    <li class="rounded shadow bg-base-100 hover:shadow-2xl">  
+        <a class="block p-3" href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank">
+            <div class="flex flex-col space-y-2">
+              <div class="text-lg font-bold tracking-wider">
+                Community chat
+              </div>
+              <div class="flex items-center space-x-2 font-semibold text-accent">
+                <span>Read more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+              </div>
+            </div>
+        </a>
+    </li>
+</ul>
+<!-- 
+
+<div x-data="{tab: 'start'}" class="relative flex items-start space-x-8">
+    
     <div x-show="tab === 'start'" class="prose prose-lg max-w-prose">
         {% markdown %}
             {%- include "./getting_started.md" -%}
@@ -67,4 +138,4 @@ description: "Discover how Bonfire can be tailored for your community needs and 
         {% endmarkdown %}
     </div> #}
 </div>
-
+ -->
