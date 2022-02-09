@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonfire</title>
-    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <title>Countering misinformation in federated social networks, an introduction to the Zappa project</title>
+    <meta name="description" content="One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...">
     <link rel="stylesheet" href="/css/output.css">
     <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
@@ -103,7 +103,7 @@
                 
 
                 
-                <a href="/blog" class="bg-primary flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+                <a href="/blog" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
                   <span class="text-base font-regular">Blog</span>
                 </a>
 
@@ -140,7 +140,7 @@
           <a href="/faq" class=" flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
             <span class="text-base font-medium">FAQ</span>
           </a>
-          <a href="/blog" class="bg-primary flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
+          <a href="/blog" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
             <span class="text-base font-medium">Blog</span>
           </a>
         </div>
@@ -149,206 +149,81 @@
     
 
       
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
+<div class="max-w-screen-lg px-6 mx-auto mt-0 lg:px-0">
+  <div class="max-w-screen-md py-8 pb-8 mx-auto">
+    <a class="items-center block mx-auto w-36 place-content-center lg:place-content-start" href="/blog">
+      <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span class="text-sm font-medium text-blueGray-300">Back to blog</span>
+      </div>
+    </a>
+    <div class="">
+      <h1 style="line-height: 60px;" class="z-10 col-span-2 text-3xl font-extrabold tracking-wide text-left text-blueGray-200 lg:text-5xl lg:text-center lg:tracking-widest">Countering misinformation in federated social networks, an introduction to the Zappa project</h1>
+      <img src="/img/3.png" alt="post image" class="w-full mt-6 rounded-lg shadow-xl" />
+      <span class="flex w-full items-center space-x-2 mt-4 py-0.5 text-sm font-medium text-pink-500">
+          <span>Published on 08 Feb 2022 by Doug Belshaw</span><a href="/tags/zappa/">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+              <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                <circle cx="4" cy="4" r="3" />
+              </svg>
+              zappa
+            </span>
+            </a><a href="/tags/facilitation/">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+              <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                <circle cx="4" cy="4" r="3" />
+              </svg>
+              facilitation
+            </span>
+            </a>
+      </span>
+    </div>
+  </div>
 
-<span class="block mt-16 -ml-6 bg-center bg-no-repeat bg-cover" style="width: 317px; height: 75px; background-image: url(../img/bonfire_brand.png);"></span>
-<h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
-  Blog
-</h1>
+  <article class="max-w-screen-md mx-auto mt-8">
+    <div class="max-w-screen-md mx-auto mt-8 prose prose-light text-blueGray-300 lg:prose-xl">
+    <p>One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t <strong>do</strong> something with the stuff you’ve bookmarked. Usually, for me, that means turning what I’ve filed away into some kind of blog post. It’s basically the reason <a href="https://thoughtshrapnel.com/">Thought Shrapnel</a> exists.</p>
+<hr>
+<p>Last week I started some new work with the Bonfire team called the <a href="https://bonfirenetworks.org/posts/bonfire_cos/">Zappa project</a>. Bonfire is a fork of CommonsPub, the underlying codebase for MoodleNet.</p>
+<blockquote>
+<p>Self-host your online community and shape your experience at the most granular level: add and remove features, change behaviours and appearance, tune, swap or turn off algorithms. You are in total control.</p>
+</blockquote>
+<p>Bonfire is modular, with different extensions allowing communities to customise their own social network. The focus of Zappa is shaped by a grant from the Culture of Solidarity Fund.</p>
+<blockquote>
+<p>The grant will be used to release a beta version of Bonfire Social and to develop Zappa – a custom bonfire extension to empower communities with a dedicated tool to deal with the coronavirus “infodemic” and online misinformation in general.</p>
+</blockquote>
+<p>The announcement blog post talks of “experimental artificial intelligence engines” and “Zappa scores” which may be longer-term goals, while my job is to talk to people with real-world needs <em>right now</em>. As I’ve learned from being involved in quite a few innovation projects over the last 20 years, there’s a sweet spot between what’s useful, theoretically sound, and technically achievable.</p>
+<hr>
+<p>Last week, I met with <a href="https://ivan.cafe">Ivan</a> to try and do some definition of user groups and the initial scope of the project. It’s easy to think that the possible target audience is ‘everyone’ but it’s of much more value to think about who the Zappa project is likely to be useful for in the near future.</p>
+<p><img src="/img/whimsical.png" alt="Whimsical preview"></p>
+<p>Priority areas for stakeholders, user groups, and themes<br>
+The above Whimsical board shows:</p>
+<ul>
+<li>a list of people we can/should speak to (we’ve spoken with two orgs so far)</li>
+<li>themes of which we should be aware/cognisant</li>
+<li>groups of people we should talk with</li>
+</ul>
+<p>The latter two lists are prioritised based on our current thinking and, as you can see, it’s biased towards action, towards those who don’t have merely an academic interest in the Zappa project, but who have some skin in the anti-misinformation game.</p>
+<p><em>A note in passing: many people use ‘misinformation’ and ‘disinformation’ as near-synonyms of one another. But, even in common usage, it’s clear that they have an important difference in meaning.</em></p>
+<p><em>We’d say, for example, that someone was ‘misinformed’, in which case their lack of having the correct information wouldn’t necessarily be their fault. On the other hand, we might talk about state actors waging a ‘disinformation’ campaign, which very much <strong>would</strong> be intentional, and probably focused on creating a mixture of fear, uncertainty, and/or doubt.</em></p>
+<p>The line between misinformation and disinformation can be blurry, but it’s probably helpful to conceptualise what we’re doing in the terms of the grant: to help “empower communities with a dedicated tool to deal with the coronavirus ‘infodemic’ and online <strong>misinformation</strong> in general”.</p>
+<hr>
+<p>One of the resources that I’ve found particularly helpful (and which I wish I’d seen before presenting on <a href="https://archive.org/details/ithaka-next-wave-part-3-truth-lies-and-digital-fluency">Truth, Lies &amp; Digital Fluency</a> a couple of years ago) is <a href="https://firstdraftnews.org/articles/fake-news-complicated/">Fake news. It’s complicated</a>. Its author, Claire Wardle from <em>First Draft</em>, lays out <strong>7 Types of Mis- and Disinformation</strong> on a spectrum from ‘satire or parody’ (which some wouldn’t even conceptualise as misinformation) through ‘fabricated content’ (which most people would definitely consider disinformation).</p>
+<p><img src="/img/7-types-misinformation.jpeg" alt="7 types of misinformation"></p>
+<p>Some of the differences between these types can be quite nuanced, and so I found the <strong>Misinformation Matrix</strong> in the post really useful for looking at the reasons for the misinformation being published in the first place. These range from sloppy journalistic practices, through to flat-out propaganda.</p>
+<p><img src="/img/misinformation-matrix.jpeg" alt="Misinformation matrix"></p>
+<p>What the user research we’re doing at the moment is focused upon is what types of misinformation human rights organisations, scientists, and other front-line orgs are suffering from, how and where these are manifested, and what they’ve tried to do about it.</p>
+<p>So far, we’ve discovered that countering misinformation can be a <em>huge</em> time suck for people who are often volunteering for charities, non-profits, or loosely-organised groups. It seems that some areas of the world seem to suffer more than others, and particular platforms are currently doing worse than others. All of them could, of course, could do much better.</p>
+<p><strong>We’re still gathering people and organisations for this project.</strong> So if, based on the above, you know someone who you think it might help us to talk to, then please get in touch! You can leave a comment below, or get in contact via <a href="mailto:hello@dynamicskillset.com">email</a>.</p>
 
-<h2 class="mt-16 -mb-4 text-sm tracking-wide uppercase text-blueGray-400 font-regular">Latest Posts</h2>
-
-
-
-
-<section class="mt-6 lg:px-0">
-  
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/3.png)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/zappa-project/">
-                
-                    Countering misinformation in federated social networks, an introduction to the Zappa project
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>08 Feb 2022</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
-            </p>
-        
-        <p>
-            <a href="/posts/zappa-project/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/cos.jpeg)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/bonfire_cos/">
-                
-                    Announcing the Zappa project
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>26 Dec 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                We are pleased to announce that Bonfire has been awarded a grant from the Culture of Solidarity Fund to support cross-border cultural initiatives of solidarity in times of uncertainty and &quot;infodemic&quot;.
-            </p>
-        
-        <p>
-            <a href="/posts/bonfire_cos/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/naples.jpg)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/notes_on_neapoletan_meeting/">
-                
-                    Notes on the first neapolitan meeting
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>14 Oct 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                As we’re approaching a new phase in which bonfire is not anymore a chimera among few devs, but it’s starting to come together as a nice tool, some of us are anxious to make raids in the analogic world and spread the big news...
-            </p>
-        
-        <p>
-            <a href="/posts/notes_on_neapoletan_meeting/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(https://i.imgur.com/XoQvDCW.png)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/bonfire_ui_social/">
-                
-                    A UI toolbox for customizable social network apps
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>23 Jul 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                Bonfire:UI:Social is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app
-            </p>
-        
-        <p>
-            <a href="/posts/bonfire_ui_social/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/flowers.png)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/let_thousand_bonfires_bloom/">
-                
-                    Let a thousand bonfires bloom
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>20 Jul 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                Dopamine and attention manipulation are not inherent properties of a social network. It is time to reconsider some fundamental questions.
-            </p>
-        
-        <p>
-            <a href="/posts/let_thousand_bonfires_bloom/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/my_tasks.png)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/bonfire_coordination/">
-                
-                    First steps toward federated project coordination
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>14 Jul 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                We are building a coordination tool that shares a lot of functionality with most to-do apps out there. But how is it different?
-            </p>
-        
-        <p>
-            <a href="/posts/bonfire_coordination/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/brand.png)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/bonfire_identity/">
-                
-                    The story of Bonfire&#39;s visual identity
-                
-            </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>21 May 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                Our journey through brainstorming and creating the bonfire logotype
-            </p>
-        
-        <p>
-            <a href="/posts/bonfire_identity/" class="text-pink-400 font-bold text-lg">
-                Read more →
-            </a>
-        </p>
-      </div>
-    </article>
-  
-</section>
+    </div>
+  </article>
 
 </div>
+
+
 
 
     <footer class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
@@ -380,6 +255,6 @@
     
 
 
-    <!-- Current page: /blog/ -->
+    <!-- Current page: /posts/zappa-project/ -->
   </body>
 </html>
