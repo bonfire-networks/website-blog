@@ -6,7 +6,12 @@ tags: [zappa, facilitation]
 image: /img/3.png
 layout: layouts/post.njk
 author: Doug Belshaw
+
 ---
+
+<div class="my-3 alert alert-info">
+<div>This post was originally published on Doug Belshaw's <a class="mx-2" href="https://dougbelshaw.com/blog/2022/02/08/zappa-project/" target="blank"> Open Thinkering </a> blog</div></div>
+
 
 One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t **do** something with the stuff you’ve bookmarked. Usually, for me, that means turning what I’ve filed away into some kind of blog post. It’s basically the reason [Thought Shrapnel](https://thoughtshrapnel.com/) exists.
 
