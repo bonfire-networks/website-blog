@@ -6,6 +6,8 @@ date: 2021-12-26
 tags: [CoS, zappa]
 image: /img/cos.jpeg
 layout: layouts/post.njk
+author: Bonfire Builders
+
 ---
 
 We are pleased to announce that Bonfire has been awarded a grant from the [Culture of Solidarity Fund](https://culturalfoundation.eu/stories/culture-of-solidarity-fund/) to support cross-border cultural initiatives of solidarity in times of uncertainty and "infodemic". 

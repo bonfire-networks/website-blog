@@ -5,6 +5,8 @@ date: 2021-05-21
 tags: [visual identity, logo]
 image: /img/brand.png
 layout: layouts/post.njk
+author: Bonfire Builders
+
 ---
 
 
@@ -30,7 +32,7 @@ We asked Rocco to work on our visual identity primarly because of the style and 
 
 
 ![](https://assets.bigcartel.com/product_images/287784678/Squirrels.jpg?auto=format&fit=max&w=600)
-<figcaption class="-mt-6 italic text-blueGray-400 text-base block">"Squirrels on the air" - Illustration by Rocco Lombardi - <a href="https://roccolombardi.bigcartel.com/product/squirrels-on-the-air" target="blank">Link</a></figcaption>
+<figcaption class="block -mt-6 text-base italic text-blueGray-400">"Squirrels on the air" - Illustration by Rocco Lombardi - <a href="https://roccolombardi.bigcartel.com/product/squirrels-on-the-air" target="blank">Link</a></figcaption>
 
 
 The end result is very much in tune with our expectations, and we hope you like it too.

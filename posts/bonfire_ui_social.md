@@ -5,6 +5,8 @@ date: 2021-07-23
 tags: [visual identity, UI, UX, liveview, surface]
 image: https://i.imgur.com/XoQvDCW.png
 layout: layouts/post.njk
+author: Bonfire Builders
+
 ---
 
 [Bonfire:UI:Social](/extensions/ui_social.html) is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.
