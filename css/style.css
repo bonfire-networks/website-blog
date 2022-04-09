@@ -1,6 +1,8 @@
 /*
 ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
-*//*
+*/
+
+/*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -8,10 +10,14 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box; /* 1 */
-  border-width: 0; /* 2 */
-  border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
 }
 
 ::before,
@@ -27,12 +33,17 @@
 */
 
 html {
-  line-height: 1.5; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -moz-tab-size: 4; /* 3 */
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
   -o-tab-size: 4;
-     tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
 }
 
 /*
@@ -41,8 +52,10 @@ html {
 */
 
 body {
-  margin: 0; /* 1 */
-  line-height: inherit; /* 2 */
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
 }
 
 /*
@@ -52,9 +65,12 @@ body {
 */
 
 hr {
-  height: 0; /* 1 */
-  color: inherit; /* 2 */
-  border-top-width: 1px; /* 3 */
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
 }
 
 /*
@@ -107,8 +123,10 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /*
@@ -146,9 +164,12 @@ sup {
 */
 
 table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
-  border-collapse: collapse; /* 3 */
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
 }
 
 /*
@@ -162,12 +183,18 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: inherit; /* 1 */
-  color: inherit; /* 1 */
-  margin: 0; /* 2 */
-  padding: 0; /* 3 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
 }
 
 /*
@@ -188,9 +215,12 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button; /* 1 */
-  background-color: transparent; /* 2 */
-  background-image: none; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
 }
 
 /*
@@ -232,8 +262,10 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /*
@@ -250,8 +282,10 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /*
@@ -313,19 +347,25 @@ textarea {
 */
 
 input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
 }
 
 input::placeholder,
 textarea::placeholder {
-  opacity: 1; /* 1 */
-  color: #9ca3af; /* 2 */
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
 }
 
 /*
@@ -340,6 +380,7 @@ button,
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
+
 :disabled {
   cursor: default;
 }
@@ -358,8 +399,10 @@ audio,
 iframe,
 embed,
 object {
-  display: block; /* 1 */
-  vertical-align: middle; /* 2 */
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
 }
 
 /*
@@ -492,35 +535,30 @@ html {
 }
 
 @media (min-width: 640px) {
-
   .container {
     max-width: 640px;
   }
 }
 
 @media (min-width: 768px) {
-
   .container {
     max-width: 768px;
   }
 }
 
 @media (min-width: 1024px) {
-
   .container {
     max-width: 1024px;
   }
 }
 
 @media (min-width: 1280px) {
-
   .container {
     max-width: 1280px;
   }
 }
 
 @media (min-width: 1536px) {
-
   .container {
     max-width: 1536px;
   }
@@ -546,7 +584,6 @@ html {
 }
 
 @media (min-width: 768px) {
-
   .alert {
     flex-direction: row;
   }
@@ -713,7 +750,6 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .btn.loading:before {
     -webkit-animation: spin 10s linear infinite;
             animation: spin 10s linear infinite;
@@ -721,7 +757,6 @@ html {
 }
 
 @-webkit-keyframes spin {
-
   from {
     transform: rotate(0deg);
   }
@@ -732,7 +767,6 @@ html {
 }
 
 @keyframes spin {
-
   from {
     transform: rotate(0deg);
   }
@@ -895,7 +929,6 @@ html {
 }
 
 @media (min-width: 48rem) {
-
   .footer {
     grid-auto-flow: column;
   }
@@ -1856,7 +1889,6 @@ html {
 }
 
 @-webkit-keyframes button-pop {
-
   0% {
     transform: scale(var(--btn-focus-scale, 0.95));
   }
@@ -1871,7 +1903,6 @@ html {
 }
 
 @keyframes button-pop {
-
   0% {
     transform: scale(var(--btn-focus-scale, 0.95));
   }
@@ -1934,7 +1965,6 @@ html {
 }
 
 @-webkit-keyframes checkmark {
-
   0% {
     background-position-y: 5px;
   }
@@ -1949,7 +1979,6 @@ html {
 }
 
 @keyframes checkmark {
-
   0% {
     background-position-y: 5px;
   }
@@ -2288,21 +2317,18 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @-webkit-keyframes progress-loading {
-
   50% {
     left: 107%;
   }
 }
 
 @keyframes progress-loading {
-
   50% {
     left: 107%;
   }
 }
 
 @-webkit-keyframes radiomark {
-
   0% {
     box-shadow: 0 0 0 12px hsl(var(--b1)) inset, 0 0 0 12px hsl(var(--b1)) inset;
   }
@@ -2317,7 +2343,6 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @keyframes radiomark {
-
   0% {
     box-shadow: 0 0 0 12px hsl(var(--b1)) inset, 0 0 0 12px hsl(var(--b1)) inset;
   }
@@ -2392,7 +2417,6 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @-webkit-keyframes rating-pop {
-
   0% {
     transform: translateY(-0.125em);
   }
@@ -2407,7 +2431,6 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @keyframes rating-pop {
-
   0% {
     transform: translateY(-0.125em);
   }
@@ -3966,6 +3989,30 @@ body[dir="rtl"] .checkbox:checked,
   right: -1rem;
 }
 
+.-left-8 {
+  left: -2rem;
+}
+
+.-top-8 {
+  top: -2rem;
+}
+
+.left-\[-150px\] {
+  left: -150px;
+}
+
+.top-\[-60px\] {
+  top: -60px;
+}
+
+.top-\[12px\] {
+  top: 12px;
+}
+
+.right-\[-80px\] {
+  right: -80px;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -4063,6 +4110,11 @@ body[dir="rtl"] .checkbox:checked,
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.my-24 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .mb-6 {
@@ -4341,6 +4393,18 @@ body[dir="rtl"] .checkbox:checked,
   height: 240px;
 }
 
+.h-\[120px\] {
+  height: 120px;
+}
+
+.h-\[80px\] {
+  height: 80px;
+}
+
+.h-0 {
+  height: 0px;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -4397,6 +4461,18 @@ body[dir="rtl"] .checkbox:checked,
   width: 9rem;
 }
 
+.w-\[120px\] {
+  width: 120px;
+}
+
+.w-\[80px\] {
+  width: 80px;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
 .max-w-prose {
   max-width: 65ch;
 }
@@ -4431,6 +4507,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .max-w-none {
   max-width: none;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
+}
+
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .flex-1 {
@@ -4510,6 +4594,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -4885,6 +4973,14 @@ body[dir="rtl"] .checkbox:checked,
   --tw-bg-opacity: 0.7;
 }
 
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
+
+.bg-opacity-10 {
+  --tw-bg-opacity: 0.1;
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -4923,6 +5019,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .bg-none {
   background-image: none;
+}
+
+.bg-\[url\(\'\/img\/zappa\.png\'\)\] {
+  background-image: url('/img/zappa.png');
+}
+
+.bg-\[url\(\'\/img\/ecf2\.png\'\)\] {
+  background-image: url('/img/ecf2.png');
 }
 
 .from-base-200 {
@@ -5032,6 +5136,10 @@ body[dir="rtl"] .checkbox:checked,
   padding: 3rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -5112,6 +5220,11 @@ body[dir="rtl"] .checkbox:checked,
   padding-right: 1.5rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -5138,6 +5251,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pb-\[40\%\] {
+  padding-bottom: 40%;
+}
+
+.pb-\[57\%\] {
+  padding-bottom: 57%;
 }
 
 .text-left {
@@ -5646,7 +5767,6 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @media (min-width: 640px) {
-
   .sm\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -5732,14 +5852,12 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @media (min-width: 768px) {
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-
   .lg\:prose-xl {
     font-size: 1.25rem;
     line-height: 1.8;
@@ -6101,7 +6219,6 @@ body[dir="rtl"] .checkbox:checked,
 }
 
 @media (min-width: 1536px) {
-
   .\32xl\:max-w-screen-xl {
     max-width: 1280px;
   }
