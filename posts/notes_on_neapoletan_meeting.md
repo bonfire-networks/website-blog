@@ -2,7 +2,7 @@
 title: Notes on the first neapolitan meeting
 description: As we’re approaching a new phase in which bonfire is not anymore a chimera among few devs, but it’s starting to come together as a nice tool, some of us are anxious to make raids in the analogic world and spread the big news...
 date: 2021-10-14
-tags: [naples, commons goods, user testing]
+tags: [naples, commons-goods, user testing]
 image: /img/naples.jpg
 layout: layouts/post.njk
 author: Ivan

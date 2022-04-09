@@ -2,7 +2,7 @@
 title: Some interesting findings from user research for the Zappa project (so far!)
 description: One of the things about working openly is, fairly obviously, sharing your work as you go. This can be difficult for many reasons, not least because of the human tendency toward narrative, to completed stories with start, middle, and end...
 date: 2022-02-18
-tags: [zappa, facilitation, cos]
+tags: [zappa, user-research, cos]
 image: /img/2.png
 layout: layouts/post.njk
 author: Doug Belshaw

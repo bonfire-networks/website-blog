@@ -2,7 +2,7 @@
 title: The story of Bonfire's visual identity
 description: Our journey through brainstorming and creating the bonfire logotype
 date: 2021-05-21
-tags: [visual identity, logo]
+tags: [visual-identity, logo]
 image: /img/brand.png
 layout: layouts/post.njk
 author: Bonfire Builders
