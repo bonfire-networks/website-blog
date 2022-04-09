@@ -3,8 +3,11 @@
   "version": "1.0.2",
   "description": "Public bonfire website.",
   "scripts": {
-    "start": "eleventy --serve & npx tailwindcss -o css/output.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss css/index.css --o css/output.css"
+    "clean": "del _site",
+    "watch-css": "npx tailwindcss -i ./css/index.css -o ./_site/css/style.css -w",
+    "start": "NODE_ENV=development concurrently  \"ELEVENTY_ENV=development eleventy --serve\"  \"npm:watch-*\"",
+    "build-css": "npx tailwindcss -i ./css/index.css -o ./_site/css/style.css --minify",
+    "build": "NODE_ENV=production concurrently \"npm:build-*\"  && ELEVENTY_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
@@ -21,18 +24,23 @@
   },
   "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-    "@tailwindcss/typography": "^0.4.0",
-    "autoprefixer": "^10.2.5",
-    "daisyui": "^1.16.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.2",
+    "concurrently": "^7.0.0",
+    "daisyui": "^2.13.6",
+    "del-cli": "^4.0.0",
+    "esbuild": "^0.14.0",
+    "html-minifier": "^4.0.0",
     "luxon": "^1.26.0",
     "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^7.1.0",
-    "postcss": "^8.3.5",
+    "postcss": "^8.4.7",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^3.0.23",
+    "vite": "^2.8.6"
   }
 }

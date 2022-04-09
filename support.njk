@@ -1,10 +1,53 @@
 ---
-layout: layouts/pages.njk
-eleventyNavigation:
-  key: about
-  order: 1
-title: "Support bonfire"
-description: "How to empower your community with free tools"
+layout: layouts/home.njk
 ---
 
-<div>test</div>
+<div class="max-w-screen-lg mx-4 mt-12 2xl:max-w-screen-xl lg:mx-auto">
+  <h1 class="text-5xl text-base-content font-bold">Support bonfire</h1>
+  <div class="prose prose-sm mt-3">
+    <p>Together with dozens of other backers, you can become a backer or a sponsor on our OpenCollective page. You will also join a monthly newsletter exclusively for backers.</p>
+    <p>Everything is transparent. The funds are used by our team to work primarily on app development, towards our feature roadmap. </p>
+    <p>The outcome of our work is seen on GitHub as commits and issues.</p>
+    <p>The names of top 5 backers (based on total funds donated) are mentioned inside the app in the Thanks screen. This is updated monthly if the top 5 changes.
+  </div>
+  <div class="flex items-center space-x-4 mt-6">
+    <a href="#" class="btn btn-primary">Become a backer</a>
+    <a href="#" class="btn btn-outline btn-primary">Become a sponsor</a>
+  </div>
+
+  <div class="text-3xl text-base-content font-bold mt-6">Backers</div>
+  <div 
+    x-data="backers()" 
+    x-init="fetchBackers()"
+    class="flex items-center mt-4 mb-8">
+      <template x-if="backers">
+      <template x-for="(b, index) in backers" class="avatar">
+        <a :href="'https://opencollective.com/bonfire-networks/backer/' + index + '/website'" class="mr-2" target="_blank" rel="noopener noreferrer">
+          <object :data="'https://opencollective.com/bonfire-networks/backer/' + index + '/avatar.svg'" type="image/png" class="bg-[url('/img/bonfire.png')] bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1">
+          </object>
+          {# <img  class="bg-[url('/img/bonfire.png')] bg-contain w-12 h-12 flex-1 rounded-full" :src="b.image" :alt="b.name" /> #}
+        </a>
+      </template>
+    </template>
+  </div>
+</div>
+
+<script>
+
+  function backers() {
+    return {
+      isLoading: false,
+      backers: null,
+      fetchBackers() {
+        this.isLoading = true;
+        fetch(`https://opencollective.com/bonfire-networks/members/all.json`)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            this.backers = data
+            this.isLoading = false;
+          });
+      },
+    }
+  }
+</script>

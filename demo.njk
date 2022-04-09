@@ -1,0 +1,81 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Demo
+  order: 1
+---
+
+
+
+<section class="max-w-screen-md mx-auto my-20">
+  <div
+    class="relative" 
+    x-data="{
+      composer: '',
+      suggestions: [],
+      open: true,
+      close(focusAfter) {
+        if (! this.open) return
+          this.open = false
+          focusAfter && focusAfter.focus()
+      }
+    }"
+    x-init="$watch('composer', () => {
+      console.log('composer changed')
+      console.log('open', this.open)
+      console.log('suggestions', this.suggestions)
+      if (composer.length > 3) {
+        return fetch(`https://api.github.com/search/users?q=${this.composer}`)
+          .then(res => res.json())
+          .then(res => {
+            console.log(res.items.map(item => item.login))
+            if (res.items > 0) {
+              this.open = true;
+              return this.suggestions = res.items.map(item => item.login)
+            }
+          })
+          .catch(err => console.log(err));
+      } else {
+        this.suggestions = []
+      }
+    })"
+    x-on:keydown.escape.prevent.stop="close($refs.button)"
+    x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+    x-id="['dropdown-button']"
+    >
+    <pre x-text="JSON.stringify(suggestions, null, 2)" class="text-sm"></pre>
+    <textarea
+      maxlength="100"
+      x-model.debounce = "composer"
+      style="resize: none" 
+      placeholder="Write something meaningful..."
+      class="textarea w-full"></textarea>
+      <div x-text="100 - composer.length" :class="100 - composer.length < 20 ? 'text-red-500' : '' " class="text-sm"></div>
+      <ul
+        x-ref="panel"
+        x-show="open"
+        x-transition.origin.top.left
+        x-on:click.outside="close($refs.button)"
+        style="display: none;"
+        class="absolute left-0 mt-2 w-full p-2 menu bg-base-100 rounded-md shadow-md overflow-hidden"
+      >
+        <template x-for="suggestion in suggestions">
+          <li class="">
+            <a style="padding: 0.5rem" class="flex items-center space-x-2">
+              <div class="avatar grow">
+                <div class="w-8 h-8 rounded">
+                  <img src="https://api.lorem.space/image/face?hash=33791" alt="Tailwind-CSS-Avatar-component">
+                </div>
+              </div>
+              <div class="flex space-x-1 items-center">
+                <div x-text="suggestion" class="text-sm text-base-content font-medium"></div>
+                <div class="text-xs text-base-content text-opacity-50 font-light">@tatha@bonfire.cafe</div>
+              </div>
+            </a>
+          </li>
+        </template>
+      </ul>
+        
+  </div>
+</section>
+

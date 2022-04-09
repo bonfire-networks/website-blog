@@ -8,25 +8,31 @@ eleventyNavigation:
 {% include "hero.njk" %}
 </div>
 
-{% include "cta.njk" %}
+
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
   {% include "why.njk" %} 
-  {% include "what.njk" %}
-  {% include "appspreview.njk" %}
+</div>
+
+  {% include "cta.njk" %}
+
+<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
+  {# {% include "what.njk" %} #}
+  {# {% include "appspreview.njk" %} #}
   <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
-    <div style="width: 1px;" class="h-24 mx-auto mb-4 bg-gradient-to-b from-blueGray-800 to-blueGray-200"></div>
+    <div id="blog" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
     <div class="relative mx-auto">
       <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Latest from the blog</span>
-      <div class="w-40 h-2 mx-auto mt-2 transform rounded-full bg-gradient-to-r from-pink-600 to-indigo-600 "></div>
     </div>
   </div>
   {% set postslist = collections.posts  %}
   {% set postslistCounter = collections.posts | length %}
   {% include "postshome.njk" %}
-  <div class="flex mx-auto mt-12 place-content-center">
-    <a href="/blog" class="px-4 py-2 border-2 border-yellow-600 rounded-lg from-yellow-600 to-yellow-500"><span class="text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-400">Read more articles</span></a>
   </div>
-  {% include "roadmap.njk" %}
-  {% include "joinus.njk" %}
+  
+  {% include "support_footer.njk" %}
+
+  {# {% include "roadmap.njk" %} #}
+  {# {% include "joinus.njk" %} #}
+
 </div>
 

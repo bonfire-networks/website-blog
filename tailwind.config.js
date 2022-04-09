@@ -1,93 +1,38 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    enabled: true,
-    content: [
-       "_site/*", 
-       "_site/**/*",
-    ]
+  content: ['./**/*.{njk,md}', './**.{njk,md}'],
+  experimental: "all",
+  future: {
+    purgeLayersByDefault: true,
   },
   theme: {
     extend: {
-        colors: {
-            gray: colors.gray,
-            blueGray: colors.blueGray,
-            orange: colors.orange,
-            rose: colors.rose,
-          },
-      typography: (theme) => ({
-        light: {
-          css: [
-            {
-              color: theme('colors.gray.400'),
-              '[class~="lead"]': {
-                color: theme('colors.gray.300'),
-              },
-              a: {
-                color: theme('colors.white'),
-              },
-              strong: {
-                color: theme('colors.white'),
-              },
-              b: {
-                color: theme('colors.white'),
-              },
-              'ol > li::before': {
-                color: theme('colors.gray.400'),
-              },
-              'ul > li::before': {
-                backgroundColor: theme('colors.gray.600'),
-              },
-              hr: {
-                borderColor: theme('colors.gray.200'),
-              },
-              blockquote: {
-                color: theme('colors.gray.200'),
-                borderLeftColor: theme('colors.gray.600'),
-              },
-              h1: {
-                color: theme('colors.white'),
-              },
-              h2: {
-                color: theme('colors.white'),
-              },
-              h3: {
-                color: theme('colors.white'),
-              },
-              h4: {
-                color: theme('colors.white'),
-              },
-              'figure figcaption': {
-                color: theme('colors.gray.400'),
-              },
-              code: {
-                color: theme('colors.white'),
-              },
-              'a code': {
-                color: theme('colors.white'),
-              },
-              pre: {
-                color: theme('colors.gray.200'),
-                backgroundColor: theme('colors.gray.800'),
-              },
-              thead: {
-                color: theme('colors.white'),
-                borderBottomColor: theme('colors.gray.400'),
-              },
-              'tbody tr': {
-                borderBottomColor: theme('colors.gray.600'),
-              },
-            },
-          ],
-        },
-    })
-  }
+      colors: {
+        bonfire: colors.amber,
+      }
+    }
   },
+  daisyui: {
+    themes: [
+      {
+        bonfire: {
+          "primary": "#fde047", 
+          "secondary": "#fb923c",
+          "accent": "#1FB2A6",
+          "neutral": "#191D24",
+          "base-100": "#1f2937",
+          "info": "#3ABFF8",
+          "success": "#36D399",
+          "warning": "#FBBD23",
+          "error": "#f15b5b",},
+      },
+    ]
+  },
+
   plugins: [
-    require('@tailwindcss/typography'),
     require('daisyui'),
+    require('@tailwindcss/typography'),
     // require('tailwindcss-debug-screens')
   ],
 }

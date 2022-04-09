@@ -7,12 +7,30 @@ eleventyNavigation:
 {% set maxPosts = collections.posts.length  %}
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
 
-<span class="block mt-16 -ml-6 bg-center bg-no-repeat bg-cover" style="width: 317px; height: 75px; background-image: url(../img/bonfire_brand.png);"></span>
+<span class="block mt-16 bg-center bg-no-repeat bg-contain mb-4" style="width: 70px; height: 80px; background-image: url(../img/bonfire.png);"></span>
 <h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
   Blog
 </h1>
 
-<h2 class="mt-16 -mb-4 text-sm tracking-wide uppercase text-blueGray-400 font-regular">Latest Posts</h2>
+<!-- Return all tags -->
+<section class="">
+  <h2 id="tags" class="uppercase tracking-wider mt-8 mb-3 text-base-content text-opacity-80 text-sm">All tags</h2>
+  {% for tag in collections.tagList %}
+    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+    <a href="{{ tagUrl | url }}">
+    <span class="mb-1 mr-1 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+    <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+        <circle cx="4" cy="4" r="3" />
+    </svg>
+    {{ tag }}
+    </span>
+    </a>
+  {% endfor %}
+</section>
+
+
+
+<h2 class="mt-16 -mb-4 text-sm tracking-wider uppercase text-base-content text-opacity-80 font-regular">All articles</h2>
 
 {% set postslist = collections.posts  %}
 {% set postslistCounter = collections.posts | length %}
