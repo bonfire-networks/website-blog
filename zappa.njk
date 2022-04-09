@@ -105,7 +105,6 @@ layout: layouts/home.njk
 <h1 class="font-bold text-left text-3xl text-base-content">Articles written on <span class="underline decoration-wavy decoration-amber-400 underline-offset-8">zappa:</h1>
 {% set taglist = collections[ "zappa" ] %}
 {% for post in taglist | reverse %}
-{% if loop.index0 < 3 %}
     <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
       <div class="w-full h-40 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url({{ post.data.image }})"></div>
       <div class="flex-1 mt-4 lg:mt-0">
@@ -153,7 +152,6 @@ layout: layouts/home.njk
         </div>
       </div>
     </article>
-    {% endif %}
   {% endfor %}
 
   </div>

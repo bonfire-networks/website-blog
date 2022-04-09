@@ -2,7 +2,7 @@
 title: First version of report published sharing findings from Zappa project user research
 description: One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
 date: 2022-03-05
-tags: [zappa, user research]
+tags: [zappa, user research, cos]
 image: /img/1.png
 layout: layouts/post.njk
 author: Doug Belshaw
