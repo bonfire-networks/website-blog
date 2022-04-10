@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Run this to regenerate the contributors list based on Github's API
+# Usage: USER=gh_username TOKEN=gh_personal_token ./contributors.sh
 # NOTE: requires Bash 4.0+ (run `brew install bash` on Mac)
 declare -A contributors
 
