@@ -2,7 +2,7 @@
 layout: layouts/home.njk
 ---
 
-<div class="bg-base-content bg-opacity-10">
+<div class="bg-base-content bg-opacity-10 py-16">
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
   <h1 class="pt-6 text-5xl text-base-content font-bold">Support bonfire</h1>
   <div class="mt-3 prose leading-relaxed text-md text-neutral-content text-opacity-80">
@@ -27,11 +27,11 @@ layout: layouts/home.njk
   <div 
     x-data="backers()" 
     x-init="fetchBackers()"
-    class="flex items-center mt-4 mb-8">
+    class="flex items-center mt-4 mb-8 flex-wrap">
       <template x-if="backers">
-      <template x-for="(b, index) in backers" class="avatar">
-        <a :href="b.website || b.twitter || b.github || b.profile" :title="b.name || b.description" class="mr-2" target="_blank"  rel="noopener noreferrer">
-          <img :src="b.image || 'https://unavatar.io/' + ((b.twitter || b.github || b.createdAt+'?fallback=https://source.boringavatars.com').replace('https://github.com/', '').replace('https://twitter.com/', ''))" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1"/>
+      <template x-for="(b, index) in backers" class="flex shrink-0">
+        <a :href="b.website || b.twitter || b.github || b.profile" :title="b.name || b.description" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
+          <img :src="b.image || 'https://unavatar.io/' + ((b.twitter || b.github || b.createdAt+'?fallback=https://source.boringavatars.com').replace('https://github.com/', '').replace('https://twitter.com/', ''))" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
         </a>
       </template>
     </template>
@@ -42,11 +42,11 @@ layout: layouts/home.njk
   <div 
     x-data="contributors()" 
     x-init="fetchContributors()"
-    class="flex items-center mt-4 mb-8">
+    class="flex items-center mt-4 mb-8 flex-wrap">
       <template x-if="contributors">
-      <template x-for="(b, index) in contributors" class="avatar">
-        <a :href="b.html_url" :title="b.login" class="mr-2" target="_blank"  rel="noopener noreferrer">
-          <img :src="b.avatar_url || 'https://unavatar.io/' + b.login" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1"/>
+      <template x-for="(b, index) in contributors" class="flex shrink-0">
+        <a :href="b.html_url" :title="b.login" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
+          <img :src="b.avatar_url || 'https://unavatar.io/' + b.login" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
         </a>
       </template>
     </template>
