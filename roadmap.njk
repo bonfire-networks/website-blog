@@ -1,5 +1,10 @@
+---
+layout: layouts/home.njk
+---
 
-  <div id="roadmap" class="container relative max-w-screen-xl mx-auto mt-20 rubik">
+<div class="max-w-screen-lg mx-2 2xl:max-w-screen-xl lg:mx-auto">
+
+  <div id="roadmap" class="container relative max-w-screen-xl mx-auto rubik">
     <div style="width: 1px;" class="h-24 mx-auto mb-4 bg-gradient-to-b from-blueGray-800 to-blueGray-200"></div>
     <div class="relative mx-auto">
       <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Roadmap</span>
@@ -7,7 +12,8 @@
     </div>
   </div>
 
-  <div class="mx-auto mt-6 prose prose-lg text-center text-opacity-80">We've spent the last couple years building a rock-solid foundation to build upon. <br/>We are now ready to partner with like-minded communities to co-create useful extensions and invite more people to grow the federated ecosystem.</div>
+  <div class="mx-auto mt-6 text-center text-opacity-80">We've spent the last couple years building a rock-solid foundation to build upon, and now ready to partner with like-minded communities to co-create useful extensions and invite more people to grow the federated ecosystem. <br/>View more details in our <a href="https://github.com/bonfire-networks/bonfire-app/milestones?direction=asc&sort=due_date&state=open" class="link">issue tracker milestones</a>.</div>
+
   <ul role="list" class="grid grid-cols-1 gap-12 mt-12 sm:grid-cols-1 md:grid-cols-2">
     <li class="flex-col items-end hidden col-span-1 -mr-6 border-r-4 lg:flex border-base-100">
       <span class="flex items-center justify-center -mr-4 bg-green-500 rounded-full h-7 w-7 ring-4 ring-base-100">
@@ -66,7 +72,7 @@
     <li class="flex flex-col col-span-1 px-4 py-3 text-right">
       <div class="flex items-center">
         <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Bonfire Social</div>
-        <div class="badge badge-success">Coming soon</div>
+        <div class="badge badge-success">Alpha released</div>
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">A customizable federated social network, to follow people, make posts, have discussion, etc... </div>
       <a href="/bonfire_classic" class="mt-2 text-sm link">Read more</a>
@@ -86,8 +92,39 @@
 
     <li class="flex flex-col col-span-1 px-4 py-3">
       <div class="flex items-center">
+        <div class="text-xl font-bold tracking-wide font-base-content">Zappa</div>
+        <div class="ml-4 badge badge-success">Alpha in development</div>
+      </div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70"> Using the power of community to counteract misinformation. </div>
+      <a href="/zappa" class="mt-2 text-sm link">Read more</a>
+    </li>
+
+    <li class="flex flex-col col-span-1 px-4 py-3 text-right">
+      <div class="flex items-center">
+        <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Bonfire framework</div>
+        <div class="badge badge-success">Alpha in development</div>
+      </div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Attempt to stabilise as much of the framework and APIs as possible so developers can build upon them.</div>
+      <a href="https://github.com/bonfire-networks/bonfire-app/milestone/22" class="mt-2 text-sm link">Read more</a>
+    </li>
+
+    <li class="flex-col items-start hidden col-span-1 -mt-12 border-l-4 lg:flex -ml-7 border-base-100">
+      <span class="flex items-center justify-center mt-16 -ml-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
+        🚀
+      </span>
+    </li>
+
+
+    <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-100">
+      <span class="flex items-center justify-center mt-16 -mr-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
+        🚀
+      </span>
+    </li>
+
+    <li class="flex flex-col col-span-1 px-4 py-3">
+      <div class="flex items-center">
         <div class="text-xl font-bold tracking-wide font-base-content">Bonfire Kanban</div>
-        <div class="ml-4 badge badge-success">In development</div>
+        <div class="ml-4 badge badge-warning">Alpha development on-hold</div>
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Federated and collaborative kanban and task list for p2p project coordination. </div>
       <a href="/bonfire_cooperation" class="mt-2 text-sm link">Read more</a>
@@ -96,7 +133,7 @@
     <li class="flex flex-col col-span-1 px-4 py-3 text-right">
       <div class="flex items-center">
         <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Bonfire Bulletin</div>
-        <div class="badge badge-success">In development</div>
+        <div class="badge badge-warning">Alpha development on-hold</div>
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Mutual aid tools for local communities, such as sharing needs and offers.</div>
       <a href="/bonfire_cooperation" class="mt-2 text-sm link">Read more</a>
@@ -108,7 +145,7 @@
       </span>
     </li>
 
-        <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-100">
+    <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-100">
       <span class="flex items-center justify-center mt-16 -mr-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
         ⚙️
       </span>
@@ -117,12 +154,13 @@
     <li class="flex flex-col col-span-1 px-4 py-3">
       <div class="flex items-center">
         <div class="text-xl font-bold tracking-wide font-base-content">Bonfire device</div>
-        <div class="ml-4 badge badge-info">Todo</div>
+        <div class="ml-4 badge badge-warning">Prototyping</div>
    
       </div>
-      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">We plan to launch a device to put your apps and data in your hands (literally)</div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">We plan to launch a device to put your apps and data in your hands, literally</div>
       <a href="/faq#device" class="mt-2 text-sm link">Read more</a>
     </li>
     
   </ul>
-{# </div> #}
+
+</div> 
