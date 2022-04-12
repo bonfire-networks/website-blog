@@ -143,7 +143,7 @@
       <template x-if="backers">
       <template x-for="(b, index) in backers" class="flex shrink-0">
         <a :href="b.website || b.twitter || b.github || b.profile" :title="b.name || b.description" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
-          <img :src="b.image || 'https://unavatar.io/' + ((b.twitter || b.github || b.createdAt+'?fallback=https://source.boringavatars.com').replace('https://github.com/', '').replace('https://twitter.com/', ''))" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
+          <img :src="b.image || 'https://unavatar.io/' + (b.profile || b.twitter || b.github || b.createdAt).replace('https://opencollective.com/', '').replace('https://github.com/', '').replace('https://twitter.com/', '') + '?fallback=https://source.boringavatars.com'" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
         </a>
       </template>
     </template>
@@ -181,7 +181,7 @@ function backers() {
       fetch(`https://opencollective.com/bonfire-networks/members/all.json`)
         .then(response => response.json())
         .then(data => {
-          //console.log(data);
+          console.log(data);
           this.backers = data
           this.isLoading = false;
         });
