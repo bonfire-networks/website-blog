@@ -1,22 +1,23 @@
 <!doctype html>
-<html lang="en" class="bg-base-200" data-theme="dark">
+<html lang="en" class="bg-base-200" data-theme="bonfire">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tagged “commons goods”</title>
+    <title>Bonfire</title>
     <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
-    <link rel="stylesheet" href="/css/output.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
     <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
-      <link href="https://cdn.jsdelivr.net/npm/daisyui@1.16.1/dist/full.css" rel="stylesheet" type="text/css" />
-
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="Bonfire">
   </head>
-  <body class="w-full"> 
-    <header 
+  <body data-theme="bonfire" class="w-full"> 
+    <div
       x-data="{open: false}" 
-      class="sticky top-0 z-20 items-center mx-auto border-b bg-base-200 lg:h-20 border-base-300">
+    >
+    <header 
+      class="sticky top-0 z-20 navbar bg-base-200">
       <div class="flex items-center w-full h-full px-4">
         <div class="flex items-center flex-1">
           <div class="inset-y-0 left-0 flex items-center sm:hidden">
@@ -32,190 +33,194 @@
           </div>
   
           <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-            <div class="flex items-center flex-shrink-0">
-              <a href="/" class="hidden lg:block">
-                <span class="inline-block bg-center bg-no-repeat bg-cover" style="width: 32px; height: 40px; background-image: url(/img/bonfire.png);"></span>
-                
+            <div class="flex items-center flex-1 flex-shrink-0">
+              <a href="/" class="items-center hidden lg:flex">
+                <span class="inline-block bg-center bg-no-repeat bg-cover" style="width: 160px; height: 40px; background-image: url(/img/bonfire_brand.png);"></span>
               </a>
-              <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 50px; height: 60px; background-image: url(/img/bonfire.png);"></a>
+              <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 120px; height: 30px; background-image: url(/img/bonfire_brand.png);"></a>
             </div>
-            <div class="hidden sm:block sm:ml-6">
-              <div class="flex items-center h-full space-x-4">
-
-
-                <div class="dropdown dropdown-start">
-                  <div tabindex="0" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
-                    <span class="text-base font-regular">Discover</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                  <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-                    
-                    <li>
-                      <a href="/#why">Why Bonfire?</a>
-                    </li> 
-                    <li>
-                      <a href="/#what">What for?</a>
-                    </li> 
-                    <li>
-                      <a href="/#roadmap">Roadmap</a>
-                    </li> 
-
-                    <li class="border-t">
-                      <a href="/use-bonfire">
-                        Apps & Extensions
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/bonfire_classic">
-                        Bonfire Classic
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/bonfire_cooperation">
-                        Bonfire Cooperation
-                      </a>
-                    </li>
-                    
-                  </ul>
-                </div>
-
-                <div class="dropdown dropdown-start">
-                  <div tabindex="0" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
-                    <span class="text-base font-regular">Get started</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                  <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-                    <li>
-                      <a href="/docs">Documentation</a>
-                    </li> 
-                    <li>
-                      <a href="/faq">FAQ</a>
-                    </li> 
-                    <li>
-                      <a href="https://github.com/bonfire-networks/" target="_blank">Get the code</a>
-                    </li>
-                  </ul>
-                </div>
-                
-
-                
-                <a href="/blog" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
+              <ul class="flex-row hidden p-0 sm:flex menu menu-horizontal">
+                <li>
+                 <a href="/docs" class=" ">
+                  <span class="text-base font-regular">Documentation</span>
+                </a>
+                </li>
+                <li>
+                 <a href="/faq" class=" ">
+                  <span class="text-base font-regular">FAQs</span>
+                </a>
+                </li>
+                <li>
+                <a href="/blog" class=" ">
                   <span class="text-base font-regular">Blog</span>
                 </a>
+                </li>
+                <li>
+                  <a href="/contribute" class=" ">
+                    <span class="text-base font-regular">Contribute</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="hidden lg:block">Get the code</span>
+                  </a>
+                </li>
+              </ul>
 
-                <a target="_blank" href="https://opencollective.com/bonfire-networks" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-90">
-                  <span class="text-base font-regular">Support the project</span>
-                </a>
-              </div>
-            </div>
+              <a class="sm:hidden" target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              </svg>
+              <span class="hidden lg:block">Get the code</span>
+              </a>
+
           </div>
         </div>
-        
-        <div class="">
-
-         
-
-          <a target="blank" href="https://github.com/bonfire-networks" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-sm font-medium rounded-lg text-base-content border-base-300 hover:bg-base-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-base-300">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-            </svg>
-            <span class="hidden ml-2 lg:block">Get the code</span>
-          </a>
-        </div>
-
       </div>    
-      <div x-description="Mobile menu, show/hide based on menu state." class="sm:hidden" id="mobile-menu" x-show="open" style="display: none;">
-        <div class="px-2 pt-2 pb-3 space-y-1 bg-base-100">
-          
-          <a href="/use-bonfire" class=" flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <span class="text-base font-medium">Use bonfire</span>
-          </a>
-          <a href="/docs" class=" flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <span class="text-base font-medium">Documentation</span>
-          </a>
-          <a href="/faq" class=" flex items-center hover:bg-primary rounded py-4 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <span class="text-base font-medium">FAQ</span>
-          </a>
-          <a href="/blog" class=" flex items-center hover:bg-primary rounded py-2 px-3 cursor-pointer space-x-2 text-base-content text-opacity-80">
-            <span class="text-base font-medium">Blog</span>
-          </a>
-        </div>
-      </div>
     </header>
-    
-
-      <h1>Tagged “commons goods”</h1>
-
-
-
-<section class="mt-6 lg:px-0">
-  
-  
-    <article class="my-8 flex space-x-6">
-      <div class="w-32 h-32 bg-blueGray-400 rounded sm:bg-contain lg:bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/naples.jpg)"></div>
-      <div class="flex-1">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/notes_on_neapoletan_meeting/">
-                
-                    Notes on the first neapolitan meeting
-                
+      <div 
+        x-description="Mobile menu, show/hide based on menu state." 
+        class="sm:hidden" 
+        id="mobile-menu" 
+        x-show="open" 
+        style="display: none;">
+        <ul class="p-0 menu">
+            <li>
+              <a href="/docs" class=" ">
+              <span class="text-base font-regular">Documentation</span>
             </a>
-        </h2>
-        <span class="inline-flex mb-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-          <time>14 Oct 2021</time>
-        </span>
-        
-            <p class="text-base text-blueGray-300 mb-3">
-                As we’re approaching a new phase in which bonfire is not anymore a chimera among few devs, but it’s starting to come together as a nice tool, some of us are anxious to make raids in the analogic world and spread the big news...
-            </p>
-        
-        <p>
-            <a href="/posts/notes_on_neapoletan_meeting/" class="text-pink-400 font-bold text-lg">
-                Read more →
+            </li>
+            <li>
+              <a href="/faq" class=" ">
+              <span class="text-base font-regular">FAQs</span>
             </a>
-        </p>
+            </li>
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-base font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/contribute" class=" ">
+                <span class="text-base font-regular">Contribute</span>
+              </a>
+            </li>
+            
+        </ul>
       </div>
-    </article>
-  
-</section>
+    </div>
 
-<p>See <a href="/tags/">all tags</a>.</p>
-
-
-
-    <footer class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
-      <span class="block mx-auto my-8 bg-center bg-no-repeat bg-cover" style="width: 45px; height: 56px; background-image: url(/img/bonfire.png)"></span>
-      <div class="flex items-center flex-1 pt-4 my-4 border-t border-base-300">
-        <div class="flex flex-col items-center flex-1 space-x-6 lg:flex-row">
-        <div class="flex items-center space-x-2 text-base-content text-opacity-80">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
-          </svg>
-          <span class="text-base font-medium">team [at] bonfire.cafe </span>
+      
+<div class="max-w-screen-lg mx-auto mt-12">
+  <a class="btn mb-4 normal-case btn-sm gap-2" href="/blog">      
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+    <span class="text-sm font-medium text-blueGray-300">Back to blog</span>
+  </a>
+    <h1 class="font-bold text-left text-3xl text-base-content">Articles tagged <span class="underline decoration-wavy decoration-amber-400 underline-offset-8">commons-goods</span></h1>
+    <ol>
+    
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/naples.jpg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/notes_on_neapoletan_meeting/">
+                  
+                      Notes on the first neapolitan meeting
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">14 Oct 2021</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  As we’re approaching a new phase in which bonfire is not anymore a chimera among few devs, but it’s starting to come together as a nice tool, some of us are anxious to make raids in the analogic world and spread the big news...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/naples/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  naples
+                  </span>
+                  </a><a href="/tags/commons-goods/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  commons-goods
+                  </span>
+                  </a><a href="/tags/user-testing/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  user testing
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/notes_on_neapoletan_meeting/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
         </div>
-        <a href="https://indieweb.social/@bonfire" target="blank" class="flex items-center px-3 py-2 space-x-2 rounded cursor-pointer hover:bg-base-300 text-base-content text-opacity-80">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-          </svg>
-          <span class="text-base font-medium">indieweb.social/@bonfire</span>
-        </a>
-      </div>
-        <a target="blank" href="https://github.com/bonfire-networks" class="items-center hidden px-3 py-2 space-x-2 rounded cursor-pointer lg:flex hover:bg-base-300 text-base-content text-opacity-80">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-          </svg>
-          <span class="text-sm">View the code</span>
-        </a>
-      </div>
-    </footer>
+      </article>
     
+    </ol>
+</div>
 
 
+
+<div class="bg-neutral">
+<footer class="flex items-center max-w-screen-lg p-4 py-8 mx-auto footer text-neutral-content">
+  <div class="items-center flex-1 grid-flow-col">
+    <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+  </div> 
+  <div class="flex items-center">
+    <div class="flex items-center space-x-2 text-base-content text-opacity-80">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
+      </svg>
+      <span class="text-sm font-medium">team [at] bonfire.cafe </span>
+     </div>
+    <a href="https://indieweb.social/@bonfire" target="blank" class="btn btn-sm btn-ghost">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+      </svg>
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">indieweb.social/@bonfire</span>
+    </a>
+    <a target="blank" href="https://github.com/bonfire-networks" class="btn btn-sm btn-ghost">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+      </svg>
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">View the code</span>
+    </a>
+  </div>
+</footer>
+</div>
     <!-- Current page: /tags/commons-goods/ -->
   </body>
 </html>

@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en" class="bg-base-200" data-theme="bonfire">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="Bonfire">
+  </head>
+  <body data-theme="bonfire" class="w-full"> 
+    <div
+      x-data="{open: false}" 
+    >
+    <header 
+      class="sticky top-0 z-20 navbar bg-base-200">
+      <div class="flex items-center w-full h-full px-4">
+        <div class="flex items-center flex-1">
+          <div class="inset-y-0 left-0 flex items-center sm:hidden">
+            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+              <span class="sr-only">Open main menu</span>
+              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-8 h-8" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-8 h-8" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+  
+          <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
+            <div class="flex items-center flex-1 flex-shrink-0">
+              <a href="/" class="items-center hidden lg:flex">
+                <span class="inline-block bg-center bg-no-repeat bg-cover" style="width: 160px; height: 40px; background-image: url(/img/bonfire_brand.png);"></span>
+              </a>
+              <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 120px; height: 30px; background-image: url(/img/bonfire_brand.png);"></a>
+            </div>
+              <ul class="flex-row hidden p-0 sm:flex menu menu-horizontal">
+                <li>
+                 <a href="/docs" class=" ">
+                  <span class="text-base font-regular">Documentation</span>
+                </a>
+                </li>
+                <li>
+                 <a href="/faq" class=" ">
+                  <span class="text-base font-regular">FAQs</span>
+                </a>
+                </li>
+                <li>
+                <a href="/blog" class=" ">
+                  <span class="text-base font-regular">Blog</span>
+                </a>
+                </li>
+                <li>
+                  <a href="/contribute" class=" ">
+                    <span class="text-base font-regular">Contribute</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="hidden lg:block">Get the code</span>
+                  </a>
+                </li>
+              </ul>
+
+              <a class="sm:hidden" target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              </svg>
+              <span class="hidden lg:block">Get the code</span>
+              </a>
+
+          </div>
+        </div>
+      </div>    
+    </header>
+      <div 
+        x-description="Mobile menu, show/hide based on menu state." 
+        class="sm:hidden" 
+        id="mobile-menu" 
+        x-show="open" 
+        style="display: none;">
+        <ul class="p-0 menu">
+            <li>
+              <a href="/docs" class=" ">
+              <span class="text-base font-regular">Documentation</span>
+            </a>
+            </li>
+            <li>
+              <a href="/faq" class=" ">
+              <span class="text-base font-regular">FAQs</span>
+            </a>
+            </li>
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-base font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/contribute" class=" ">
+                <span class="text-base font-regular">Contribute</span>
+              </a>
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+
+      
+<div class="max-w-lg mx-4 mt-12 2xl:max-w-screen-xl lg:mx-auto">
+  <div class="max-w-screen-md mx-auto">
+    <div class="mx-auto bg-[url('/img/zappa.png')] bg-contain w-[80px] h-[80px] bg-no-repeat"></div>
+    <h1 class="mt-4 text-5xl font-bold text-center text-gray-200">Zappa</h1>
+    <div class="mt-4 text-3xl font-light text-center text-base-content">
+        Using the power of community to counteract misinformation
+    </div>
+
+    <div class="relative mt-20"> 
+        <div class="absolute left-[-150px] top-[-60px]">
+            <span class="italic">Watch our mindmap</span>
+            <svg class="absolute top-[12px] right-[-80px]" width="74" height="41" viewBox="0 0 74 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M73.5 40.9999L73.7311 35.231L68.6195 37.9153L73.5 40.9999ZM0.546961 1.99779C8.89705 1.21005 22.4869 3.05215 36.0149 8.59695C49.5376 14.1396 62.9357 23.3561 70.9734 37.2633L71.8392 36.7629C63.6562 22.6042 50.0467 13.2675 36.3942 7.67166C22.747 2.07799 8.99411 0.196449 0.453039 1.00221L0.546961 1.99779Z" fill="#D4D5D7"/>
+            </svg>
+        </div>
+        <div class="mt-8 relative pb-[57%] h-0">  
+        <iframe src="https://www.loom.com/embed/4286507989d749b683ce228d1a3af9f5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        </div>
+    </div>
+    <div class="flex items-center mx-auto mt-8 space-x-4 place-content-center">
+        <a href="https://whimsical.com/report-DEiDgckNvj6hVvno9au7FP" class="normal-case btn btn-primary">Read our report</a>
+        <a href="https://github.com/bonfire-networks/bonfire-app/milestones?direction=asc&sort=due_date&state=open" class="normal-case btn btn-outline btn-primary">View milestones</a>
+    </div>
+  </div>
+</div>
+<div class="p-16 mt-20 bg-base-content bg-opacity-10">
+    <div class="text-3xl font-bold text-center text-base-content">Project sponsors</div>
+    <div class="flex items-center max-w-screen-lg mx-auto mt-8 space-x-4 place-content-center">
+        <div class="bg-contain  bg-no-repeat w-40 bg-[url('/img/ecf2.png')] h-20"></div>
+        <a href="https://opencollective.com/bonfire-networks/contribute/sponsor-39507/checkout" class="normal-case btn btn-outline">Become a sponsor</a>
+    </div>
+</div>
+
+<div class="py-12 bg-base-200">
+<div class="max-w-screen-md mx-4 my-12 2xl:max-w-screen-xl lg:mx-auto">
+    <div class="text-2xl font-bold text-center text-base-content">How can Bonfire and Zappa promote a better and safer social networking experience ?</div>
+    <div class="grid grid-cols-1 gap-24 mt-12 md:grid-cols-2">
+        <div class="col-span-1">
+            <div class="flex items-center w-24 h-24 mx-auto rounded-full place-content-center bg-base-content bg-opacity-30">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
+              </svg>
+            </div>
+            <div class="mt-3 text-lg font-bold text-center text-gray-200">Flexible audiences & granular permissions </div>
+            <div class="mt-2 text-base text-center text-base-content">
+                Users are able to define who can discover, read or interact with them and their content/activities with a granular set of permissions (known as boundaries in bonfire).
+            </div>
+             <a href="https://github.com/bonfire-networks/bonfire-app/milestone/16" target="_blank" class="flex items-center gap-2 mt-3 link link-hover place-content-center">
+                <span class="text-xs font-medium uppercase text-neutral-content">View milestone</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+        <div class="col-span-1">
+            <div class="flex items-center w-24 h-24 mx-auto rounded-full place-content-center bg-base-content bg-opacity-30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="mt-3 text-lg font-bold text-center text-gray-200">Opt-in moderation lists for blocked and verified content</div>
+            <div class="mt-2 text-base text-center text-base-content">
+                Users can create or subscribe to opt-in moderation lists, and - according to permissions - contribute to them. Such opt-in lists may include flagged and blocked content, as well as trusted and verified content.
+            </div>
+            <a href="https://github.com/bonfire-networks/bonfire-app/milestone/28" target="_blank" class="flex items-center gap-2 mt-3 link link-hover place-content-center">
+                <span class="text-xs font-medium uppercase text-neutral-content">View milestone</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+        <div class="col-span-1">
+            <div class="flex items-center w-24 h-24 mx-auto rounded-full place-content-center bg-base-content bg-opacity-30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="mt-3 text-lg font-bold text-center text-gray-200">Roles & moderation</div>
+            <div class="mt-2 text-base text-center text-base-content">
+                The community can decide to decentralise power and responsibility from admins by adding more custom roles to efficiently manage moderation and resolve conflicts.
+            </div>
+            <a href="https://github.com/bonfire-networks/bonfire-app/milestone/27" target="_blank" class="flex items-center gap-2 mt-3 link link-hover place-content-center">
+                <span class="text-xs font-medium uppercase text-neutral-content">View milestone</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+        <div class="col-span-1">
+            <div class="flex items-center w-24 h-24 mx-auto rounded-full place-content-center bg-base-content bg-opacity-30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+            </div>
+            <div class="mt-3 text-lg font-bold text-center text-gray-200">Manual and automatic labelling</div>
+            <div class="mt-2 text-base text-center text-base-content">
+                Users, moderation list editors, or instance moderators can add labels to content, either by hand or by creating filters for auto-labelling. Labels are shown in feeds to aid with quickly identifying certain aspects of information or misinformation.
+            </div>
+            <a href="https://github.com/bonfire-networks/bonfire-app/milestone/26" target="_blank" class="flex items-center gap-2 mt-3 link link-hover place-content-center">
+                <span class="text-xs font-medium uppercase text-neutral-content">View milestone</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+        
+    </div>
+</div>
+</div>
+
+<div class="max-w-screen-lg mx-4 my-12 2xl:max-w-screen-xl lg:mx-auto">
+<h1 class="text-3xl font-bold text-left text-base-content">Blog posts about <span class="underline decoration-wavy decoration-amber-400 underline-offset-8">Zappa:</h1>
+
+
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+      <div class="w-full h-40 bg-center bg-no-repeat bg-cover rounded shadow-xl lg:w-32 lg:h-32 bg-blueGray-400" style="background-image: url(/img/1.png)"></div>
+      <div class="flex-1 mt-4 lg:mt-0">
+        <h2 class="mb-2 text-2xl font-bold text-blueGray-200 hover:text-blueGray-200 hover:underline">
+            <a href="/posts/zappa_report/">
+                
+                    First version of report published sharing findings from Zappa project user research
+                
+            </a>
+        </h2>
+        <div class="flex items-center space-x-2">
+            <span class="flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+              <time class="text-xs text-base-content text-opacity-70">05 Mar 2022</time>
+            </span>
+        </div>
+        
+        
+        
+            <p class="my-2 text-sm text-base-content text-opacity-80">
+                One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
+            </p>
+        
+        <div class="my-2"><a href="/tags/posts/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                posts
+                </span>
+                </a><a href="/tags/zappa/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                zappa
+                </span>
+                </a><a href="/tags/user-research/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                user-research
+                </span>
+                </a><a href="/tags/cos/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                CoS
+                </span>
+                </a>
+        </div>
+        <div>
+            <a href="/posts/zappa_report/" class="text-sm font-bold text-pink-400">
+                Read more →
+            </a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+      <div class="w-full h-40 bg-center bg-no-repeat bg-cover rounded shadow-xl lg:w-32 lg:h-32 bg-blueGray-400" style="background-image: url(/img/2.png)"></div>
+      <div class="flex-1 mt-4 lg:mt-0">
+        <h2 class="mb-2 text-2xl font-bold text-blueGray-200 hover:text-blueGray-200 hover:underline">
+            <a href="/posts/zappa_some_interesting_finding/">
+                
+                    Some interesting findings from user research for the Zappa project (so far!)
+                
+            </a>
+        </h2>
+        <div class="flex items-center space-x-2">
+            <span class="flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+              <time class="text-xs text-base-content text-opacity-70">18 Feb 2022</time>
+            </span>
+        </div>
+        
+        
+        
+            <p class="my-2 text-sm text-base-content text-opacity-80">
+                One of the things about working openly is, fairly obviously, sharing your work as you go. This can be difficult for many reasons, not least because of the human tendency toward narrative, to completed stories with start, middle, and end...
+            </p>
+        
+        <div class="my-2"><a href="/tags/posts/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                posts
+                </span>
+                </a><a href="/tags/zappa/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                zappa
+                </span>
+                </a><a href="/tags/user-research/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                user-research
+                </span>
+                </a><a href="/tags/cos/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                CoS
+                </span>
+                </a>
+        </div>
+        <div>
+            <a href="/posts/zappa_some_interesting_finding/" class="text-sm font-bold text-pink-400">
+                Read more →
+            </a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+      <div class="w-full h-40 bg-center bg-no-repeat bg-cover rounded shadow-xl lg:w-32 lg:h-32 bg-blueGray-400" style="background-image: url(/img/3.png)"></div>
+      <div class="flex-1 mt-4 lg:mt-0">
+        <h2 class="mb-2 text-2xl font-bold text-blueGray-200 hover:text-blueGray-200 hover:underline">
+            <a href="/posts/zappa-project/">
+                
+                    Countering misinformation in federated social networks, an introduction to the Zappa project
+                
+            </a>
+        </h2>
+        <div class="flex items-center space-x-2">
+            <span class="flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+              <time class="text-xs text-base-content text-opacity-70">08 Feb 2022</time>
+            </span>
+        </div>
+        
+        
+        
+            <p class="my-2 text-sm text-base-content text-opacity-80">
+                One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
+            </p>
+        
+        <div class="my-2"><a href="/tags/posts/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                posts
+                </span>
+                </a><a href="/tags/zappa/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                zappa
+                </span>
+                </a><a href="/tags/user-research/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                user-research
+                </span>
+                </a><a href="/tags/cos/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                CoS
+                </span>
+                </a>
+        </div>
+        <div>
+            <a href="/posts/zappa-project/" class="text-sm font-bold text-pink-400">
+                Read more →
+            </a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+      <div class="w-full h-40 bg-center bg-no-repeat bg-cover rounded shadow-xl lg:w-32 lg:h-32 bg-blueGray-400" style="background-image: url(/img/cos.jpeg)"></div>
+      <div class="flex-1 mt-4 lg:mt-0">
+        <h2 class="mb-2 text-2xl font-bold text-blueGray-200 hover:text-blueGray-200 hover:underline">
+            <a href="/posts/bonfire_cos/">
+                
+                    Announcing the Zappa project
+                
+            </a>
+        </h2>
+        <div class="flex items-center space-x-2">
+            <span class="flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+              <time class="text-xs text-base-content text-opacity-70">26 Dec 2021</time>
+            </span>
+        </div>
+        
+        
+        
+            <p class="my-2 text-sm text-base-content text-opacity-80">
+                We are pleased to announce that Bonfire has been awarded a grant from the Culture of Solidarity Fund to support cross-border cultural initiatives of solidarity in times of uncertainty and &quot;infodemic&quot;.
+            </p>
+        
+        <div class="my-2"><a href="/tags/posts/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                posts
+                </span>
+                </a><a href="/tags/cos/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                CoS
+                </span>
+                </a><a href="/tags/zappa/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                zappa
+                </span>
+                </a>
+        </div>
+        <div>
+            <a href="/posts/bonfire_cos/" class="text-sm font-bold text-pink-400">
+                Read more →
+            </a>
+        </div>
+      </div>
+    </article>
+  
+
+  </div>
+
+<div class="p-20  mt-16 rounded-none lg:px-20 bg-base-content bg-opacity-10 lg:mx-0">
+    <div class="max-w-screen-lg 2xl:max-w-screen-xl lg:mx-auto">
+        <h3 class="text-4xl font-bold flex flex-col md:flex-row items-center md:space-x-4 tracking-wide text-neutral-content">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 grow-0" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+          </svg>  
+          <span class="text-center md:text-left mt-2 md:mt-0 grow-0">Support the project</span>
+        </h3>
+        <div class="mt-8 text-center md:text-left leading-relaxed text-md text-neutral-content text-opacity-60 ">
+            <p>Bonfire is still in development. If you want to show us your support, we gladly accept donations and other contributions.</p>
+        </div>
+        <div class="flex items-center space-x-8 mt-6">
+            <a href="/contribute" class="btn btn-primary">Contribute</a>
+            <a href="/roadmap" class="link link-primary flex items-center gap-2 link-hover font-semibold text-sm uppercase">
+              <span>View our roadmap</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="bg-neutral">
+<footer class="flex items-center max-w-screen-lg p-4 py-8 mx-auto footer text-neutral-content">
+  <div class="items-center flex-1 grid-flow-col">
+    <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+  </div> 
+  <div class="flex items-center">
+    <div class="flex items-center space-x-2 text-base-content text-opacity-80">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
+      </svg>
+      <span class="text-sm font-medium">team [at] bonfire.cafe </span>
+     </div>
+    <a href="https://indieweb.social/@bonfire" target="blank" class="btn btn-sm btn-ghost">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+      </svg>
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">indieweb.social/@bonfire</span>
+    </a>
+    <a target="blank" href="https://github.com/bonfire-networks" class="btn btn-sm btn-ghost">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+      </svg>
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">View the code</span>
+    </a>
+  </div>
+</footer>
+</div>
+    <!-- Current page: /zappa/ -->
+  </body>
+</html>
