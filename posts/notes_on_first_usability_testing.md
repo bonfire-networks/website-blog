@@ -19,7 +19,7 @@ A huge thanks to [@dougbelshaw](https://fosstodon.org/@dajbelshaw), [@django](ht
 
 This first round included 5 testers (we picked this number based on this [NNG article](https://www.nngroup.com/articles/usability-testing-101/) about usability testing). Though small, the group was diverse enough in terms of background, interests and geography. It included educators, activists and developers, among which some were already well versed with the fediverse, while others discovered it recently. 
 
-They all were interested in using Bonfire via servers operated by and for themselves, their family or their local community servers. Some of them were even keen to set up and maintain an instance. 
+They all were interested in using Bonfire via servers operated by and for themselves, their family or their local community. Some of them were even keen to set up and maintain an instance. 
 
 ## Main takeaways
 
