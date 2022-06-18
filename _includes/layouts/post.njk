@@ -3,7 +3,8 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 
-<div class="max-w-screen-lg px-6 mx-auto mt-0 lg:px-0 mb-12">
+
+<div class="max-w-screen-lg px-6 mx-auto mt-0 mb-12 lg:px-0">
   <div class="max-w-screen-md py-8 pb-8 mx-auto">
     <a class="items-center block mx-auto w-36 place-content-center lg:place-content-start" href="/blog">
       <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
@@ -39,8 +40,15 @@ templateClass: tmpl-post
     </div>
   </article>
 
+
+  <div class="max-w-screen-md mx-4 mt-8 lg:mx-auto">
+    {% include "newsletter.njk" %}
+    </div>
+    
 </div>
 
+
+  
 {# {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {%- if nextPost or previousPost %}
