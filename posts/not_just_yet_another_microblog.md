@@ -45,3 +45,5 @@ In general, we're getting into the habit where any hesitation or disagreement ab
 From the beginning, we've built Bonfire to be extremely customisable and configurable. One of the great things about Free Software is the ability to fork the project and take it in your own direction. However, a fork of a big complex app is a lot of work to maintain by one person or a small group, let alone someone who isn't very technical (or not experienced in the particular tech stack).
 
 By separating the code in dozens of different extensions (each in their own git repository), the maintainance burden is greatly reduced. We've for example put data models, backend functionality and user interfaces in separate extensions, so it's easier to, for example, fork a UI extension to customise the experience (or create a completely different one) while retaining the same functionality.
+## Next steps
+If you're intereted in helping us test the upcoming beta version of Bonfire, please add your email address below. We'll be sure do notify you when it launches. 
