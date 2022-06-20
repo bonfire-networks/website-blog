@@ -1,0 +1,8 @@
+---
+layout: layouts/home.njk
+---
+
+<div class="max-w-screen-lg mx-4 mt-12 prose prose-lg lg:mx-auto">
+  {% set snippet %}{% include 'code_of_conduct.md' %}{% endset %}
+  {{ snippet | markdown | safe }}`
+</div>

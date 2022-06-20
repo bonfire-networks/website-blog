@@ -74,10 +74,17 @@ module.exports = function(eleventyConfig) {
 
   
   
-  eleventyConfig.addPairedShortcode("markdown", (content) => {
-    return markdownLibrary.render(content);
-  });
+  eleventyConfig.addFilter('markdown', function(value) {
+    let markdown = require('markdown-it')({
+        html: true
+    });
+    return markdown.render(value);
+});
 
+  eleventyConfig.addNunjucksShortcode(
+    "markdown",
+    content => `<div class="md-block">${markdown.render(content)}</div>`
+  );
  
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({
