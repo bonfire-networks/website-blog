@@ -75,10 +75,7 @@ module.exports = function(eleventyConfig) {
   
   
   eleventyConfig.addFilter('markdown', function(value) {
-    let markdown = require('markdown-it')({
-        html: true
-    });
-    return markdown.render(value);
+    return markdownLibrary.render(value);
 });
 
   eleventyConfig.addNunjucksShortcode(

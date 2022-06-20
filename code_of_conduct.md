@@ -1,11 +1,10 @@
-# Code of Conduct - Draft
-
+# Code of Conduct - v0.1
 
 ## Introduction
 
 Please read and commit to the following Code of Conduct before engaging in any community discussions or other forms of participation in any Bonfire space: in other words, please commit to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, healthy, and sustainable community. Being a community means we support each others’ emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work. 
 
-Is there an emergency? go straight to [reporting an issue](#5-Reporting-issues). 
+Is there an emergency? go straight to [reporting an issue](#6-reporting-issues). 
 
 ## Community Guidelines
 
@@ -15,7 +14,7 @@ Is there an emergency? go straight to [reporting an issue](#5-Reporting-issues).
 
 Let's endeavour to treat our fellow community participants with respect and dignity:
 
-- We welcome people of [all backgrounds and identities](#Protected-characteristics). 
+- We welcome people of [all backgrounds and identities](#protected-characteristics). 
 
 - **We're friendly and patient**, treating each other with empathy and gratitude.
 
@@ -106,14 +105,14 @@ If we feel able and safe to, we may want to directly discuss our concerns with t
 
 #### Escalating
 
-If we are uncomfortable about how a conversation is proceeding, we should bring it to the attention of moderators, as they are not present in all discussions. There's power in numbers, so we should do so even if someone else may have done so already - when multiple people share how they feel, it has a unique way of changing the conversation. Refer to the section on [reporting issues](#5-Reporting-issues).
+If we are uncomfortable about how a conversation is proceeding, we should bring it to the attention of moderators, as they are not present in all discussions. There's power in numbers, so we should do so even if someone else may have done so already - when multiple people share how they feel, it has a unique way of changing the conversation. Refer to the section on [reporting issues](#6-reporting-issues).
 
 
 ### 4. Harassment
 
 We are intolerant of intolerance, harassment, exploitation and domination. This includes, but is not limited to: 
 
-* Offensive or unwelcome comments related to one's [background or identity](#Protected-characteristics).
+* Offensive or unwelcome comments related to one's [background or identity](#protected-characteristics).
 
 * Name calling, insensitive sarcasm and general unkindness.
 
@@ -175,13 +174,13 @@ Our community prioritises marginalised people’s safety over privileged people�
 * Communicating in a ‘tone’ one doesn’t find congenial.
 
 
-### 5. Reporting issues
+### 6. Reporting issues
 
 All reports will be handled with discretion, and all people involved issues will be treated with respect. 
 
 If you experience or witness harrassment or unacceptable behaviour — or have any other concerns — please use the flagging feature where available, or send a message or tag moderator(s) in the thread. If the person you are reporting is on the moderation team, they must recuse themselves from handling the incident.
 
-In addition to the points specified in the [Setting Boundaries section](#Setting-boundaries), please include in your report:
+In addition to the points specified in the [Setting Boundaries section](#setting-boundaries), please include in your report:
 - Urgency (e.g. is somebody in danger?) and whether the incident is ongoing
 - Names (usernames/handles and/or real names) of any individuals involved
 - Links and/or screenshots to the relevant conversation or content
@@ -193,7 +192,7 @@ In order to protect moderators from abuse and burnout, they reserve the right to
 
 Moderators will not name harassment victims without their affirmative consent, and will respect confidentiality requests for the purpose of protecting victims of abuse. At their discretion, they may publicly name a person about whom they've received harassment complaints, or privately warn third parties about them, if they believe that doing so will increase the safety of the community or the general public. 
 
-### 6. Violations of community guidelines
+### 7. Violations of community guidelines
 
 First and foremost, these guidelines make it clear that **it is necessary for communities to self-regulate**. This means that asking people to follow community guidelines is not itself a violation of the spirit or intent of our community. It is important to make this clear, because trolls often attempt to put this into question. Subsequently the following agreements bind this document:
 
@@ -216,7 +215,7 @@ In the case that individuals do not adhere to the community guidelines, communit
   * The individuals may be given a chance to apologise to the person(s) they targeted, or make other reparations as appropriate, within a specified time frame. 
   * If an understanding and positive outcome cannot be reached, one of these steps may be taken, temporarily or permanently:
     * Suspension of participation privileges.
-    * Removal from the specific space (block the person from one group, but not all splaces). 
+    * Removal from the specific space (block the person from one group, but not all spaces). 
     * Removal from the community (all spaces).
 
 With this, we have a clear expectation about what we consider to be a reasonable understanding to approach potential conflict, and to quickly settle those disputes peacefully.
