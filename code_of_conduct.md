@@ -4,7 +4,7 @@
 
 Please read and commit to the following Code of Conduct before engaging in any community discussions or other forms of participation in any Bonfire space: in other words, please commit to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, healthy, and sustainable community. Being a community means we support each others’ emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work. 
 
-Is there an emergency? go straight to [reporting an issue](#6-reporting-issues). 
+Is there an emergency? go straight to [reporting an issue](#6.-reporting-issues). 
 
 ## Community Guidelines
 
@@ -105,7 +105,7 @@ If we feel able and safe to, we may want to directly discuss our concerns with t
 
 #### Escalating
 
-If we are uncomfortable about how a conversation is proceeding, we should bring it to the attention of moderators, as they are not present in all discussions. There's power in numbers, so we should do so even if someone else may have done so already - when multiple people share how they feel, it has a unique way of changing the conversation. Refer to the section on [reporting issues](#6-reporting-issues).
+If we are uncomfortable about how a conversation is proceeding, we should bring it to the attention of moderators, as they are not present in all discussions. There's power in numbers, so we should do so even if someone else may have done so already - when multiple people share how they feel, it has a unique way of changing the conversation. Refer to the section on [reporting issues](#6.-reporting-issues).
 
 
 ### 4. Harassment
