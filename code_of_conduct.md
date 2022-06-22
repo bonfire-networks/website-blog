@@ -178,15 +178,13 @@ Our community prioritises marginalised people’s safety over privileged people�
 
 All reports will be handled with discretion, and all people involved issues will be treated with respect. 
 
-If you experience or witness harrassment or unacceptable behaviour — or have any other concerns — please use the flagging feature where available, or send a message or tag moderator(s) in the thread. If the person you are reporting is on the moderation team, they must recuse themselves from handling the incident.
+If you experience or witness harrassment or unacceptable behaviour — or have any other concerns — please use the flagging feature where available, or tag moderator(s) in the thread to bring it to their attention. You can also report it by directly contacting moderator(s), instance admin(s), and/or directly sending a message to the email address on the [project homepage](https://bonfirenetworks.org/). If the person you are reporting is on the moderation or admin teams, they must recuse themselves from handling the incident. 
 
 In addition to the points specified in the [Setting Boundaries section](#setting-boundaries), please include in your report:
 - Urgency (e.g. is somebody in danger?) and whether the incident is ongoing
 - Names (usernames/handles and/or real names) of any individuals involved
 - Links and/or screenshots to the relevant conversation or content
 - Any additional information or context that may be helpful
-
-If you do not hear a response in 24 hours, please report it by directly contacting another group moderator, instance admin, and/or directly sending a message to the email address on the [project homepage](https://bonfirenetworks.org/). 
 
 In order to protect moderators from abuse and burnout, they reserve the right to reject any report believed to have been made in bad faith. Reports intended to silence legitimate criticism may be deleted without response. 
 
