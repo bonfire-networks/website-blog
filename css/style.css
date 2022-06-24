@@ -4473,6 +4473,10 @@ body[dir="rtl"] .checkbox:checked,
   width: 9rem;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .max-w-prose {
   max-width: 65ch;
 }
@@ -4698,6 +4702,16 @@ body[dir="rtl"] .checkbox:checked,
 
 .gap-16 {
   gap: 4rem;
+}
+
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.gap-x-1 {
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -5030,6 +5044,11 @@ body[dir="rtl"] .checkbox:checked,
 .bg-indigo-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(199 210 254 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e0e1a9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 225 169 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -5631,6 +5650,16 @@ body[dir="rtl"] .checkbox:checked,
   color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-\[\#434030\] {
+  --tw-text-opacity: 1;
+  color: rgb(67 64 48 / var(--tw-text-opacity));
+}
+
 .text-opacity-80 {
   --tw-text-opacity: 0.8;
 }
@@ -5664,6 +5693,10 @@ body[dir="rtl"] .checkbox:checked,
 .decoration-wavy {
   -webkit-text-decoration-style: wavy;
           text-decoration-style: wavy;
+}
+
+.decoration-2 {
+  text-decoration-thickness: 2px;
 }
 
 .underline-offset-2 {
@@ -5893,6 +5926,11 @@ body[dir="rtl"] .checkbox:checked,
 
 .focus\:ring-offset-2:focus {
   --tw-ring-offset-width: 2px;
+}
+
+.group:hover .group-hover\:underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 @media (min-width: 640px) {
