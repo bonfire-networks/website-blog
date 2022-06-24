@@ -2,8 +2,8 @@
 layout: layouts/base.njk
 templateClass: tmpl-pages
 ---
-<div class="">
-<div  class="w-full p-12 hero bg-primary">
+<div class="max-w-screen-xl mt-12 mx-auto">
+<div  class="w-full p-12 hero rounded-lg bg-primary">
   <div class="text-center hero-content ">
     <div class="max-w-xl mx-auto">
       <h1 class="mb-5 text-5xl text-base-100 font-bold">{{ title }}</h1> 
@@ -11,7 +11,7 @@ templateClass: tmpl-pages
     </div>
   </div>
 </div>
-<main class="max-w-screen-lg mx-4 mt-12 2xl:max-w-screen-xl lg:mx-auto">
+<main class=" mx-4 mt-12 2xl:max-w-screen-xl lg:mx-auto">
     {{ content | safe }}
 </main>
 </div>
