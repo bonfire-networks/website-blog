@@ -16,7 +16,13 @@ templateClass: tmpl-post
     </a>
     <div class="">
       <h1 style="line-height: 60px;" class="z-10 col-span-2 text-3xl font-extrabold tracking-wide text-left text-blueGray-200 lg:text-5xl lg:text-center lg:tracking-widest">{{title}}</h1>
-      <img src="{{image}}" alt="post image" class="w-full mt-6 rounded-lg shadow-xl" />
+
+      {% if header_html %}
+        {{ header_html | safe }}
+      {% else %}
+        <img src="{{image}}" alt="post image" class="w-full mt-6 rounded-lg shadow-xl" />
+      {% endif %}
+      
       <span class="flex w-full items-center space-x-2 mt-4 py-0.5 text-sm font-medium text-pink-500">
           <span>Published on {{ date | readableDate }} by {{author}}</span>
           {%- for tag in tags | filterTagList -%}
@@ -34,8 +40,8 @@ templateClass: tmpl-post
     </div>
   </div>
 
-  <article class="max-w-screen-md mx-auto mt-8">
-    <div class="max-w-screen-md mx-auto mt-8 prose prose-light text-blueGray-300 lg:prose-xl">
+  <article class="max-w-screen-md mx-auto mt-0">
+    <div class="max-w-screen-md mx-auto mt-0 prose prose-light text-blueGray-300 lg:prose-xl">
     {{ content | safe }}
     </div>
   </article>

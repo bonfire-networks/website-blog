@@ -1,20 +1,17 @@
 ---
-title: Meet us at the playground! Beta launch announcement & playground instance invite
+title: "Meet us at the playground: Bonfire Social beta launch "
 description: Today, the Bonfire team is asking for *your* help with beta testing. Bonfire still needs a lot of work - be it bugs, federation, missing features, configurability and user experience - but that's the point, we decided to launch the playground at this gnarly stage with the specific intention of moving toward the 1.0 release as a community.
 date: 2022-06-25
 tags: [beta, social]
 image: /img/bonfire_beta.png
 layout: layouts/post.njk
 author: Bonfire Builders
+header_html: '<div class="w-full h-[440px]"><div class="rounded-lg border-8 border-base-300/40 h-full">  <iframe title="Bonfire social beta screencast" src="https://tube.tchncs.de/videos/embed/59353f51-17a1-4dd7-9935-e74c5e4ae1e2" allowfullscreen="yes" sandbox="allow-same-origin allow-scripts allow-popups" width="560" height="315" frameborder="0" style="width: 100%; height: 100%;"></iframe></div></div>'
 
 ---
-
 Today, the Bonfire team is asking for *your* help with beta testing. Bonfire still needs a lot of work - be it bugs, federation, missing features, configurability and user experience - but that's the point: we decided to launch the playground at this gnarly stage with the specific intention of moving toward the 1.0 release as a community. We think the best way to rapidly improve Bonfire and its modularity is to test it and discuss it together!
 
 By setting up a workflow within the bonfire platform to report errors or sharing feedback, both devs and non-devs alike will be able to input their ideas and co-design our 1.0 release in an open and inclusive way. 
-
-## Watch the video walkthrough 
-(embedded in the page)
 
 ## Sign up to the Bonfire playground 
 
