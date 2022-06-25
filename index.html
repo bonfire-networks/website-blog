@@ -14,30 +14,21 @@
   </head>
   <body data-theme="bonfire" class="w-full"> 
     <div
+      class="sticky top-0 z-20 bg-base-100"
       x-data="{open: false}" 
     >
     <header 
-      class="sticky top-0 z-20 navbar bg-base-200">
+      class="navbar max-w-screen-xl mx-auto">
       <div class="flex items-center w-full h-full px-4">
         <div class="flex items-center flex-1">
-          <div class="inset-y-0 left-0 flex items-center sm:hidden">
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
-              <span class="sr-only">Open main menu</span>
-              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-8 h-8" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-8 h-8" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
+          
   
           <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
             <div class="flex items-center flex-1 flex-shrink-0">
-              <a href="/" class="items-center hidden lg:flex">
-                <span class="inline-block bg-center bg-no-repeat bg-cover" style="width: 160px; height: 40px; background-image: url(/img/bonfire_brand.png);"></span>
+              <a href="/" class="items-center space-x-4 flex">
+                <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+                <span class="flex items-center"><span class="font-bold text-2xl tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-primary">Beta</div></span>
               </a>
-              <a href="/" class="block my-2 bg-center bg-no-repeat bg-cover lg:hidden" style="width: 120px; height: 30px; background-image: url(/img/bonfire_brand.png);"></a>
             </div>
               <ul class="flex-row hidden p-0 sm:flex menu menu-horizontal">
                 <li>
@@ -70,57 +61,83 @@
                 </li>
               </ul>
 
-              <a class="sm:hidden" target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              
+          </div>
+          <div class="inset-y-0 right-0 flex items-center sm:hidden">
+            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+              <span class="sr-only">Open main menu</span>
+              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
-              <span class="hidden lg:block">Get the code</span>
-              </a>
-
+              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>    
     </header>
-      <div 
-        x-description="Mobile menu, show/hide based on menu state." 
-        class="sm:hidden" 
-        id="mobile-menu" 
-        x-show="open" 
-        style="display: none;">
-        <ul class="p-0 menu">
-            <li>
-              <a href="/docs" class=" ">
-              <span class="text-base font-regular">Documentation</span>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="sm:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/contribute" class=" ">
+              <span class="text-base font-regular">Contribute</span>
             </a>
-            </li>
-            <li>
-              <a href="/faq" class=" ">
-              <span class="text-base font-regular">FAQs</span>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
             </a>
-            </li>
-            <li>
-            <a href="/blog" class=" ">
-              <span class="text-base font-regular">Blog</span>
-            </a>
-            </li>
-            <li>
-              <a href="/contribute" class=" ">
-                <span class="text-base font-regular">Contribute</span>
-              </a>
-            </li>
-            
-        </ul>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      <div class="mx-4 max-w-screen-xl lg:mx-auto">
+
+<a class="flex justify-between w-full  px-2 py-1 rounded-full gap-x-2 group text-[#434030] bg-[#e0e1a9] mt-12 max-w-sm mx-auto" href="posts/meet_us_at_the_playground/" role="alert">
+  <p class="flex-1 text-center">
+    🎉 <strong class="font-semibold">The beta is out!</strong> Meet us at the playground...
+  </p>
+  
+</a>
+
+<div class="max-w-screen-xl mx-auto ">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-center mt-12">
+    <div class="col-span-1"> 
+      <h1 class="text-[42px] font-bold leading-normal tracking-wider prose text-neutral-content">Tend to your digital life in community</h1>
+      <h2 class="mt-5 text-2xl font-light leading-relaxed text-neutral-content">Customise and host your own online space and control your experience at the most granular level.</h2>
+      <div class="mt-5 flex-col lg:space-y-0 space-y-3 lg:flex-row flex lg:items-center lg:space-x-6">
+        <a href="https://playground.bonfire.cafe" target="_blank" class="btn btn-primary normal-case">🔥 Join the playground</a>
+        <a href="/posts/meet_us_at_the_playground/" class="btn btn-outline normal-case">🎉 Read the announcement post </a>
       </div>
     </div>
-
-      <div class="max-w-screen-md mx-4 2xl:max-w-screen-xl lg:mx-auto">
-<div class="max-w-screen-md mx-auto ">
-  <div class="flex flex-col items-center justify-center mt-12">
-      <span class="block bg-center bg-no-repeat bg-cover" style="width: 70px; height: 90px; background-image: url(img/bonfire.png);"></span>
-      <h1 class="mt-4 text-5xl font-bold leading-[70px] tracking-wider prose text-neutral-content text-center">Tend to your digital life in community</h1>
-      <h2 class="mt-3 text-xl font-light leading-relaxed text-center text-neutral-content">Customise and host your own online space and control your experience at the most granular level.</h2>
-    <div class="w-full max-w-screen-sm mt-4">
-      <span class="block bg-center bg-no-repeat bg-contain w-full h-0 pb-[50%]" style="background-image: url(img/banner.png);"></span>
+    <div class="w-full h-[358px]">
+      <div class="rounded-lg border-8 border-base-300/40 h-full">  
+        <iframe title="Bonfire social beta screencast" src="https://tube.tchncs.de/videos/embed/59353f51-17a1-4dd7-9935-e74c5e4ae1e2" allowfullscreen="yes" sandbox="allow-same-origin allow-scripts allow-popups" width="560" height="315" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+      </div>
     </div>
   </div>
 
@@ -172,25 +189,9 @@
 </div>
 
 
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
-  <!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-<div class="p-4 border-4 rounded-lg bg-info/10 border-base-content/10">
-  <p class="inline text-3xl font-extrabold tracking-tight text-base-content/80 sm:block sm:text-4xl">Sign up for our newsletter</p>
+  <div class="py-16 border-t border-b  border-base-content/30">
+<div class="max-w-screen-xl mx-4 lg:mx-auto">
+  <p class="inline text-3xl font-extrabold tracking-tight text-base-content sm:block sm:text-4xl">Sign up for our newsletter</p>
   <div class="my-4 text-lg text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire. <br />You may unsubscribe at any time.</div>
   <div id="mc_embed_signup">
     <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -201,129 +202,132 @@
       <div id="mce-responses" class="mt-3 clear foot">
         <div class="response" id="mce-error-response" style="display:none"></div>
         <div class="response" id="mce-success-response" style="display:none"></div>
-      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      </div>   
+       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
-            <div class="optionalParent">
-                <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
-                    <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
-                </div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+                <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
             </div>
         </div>
+      </div>
     </form>
     </div>
+  </div>
 </div>
   
-<!-- Begin Mailchimp Signup Form -->
-
-  
-  <!--End mc_embed_signup-->
-  </div>
   
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
   <div id="why" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
   <div class="relative mx-auto">
-    <span class="relative block text-xs font-semibold tracking-widest text-center text-base-content uppercase">What is Bonfire ?</span>
+    <span class="relative block text-xs font-semibold tracking-widest text-center uppercase text-base-content">What is Bonfire ?</span>
   </div>
-<div class="relative pt-8 overflow-hidden pb-28">
-  <div class="relative">
-    <div class="items-center gap-24 lg:mx-auto lg:grid lg:grid-cols-2 place-content-start lg:grid-flow-col-dense">
-      <div class="max-w-xl px-4 mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
-        <div>
-          <div class="">
-            <h2 class="text-2xl font-bold tracking-wide text-neutral-content">
-              A <span class="underline decoration-wavy decoration-amber-400 underline-offset-8">thoughtful</span> social experience
-            </h2>
-            <p class="mt-4 leading-relaxed text-md text-neutral-content text-opacity-60">
-              We endeavour to develop tools for <a href="https://en.wikipedia.org/wiki/Conviviality" target="_blank" class="link">conviviality</a>. Tools that you total control over, which are not developed for extracting value from their users in any way. 
-              Each Bonfire instance is shaped by its members to pursue their community goals, not those of some investment fund. 
-            </p>
-          </div>
+
+  <div class="relative grid grid-cols-1 gap-12 pt-16 overflow-hidden lg:grid-cols-2 pb-28">
+    
+    <div class="relative">
+      <div class="items-center gap-8 lg:mx-auto lg:grid lg:grid-cols-1 place-content-start lg:grid-flow-col-dense">
+        <div class="lg:px-12">
+          <div class="bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/1.png')] ">
         </div>
-      </div>
-      <div class="mt-4 md:mt-16 lg:mt-0 px-4 md:px-8">
-        <div class="bg-contain bg-no-repeat h-[240px] bg-[url('/img/1.png')] ">
+        
+        <div class="mt-4 text-center">
+          <h2 class="text-3xl font-bold tracking-wide text-base-content">
+            A thoughtful social network
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
+            We endeavour to develop tools for <a href="https://en.wikipedia.org/wiki/Conviviality" target="_blank" class="link">conviviality</a>. Tools that you total control over, which are not developed for extracting value from their users in any way. 
+            Each Bonfire instance is shaped by its members to pursue their community goals, not those of some investment fund. 
+          </p>
+        </div>
+        
         </div>
       </div>
     </div>
-  </div>
-  <div class="mt-12">
-    <div class="items-center gap-24 lg:mx-auto lg:grid lg:grid-cols-2 lg:grid-flow-col-dense">
-      <div class="order-last max-w-xl px-4 mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
-        <div>
-          <div class="">
-            <h2 class="text-2xl font-bold tracking-wide text-neutral-content">
-              A <span class="underline decoration-wavy decoration-amber-400 underline-offset-8">flexible</span> tool  to fit your needs
-            </h2>
-            <p class="mt-4 leading-relaxed text-md text-neutral-content text-opacity-60">
-              Add or remove extensions based on the functionality you need, or go futher and create a new extension. Pick or create a theme that reflects your community identity, edit and localise text to increase inclusivity, decide which kind of information and behaviours to include and fight the dopamine economy.</p>
-          </div>
+    
+    
+    <div class="relative">
+      <div class="items-center gap-8 lg:mx-auto lg:grid lg:grid-cols-1 place-content-start lg:grid-flow-col-dense">
+        <div class="lg:px-12">
+          <div class="bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/2.png')] ">
         </div>
-      </div>
-     <div class="mt-4 md:mt-16 lg:mt-0 px-4 md:px-8">
-        <div class="bg-contain bg-no-repeat h-[240px] bg-[url('/img/2.png')]">
-         </div>
-      </div>
-    </div>
-  </div>
-  <div class="mt-12">
-    <div class="items-center gap-24 lg:mx-auto lg:grid lg:grid-cols-2 lg:grid-flow-col-dense">
-      <div class="max-w-xl px-4 mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
-        <div>
-          <div class="">
-            <h2 class="text-2xl font-bold tracking-wide text-neutral-content">
-              A space to <span class="underline decoration-wavy decoration-amber-400 underline-offset-4">connect</span> with the rest of the world , on your own terms
-            </h2>
-            <p class="mt-4 leading-relaxed text-md text-neutral-content text-opacity-60">
-              Each Bonfire community has the power to federate with others communities but also with other fediverse platforms that support the <a href="http://activitypub.rocks/" target="_blank" class="link">ActivityPub</a> protocol (like Mastodon, PeerTube, etc...) and interact with them, maintaining the autonomy to decide which information to share with others and which to keep on their instance.                  
-            </p>
-          </div>
+        
+        <div class="mt-4 text-center">
+          <h2 class="text-3xl font-bold tracking-wide text-base-content">
+            A flexible tool to fit your needs
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
+            Add or remove extensions based on the functionality you need, or go futher and create a new extension. Pick or create a theme that reflects your community identity, edit and localise text to increase inclusivity, decide which kind of information and behaviours to include and fight the dopamine economy.
+          </p>
         </div>
-      </div>
-      <div class="mt-4 md:mt-16 lg:mt-0 px-4 md:px-8">
-        <div class="bg-contain bg-no-repeat h-[240px] bg-[url('/img/3.png')]">
+        
         </div>
       </div>
     </div>
-  </div>
-  <div class="mt-12">
-    <div class="items-center gap-24 lg:mx-auto lg:grid lg:grid-cols-2 lg:grid-flow-col-dense">
-      <div class="order-last max-w-xl px-4 mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
-        <div>
-          <div class="">
-            <h2 class="text-2xl font-bold tracking-wide text-neutral-content">
-              A <span class="underline decoration-wavy decoration-amber-400 underline-offset-4">free</span> tool developed to empower your community
-            </h2>
-            <p class="mt-4 leading-relaxed text-md text-neutral-content text-opacity-60">
-              Bonfire is libre and open source software. This means that you can use and modify Bonfire without asking permission from anyone. Plus, benefit from future developments by anyone using the codebase: improvements, upgrades, and additions to Bonfire apps and extensions will always be freely available to users. 
-            </p>
-          </div>
+    
+    
+    <div class="relative">
+      <div class="items-center gap-8 lg:mx-auto lg:grid lg:grid-cols-1 place-content-start lg:grid-flow-col-dense">
+        <div class="lg:px-12">
+          <div class="bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/3.png')] ">
         </div>
-      </div>
-      <div class="mt-4 md:mt-16 lg:mt-0 px-4 md:px-8">
-        <div class="bg-contain bg-no-repeat h-[240px] bg-[url('/img/4.png')]">
+        
+        <div class="mt-4 text-center">
+          <h2 class="text-3xl font-bold tracking-wide text-base-content">
+            A space to connect with the rest of the world , on your own terms
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
+            Each Bonfire community has the power to federate with others communities but also with other fediverse platforms that support the <a href="http://activitypub.rocks/" target="_blank" class="link">ActivityPub</a> protocol (like Mastodon, PeerTube, etc...) and interact with them, maintaining the autonomy to decide which information to share with others and which to keep on their instance.                  
+          </p>
+        </div>
+        
         </div>
       </div>
     </div>
-  </div>
+    
+    <div class="relative">
+      <div class="items-center gap-8 lg:mx-auto lg:grid lg:grid-cols-1 place-content-start lg:grid-flow-col-dense">
+        <div class="lg:px-12">
+          <div class="bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/4.png')] ">
+        </div>
+        
+        <div class="mt-4 text-center">
+          <h2 class="text-3xl font-bold tracking-wide text-base-content">
+            A free tool developed to empower your community
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
+            Bonfire is libre and open source software. This means that you can use and modify Bonfire without asking permission from anyone. Plus, benefit from future developments by anyone using the codebase: improvements, upgrades, and additions to Bonfire apps and extensions will always be freely available to users. 
+          </p>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  
 </div>
 
  
 </div>
 
-  <div class="py-6 md:py-20 text-center rounded-none lg:px-20 bg-base-200 lg:mx-0">
-  <div class="max-w-screen-lg grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 mx-4 2xl:max-w-screen-xl lg:mx-auto">
-    <div class="col-span-1 flex items-start space-x-4 border-4 text-left bg-base-300 border-neutral-content border-opacity-30 rounded p-6">
+<div class="py-6 md:py-20 text-center rounded-none px-4 bg-base-200 lg:mx-0">
+      <p class="inline text-3xl font-extrabold text-center tracking-relaxed text-base-content sm:block sm:text-4xl">Don't know where to start?</p>
+  
+  <div class="max-w-screen-lg grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 mx-4 mt-12 xl:max-w-screen-xl lg:mx-auto">
+
+
+
+    <div class="col-span-1 flex items-start space-x-4 border-4 text-left bg-base-300/40 border-base-300/20 rounded-lg p-6">
       <div class="flex-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 opacity-80" viewBox="0 0 20 20" fill="currentColor">
           <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
         </svg>
       </div>
       <div class="flex flex-col">
-        <h2 class="text-xl font-bold text-neutral-content">
+        <h2 class="text-2xl font-bold text-neutral-content">
           Community builders
         </h2>
-        <p class="text-sm mt-1 text-neutral-content text-opacity-70">From self-hosting a new instance, to customising every aspect of it, to creating new apps or extensions...</p>
+        <p class="text-md mt-1 text-neutral-content text-opacity-70">From self-hosting a new instance, to customising every aspect of it, to creating new apps or extensions...</p>
         <div class="flex flex-col space-y-4 mt-4">
           <a href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank" class="link link-hover flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -353,17 +357,17 @@
       </div>
     </div>
     
-    <div class="col-span-1 flex items-start space-x-4 border-4 text-left bg-base-300 border-neutral-content border-opacity-30 rounded p-6">
+    <div class="col-span-1 flex items-start space-x-4 border-4 text-left bg-base-300/40 border-base-300/20 rounded-lg p-6">
       <div class="flex-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 opacity-80" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
         </svg>
       </div>
       <div class="flex flex-col">
-        <h2 class="text-xl font-bold text-neutral-content">
+        <h2 class="text-2xl font-bold text-neutral-content">
           Tool builders
         </h2>
-        <p class="text-sm text-neutral-content mt-1 text-opacity-70">From setting up a development environment, to groking the architecture and codebase, to building new extensions...</p>
+        <p class="text-md text-neutral-content mt-1 text-opacity-70">From setting up a development environment, to groking the architecture and codebase, to building new extensions...</p>
         <div class="flex flex-col space-y-4 mt-4">
           <a href="/docs" class="link link-hover flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -411,6 +415,64 @@
 
 <section class="mt-6 lg:px-0">
   
+  
+  
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+      <div class="w-full h-40 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/bonfire_beta.png)"></div>
+      <div class="flex-1 mt-4 lg:mt-0">
+        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+            <a href="/posts/meet_us_at_the_playground/">
+                
+                    Meet us at the playground: Bonfire Social beta launch 
+                
+            </a>
+        </h2>
+        <div class="flex items-center space-x-2">
+            <span class="flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+              <time class="text-xs text-base-content text-opacity-70">25 Jun 2022</time>
+            </span>
+        </div>
+        
+        
+        
+            <p class="text-sm text-base-content text-opacity-80 my-2">
+                Today, the Bonfire team is asking for *your* help with beta testing. Bonfire still needs a lot of work - be it bugs, federation, missing features, configurability and user experience - but that&#39;s the point, we decided to launch the playground at this gnarly stage with the specific intention of moving toward the 1.0 release as a community.
+            </p>
+        
+        <div class="my-2"><a href="/tags/posts/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                posts
+                </span>
+                </a><a href="/tags/beta/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                beta
+                </span>
+                </a><a href="/tags/social/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                social
+                </span>
+                </a>
+        </div>
+        <div>
+            <a href="/posts/meet_us_at_the_playground/" class="text-pink-400 font-bold text-sm">
+                Read more →
+            </a>
+        </div>
+      </div>
+    </article>
+    
   
   
     <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
@@ -529,76 +591,6 @@
     
   
   
-    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
-      <div class="w-full h-40 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/testing.png)"></div>
-      <div class="flex-1 mt-4 lg:mt-0">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/notes_on_first_usability_testing/">
-                
-                    Notes on our first usability testing round
-                
-            </a>
-        </h2>
-        <div class="flex items-center space-x-2">
-            <span class="flex items-center space-x-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                  </svg>
-              <time class="text-xs text-base-content text-opacity-70">21 May 2022</time>
-            </span>
-        </div>
-        
-        
-        
-            <p class="text-sm text-base-content text-opacity-80 my-2">
-                On May 10th we published a toot asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions.
-            </p>
-        
-        <div class="my-2"><a href="/tags/posts/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                posts
-                </span>
-                </a><a href="/tags/usability/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                usability
-                </span>
-                </a><a href="/tags/testing/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                testing
-                </span>
-                </a><a href="/tags/social/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                social
-                </span>
-                </a><a href="/tags/ux/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                ux
-                </span>
-                </a>
-        </div>
-        <div>
-            <a href="/posts/notes_on_first_usability_testing/" class="text-pink-400 font-bold text-sm">
-                Read more →
-            </a>
-        </div>
-      </div>
-    </article>
-    
   
   
   
@@ -627,7 +619,7 @@
   <div class="p-20  mt-16 rounded-none lg:px-20 bg-base-content bg-opacity-10 lg:mx-0">
     <div class="max-w-screen-lg 2xl:max-w-screen-xl lg:mx-auto">
         <h3 class="text-4xl font-bold flex flex-col md:flex-row items-center md:space-x-4 tracking-wide text-neutral-content">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 grow-0" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 grow-0 text-error" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
           </svg>  
           <span class="text-center md:text-left mt-2 md:mt-0 grow-0">Support the project</span>
@@ -644,6 +636,22 @@
               </svg>
             </a>
         </div>
+        <h3 class="text-4xl font-bold flex flex-col md:flex-row items-center md:space-x-4 tracking-wide text-neutral-content mt-16">
+          <span class="">✨</span>
+          <span class="text-center md:text-left mt-2 md:mt-0 grow-0">Sponsored by</span>
+        </h3>
+            <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+              <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50/10">
+                <img class="max-h-12" src="/img/logo_nlnet.svg" alt="NlNet">
+              </div>
+              <div class="col-span-1 flex justify-center py-8 px-8 bg-white/10">
+                <img class="max-h-12" src="/img/ecf_logo.svg" alt="European Cultural Foundation">
+              </div>
+              <div class="col-span-1 flex justify-center place-content-center py-8 px-8 bg-white/10">
+                <a class="link font-bold text-lg self-center" href="https://opencollective.com/bonfire-networks/contribute/sponsor-39507/checkout">Become a sponsor</a>
+              </div>
+            </div>
+        
 
 
 
@@ -657,8 +665,8 @@
 
 
 
-<div class="bg-neutral">
-<footer class="flex items-center max-w-screen-lg p-4 py-8 mx-auto footer text-neutral-content">
+<div class="bg-base-100">
+<footer class="flex items-center max-w-screen-xl p-4 py-8 mx-auto footer text-neutral-content">
   <div class="items-center flex-1 grid-flow-col">
     <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
   </div> 
@@ -669,18 +677,16 @@
       </svg>
       <span class="text-sm font-medium">team [at] bonfire.cafe </span>
      </div>
-    <a href="https://indieweb.social/@bonfire" target="blank" class="btn btn-sm btn-ghost">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-      </svg>
-      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">indieweb.social/@bonfire</span>
+    <a href="/conduct" target="blank" class="btn btn-sm btn-ghost">
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">Code of conduct</span>
+    </a>
+    <a href="/privacy" target="blank" class="btn btn-sm btn-ghost">
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">Privacy policy</span>
     </a>
     <a target="blank" href="https://github.com/bonfire-networks" class="btn btn-sm btn-ghost">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
       </svg>
-      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">View the code</span>
     </a>
   </div>
 </footer>
