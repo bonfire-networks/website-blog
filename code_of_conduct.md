@@ -1,4 +1,4 @@
-# Code of Conduct - v0.1
+# Code of Conduct - v0.2
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Is there an emergency? go straight to [REPORT AN ISSUE](#6.-reporting-issues).
 
 ### 1. Let's be excellent to each other
 
-> Let's treat everyone with respect. Participate while acknowledging that we all deserve to be here — and each of us has the right to enjoy our experience without fear of harassment, discrimination, or condescension, whether blatant, via microaggressions or via subtle negativity.
+> Let's treat everyone with respect. Participate while acknowledging that we all deserve to be here — and each of us has the right to enjoy our experience without fear of harassment, discrimination, or condescension, whether blatant, or via micro-aggressions or subtle negativity.
 
 Let's endeavour to treat our fellow community participants with respect and dignity:
 
@@ -66,7 +66,7 @@ Although this list cannot be exhaustive, we explicitly honour diversity in:
 - language, culture, regional/national origin, or migratory status; 
 - disability; 
 - gender identity, expression or presentation; 
-- neuro(a)typicality or neurodiversity;
+- neuro(a)typicality or neuro-diversity;
 - race, ethnicity, caste, or colour; 
 - sexual orientation; 
 - appearance or body size; 
@@ -78,7 +78,7 @@ We will not tolerate discrimination based on any of the protected characteristic
 
 ### 3. We stand together
 
-We do not have to suffer in silence, or see others harassed without feeling like we have no course of action. While harassment cannot be tolerated, there's a whole range of behaviours or ways people communicate that aren't harassement, and we are empowered to politely engage when we or others are mistreated, by describing our perceptions. 
+We do not have to suffer in silence, or see others harassed without feeling like we have no course of action. While harassment cannot be tolerated, there's a whole range of behaviours or ways people communicate that aren't harassment, and we are empowered to politely engage when we or others are mistreated, by describing our perceptions. 
 
 #### Identifying issues
 
@@ -100,7 +100,7 @@ If we feel able and safe to, we may want to directly discuss our concerns with t
 > * Start by identifying our _feelings_ and _needs_.
 > * Make _offers_ or _requests_.
 > * Develop _points of agreement_ to facilitate progress.
-> * Negotitate _plans_ to treat conflict in a mutually satisfactory way. 
+> * Negotiate _plans_ to treat conflict in a mutually satisfactory way. 
 > * _Follow up_ later to discuss progress.
 
 #### Escalating
@@ -116,7 +116,7 @@ We are intolerant of intolerance, harassment, exploitation and domination. This 
 
 * Name calling, insensitive sarcasm and general unkindness.
 
-* Sustained disruption of discussion (e.g. [sealioning](https://en.wikipedia.org/wiki/Sealioning) or [Gish Gallop](https://en.wikipedia.org/wiki/Gish_gallop)).
+* Sustained disruption of discussion (e.g. [sealioning](https://en.wikipedia.org/wiki/Sealioning) or [Gish gallop](https://en.wikipedia.org/wiki/Gish_gallop)).
 
 * Bad-faith arguments: 
     * Let's have discussions in good faith, keeping to the arguments being discussed and arguing methodically, and when appropriate, with citations. **The object of a discussion is to understand the topic better, not to win the discussion.** Discussions are an opportunity for all parties to learn; this process is best served in an atmosphere of mutual respect. 
@@ -124,15 +124,13 @@ We are intolerant of intolerance, harassment, exploitation and domination. This 
 
 * Exercising or promoting domination, hierarchy or exploitation.
 
-* Abuse of power relations, for example, role as an admin or moderator; priviledged access or control over infrastructure or tools; technical knowledge or skills; privilege (socio-economic background, education, race, gender, regional or national origin, etc);  mental or physical ability; age; seniority as a participant, etc. 
+* Abuse of power relations, for example, role as an admin or moderator; privileged access or control over infrastructure or tools; technical knowledge or skills; privilege, ability or seniority, etc. 
 
 * Deliberate misgendering or mislabelling. This includes deadnaming or persistently using a pronoun that does not correctly reflect a person’s gender identity. We address people by their name/pronouns when provided, and otherwise don't make assumptions and use their username or handle. 
 
 * Deliberate intimidation or bullying.
 
-* Violence or threats of violence, both physical and psychological, towards another participant.
-
-* Incitement of violence towards any individual, including encouraging a person to engage in self-harm.
+* Violence, incitement or threats of violence (both physical and psychological) towards another participant, including encouraging someone to engage in self-harm.
 
 * Pattern of inappropriate social contact, such as assuming inappropriate levels of intimacy with others.
 
@@ -159,7 +157,7 @@ We are intolerant of intolerance, harassment, exploitation and domination. This 
 * Threatening the physical, legal or ethical integrity of the community or shared infrastructure with malicious software or behaviour (spamming, DDoS, posting illegal content, etc).
 
 
-### 5. Non-harrassment
+### 5. Non-harassment
 
 Our community prioritises marginalised people’s safety over privileged people’s comfort. Moderators reserve the right not to act on complaints regarding:
 
@@ -176,9 +174,9 @@ Our community prioritises marginalised people’s safety over privileged people�
 
 ### 6. Reporting issues
 
-All reports will be handled with discretion, and all people involved issues will be treated with respect. 
+All reports will be handled with discretion, and all people involved will be treated with respect. 
 
-If you experience or witness harrassment or unacceptable behaviour — or have any other concerns — please use the flagging feature where available, or tag moderator(s) in the thread to bring it to their attention. You can also report it by directly contacting moderator(s), instance admin(s), and/or directly sending a message to the email address on the [project homepage](https://bonfirenetworks.org/). If the person you are reporting is on the moderation or admin teams, they must recuse themselves from handling the incident. 
+If you experience or witness harassment or unacceptable behaviour — or have any other concerns — please use the flagging feature where available, or tag moderator(s) in the thread to bring it to their attention. You can also report it by directly contacting moderator(s), instance admin(s), and/or directly sending a message to the email address on the [project homepage](https://bonfirenetworks.org/). If the person you are reporting is on a moderation or admin team, they must recuse themselves from handling the incident. 
 
 In addition to the points specified in the [Setting Boundaries section](#setting-boundaries), please include in your report:
 - Urgency (e.g. is somebody in danger?) and whether the incident is ongoing
@@ -206,9 +204,9 @@ In the case that individuals do not adhere to the community guidelines, communit
   * Remove, edit, or block posts, comments, commits, wiki edits, issues, and other contributions, contributors or communities that do not align with this Code of Conduct, and communicate reasons for those decisions when and where appropriate. 
   * Enlist support of other community moderators (power in numbers)
   * Call out individuals to stop or change specific behaviour(s), privately and/or publicly. 
-  * Start by assuming good intent (i.e. that the person was just careless or had not realised). The moderator(s) will check that they understand why it is considered harrassment or otherwise innapropriate. If they do not understand why, but they wish to understand, they will receive an explanation if the moderator(s) have the time, or they will be pointed in the direction of more information. 
+  * Start by assuming good intent (i.e. that the person was just careless or had not realised). The moderator(s) will check that they understand why it is considered harassment or otherwise inappropriate. If they do not understand why, but they wish to understand, they will receive an explanation if the moderator(s) have the time, or they will be pointed in the direction of more information. 
 
-> Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is our responsibility to listen carefully and respectfully, and do our best to right the wrong. If there is a need for education, the person causing offence can ask for more information. They will either be given an explanation or be referred to links and educative content if available. If relevant content is not yet available, or if nobody in the community has the ability or willingness to help, they may need to do their own research.
+> Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is our responsibility to listen carefully and respectfully, and do our best to right the wrong. If there is a need for education, the person causing offense can ask for more information. They will either be given an explanation or be referred to links and educative content if available. If relevant content is not yet available, or if nobody in the community has the ability or willingness to help, they may need to do their own research.
 
   * The individuals may be given a chance to apologise to the person(s) they targeted, or make other reparations as appropriate, within a specified time frame. 
   * If an understanding and positive outcome cannot be reached, one of these steps may be taken, temporarily or permanently:
@@ -225,9 +223,9 @@ With this, we have a clear expectation about what we consider to be a reasonable
 
 This **code of conduct applies to all Bonfire spaces**, including interactions, discussions and other content, both online or offline. Some spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by these rules. 
 
-We are participants in a decentralised software ecosystem and various online discussion and collabaration spaces, but we also aim to be a community. A community is different than a “forum” or a “debate hall”, it means we support each others' emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work, and foster respect, diversity, inclusion, wellbeing and learning.
+We are participants in a decentralised software ecosystem and various online discussion and collaboration spaces, but we also aim to be a community. A community is different than a “forum” or a “debate hall”, it means we support each others' emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work, and foster respect, diversity, inclusion, wellbeing and learning.
 
-> This community is made up of disparate online collections of people committed to exploring and building a p2p ecosystem with the awareness and sensitivity of intersectionality. This requires us to have *challenging conversations* about privilege, power, history, culture, inequality, pain, injustice, trauma, and the influence of hegemonic ideas, institutions and practicies. Our goal is to have these dialogues and debates from a place of compassion that honours our shared humanity. We recognise this may require us to *level up our conversational skills*, both as individuals and as a collective. Hence the spirit of learning together must try to describe this process in detail. We believe this kind of work is transformative, and any learning here will initiate similar changes in the other communities we participate in. 
+> This community is made up of disparate online collections of people committed to exploring and building a p2p ecosystem with the awareness and sensitivity of intersectionality. This requires us to have *challenging conversations* about privilege, power, history, culture, inequality, pain, injustice, trauma, and the influence of hegemonic ideas, institutions and practices. Our goal is to have these dialogues and debates from a place of compassion that honours our shared humanity. We recognise this may require us to *level up our conversational skills*, both as individuals and as a collective. Hence the spirit of learning together must try to describe this process in detail. We believe this kind of work is transformative, and any learning here will initiate similar changes in the other communities we participate in. 
 
 This code of conduct is long. **We realise that it may take a good few minutes** over a cup of [insert favourite beverage here], to read through these guidelines. If we think about how difficult conversations can be online, we might consider the following points:
 
@@ -252,7 +250,7 @@ There are two aspects to NVC - one is the deeper attitude (spirit) behind it and
 
 There are four practical components to the technique. Remember that _It is a practice_. Most of us are not trained to think in these ways. Each component requires practice. It is really useful to know and understand the philosophy behind each one.
 
-If you're not familiar with it, you can start with this [introduction to NVC](http://www.artofwellbeing.com/2017/11/24/nonviolent-communication/). You can go futher with this article about [NVC in the context of code reviews](https://dev.to/dkassen/nonviolent-communication-in-code-reviews-3jh2).
+If you're not familiar with it, you can start with this [introduction to NVC](http://www.artofwellbeing.com/2017/11/24/nonviolent-communication/). You can go further with this article about [NVC in the context of code reviews](https://dev.to/dkassen/nonviolent-communication-in-code-reviews-3jh2).
 
 Please note: NVC IS NOT A PANACEA. There are times in life when you would not have time to use it and it would not be appropriate. 
 
