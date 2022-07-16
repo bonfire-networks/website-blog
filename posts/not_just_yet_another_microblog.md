@@ -31,7 +31,7 @@ We have plenty of ideas and work-in-progress for Bonfire apps within the existin
 
 And we'd love to see many other apps emerge, for example:
 
-* Collective decision-making - perhaps in a similar way to [Ukuvota](https://ukuvota.world/) or [Loomio](https://www.loomio.org/)
+* Collective decision-making - perhaps in a similar way to [Ukuvota](https://ukuvota.world/) or [Loomio](https://www.loomio.com/)
 * Federated calendar & scheduling tool - to help plan and coordinate intitiatives across different communities and timezones. 
 
 We're also excited to see ideas coming from the community, including designers or developers who may have the expertise to collaborate on making some of these ideas into reality! 
