@@ -4,7 +4,7 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-<div class="mx-4 max-w-screen-xl lg:mx-auto">
+<div class="max-w-screen-xl mx-4 lg:mx-auto">
 
 <a class="flex justify-between w-full  px-2 py-1 rounded-full gap-x-2 group text-[#434030] bg-[#e0e1a9] mt-12 max-w-sm mx-auto" href="posts/meet_us_at_the_playground/" role="alert">
   <p class="flex-1 text-center">
@@ -16,17 +16,22 @@ eleventyNavigation:
   </span> #}
 </a>
 
-{% include "hero.njk" %}
+  {% include "hero.njk" %}
 </div>
 
-
-  {% include "newsletter.njk" %}
-  
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
   {% include "why.njk" %} 
 </div>
 
+<div class="mt-40">
+  {% include "features.njk" %}
+</div>
+
+
+
 {% include "cta.njk" %}
+
+{% include "newsletter.njk" %}
 
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
   {# {% include "what.njk" %} #}
