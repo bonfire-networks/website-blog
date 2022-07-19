@@ -2949,15 +2949,36 @@ body[dir="rtl"] .checkbox:checked,
   font-size: 0.875rem;
 }
 
+.btn-lg {
+  height: 4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-height: 4rem;
+  font-size: 1.125rem;
+}
+
 .btn-square:where(.btn-sm) {
   height: 2rem;
   width: 2rem;
   padding: 0px;
 }
 
+.btn-square:where(.btn-lg) {
+  height: 4rem;
+  width: 4rem;
+  padding: 0px;
+}
+
 .btn-circle:where(.btn-sm) {
   height: 2rem;
   width: 2rem;
+  border-radius: 9999px;
+  padding: 0px;
+}
+
+.btn-circle:where(.btn-lg) {
+  height: 4rem;
+  width: 4rem;
   border-radius: 9999px;
   padding: 0px;
 }
@@ -4025,6 +4046,216 @@ body[dir="rtl"] .checkbox:checked,
   margin-bottom: 0;
 }
 
+.prose-2xl {
+  font-size: 1.5rem;
+  line-height: 1.6666667;
+}
+
+.prose-2xl :where(p):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+}
+
+.prose-2xl :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
+  font-size: 1.25em;
+  line-height: 1.4666667;
+  margin-top: 1.0666667em;
+  margin-bottom: 1.0666667em;
+}
+
+.prose-2xl :where(blockquote):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.7777778em;
+  margin-bottom: 1.7777778em;
+  padding-left: 1.1111111em;
+}
+
+.prose-2xl :where(h1):not(:where([class~="not-prose"] *)) {
+  font-size: 2.6666667em;
+  margin-top: 0;
+  margin-bottom: 0.875em;
+  line-height: 1;
+}
+
+.prose-2xl :where(h2):not(:where([class~="not-prose"] *)) {
+  font-size: 2em;
+  margin-top: 1.5em;
+  margin-bottom: 0.8333333em;
+  line-height: 1.0833333;
+}
+
+.prose-2xl :where(h3):not(:where([class~="not-prose"] *)) {
+  font-size: 1.5em;
+  margin-top: 1.5555556em;
+  margin-bottom: 0.6666667em;
+  line-height: 1.2222222;
+}
+
+.prose-2xl :where(h4):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.6666667em;
+  margin-bottom: 0.6666667em;
+  line-height: 1.5;
+}
+
+.prose-2xl :where(img):not(:where([class~="not-prose"] *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose-2xl :where(video):not(:where([class~="not-prose"] *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose-2xl :where(figure):not(:where([class~="not-prose"] *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose-2xl :where(figure > *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose-2xl :where(figcaption):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8333333em;
+  line-height: 1.6;
+  margin-top: 1em;
+}
+
+.prose-2xl :where(code):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8333333em;
+}
+
+.prose-2xl :where(h2 code):not(:where([class~="not-prose"] *)) {
+  font-size: 0.875em;
+}
+
+.prose-2xl :where(h3 code):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+}
+
+.prose-2xl :where(pre):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8333333em;
+  line-height: 1.8;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem;
+  padding-top: 1.2em;
+  padding-right: 1.6em;
+  padding-bottom: 1.2em;
+  padding-left: 1.6em;
+}
+
+.prose-2xl :where(ol):not(:where([class~="not-prose"] *)) {
+  padding-left: 1.5833333em;
+}
+
+.prose-2xl :where(ul):not(:where([class~="not-prose"] *)) {
+  padding-left: 1.5833333em;
+}
+
+.prose-2xl :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose-2xl :where(ol > li):not(:where([class~="not-prose"] *)) {
+  padding-left: 0.4166667em;
+}
+
+.prose-2xl :where(ul > li):not(:where([class~="not-prose"] *)) {
+  padding-left: 0.4166667em;
+}
+
+.prose-2xl > :where(ul > li p):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.8333333em;
+  margin-bottom: 0.8333333em;
+}
+
+.prose-2xl > :where(ul > li > *:first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+}
+
+.prose-2xl > :where(ul > li > *:last-child):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 1.3333333em;
+}
+
+.prose-2xl > :where(ol > li > *:first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+}
+
+.prose-2xl > :where(ol > li > *:last-child):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 1.3333333em;
+}
+
+.prose-2xl :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.6666667em;
+  margin-bottom: 0.6666667em;
+}
+
+.prose-2xl :where(hr):not(:where([class~="not-prose"] *)) {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.prose-2xl :where(hr + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-2xl :where(h2 + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-2xl :where(h3 + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-2xl :where(h4 + *):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-2xl :where(table):not(:where([class~="not-prose"] *)) {
+  font-size: 0.8333333em;
+  line-height: 1.4;
+}
+
+.prose-2xl :where(thead th):not(:where([class~="not-prose"] *)) {
+  padding-right: 0.6em;
+  padding-bottom: 0.8em;
+  padding-left: 0.6em;
+}
+
+.prose-2xl :where(thead th:first-child):not(:where([class~="not-prose"] *)) {
+  padding-left: 0;
+}
+
+.prose-2xl :where(thead th:last-child):not(:where([class~="not-prose"] *)) {
+  padding-right: 0;
+}
+
+.prose-2xl :where(tbody td):not(:where([class~="not-prose"] *)) {
+  padding-top: 0.8em;
+  padding-right: 0.6em;
+  padding-bottom: 0.8em;
+  padding-left: 0.6em;
+}
+
+.prose-2xl :where(tbody td:first-child):not(:where([class~="not-prose"] *)) {
+  padding-left: 0;
+}
+
+.prose-2xl :where(tbody td:last-child):not(:where([class~="not-prose"] *)) {
+  padding-right: 0;
+}
+
+.prose-2xl > :where(:first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-2xl > :where(:last-child):not(:where([class~="not-prose"] *)) {
+  margin-bottom: 0;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -4311,8 +4542,20 @@ body[dir="rtl"] .checkbox:checked,
   margin-left: 1.5rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
 }
 
 .mt-20 {
@@ -4465,6 +4708,14 @@ body[dir="rtl"] .checkbox:checked,
 
 .h-7 {
   height: 1.75rem;
+}
+
+.h-\[560px\] {
+  height: 560px;
+}
+
+.h-\[195px\] {
+  height: 195px;
 }
 
 .h-\[358px\] {
@@ -4794,8 +5045,8 @@ body[dir="rtl"] .checkbox:checked,
   gap: 6rem;
 }
 
-.gap-12 {
-  gap: 3rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-4 {
@@ -4808,6 +5059,10 @@ body[dir="rtl"] .checkbox:checked,
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .gap-0\.5 {
@@ -5047,12 +5302,12 @@ body[dir="rtl"] .checkbox:checked,
   border-color: hsl(var(--b3, var(--b2)) / 0.2);
 }
 
-.border-base-300\/40 {
-  border-color: hsl(var(--b3, var(--b2)) / 0.4);
-}
-
 .border-base-content\/30 {
   border-color: hsl(var(--bc) / 0.3);
+}
+
+.border-base-300\/40 {
+  border-color: hsl(var(--b3, var(--b2)) / 0.4);
 }
 
 .border-base-300 {
@@ -5123,6 +5378,11 @@ body[dir="rtl"] .checkbox:checked,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-base-300 {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
+}
+
 .bg-\[\#e0e1a9\] {
   --tw-bg-opacity: 1;
   background-color: rgb(224 225 169 / var(--tw-bg-opacity));
@@ -5139,11 +5399,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .bg-white\/10 {
   background-color: rgb(255 255 255 / 0.1);
-}
-
-.bg-base-300 {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
@@ -5188,6 +5443,18 @@ body[dir="rtl"] .checkbox:checked,
 
 .bg-\[url\(\'\/img\/nlnet\.png\'\)\] {
   background-image: url('/img/nlnet.png');
+}
+
+.bg-\[url\(\/img\/boundaries\.png\)\] {
+  background-image: url(/img/boundaries.png);
+}
+
+.bg-\[url\(\/img\/circles\.png\)\] {
+  background-image: url(/img/circles.png);
+}
+
+.bg-\[url\(\/img\/blist\.png\)\] {
+  background-image: url(/img/blist.png);
 }
 
 .bg-gradient-to-r {
@@ -5393,9 +5660,19 @@ body[dir="rtl"] .checkbox:checked,
   padding-bottom: 0.75rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-8 {
@@ -5403,14 +5680,14 @@ body[dir="rtl"] .checkbox:checked,
   padding-right: 2rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .pt-8 {
@@ -5441,12 +5718,12 @@ body[dir="rtl"] .checkbox:checked,
   padding-top: 4rem;
 }
 
-.pb-\[57\%\] {
-  padding-bottom: 57%;
-}
-
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pb-\[57\%\] {
+  padding-bottom: 57%;
 }
 
 .text-left {
@@ -5520,8 +5797,9 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 1.75rem;
 }
 
-.text-\[42px\] {
-  font-size: 42px;
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .text-base {
@@ -5532,11 +5810,6 @@ body[dir="rtl"] .checkbox:checked,
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .font-medium {
@@ -5612,8 +5885,16 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 1.5rem;
 }
 
-.leading-normal {
-  line-height: 1.5;
+.leading-\[1\.4\] {
+  line-height: 1.4;
+}
+
+.\!leading-loose {
+  line-height: 2 !important;
+}
+
+.leading-\[1\.3\] {
+  line-height: 1.3;
 }
 
 .tracking-wider {
@@ -6128,8 +6409,8 @@ body[dir="rtl"] .checkbox:checked,
     flex-direction: row;
   }
 
-  .md\:gap-24 {
-    gap: 6rem;
+  .md\:gap-12 {
+    gap: 3rem;
   }
 
   .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -6138,14 +6419,13 @@ body[dir="rtl"] .checkbox:checked,
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:p-16 {
+    padding: 4rem;
+  }
+
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .md\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
   }
 
   .md\:text-left {
@@ -6419,6 +6699,10 @@ body[dir="rtl"] .checkbox:checked,
     display: none;
   }
 
+  .lg\:h-\[340px\] {
+    height: 340px;
+  }
+
   .lg\:h-32 {
     height: 8rem;
   }
@@ -6447,10 +6731,6 @@ body[dir="rtl"] .checkbox:checked,
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -6461,6 +6741,10 @@ body[dir="rtl"] .checkbox:checked,
 
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
   }
 
   .lg\:gap-4 {
@@ -6485,6 +6769,10 @@ body[dir="rtl"] .checkbox:checked,
     margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .lg\:bg-cover {
+    background-size: cover;
+  }
+
   .lg\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -6503,11 +6791,6 @@ body[dir="rtl"] .checkbox:checked,
   .lg\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
-  }
-
-  .lg\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 
   .lg\:pb-0 {
@@ -6540,6 +6823,11 @@ body[dir="rtl"] .checkbox:checked,
 @media (min-width: 1280px) {
   .xl\:max-w-screen-xl {
     max-width: 1280px;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
