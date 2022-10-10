@@ -1,0 +1,92 @@
+
+
+<style>
+    .glide__bullet--active {
+        background: #333;
+    }
+</style>
+
+<div class="relative bg-base-300">
+    <div class="max-w-screen-lg py-24 mx-4 2xl:max-w-screen-xl lg:mx-auto">
+      <div class="text-2xl font-bold leading-relaxed text-center text-base-content">What the community is saying</div>
+
+    <div
+        x-data="{
+            init() {
+                new Glide(this.$refs.glide, {
+                    perView: 3,
+                    640: {
+                        perView: 2,
+                    },
+                }).mount()
+            },
+        }"
+    >
+
+    <div x-ref="glide" class="relative block px-12 mt-16 glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="flex flex-col items-center justify-center pb-6 glide__slide">
+                    <img class="w-full" src="https://picsum.photos/800/400?random=1" alt="placeholder image">
+                </li>
+
+                <li class="flex flex-col items-center justify-center pb-6 glide__slide">
+                    <img class="w-full" src="https://picsum.photos/800/400?random=2" alt="placeholder image">
+                </li>
+
+                <li class="flex flex-col items-center justify-center pb-6 glide__slide">
+                    <img class="w-full" src="https://picsum.photos/800/400?random=3" alt="placeholder image">
+                </li>
+
+                <li class="flex flex-col items-center justify-center pb-6 glide__slide">
+                    <img class="w-full" src="https://picsum.photos/800/400?random=4" alt="placeholder image">
+                </li>
+
+                <li class="flex flex-col items-center justify-center pb-6 glide__slide">
+                    <img class="w-full" src="https://picsum.photos/800/400?random=5" alt="placeholder image">
+                </li>
+
+                <li class="flex flex-col items-center justify-center pb-6 glide__slide">
+                    <img class="w-full" src="https://picsum.photos/800/400?random=6" alt="placeholder image">
+                </li>
+            </ul>
+        </div>
+
+        <div class="absolute inset-0 flex items-center justify-between pointer-events-none glide__arrows" data-glide-el="controls">
+            <!-- Previous Button -->
+            <button
+                class="pointer-events-auto glide__arrow glide__arrow--left disabled:opacity-50"
+                data-glide-dir="<"
+            >
+                <span aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                </span>
+                <span class="sr-only">Skip to previous slide page</span>
+            </button>
+
+            <!-- Next Button -->
+            <button
+                class="pointer-events-auto glide__arrow glide__arrow--left disabled:opacity-50"
+                data-glide-dir=">"
+            >
+                <span aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+                <span class="sr-only">Skip to next slide page</span>
+            </button>
+        </div>
+
+        <!-- Bullets -->
+        <div class="flex items-center justify-center w-full gap-1 glide__bullets" data-glide-el="controls[nav]">
+            <button class="w-3 h-3 transition-colors bg-gray-300 rounded-full glide__bullet" data-glide-dir="=0"></button>
+            <button class="w-3 h-3 transition-colors bg-gray-300 rounded-full glide__bullet" data-glide-dir="=1"></button>
+            <button class="w-3 h-3 transition-colors bg-gray-300 rounded-full glide__bullet" data-glide-dir="=2"></button>
+            <button class="w-3 h-3 transition-colors bg-gray-300 rounded-full glide__bullet" data-glide-dir="=3"></button>
+            <button class="w-3 h-3 transition-colors bg-gray-300 rounded-full glide__bullet" data-glide-dir="=4"></button>
+            <button class="w-3 h-3 transition-colors bg-gray-300 rounded-full glide__bullet" data-glide-dir="=5"></button>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>

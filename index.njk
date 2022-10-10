@@ -4,41 +4,22 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-<div class="max-w-screen-xl mx-4 lg:mx-auto">
 
-<a class="flex justify-between w-full  px-2 py-1 rounded-full gap-x-2 group text-[#434030] bg-[#e0e1a9] mt-12 max-w-sm mx-auto" href="posts/meet_us_at_the_playground/" role="alert">
-  <p class="flex-1 text-center">
-    🎉 <strong class="font-semibold">The beta is out!</strong> Meet us at the playground...
-  </p>
-  {# <span class="inline-flex items-center flex-shrink-0 font-semibold gap-x-1 group-hover:underline decoration-pine-500 decoration-2">
-    Learn more
-    <svg viewBox="0 0 24 24" class="h-6" astro-icon="ri:arrow-right-line"><path fill="currentColor" d="m16.172 11-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-  </span> #}
-</a>
-
-  {% include "hero.njk" %}
-</div>
-
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
-  {% include "why.njk" %} 
-</div>
-
-<div class="mt-40">
-  {% include "features.njk" %}
-</div>
-
-
-
+{% include "hero.njk" %}
+{% include "general_intro.njk" %}
+{% include "how_to.njk" %}
+{% include "why.njk" %} 
+{% include "testimonials.njk" %}
 {% include "cta.njk" %}
 
-{% include "newsletter.njk" %}
+
 
 <div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
   {# {% include "what.njk" %} #}
   {# {% include "appspreview.njk" %} #}
   <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
     <div id="blog" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-    <div class="relative mx-auto">
+    <div class="relative mx-auto mb-24">
       <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Latest from the blog</span>
     </div>
   </div>
