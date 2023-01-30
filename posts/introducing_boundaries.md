@@ -2,7 +2,7 @@
 title: Introducing circles and boundaries
 description: How will our online experiences be different once we take back control over exactly who should see, interact with, and even collaborate on our content and activities at the most granular level? 
 date: 2022-07-19
-tags: [beta, social, boundaries, circles]
+tags: [beta, social, boundaries, circles, zappa]
 image: /img/blog_boundaries.png
 layout: layouts/post.njk
 author: Bonfire Builders

@@ -2,7 +2,7 @@
 title: Notes on our first usability testing round
 description: On May 10th we published a toot asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions. 
 date: 2022-05-21
-tags: [usability, testing, social, ux]
+tags: [usability, testing, social, ux, zappa]
 image: /img/testing.png
 layout: layouts/post.njk
 author: Ivan Minutillo

@@ -18,7 +18,8 @@ module.exports = {
       {
         bonfire: {
           ...require("daisyui/src/colors/themes")["[data-theme=dracula]"],
-          "primary": "#fde047"
+          "primary": "#fde047",
+          "bg-base-300": "#1B1A27"
         },
       },
     ]
