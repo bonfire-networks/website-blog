@@ -68,6 +68,9 @@
         </a>
 
         <div class="inset-y-0 right-0 flex items-center sm:hidden">
+          <a href="/start/" >
+            <span class="btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+          </a>
           <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
             <span class="sr-only">Open main menu</span>
             <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
