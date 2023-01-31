@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started</title>
+    <meta name="description" content="How do you want to use or build with Bonfire?">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style_v2.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
+    <div
+      class="sticky top-0 z-20 bg-[#1B1A27]"
+      x-data="{open: false}" 
+    >
+    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+      <div class="w-[108rem] flex-none flex justify-end">
+          <source srcset="/img/bgover.png" type="image/avif">
+          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
+        </picture>
+      </div>
+    </div>
+
+    <header 
+      class="max-w-screen-xl relative z-30 mx-auto navbar">
+      <div class="navbar-start">
+        <div class="flex items-center flex-1 flex-shrink-0">
+          <a href="/" class="flex items-center space-x-4">
+            <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+            <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-ghost">Beta</div></span>
+          </a>
+        </div>
+      </div>
+      <div class="hidden navbar-center lg:flex">
+        <ul class="flex-row gap-3 p-0 menu menu-compact menu-horizontal">
+          <li>
+           <a href="/docs" class=" ">
+            <span class="text-sm font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+           <a href="/faq" class=" ">
+            <span class="text-sm font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-sm font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/contribute" class=" ">
+              <span class="text-sm font-regular">Contribute</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <a href="/start/" >
+          <span class="hidden btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+        </a>
+
+        <div class="inset-y-0 right-0 flex items-center sm:hidden">
+          <a href="/start/" >
+            <span class="btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+          </a>
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+            <span class="sr-only">Open main menu</span>
+            <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+     
+
+   
+    </header>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="sm:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/contribute" class=" ">
+              <span class="text-base font-regular">Contribute</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      
+<div class="max-w-screen-lg mt-16 mb-32 mx-4 2xl:max-w-screen-xl lg:mx-auto">
+  <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+    <div class="mx-auto max-w-2xl mb-24 sm:mx-0 sm:max-w-none">
+        <div class="text-[46px] font-extrabold text-center text-neutral-content">Get Started</div>
+        <div class="text-[24px] mt-4 text-center text-neutral-content">How do you want to use or build with Bonfire?</div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-10 my-10 lg:grid-cols-2">
+
+      <div class="bg-[#282736] rounded-2xl p-12">
+        <div class="text-5xl text-center mb-8">🔥</div>
+        <div class="text-[32px] font-bold text-neutral-content text-center">Explore the campground</div>
+        <div class="text-lg text-center text-neutral-content/70 mt-4">Join our beta test instance, get a feeling for Bonfire's core functionality and social extensions, and connect with other community participants.</div>
+        <div class="flex flex-col mt-10 space-y-3 text-center place-content-center items-center lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6">
+        <a href="https://campground.bonfire.cafe" target="_blank" class="normal-case btn">Join the campground</a>
+        <a href="/tags/beta/" class="normal-case btn btn-ghost border-opacity-70">🎉 Read the beta release posts </a>
+      </div>
+      </div>
+
+      <div class="bg-[#282736] rounded-2xl p-12">
+        <div class="text-5xl text-center mb-8">🐉</div>
+        <div class="text-[32px] text-neutral-content font-bold text-center">Setup your own instance</div>
+        <div class="text-lg text-center text-neutral-content/70 mt-4">Set up your own instance, and see how you can tailor it for your communities values and needs. Be aware, bonfire software is still in beta.</div>
+        <div class="flex flex-col mt-10 space-y-3 text-center items-center place-content-center lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6">
+        <a href="https://doc.bonfirenetworks.org/deploy.html" target="_blank" class="normal-case btn">Set up an instance</a>
+      </div>
+      </div>
+    </div>
+    <div class="bg-[#282736] rounded-2xl shadow-xl p-12">
+      <div class="grid grid-cols-1 gap-y-16 gap-x-10 sm:gap-y-20 lg:grid-cols-2 items-center">
+        <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img src="/img/2.png" alt="free to leave" width="640" height="492" class="w-full max-w-none">
+          </div>
+        </div>
+        <div>
+      <div class="text-[32px] text-neutral-content font-bold text-left">Develop on bonfire</div>
+      <div class="text-lg text-left text-neutral-content/70 mt-4">Check out the code and set up a development environment.</div>
+      <div class="flex flex-col mt-6 space-y-3 text-center lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6">
+        <a href="https://doc.bonfirenetworks.org/hacking.html" target="_blank" class="normal-case btn">🔨 Start hacking</a>
+      </div>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+<div class="">
+<footer class="flex items-center max-w-screen-xl p-4 py-8 mx-auto footer text-neutral-content">
+  <div class="items-center flex-1 grid-flow-col">
+    <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+  </div> 
+  <div class="flex items-center">
+    <div class="flex items-center space-x-2 text-base-content text-opacity-80">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
+      </svg>
+      <span class="text-sm font-medium">team [at] bonfire.cafe </span>
+     </div>
+    <a href="/conduct" target="blank" class="btn btn-sm btn-ghost">
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">Code of conduct</span>
+    </a>
+    <a href="/privacy" target="blank" class="btn btn-sm btn-ghost">
+      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">Privacy policy</span>
+    </a>
+    <a target="blank" href="https://github.com/bonfire-networks" class="btn btn-sm btn-ghost">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </div>
+</footer>
+</div>
+    <!-- Current page: /start/ -->
+  </body>
+</html>

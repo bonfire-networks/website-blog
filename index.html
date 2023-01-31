@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-base-300" data-theme="bonfire">
+<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,72 +10,82 @@
     <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
-    
-  </head>
-  <body data-theme="bonfire" class="w-full"> 
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
     <div
-      class="sticky top-0 z-20 bg-base-100"
+      class="sticky top-0 z-20 bg-[#1B1A27]"
       x-data="{open: false}" 
     >
-    <header 
-      class="max-w-screen-xl mx-auto navbar">
-      <div class="flex items-center w-full h-full px-4">
-        <div class="flex items-center flex-1">
-          
-  
-          <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-            <div class="flex items-center flex-1 flex-shrink-0">
-              <a href="/" class="flex items-center space-x-4">
-                <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-                <span class="flex items-center"><span class="text-2xl font-bold tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-primary">Beta</div></span>
-              </a>
-            </div>
-              <ul class="flex-row hidden p-0 sm:flex menu menu-horizontal">
-                <li>
-                 <a href="/docs" class=" ">
-                  <span class="text-base font-regular">Documentation</span>
-                </a>
-                </li>
-                <li>
-                 <a href="/faq" class=" ">
-                  <span class="text-base font-regular">FAQs</span>
-                </a>
-                </li>
-                <li>
-                <a href="/blog" class=" ">
-                  <span class="text-base font-regular">Blog</span>
-                </a>
-                </li>
-                <li>
-                  <a href="/contribute" class=" ">
-                    <span class="text-base font-regular">Contribute</span>
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                  </svg>
-                  <span class="hidden lg:block">Get the code</span>
-                  </a>
-                </li>
-              </ul>
+    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+      <div class="w-[108rem] flex-none flex justify-end">
+          <source srcset="/img/bgover.png" type="image/avif">
+          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
+        </picture>
+      </div>
+    </div>
 
-              
-          </div>
-          <div class="inset-y-0 right-0 flex items-center sm:hidden">
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
-              <span class="sr-only">Open main menu</span>
-              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
+    <header 
+      class="max-w-screen-xl relative z-30 mx-auto navbar">
+      <div class="navbar-start">
+        <div class="flex items-center flex-1 flex-shrink-0">
+          <a href="/" class="flex items-center space-x-4">
+            <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+            <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-ghost">Beta</div></span>
+          </a>
         </div>
-      </div>    
+      </div>
+      <div class="hidden navbar-center lg:flex">
+        <ul class="flex-row gap-3 p-0 menu menu-compact menu-horizontal">
+          <li>
+           <a href="/docs" class=" ">
+            <span class="text-sm font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+           <a href="/faq" class=" ">
+            <span class="text-sm font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-sm font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/contribute" class=" ">
+              <span class="text-sm font-regular">Contribute</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <a href="/start/" >
+          <span class="hidden btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+        </a>
+
+        <div class="inset-y-0 right-0 flex items-center sm:hidden">
+          <a href="/start/" >
+            <span class="btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+          </a>
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+            <span class="sr-only">Open main menu</span>
+            <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+     
+
+   
     </header>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
@@ -115,347 +125,295 @@
     </div>
   </div>
 
-      <div class="max-w-screen-xl mx-4 lg:mx-auto">
-
-<a class="flex justify-between w-full  px-2 py-1 rounded-full gap-x-2 group text-[#434030] bg-[#e0e1a9] mt-12 max-w-sm mx-auto" href="posts/meet_us_at_the_playground/" role="alert">
-  <p class="flex-1 text-center">
-    🎉 <strong class="font-semibold">The beta is out!</strong> Meet us at the playground...
-  </p>
-  
-</a>
-
-  <div class="max-w-screen-md mx-auto mb-16">
-  <div class="grid items-center justify-center grid-cols-1 gap-8 mt-12 ">
-    <div class="flex flex-col items-center col-span-1"> 
-      <h1 class="text-6xl font-bold leading-[1.3] tracking-wider text-center text-base-content">Join the frontier<br/> of social networking</h1>
-      <h2 class="mt-5 text-2xl font-light leading-relaxed text-center text-neutral-content">Working together to build <b class="font-bold">safer</b>, more <b class="font-bold">open</b> and <b class="font-bold">fun</b> federated tools and communities for the post-capitalist world.</h2>
-      <div class="flex flex-col mt-10 space-y-3 text-center lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6">
-        <a href="https://playground.bonfire.cafe" target="_blank" class="normal-case btn btn-lg btn-primary">🔥 Join the playground</a>
-        <a href="/tags/beta/" class="normal-case btn btn-outline btn-lg">🎉 Read the beta release posts </a>
-      </div>
-    </div>
-    <!-- <div class="w-full h-[358px]">
-      <div class="h-full border-8 rounded-lg border-base-300/40">  
-        <iframe title="Bonfire social beta screencast" src="https://tube.tchncs.de/videos/embed/59353f51-17a1-4dd7-9935-e74c5e4ae1e2" allowfullscreen="yes" sandbox="allow-same-origin allow-scripts allow-popups" width="560" height="315" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-      </div>
-    </div> -->
-  </div>
-
-<!-- <div class="grid items-center justify-around grid-cols-3 gap-8 mx-auto my-16 lg:grid-cols-5 place-content-center lg:flex lg:space-x-8">
-  <div class="flex flex-col items-center grid-cols-1 pb-3 space-y-2 place-content-center lg:pb-0">
-    <span class="flex items-center w-16 h-16 rounded-full place-content-center bg-base-content bg-opacity-40">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-base-100" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-      </svg>  
-    </span>
-    <span class="flex-1 text-base font-semibold text-base-content">Safe</span>
-  </div>
-  <div class="flex flex-col items-center grid-cols-1 pb-3 space-y-2 place-content-center lg:pb-0">
-    <span class="flex items-center w-16 h-16 rounded-full place-content-center bg-base-content bg-opacity-40">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-base-100" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
-      </svg> 
-    </span>
-    <span class="flex-1 text-base font-semibold text-base-content">Customisable</span>
-  </div>
-  <div class="flex flex-col items-center grid-cols-1 pb-3 space-y-2 place-content-center lg:pb-0">
-    <span class="flex items-center w-16 h-16 rounded-full place-content-center bg-base-content bg-opacity-40">
-     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-base-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-      </svg>  
-    </span>
-    <span class="flex-1 text-base font-semibold text-base-content">Federated</span>
-  </div>
-  <div class="flex flex-col items-center grid-cols-1 pb-3 space-y-2 place-content-center lg:pb-0">
-    <span class="flex items-center w-16 h-16 rounded-full place-content-center bg-base-content bg-opacity-40">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-base-100" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z" clip-rule="evenodd" />
-        <path d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z" />
-      </svg>
-    </span>
-    <span class="flex-1 text-base font-semibold text-base-content">Ad-free</span>
-  </div>
-  <div class="flex flex-col items-center grid-cols-1 pb-3 space-y-2 place-content-center lg:pb-0">
-    <span class="flex items-center w-16 h-16 rounded-full place-content-center bg-base-content bg-opacity-40">
-     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-base-100" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
-    </svg>
-    </span>
-    <span class="flex-1 text-base font-semibold text-base-content">Open Source</span>
-  </div>
-</div> -->
-</div>
-
-</div>
-
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
-  <div id="why" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-  <div class="relative mx-auto">
-    <span class="relative block text-xs font-semibold tracking-widest text-center uppercase text-base-content">What is Bonfire ?</span>
-  </div>
-
-  <div class="relative grid grid-cols-1 gap-12 pt-16 pb-8 overflow-hidden">
-    
-    <div class="relative">
-      <div class="items-center gap-16 lg:mx-auto lg:grid lg:grid-cols-2 place-content-start lg:grid-flow-col-dense">
-        <div class="col-span-1 bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/1.png')] "></div>
       
-        <div class="col-span-1 mt-4 ">
-          <h2 class="text-3xl font-bold tracking-wide text-base-content">
-            A thoughtful social network
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
-            We endeavour to develop tools for <a href="https://en.wikipedia.org/wiki/Conviviality" target="_blank" class="link">conviviality</a>. Tools that you have total control over, which are not developed for extracting value from their users in any way. 
-            Each Bonfire instance is shaped by its members to pursue their community goals, not those of some investment fund. 
-          </p>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="relative">
-      <div class="items-center gap-16 lg:mx-auto lg:grid lg:grid-cols-2 place-content-start lg:grid-flow-col-dense">
-        <div class="order-last bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/2.png')] "></div>
-        
-        <div class="mt-4 ">
-          <h2 class="text-3xl font-bold tracking-wide text-base-content">
-            A flexible tool to fit your needs
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
-            Add or remove extensions based on the functionality you need, or go further and create a new extension. Pick or create a theme that reflects your community identity, edit and localise text to increase inclusivity, decide which kind of information and behaviours to include and fight the dopamine economy.
-          </p>
-        </div>
-        
-        </div>
-    </div>
-    
-    
-    <div class="relative">
-      <div class="items-center gap-16 lg:mx-auto lg:grid lg:grid-cols-2 place-content-start lg:grid-flow-col-dense">
-        <div class="bg-cover object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/3.png')] "></div>
-        
-        <div class="mt-4">
-          <h2 class="text-3xl font-bold tracking-wide text-base-content">
-            A space to connect with the rest of the world , on your own terms
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
-            Each Bonfire community has the power to federate with others communities but also with other fediverse platforms that support the <a href="http://activitypub.rocks/" target="_blank" class="link">ActivityPub</a> protocol (like Mastodon, PeerTube, etc...) and interact with them, maintaining the autonomy to decide which information to share with others and which to keep on their instance.                  
-          </p>
-        </div>
-        
-        </div>
-      </div>
-    
-    <div class="relative">
-      <div class="items-center gap-8 lg:mx-auto lg:grid lg:grid-cols-2 place-content-start lg:grid-flow-col-dense">
-        <div class="bg-cover order-last object-center border-8 border-base-300/20 rounded-lg bg-no-repeat h-[320px] bg-[url('/img/4.png')] ">
-        </div>
-        
-        <div class="mt-4">
-          <h2 class="text-3xl font-bold tracking-wide text-base-content">
-            A free tool developed to empower your community
-          </h2>
-          <p class="mt-4 text-lg leading-relaxed text-base-content/70">
-            Bonfire is libre and open source software. This means that you can use and modify Bonfire without asking permission from anyone. Plus, benefit from future developments by anyone using the codebase: improvements, upgrades, and additions to Bonfire apps and extensions will always be freely available to users. 
-          </p>
-        </div>
-        
-        </div>
-      </div>
-    </div>
-  
-</div>
 
- 
-</div>
-
-<div class="mt-40">
-  <div class=" border-base-content/30 bg-base-300">
-  <div id="boundaries" class="max-w-screen-xl px-16 py-32 mx-auto xl:px-0">
-        <span class="text-sm font-bold uppercase text-primary">Safer participation.
-        </span>
-        <span class="text-sm font-bold uppercase text-primary">Healthier conversations.</span>
-        <span class="text-sm font-bold uppercase text-primary">More collaboration.</span>
-        
-    <div class="grid px-6 lg:gap-12 lg:px-0 lg:grid-cols-2">
-      <div>
-        <div class="mt-4 text-6xl font-bold leading-[1.4] text-base-content">Introducing circles & boundaries</div>
-        <div class="mt-6 !leading-loose prose prose-2xl">
-          How will our online experiences be different once we take back control over exactly who should see, interact with, and even collaborate on our content and activities at the most granular level? Join us in this experiment!
-        </div>
-        
-      </div>
-      <div class="bg-[url(/img/boundaries.png)] w-full h-[560px] bg-contain bg-center bg-no-repeat mx-auto"></div>
-    </div>
-    <div class="grid gap-24 px-6 mt-12 lg:px-0 lg:grid-cols-2">
-      <div class="flex flex-col">
-        <div class="bg-contain bg-no-repeat bg-center lg:bg-cover h-[195px] lg:h-[340px] mx-auto w-full bg-[url(/img/circles.png)]"></div>
-        <div class="mt-4">
-          <div class="text-2xl font-bold">Define circles that reflect real life</div>
-          <div class="mt-2 prose prose-lg">
-            People don’t fit in binary boxes labeled “follower” or “friend”. Define as many custom circles as you need. Use them as shorthand when setting boundaries, so you don’t have to configure permissions one person at a time.
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col">
-        <div class="bg-contain bg-no-repeat bg-center lg:bg-cover h-[195px] lg:h-[340px] mx-auto w-full bg-[url(/img/blist.png)]"></div>
-        <div class="mt-4">
-          <div class="text-2xl font-bold">Fine-tune permissions</div>
-          <div class="mt-2 prose prose-lg">
-            Set boundaries by deciding which circles or people should (or should not) be able to - for example - see, read, boost, reply to, or even edit your content. Or who can message, follow, or even request to message you...
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-<div class="py-6 text-center rounded-none md:p-16 bg-base-200 lg:mx-0">
-      <p class="inline text-3xl font-extrabold text-center tracking-relaxed text-base-content sm:block sm:text-4xl">Don't know where to start?</p>
-  
-  <div class="grid max-w-screen-lg grid-cols-1 gap-6 mx-4 mt-12 lg:grid-cols-2 md:gap-12 xl:max-w-screen-xl lg:mx-auto">
-
-
-
-    <div class="flex items-start col-span-1 p-6 space-x-4 text-left border-4 rounded-lg bg-base-300/40 border-base-300/20">
-      <div class="flex-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 opacity-80" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-        </svg>
-      </div>
-      <div class="flex flex-col">
-        <h2 class="text-2xl font-bold text-neutral-content">
-          Community builders
-        </h2>
-        <p class="mt-1 text-md text-neutral-content text-opacity-70">From self-hosting a new instance, to customising every aspect of it, to creating new apps or extensions...</p>
-        <div class="flex flex-col mt-4 space-y-4">
-          <a href="https://playground.bonfire.cafe" target="_blank" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Join the playground</span>
-          </a>
-          <a href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Start your own instance</span>
-          </a>
-          <a href="/contact" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Need a custom extension?</span>
-          </a>
-          <a href="/contribute" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Support bonfire</span>
-          </a>
-          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Join our community chat</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="flex items-start col-span-1 p-6 space-x-4 text-left border-4 rounded-lg bg-base-300/40 border-base-300/20">
-      <div class="flex-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 opacity-80" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      <div class="flex flex-col">
-        <h2 class="text-2xl font-bold text-neutral-content">
-          Tool builders
-        </h2>
-        <p class="mt-1 text-md text-neutral-content text-opacity-70">From setting up a development environment, to groking the architecture and codebase, to building new extensions...</p>
-        <div class="flex flex-col mt-4 space-y-4">
-          <a href="https://playground.bonfire.cafe" target="_blank" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Join the playground</span>
-          </a>
-          <a href="/docs" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Documentation</span>
-          </a>
-          <a href="https://github.com/bonfire-networks/bonfire-app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Good first issues</span>
-          </a>
-          <a href="/roadmap" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">View our roadmap</span>
-          </a>
-          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" class="flex items-center gap-2 link link-hover">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span class="text-xs font-medium uppercase text-neutral-content">Join our community chat</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="p-16 border-t border-b border-base-content/30">
 <div class="max-w-screen-xl mx-4 lg:mx-auto">
-  <p class="inline text-3xl font-extrabold tracking-tight text-base-content sm:block sm:text-4xl">Sign up for our newsletter</p>
-  <div class="my-4 text-lg text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire. <br />You may unsubscribe at any time.</div>
-  <div id="mc_embed_signup">
-    <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div class="" id="mc_embed_signup_scroll">
-      <div class="col-span-2 mc-field-group">
-        <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="max-w-[420px] w-full required email input input-bordered" id="mce-EMAIL">
-      </div>
-      <div id="mce-responses" class="mt-3 clear foot">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
-      </div>   
-       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
-                <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
-            </div>
-        </div>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
+
   
 
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
-  
-  
-  <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
-    <div id="blog" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-    <div class="relative mx-auto">
-      <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Latest from the blog</span>
+
+  <div class="max-w-screen-xl mx-auto mt-[120px]">
+    <div class="flex flex-col items-center justify-center grid-cols-1 gap-16">
+      <div class="flex flex-col col-span-1 text-center items-center justify-center"> 
+        <h1 class="text-[48px] font-extrabold leading-[1.3] tracking-wider text-base-content">Tools for 
+          <span class="relative whitespace-nowrap text-primary"><svg aria-hidden="true" viewBox="0 0 418 42" class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none"><path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path></svg><span class="relative">thriving</span></span>
+           communities</h1>
+        <h2 class="mt-1 text-[42px] font-medium leading-relaxed text-base-content/80">free from private interests</h2>
+        
+      </div>
+      <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+          <img src="/img/1.png" alt="defaults" width="640" height="492" class="w-full max-w-none">
+        </div>
+      </div>
+      
+      
     </div>
   </div>
-  
-  
-  
+
+</div>
+<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto mt-16 lg:mt-32">
+    <div class="relative flex flex-col text-center items-center grid-cols-1 gap-4 place-content-center">
+      <div  style="width: 1px;" class="h-16 mx-auto mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
+      <div class="text-[36px] font-extrabold leading-[1.3] tracking-wider text-base-content">Explore what is possible</div>
+      <div class="text-[24px] mx-auto max-w-[800px] leading-[35px] font-normal text-base-content/60">when you're not the product</div>
+    </div>
+
+
+  <div class="bg-gradient-to-r mt-20 from-sky-900 via-violet-600 to-white/70 col-span-3 rounded-2xl shadow-xl p-[1px]">
+    <div class="px-[64px] bg-gradient-to-tl from-amber-200 via-violet-600 to-sky-900 rounded-2xl py-16">
+      <div class="grid grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+          <div class="px-6 lg:px-0 lg:pt-4 lg:pr-4">
+            <div class="w-[60px] h-[60px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px]" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>
+            </div>
+            <div class="mt-10 text-[32px] font-bold tracking-wider text-base-content">You are in control</div>
+            <div class="mt-2 text-[20px] leading-[32px] tracking-wider font-normal text-base-content/70">Start with the core features of Bonfire, then add or remove extensions based on the functionality you need and configure everything to your preferences. With this flexibility, you can customize your experience to fit your exact values and needs, and easily adjust your setup at any time.</div>
+          </div>
+          <div class="sm:px-6 lg:px-0">
+            <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+              <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                <img src="/img/defaults.png" alt="defaults" width="640" height="492" class="w-full max-w-none">
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+
+    <div class="grid grid-cols-1 gap-10 my-10 lg:grid-cols-2">
+
+      <div class="bg-[#282736] rounded-2xl  p-12">
+        <div class="text-[32px] font-bold text-center">Define circles that mirror real life</div>
+        <div class="text-lg text-center text-base-content/70 mt-4">Relationships cannot be confined to binary categories like “follower” or “friend”. Define as many personalized circles as makes sense for you.</div>
+        <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img src="/img/c.png" alt="circle screenshot" class="w-full max-w-none">
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#282736] rounded-2xl p-12 ">
+        <div class="text-[32px]  font-bold text-center">Set some healthy boundaries</div>
+        <div class="text-lg text-center text-base-content/70 mt-4">Assign roles to circles and users to control if and how they can see and interact with you and your data. </div>
+        <div class="relative mt-16 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img src="/img/r.png" alt="circle screenshot" class="w-full max-w-none">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#282736] rounded-2xl shadow-xl p-12">
+      <div class="grid grid-cols-1 gap-y-16 gap-x-10 sm:gap-y-20 lg:grid-cols-2 items-center">
+        <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img src="/img/3.png" alt="free to leave" width="640" height="492" class="w-full max-w-none">
+          </div>
+        </div>
+        <div>
+      <div class="text-[32px] font-bold text-left">You are free to leave</div>
+      <div class="text-lg text-left text-base-content/70 mt-4">The platform or instance does not own your profile, posts, or network. These belong to you. On the fediverse, you are not restricted to a specific software or instance; you are free to leave, transfer all your data, and move to a different instance.</div>
+      </div>
+      </div>
+    </div>
+</div>
+<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto my-32">
+    <div class="relative flex flex-col text-center items-center grid-cols-1 gap-4 place-content-center">
+      <div style="width: 1px;" class="h-16 mx-auto mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
+      <div class="text-[36px] font-extrabold leading-[1.3] tracking-wider text-base-content">Much more than a microblog</div>
+      <div class="text-[24px] mx-auto max-w-[800px] leading-[35px] font-normal text-base-content/60">Choose from a growing list of Bonfire extensions to enhance your instance and uncover new possibilities.</div>
+    </div>
+    
+    <div class="colums-1 md:columns-2 lg:columns-3 gap-10 mt-20">
+
+      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="1em" height="1em" viewBox="-5 -5 24 24"><path fill="currentColor" d="M6 6v2h2V6H6zm0-2h2V1a1 1 0 1 1 2 0v3h3a1 1 0 0 1 0 2h-3v2h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3H6v3a1 1 0 0 1-2 0v-3H1a1 1 0 1 1 0-2h3V6H1a1 1 0 1 1 0-2h3V1a1 1 0 1 1 2 0v3z"/></svg>          
+        </div>
+        <div class="text-xl font-semibold ">Topics</div>
+        <div class="text-lg  text-base-content/70 mt-4">
+          Topics connect you with people who share your passion, to share ideas and have in-depth discussions on a specific theme. By following a topic (like "solarpunk" or "upcycling tips") you'll receive posts carefully curated by a team you trust.
+        </div>
+        <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img src="/img/topics.png" alt="topics preview" width="640" height="492" class="w-full max-w-none">
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2q1.625 0 3.075.475q1.45.475 2.675 1.325L16.3 5.275q-.95-.6-2.025-.938Q13.2 4 12 4Q8.675 4 6.338 6.337Q4 8.675 4 12t2.338 5.663Q8.675 20 12 20q3.325 0 5.663-2.337Q20 15.325 20 12q0-.45-.05-.9t-.15-.875L21.425 8.6q.275.8.425 1.65q.15.85.15 1.75q0 2.075-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Zm-1.4-5.4l-4.25-4.25l1.4-1.4l2.85 2.85l10-10.025l1.4 1.4Z"/></svg>
+        </div>
+        <div class="text-xl font-semibold ">Tasks</div>
+        <div class="text-lg  text-base-content/70 mt-4">
+        Create to-do lists and assign tasks to yourself or others across multiple instances. Coordinate work in teams, stay in the loop, make progress, and get it done.
+        </div>
+      </div>
+      
+      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5l-9-4m0 4a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m5.13 12A9.69 9.69 0 0 1 12 20.92A9.69 9.69 0 0 1 6.87 17c-.34-.5-.63-1-.87-1.53c0-1.65 2.71-3 6-3s6 1.32 6 3c-.24.53-.53 1.03-.87 1.53Z"/></svg>
+        </div>
+        <div class="text-xl font-semibold ">Custom roles</div>
+        <div class="text-lg  text-base-content/70 mt-4">
+        Create and assign custom roles to grant different groups of permissions to users and circles. Roles affect what actions users can take and what information they can view, interact with, or even edit.</div>
+        <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img src="/img/role.png" alt="role preview" width="640" height="492" class="w-full max-w-none">
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M14 14.252v2.09A6 6 0 0 0 6 22l-2-.001a8 8 0 0 1 10-7.748zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6s6 2.685 6 6s-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm6.586 6l-1.829-1.828l1.415-1.415L22.414 18l-4.242 4.243l-1.415-1.415L18.586 19H15v-2h3.586z"/></svg>
+        </div>
+        <div class="text-xl font-semibold ">Shared user</div>
+        <div class="text-lg  text-base-content/70 mt-4">
+        Manage your group's online presence by sharing a single user profile with multiple people. Useful for organizations, teams, or families to manage their online presence collectively and communicate with others transparently. 
+        </div>
+      </div>
+
+    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M8 3C5.79 3 4 4.79 4 7v7c0 1.1.9 2 2 2h3v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h3c1.1 0 2-.9 2-2V3H8m0 2h4v2h2V5h1v4h2V5h1v5H6V7c0-1.1.9-2 2-2m-2 9v-2h12v2H6Z"/></svg>
+      </div>
+      <div class="text-xl font-semibold ">Personalize the look & feel</div>
+      <div class="text-lg  text-base-content/70 mt-4">
+      Pick your preferred color scheme or define your own palette to give your instance a personal touch. Creating your own theme is simple and does not require writing code. 
+      </div>
+      <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+          <img src="/img/theme.png" alt="theme preview" width="640" height="492" class="w-full max-w-none">
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16H3l3.47-4.66A2 2 0 1 0 3 9.8m7 6.2V8h4m-4 4h3m4 4v-6a2 2 0 0 1 4 0v6m-4-3h4"/></svg>
+      </div>
+      <div class="text-xl font-semibold ">Two-Factor Authentication</div>
+      <div class="text-lg  text-base-content/70 mt-4">
+      Increase the security of your account by enabling Two-Factor Authentication (2FA). 
+      </div>
+    </div>
+    
+    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M18 24V12m5 10l-10-7m10 0l-10 7M8 11A5 5 0 1 0 8 1a5 5 0 0 0 0 10Zm5.023 2.023C11.772 11.76 10.013 11 8 11c-4 0-7 3-7 7v5h10"/></svg>
+      </div>
+      <div class="text-xl font-semibold ">Multiple identities</div>
+      <div class="text-lg  text-base-content/70 mt-4">
+      Create multiple user profiles linked to the same account for an extra layer of privacy. This enables you to maintain a profile for each aspect of your online life, with different followers and privacy settings, without having to log in to separate accounts.</div>
+    </div>
+
+    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><path fill="currentColor" d="M3.135 6.89c.933-.725 1.707-.225 2.74.971c.116.135.272-.023.361-.1c.088-.078 1.451-1.305 1.518-1.361c.066-.059.146-.169.041-.292a36.238 36.238 0 0 1-.743-.951c-1.808-2.365 4.946-3.969 3.909-3.994c-.528-.014-2.646-.039-2.963-.004c-1.283.135-2.894 1.334-3.705 1.893c-1.061.726-1.457 1.152-1.522 1.211c-.3.262-.048.867-.592 1.344c-.575.503-.934.122-1.267.414c-.165.146-.627.492-.759.607c-.133.117-.157.314-.021.471c0 0 1.264 1.396 1.37 1.52c.105.122.391.228.567.071c.177-.156.632-.553.708-.623c.078-.066-.05-.861.358-1.177zm5.708.517c-.12-.139-.269-.143-.397-.029L7.012 8.63a.289.289 0 0 0-.027.4l8.294 9.439c.194.223.53.246.751.053l.97-.813a.54.54 0 0 0 .052-.758L8.843 7.407zM19.902 3.39c-.074-.494-.33-.391-.463-.182c-.133.211-.721 1.102-.963 1.506c-.24.4-.832 1.191-1.934.41c-1.148-.811-.749-1.377-.549-1.758c.201-.383.818-1.457.907-1.59c.089-.135-.015-.527-.371-.363c-.357.164-2.523 1.025-2.823 2.26c-.307 1.256.257 2.379-.85 3.494l-1.343 1.4l1.349 1.566l1.654-1.57c.394-.396 1.236-.781 1.998-.607c1.633.369 2.524-.244 3.061-1.258c.482-.906.402-2.814.327-3.308zM2.739 17.053a.538.538 0 0 0 0 .758l.951.93c.208.209.538.121.746-.088l4.907-4.824l-1.503-1.714l-5.101 4.938z"/></svg>
+      </div>
+      <div class="text-xl font-semibold ">Inventory management</div>
+      <div class="text-lg  text-base-content/70 mt-4">
+      Track tools, goods, and other assets, and record when they are transferred, stored, consumed, recycled, etc. The inventory extension is powered by the <a href="https://www.valueflo.ws/" class="link">ValueFlows vocabulary</a>.
+      </div>
+      <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+          <img src="/img/inventory.png" alt="inventory preview" width="640" height="492" class="w-full max-w-none">
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
+      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1.13em" height="1em" viewBox="0 0 576 512"><path fill="currentColor" d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8l-17.5-17.5zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512C34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z"/></svg>
+      </div>
+      <div class="text-xl font-semibold ">Build your own</div>
+      <div class="text-lg  text-base-content/70 mt-4">
+      You can develop your own extensions, and leverage on our set of utilities and core modules to plug it seamlessy with the rest of the core modules.
+      Develop your own extensions using our set of utilities and core modules for seamless integration with core functionality such as circles/boundaries, federation, and activity feeds.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+    
+
+<div class="max-w-screen-lg px-4 lg:px-8 2xl:max-w-screen-xl lg:mx-auto mt-32">
+    <div class="relative flex flex-col text-center items-center grid-cols-1 gap-4 place-content-center">
+      <div style="width: 1px;" class="h-16 mx-auto mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
+      <div class="text-[36px] font-extrabold leading-[1.3] tracking-wider text-base-content">Designed to be forked</div>
+      <div class="text-[24px] mx-auto max-w-[800px] leading-[35px] font-normal text-base-content/60">Bonfire is meant to be easily customised and extended by developers </div>
+    </div>
+    
+    <div class="grid grid-cols-3 items-start gap-10 mt-20">
+
+      <div class=" bg-gradient-to-r from-blue-700 via-blue-800 to-white/20 col-span-3 rounded-2xl shadow-xl p-[1px]">
+        <div class="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 rounded-2xl px-16 py-20">
+          <div class="grid grid-cols-1 gap-y-16 gap-x-10 sm:gap-y-20 lg:grid-cols-2 items-center">
+            <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+            <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+              <img src="/img/modular.png" alt="modularity preview" class="w-full max-w-none">
+            </div>
+          </div>
+            <div>
+              <div class="text-[32px] font-bold ">Modular at its core</div>
+              <div class="text-lg  text-base-content/70 mt-4">Bonfire is made of independent extensions and modules, glued together by a set of configuration files. Every line of Bonfire’s code is available to be used or forked, in a collection of repositories that can be assembled and re-assembled to create all kinds of full-featured apps. </div>
+              <a href="/docs" class="normal-case bg-base-content/20 btn mt-4 ">Read our documentation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#282736] col-span-3 lg:col-span-2 rounded-2xl p-12">
+        <div class="w-[64px] mb-8 h-[64px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-2xl shadow-xl">
+          <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M16.7 17.3q-.275.275-.687.275q-.413 0-.713-.3t-.3-.713q0-.412.3-.712l3.875-3.875l-3.9-3.9Q15 7.8 15.012 7.387q.013-.412.288-.687q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.3.3.3.7q0 .4-.3.7Zm-9.4 0l-4.6-4.6q-.3-.3-.3-.7q0-.4.3-.7l4.6-4.6q.275-.275.7-.288q.425-.012.725.288t.3.712q0 .413-.3.713l-3.9 3.9l3.9 3.9q.275.275.263.687q-.013.413-.288.688q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
+        </div>
+        <div class="text-[24px] font-bold ">Open source</div>
+        <div class="text-lg  text-base-content/70 mt-4">Bonfire is libre and open source software. This means that you can use and modify Bonfire without asking permission from anyone. Plus, you can benefit from future developments by anyone improving the codebase, due to the AGPL license.</div>
+        <a href="https://github.com/bonfire-networks/" target="_blank" class="normal-case  mt-4  btn">Get the code</a>
+      </div>
+      
+      <div class="bg-[#282736] col-span-3 lg:col-span-1 rounded-2xl p-12">
+        <div class="w-[64px] mb-8 h-[64px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-2xl shadow-xl">
+          <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 9.5a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0-11 0"/><path d="M9 14.5a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0-11 0"/></g></svg>
+        </div>
+        <div class="text-[24px] font-bold ">Community driven</div>
+        <div class="text-lg  text-base-content/70 mt-4">Reach out for support while using and leveraging the project for your own needs. </div>
+        <a href="/contribute" class="normal-case  mt-4  btn">Contribute</a>
+      </div>
+      
+     
+  </div>
+
+</div>
+
+
+
+    
+ 
+
+
+
+  <div class="border-b border-base-content/30 pb-32">
+    <div class="max-w-screen-lg mx-4 mt-32 2xl:max-w-screen-xl lg:mx-auto">
+    
+    
+    <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
+      <div id="blog" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
+      <div class="relative mx-auto mb-24">
+        <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Latest from the blog</span>
+      </div>
+      </div>
+      
+      
+      
 
 <section class="mt-6 lg:px-0">
   
@@ -579,6 +537,13 @@
                 </svg>
                 circles
                 </span>
+                </a><a href="/tags/zappa/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                zappa
+                </span>
                 </a>
         </div>
         <div>
@@ -637,6 +602,13 @@
                 </svg>
                 social
                 </span>
+                </a><a href="/tags/zappa/">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" />
+                </svg>
+                zappa
+                </span>
                 </a>
         </div>
         <div>
@@ -676,58 +648,63 @@
 <div class="flex mx-auto mt-12">
   <a href="/blog" class="btn btn-outline btv-sm normal-case">View all posts</a>
 </div>
-  </div>
-  
-  <div class="p-20 mt-16 rounded-none lg:px-20 bg-base-content bg-opacity-10 lg:mx-0">
-    <div class="max-w-screen-lg 2xl:max-w-screen-xl lg:mx-auto">
-        <h3 class="flex flex-col items-center text-4xl font-bold tracking-wide md:flex-row md:space-x-4 text-neutral-content">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 grow-0 text-error" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-          </svg>  
-          <span class="mt-2 text-center md:text-left md:mt-0 grow-0">Support the project</span>
-        </h3>
-        <div class="mt-8 leading-relaxed text-center md:text-left text-md text-neutral-content text-opacity-60 ">
-            <p>Bonfire is still in development. If you want to show us your support, we gladly accept donations and other contributions.</p>
-        </div>
-        <div class="flex items-center mt-6 space-x-8">
-            <a href="/contribute" class="btn btn-primary">Contribute</a>
-            <a target="blank" href="https://changemap.co/bonfire/bonfire/" class="flex items-center gap-2 text-sm font-semibold uppercase link link-primary link-hover">
-              <span>View our roadmap</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-        </div>
-        <h3 class="flex flex-col items-center mt-16 text-4xl font-bold tracking-wide md:flex-row md:space-x-4 text-neutral-content">
-          <span class="">✨</span>
-          <span class="mt-2 text-center md:text-left md:mt-0 grow-0">Sponsored by</span>
-        </h3>
-            <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
-              <div class="flex justify-center col-span-1 px-8 py-8 bg-gray-50/10">
-                <img class="max-h-12" src="/img/logo_nlnet.svg" alt="NlNet">
-              </div>
-              <div class="flex justify-center col-span-1 px-8 py-8 bg-white/10">
-                <img class="max-h-12" src="/img/ecf_logo.svg" alt="European Cultural Foundation">
-              </div>
-              <div class="flex justify-center col-span-1 px-8 py-8 place-content-center bg-white/10">
-                <a class="self-center text-lg font-bold link" href="https://opencollective.com/bonfire-networks/contribute/sponsor-39507/checkout">Become a sponsor</a>
-              </div>
+    
+        <div class="rounded-xl place-content-center items-center flex flex-col md:flex-row gap-16 mt-32">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.</div>
             </div>
-        
 
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
 
+            
 
+    
+    
     </div>
+    </div>
+  </div>
+  <div class="p-20 mt-16 rounded-none lg:px-20 bg-[#1B1A27] lg:mx-0">
+
+  <div class="relative mt-16 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+    <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+      <img src="/img/footer.png" alt="footer screenshot" class="w-full max-w-none">
+    </div>
+  </div>
+
+  
+
+
 </div>
 
   
 
-</div>
 
 
 
 
-<div class="bg-base-100">
+<div class="">
 <footer class="flex items-center max-w-screen-xl p-4 py-8 mx-auto footer text-neutral-content">
   <div class="items-center flex-1 grid-flow-col">
     <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>

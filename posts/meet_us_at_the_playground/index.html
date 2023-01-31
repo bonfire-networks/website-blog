@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-base-300" data-theme="bonfire">
+<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,72 +10,82 @@
     <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
-    
-  </head>
-  <body data-theme="bonfire" class="w-full"> 
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
     <div
-      class="sticky top-0 z-20 bg-base-100"
+      class="sticky top-0 z-20 bg-[#1B1A27]"
       x-data="{open: false}" 
     >
-    <header 
-      class="max-w-screen-xl mx-auto navbar">
-      <div class="flex items-center w-full h-full px-4">
-        <div class="flex items-center flex-1">
-          
-  
-          <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
-            <div class="flex items-center flex-1 flex-shrink-0">
-              <a href="/" class="flex items-center space-x-4">
-                <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-                <span class="flex items-center"><span class="text-2xl font-bold tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-primary">Beta</div></span>
-              </a>
-            </div>
-              <ul class="flex-row hidden p-0 sm:flex menu menu-horizontal">
-                <li>
-                 <a href="/docs" class=" ">
-                  <span class="text-base font-regular">Documentation</span>
-                </a>
-                </li>
-                <li>
-                 <a href="/faq" class=" ">
-                  <span class="text-base font-regular">FAQs</span>
-                </a>
-                </li>
-                <li>
-                <a href="/blog" class=" ">
-                  <span class="text-base font-regular">Blog</span>
-                </a>
-                </li>
-                <li>
-                  <a href="/contribute" class=" ">
-                    <span class="text-base font-regular">Contribute</span>
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app" >
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-                  </svg>
-                  <span class="hidden lg:block">Get the code</span>
-                  </a>
-                </li>
-              </ul>
+    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+      <div class="w-[108rem] flex-none flex justify-end">
+          <source srcset="/img/bgover.png" type="image/avif">
+          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
+        </picture>
+      </div>
+    </div>
 
-              
-          </div>
-          <div class="inset-y-0 right-0 flex items-center sm:hidden">
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
-              <span class="sr-only">Open main menu</span>
-              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
+    <header 
+      class="max-w-screen-xl relative z-30 mx-auto navbar">
+      <div class="navbar-start">
+        <div class="flex items-center flex-1 flex-shrink-0">
+          <a href="/" class="flex items-center space-x-4">
+            <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+            <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-ghost">Beta</div></span>
+          </a>
         </div>
-      </div>    
+      </div>
+      <div class="hidden navbar-center lg:flex">
+        <ul class="flex-row gap-3 p-0 menu menu-compact menu-horizontal">
+          <li>
+           <a href="/docs" class=" ">
+            <span class="text-sm font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+           <a href="/faq" class=" ">
+            <span class="text-sm font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-sm font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/contribute" class=" ">
+              <span class="text-sm font-regular">Contribute</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <a href="/start/" >
+          <span class="hidden btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+        </a>
+
+        <div class="inset-y-0 right-0 flex items-center sm:hidden">
+          <a href="/start/" >
+            <span class="btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+          </a>
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+            <span class="sr-only">Open main menu</span>
+            <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+     
+
+   
     </header>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
@@ -148,6 +158,13 @@
                 <circle cx="4" cy="4" r="3" />
               </svg>
               social
+            </span>
+            </a><a href="/tags/zappa/">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+              <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                <circle cx="4" cy="4" r="3" />
+              </svg>
+              zappa
             </span>
             </a>
       </span>
@@ -237,7 +254,7 @@ As part of the sign-up process, all users will be asked to agree to a <a href="h
 
 
 
-<div class="bg-base-100">
+<div class="">
 <footer class="flex items-center max-w-screen-xl p-4 py-8 mx-auto footer text-neutral-content">
   <div class="items-center flex-1 grid-flow-col">
     <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
