@@ -19,10 +19,16 @@
       class="sticky top-0 z-20 bg-[#1B1A27]"
       x-data="{open: false}" 
     >
-
+    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+      <div class="w-[108rem] flex-none flex justify-end">
+          <source srcset="/img/bgover.png" type="image/avif">
+          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
+        </picture>
+      </div>
+    </div>
 
     <header 
-      class="max-w-screen-xl mx-auto navbar">
+      class="max-w-screen-xl relative z-30 mx-auto navbar">
       <div class="navbar-start">
         <div class="flex items-center flex-1 flex-shrink-0">
           <a href="/" class="flex items-center space-x-4">
