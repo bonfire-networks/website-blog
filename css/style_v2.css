@@ -4688,8 +4688,8 @@ html {
   margin-top: 5rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mb-10 {
@@ -4698,10 +4698,6 @@ html {
 
 .ml-6 {
   margin-left: 1.5rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mb-\[-46px\] {
@@ -4766,6 +4762,10 @@ html {
 
 .mt-0 {
   margin-top: 0px;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .mt-auto {
@@ -5427,12 +5427,6 @@ html {
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-}
-
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -5443,6 +5437,12 @@ html {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
 .space-y-16 > :not([hidden]) ~ :not([hidden]) {
@@ -6007,12 +6007,20 @@ html {
   padding: 1rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-3 {
   padding: 0.75rem;
 }
 
 .p-0 {
   padding: 0px;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-3 {
@@ -6269,6 +6277,11 @@ html {
   font-size: 24px;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -6279,11 +6292,6 @@ html {
 
 .text-\[46px\] {
   font-size: 46px;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .font-medium {
@@ -6769,6 +6777,10 @@ html {
 .placeholder\:text-base-300::placeholder {
   --tw-text-opacity: 1;
   color: hsl(var(--b3, var(--b2)) / var(--tw-text-opacity));
+}
+
+.hover\:border-base-content\/30:hover {
+  border-color: hsl(var(--bc) / 0.3);
 }
 
 .hover\:bg-indigo-200:hover {

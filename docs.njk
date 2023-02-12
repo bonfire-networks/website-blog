@@ -8,57 +8,75 @@ description: "Discover how Bonfire can be tailored for your community needs and 
 ---
 
 
-<h1 class="text-xl font-medium text-base-content">Here you'll find some work-in-progress guides to get up and running.</h1> 
-<p class="mt-2 text-base-content text-opacity-70">
-    Please join our <a class="link" href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank">chat room</a> or <a href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="link" target="_blank">open an issue</a> if you have feedback or encounter a bug.
-</p>
+<h1 class="mt-6 text-4xl font-medium text-base-content">Bonfire docs</h1> 
+<div class="mt-10 prose">
+  <p>Here you'll find some work-in-progress guides to get up and running with Bonfire, or to build on top of it.  
+  Please join our <a class="link" href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank">chat room</a> or <a href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="link" target="_blank">open an issue</a> if you have feedback or encounter a bug. </p>
+</div>
 
-<ul class="flex flex-col mt-4 space-y-3 mb-12">
-    <li class="rounded shadow bg-neutral-content bg-opacity-30 hover:bg-opacity-40 hover:shadow-2xl">
-        <a class="block p-3" href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank">
-            <div class="flex flex-col space-y-2">
-              <div class="text-lg font-bold tracking-wider">
+<ul class="flex flex-col gap-6 mt-10 mb-10">
+    <li class="border rounded hover:border-base-content/30 border-base-content/10">
+        <a class="block p-10" href="https://doc.bonfirenetworks.org/deploy.html#content" target="_blank">
+            <div class="flex flex-col">
+              <div class="text-2xl font-medium tracking-wider">
                 Setup an instance
               </div>
-              <div class="flex items-center space-x-2 font-normal text-base-content/80">
-                <span>How to deploy Bonfire on a server (currently only for alpha testing)</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+              <div class="flex items-center mt-4 space-x-2 font-normal text-base-content/80">
+                <span>How to deploy Bonfire on a server (currently only for beta testing)</span>
               </div>
+              <div class="mt-8 text-sm font-light uppercase text-base-content/60">
+                <span>Requirements</span>
+              </div>
+              <div class="flex flex-col gap-3 mt-4">
+                <div class="flex items-center gap-3">
+                  <span>
+                    <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M8.7 17.3q-.275-.275-.275-.7q0-.425.275-.7l3.9-3.9l-3.9-3.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.15.15.213.325q.062.175.062.375t-.062.375q-.063.175-.213.325l-4.6 4.6q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
+                  </span>
+                  <span class="text-sm">Some sysadmin knowledge and comfort in using the terminal</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span>
+                    <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M8.7 17.3q-.275-.275-.275-.7q0-.425.275-.7l3.9-3.9l-3.9-3.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.15.15.213.325q.062.175.062.375t-.062.375q-.063.175-.213.325l-4.6 4.6q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
+                  </span>
+                  <span class="text-sm">Server space</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span>
+                    <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M8.7 17.3q-.275-.275-.275-.7q0-.425.275-.7l3.9-3.9l-3.9-3.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.15.15.213.325q.062.175.062.375t-.062.375q-.063.175-.213.325l-4.6 4.6q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
+                  </span>
+                  <span class="text-sm">Domain name & access to DNS</span>
+                </div>
+              </div>
+              
             </div>
         </a>
     </li> 
-    <li class="rounded shadow bg-neutral-content bg-opacity-30 hover:bg-opacity-40 hover:shadow-2xl">
-        <a class="block p-3" href="https://doc.bonfirenetworks.org/hacking.html#content" target="_blank">
-            <div class="flex flex-col space-y-2">
-              <div class="text-lg font-bold tracking-wider">
-                Hacking on Bonfire
+    <li class="flex gap-6">
+      <div class="flex-1 w-full rounded shadow bg-[#282736] p-6  hover:shadow-2xl">
+          <a class="block p-3" href="https://doc.bonfirenetworks.org/hacking.html#content" target="_blank">
+              <div class="flex flex-col space-y-2">
+                <div class="text-lg font-bold tracking-wider">
+                  Hack on Bonfire
+                </div>
+                <div class="font-normal prose-sm prose text-base-content/80">
+                  Follow this guide to set up a development environment. <br/> By the end of the guide, you will be able to run Bonfire locally, fork one or more extension and compile your changes.
+                </div>
               </div>
-              <div class="flex items-center space-x-2 font-normal text-base-content/80">
-                <span>How to set up a development environment</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+          </a>
+      </div> 
+      <div class="flex-1 w-full rounded shadow bg-[#282736] p-6  hover:shadow-2xl">
+          <a class="block p-3" href="https://doc.bonfirenetworks.org/" target="_blank">
+              <div class="flex flex-col space-y-2">
+                <div class="text-lg font-bold tracking-wider">
+                  Architecture overview
+                </div>
+                <div class="font-normal prose-sm prose text-base-content/80">
+                  Bonfire architecture aims to encourage high flexibility in term of configurability and extensibility, while ensuring that the software remains easy to set up, resource-light for small deployments, and scalable for larger ones.
+                </div>
               </div>
-            </div>
-        </a>
-    </li> 
-    <li class="rounded shadow bg-neutral-content bg-opacity-30 hover:bg-opacity-40 hover:shadow-2xl">
-        <a class="block p-3" href="https://doc.bonfirenetworks.org/" target="_blank">
-            <div class="flex flex-col space-y-2">
-              <div class="text-lg font-bold tracking-wider">
-                Technical docs
-              </div>
-              <div class="flex items-center space-x-2 font-normal text-base-content/80">
-                <span>Documentation about the architecture, extensions, libraries, modules and functions...</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-              </div>
-            </div>
-        </a>
-    </li> 
+          </a>
+        </div> 
+    </li>
     <li class="rounded shadow bg-neutral-content bg-opacity-30 hover:bg-opacity-40 hover:shadow-2xl">  
         <a class="block p-3" href="https://github.com/bonfire-networks/bonfire-app/milestones?direction=asc&sort=due_date&state=open" target="_blank">
             <div class="flex flex-col space-y-2">
