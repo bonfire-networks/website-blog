@@ -18,28 +18,23 @@ templateClass: tmpl-pages
             <div class="relative pl-2 mt-3">
               <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/">
+                  <a href="/docs" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/">
                     <span class="truncate">Introduction</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/quickstart" aria-current="page">
-                    <span class="truncate">System requirements</span>
-                  </a>
-                </li>
-                <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                  <a href="/docs/deploy" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
                     <span class="truncate">Start an instance</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/authentication">
-                    <span class="truncate">Start a local environment</span>
+                  <a href="/docs/hacking" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/authentication">
+                    <span class="truncate">Setup a Dev environment</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/pagination">
-                    <span class="truncate">Installation troubleshooting</span>
+                  <a target="_blank" href="/faqs" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/pagination">
+                    <span class="truncate">FAQs</span>
                   </a>
                 </li>
                 {# <li class="relative">
@@ -61,30 +56,40 @@ templateClass: tmpl-pages
             <div class="relative pl-2 mt-3">
               <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/">
+                  <a href="/docs/architecture" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/">
                     <span class="truncate">Architecture overview</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/quickstart" aria-current="page">
-                    <span class="truncate">Federations</span>
+                  <a href="/docs/bonfire-flavoured-elixir" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/quickstart" aria-current="page">
+                    <span class="truncate">Bonfire codestyle</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
-                    <span class="truncate">Core modules</span>
+                  <a href="/docs/boundaries" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                    <span class="truncate">Boundaries</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
-                    <span class="truncate">UI modules</span>
+                  <a href="/docs/database" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                    <span class="truncate">Database</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/graphql" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                    <span class="truncate">GraphQL</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/mrf" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                    <span class="truncate">MRF</span>
                   </a>
                 </li>
               </ul>
             </div>
           </li>
 
-          <li class="relative pt-4 mt-4 border-t border-base-content/10">
+          {# <li class="relative pt-4 mt-4 border-t border-base-content/10">
             <h2 class="text-xs font-semibold uppercase text-base-content/60">Guides</h2>
             <div class="relative pl-2 mt-3">
               <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
@@ -101,40 +106,40 @@ templateClass: tmpl-pages
                 
               </ul>
             </div>
-          </li>
+          </li> #}
 
           <li class="relative pt-4 mt-4 border-t border-base-content/10">
             <h2 class="text-xs font-semibold uppercase text-base-content/60">Resources</h2>
             <div class="relative pl-2 mt-3">
               <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
-                <li class="relative">
+                {# <li class="relative">
                   <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/">
                     <span class="truncate">Bonfire governance</span>
                   </a>
-                </li>
+                </li> #}
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/quickstart" aria-current="page">
+                  <a href="/docs/coc" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/quickstart" aria-current="page">
                     <span class="truncate">Code of Conduct</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                  <a href="/docs/privacy" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
                     <span class="truncate">Privacy</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
-                    <span class="truncate">Changelogs</span>
+                  <a href="/docs/changelog" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                    <span class="truncate">Changelog</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                  <a href="https://github.com/bonfire-networks/bonfire-app/issues" target="_blank" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
                     <span class="truncate">Issue tracker</span>
                   </a>
                 </li>
                 <li class="relative">
-                  <a class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
-                    <span class="truncate">Faqs</span>
+                  <a href="https://opencollective.com/bonfire-networks" target="_blank" class="flex justify-between gap-2 py-1 pl-2 pr-3 text-sm font-medium transition text-base-content/80 hover:text-base-content/100" href="/sdks">
+                    <span class="truncate">Support</span>
                   </a>
                 </li>
               </ul>
