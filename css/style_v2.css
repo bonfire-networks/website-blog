@@ -468,7 +468,7 @@ html {
   bg-base-300: #1B1A27;
 }
 
-.-rotate-180, .rotate-0, .skew-y-2, .transform {
+.-rotate-180, .rotate-0, .skew-y-2, .-skew-y-2, .transform {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -5171,6 +5171,11 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-skew-y-2 {
+  --tw-skew-y: -2deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -5769,6 +5774,11 @@ html {
 
 .bg-\[\#1B1A27\]\/80 {
   background-color: rgb(27 26 39 / 0.8);
+}
+
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--a) / var(--tw-bg-opacity));
 }
 
 .bg-opacity-10 {
