@@ -22,6 +22,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies & build
+        env:
+          API_TOKEN: ${{secrets.API_TOKEN}}
         run: |
           npm ci
           npm run build          
@@ -32,3 +34,5 @@ jobs:
           publish_dir: ./_site
           github_token: ${{ secrets.GITHUB_TOKEN }}
           cname: bonfirenetworks.org
+        env:
+          API_TOKEN: ${{secrets.API_TOKEN}}
