@@ -54,7 +54,7 @@ If you would like to test Bonfire as a user rather than as an administrator then
 - **If I want to be involved, how much time do I need to set aside for beta testing?**
 We would appreciate any and all help with beta testing. You may be able to spend 15 minutes looking around and sharing your thoughts on anything that doesn't work as expected. You might be able to experiment with the Bonfire playground over a number of days or weeks, and give us more in-depth feedback. Whatever works for you, works for us. After all, *given enough eyeballs, all bugs are shallow!*
 - **What happens if I come across inappropriate content while involved in user testing?**
-As part of the sign-up process, all users will be asked to agree to a [Code of Conduct](https://bonfirenetworks.org/conduct/). The Bonfire team has spent time and effort in crafting this document, and expect it to be followed in all spaces operated by us. Of course, feedback on improving future versions of the code of conduct is welcome. Please follow the guildelines for [reporting issues](https://bonfirenetworks.org/conduct/#6.-reporting-issues) should you come across anything which contravenes the Code of Conduct.
+As part of the sign-up process, all users will be asked to agree to a [Code of Conduct](/docs/conduct/). The Bonfire team has spent time and effort in crafting this document, and expect it to be followed in all spaces operated by us. Of course, feedback on improving future versions of the code of conduct is welcome. Please follow the guildelines for [reporting issues](/docs/conduct/#6.-reporting-issues) should you come across anything which contravenes the Code of Conduct.
 
 Our general FAQ section can be found on the [Bonfire website](https://bonfirenetworks.org/faq/). 
 
