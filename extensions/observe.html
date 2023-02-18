@@ -34,16 +34,45 @@
         <div class="flex items-center flex-1 flex-shrink-0">
           <a href="/" class="flex items-center space-x-4">
             <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-            <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="ml-2 badge badge-ghost">Beta</div></span>
+            <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary">v0.4.0-beta.43</div></span>
           </a>
         </div>
       </div>
       <div class="hidden navbar-center lg:flex">
         <ul class="flex-row gap-3 p-0 menu menu-compact menu-horizontal">
+          <li tabindex="0">
+            <a>
+              Developers
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+            </a>
+            <ul class="p-2 gap-2 bg-base-100">
+              <li>
+                <a class="flex items-start flex-wrap gap-1 flex-col" href="/docs">
+                    <div class="font-bold">Documentation</div>
+                    <div class="text-sm flex-wrap text-base-content/70">Everything you need to get started with bonfire</div>
+                </a>
+              </li>
+              <li>
+                <a class="flex items-start flex-wrap gap-1 flex-col" href="/roadmap">
+                  <div class="font-bold">Roadmap</div>
+                  <div class="text-sm text-base-content/70">See what's coming next</div>
+                </a>
+              </li>
+              <li>
+                <a class="flex items-start flex-wrap gap-1 flex-col" href="/docs/changelog">
+                  <div class="font-bold">Changelog</div>
+                  <div class="text-sm text-base-content/70">See the latest updates and improvements</div>
+                </a></li>
+              <li>
+                <a class="flex items-start flex-wrap gap-1 flex-col" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                  <div class="font-bold">Get the code</div>
+                  <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li>
-           <a href="/docs" class=" ">
-            <span class="text-sm font-regular">Documentation</span>
-          </a>
+ 
           </li>
           <li>
            <a href="/faq" class=" ">
@@ -56,27 +85,19 @@
           </a>
           </li>
           <li>
-            <a href="/contribute" class=" ">
-              <span class="text-sm font-regular">Contribute</span>
+            <a href="/community" class=" ">
+              <span class="text-sm font-regular">Community</span>
             </a>
           </li>
         </ul>
       </div>
 
       <div class="navbar-end">
-        <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="mr-4 relative cursor-pointer items-center space-x-2 text-center font-regular ease-out duration-200 rounded outline-none transition-all outline-0 focus-visible:outline-4 focus-visible:outline-offset-1   text-scale-1200 hover:bg-scale-500 shadow-none focus-visible:outline-scale-700  text-xs px-2.5 py-1 group hidden lg:flex">
-          <div class="text-brand-800 flex h-4 w-4 items-center justify-center">
-            <div class="text-scale-900 flex h-3 w-3 items-center justify-center transition-all group-hover:h-4 group-hover:w-4 group-hover:text-yellow-900 group-focus:h-4 group-focus:w-4 group-focus:text-yellow-900">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sbui-icon "><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-          </div>
-          <span class="truncate">Check out the code</span>
-        </a>
         <a href="/start/" >
           <span class="hidden btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
         </a>
 
-        <div class="inset-y-0 right-0 flex items-center sm:hidden">
+        <div class="inset-y-0 right-0 flex items-center lg:hidden">
           <a href="/start/" >
             <span class="btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
           </a>
@@ -98,7 +119,7 @@
     </header>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
-      class="sm:hidden" 
+      class="lg:hidden" 
       id="mobile-menu" 
       x-show="open" 
       style="display: none;">
@@ -212,30 +233,35 @@
 </div>
 
 <div class="">
-<footer class="flex items-center max-w-screen-xl p-4 py-8 mx-auto footer text-neutral-content">
-  <div class="items-center flex-1 grid-flow-col">
-    <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+  <footer class="footer p-10 py-24 border-t border-base-content/10 text-base-content">
+  <div>
+    <div class="items-center flex-1 grid-flow-col">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+    </div> 
+    <p>Bonfire Networks<br/>Proudly FLOSS since 2020</p>
   </div> 
-  <div class="flex items-center">
-    <div class="flex items-center space-x-2 text-base-content text-opacity-80">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd" />
-      </svg>
-      <span class="text-sm font-medium">team [at] bonfire.cafe </span>
-     </div>
-    <a href="/docs/conduct" class="btn btn-sm btn-ghost">
-      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">Code of conduct</span>
-    </a>
-    <a href="/docs/privacy" class="btn btn-sm btn-ghost">
-      <span class="hidden ml-2 text-sm font-medium normal-case lg:block">Privacy policy</span>
-    </a>
-    <a target="blank" href="https://github.com/bonfire-networks" class="btn btn-sm btn-ghost">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-      </svg>
-    </a>
+  <div>
+    <span class="footer-title">Developers</span> 
+    <a href="/docs" class="link link-hover">Documentation</a> 
+    <a href="/roadmap" class="link link-hover">Roadmap</a> 
+    <a href="/docs/changelog" class="link link-hover">Changelog</a> 
+    <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="link link-hover">Code</a>
+  </div> 
+  <div>
+    <span class="footer-title">Product</span> 
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/docs/faq" class="link link-hover">FAQs</a> 
+    <a href="campground.bonfire.cafe" target="_blank" class="link link-hover">Campground</a> 
+  </div> 
+  <div>
+    <span class="footer-title">Community</span> 
+    <a href="/community" class="link link-hover">Community</a> 
+    <a href="/docs/conduct" class="link link-hover">Terms of use</a> 
+    <a href="/docs/privacy" class="link link-hover">Privacy policy</a> 
+    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="link link-hover">Support</a> 
   </div>
 </footer>
+
 </div>
     <!-- Current page: /extensions/observe.html -->
   </body>
