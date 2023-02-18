@@ -1,165 +1,145 @@
 ---
-layout: /layouts/pages.njk
+layout: /layouts/base.njk
 title: "Roadmap"
-description: "Discover how Bonfire can be tailored for your community needs and goals."
 ---
 
 
 
-<div class="max-w-screen-lg mx-2 2xl:max-w-screen-xl lg:mx-auto">
+    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto">
+      <div class="relative flex flex-col items-center grid-cols-1 gap-4 text-center place-content-center">
+        <div class="text-[32px] font-extrabold leading-[1.3] tracking-wider text-base-content">Roadmap</div>
+          <div class="prose prose-sm mx-auto text-center">Here's a small preview of the things we're currently focusing on, as well as some of our plans for future projects. Did you spotted a bug using bonfire or you want to propose a new feature ?</div>
+        </div>
+        <div class="flex items-center place-content-center gap-3 mt-8">
+          <a href="https://github.com/bonfire-networks/bonfire-app/milestones?direction=asc&sort=due_date&state=open" target="_blank" class="normal-case rounded btn btn-outline btn-sm">Open an issue</a>
+          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="normal-case rounded btn btn-sm">Join our Matrix chat</a>
+        </div>
+      </div>
+    </div>
+<div class="pb-40 mt-16 border-t section--bg border-base-content/10">
+  <div class="skew-y-2">
+    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto lg:mt-24">
+
 
   
-  <div class="mx-auto mt-6 prose prose-lg text-center text-opacity-80">We've spent the last couple years building a rock-solid foundation to build upon, and now ready to partner with like-minded communities to co-create useful extensions and invite more people to grow the federated ecosystem. <br/>You can suggest new ideas and upvote existing ones on our <a href="https://changemap.co/bonfire/bonfire/" class="link">collaborative Changemap</a>, or implementation details on our <a href="https://github.com/bonfire-networks/bonfire-app/milestones?direction=asc&sort=due_date&state=open" class="link">issue tracker</a>.</div>
 
-  <ul role="list" class="grid grid-cols-1 gap-12 mt-12 sm:grid-cols-1 md:grid-cols-2">
-    <li class="flex-col items-end hidden col-span-1 -mr-6 border-r-4 lg:flex border-base-300">
-      <span class="flex items-center justify-center -mr-4 bg-green-500 rounded-full h-7 w-7 ring-4 ring-base-100">
-        <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-        </svg>
-      </span>
-    </li>
-    <li class="flex flex-col col-span-1 px-4">
+  <div class="text-2xl tracking-wider flex items-center place-content-center max-w-screen-lg mx-auto font-bold mt-16 mb-8">
+    <div class="w-[42px] h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><rect x="0" y="0" width="32" height="32" fill="none" stroke="none" /><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2Zm0 26a12 12 0 0 1 0-24v12l8.481 8.481A11.963 11.963 0 0 1 16 28Z"/></svg>
+    </div>
+    <span class="ml-4">In progress </span>
+  </div>
+  <ul role="list" class="max-w-screen-lg px-6 mx-auto grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">
       <div class="flex items-center mb-4 lg:mb-0">
-        <span class="flex items-center justify-center mr-4 bg-green-500 rounded-full lg:hidden h-7 w-7 ring-4 ring-base-100">
-          <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-          </svg>
-        </span>
-        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Add / remove extensions</div>
+        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Federation</div>
+      </div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Implement basic federation for social activities and moderation. We will focus on testing federation between different bonfire instances and between bonfire and mastodon.</div>
+      <a href="https://github.com/bonfire-networks/bonfire-app/issues/473" target="_blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
+          <span>Read more</span>
+          <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
+      </a>
+    </li>
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4 ">
+      <div class="flex items-center mb-4 lg:mb-0">
+        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Release Candidate (0.5.0) issues list</div>
+        
+      </div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-80">Use the <a href="https://campground.bonfire.cafe" class="link" target="_blank">campground instance</a> to test and catch all the bugs we need to fix before calling our first Bonfire Release Candidate.</div>
+      <a href="https://github.com/bonfire-networks/bonfire-app/issues/472" target="_blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
+        <span>Read more</span>
+        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
+      </a>
+    </li>
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">
+      <div class="flex items-center mb-4 lg:mb-0">
+        
+        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Circle & Boundaries</div>
+      </div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Ensure Circles & Boundaries flow works smooth and without bugs</div>
+      <a href="https://github.com/bonfire-networks/bonfire-app/issues/474" target="_blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
+        <span>Read more</span>
+        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
+      </a>
+    </li>
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4 ">
+      <div class="flex items-center">
+        <div class="mr-2 text-xl font-bold tracking-wide font-base-content">Improve Developer Experience</div>
+      </div>
+      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Ease the onboarding experience for new developers by improving docs, writing guides and create good first issues.</div>
+      
+    </li>
+
+  </ul>
+
+  <div class="text-2xl tracking-wider flex items-center place-content-center max-w-screen-lg mx-auto font-bold mt-16 mb-8">
+    <div class="w-[42px] h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+      <svg class="w-5 h-5"cxmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><rect x="0" y="0" width="32" height="32" fill="none" stroke="none" /><path fill="currentColor" d="m23 27.2l-2.6-2.6L19 26l4 4l7-7l-1.4-1.4zM12 18h8v2h-8zm0-5h8v2h-8zm0-5h8v2h-8z"/><path fill="currentColor" d="M16 28H6v-4h2v-2H6v-5h2v-2H6v-5h2V8H6V4h18v16h2V4c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v4H2v2h2v5H2v2h2v5H2v2h2v4c0 1.1.9 2 2 2h10v-2z"/></svg>    </div>
+    <span class="ml-4">Planned </span>
+  </div>  
+  <ul role="list" class="px-6 max-w-screen-lg mx-auto grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
+
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">
+      <div class="flex items-center mb-4 lg:mb-0">
+        
+        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Groups Alpha Implementation</div>
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">At its core, Bonfire is a set of configurations that define what extensions to use and how they play together.</div>
     </li>
-    <li class="flex flex-col col-span-1 px-4 py-3 text-right">
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4 ">
       <div class="flex items-center mb-4 lg:mb-0">
-        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Customisable</div>
-        <span class="flex items-center justify-center ml-4 bg-green-500 rounded-full lg:hidden h-7 w-7 ring-4 ring-base-100">
-          <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-          </svg>
-        </span>
+        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Groups Federation</div>
+        
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-80">Pick or create a theme that reflects your community identity, edit and localise terminology to increase inclusivity, decide which kind of information and behaviours </div>
     </li>
-    <li class="flex-col items-start hidden col-span-1 -mt-12 border-l-4 lg:flex -ml-7 border-base-300">
-      <span class="flex items-center justify-center mt-16 -ml-4 bg-green-500 rounded-full h-7 w-7 ring-4 ring-base-100">
-        <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-        </svg>
-      </span>
-    </li>
-    <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-300">
-      <span class="flex items-center justify-center mt-16 -mr-4 bg-green-500 rounded-full h-7 w-7 ring-4 ring-base-100">
-        <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-        </svg>
-      </span>
-    </li>
-    <li class="flex flex-col col-span-1 px-4 py-3">
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">
       <div class="flex items-center mb-4 lg:mb-0">
-        <span class="flex items-center justify-center mr-4 bg-green-500 rounded-full lg:hidden h-7 w-7 ring-4 ring-base-100">
-          <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-          </svg>
-        </span>
-        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Optional federation</div>
+        
+        <div class="flex-1 text-xl font-bold tracking-wide font-base-content">Roles</div>
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Connect with other people and communities in a decentralized environment, including other fediverse platforms that support the ActivityPub protocol (like Mastodon, PeerTube, etc...)</div>
     </li>
-    <li class="flex flex-col col-span-1 px-4 py-3 text-right">
+    <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4 ">
       <div class="flex items-center">
-        <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Bonfire Social</div>
-        <div class="badge badge-primary">Beta</div>
+        <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Federated topics</div>
       </div>
       <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">A customizable federated social network, to follow people, make posts, have discussion, etc... </div>
       <a href="/bonfire_classic" class="mt-2 text-sm link">Read more</a>
     </li>
 
-    <li class="flex-col items-start hidden col-span-1 -mt-12 border-l-4 lg:flex -ml-7 border-base-300">
-      <span class="flex items-center justify-center mt-16 -ml-4 bg-green-500 rounded-full h-7 w-7 ring-4 ring-base-100">
-        <svg class="w-5 h-5 text-white" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-        </svg>
-      </span>
-    </li>
-
-    <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-300">
-      <span class="flex items-center justify-center mt-16 -mr-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
-        🚀
-      </span>
-    </li>
-
-    <li class="flex flex-col col-span-1 px-4 py-3">
-      <div class="flex items-center">
-        <div class="text-xl font-bold tracking-wide font-base-content">Zappa</div>
-        <div class="ml-4 badge badge-success">Alpha in development</div>
-      </div>
-      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70"> Using the power of community to counteract misinformation. </div>
-      <a href="/zappa" class="mt-2 text-sm link">Read more</a>
-    </li>
-
-    <li class="flex flex-col col-span-1 px-4 py-3 text-right">
-      <div class="flex items-center">
-        <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Bonfire framework</div>
-        <div class="badge badge-success">Alpha in development</div>
-      </div>
-      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Attempt to stabilise as much of the framework and APIs as possible so developers can build upon them.</div>
-      <a href="https://github.com/bonfire-networks/bonfire-app/milestone/22" class="mt-2 text-sm link">Read more</a>
-    </li>
-
-    <li class="flex-col items-start hidden col-span-1 -mt-12 border-l-4 lg:flex -ml-7 border-base-300">
-      <span class="flex items-center justify-center mt-16 -ml-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
-        🚀
-      </span>
-    </li>
-
-
-    <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-300">
-      <span class="flex items-center justify-center mt-16 -mr-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
-        🚀
-      </span>
-    </li>
-
-    <li class="flex flex-col col-span-1 px-4 py-3">
-      <div class="flex items-center">
-        <div class="text-xl font-bold tracking-wide font-base-content">Bonfire Kanban</div>
-        <div class="ml-4 badge badge-warning">Alpha development on-hold</div>
-      </div>
-      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Federated and collaborative kanban and task list for p2p project coordination. </div>
-      <a href="/bonfire_cooperation" class="mt-2 text-sm link">Read more</a>
-    </li>
-
-    <li class="flex flex-col col-span-1 px-4 py-3 text-right">
-      <div class="flex items-center">
-        <div class="flex-1 mr-4 text-xl font-bold tracking-wide font-base-content">Bonfire Bulletin</div>
-        <div class="badge badge-warning">Alpha development on-hold</div>
-      </div>
-      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">Mutual aid tools for local communities, such as sharing needs and offers.</div>
-      <a href="/bonfire_cooperation" class="mt-2 text-sm link">Read more</a>
-    </li>
-
-    <li class="flex-col items-start hidden col-span-1 -mt-12 border-l-4 lg:flex -ml-7 border-base-300">
-      <span class="flex items-center justify-center mt-16 -ml-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
-        🚀
-      </span>
-    </li>
-
-    <li class="flex-col items-end hidden col-span-1 -mt-12 -mr-6 border-r-4 lg:flex border-base-300">
-      <span class="flex items-center justify-center mt-16 -mr-4 bg-white rounded-full h-7 w-7 bg-opacity-90 ring-4 ring-base-100">
-        ⚙️
-      </span>
-    </li>
-
-    <li class="flex flex-col col-span-1 px-4 py-3">
-      <div class="flex items-center">
-        <div class="text-xl font-bold tracking-wide font-base-content">Bonfire device</div>
-        <div class="ml-4 badge badge-warning">Prototyping</div>
-   
-      </div>
-      <div class="w-full mt-1 text-sm font-light text-base-content text-opacity-70">We plan to launch a device to put your apps and data in your hands, literally</div>
-      <a href="/faq#device" class="mt-2 text-sm link">Read more</a>
-    </li>
-    
   </ul>
 
+  <div class="text-2xl tracking-wider flex items-center place-content-center max-w-screen-lg mx-auto font-bold mt-16 mb-8">
+    <div class="w-[42px] h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
+      <svg class="w-5 h-5"cxmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><rect x="0" y="0" width="32" height="32" fill="none" stroke="none" /><path fill="currentColor" d="m23 27.2l-2.6-2.6L19 26l4 4l7-7l-1.4-1.4zM12 18h8v2h-8zm0-5h8v2h-8zm0-5h8v2h-8z"/><path fill="currentColor" d="M16 28H6v-4h2v-2H6v-5h2v-2H6v-5h2V8H6V4h18v16h2V4c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v4H2v2h2v5H2v2h2v5H2v2h2v4c0 1.1.9 2 2 2h10v-2z"/></svg>    </div>
+    <span class="ml-4">Backlog </span>
+  </div>  
+    <ul class="px-6 max-w-screen-lg mx-auto text-md list-disc	 tracking-wide flex flex-col gap-4 mt-6">
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Add a comment when flagging</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Easily start a group DM thread linked to flags</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Edit my account (email address) #10 -> initial implementation done, but we should verify the new address before updating…</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">(Add screen to enable/disable 2FA in settings) I didn’t want to activate 2FA/TOTP when signing up but now I cannot find where to do it on the settings [#360]</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Download my user data #80</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Delete my account or user + data #79</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Pages Extension - Create custom pages and posts with custom boundaries</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Kanban Extension - Coordinate tasks in a trello-like environment, federate tasks and add custom boundaries</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Gathering Extension - Create and organize meetups, ensure federatation with Mobilizon</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Enable delete / redraft or edit of posts</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Pin one or more activities in the user profile</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Custom roles</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Implement sub-types so we can handle (eg. generate paths or show previews) different kinds of the same Pointer (eg Intent can be Need, Offer, Task, etc)</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Feature Proposal: Let people choose what types of posts show in their default (or local) timeline, also more tabs #460</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Add a wizard on first user creation</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Add a way to message all local admins (or people with a specific role) #169</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Add a the ability to position the avatar and background image</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Create a composable dashboard homepage</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Implement password-less auth https://github.com/liveshowy/webauthn_live_component/</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">Re-organise / simplify migrations in flavours & Auto-add migrations when installing/upgrading an extension #243 (see Mix.Tasks.Rauversion.CopyMigrations)</li>
+          <li class="bg-base-200 rounded-md shadow flex flex-col col-span-1 p-4">View all users (local and/or remote) from a single instance view and block them (or deactivate entirely?)
+    </ul>
+
 </div> 
+</div>
+</div>
