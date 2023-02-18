@@ -20,7 +20,7 @@
       class="sticky top-0 z-20 bg-[#1B1A27]"
       x-data="{open: false}" 
     >
-    <div class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+    <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
       <div class="w-[108rem] flex-none flex justify-end">
           <source srcset="/img/bgover.png" type="image/avif">
           <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
@@ -29,7 +29,7 @@
     </div>
 
     <header 
-      class="max-w-screen-xl relative z-30 mx-auto navbar">
+      class="relative z-30 max-w-screen-xl mx-auto navbar">
       <div class="navbar-start">
         <div class="flex items-center flex-1 flex-shrink-0">
           <a href="/" class="flex items-center space-x-4">
@@ -45,26 +45,26 @@
               Developers
               <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
             </a>
-            <ul class="p-2 gap-2 bg-base-100">
+            <ul class="gap-2 p-2 bg-base-100">
               <li>
-                <a class="flex items-start flex-wrap gap-1 flex-col" href="/docs">
+                <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
                     <div class="font-bold">Documentation</div>
-                    <div class="text-sm flex-wrap text-base-content/70">Everything you need to get started with bonfire</div>
+                    <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
                 </a>
               </li>
               <li>
-                <a class="flex items-start flex-wrap gap-1 flex-col" href="/roadmap">
+                <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
                   <div class="font-bold">Roadmap</div>
                   <div class="text-sm text-base-content/70">See what's coming next</div>
                 </a>
               </li>
               <li>
-                <a class="flex items-start flex-wrap gap-1 flex-col" href="/docs/changelog">
+                <a class="flex flex-col flex-wrap items-start gap-1" href="/docs/changelog">
                   <div class="font-bold">Changelog</div>
                   <div class="text-sm text-base-content/70">See the latest updates and improvements</div>
                 </a></li>
               <li>
-                <a class="flex items-start flex-wrap gap-1 flex-col" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
                   <div class="font-bold">Get the code</div>
                   <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
                 </a>
@@ -94,12 +94,12 @@
 
       <div class="navbar-end">
         <a href="/start/" >
-          <span class="hidden btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+          <span class="hidden normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
         </a>
 
         <div class="inset-y-0 right-0 flex items-center lg:hidden">
           <a href="/start/" >
-            <span class="btn btn-sm btn-primary normal-case rounded lg:flex">Get started</span>
+            <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
           </a>
           <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
             <span class="sr-only">Open main menu</span>
@@ -130,6 +130,17 @@
           </a>
           </li>
           <li>
+            <a href="/roadmap" class=" ">
+            <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          <li>
+            <a href="/docs/changelog" class=" ">
+            <span class="text-base font-regular">Changelog</span>
+          </a>
+          </li>
+          
+          <li>
             <a href="/faq" class=" ">
             <span class="text-base font-regular">FAQs</span>
           </a>
@@ -140,8 +151,8 @@
           </a>
           </li>
           <li>
-            <a href="/contribute" class=" ">
-              <span class="text-base font-regular">Contribute</span>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
             </a>
           </li>
 
@@ -1051,7 +1062,7 @@
 
 
 <div class="">
-  <footer class="footer p-10 py-24 border-t border-base-content/10 text-base-content">
+  <footer class="p-10 py-24 border-t footer border-base-content/10 text-base-content">
   <div>
     <div class="items-center flex-1 grid-flow-col">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
