@@ -57,7 +57,7 @@ That's it! With these steps, you can create and add people to circles in Bonfire
 
 ## Using boundaries
 
-Boundaries take circle permissions to the next level by enabling you to combine one or more circles and to grant specific roles to each circle. For example, you might create a "Fitness" boundary and grant the "Participate" role to your gym buddies, allowing them to interact with your fitness-related content, while granting the "Interact" role to your family and friends, who can view and react to your posts but not comment on them.
+Boundaries takes things the next level by enabling you to combine one or more circles and then grant specific roles to each circle. For example, you might create a "Fitness" boundary and grant the "Participate" role to your gym buddies, allowing them to interact with your fitness-related content, while granting the "Interact" role to your family and friends, who can view and react to your posts but not comment on them.
 
 1. Navigate to your settings page.
 2. Click on the "Boundaries" section on the left sidebar.
