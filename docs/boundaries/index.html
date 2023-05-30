@@ -280,6 +280,7 @@
 <p>Conceptually, an ACL contains a grant for every user-or-circle/verb combination, but most of the permissions are <code>nil</code>. We do not record grants with <code>nil</code> permissions in the database, saving substantially on storage space and compute requirements.</p>
 <h2 id="controlled---applying-boundaries-to-an-object">Controlled - Applying boundaries to an object <a class="direct-link" href="#controlled---applying-boundaries-to-an-object">#</a></h2>
 <p>An object is linked to one or more <code>ACL</code>s by the <code>Controlled</code> multimixin, which pairs an object ID with an ACL ID. Because it is a multimixin, a given object can have multiple ACLs applied. In the case of overlap, permissions are combined in the manner described earlier.</p>
+<p>See also <a href="https://doc.bonfirenetworks.org/extension-bonfire_data_access_control.html">https://doc.bonfirenetworks.org/extension-bonfire_data_access_control.html</a> for more docs (TODO: merge/deduplicate)</p>
 
 </div>
       </div>

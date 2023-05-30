@@ -232,7 +232,7 @@
 <li><code>Bonfire.GraphQL.*</code> - Optional GraphQL API</li>
 <li><code>Bonfire.Federate.*</code> - Optional Federation hooks</li>
 <li><code>ActivityPub</code> - ActivityPub S2S models, logic and various helper modules</li>
-<li><code>ActivityPubWeb</code> - ActivityPub S2S REST endpoints, activity ingestion and push federation facilities</li>
+<li><code>ActivityPub.Web</code> - ActivityPub S2S REST endpoints, activity ingestion and push federation facilities</li>
 <li><code>ValueFlows.*</code> - economic extensions implementing the <a href="https://www.valueflo.ws">ValueFlows vocabulary</a></li>
 </ul>
 <p>Contexts are were we put any core logic. A context often is circumscribed to providing logic for a particular object type (e. g. <code>Bonfire.Social.Posts</code> implements <code>Bonfire.Data.Social.Post</code>).</p>
@@ -345,21 +345,20 @@ EconomicResources.many(deleted: true) # List any deleted resources
 <p>This namespace handles the ActivityPub logic and stores AP activities. It is largely adapted Pleroma code with some modifications, for example merging of the activity and object tables and new actor object abstraction.</p>
 <ul>
 <li><code>ActivityPub</code> contains the main API and is documented there.</li>
-<li><code>ActivityPub.Adapter</code> defines callback functions for the AP library.</li>
+<li><code>ActivityPub.Federator.Adapter</code> defines callback functions for the AP library.</li>
 </ul>
 <p>It also contains some functionality that isn't part of the AP spec but is required for federation:</p>
 <ul>
-<li><code>ActivityPub.Keys</code> - Generating and handling RSA keys for messagage signing</li>
-<li><code>ActivityPub.Signature</code> - Adapter for the HTTPSignature library</li>
-<li><code>ActivityPub.WebFinger</code> - Implementation of the WebFinger protocol</li>
-<li><code>ActivityPub.HTTP</code> - Module for making HTTP requests (wrapper around tesla)</li>
+<li><code>ActivityPub.Safety.Keys</code> - Generating and handling RSA keys and signatures</li>
+<li><code>ActivityPub.Federator.WebFinger</code> - Implementation of the WebFinger protocol</li>
+<li><code>ActivityPub.Federator.HTTP</code> - Module for making HTTP requests (wrapper around tesla)</li>
 <li><code>ActivityPub.Instances</code> - Module for storing reachability information about remote instances</li>
 </ul>
 <p>Also refer to <a href="./MRF.md">MRF documentation</a> to learn how to rewrite or discard messages.</p>
-<h3 id="activitypubweb"><code>ActivityPubWeb</code> <a class="direct-link" href="#activitypubweb">#</a></h3>
-<p>This namespace contains the ActivityPub Server-to-Server REST API, the activity ingestion pipeline (<code>ActivityPubWeb.Transmogrifier</code>) and the push federation facilities (<code>ActivityPubWeb.Federator</code>, <code>ActivityPubWeb.Publisher</code> and others). The outgoing federation module is designed in a modular way allowing federating through different protocols in the future.</p>
+<h3 id="activitypub.web"><code>ActivityPub.Web</code> <a class="direct-link" href="#activitypub.web">#</a></h3>
+<p>This namespace contains the ActivityPub Server-to-Server REST API, the activity ingestion pipeline (<code>ActivityPub.Federator.Transformer</code>) and the push federation facilities (<code>ActivityPub.Federator</code>, <code>ActivityPub.Federator.APPublisher</code> and others). The outgoing federation module is designed in a modular way allowing federating through different protocols in the future.</p>
 <h3 id="activitypub-integration-with-bonfire's-application-logic">ActivityPub integration with Bonfire's application logic <a class="direct-link" href="#activitypub-integration-with-bonfire's-application-logic">#</a></h3>
-<p>The callback functions defined in <code>ActivityPub.Adapter</code> are implemented in <code>Bonfire.Federate.ActivityPub.Adapter</code>.</p>
+<p>The callback functions defined in <code>ActivityPub.Federator.Adapter</code> are implemented in <code>Bonfire.Federate.ActivityPub.Adapter</code>.</p>
 <p>When implementing federation for a new object type it needs to be implemented for both directions:<br>
 for outgoing federation using the hooks in <code>Bonfire.Federate.ActivityPub.Outgoing</code> and for incoming federation using the hooks in <code>Bonfire.Federate.ActivityPub.Incoming</code>.</p>
 

@@ -203,41 +203,70 @@
 <h2 id="security-warning">Security Warning <a class="direct-link" href="#security-warning">#</a></h2>
 <p>We recommend only granting an account to people you trust to minimise the attack surface. Accordingly, Bonfire ships with public registration disabled. The admin panel has an <code>invite</code> facility.</p>
 <hr>
-<h2 id="step-0---configure-your-database">Step 0 - Configure your database <a class="direct-link" href="#step-0---configure-your-database">#</a></h2>
-<p>You must provide a postgresql database for data storage. We require postgres 12 or above.</p>
-<p>If you are running in a restricted environment such as Amazon RDS, you will need to execute some sql against the database:</p>
-<pre><code>CREATE EXTENSION IF NOT EXISTS citext;
-</code></pre>
+<h2 id="step---0---decide-how-you-want-to-deploy-and-manage-the-app">Step - 0 - Decide how you want to deploy and manage the app <a class="direct-link" href="#step---0---decide-how-you-want-to-deploy-and-manage-the-app">#</a></h2>
+<ul>
+<li>Option A - Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects. In this case, jump straight to step 4.</li>
+<li>Option B - Install using Docker containers (easy mode)
+<ul>
+<li>Option B1 - Using pre-built Docker images</li>
+<li>Option B2 - Building your own Docker image (if you want to make changes to the code)</li>
+</ul>
+</li>
+<li>Option C - Manual installation (without Docker)</li>
+</ul>
 <h2 id="step-1---download-and-configure-the-app">Step 1 - Download and configure the app <a class="direct-link" href="#step-1---download-and-configure-the-app">#</a></h2>
+<h3 id="option-a---install-using-co-op-cloud-(recommended)">Option A - Install using Co-op Cloud (recommended) <a class="direct-link" href="#option-a---install-using-co-op-cloud-(recommended)">#</a></h3>
+<ol>
+<li>Install <a href="https://docs.coopcloud.tech/abra/">Abra</a> on your machine</li>
+<li><a href="https://docs.coopcloud.tech/operators/">Set up a server with co-op cloud</a></li>
+<li>Use the <a href="https://recipes.coopcloud.tech/bonfire">Bonfire recipe</a> and follow the instructions there.</li>
+</ol>
+<h3 id="options-b-and-c">Options B and C <a class="direct-link" href="#options-b-and-c">#</a></h3>
 <ol>
 <li>
-<p>Install dependencies. You will need to install <a href="https://github.com/casey/just#packages">just</a>, and other requirements such as Docker (check the exact list of requirements based on the option you choose in step 2.)</p>
+<p>Install dependencies.<br>
+You may need to install <a href="https://github.com/casey/just#packages">just</a>, and other requirements such as Docker (check the exact list of requirements based on the option you choose in step 2.)</p>
 </li>
 <li>
 <p>Clone this repository and change into the directory:</p>
 </li>
 </ol>
-<pre class="language-sh"><code class="language-sh">$ <span class="token function">git</span> clone https://github.com/bonfire-networks/bonfire-app.git bonfire<br>$ <span class="token builtin class-name">cd</span> bonfire</code></pre>
+<pre class="language-sh"><code class="language-sh"><span class="token function">git</span> clone <span class="token parameter variable">--depth</span> <span class="token number">1</span> https://github.com/bonfire-networks/bonfire-app.git bonfire <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> bonfire</code></pre>
 <ol start="3">
 <li>Specify what flavour you want to run in production:</li>
 </ol>
-<p>The first thing to do is choose what flavour of Bonfire you want to deploy, as each flavour uses different Docker images and set of configs. For example if you want to run the <code>classic</code> flavour:</p>
+<p>The first thing to do is choose what flavour of Bonfire (eg. classic, community, or cooperation) you want to deploy, as each flavour uses different Docker images and set of configs. For example if you want to run the <code>classic</code> flavour:</p>
 <ul>
-<li><code>export MIX_ENV=prod FLAVOUR=classic</code> (you may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time)</li>
-<li><code>just config</code></li>
+<li><code>export MIX_ENV=prod FLAVOUR=classic</code></li>
 </ul>
-<p>This will initialise some default config (a .env file which won't be checked into git)</p>
-<ol start="5">
-<li>Edit the config (especially the secrets) for the selected flavour in <code>./.env</code> (except if using the Bonfire co-op cloud recipe, which will create its own env file you should edit instead).</li>
-</ol>
-<p>These are the config keys you should especially pay attention to:</p>
+<p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
+<p>If you're not planning on using Docker, you'll also need:</p>
 <ul>
+<li><code>export WITH_DOCKER=no</code></li>
+</ul>
+<p>## Step 2- Prepare the config</p>
+<ul>
+<li>
+<p><strong>Option A</strong>: if deploying with co-op cloud, edit the env file at <code>~/.abra/servers/your_server/your_app.env</code> instead.</p>
+</li>
+<li>
+<p><strong>Option B and C</strong>:</p>
+</li>
+</ul>
+<ul>
+<li>Run <code>just config</code> to initialise some default config and then edit the config in the <code>./.env</code> file.</li>
+</ul>
+<h3 id="config-keys-you-should-pay-special-attention-to%3A">Config keys you should pay special attention to: <a class="direct-link" href="#config-keys-you-should-pay-special-attention-to%3A">#</a></h3>
+<p>The app needs these environment variables to be configured in order to work.</p>
+<ul>
+<li><code>FLAVOUR</code> should reflect your chosen flavour</li>
 <li><code>HOSTNAME</code> (your domain name, eg: <code>bonfire.example.com</code>)</li>
 <li><code>PUBLIC_PORT</code> (usually 443)</li>
 <li><code>MAIL_DOMAIN</code> and <code>MAIL_KEY</code> and related keys to configure transactional email, for example set <code>MAIL_BACKEND=mailgun</code> and sign up at <a href="https://www.mailgun.com/">Mailgun</a> and then configure the domain name and key (you may also need to set <code>MAIL_BASE_URI</code> if your domain is not setup in EU, as the default <code>MAIL_BASE_URI</code> is set as <code>https://api.eu.mailgun.net/v3</code>). SMTP is supported as well.</li>
 <li><code>UPLOADS_S3_BUCKET</code> and the related API key and secret for uploads. WARNING: If you want to store uploads in an object storage rather than directly on your server (which you probably want, to not run out of space), you need to configure that up front, otherwise URLs will break if you change it later. See <code>config/runtime.exs</code> for extra variables to set if you're not using the default service and region (which is <a href="https://www.scaleway.com/en/object-storage/">Scaleway</a> Paris).</li>
 </ul>
-<p>These are the secret keys for which you should put random secrets. You can run <code>just secrets</code> to generate some:</p>
+<h3 id="secret-keys-for-which-you-should-put-random-secrets.">Secret keys for which you should put random secrets. <a class="direct-link" href="#secret-keys-for-which-you-should-put-random-secrets.">#</a></h3>
+<p>You can run <code>just secrets</code> to generate some for you.</p>
 <ul>
 <li><code>SECRET_KEY_BASE</code></li>
 <li><code>SIGNING_SALT</code></li>
@@ -246,7 +275,6 @@
 <li><code>MEILI_MASTER_KEY</code></li>
 </ul>
 <h3 id="further-information-on-config">Further information on config <a class="direct-link" href="#further-information-on-config">#</a></h3>
-<p>The app needs some environment variables to be configured in order to work. The easy way to manage that is whit the <code>just</code> commands which take care of loading the environment for you.</p>
 <p>In the <code>./config/</code> (which is a symbolic link to the config of the flavour you choose to run) directory of the codebase, there are following config files:</p>
 <ul>
 <li><code>config.exs</code>: default base configuration, which itself loads many other config files, such as one for each installed Bonfire extension.</li>
@@ -254,18 +282,16 @@
 <li><code>runtime.exs</code>: extra configuration which is loaded at runtime (vs the others which are only loaded once at compile time, i.e. when you build a release)</li>
 <li><code>bonfire_*.exs</code>: configs specific to different extensions, which are automatically imported by <code>config.exs</code></li>
 </ul>
-<p>You should <em>not</em> have to modify the files above. Instead, overload any settings from the above files using env variables or in <code>./.env</code>.</p>
-<h2 id="step-2---install">Step 2 - Install <a class="direct-link" href="#step-2---install">#</a></h2>
-<h3 id="option-a---install-using-co-op-cloud-(recommended)">Option A - Install using Co-op Cloud (recommended) <a class="direct-link" href="#option-a---install-using-co-op-cloud-(recommended)">#</a></h3>
-<p><a href="https://coopcloud.tech">https://coopcloud.tech</a> is an alternative to corporate clouds built by tech co-ops, and provides very useful tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;.</p>
-<p>If you're interested in hosting Bonfire alongside other open and/or federated projects, we recommend installing <a href="https://docs.coopcloud.tech/abra/">Abra</a>, <a href="https://docs.coopcloud.tech/operators/">setting up a co-op cloud server</a> and using the <a href="https://recipes.coopcloud.tech/bonfire">Bonfire recipe</a> (which provides it's own instructions, so read that and you can mostly ignore this document) to set up an instance.</p>
+<p>You should <em>not</em> have to modify the files above. Instead, overload any settings from the above files using env variables or in <code>./.env</code>. If any settings in the <code>.exs</code> config files are not available in env or in the instance settings UI, please open an issue or PR.</p>
+<h2 id="step-3---install">Step 3 - Install <a class="direct-link" href="#step-3---install">#</a></h2>
+<h3 id="option-a---install-using-co-op-cloud-(recommended)-1">Option A - Install using Co-op Cloud (recommended) <a class="direct-link" href="#option-a---install-using-co-op-cloud-(recommended)-1">#</a></h3>
+<p>Follow the instructions in the coop-cloud recipe readme.</p>
 <h3 id="option-b---install-using-docker-containers-(easy-mode)">Option B - Install using Docker containers (easy mode) <a class="direct-link" href="#option-b---install-using-docker-containers-(easy-mode)">#</a></h3>
 <p>The easiest way to launch the docker image is using the just commands.<br>
 The <code>docker-compose.release.yml</code> uses <code>config/prod/.env</code> to launch a container with the necessary environment variables along with its dependencies, currently that means an extra postgres container, along with a reverse proxy (Caddy server, which you may want to replace with nginx or whatever you prefer).</p>
-<h4 id="install-with-docker-compose">Install with docker-compose <a class="direct-link" href="#install-with-docker-compose">#</a></h4>
-<p>Make sure you have <a href="https://www.docker.com/">Docker</a>, a recent <a href="https://docs.docker.com/compose/install/#install-compose">docker-compose</a> (which supports v3 configs), and <a href="https://github.com/casey/just#packages">just</a> installed:</p>
-<pre class="language-sh"><code class="language-sh">$ <span class="token function">docker</span> version<br>Docker version <span class="token number">18.09</span>.1-ce<br><br>$ <span class="token function">docker-compose</span> <span class="token parameter variable">-v</span><br><span class="token function">docker-compose</span> version <span class="token number">1.23</span>.2<br><br>$ just <span class="token parameter variable">--version</span><br>just <span class="token number">1.1</span>.3<br><span class="token punctuation">..</span>.</code></pre>
-<p>Now that your tooling is set up, you have the choice of using pre-built images or building your own. For example if your flavour does not have a prebuilt image on Docker Hub, or if you want to customise any of the extensions, you can build one yourself - see option A2 below.</p>
+<p>Make sure you have <a href="https://www.docker.com/">Docker</a>, with the <a href="https://docs.docker.com/compose/install/#install-compose">compose</a> plugin, and <a href="https://github.com/casey/just#packages">just</a> installed:</p>
+<pre class="language-sh"><code class="language-sh">$ <span class="token function">docker</span> version<br>Docker Engine - Community - <span class="token number">23.0</span>.1<br><br>$ <span class="token function">docker</span> compose version<br>Docker Compose version v2.16.0<br><br>$ just <span class="token parameter variable">--version</span><br>just <span class="token number">1.13</span>.0<br><span class="token punctuation">..</span>.</code></pre>
+<p>Now that your tooling is set up, you have the choice of using pre-built images or building your own. For example if your flavour does not have a prebuilt image on Docker Hub, or if you want to customise any of the extensions, you can build one yourself - see option B2 below.</p>
 <h4 id="option-b1---using-pre-built-docker-images-(recommended-to-start-with)">Option B1 - Using pre-built Docker images (recommended to start with) <a class="direct-link" href="#option-b1---using-pre-built-docker-images-(recommended-to-start-with)">#</a></h4>
 <ul>
 <li>The <code>image</code> entry in <code>docker-compose.release.yml</code> will by default use the image on Docker Hub which corresponds to your chosen flavour (see step 1 above for choosing your flavour).</li>
@@ -345,28 +371,26 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 <p>Make sure you have erlang and elixir installed (check <code>Dockerfile</code> for what version we're currently using)</p>
 </li>
 <li>
-<p><code>export WITH_DOCKER=no</code> and <code>just flavour [classic or your choice of flavour]</code></p>
+<p><code>export WITH_DOCKER=no</code> OR add <code>WITH_DOCKER=no</code> to the end of <code>.env</code> and source it with <code>source .env</code></p>
 </li>
 <li>
-<p>Run <code>just mix &quot;deps.get --only prod&quot;</code> and <code>just js-deps-get</code> to install elixir dependencies.</p>
-</li>
-<li>
-<p>Run <code>just rel-build</code> to create an elixir release. This will create an executable in your <code>_build/prod/rel/bonfire</code> directory. We will be using the <code>bin/bonfire</code> executable from here on.</p>
+<p>Run <code>just rel-build</code> to create an elixir release. This will create an executable in your <code>_build/prod/rel/bonfire</code> directory. Note that you will need <code>just</code> to pass in the <code>.env</code> file to the executable, like so: <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Alternatively, this file can be sourced by <code>source .env</code> instead. We will be using the <code>bin/bonfire</code> executable as called from <code>just</code> from here on.</p>
 </li>
 </ul>
 <h4 id="c-2.-running-the-release">C-2. Running the release <a class="direct-link" href="#c-2.-running-the-release">#</a></h4>
 <ul>
 <li>
-<p><code>cd _build/prod/rel/bonfire/</code></p>
+<p>Create a database, and a user, fill out the <code>.env</code> with your credentials and secrets</p>
 </li>
 <li>
-<p>Create a database and run the migrations with <code>bin/bonfire eval 'EctoSparkles.Migrator.migrate()'</code>.</p>
+<p>You will need to use <code>just</code> in order to pass the <code>.env</code> file to the executable. This can be accomplished by running <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Just works from the root directory of the <code>justfile</code>, not your current directory.</p>
+</li>
+<li>
+<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>bin/bonfire eval 'EctoSparkles.Migrator.migrate()'</code>.</p>
 </li>
 <li>
 <p>If you’re using RDS or some other locked down DB, you may need to run <code>CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;</code> on your database with elevated privileges.</p>
 </li>
-</ul>
-<ul>
 <li>
 <p>You can check if your instance is configured correctly by running it with <code>bin/bonfire start</code></p>
 </li>
@@ -404,13 +428,16 @@ Here are the detailed steps to deploy it.</p>
 <p>then in myHostName.nix would look like the following</p>
 <p>TODO: add the caddy config</p>
 <pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span> config<span class="token punctuation">,</span> lib<span class="token punctuation">,</span> pkgs<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">:</span><br><br><span class="token punctuation">{</span><br>  services<span class="token punctuation">.</span>bonfire <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token comment"># you will need to expose bonfire with a reverse proxy, for example caddy</span><br>    port <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">;</span><br>    package <span class="token operator">=</span> pkgs<span class="token punctuation">.</span>elixirBonfire<span class="token punctuation">;</span><br>    dbName <span class="token operator">=</span> <span class="token string">"bonfire"</span><span class="token punctuation">;</span><br>    <span class="token comment"># the environment should contain a minimum of</span><br>    <span class="token comment">#   SECRET_KEY_BASE</span><br>    <span class="token comment">#   SIGNING_SALT</span><br>    <span class="token comment">#   ENCRYPTION_SALT</span><br>    <span class="token comment">#   RELEASE_COOKIE</span><br>    <span class="token comment"># have a look into nix/module.nix for more details</span><br>    <span class="token comment"># the way to deploy secrets is beyond this readme, but I would recommend agenix</span><br>    environmentFile <span class="token operator">=</span> <span class="token string">"/run/secrets/bonfireEnv"</span><span class="token punctuation">;</span><br>    dbSocketDir <span class="token operator">=</span> <span class="token string">"/var/run/postgresql"</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>  <span class="token comment"># this is uniquely for database backup purposes</span><br>  <span class="token comment"># replace myBackupUserName with the user name that will do the backups</span><br>  <span class="token comment"># if you want to do backups differently, feel free to remove this part of the config</span><br>  services<span class="token punctuation">.</span>postgresql <span class="token operator">=</span> <span class="token punctuation">{</span><br>    ensureDatabases <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"bonfire"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><br>    ensureUsers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>      name <span class="token operator">=</span> <span class="token string">"myBackupUserName"</span><span class="token punctuation">;</span><br>      ensurePermissions <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"DATABASE bonfire"</span> <span class="token operator">=</span> <span class="token string">"ALL PRIVILEGES"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<h2 id="step-3---run">Step 3 - Run <a class="direct-link" href="#step-3---run">#</a></h2>
+<h2 id="step-4---run">Step 4 - Run <a class="direct-link" href="#step-4---run">#</a></h2>
 <p>By default, the backend listens on port 4000 (TCP), so you can access it on <a href="http://localhost:4000/">http://localhost:4000/</a> (if you are on the same machine). In case of an error it will restart automatically.</p>
 <p>Once you've signed up, you will automatically be an instance admin if you were the first to register.</p>
-<hr>
-<h4 id="step-4---adding-https">Step 4 - Adding HTTPS <a class="direct-link" href="#step-4---adding-https">#</a></h4>
-<p>The common and convenient way for adding HTTPS is by using a reverse proxy like Nginx or Caddyserver (the latter of which is bundled as part of the docker-compose setup).</p>
+<blockquote>
+<p>NOTE: If you are running in a restricted environment such as Amazon RDS, you will need to execute some sql against the database before migrations can run: <code>CREATE EXTENSION IF NOT EXISTS citext;</code></p>
+</blockquote>
+<h4 id="step-5---adding-https">Step 5 - Adding HTTPS <a class="direct-link" href="#step-5---adding-https">#</a></h4>
+<p>The common and convenient way for adding HTTPS is by using a reverse proxy like Nginx or Caddyserver (the latter of which is bundled as part of the docker compose setup).</p>
 <p>Caddyserver and other servers can handle generating and setting up HTTPS certificates automatically, but if you need TLS/SSL certificates for nginx, you can look get some for free with <a href="https://letsencrypt.org/">letsencrypt</a>. The simplest way to obtain and install a certificate is to use <a href="https://certbot.eff.org">Certbot.</a>. Depending on your specific setup, certbot may be able to get a certificate and configure your web server automatically.</p>
+<p>If you've built from source, you should point the nginx root directory to be <code>_build/prod/rel/bonfire/lib/bonfire-0.1.0-*/priv/static</code></p>
 <h2 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h2>
 <p>Some common issues that may arise during deployment and our suggestions for resolving them.</p>
 <h4 id="websocket-connections-not-establishing-behind-a-reverse-proxy">WebSocket connections not establishing behind a reverse proxy <a class="direct-link" href="#websocket-connections-not-establishing-behind-a-reverse-proxy">#</a></h4>

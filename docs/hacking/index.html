@@ -211,16 +211,18 @@
 <p>Bonfire is a flexible platform that powers a variety of social networks. The first thing you have to choose is which app (or &quot;flavour&quot;) you want to hack on:</p>
 <ul>
 <li><code>classic</code> (&quot;Bonfire Social&quot;, a toot-based social network that interoperates with the fediverse)</li>
-<li><code>cooperation</code> (for building cooperative communities)</li>
-<li><code>reflow</code> (for community economic activities)</li>
-<li><code>haha</code> (for learning new things)</li>
+<li><code>community</code> (for groups and communities)</li>
+<li><code>cooperation</code> (for building cooperative economic networks)</li>
 </ul>
 <p>Note that at the current time, the core team are focusing most of their efforts on the classic flavour and this is where we recommend you start.</p>
 <p>You first need to install <a href="https://github.com/casey/just#packages">just</a> which is a handy tool (a <code>make</code> alternative) to run commands defined in <code>./justfile</code>.</p>
-<p>So for example if you want to run the <code>classic</code> flavour, run:</p>
+<p>So for example if you want to run the <code>classic</code> flavour, with a fully-docker-managed setup (see the other options available below), run:</p>
 <ul>
-<li><code>export FLAVOUR=classic</code> (you may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time)</li>
-<li><code>just config</code></li>
+<li><code>export FLAVOUR=classic WITH_DOCKER=total</code></li>
+</ul>
+<p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
+<ul>
+<li>Then run <code>just config</code> to initialise some config.</li>
 </ul>
 <h3 id="configure-1">Configure <a class="direct-link" href="#configure-1">#</a></h3>
 <ul>
@@ -235,7 +237,7 @@
 </ul>
 </li>
 <li>
-<p>Set an environment variable to indicate your choice: <code>export WITH_DOCKER=total</code></p>
+<p>Make sure you've set the environment variable to indicate your choice: <code>export WITH_DOCKER=total</code></p>
 </li>
 <li>
 <p>Make sure you've edited your .env file (see above) before getting started and proceed to Hello world!</p>
@@ -252,7 +254,7 @@
 </ul>
 </li>
 <li>
-<p>Set an environment variable to indicate your choice: <code>export WITH_DOCKER=easy</code></p>
+<p>Make sure you've set the env to indicate your choice: <code>export WITH_DOCKER=easy</code></p>
 </li>
 <li>
 <p>Make sure you've edited your .env file (see above) before getting started and proceed to Hello world!</p>
@@ -270,7 +272,7 @@
 </ul>
 </li>
 <li>
-<p>Set an environment variable to indicate your choice: <code>export WITH_DOCKER=partial</code></p>
+<p>Make sure you've set the environment variable to indicate your choice: <code>export WITH_DOCKER=partial</code></p>
 </li>
 <li>
 <p>Make sure you've edited your .env file (see above) before getting started and proceed to Hello world!</p>
@@ -295,7 +297,7 @@
 <p>If you want search capabilities, you'll also need to setup a Meili server and set the relevant env variables as well.</p>
 </li>
 <li>
-<p>Set an environment variable to indicate your choice: <code>export WITH_DOCKER=no</code> and proceed to Hello world!</p>
+<p>Make sure you've set the environment variable to indicate your choice: <code>export WITH_DOCKER=no</code> and proceed to Hello world!</p>
 </li>
 </ul>
 <h3 id="option-e---the-nix-one-(dev-environment-with-nix)">Option E - the nix one (dev environment with Nix) <a class="direct-link" href="#option-e---the-nix-one-(dev-environment-with-nix)">#</a></h3>
