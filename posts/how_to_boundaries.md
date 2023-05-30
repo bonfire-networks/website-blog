@@ -3,7 +3,7 @@ title: How to use boundaries, circles and roles
 description: "\"One does not need to set themselves on fire to keep other people warm.\""
 date: 2023-05-30
 tags: [beta, social, boundaries, circles, zappa]
-image: /img/boundaries-fire.jpg
+image: /img/boundaries_post.png
 layout: layouts/post.njk
 author: Bonfire Builders
 
@@ -54,6 +54,9 @@ Now you can use that circle when making a post:
 
 That's it! With these steps, you can create and add people to circles in Bonfire and use them to share content with specific groups of people. 
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/c063e8b219524f858192fc9a82b9f41a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
 ## Using boundaries
 
 Boundaries take circle permissions to the next level by enabling you to combine one or more circles and to grant specific roles to each circle. For example, you might create a "Fitness" boundary and grant the "Participate" role to your gym buddies, allowing them to interact with your fitness-related content, while granting the "Interact" role to your family and friends, who can view and react to your posts but not comment on them.
@@ -72,6 +75,9 @@ Now you can use that boundary when making a post:
 2. Click the boundary menu which by default says "Public"
 5. Select the boundary you created
 7. You can now write and publish your post
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/6fc942fb149c457d97148730eb5fd333" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## What are roles?
 
