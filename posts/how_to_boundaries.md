@@ -9,8 +9,6 @@ author: Bonfire Builders
 
 ---
 
-# Circles and boundaries
-
 Bonfire's circles and boundaries system is a powerful tool with which you can create custom groups of contacts and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want. 
 
 It may help to start by defining some general concepts:
