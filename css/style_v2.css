@@ -911,6 +911,40 @@ html {
   width: 100%;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > *:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.dropdown .dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  z-index: 50;
+  opacity: 0;
+  transform-origin: top;
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown.dropdown-open .dropdown-content,
+.dropdown.dropdown-hover:hover .dropdown-content,
+.dropdown:not(.dropdown-hover):focus .dropdown-content,
+.dropdown:not(.dropdown-hover):focus-within .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+}
+
 .footer {
   display: grid;
   width: 100%;
@@ -986,7 +1020,6 @@ html {
   z-index: 1;
   position: absolute;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  white-space: nowrap;
 }
 
 .input {
@@ -1113,6 +1146,39 @@ html {
 
 .menu > :where(li:focus) > :where(ul) {
   display: flex;
+}
+
+.modal {
+  pointer-events: none;
+  visibility: hidden;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  z-index: 999;
+  background-color: hsl(var(--nf, var(--n)) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.4;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+
+:where(.modal) {
+  align-items: center;
+}
+
+.modal-open,
+.modal:target,
+.modal-toggle:checked + .modal {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
 }
 
 .navbar {
@@ -2122,6 +2188,15 @@ html {
   outline: 2px solid currentColor;
 }
 
+.dropdown.dropdown-open .dropdown-content,
+.dropdown.dropdown-hover:hover .dropdown-content,
+.dropdown:focus .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .footer-title {
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -2273,16 +2348,14 @@ html {
   line-height: 1.25rem;
 }
 
-.menu .menu-title {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  opacity: 0.4;
-}
-
 .menu .menu-title > * {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
+  --tw-text-opacity: 0.4;
 }
 
 .menu :where(li:not(.disabled)) > :where(*:not(ul)) {
@@ -2369,6 +2442,15 @@ html {
   overflow: hidden;
   border-radius: 40px;
   margin-top: -25px;
+}
+
+.modal-open .modal-box,
+.modal-toggle:checked + .modal .modal-box,
+.modal:target .modal-box {
+  --tw-translate-y: 0px;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .progress::-moz-progress-bar {
@@ -3361,13 +3443,13 @@ html {
   padding-left: 1em;
 }
 
-/* .prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before {
+.prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before {
   content: open-quote;
 }
 
 .prose :where(blockquote p:last-of-type):not(:where([class~="not-prose"] *))::after {
   content: close-quote;
-} */
+}
 
 .prose :where(h1):not(:where([class~="not-prose"] *)) {
   color: var(--tw-prose-headings);
@@ -4657,10 +4739,6 @@ html {
   margin-bottom: 2rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -4711,6 +4789,10 @@ html {
 
 .mb-32 {
   margin-bottom: 8rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .-mt-16 {
@@ -5191,10 +5273,6 @@ html {
 
 .snap-start {
   scroll-snap-align: start;
-}
-
-.list-disc {
-  list-style-type: disc;
 }
 
 .break-inside-avoid {
