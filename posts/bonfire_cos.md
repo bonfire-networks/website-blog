@@ -3,7 +3,7 @@ title: Announcing the Zappa project
 description: We are pleased to announce that Bonfire has been awarded a grant from the Culture of Solidarity Fund to support cross-border cultural initiatives of solidarity in times of uncertainty and "infodemic". 
 
 date: 2021-12-26
-tags: [CoS, zappa]
+tags: [announcement]
 image: /img/cos.jpeg
 layout: layouts/post.njk
 author: Bonfire Builders

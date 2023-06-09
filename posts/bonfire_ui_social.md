@@ -2,7 +2,7 @@
 title: A UI toolbox for customizable social network apps
 description: Bonfire:UI:Social is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app
 date: 2021-07-23
-tags: [visual-identity, UI, UX, liveview, surface]
+tags: [product]
 image: https://i.imgur.com/XoQvDCW.png
 layout: layouts/post.njk
 author: Bonfire Builders

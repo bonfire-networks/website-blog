@@ -2,7 +2,7 @@
 title: Let a thousand bonfires bloom
 description: Dopamine and attention manipulation are not inherent properties of a social network. It is time to reconsider some fundamental questions.
 date: 2021-07-20
-tags: [flavour, nlnet, valueflows]
+tags: [product]
 image: /img/flowers.png
 layout: layouts/post.njk
 author: Bonfire Builders

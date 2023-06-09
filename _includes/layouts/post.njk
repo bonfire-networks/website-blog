@@ -6,53 +6,53 @@ templateClass: tmpl-post
 
 <div class="max-w-screen-lg px-6 mx-auto mt-0 mb-12 lg:px-0">
   <div class="max-w-screen-md py-8 pb-8 mx-auto">
-    <a class="items-center block mx-auto w-36 place-content-center lg:place-content-start" href="/blog">
-      <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
+    <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
+      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
-        <span class="text-sm font-medium text-blueGray-300">Back to blog</span>
       </div>
+        <span class="text-sm font-medium text-blueGray-300">Back to Newsroom</span>
     </a>
     <div class="">
-      <h1 style="line-height: 60px;" class="z-10 col-span-2 text-3xl font-extrabold tracking-wide text-left text-blueGray-200 lg:text-5xl lg:text-center lg:tracking-widest">{{title}}</h1>
+       <div class="my-6 mt-8 text-base text-base-content/70">
+          <span>Published {{ date | readableDate }} in  {%- for tag in tags | filterTagList -%}
+          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+            <a href="{{ tagUrl | url }}">
+            <span class="link capitalize">
+              {{ tag }}
+            </span>
+            </a>
+          {%- endfor %}</span>
+      </div>
+     
+
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-2xl lg:text-4xl mt-6 font-bold text-left">{{title}}</h1>
+     
+     
 
       {% if header_html %}
         {{ header_html | safe }}
       {% else %}
-        <img src="{{image}}" alt="post image" class="w-full mt-6 rounded-lg shadow-xl" />
+        <img src="{{image}}" alt="post image" class="w-full max-h-[400px] mt-6 rounded-lg object-fit object-cover" />
       {% endif %}
-      
-      <span class="flex w-full items-center space-x-2 mt-4 py-0.5 text-sm font-medium text-pink-500">
-          <span>Published on {{ date | readableDate }} by {{author}}</span>
-          {%- for tag in tags | filterTagList -%}
-          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-            <a href="{{ tagUrl | url }}">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-              <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                <circle cx="4" cy="4" r="3" />
-              </svg>
-              {{ tag }}
-            </span>
-            </a>
-          {%- endfor %}
-      </span>
+ 
     </div>
   </div>
 
   <article class="max-w-screen-md mx-auto mt-0">
-    <div class="max-w-screen-md mx-auto mt-0 prose prose-light text-blueGray-300 lg:prose-xl">
+    <div class="max-w-screen-md mx-auto mt-0 prose prose-light">
     {{ content | safe }}
     </div>
   </article>
 
 
-  <div class="max-w-screen-md mx-4 mt-8 lg:mx-auto">
-    {% include "newsletter.njk" %}
-    </div>
     
 </div>
 
+  <div class="mx-4 mt-8 lg:mx-auto">
+    {% include "newsletter.njk" %}
+    </div>
 
   
 {# {%- set nextPost = collections.posts | getNextCollectionItem(page) %}

@@ -2,7 +2,7 @@
 title:  Not Just 'Yet Another Microblog'
 description: We're now days away from the beta release of Bonfire, a federated app toolkit. When beta users get their hands on it, however, they might be confused wait, this looks like just another microblogging app! haven't we already got enough of those? 
 date: 2022-06-18
-tags: [beta, social, zappa]
+tags: [product]
 image: /img/1a.jpg
 layout: layouts/post.njk
 author: Bonfire Builders
