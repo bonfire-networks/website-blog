@@ -17,8 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
   <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
     <div
-      class="sticky top-0 z-20 "
-      x-data="{open: false}" 
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     {# <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
       <div class="w-[108rem] flex-none flex justify-end">
@@ -28,7 +30,7 @@
       </div>
     </div> #}
 
-    <div class="">
+    <div>
       <header 
         class="relative z-30  max-w-screen-xl mx-auto navbar">
         <div class="navbar-start">
@@ -175,13 +177,14 @@
 
       {{ content | safe }}
 
-<div class="">
-  <footer class="p-10 py-24 border-t footer border-base-content/10 text-base-content">
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
   <div>
     <div class="items-center flex-1 grid-flow-col">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
     </div> 
-    <p>Bonfire Networks<br/>Proudly FLOSS since 2020</p>
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
   </div> 
   <div>
     <span class="footer-title">Developers</span> 

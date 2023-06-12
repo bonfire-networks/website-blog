@@ -2,7 +2,7 @@
 title: What you can expect from the Bonfire beta
 description: In a few days' time we'd like to invite you to experiment with a 'playground' instance of Bonfire, the federated social networking toolkit for communities. Lots of what you'll see in the Bonfire beta will be recognisable from other social and/or federated apps. There is some functionality that may be a little different with Bonfire as well.
 date: 2022-06-21
-tags: [announcement]
+tags: community
 image: /img/beta-screenshot.png
 layout: layouts/post.njk
 author: Bonfire Builders

@@ -2,7 +2,7 @@
 title: Bonfire presentation @ PrivacyWeek
 description: In September we have been invited to present bonfire at the italian privacy week conference. This is the bonfire presentation translated in english.
 date: 2022-10-01
-tags: [announcement]
+tags: announcement
 image: /img/pweek.png
 layout: layouts/post.njk
 author: Bonfire Builders
