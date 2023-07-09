@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
+<html lang="en" class="bg-base-300" data-theme="bonfire">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
 
       <div x-data="{open: false}" class="flex">
   <div 
@@ -25,12 +25,12 @@
     class="lg:!hidden cursor-pointer backdrop-blur backdrop-filter inset-0 z-10 bg-black/30 absolute"></div>
   <aside 
   :class="open ? 'block' : 'hidden'"  
-  class="sticky top-0 z-20 h-screen w-72 xl:w-80 lg:!block bg-[#1B1A27]/80">
+  class="sticky top-0 z-20 h-screen w-72 xl:w-80 lg:!block bg-base-100">
     <div class="block h-screen px-6 pt-4 pb-8 overflow-y-auto border-r pointer-events-auto w-72 border-white/10 xl:w-80">
       <div class="flex">
         <a href="/" class="flex items-center space-x-4">
           <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-          <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary"></div></span>
+          <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary">DOCS</div></span>
         </a>
       </div>
       <a href="/" class="gap-3 mt-5 -ml-4 font-medium normal-case rounded btn btn-ghost btn-sm">
@@ -210,7 +210,7 @@
 <h3 id="pick-a-flavour">Pick a flavour <a class="direct-link" href="#pick-a-flavour">#</a></h3>
 <p>Bonfire is a flexible platform that powers a variety of social networks. The first thing you have to choose is which app (or &quot;flavour&quot;) you want to hack on:</p>
 <ul>
-<li><code>classic</code> (&quot;Bonfire Social&quot;, a toot-based social network that interoperates with the fediverse)</li>
+<li><code>classic</code> (&quot;Bonfire Social&quot;, a basic social network that interoperates with the fediverse)</li>
 <li><code>community</code> (for groups and communities)</li>
 <li><code>cooperation</code> (for building cooperative economic networks)</li>
 </ul>
@@ -429,10 +429,10 @@ conveniences built in once you know how they all work. The gotcha is that while 
 <p>In this case, the seeds were unable to complete because a query took too long to execute on your machine. You can configure the timeout to be larger in the <code>dev</code> environment:</p>
 <ol>
 <li>Open <code>config/dev.exs</code> in your editor.</li>
-<li>Find the database configuration (search for <code>Bonfire.Repo</code>).</li>
+<li>Find the database configuration (search for <code>Bonfire.Common.Repo</code>).</li>
 <li>Add <code>timeout: 60_000</code> to the list of options:</li>
 </ol>
-<pre><code>config :bonfire, Bonfire.Repo,
+<pre><code>config :bonfire, Bonfire.Common.Repo,
   timeout: 60_000,
   [...]
 </code></pre>

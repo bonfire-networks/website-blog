@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
     <div
-      class="sticky top-0 z-20 bg-[#1B1A27]"
-      x-data="{open: false}" 
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
-    <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
-      <div class="w-[108rem] flex-none flex justify-end">
-          <source srcset="/img/bgover.png" type="image/avif">
-          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
-        </picture>
-      </div>
-    </div>
+    
 
     <header 
       class="relative z-30 max-w-screen-xl mx-auto navbar">
@@ -39,82 +35,37 @@
             </span>
           </a>
         </div>
-      </div>
-      <div class="hidden navbar-center lg:flex">
-        <ul class="flex-row gap-3 p-0 menu menu-compact menu-horizontal">
-          <li tabindex="0">
-            <a>
-              Developers
-              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-            </a>
-            <ul class="gap-2 p-2 bg-base-100">
-              <li>
-                <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
-                    <div class="font-bold">Documentation</div>
-                    <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                </a>
-              </li>
-              <li>
-                <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
-                  <div class="font-bold">Roadmap</div>
-                  <div class="text-sm text-base-content/70">See what's coming next</div>
-                </a>
-              </li>
-              
-              <li>
-                <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                  <div class="font-bold">Get the code</div>
-                  <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
- 
-          </li>
-          <li>
-           <a href="/faq" class=" ">
-            <span class="text-sm font-regular">FAQs</span>
-          </a>
-          </li>
-          <li>
-          <a href="/blog" class=" ">
-            <span class="text-sm font-regular">Blog</span>
-          </a>
-          </li>
-          <li>
-            <a href="/community" class=" ">
-              <span class="text-sm font-regular">Community</span>
-            </a>
-          </li>
-        </ul>
-      </div>
 
-      <div class="navbar-end">
-        <a href="/start/" >
-          <span class="hidden normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
-        </a>
 
-        <div class="inset-y-0 right-0 flex items-center lg:hidden">
-          <a href="/start/" >
-            <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
-          </a>
-          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
-            <span class="sr-only">Open main menu</span>
-            <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
+
         </div>
+        
+        <div class="navbar-end">
+          <a href="/start/" >
+            <span class="hidden normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+          </a>
 
-      </div>
-     
+          <div class="inset-y-0 right-0 flex items-center lg:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+            </a>
+            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+              <span class="sr-only">Open main menu</span>
+              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
 
-   
-    </header>
+        </div>
+      
+
+    
+      </header>
+    </div>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
       class="lg:hidden" 
@@ -162,141 +113,427 @@
 
       
 
-<div class="max-w-screen-xl mx-4 lg:mx-auto">
+<div class=" mx-4 lg:mx-auto">
 
   
 
+<div class="max-w-screen-lg mx-auto relative mt-32 flex items-center justify-center">
+  <div class="relative z-50">
+    <img src="/img/1.png" class="max-w-[520px] w-full mx-auto" />
+  <h1 class="relative z-50 font-semibold text-center  text-[58px] leading-[80px] mb-10 tracking-tight">
+    Open source toolkit <br />
+    for digital spaces
+  </h1>
+  <h2 class="text-lg text-center lg:text-xl mb-10 !leading-[34px] mx-auto text-base-content/90">Customisable, Decentralised, Self-governed.
+    <br />Welcome to the digital space of the future.</h2>
+  <div class="flex items-center place-content-center gap-4">
+      <a href="https://campground.bonfire.cafe" target="blank" class="btn rounded-full normal-case btn-primary px-5">Explore the playground</a>
+      <a href="#customisable" class="btn rounded-full normal-case  btn-primary btn-outline px-4">Read more</a>
 
-  <div class="max-w-screen-xl mx-auto mt-[120px]">
-    <div class="flex flex-col items-center justify-center grid-cols-1 gap-16">
-      <div class="flex flex-col col-span-1 text-center items-center justify-center"> 
-        <h1 class="text-[48px] font-extrabold leading-[1.3] tracking-wider text-base-content">Social networks <br>for 
-          <span class="relative whitespace-nowrap text-primary"><svg aria-hidden="true" viewBox="0 0 418 42" class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none"><path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path></svg><span class="relative">thriving</span></span>
-           communities</h1>
-        
-        
-      </div>
-      <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-          <img src="/img/1.png" alt="defaults" width="640" height="492" class="w-full max-w-none">
-        </div>
-      </div>
-      
-      
-    </div>
-  </div>
-
-<div class="sm:py-18 container relative mx-auto py-16 md:py-24 lg:py-24 space-y-16 pb-0">
-  
-  <div class="grid grid-cols-1 mt-8 gap-y-4 sm:grid-cols-2 md:grid-cols-2 md:gap-8 lg:grid-cols-4 lg:gap-x-8 xl:gap-x-8">
-    <div class="mb-10 space-y-4 md:mb-0">
-      <div class="flex items-center">
-        <div class="bg-[#282736] text-base-300 inline-flex h-10 w-10 items-center justify-center rounded-md">
-          <svg class="w-6 h-6 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10c0 4.13-2.504 7.676-6.077 9.201l-2.518-6.55a3 3 0 1 0-2.809.001l-2.518 6.55A10.005 10.005 0 0 1 2 12C2 6.477 6.477 2 12 2z"/></svg>
-        </div>
-        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Open Source</div>
-      </div>
-      <div class="text-base-content/80">Join a community of developers and users who are dedicated to creating a transparent, accessible and constantly improving social network.</div>
-    </div>
-
-    <div class="mb-10 space-y-4 md:mb-0">
-      <div class="flex items-center">
-        <div class="bg-[#282736] text-base-300 inline-flex h-10 w-10 items-center justify-center rounded-md">
-          <svg class="w-6 h-6 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M12 4a8 8 0 1 0 8 8a8.003 8.003 0 0 0-8-8Zm-6 8a5.997 5.997 0 0 1 .105-1.095L9.6 14.4v.8a1.605 1.605 0 0 0 1.6 1.6v1.14A6.004 6.004 0 0 1 6 12Zm9.2 3.2h-.8v-2.4a.802.802 0 0 0-.8-.8H8.8v-1.6h1.6a.802.802 0 0 0 .8-.8V8h1.6a1.6 1.6 0 0 0 1.59-1.5a5.985 5.985 0 0 1 2.137 9.426A1.57 1.57 0 0 0 15.2 15.2ZM13 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm5 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm4 4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2 6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-2 6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-4 4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-5 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-5-1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-4-4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-2-6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2-6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm4-4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Z"/></svg>
-        </div>
-        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Federated</div>
-      </div>
-      <div class="text-base-content/80">Be a part of a decentralized network where you can connect with users on other instances, while keeping control of your own data.</div>
-    </div>
-
-    <div class="mb-10 space-y-4 md:mb-0">
-      <div class="flex items-center">
-        <div class="bg-[#282736] text-base-300 inline-flex h-10 w-10 items-center justify-center rounded-md">
-          <svg class="w-6 h-6 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M8.8 21H5q-.825 0-1.413-.587Q3 19.825 3 19v-3.8q1.2 0 2.1-.762q.9-.763.9-1.938q0-1.175-.9-1.938Q4.2 9.8 3 9.8V6q0-.825.587-1.412Q4.175 4 5 4h4q0-1.05.725-1.775Q10.45 1.5 11.5 1.5q1.05 0 1.775.725Q14 2.95 14 4h4q.825 0 1.413.588Q20 5.175 20 6v4q1.05 0 1.775.725q.725.725.725 1.775q0 1.05-.725 1.775Q21.05 15 20 15v4q0 .825-.587 1.413Q18.825 21 18 21h-3.8q0-1.25-.787-2.125Q12.625 18 11.5 18t-1.912.875Q8.8 19.75 8.8 21Z"/></svg>
-        </div>
-        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Modular</div>
-      </div>
-      <div class="text-base-content/80">Experience unparalleled customization with our modular architecture, allowing you to choose the features that matter most to you.</div>
-    </div>
-
-    <div class="mb-10 space-y-4 md:mb-0">
-      <div class="flex items-center">
-        <div class="bg-[#282736] text-base-300 inline-flex h-10 w-10 items-center justify-center rounded-md">
-          <svg class="w-6 h-6 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 3h8v8h-8V3Zm2 2h4v4h-4V5Z"/><path d="M17 21v-8h-6V7H3v14h14ZM9 9H5v4h4V9ZM5 19v-4h4v4H5Zm6 0v-4h4v4h-4Z"/></g></svg>
-        </div>
-        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Extensible</div>
-      </div>
-      <div class="text-base-content/80">Don't find what you need? Ask the community to build specific features or do it by yourselves.</div>
-    </div>
   </div>
   </div>
 </div>
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto mt-16 lg:mt-32">
-    <div class="relative flex flex-col text-center items-center grid-cols-1 gap-4 place-content-center">
-      <div  style="width: 1px;" class="h-16 mx-auto mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-      <div class="text-[36px] font-extrabold leading-[1.3] tracking-wider text-base-content">Explore what is possible</div>
-      <div class="text-[24px] mx-auto max-w-[800px] leading-[35px] font-normal text-base-content/60">when you're not the product</div>
+  
+
+
+<div class="max-w-screen-lg relative mx-auto py-16 pb-32">
+  
+  <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-x-8 xl:gap-x-8">
+    
+    <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex flex-col gap-3 items-center">
+          <svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none"></rect><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10c0 4.13-2.504 7.676-6.077 9.201l-2.518-6.55a3 3 0 1 0-2.809.001l-2.518 6.55A10.005 10.005 0 0 1 2 12C2 6.477 6.477 2 12 2z"></path></svg>
+          <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Open Source</div>
+        </div>
+        <div class="text-sm text-base-content/80">Join a community of users and developers who are dedicated to creating a transparent, accessible and constantly improving social network.</div>
+      </div>
+    </div>
+    
+    <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 flex items-center text-center gap-2 flex-col p-4">
+      <div class="flex flex-col gap-3 items-center">
+          <svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none"></rect><path fill="currentColor" d="M12 4a8 8 0 1 0 8 8a8.003 8.003 0 0 0-8-8Zm-6 8a5.997 5.997 0 0 1 .105-1.095L9.6 14.4v.8a1.605 1.605 0 0 0 1.6 1.6v1.14A6.004 6.004 0 0 1 6 12Zm9.2 3.2h-.8v-2.4a.802.802 0 0 0-.8-.8H8.8v-1.6h1.6a.802.802 0 0 0 .8-.8V8h1.6a1.6 1.6 0 0 0 1.59-1.5a5.985 5.985 0 0 1 2.137 9.426A1.57 1.57 0 0 0 15.2 15.2ZM13 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm5 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm4 4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2 6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-2 6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-4 4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-5 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-5-1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-4-4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-2-6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2-6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm4-4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Z"></path></svg>
+        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Federated</div>
+      </div>
+      <div class="text-sm text-base-content/80">Be a part of a decentralized network where you can connect with users on other instances, while keeping control of your own data.</div>
+    </div>
     </div>
 
+    <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 flex items-center text-center gap-2 flex-col p-4">
+      <div class="flex flex-col gap-3 items-center">
+          <svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none"></rect><path fill="currentColor" d="M8.8 21H5q-.825 0-1.413-.587Q3 19.825 3 19v-3.8q1.2 0 2.1-.762q.9-.763.9-1.938q0-1.175-.9-1.938Q4.2 9.8 3 9.8V6q0-.825.587-1.412Q4.175 4 5 4h4q0-1.05.725-1.775Q10.45 1.5 11.5 1.5q1.05 0 1.775.725Q14 2.95 14 4h4q.825 0 1.413.588Q20 5.175 20 6v4q1.05 0 1.775.725q.725.725.725 1.775q0 1.05-.725 1.775Q21.05 15 20 15v4q0 .825-.587 1.413Q18.825 21 18 21h-3.8q0-1.25-.787-2.125Q12.625 18 11.5 18t-1.912.875Q8.8 19.75 8.8 21Z"></path></svg>
+        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Modular</div>
+      </div>
+      <div class="text-sm text-base-content/80">Experience unparalleled customization with our modular architecture, allowing you to choose the features that matter most to you.</div>
+    </div>
+    </div>
 
-  <div class="bg-gradient-to-r mt-20 from-sky-900 via-violet-600 to-white/70 col-span-3 rounded-2xl shadow-xl p-[1px]">
-    <div class="px-4 md:px-[64px] bg-gradient-to-tl from-amber-200 via-violet-600 to-sky-900 rounded-2xl py-8 md:py-16">
-      <div class="grid grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
-          <div class="px-6 lg:px-0 lg:pt-4 lg:pr-4">
-            <div class="w-[60px] h-[60px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px]" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35Z"/></svg>
-            </div>
-            <div class="mt-10 text-[26px] font-bold tracking-wider text-base-content">Customise bonfire to meet your specific needs</div>
-            <div class="mt-2 text-[20px] leading-[32px] tracking-wider font-normal text-base-content/70">Start with the core features of Bonfire, then add or remove extensions based on the functionality you need and configure everything to your preferences. With this flexibility, you can customize your experience to fit your exact values and needs, and easily adjust your setup at any time.</div>
-          </div>
-          <div class="sm:px-6 lg:px-0">
-            <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-              <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <img src="/img/defaults.png" alt="defaults" width="640" height="492" class="w-full max-w-none">
+    
+  </div>
+  </div>
+
+<div class="max-w-screen-lg mx-auto">
+  <div id="customisable" class="text-5xl text-center font-semibold text-base-content">
+    Customisable, yet federated. </div>
+
+<div class="mt-24">
+  
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6">
+    
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Have meaningful and safer interactions</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">Thanks to bonfire modularity, you can customize your experience to fit your exact values and needs, and easily adjust your setup at any time.</div>
+        <img src="/img/c1.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Create and manage groups</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">With groups users can create context-specific and cross-instances spaces, define their own rules and governance, to better organize their participation across the fediverse.</div>
+        <img src="/img/c2.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Build safer boundaries</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">Create custom circles of contacts and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want.</div>
+        <img src="/img/c3.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Connect with other communities</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">Engage with diverse communities across the fediverse at a pace that suits you. Bonfire ensures a personalized interaction experience, connecting you with like-minded networks while maintaining your comfort and control.</div>
+        <img src="/img/c4.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+    
+    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Create Circles</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Circles are a tool that can be used to establish relationships. They are representations of multifaceted relationships that you have with people in your life.</div>
+        <img src="/img/c5.png" class="mx-auto my-4 h-[80px]" />
+      </div>
+    </div>
+    
+    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Assign Roles</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Create and assign custom roles to grant different permissions to users and circles. Roles affect what actions users can take and what information they can view, interact with, or even edit.</div>
+        <img src="/img/c6.png" class="mx-auto my-4 h-[80px]" />
+      </div>
+    </div>
+
+    
+
+    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">You are free to leave</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Your profile, posts, or network belong to you. On the fediverse, you are not restricted to a specific software or instance; you are free to leave, transfer all your data, and move to a different instance.</div>
+        <img src="/img/c8.png" class="mx-auto my-4 h-[80px]" />
+      </div>
+    </div>
+
+    
+
+    
+  </div>
+  </div>
+
+  <div class="text-center flex mb-20 flex-col mt-40 gap-4 items-center">
+    <div class="badge badge-accent badge-lg mx-auto">Case Study</div>
+    <div class="text-5xl leading-[70px] text-center font-semibold text-base-content">What communities plan to build with bonfire</div>
+  </div>
+
+  <div class="flex justify-evenly w-full max-w-screen-lg mx-auto text-center">
+    <div class="btn btn-secondary rounded-full normal-case">Research Network</div>
+    <div class="btn hidden md:block btn-ghost relative rounded-full normal-case">Learners Community <span class="badge-outline badge badge-sm">Coming soon</span></div>
+    <div class="btn hidden md:block btn-ghost relative  rounded-full normal-case">Non-profit <span class="badge-outline badge badge-sm">Coming soon</span></div>
+    <div class="btn hidden md:block btn-ghost relative  rounded-full normal-case">Neighborhood <span class="badge-outline badge badge-sm">Coming soon</span></div>
+  </div>
+
+  <div class="col-span-2  mt-16 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+    <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200">
+      <div class="relative">
+        <div class="mx-auto lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+          <div class="px-6 lg:col-span-7 lg:px-0 xl:col-span-6">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+              <h2 class="mt-24 text-3xl font-bold text-base-content sm:mt-10">How Niboe is using bonfire to facilitate open peer reviews and boost scientific divulgation. </h2>
+              <p class="mt-6 text-lg leading-8 text-base-content/70">A massive adoption of federated protocols by academic institutions will help to boost open-science implementations and to include non-academic communities in the knowledge production process. We envision these implementations being crafted in the open, through a co-designing process that unites scientists, researchers, and activists...</p>
+              <div class="my-10 flex items-center gap-x-6">
+                <a href="https://notes.zo.team/niboe-use-case" target="blank" class="btn btn-outline !border !border-base-content/30 normal-case rounded-full">Read more</a>
               </div>
             </div>
           </div>
-          
+          <div class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+            <img class="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full" src="https://i.imgur.com/UTp45o0.jpg" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-    <div class="grid grid-cols-1 gap-10 my-10 lg:grid-cols-2">
-
-      <div class="bg-[#282736] rounded-2xl  p-12">
-        <div class="text-[26px] font-bold text-center">Define circles that mirror real life</div>
-        <div class="text-lg text-center text-base-content/70 mt-4">Relationships cannot be confined to binary categories like “follower” or “friend”. Define as many personalized circles as makes sense for you.</div>
-        <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-            <img src="/img/c.png" alt="circle screenshot" class="w-full max-w-none">
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-[#282736] rounded-2xl p-12 ">
-        <div class="text-[26px]  font-bold text-center">Set some healthy boundaries</div>
-        <div class="text-lg text-center text-base-content/70 mt-4">Assign roles to circles and users to control if and how they can see and interact with you and your data. </div>
-        <div class="relative mt-16 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-            <img src="/img/r.png" alt="circle screenshot" class="w-full max-w-none">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-[#282736] rounded-2xl shadow-xl">
-      <div class="grid grid-cols-1 gap-y-16 gap-x-10 sm:gap-y-20 lg:grid-cols-2 items-center">
-        <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-            <img src="/img/3.png" alt="free to leave" width="640" height="492" class="w-full max-w-none">
-          </div>
-        </div>
-        <div class="p-4 md:p-12">
-      <div class="text-[26px] font-bold text-left">You are free to leave</div>
-      <div class="text-lg text-left text-base-content/70 mt-4">The platform or instance does not own your profile, posts, or network. These belong to you. On the fediverse, you are not restricted to a specific software or instance; you are free to leave, transfer all your data, and move to a different instance.</div>
-      </div>
-      </div>
-    </div>
 </div>
+
+
+
+</div>
+
+
+<div class="max-w-screen-lg mx-auto">
+  <div class="text-center flex mb-20 flex-col mt-40 gap-4 items-center">
+    <div class="badge badge-accent badge-lg mx-auto">Developers friendly</div>
+    <div class="text-5xl leading-[70px] text-center font-semibold text-base-content">Powerful building blocks.</div>
+    <div class="text-center text-lg  max-w-xl !leading-[34px] mx-auto text-base-content/90">Leveraging Bonfire's modular architecture, developers can effortlessly build new extensions, making full use of a stable and documented set of building blocks.</div>
+    <a href="#" class="btn btn-outline mt-6 !border !border-base-content/30 normal-case rounded-full">Read the documentation</a>
+  </div>
+
+
+  <div class="mt-12">
+    
+    <div class="grid grid-cols-1 px-4 md:px-0 gap-8 sm:grid-cols-2 md:grid-cols-2 divide-base-content/40  lg:grid-cols-3">
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+          <div class="flex items-center">
+            <div class="text-base-content uppercase mt-2 text-lg font-semibold flex flex-row xl:flex-col">Account & Users</div>
+          </div>
+          <div class="text-base-content/80 text-sm mt-4">The library provides all the necessary tools for creating accounts, customizing user profiles, and safeguarding personal information</div>
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_me" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full w-full !border !border-primary/50">View code</a>
+        </div>
+      </div>
+
+     <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">Boundaries & Circles</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">The library lets you easily create and manage circles, assign roles and define default and custom boundaries. Read more in our <a target="blank" href="https://bonfirenetworks.org/docs/boundaries/" target="blank">docs section</a></div>
+                  <a target="blank" href="https://github.com/bonfire-networks/bonfire_boundaries" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full w-full !border !border-primary/50">View code</a>
+      </div>
+      </div>
+
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+          <div class="flex items-center">
+            <div class="text-base-content uppercase mt-2 text-lg font-semibold flex flex-row xl:flex-col">Social</div>
+          </div>
+          <div class="text-base-content/80 text-sm mt-4">Follow, read, reply, moderate. The social library includes all the crucial functions that fuel the core bonfire microblog.</div>
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_social" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full w-full !border !border-primary/50">View code</a>
+        </div>
+      </div>
+
+
+
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">ValueFlows</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">This library lets you build features such as Kanban boards, inventories, offer/need bulletins, marketplaces, and much more.</div>
+                  <a target="blank" href="https://github.com/bonfire-networks/bonfire_valueflows" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full w-full !border !border-primary/50">View code</a>
+      </div>
+      </div>
+      
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">Groups</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Create federated groups and topics, each with unique visibility settings and governance structures. Currently in alpha.</div>
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_classify" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full w-full !border !border-primary/50">View code</a>
+      </div>
+      </div>
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">ActivityPub</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">A Modular ActivityPub library in Elixir, generic enough to be used for federating any kind of activities.</div>
+            <a href="https://github.com/bonfire-networks/activity_pub" target="blank" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full w-full !border !border-primary/50">View code</a>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="max-w-screen-lg px-4 md:px-0 lg:mx-auto mt-32">
+      <div class="text-5xl leading-[70px] text-center font-semibold mb-16 text-base-content">Latest from the blog</div>
+      
+      
+      
+
+<section class="mt-6 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+  
+  
+  
+    <article class="flex flex-col gap-2">
+      <div class="w-full h-48 bg-blueGray-400 rounded-lg bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/ux.jpeg)"></div>
+      <div class="flex-1 mt-2">
+        <h2 class="font-bold text-lg link link-hover">
+            <a href="/posts/user_research/">
+                
+                    Could you help us with user research?
+                
+            </a>
+        </h2>
+        
+        
+        
+        
+            <p class="text-sm text-base-content/70 my-2">
+                As we approach v1.0 of Bonfire, we’re looking for volunteers to help us with some user research.
+            </p>
+        
+        
+        
+      </div>
+    </article>
+    
+  
+  
+    <article class="flex flex-col gap-2">
+      <div class="w-full h-48 bg-blueGray-400 rounded-lg bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/roles.png)"></div>
+      <div class="flex-1 mt-2">
+        <h2 class="font-bold text-lg link link-hover">
+            <a href="/posts/custom_roles/">
+                
+                    Empowering Bonfire users with advanced roles &amp; permissions
+                
+            </a>
+        </h2>
+        
+        
+        
+        
+            <p class="text-sm text-base-content/70 my-2">
+                We are happy to announce that the next Bonfire release will introduce the capacity to define and assign custom roles.
+            </p>
+        
+        
+        
+      </div>
+    </article>
+    
+  
+  
+    <article class="flex flex-col gap-2">
+      <div class="w-full h-48 bg-blueGray-400 rounded-lg bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/groups1.png)"></div>
+      <div class="flex-1 mt-2">
+        <h2 class="font-bold text-lg link link-hover">
+            <a href="/posts/dev_diary_groups_1/">
+                
+                    Dev Diary: Implementing federated groups in Bonfire
+                
+            </a>
+        </h2>
+        
+        
+        
+        
+            <p class="text-sm text-base-content/70 my-2">
+                As part of our commitment to empower communities with tools to foster coordination, we are thrilled to announce the development of federated groups in Bonfire.
+            </p>
+        
+        
+        
+      </div>
+    </article>
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</section>
+<div class="flex mx-auto items-center place-content-center mt-12">
+  <a href="/blog" class="btn btn-outline !border !border-base-content/30 rounded-full normal-case">View all posts</a>
+</div>
+
+    <div class="mt-24 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
+
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
  
@@ -305,25 +542,19 @@
         background: #333;
     }
 </style>
-<div class="pb-40 mt-32 border-t border-b section--bg border-base-content/10">
-  <div class="skew-y-2">
-    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto lg:mt-32">
+<div class="mt-32 relative">
+  <div class="">
       <div class="relative flex flex-col items-center grid-cols-1 gap-4 text-center place-content-center">
-        <div class="text-[32px] font-extrabold leading-[1.3] tracking-wider text-base-content">What our community is saying</div>
-        <div class="flex items-center gap-3 mt-3">
-          <a href="https://indieweb.social/@bonfire" target="_blank" class="normal-case rounded btn btn-outline btn-sm">Follow on the fediverse</a>
-          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="normal-case rounded btn btn-sm">Join our Matrix chat</a>
-        </div>
-      </div>
+        <div class="text-5xl leading-[70px] text-center font-semibold mb-16 text-base-content">What our community is saying</div>
+        
     </div>
-    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto lg:mt-24">
+    <div class="">
 
 <div
     x-data="{
         init() {
             new Splide(this.$refs.splide, {
-                perPage: 3,
-                gap: '1rem',
+                perPage: 4,
                 breakpoints: {
                     640: {
                         perPage: 1,
@@ -335,66 +566,68 @@
 >
     <section x-ref="splide" class="splide" aria-label="Splide/Alpine.js Carousel Example">
         <div class="splide__track">
-            <ul class="items-start splide__list -skew-y-2">
-                <li class="flex flex-col items-center justify-center pb-8 splide__slide">
-                  <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+            <ul class="items-start splide__list ">
+              <li class="relative cursor-pointer bg-base-content/10 p-6 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">The most exciting thing about Bonfire to me is that they have set the stage to add all kinds of features integrated with the social networking core.  Circles and groups to start, offers/wants... some day whole social/economic networks and ecosystems.  Looking into the campfire, I can see a bright future for the fediverse.</div>
                     <div class="flex items-center gap-3">
                       <div class="w-12 h-12 rounded-full bg-base-100">
                         <img src="./img/lynn.png" class="object-cover w-full h-full rounded-full">
                       </div>
                       <div class="flex flex-col">
-                        <a href="https://social.coop/@lynnfoster" target="_blank" class="font-bold link link-hover text-base-content">Lynn Foster</a>
+                        <div class="font-bold text-base-content">Lynn Foster</div>
                         <div class="text-sm font-light text-base-content/80">lynnfoster@social.coop</div>
                       </div>
                     </div>
-                    <div class="mt-4 text-base text-base-content/60">The most exciting thing about Bonfire to me is that they have set the stage to add all kinds of features integrated with the social networking core.  Circles and groups to start, offers/wants... some day whole social/economic networks and ecosystems.  Looking into the campfire, I can see a bright future for the fediverse.</div>
                   </div>
-                </li>
- 
-                <li class="flex flex-col items-center justify-center pb-8 splide__slide">
-                  <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+              </li>
+
+              <li class="relative cursor-pointer bg-base-content/20 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">Bonfire has the potential to bring federated social media to a new level. Its modular design will facilitate the creation of applications for all kind of purposes. We believe Bonfire will become the backbone of our future developments in the fields of open knowledge and science communication.</div>
                     <div class="flex items-center gap-3">
                       <div class="w-12 h-12 rounded-full bg-base-100">
                         <img src="./img/jorge.jpeg" class="object-cover w-full h-full rounded-full">
                       </div>
                       <div class="flex flex-col">
-                        <a href="https://red.niboe.info/@jorge" target="_blank" class="font-bold link link-hover text-base-content">Jorge Saturno</a>
+                        <div class="font-bold text-base-content">Jorge Saturno</div>
                         <div class="text-sm font-light text-base-content/80">jorge@red.niboe.info</div>
                       </div>
                     </div>
-                    <div class="mt-4 text-base text-base-content/60">Bonfire has the potential to bring federated social media to a new level. Its modular design will facilitate the creation of applications for all kind of purposes. We believe Bonfire will become the backbone of our future developments in the fields of open knowledge and science communication.</div>
                   </div>
-                </li>
- 
-                <li class="flex flex-col items-center justify-center pb-8 splide__slide">
-                  <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+              </li>
+
+              <li class="relative cursor-pointer bg-base-content/10 p-6 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">While I like Bonfire already, and love their care at making everything work smoothly, I am most excited by their future plans. I am working on community economic systems where the future Bonfire could be the main coordination medium.</div>
                     <div class="flex items-center gap-3">
                       <div class="w-12 h-12 rounded-full bg-base-100">
                         <img src="./img/bob.jpeg" class="object-cover w-full h-full rounded-full">
                       </div>
                       <div class="flex flex-col">
-                        <a href="https://social.coop/@bhaugen" target="_blank" class="font-bold link link-hover text-base-content">Bob Haugen</a>
+                        <div class="font-bold text-base-content">Bob Haugen</div>
                         <div class="text-sm font-light text-base-content/80">bhaugen@social.coop</div>
                       </div>
                     </div>
-                    <div class="mt-4 text-base text-base-content/60">While I like Bonfire already, and love their care at making everything work smoothly, I am most excited by their future plans. I am working on community economic systems where the future Bonfire could be the main coordination medium.</div>
                   </div>
-                </li>
- 
-                <li class="flex flex-col items-center justify-center pb-8 splide__slide">
-                  <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+              </li>
+
+
+              <li class="relative cursor-pointer bg-base-content/20 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">We are loving Bonfire. We are actively exploring it to move our tools into Bonfire. Getting access to the Fediverse and to all the blocks looks really promising, to quickly develop community driven processes.</div>
                     <div class="flex items-center gap-3">
                       <div class="w-12 h-12 rounded-full bg-accent">
-                        <div class="object-cover w-full h-full rounded-full"></div>
+                        
                       </div>
                       <div class="flex flex-col">
-                        <a href="#" target="_blank" class="font-bold link link-hover text-base-content">Angel</a>
+                        <div class="font-bold text-base-content">Angel</div>
                         <div class="text-sm font-light text-base-content/80">The Weather Makers</div>
                       </div>
                     </div>
-                    <div class="mt-4 text-base text-base-content/60">We are loving Bonfire. We are actively exploring it to move our tools into Bonfire. Getting access to the Fediverse and to all the blocks looks really promising, to quickly develop community driven processes.</div>
                   </div>
-                </li>
+              </li>
+
 
             </ul>
         </div>
@@ -568,462 +801,13 @@
 </div>
   </div>
 </div> -->
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto my-32">
-    <div class="relative flex flex-col text-center items-center grid-cols-1 gap-4 place-content-center">
-      <div style="width: 1px;" class="h-16 mx-auto mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-      <div class="text-[36px] font-extrabold leading-[1.3] tracking-wider text-base-content">Much more than a microblog</div>
-      <div class="text-[24px] mx-auto max-w-[800px] leading-[35px] font-normal text-base-content/60">Choose from a growing list of Bonfire extensions to enhance your instance and uncover new possibilities.</div>
-    </div>
-    
-    <div class="colums-1 md:columns-2 lg:columns-3 gap-10 mt-20">
-
-      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="1em" height="1em" viewBox="-5 -5 24 24"><path fill="currentColor" d="M6 6v2h2V6H6zm0-2h2V1a1 1 0 1 1 2 0v3h3a1 1 0 0 1 0 2h-3v2h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3H6v3a1 1 0 0 1-2 0v-3H1a1 1 0 1 1 0-2h3V6H1a1 1 0 1 1 0-2h3V1a1 1 0 1 1 2 0v3z"/></svg>          
-        </div>
-        <div class="text-xl font-semibold ">Topics</div>
-        <div class="text-lg  text-base-content/70 mt-4">
-          Topics connect you with people who share your passion, to share ideas and have in-depth discussions on a specific theme. By following a topic (like "solarpunk" or "upcycling tips") you'll receive posts carefully curated by a team you trust.
-        </div>
-        <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-            <img src="/img/topics.png" alt="topics preview" width="640" height="492" class="w-full max-w-none">
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2q1.625 0 3.075.475q1.45.475 2.675 1.325L16.3 5.275q-.95-.6-2.025-.938Q13.2 4 12 4Q8.675 4 6.338 6.337Q4 8.675 4 12t2.338 5.663Q8.675 20 12 20q3.325 0 5.663-2.337Q20 15.325 20 12q0-.45-.05-.9t-.15-.875L21.425 8.6q.275.8.425 1.65q.15.85.15 1.75q0 2.075-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Zm-1.4-5.4l-4.25-4.25l1.4-1.4l2.85 2.85l10-10.025l1.4 1.4Z"/></svg>
-        </div>
-        <div class="text-xl font-semibold ">Tasks</div>
-        <div class="text-lg  text-base-content/70 mt-4">
-        Create to-do lists and assign tasks to yourself or others across multiple instances. Coordinate work in teams, stay in the loop, make progress, and get it done.
-        </div>
-      </div>
-      
-      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5l-9-4m0 4a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m5.13 12A9.69 9.69 0 0 1 12 20.92A9.69 9.69 0 0 1 6.87 17c-.34-.5-.63-1-.87-1.53c0-1.65 2.71-3 6-3s6 1.32 6 3c-.24.53-.53 1.03-.87 1.53Z"/></svg>
-        </div>
-        <div class="text-xl font-semibold ">Custom roles</div>
-        <div class="text-lg  text-base-content/70 mt-4">
-        Create and assign custom roles to grant different groups of permissions to users and circles. Roles affect what actions users can take and what information they can view, interact with, or even edit.</div>
-        <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-            <img src="/img/role.png" alt="role preview" width="640" height="492" class="w-full max-w-none">
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-        <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M14 14.252v2.09A6 6 0 0 0 6 22l-2-.001a8 8 0 0 1 10-7.748zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6s6 2.685 6 6s-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm6.586 6l-1.829-1.828l1.415-1.415L22.414 18l-4.242 4.243l-1.415-1.415L18.586 19H15v-2h3.586z"/></svg>
-        </div>
-        <div class="text-xl font-semibold ">Shared user</div>
-        <div class="text-lg  text-base-content/70 mt-4">
-        Manage your group's online presence by sharing a single user profile with multiple people. Useful for organizations, teams, or families to manage their online presence collectively and communicate with others transparently. 
-        </div>
-      </div>
-
-    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M8 3C5.79 3 4 4.79 4 7v7c0 1.1.9 2 2 2h3v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h3c1.1 0 2-.9 2-2V3H8m0 2h4v2h2V5h1v4h2V5h1v5H6V7c0-1.1.9-2 2-2m-2 9v-2h12v2H6Z"/></svg>
-      </div>
-      <div class="text-xl font-semibold ">Personalize the look & feel</div>
-      <div class="text-lg  text-base-content/70 mt-4">
-      Pick your preferred color scheme or define your own palette to give your instance a personal touch. Creating your own theme is simple and does not require writing code. 
-      </div>
-      <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-          <img src="/img/theme.png" alt="theme preview" width="640" height="492" class="w-full max-w-none">
-        </div>
-      </div>
-    </div>
-    
-    
-    
-    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16H3l3.47-4.66A2 2 0 1 0 3 9.8m7 6.2V8h4m-4 4h3m4 4v-6a2 2 0 0 1 4 0v6m-4-3h4"/></svg>
-      </div>
-      <div class="text-xl font-semibold ">Two-Factor Authentication</div>
-      <div class="text-lg  text-base-content/70 mt-4">
-      Increase the security of your account by enabling Two-Factor Authentication (2FA). 
-      </div>
-    </div>
-    
-    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M18 24V12m5 10l-10-7m10 0l-10 7M8 11A5 5 0 1 0 8 1a5 5 0 0 0 0 10Zm5.023 2.023C11.772 11.76 10.013 11 8 11c-4 0-7 3-7 7v5h10"/></svg>
-      </div>
-      <div class="text-xl font-semibold ">Multiple identities</div>
-      <div class="text-lg  text-base-content/70 mt-4">
-      Create multiple user profiles linked to the same account for an extra layer of privacy. This enables you to maintain a profile for each aspect of your online life, with different followers and privacy settings, without having to log in to separate accounts.</div>
-    </div>
-
-    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><path fill="currentColor" d="M3.135 6.89c.933-.725 1.707-.225 2.74.971c.116.135.272-.023.361-.1c.088-.078 1.451-1.305 1.518-1.361c.066-.059.146-.169.041-.292a36.238 36.238 0 0 1-.743-.951c-1.808-2.365 4.946-3.969 3.909-3.994c-.528-.014-2.646-.039-2.963-.004c-1.283.135-2.894 1.334-3.705 1.893c-1.061.726-1.457 1.152-1.522 1.211c-.3.262-.048.867-.592 1.344c-.575.503-.934.122-1.267.414c-.165.146-.627.492-.759.607c-.133.117-.157.314-.021.471c0 0 1.264 1.396 1.37 1.52c.105.122.391.228.567.071c.177-.156.632-.553.708-.623c.078-.066-.05-.861.358-1.177zm5.708.517c-.12-.139-.269-.143-.397-.029L7.012 8.63a.289.289 0 0 0-.027.4l8.294 9.439c.194.223.53.246.751.053l.97-.813a.54.54 0 0 0 .052-.758L8.843 7.407zM19.902 3.39c-.074-.494-.33-.391-.463-.182c-.133.211-.721 1.102-.963 1.506c-.24.4-.832 1.191-1.934.41c-1.148-.811-.749-1.377-.549-1.758c.201-.383.818-1.457.907-1.59c.089-.135-.015-.527-.371-.363c-.357.164-2.523 1.025-2.823 2.26c-.307 1.256.257 2.379-.85 3.494l-1.343 1.4l1.349 1.566l1.654-1.57c.394-.396 1.236-.781 1.998-.607c1.633.369 2.524-.244 3.061-1.258c.482-.906.402-2.814.327-3.308zM2.739 17.053a.538.538 0 0 0 0 .758l.951.93c.208.209.538.121.746-.088l4.907-4.824l-1.503-1.714l-5.101 4.938z"/></svg>
-      </div>
-      <div class="text-xl font-semibold ">Inventory management</div>
-      <div class="text-lg  text-base-content/70 mt-4">
-      Track tools, goods, and other assets, and record when they are transferred, stored, consumed, recycled, etc. The inventory extension is powered by the <a href="https://www.valueflo.ws/" class="link">ValueFlows vocabulary</a>.
-      </div>
-      <div class="relative mb-[-46px] mt-6 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-        <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-          <img src="/img/inventory.png" alt="inventory preview" width="640" height="492" class="w-full max-w-none">
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-      <div class="w-[42px] mb-8 h-[42px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">
-        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1.13em" height="1em" viewBox="0 0 576 512"><path fill="currentColor" d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8l-17.5-17.5zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512C34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z"/></svg>
-      </div>
-      <div class="text-xl font-semibold ">Build your own</div>
-      <div class="text-lg  text-base-content/70 mt-4">
-      You can develop your own extensions, and leverage on our set of utilities and core modules to plug it seamlessy with the rest of the core modules.
-      Develop your own extensions using our set of utilities and core modules for seamless integration with core functionality such as circles/boundaries, federation, and activity feeds.
-      </div>
-    </div>
-  </div>
-
-</div>
 
 
 
-    
-
-<div class="max-w-screen-lg px-4 lg:px-8 2xl:max-w-screen-xl lg:mx-auto mt-32">
-    <div class="relative flex flex-col text-center items-center grid-cols-1 gap-4 place-content-center">
-      <div style="width: 1px;" class="h-16 mx-auto mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-      <div class="text-[36px] font-extrabold leading-[1.3] tracking-wider text-base-content">Designed to be forked</div>
-      <div class="text-[24px] mx-auto max-w-[800px] leading-[35px] font-normal text-base-content/60">Bonfire is meant to be easily customised and extended by developers </div>
-    </div>
-    
-    <div class="grid grid-cols-3 items-start gap-10 mt-20">
-
-      <div class=" bg-gradient-to-r from-blue-700 via-blue-800 to-white/20 col-span-3 rounded-2xl shadow-xl p-[1px]">
-        <div class="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 rounded-2xl p-4 py-8 md;px-16 md:py-20">
-          <div class="grid grid-cols-1 gap-y-16 gap-x-10 sm:gap-y-20 lg:grid-cols-2 items-center">
-            <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
-            <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-              <img src="/img/modular.png" alt="modularity preview" class="w-full max-w-none">
-            </div>
-          </div>
-            <div>
-              <div class="text-[32px] font-bold ">Modular at its core</div>
-              <div class="text-lg  text-base-content/70 mt-4">Bonfire is made of independent extensions and modules, glued together by a set of configuration files. Every line of Bonfire’s code is available to be used or forked, in a collection of repositories that can be assembled and re-assembled to create all kinds of full-featured apps. </div>
-              <a href="/docs" class="normal-case bg-base-content/20 btn mt-4 ">Read our documentation</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-[#282736] col-span-3 lg:col-span-2 rounded-2xl p-12">
-        <div class="w-[64px] mb-8 h-[64px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-2xl shadow-xl">
-          <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M16.7 17.3q-.275.275-.687.275q-.413 0-.713-.3t-.3-.713q0-.412.3-.712l3.875-3.875l-3.9-3.9Q15 7.8 15.012 7.387q.013-.412.288-.687q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.3.3.3.7q0 .4-.3.7Zm-9.4 0l-4.6-4.6q-.3-.3-.3-.7q0-.4.3-.7l4.6-4.6q.275-.275.7-.288q.425-.012.725.288t.3.712q0 .413-.3.713l-3.9 3.9l3.9 3.9q.275.275.263.687q-.013.413-.288.688q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
-        </div>
-        <div class="text-[24px] font-bold ">Open source</div>
-        <div class="text-lg  text-base-content/70 mt-4">Bonfire is libre and open source software. This means that you can use and modify Bonfire without asking permission from anyone. Plus, you can benefit from future developments by anyone improving the codebase, due to the AGPL license.</div>
-        <a href="https://github.com/bonfire-networks/" target="_blank" class="normal-case  mt-4  btn">Get the code</a>
-      </div>
-      
-      <div class="bg-[#282736] col-span-3 lg:col-span-1 rounded-2xl p-12">
-        <div class="w-[64px] mb-8 h-[64px] bg-gradient-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-2xl shadow-xl">
-          <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 9.5a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0-11 0"/><path d="M9 14.5a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0-11 0"/></g></svg>
-        </div>
-        <div class="text-[24px] font-bold ">Community driven</div>
-        <div class="text-lg  text-base-content/70 mt-4">Reach out for support while using and leveraging the project for your own needs. </div>
-        <a href="/contribute" class="normal-case  mt-4  btn">Contribute</a>
-      </div>
-      
-     
-  </div>
-
-</div>
 
 
 
-    
- 
-
-
-
-  <div class="pb-32 border-b border-base-content/30">
-    <div class="max-w-screen-lg px-4 lg:px-8 2xl:max-w-screen-xl lg:mx-auto mt-32">
-    
-    
-    <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
-      <div id="blog" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-      <div class="relative mx-auto mb-24">
-        <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Latest from the blog</span>
-      </div>
-      </div>
-      
-      
-      
-
-<section class="mt-6 lg:px-0">
-  
-  
-  
-    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
-      <div class="w-full h-40 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/ux.jpeg)"></div>
-      <div class="flex-1 mt-4 lg:mt-0">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/user_research/">
-                
-                    Could you help us with user research?
-                
-            </a>
-        </h2>
-        <div class="flex items-center space-x-2">
-            <span class="flex items-center space-x-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                  </svg>
-              <time class="text-xs text-base-content text-opacity-70">28 Jun 2023</time>
-            </span>
-        </div>
-        
-        
-        
-            <p class="text-sm text-base-content text-opacity-80 my-2">
-                As we approach v1.0 of Bonfire, we’re looking for volunteers to help us with some user research.
-            </p>
-        
-        <div class="my-2"><a href="/tags/posts/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                posts
-                </span>
-                </a><a href="/tags/user_research/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                user_research
-                </span>
-                </a>
-        </div>
-        <div>
-            <a href="/posts/user_research/" class="text-pink-400 font-bold text-sm">
-                Read more →
-            </a>
-        </div>
-      </div>
-    </article>
-    
-  
-  
-    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
-      <div class="w-full h-40 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/roles.png)"></div>
-      <div class="flex-1 mt-4 lg:mt-0">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/custom_roles/">
-                
-                    Empowering Bonfire users with advanced roles &amp; permissions
-                
-            </a>
-        </h2>
-        <div class="flex items-center space-x-2">
-            <span class="flex items-center space-x-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                  </svg>
-              <time class="text-xs text-base-content text-opacity-70">15 Jun 2023</time>
-            </span>
-        </div>
-        
-        
-        
-            <p class="text-sm text-base-content text-opacity-80 my-2">
-                We are happy to announce that the next Bonfire release will introduce the capacity to define and assign custom roles.
-            </p>
-        
-        <div class="my-2"><a href="/tags/posts/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                posts
-                </span>
-                </a><a href="/tags/groups/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                groups
-                </span>
-                </a><a href="/tags/nlnet/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                nlnet
-                </span>
-                </a><a href="/tags/extension/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                extension
-                </span>
-                </a>
-        </div>
-        <div>
-            <a href="/posts/custom_roles/" class="text-pink-400 font-bold text-sm">
-                Read more →
-            </a>
-        </div>
-      </div>
-    </article>
-    
-  
-  
-    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
-      <div class="w-full h-40 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/groups1.png)"></div>
-      <div class="flex-1 mt-4 lg:mt-0">
-        <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-            <a href="/posts/dev_diary_groups_1/">
-                
-                    Dev Diary: Implementing federated groups in Bonfire
-                
-            </a>
-        </h2>
-        <div class="flex items-center space-x-2">
-            <span class="flex items-center space-x-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                  </svg>
-              <time class="text-xs text-base-content text-opacity-70">08 Jun 2023</time>
-            </span>
-        </div>
-        
-        
-        
-            <p class="text-sm text-base-content text-opacity-80 my-2">
-                As part of our commitment to empower communities with tools to foster coordination, we are thrilled to announce the development of federated groups in Bonfire.
-            </p>
-        
-        <div class="my-2"><a href="/tags/posts/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                posts
-                </span>
-                </a><a href="/tags/groups/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                groups
-                </span>
-                </a><a href="/tags/nlnet/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                nlnet
-                </span>
-                </a><a href="/tags/extension/">
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="3" />
-                </svg>
-                extension
-                </span>
-                </a>
-        </div>
-        <div>
-            <a href="/posts/dev_diary_groups_1/" class="text-pink-400 font-bold text-sm">
-                Read more →
-            </a>
-        </div>
-      </div>
-    </article>
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</section>
-<div class="flex mx-auto mt-12">
-  <a href="/blog" class="btn btn-outline btv-sm normal-case">View all posts</a>
-</div>
-    
-        <div class="flex flex-col items-center gap-16 mt-32 rounded-xl place-content-center md:flex-row">
-          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
-            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
-            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
-              <br/>You may unsubscribe at any time.
-            </div>
-          </div>
-
-            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
-              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
-                <div class="col-span-2 mc-field-group">
-                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
-                </div>
-                <div id="mce-responses" class="mt-3 clear foot">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>   
-                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
-                  <div class="optionalParent">
-                      <div class="clear foot">
-                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
-                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
-                      </div>
-                  </div>
-                </div>
-              </form>
-              </div>
-
-            
-
-    
-    
-    </div>
-    </div>
-  </div>
-  <div class="md:p-20 md:mt-16 rounded-none lg:px-20 bg-[#1B1A27] lg:mx-0">
+  <div class="md:p-20 rounded-none lg:px-20 bg-[#1B1A27] lg:mx-0">
 
   <div class="relative mt-16 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
     <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
@@ -1042,13 +826,14 @@
 
 
 
-<div class="">
-  <footer class="p-10 py-24 border-t footer border-base-content/10 text-base-content">
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
   <div>
     <div class="items-center flex-1 grid-flow-col">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
     </div> 
-    <p>Bonfire Networks<br/>Proudly FLOSS since 2020</p>
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
   </div> 
   <div>
     <span class="footer-title">Developers</span> 

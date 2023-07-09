@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
+<html lang="en" class="bg-base-300" data-theme="bonfire">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
 
       <div x-data="{open: false}" class="flex">
   <div 
@@ -25,12 +25,12 @@
     class="lg:!hidden cursor-pointer backdrop-blur backdrop-filter inset-0 z-10 bg-black/30 absolute"></div>
   <aside 
   :class="open ? 'block' : 'hidden'"  
-  class="sticky top-0 z-20 h-screen w-72 xl:w-80 lg:!block bg-[#1B1A27]/80">
+  class="sticky top-0 z-20 h-screen w-72 xl:w-80 lg:!block bg-base-100">
     <div class="block h-screen px-6 pt-4 pb-8 overflow-y-auto border-r pointer-events-auto w-72 border-white/10 xl:w-80">
       <div class="flex">
         <a href="/" class="flex items-center space-x-4">
           <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-          <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary"></div></span>
+          <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary">DOCS</div></span>
         </a>
       </div>
       <a href="/" class="gap-3 mt-5 -ml-4 font-medium normal-case rounded btn btn-ghost btn-sm">
@@ -262,7 +262,18 @@ You may need to install <a href="https://github.com/casey/just#packages">just</a
 <li><code>FLAVOUR</code> should reflect your chosen flavour</li>
 <li><code>HOSTNAME</code> (your domain name, eg: <code>bonfire.example.com</code>)</li>
 <li><code>PUBLIC_PORT</code> (usually 443)</li>
-<li><code>MAIL_DOMAIN</code> and <code>MAIL_KEY</code> and related keys to configure transactional email, for example set <code>MAIL_BACKEND=mailgun</code> and sign up at <a href="https://www.mailgun.com/">Mailgun</a> and then configure the domain name and key (you may also need to set <code>MAIL_BASE_URI</code> if your domain is not setup in EU, as the default <code>MAIL_BASE_URI</code> is set as <code>https://api.eu.mailgun.net/v3</code>). SMTP is supported as well.</li>
+<li><code>MAIL_DOMAIN</code> and <code>MAIL_KEY</code> and related keys to configure transactional email, for example set <code>MAIL_BACKEND=mailgun</code> and sign up at <a href="https://www.mailgun.com/">Mailgun</a> and then configure the domain name and key (you may also need to set <code>MAIL_BASE_URI</code> if your domain is not setup in EU, as the default <code>MAIL_BASE_URI</code> is set as <code>https://api.eu.mailgun.net/v3</code>).</li>
+<li>SMTP is supported as well, through the following env vars</li>
+</ul>
+<pre><code>MAIL_SERVER (smtp domain of the mail server)
+MAIL_DOMAIN (the bit after the @ in your email)
+MAIL_USER
+MAIL_PASSWORD
+MAIL_FROM
+MAIL_PORT (optional)
+MAIL_SSL (optional)
+</code></pre>
+<ul>
 <li><code>UPLOADS_S3_BUCKET</code> and the related API key and secret for uploads. WARNING: If you want to store uploads in an object storage rather than directly on your server (which you probably want, to not run out of space), you need to configure that up front, otherwise URLs will break if you change it later. See <code>config/runtime.exs</code> for extra variables to set if you're not using the default service and region (which is <a href="https://www.scaleway.com/en/object-storage/">Scaleway</a> Paris).</li>
 </ul>
 <h3 id="secret-keys-for-which-you-should-put-random-secrets.">Secret keys for which you should put random secrets. <a class="direct-link" href="#secret-keys-for-which-you-should-put-random-secrets.">#</a></h3>

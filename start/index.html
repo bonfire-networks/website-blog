@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="bg-[#1B1A27]" data-theme="bonfire">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-[#1B1A27] antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
     <div
-      class="sticky top-0 z-20 bg-[#1B1A27]"
-      x-data="{open: false}" 
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
-    <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
-      <div class="w-[108rem] flex-none flex justify-end">
-          <source srcset="/img/bgover.png" type="image/avif">
-          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
-        </picture>
-      </div>
-    </div>
+    
 
     <header 
       class="relative z-30 max-w-screen-xl mx-auto navbar">
@@ -39,82 +35,37 @@
             </span>
           </a>
         </div>
-      </div>
-      <div class="hidden navbar-center lg:flex">
-        <ul class="flex-row gap-3 p-0 menu menu-compact menu-horizontal">
-          <li tabindex="0">
-            <a>
-              Developers
-              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-            </a>
-            <ul class="gap-2 p-2 bg-base-100">
-              <li>
-                <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
-                    <div class="font-bold">Documentation</div>
-                    <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                </a>
-              </li>
-              <li>
-                <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
-                  <div class="font-bold">Roadmap</div>
-                  <div class="text-sm text-base-content/70">See what's coming next</div>
-                </a>
-              </li>
-              
-              <li>
-                <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                  <div class="font-bold">Get the code</div>
-                  <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
- 
-          </li>
-          <li>
-           <a href="/faq" class=" ">
-            <span class="text-sm font-regular">FAQs</span>
-          </a>
-          </li>
-          <li>
-          <a href="/blog" class=" ">
-            <span class="text-sm font-regular">Blog</span>
-          </a>
-          </li>
-          <li>
-            <a href="/community" class=" ">
-              <span class="text-sm font-regular">Community</span>
-            </a>
-          </li>
-        </ul>
-      </div>
 
-      <div class="navbar-end">
-        <a href="/start/" >
-          <span class="hidden normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
-        </a>
 
-        <div class="inset-y-0 right-0 flex items-center lg:hidden">
-          <a href="/start/" >
-            <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
-          </a>
-          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
-            <span class="sr-only">Open main menu</span>
-            <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
+
         </div>
+        
+        <div class="navbar-end">
+          <a href="/start/" >
+            <span class="hidden normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+          </a>
 
-      </div>
-     
+          <div class="inset-y-0 right-0 flex items-center lg:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+            </a>
+            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-base-content text-opacity-80 hover:text-opacity-100 hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+              <span class="sr-only">Open main menu</span>
+              <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block w-10 h-10" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg x-description="Icon when menu is open.Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden w-10 h-10" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
 
-   
-    </header>
+        </div>
+      
+
+    
+      </header>
+    </div>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
       class="lg:hidden" 
@@ -171,7 +122,7 @@
 
   <div class="grid grid-cols-1 gap-10 my-10 lg:grid-cols-2">
 
-      <div class="bg-[#282736] rounded-2xl p-12">
+      <div class="bg-base-100 rounded-2xl p-12">
         <div class="text-5xl text-center mb-8">🔥</div>
         <div class="text-[32px] font-bold text-neutral-content text-center">Explore the campground</div>
         <div class="text-lg text-center text-neutral-content/70 mt-4">Join our beta test instance, get a feeling for Bonfire's core functionality and social extensions, and connect with other community participants.</div>
@@ -181,7 +132,7 @@
       </div>
       </div>
 
-      <div class="bg-[#282736] rounded-2xl p-12">
+      <div class="bg-base-100 rounded-2xl p-12">
         <div class="text-5xl text-center mb-8">🐉</div>
         <div class="text-[32px] text-neutral-content font-bold text-center">Setup your own instance</div>
         <div class="text-lg text-center text-neutral-content/70 mt-4">Set up your own instance, and see how you can tailor it for your communities values and needs. Be aware, bonfire software is still in beta.</div>
@@ -190,7 +141,7 @@
       </div>
       </div>
     </div>
-    <div class="bg-[#282736] rounded-2xl shadow-xl p-12">
+    <div class="bg-base-100 rounded-2xl shadow-xl p-12">
       <div class="grid grid-cols-1 gap-y-16 gap-x-10 sm:gap-y-20 lg:grid-cols-2 items-center">
         <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
           <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
@@ -211,13 +162,14 @@
 
 
 
-<div class="">
-  <footer class="p-10 py-24 border-t footer border-base-content/10 text-base-content">
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
   <div>
     <div class="items-center flex-1 grid-flow-col">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
     </div> 
-    <p>Bonfire Networks<br/>Proudly FLOSS since 2020</p>
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
   </div> 
   <div>
     <span class="footer-title">Developers</span> 
