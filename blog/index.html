@@ -24,16 +24,66 @@
     >
     
 
-    <header 
-      class="relative z-30 max-w-screen-xl mx-auto navbar">
-      <div class="navbar-start">
-        <div class="flex items-center flex-1 flex-shrink-0">
-          <a href="/" class="flex items-center space-x-4">
-            <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-            <span class="flex items-center"><span class="text-xl font-bold tracking-wider text-white">Bonfire</span> 
-            
-            </span>
-          </a>
+    <div>
+      <header 
+        class="relative z-30  max-w-screen-xl mx-auto navbar">
+        <div class="navbar-start">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+
+          <div class="hidden lg:flex ml-10">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+            <a href="/faq" class=" ">
+              <span class="text-sm font-regular">FAQs</span>
+            </a>
+            </li>
+            <li>
+            <a href="/blog" class="underline decoration-primary decoration-2 text-primary  underline-offset-8 ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/community" class=" ">
+                <span class="text-sm font-regular">Community</span>
+              </a>
+            </li>
+          </ul>
         </div>
 
 
