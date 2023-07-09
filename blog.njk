@@ -5,23 +5,19 @@ eleventyNavigation:
   order: 1
 ---
 {% set maxPosts = collections.posts.length  %}
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
+<div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-xl lg:mx-auto">
 
-<span class="block mt-16 bg-center bg-no-repeat bg-contain mb-4" style="width: 70px; height: 80px; background-image: url(/img/bonfire.png);"></span>
-<h1 class="text-3xl font-extrabold text-blueGray-300 sm:text-4xl">
-  Blog
+{# <span class="block mt-16 bg-center bg-no-repeat bg-contain mb-4" style="width: 70px; height: 80px; background-image: url(/img/bonfire.png);"></span> #}
+<h1 class="mt-20 mb-8 text-3xl font-extrabold text-center sm:text-4xl">
+  Newsroom
 </h1>
 
 <!-- Return all tags -->
-<section class="">
-  <h2 id="tags" class="uppercase tracking-wider mt-8 mb-3 text-base-content text-opacity-80 text-sm">All tags</h2>
+<section class="flex items-center mb-24 place-content-center gap-4">
   {% for tag in collections.tagList %}
     {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
     <a href="{{ tagUrl | url }}">
-    <span class="mb-1 mr-1 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-    <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
-        <circle cx="4" cy="4" r="3" />
-    </svg>
+    <span class="badge hover:bg-info/20 badge-info badge-outline badge-lg h-[3rem] border-info !border-opacity-40 text-info">
     {{ tag }}
     </span>
     </a>
@@ -29,8 +25,6 @@ eleventyNavigation:
 </section>
 
 
-
-<h2 class="mt-16 -mb-4 text-sm tracking-wider uppercase text-base-content text-opacity-80 font-regular">All articles</h2>
 
 {% set postslist = collections.posts  %}
 {% set postslistCounter = collections.posts | length %}

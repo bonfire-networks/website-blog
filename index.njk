@@ -7,28 +7,17 @@ eleventyNavigation:
 
 {% include "hero.njk" %}
 {% include "general_intro.njk" %}
-{% include "testimonials.njk" %}
-{% include "plugins.njk" %}
-{% include "developers.njk" %} 
-{# {% include "testimonials.njk" %}
-{% include "cta.njk" %} #}
 
-
-  <div class="pb-32 border-b border-base-content/30">
-    <div class="max-w-screen-lg px-4 lg:px-8 2xl:max-w-screen-xl lg:mx-auto mt-32">
-    {# {% include "what.njk" %} #}
-    {# {% include "appspreview.njk" %} #}
-    <div class="container relative max-w-screen-xl mx-auto mt-20 rubik">
-      <div id="blog" style="width: 1px;" class="h-16 mx-auto mt-16 mb-4 bg-gradient-to-b from-base-200 to-base-content"></div>
-      <div class="relative mx-auto mb-24">
-        <span class="relative block text-sm font-semibold tracking-widest text-center uppercase text-base-content text-opacity-90">Latest from the blog</span>
-      </div>
-      </div>
+    <div class="max-w-screen-lg px-4 md:px-0 lg:mx-auto mt-32">
+      <div class="text-5xl leading-[70px] text-center font-semibold mb-16 text-base-content">Latest from the blog</div>
       {% set postslist = collections.posts  %}
       {% set postslistCounter = collections.posts | length %}
       {% include "postshome.njk" %}
-    
-        <div class="flex flex-col items-center gap-16 mt-32 rounded-xl place-content-center md:flex-row">
+
+    <div class="mt-24 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
           <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
             <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
             <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
@@ -46,7 +35,6 @@ eleventyNavigation:
                   <div class="response" id="mce-error-response" style="display:none"></div>
                   <div class="response" id="mce-success-response" style="display:none"></div>
                 </div>   
-                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                   <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
                   <div class="optionalParent">
                       <div class="clear foot">
@@ -57,14 +45,19 @@ eleventyNavigation:
                 </div>
               </form>
               </div>
-
-            
-
-    
-    
+      </div>
+      </div>
     </div>
     </div>
-  </div>
+
+{% include "testimonials.njk" %}
+{# {% include "plugins.njk" %} #}
+{# {% include "developers.njk" %}  #}
+{# {% include "testimonials.njk" %}
+{% include "cta.njk" %} #}
+
+
+
   {% include "support_footer.njk" %}
 
   {# {% include "joinus.njk" %} #}

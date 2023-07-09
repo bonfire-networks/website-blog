@@ -2,7 +2,7 @@
 title: First steps toward federated project coordination
 description: We are building a coordination tool that shares a lot of functionality with most to-do apps out there. But how is it different?
 date: 2021-07-14
-tags: [flavour, coordination, nlnet, valueflows]
+tags: [product]
 image: /img/my_tasks.png
 layout: layouts/post.njk
 author: Bonfire Builders

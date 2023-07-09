@@ -2,7 +2,7 @@
 title: "Dev Diary: Implementing federated groups in Bonfire"
 description: "As part of our commitment to empower communities with tools to foster coordination, we are thrilled to announce the development of federated groups in Bonfire."
 date: 2023-06-08
-tags: [groups, nlnet, extension]
+tags: [tech]
 image: /img/groups1.png
 layout: layouts/post.njk
 author: Bonfire Builders

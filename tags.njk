@@ -8,13 +8,15 @@ layout: layouts/home.njk
 ---
 
 <div class="max-w-screen-lg mx-auto mt-12">
-  <a class="btn mb-4 normal-case btn-sm gap-2" href="/blog">      
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-    </svg>
-    <span class="text-sm font-medium text-blueGray-300">Back to blog</span>
-  </a>
-    <h1 class="font-bold text-left text-3xl text-base-content">Articles tagged <span class="underline decoration-wavy decoration-amber-400 underline-offset-8">{{ tag }}</span></h1>
+ <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
+      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </div>
+        <span class="text-sm font-medium text-blueGray-300">Back to Newsroom</span>
+    </a>
+    <h1 class="font-medium text-left text-xl text-base-content">Articles tagged <span class="underline">{{ tag }}</span></h1>
     <ol>
     {% set taglist = collections[ tag ] %}
     {% for post in taglist | reverse %}

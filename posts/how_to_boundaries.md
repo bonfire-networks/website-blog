@@ -2,7 +2,7 @@
 title: How to use boundaries, circles and roles
 description: "\"One does not need to set themselves on fire to keep other people warm.\""
 date: 2023-05-30
-tags: [beta, social, boundaries, circles, zappa]
+tags: [product]
 image: /img/boundaries_post.png
 layout: layouts/post.njk
 author: Bonfire Builders

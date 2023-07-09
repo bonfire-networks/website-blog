@@ -2,7 +2,7 @@
 title: "Meet us at the playground: Bonfire Social beta launch "
 description: Today, the Bonfire team is asking for *your* help with beta testing. Bonfire still needs a lot of work - be it bugs, federation, missing features, configurability and user experience - but that's the point, we decided to launch the playground at this gnarly stage with the specific intention of moving toward the 1.0 release as a community.
 date: 2022-06-25
-tags: [beta, social, zappa]
+tags: [announcement]
 image: /img/bonfire_beta.png
 layout: layouts/post.njk
 author: Bonfire Builders
