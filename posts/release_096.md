@@ -25,7 +25,7 @@ The addition of a rich text editor in our composer enables markdown use with a W
 The composer can also now be stretched and expanded, enhancing focus and ease of use, especially when writing longer posts.
 
 ## Refined Boundaries
-We've integrated the valuable insights gained from our [user testing interviews](https://bonfirenetworks.org/posts/user_research/) into our boundary system, enhancing the overall user experience. This update simplifies the process of defining custom permissions and includes a convenient option to preview the resulting boundaries, allowing for more intuitive and flexible control.
+We've integrated the valuable insights gained from our [user testing interviews](https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/) into our boundary system, enhancing the overall user experience. This update simplifies the process of defining custom permissions and includes a convenient option to preview the resulting boundaries, allowing for more intuitive and flexible control.
 
 ## And More!
 Plus, we've tweaked and fixed many more things to make the Bonfire experience smoother and more intuitive.
