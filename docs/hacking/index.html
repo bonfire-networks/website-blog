@@ -222,7 +222,12 @@
 </ul>
 <p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
 <ul>
-<li>Then run <code>just config</code> to initialise some config.</li>
+<li>
+<p>Make sure docker daemon is running if you chose a docker managed setup.</p>
+</li>
+<li>
+<p>Then run <code>just config</code> to initialise some config.</p>
+</li>
 </ul>
 <h3 id="configure-1">Configure <a class="direct-link" href="#configure-1">#</a></h3>
 <ul>
@@ -387,7 +392,7 @@ conveniences built in once you know how they all work. The gotcha is that while 
 <p><code>./forks/</code> is used to hack on local copies of any other dependencies.</p>
 </li>
 <li>
-<p>You can migrate the DB when the app is running (also runs automatically on startup): <code>EctoSparkles.Migrator.migrate</code></p>
+<p>You can migrate the DB when the app is running (also runs automatically on startup): <code>Bonfire.Common.Repo.migrate</code></p>
 </li>
 <li>
 <p>You can generate a dependency graph using <code>just xref-graph</code> which will generate a DOT file at <code>docs/</code> (if Graphviz is installed it will also generate an SVG visualisation using <code>dot</code>).</p>

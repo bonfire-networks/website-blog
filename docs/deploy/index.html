@@ -315,7 +315,7 @@ The <code>docker-compose.release.yml</code> uses <code>config/prod/.env</code> t
 </code></pre>
 <p>Run this at the prompt:</p>
 <p><code>bin/bonfire remote</code> to enter Elixir's iex environment<br>
-<code>EctoSparkles.Migrator.migrate</code> to initialise your database</p>
+<code>Bonfire.Common.Repo.migrate</code> to initialise your database</p>
 <p>The backend should now be running at <a href="http://localhost:4000/">http://localhost:4000/</a>.</p>
 <ul>
 <li>If that worked, start the app as a daemon next time:</li>
@@ -355,7 +355,7 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 </ul>
 <p>You can also directly call some functions in the code from the command line, for example:</p>
 <ul>
-<li>to migrate: <code>docker exec bonfire_web bin/bonfire rpc 'EctoSparkles.Migrator.migrate'</code></li>
+<li>to migrate: <code>docker exec bonfire_web bin/bonfire rpc 'Bonfire.Common.Repo.migrate'</code></li>
 <li>to just yourself an admin: <code>docker exec bonfire_web bin/bonfire rpc 'Bonfire.Me.Users.make_admin(&quot;my_username&quot;)'</code></li>
 </ul>
 <h4 id="option-b2---building-your-own-docker-image">Option B2 - Building your own Docker image <a class="direct-link" href="#option-b2---building-your-own-docker-image">#</a></h4>
@@ -397,7 +397,7 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 <p>You will need to use <code>just</code> in order to pass the <code>.env</code> file to the executable. This can be accomplished by running <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Just works from the root directory of the <code>justfile</code>, not your current directory.</p>
 </li>
 <li>
-<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>bin/bonfire eval 'EctoSparkles.Migrator.migrate()'</code>.</p>
+<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>bin/bonfire eval 'Bonfire.Common.Repo.migrate()'</code>.</p>
 </li>
 <li>
 <p>If you’re using RDS or some other locked down DB, you may need to run <code>CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;</code> on your database with elevated privileges.</p>
