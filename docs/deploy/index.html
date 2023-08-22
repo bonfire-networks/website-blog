@@ -374,7 +374,7 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 <ul>
 <li>Postgres (or Postgis) version 12 or newer</li>
 <li><a href="https://github.com/casey/just#packages">just</a></li>
-<li>Elixir version 1.13 with OTP 24 (or newer). If your distribution only has an old version available, check <a href="https://elixir-lang.org/install.html">Elixir's install page</a> or use a tool like <a href="https://github.com/asdf-vm/asdf">asdf</a> (run <code>asdf install</code> in this directory).</li>
+<li>Elixir version 1.15+ with OTP 25+. If your distribution only has an old version available, check <a href="https://elixir-lang.org/install.html">Elixir's install page</a> or use a tool like <a href="https://github.com/jdxcode/rtx">rtx</a> (run <code>rtx install</code> in this directory).</li>
 </ul>
 <h4 id="c-1.-building-the-release">C-1. Building the release <a class="direct-link" href="#c-1.-building-the-release">#</a></h4>
 <ul>
@@ -397,13 +397,13 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 <p>You will need to use <code>just</code> in order to pass the <code>.env</code> file to the executable. This can be accomplished by running <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Just works from the root directory of the <code>justfile</code>, not your current directory.</p>
 </li>
 <li>
-<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>bin/bonfire eval 'Bonfire.Common.Repo.migrate()'</code>.</p>
-</li>
-<li>
 <p>If you’re using RDS or some other locked down DB, you may need to run <code>CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;</code> on your database with elevated privileges.</p>
 </li>
 <li>
-<p>You can check if your instance is configured correctly by running it with <code>bin/bonfire start</code></p>
+<p>You can check if your instance is configured correctly and get to the iex console by running <code>bin/bonfire start</code></p>
+</li>
+<li>
+<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>Bonfire.Common.Repo.migrate()</code> in the iex console.</p>
 </li>
 <li>
 <p>To run the instance as a daemon, use <code>bin/bonfire start daemon</code>.</p>
