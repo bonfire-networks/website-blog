@@ -5,16 +5,16 @@
     <article class="flex flex-col gap-2">
         <div class="flex items-center gap-4">
             <div class="flex items-center space-x-2">
-                <span class="flex items-center gap-2">
+                <span class="flex items-center gap-4 mb-2">
                     <time class="text-sm text-base-content/70">{{ post.date | readableDate }}</time>
-                    <div class="my-2">
+                    <div class="">
                         {%- for tag in post.data.tags -%}
-                        {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-                            <a href="{{ tagUrl | url }}">
-                            <span class="badge h-[2rem] badge-lg badge-info bg-info/10 text-info">
-                            {{ tag }}
-                            </span>
-                            </a>
+                          {% if tag != "posts" %}
+                                {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+                                <a class="relative z-10 rounded-full bg-base-content/5 px-3 py-1.5 font-medium text-sm text-base-content hover:bg-base-content/5" href="{{ tagUrl | url }}">
+                                {{ tag }}
+                                </a>
+                             {% endif %}
                         {%- endfor %}
                     </div>
                 </span>
@@ -35,7 +35,7 @@
         
         
         {% if post.data.description %}
-            <p class="text-base text-base-content my-2">
+            <p class="text-sm text-base-content/80 line-clamps-5 my-2">
                 {{ post.data.description }}
             </p>
         {% endif %}

@@ -2,7 +2,7 @@
 title: "Could you help us with user research?"
 description: "As we approach v1.0 of Bonfire, we’re looking for volunteers to help us with some user research."
 date: 2023-06-28
-tags: [user_research]
+tags: [community]
 image: /img/ux.jpeg
 layout: layouts/post.njk
 author: Bonfire Builders

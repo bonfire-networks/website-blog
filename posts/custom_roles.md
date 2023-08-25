@@ -2,7 +2,7 @@
 title: "Empowering Bonfire users with advanced roles & permissions"
 description: "We are happy to announce that the next Bonfire release will introduce the capacity to define and assign custom roles."
 date: 2023-06-15
-tags: [groups, nlnet, extension]
+tags: [extension]
 image: /img/roles.png
 layout: layouts/post.njk
 author: Bonfire Builders

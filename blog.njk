@@ -8,26 +8,79 @@ eleventyNavigation:
 <div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-xl lg:mx-auto">
 
 {# <span class="block mt-16 bg-center bg-no-repeat bg-contain mb-4" style="width: 70px; height: 80px; background-image: url(/img/bonfire.png);"></span> #}
-<h1 class="mt-20 mb-8 text-3xl font-extrabold text-center sm:text-4xl">
+<h1 class="mt-20 mb-16 text-3xl font-extrabold sm:text-4xl">
   Newsroom
 </h1>
 
+{% set postslist = collections.posts  %}
+{% set postslistCounter = collections.posts | length %}
+{% set firstPost = postslist | reverse | first %}
+
+
+<article class="relative isolate flex flex-col gap-8 lg:gap-16 lg:flex-row">
+  <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-1/2 lg:shrink-0">
+    <img src="{{ firstPost.data.image }}" alt="" class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover">
+    <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+  </div>
+  <div>
+    <div class="flex items-center mt-4 gap-x-4 text-base">
+      <time datetime="2020-03-16" class="text-base text-base-content/70">{{ firstPost.date | readableDate }}</time>
+      {%- for tag in firstPost.data.tags -%}
+      {% if tag != "posts" %}
+        {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+        <a class="relative z-10 rounded-full bg-base-content/5 px-3 py-1.5 font-medium text-sm text-base-content hover:bg-base-content/5" href="{{ tagUrl | url }}">
+          {{ tag }}
+        </a>
+      {% endif %}
+    {%- endfor %}
+    </div>
+    <div class="group relative max-w-full">
+      <h3 class="mt-8 text-3xl font-semibold leading-6 text-base-content link link-hover">
+        <a href="{{ firstPost.url | url }}">
+          <span class="absolute inset-0"></span>
+           {% if firstPost.data.title %}
+                    {{ firstPost.data.title }}
+                {% else %}
+                    Untitled
+                {% endif %}
+        </a>
+      </h3>
+      {% if firstPost.data.description %}
+        <p class="mt-8 text-lg leading-6 text-base-content/70">{{ firstPost.data.description }}</p>
+      {% endif %}
+    </div>
+    {# <div class="mt-6 flex border-t border-gray-900/5 pt-6">
+      <div class="relative flex items-center gap-x-4">
+        <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+        <div class="text-sm leading-6">
+          <p class="font-semibold text-gray-900">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+              Michael Foster
+            </a>
+          </p>
+          <p class="text-gray-600">Co-Founder / CTO</p>
+        </div>
+      </div>
+    </div> #}
+  </div>
+</article>
+
+
 <!-- Return all tags -->
-<section class="flex items-center mb-24 place-content-center gap-4">
+<section class="flex items-center my-24 place-content-center gap-4">
   {% for tag in collections.tagList %}
+    {% if tag != "posts" %}
     {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
     <a href="{{ tagUrl | url }}">
     <span class="badge hover:bg-info/20 badge-info badge-outline badge-lg h-[3rem] border-info !border-opacity-40 text-info">
     {{ tag }}
     </span>
     </a>
+    {% endif %}
   {% endfor %}
 </section>
 
-
-
-{% set postslist = collections.posts  %}
-{% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 
 </div>
