@@ -29,10 +29,7 @@ module.exports = {
         bonfire: {
           ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
           "primary": "#fde047",
-          "primary-content": "#112A46",
-          "base-content": "#e8e8e8",
-          "secondary": "#A7B5FF",
-          "secondary-content": "#131415"
+          "primary-content": "#112A46"
         }
       },
     ]
