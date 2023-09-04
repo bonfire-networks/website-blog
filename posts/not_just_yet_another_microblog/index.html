@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Just &#39;Yet Another Microblog&#39;</title>
+    <meta name="description" content="We&#39;re now days away from the beta release of Bonfire, a federated app toolkit. When beta users get their hands on it, however, they might be confused wait, this looks like just another microblogging app! haven&#39;t we already got enough of those?">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style_v2.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div>
+      <header 
+        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+        <div class="navbar-start">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+
+          <div class="hidden lg:flex ml-10">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+            <a href="/faq" class=" ">
+              <span class="text-sm font-regular">FAQs</span>
+            </a>
+            </li>
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/community" class=" ">
+                <span class="text-sm font-regular">Community</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="lg:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/roadmap" class=" ">
+            <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      
+
+<div class="max-w-screen-lg px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="max-w-screen-md py-8 pb-8 mx-auto">
+    <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
+      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </div>
+        <span class="text-sm font-medium text-blueGray-300">Back to Newsroom</span>
+    </a>
+    <div class="">
+       <div class="my-6 mt-8 text-base text-base-content/70">
+          <span>Published 18 Jun 2022 in<a href="/tags/product/">
+            <span class="link capitalize">
+              product
+            </span>
+            </a></span>
+      </div>
+     
+
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-2xl lg:text-4xl mt-6 font-bold text-left">Not Just &#39;Yet Another Microblog&#39;</h1>
+     
+     
+
+      
+        <img src="/img/1a.jpg" alt="post image" class="w-full max-h-[400px] mt-6 rounded-lg object-fit object-cover" />
+      
+ 
+    </div>
+  </div>
+
+  <article class="max-w-screen-md mx-auto mt-0">
+    <div class="max-w-screen-md mx-auto mt-0 prose prose-light">
+    <p>We’re days away now from the beta release of our <a href="/">Bonfire</a> federated app toolkit. So close to the launch, we thought it’d be a great opportunity to write to future beta users - especially those whose first impressions of it might be something along the lines of: <em>wait, this looks like just another microblogging app! haven't we already got enough of those?</em></p>
+<p>Well, our reasoning is that everything is social. Political activities are social. Economic activities are social. Artistic activities are social. The way we work and coordinate activities... is social. That's why at the heart of Bonfire is a set of social components that underpins what is yet to come.</p>
+<h2 id="bonfire-is-a-toolkit-for-assembling-federated-apps">Bonfire is a toolkit for assembling federated apps <a class="direct-link" href="#bonfire-is-a-toolkit-for-assembling-federated-apps">#</a></h2>
+<p>In a <a href="https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/">previous post</a>, we wrote:</p>
+<blockquote>
+<p>Social networking plays a critical role in our lives, and everyone should be able to decide how to define their online identities and how to interact with others, without an app imposing the boundaries of their experience in one way or another.</p>
+</blockquote>
+<p>An app built with Bonfire is a preset configuration describing how a collection of extensions should plug and play together. And users can then add more extension to end up with an app that fits their specific needs. For example, imagine installing an extension that adds end-to-end encryption to the messaging functionality, or an extension that adds a calendar view showing any-date based information from other extensions (like the kanban app, or events federated from <a href="https://joinmobilizon.org/">Mobilizon</a>).</p>
+<p>With this beta launch we're looking to test both the user experience of the social components of Bonfire, and also to ask for help (from the <a href="https://activitypub.rocks/">ActivityPub</a> savvy people who are willing to set up test instances) to ensure Bonfire instances are first-class citizens of the Fediverse. By this we mean that federation works as expected with other networks such as <a href="https://joinmastodon.org/">Mastodon</a>, <a href="https://joinpeertube.org/">Peertube</a>, and <a href="https://pixelfed.org/">Pixelfed</a>.</p>
+<h2 id="other-apps">Other apps <a class="direct-link" href="#other-apps">#</a></h2>
+<p>We have plenty of ideas and work-in-progress for Bonfire apps within the existing team and the wider network of people and organisations around us. For example:</p>
+<ul>
+<li><a href="https://bonfirenetworks.org/posts/bonfire_coordination/">Kanban</a> - federated project coordination.</li>
+<li><a href="https://bonfirenetworks.org/tags/zappa/">Zappa</a> - empowering communities to tackle online misinformation.</li>
+<li><a href="https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/#suggestions-for-next-extensions">Offers &amp; needs</a> - a federated way for people to share offers and requests, as one of the many apps that will use <a href="https://valueflo.ws">ValueFlows</a>, an open protocol for economic activities</li>
+</ul>
+<p>And we'd love to see many other apps emerge, for example:</p>
+<ul>
+<li>Collective decision-making - perhaps in a similar way to <a href="https://ukuvota.world/">Ukuvota</a> or <a href="https://www.loomio.com/">Loomio</a></li>
+<li>Federated calendar &amp; scheduling tool - to help plan and coordinate intitiatives across different communities and timezones.</li>
+</ul>
+<p>We're also excited to see ideas coming from the community, including designers or developers who may have the expertise to collaborate on making some of these ideas into reality!</p>
+<h2 id="customisation">Customisation <a class="direct-link" href="#customisation">#</a></h2>
+<p>Everything in Bonfire is customisable at one level or another, a nice example is how the whole UI is themeable, but it goes much further than that.</p>
+<p>In general, we're getting into the habit where any hesitation or disagreement about a feature is used as an opportunity to add a <em>user setting</em> for it, meaning that the user is the one to decide how it should work. Developers and instance admins still hold power in setting the defaults, but ultimately it should be up to the people using Bonfire.</p>
+<h3 id="%22forkability%22">&quot;Forkability&quot; <a class="direct-link" href="#%22forkability%22">#</a></h3>
+<p>From the beginning, we've built Bonfire to be extremely customisable and configurable. One of the great things about Free Software is the ability to fork the project and take it in your own direction. However, a fork of a big complex app is a lot of work to maintain by one person or a small group, let alone someone who isn't very technical (or not experienced in the particular tech stack).</p>
+<p>By separating the code in dozens of different extensions (each in their own git repository), the maintainance burden is greatly reduced. By putting data models, backend functionality and user interfaces in separate extensions, it’s easier to, for example, fork an UI extension to customise the experience (or create a completely different one) while retaining the same functionality.</p>
+<h2 id="next-steps">Next steps <a class="direct-link" href="#next-steps">#</a></h2>
+<p>We couldn't be more excited about the first release of Bonfire and we hope it can truly revolutionise the way online communities are formed and maintained. If you’re interested in helping us test the upcoming beta version of Bonfire, please add your email address below and we’ll get back to you very soon.</p>
+
+    </div>
+  </article>
+
+
+    
+</div>
+
+  <div class="mx-4 mt-8 lg:mx-auto">
+    
+  
+
+  <div class="my-24 mx-auto max-w-screen-lg w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
+
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+  
+
+
+
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
+  <div>
+    <div class="items-center flex-1 grid-flow-col">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+    </div> 
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+  </div> 
+  <div>
+    <span class="footer-title">Developers</span> 
+    <a href="/docs" class="link link-hover">Documentation</a> 
+    <a href="/roadmap" class="link link-hover">Roadmap</a> 
+    
+    <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="link link-hover">Code</a>
+  </div> 
+  <div>
+    <span class="footer-title">Apps</span> 
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/docs/faq" class="link link-hover">FAQs</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="footer-title">More</span> 
+    <a href="/community" class="link link-hover">Community</a> 
+    <a href="/docs/conduct" class="link link-hover">Terms of use</a> 
+    <a href="/docs/privacy" class="link link-hover">Privacy policy</a> 
+    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="link link-hover">Support</a> 
+  </div>
+</footer>
+
+</div>
+    <!-- Current page: /posts/not_just_yet_another_microblog/ -->
+  </body>
+</html>

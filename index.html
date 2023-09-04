@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style_v2.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div>
+      <header 
+        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+        <div class="navbar-start">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+
+          <div class="hidden lg:flex ml-10">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+            <a href="/faq" class=" ">
+              <span class="text-sm font-regular">FAQs</span>
+            </a>
+            </li>
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/community" class=" ">
+                <span class="text-sm font-regular">Community</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="lg:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/roadmap" class=" ">
+            <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      
+
+<div class=" mx-4 lg:mx-auto">
+
+  
+
+<div class="max-w-screen-lg mx-auto relative mt-32 flex items-center justify-center">
+  <div class="relative z-50">
+    <img src="/img/1.png" class="max-w-[520px] w-full mx-auto" />
+  <h1 class="relative z-50 font-semibold text-center  text-[58px] leading-[80px] mb-10 tracking-tight">
+    Compose <br />
+    your digital worlds
+  </h1>
+  <h2 class="text-lg text-center lg:text-xl mb-10 !leading-[34px] mx-auto text-base-content/90">Customisable, Decentralised, Self-governed.
+    <br />Welcome to the digital space of the future.</h2>
+  <div class="flex items-center place-content-center gap-4">
+      <a href="https://campground.bonfire.cafe" target="blank" class="btn rounded-full normal-case btn-primary px-5">Explore the playground</a>
+      <a href="#customisable" class="btn rounded-full normal-case  btn-primary btn-outline px-4">Read more</a>
+
+  </div>
+  </div>
+</div>
+  
+
+
+<div class="max-w-screen-lg relative mx-auto py-16 pb-32">
+  
+  <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-x-8 xl:gap-x-8">
+    
+    <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex flex-col gap-3 items-center">
+          <svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none"></rect><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10c0 4.13-2.504 7.676-6.077 9.201l-2.518-6.55a3 3 0 1 0-2.809.001l-2.518 6.55A10.005 10.005 0 0 1 2 12C2 6.477 6.477 2 12 2z"></path></svg>
+          <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Open Source</div>
+        </div>
+        <div class="text-sm text-base-content/80">Join a community of users and developers who are dedicated to creating a transparent, accessible and constantly improving social network.</div>
+      </div>
+    </div>
+    
+    <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 flex items-center text-center gap-2 flex-col p-4">
+      <div class="flex flex-col gap-3 items-center">
+          <svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none"></rect><path fill="currentColor" d="M12 4a8 8 0 1 0 8 8a8.003 8.003 0 0 0-8-8Zm-6 8a5.997 5.997 0 0 1 .105-1.095L9.6 14.4v.8a1.605 1.605 0 0 0 1.6 1.6v1.14A6.004 6.004 0 0 1 6 12Zm9.2 3.2h-.8v-2.4a.802.802 0 0 0-.8-.8H8.8v-1.6h1.6a.802.802 0 0 0 .8-.8V8h1.6a1.6 1.6 0 0 0 1.59-1.5a5.985 5.985 0 0 1 2.137 9.426A1.57 1.57 0 0 0 15.2 15.2ZM13 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm5 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm4 4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2 6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-2 6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-4 4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-5 1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-5-1a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-4-4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm-2-6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm2-6a1 1 0 1 1-1-1a1 1 0 0 1 1 1Zm4-4a1 1 0 1 1-1-1a1 1 0 0 1 1 1Z"></path></svg>
+        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Federated</div>
+      </div>
+      <div class="text-sm text-base-content/80">Be a part of a decentralized network where you can connect with users on other instances, while keeping control of your own data.</div>
+    </div>
+    </div>
+
+    <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 flex items-center text-center gap-2 flex-col p-4">
+      <div class="flex flex-col gap-3 items-center">
+          <svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none"></rect><path fill="currentColor" d="M8.8 21H5q-.825 0-1.413-.587Q3 19.825 3 19v-3.8q1.2 0 2.1-.762q.9-.763.9-1.938q0-1.175-.9-1.938Q4.2 9.8 3 9.8V6q0-.825.587-1.412Q4.175 4 5 4h4q0-1.05.725-1.775Q10.45 1.5 11.5 1.5q1.05 0 1.775.725Q14 2.95 14 4h4q.825 0 1.413.588Q20 5.175 20 6v4q1.05 0 1.775.725q.725.725.725 1.775q0 1.05-.725 1.775Q21.05 15 20 15v4q0 .825-.587 1.413Q18.825 21 18 21h-3.8q0-1.25-.787-2.125Q12.625 18 11.5 18t-1.912.875Q8.8 19.75 8.8 21Z"></path></svg>
+        <div class="text-base-content text-lg font-semibold ml-4 flex flex-row xl:flex-col">Modular</div>
+      </div>
+      <div class="text-sm text-base-content/80">Experience unparalleled customization with our modular architecture, allowing you to choose the features that matter most to you.</div>
+    </div>
+    </div>
+
+    
+  </div>
+  </div>
+
+<div class="max-w-screen-lg mx-auto">
+  <div id="customisable" class="text-5xl text-center font-semibold text-base-content">
+    Customisable, yet federated. </div>
+
+<div class="mt-24">
+  
+  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6">
+    
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Have meaningful and safer interactions</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">Thanks to bonfire modularity, you can customize your experience to fit your exact values and needs, and easily adjust your setup at any time.</div>
+        <img src="/img/c1.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Create and manage groups</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">With groups users can create context-specific and cross-instances spaces, define their own rules and governance, to better organize their participation across the fediverse.</div>
+        <img src="/img/c2.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Build safer boundaries</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">Create custom circles of contacts and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want.</div>
+        <img src="/img/c3.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+
+    <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Connect with other communities</div>
+        </div>
+        <div class="text-base-content/80 text-base mt-4">Engage with diverse communities across the fediverse at a pace that suits you. Bonfire ensures a personalized interaction experience, connecting you with like-minded networks while maintaining your comfort and control.</div>
+        <img src="/img/c4.png" class="mx-auto my-4 h-[400px]" />
+      </div>
+    </div>
+    
+    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Create Circles</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Circles are a tool that can be used to establish relationships. They are representations of multifaceted relationships that you have with people in your life.</div>
+        <img src="/img/c5.png" class="mx-auto my-4 h-[80px]" />
+      </div>
+    </div>
+    
+    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Assign Roles</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Create and assign custom roles to grant different permissions to users and circles. Roles affect what actions users can take and what information they can view, interact with, or even edit.</div>
+        <img src="/img/c6.png" class="mx-auto my-4 h-[80px]" />
+      </div>
+    </div>
+
+    
+
+    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">You are free to leave</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Your profile, posts, or network belong to you. On the fediverse, you are not restricted to a specific software or instance; you are free to leave, transfer all your data, and move to a different instance.</div>
+        <img src="/img/c8.png" class="mx-auto my-4 h-[80px]" />
+      </div>
+    </div>
+
+    
+
+    
+  </div>
+  </div>
+
+  <div class="text-center flex mb-20 flex-col mt-40 gap-4 items-center">
+    <div class="badge badge-accent badge-lg mx-auto">Case Study</div>
+    <div class="text-5xl leading-[70px] text-center font-semibold text-base-content">What communities plan to build with bonfire</div>
+  </div>
+
+  <div class="flex justify-evenly w-full max-w-screen-lg mx-auto text-center">
+    <div class="btn btn-secondary rounded-full normal-case">Research Network</div>
+    <div class="btn hidden md:flex btn-ghost relative rounded-full normal-case">Learners Community <span class="badge-outline badge badge-sm">Coming soon</span></div>
+    <div class="btn hidden md:flex btn-ghost relative rounded-full normal-case">Non-profit <span class="badge-outline badge badge-sm">Coming soon</span></div>
+    <div class="btn hidden md:flex btn-ghost relative rounded-full normal-case">Neighborhood <span class="badge-outline badge badge-sm">Coming soon</span></div>
+  </div>
+
+  <div class="col-span-2  mt-16 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+    <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200">
+      <div class="relative">
+        <div class="mx-auto lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+          <div class="px-6 lg:col-span-7 lg:px-0 xl:col-span-6">
+            <div class="mx-auto max-w-2xl lg:mx-0">
+              <h2 class="mt-24 text-3xl font-bold text-base-content sm:mt-10">How Niboe plans to use bonfire to facilitate open peer reviews and boost scientific divulgation. </h2>
+              <p class="mt-6 text-lg leading-8 text-base-content/70">A massive adoption of federated protocols by academic institutions will help to boost open-science implementations and to include non-academic communities in the knowledge production process. We envision these implementations being crafted in the open, through a co-designing process that unites scientists, researchers, and activists...</p>
+              <div class="my-10 flex items-center gap-x-6">
+                <a href="https://notes.zo.team/niboe-use-case" target="blank" class="btn btn-outline !border !border-base-content/30 normal-case rounded-full">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+            <img class="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full" src="https://i.imgur.com/UTp45o0.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+<div class="max-w-screen-lg mx-auto">
+  <div class="text-center flex mb-20 flex-col mt-40 gap-4 items-center">
+    <div class="badge badge-accent badge-lg mx-auto">Developers friendly</div>
+    <div class="text-5xl leading-[70px] text-center font-semibold text-base-content">Powerful building blocks.</div>
+    <div class="text-center text-lg  max-w-xl !leading-[34px] mx-auto text-base-content/90">Leveraging Bonfire's modular architecture, developers can effortlessly build new extensions, making full use of a stable and documented set of building blocks.</div>
+    <a href="#" class="btn btn-outline mt-6 !border !border-base-content/30 normal-case rounded-full">Read the documentation</a>
+  </div>
+
+
+  <div class="mt-12">
+    
+    <div class="grid grid-cols-1 px-4 md:px-0 gap-8 sm:grid-cols-2 md:grid-cols-2 divide-base-content/40  lg:grid-cols-3">
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+          <div class="flex items-center">
+            <div class="text-base-content uppercase mt-2 text-lg font-semibold flex flex-row xl:flex-col">Account & Users</div>
+          </div>
+          <div class="text-base-content/80 text-sm mt-4">The library provides all the necessary tools for creating accounts, customizing user profiles, and safeguarding personal information</div>
+          <div class="flex gap-2"><a target="blank" href="https://github.com/bonfire-networks/bonfire_me" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50 flex-full">Backend code</a>
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_ui_me" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50 flex-full">UI code</a>
+          </div>
+        </div>
+      </div>
+
+     <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">Boundaries & Circles</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">The library lets you easily create and manage circles, assign roles and define default and custom boundaries. Read more in our <a target="blank" href="https://bonfirenetworks.org/docs/boundaries/" target="blank">docs section</a></div>
+                  <a target="blank" href="https://github.com/bonfire-networks/bonfire_boundaries" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50">View code</a>
+      </div>
+      </div>
+
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+          <div class="flex items-center">
+            <div class="text-base-content uppercase mt-2 text-lg font-semibold flex flex-row xl:flex-col">Social</div>
+          </div>
+          <div class="text-base-content/80 text-sm mt-4">Follow, read, reply, moderate. The social library includes all the crucial functions that fuel the core bonfire microblog.</div>
+          <div class="flex gap-2"><a target="blank" href="https://github.com/bonfire-networks/bonfire_social" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50 flex-full">Backend code</a>
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_ui_social" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50">UI code</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">ValueFlows</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">This library lets you build features such as Kanban boards, inventories, offer/need bulletins, marketplaces, and much more.</div>
+                  <a target="blank" href="https://github.com/bonfire-networks/bonfire_valueflows" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50">Backend code</a>
+      </div>
+      </div>
+      
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">Groups</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">Create federated groups and topics, each with unique visibility settings and governance structures. Currently in alpha.</div>
+         <div class="flex gap-2">
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_classify" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full  !border !border-primary/50">Backend code</a>
+          <a target="blank" href="https://github.com/bonfire-networks/bonfire_ui_groups" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50 flex-full">UI code</a>
+          </div>
+      </div>
+      </div>
+      <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+        <div class="flex items-center">
+          <div class="text-base-content text-lg mt-2 font-semibold uppercase flex flex-row xl:flex-col">ActivityPub</div>
+        </div>
+        <div class="text-base-content/80 text-sm mt-4">A Modular ActivityPub library in Elixir, generic enough to be used for federating any kind of activities.</div>
+        <div class="flex gap-2">
+            <a href="https://github.com/bonfire-networks/activity_pub" target="blank" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50">Library code</a>
+            <a href="https://github.com/bonfire-networks/bonfire_federate_activitypub" target="blank" class="btn btn-outline btn-primary normal-case mt-4 btn-sm rounded-full !border !border-primary/50">Integration code</a>
+            </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="max-w-screen-lg px-4 md:px-0 lg:mx-auto mt-32">
+      <div class="text-5xl leading-[70px] text-center font-semibold mb-16 text-base-content">Latest from the blog</div>
+      
+      
+      
+
+<section class="mt-6 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+  
+  
+  
+    <article class="flex flex-col gap-2">
+      <div class="w-full h-48 bg-blueGray-400 rounded-lg bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/release.png)"></div>
+      <div class="flex-1 mt-2">
+        <h2 class="font-bold text-lg link link-hover">
+            <a href="/posts/release_096/">
+                
+                    Bonfire 0.9.6
+                
+            </a>
+        </h2>
+        
+        
+        
+        
+            <p class="text-sm text-base-content/70 my-2">
+                We&#39;re thrilled to announce the release of Bonfire version 0.9.6! 
+            </p>
+        
+        
+        
+      </div>
+    </article>
+    
+  
+  
+    <article class="flex flex-col gap-2">
+      <div class="w-full h-48 bg-blueGray-400 rounded-lg bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/composer.png)"></div>
+      <div class="flex-1 mt-2">
+        <h2 class="font-bold text-lg link link-hover">
+            <a href="/posts/making_things_intuitive_is_complex/">
+                
+                    Making things intuitive is complex! Or, what we discovered via user testing
+                
+            </a>
+        </h2>
+        
+        
+        
+        
+            <p class="text-sm text-base-content/70 my-2">
+                Notes about our latest user testing research to gather feedback and insights on the bonfire composer component.
+            </p>
+        
+        
+        
+      </div>
+    </article>
+    
+  
+  
+    <article class="flex flex-col gap-2">
+      <div class="w-full h-48 bg-blueGray-400 rounded-lg bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/ux.jpeg)"></div>
+      <div class="flex-1 mt-2">
+        <h2 class="font-bold text-lg link link-hover">
+            <a href="/posts/user_research/">
+                
+                    Could you help us with user research?
+                
+            </a>
+        </h2>
+        
+        
+        
+        
+            <p class="text-sm text-base-content/70 my-2">
+                As we approach v1.0 of Bonfire, we’re looking for volunteers to help us with some user research.
+            </p>
+        
+        
+        
+      </div>
+    </article>
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</section>
+<div class="flex mx-auto items-center place-content-center mt-12">
+  <a href="/blog" class="btn btn-outline !border !border-base-content/30 rounded-full normal-case">View all posts</a>
+</div>
+
+    <div class="mt-24 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-200 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
+
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+ 
+<style>
+    .splide__pagination__page.is-active {
+        background: #333;
+    }
+</style>
+<div class="mt-32 relative">
+  <div class="">
+      <div class="relative flex flex-col items-center grid-cols-1 gap-4 text-center place-content-center">
+        <div class="text-5xl leading-[70px] text-center font-semibold mb-16 text-base-content">What our community is saying</div>
+        
+    </div>
+    <div class="">
+
+<div
+    x-data="{
+        init() {
+            new Splide(this.$refs.splide, {
+                perPage: 4,
+                breakpoints: {
+                    640: {
+                        perPage: 1,
+                    },
+                },
+            }).mount()
+        },
+    }"
+>
+    <section x-ref="splide" class="splide" aria-label="Splide/Alpine.js Carousel Example">
+        <div class="splide__track">
+            <ul class="items-start splide__list ">
+              <li class="relative cursor-pointer bg-base-content/10 p-6 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">The most exciting thing about Bonfire to me is that they have set the stage to add all kinds of features integrated with the social networking core.  Circles and groups to start, offers/wants... some day whole social/economic networks and ecosystems.  Looking into the campfire, I can see a bright future for the fediverse.</div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-12 rounded-full bg-base-100">
+                        <img src="./img/lynn.png" class="object-cover w-full h-full rounded-full">
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-bold text-base-content">Lynn Foster</div>
+                        <div class="text-sm font-light text-base-content/80">lynnfoster@social.coop</div>
+                      </div>
+                    </div>
+                  </div>
+              </li>
+
+              <li class="relative cursor-pointer bg-base-content/20 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">Bonfire has the potential to bring federated social media to a new level. Its modular design will facilitate the creation of applications for all kind of purposes. We believe Bonfire will become the backbone of our future developments in the fields of open knowledge and science communication.</div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-12 rounded-full bg-base-100">
+                        <img src="./img/jorge.jpeg" class="object-cover w-full h-full rounded-full">
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-bold text-base-content">Jorge Saturno</div>
+                        <div class="text-sm font-light text-base-content/80">jorge@red.niboe.info</div>
+                      </div>
+                    </div>
+                  </div>
+              </li>
+
+              <li class="relative cursor-pointer bg-base-content/10 p-6 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">While I like Bonfire already, and love their care at making everything work smoothly, I am most excited by their future plans. I am working on community economic systems where the future Bonfire could be the main coordination medium.</div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-12 rounded-full bg-base-100">
+                        <img src="./img/bob.jpeg" class="object-cover w-full h-full rounded-full">
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-bold text-base-content">Bob Haugen</div>
+                        <div class="text-sm font-light text-base-content/80">bhaugen@social.coop</div>
+                      </div>
+                    </div>
+                  </div>
+              </li>
+
+
+              <li class="relative cursor-pointer bg-base-content/20 h-[400px] relative splide__slide">
+                  <div class="absolute left-6 right-6 flex flex-col gap-4 bottom-6">
+                    <div class="mt-4 prose text-base-content">We are loving Bonfire. We are actively exploring it to move our tools into Bonfire. Getting access to the Fediverse and to all the blocks looks really promising, to quickly develop community driven processes.</div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-12 rounded-full bg-accent">
+                        
+                      </div>
+                      <div class="flex flex-col">
+                        <div class="font-bold text-base-content">Angel</div>
+                        <div class="text-sm font-light text-base-content/80">The Weather Makers</div>
+                      </div>
+                    </div>
+                  </div>
+              </li>
+
+
+            </ul>
+        </div>
+    </section>
+</div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="pb-40 mt-32 border-t border-b section--bg border-base-content/10">
+  <div class="skew-y-2">
+    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto lg:mt-32">
+      <div class="relative flex flex-col items-center grid-cols-1 gap-4 text-center place-content-center">
+        <div class="text-[32px] font-extrabold leading-[1.3] tracking-wider text-base-content">What our community is saying</div>
+        <div class="flex items-center gap-3 mt-3">
+          <a href="https://indieweb.social/@bonfire" target="_blank" class="normal-case rounded btn btn-outline btn-sm">Follow on the fediverse</a>
+          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="normal-case rounded btn btn-sm">Join our Matrix chat</a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto lg:mt-24">
+
+  <div
+    x-data="{
+        skip: 3,
+        atBeginning: false,
+        atEnd: false,
+        next() {
+            this.to((current, offset) => current + (offset * this.skip))
+        },
+        prev() {
+            this.to((current, offset) => current - (offset * this.skip))
+        },
+        to(strategy) {
+            let slider = this.$refs.slider
+            let current = slider.scrollLeft
+            let offset = slider.firstElementChild.getBoundingClientRect().width
+            slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
+        },
+        focusableWhenVisible: {
+            'x-intersect:enter'() {
+                this.$el.removeAttribute('tabindex')
+            },
+            'x-intersect:leave'() {
+                this.$el.setAttribute('tabindex', '-1')
+            },
+        },
+        disableNextAndPreviousButtons: {
+            'x-intersect:enter.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+ 
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = true
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = true
+                }
+            },
+            'x-intersect:leave.threshold.05'() {
+                let slideEls = this.$el.parentElement.children
+ 
+                // If this is the first slide.
+                if (slideEls[0] === this.$el) {
+                    this.atBeginning = false
+                // If this is the last slide.
+                } else if (slideEls[slideEls.length-1] === this.$el) {
+                    this.atEnd = false
+                }
+            },
+        },
+    }"
+    class="flex flex-col items-start w-full"
+>
+    <div
+        x-on:keydown.right="next"
+        x-on:keydown.left="prev"
+        tabindex="0"
+        role="region"
+        aria-labelledby="carousel-label"
+        class="flex space-x-6"
+    >
+        <h2 id="carousel-label" class="sr-only" hidden>Carousel</h2>
+ 
+        <button
+            x-on:click="prev"
+            class="text-6xl"
+            :aria-disabled="atBeginning"
+            :tabindex="atEnd ? -1 : 0"
+            :class="{ 'opacity-50 cursor-not-allowed': atBeginning }"
+        >
+            <span aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </span>
+            <span class="sr-only">Skip to previous slide page</span>
+        </button>
+ 
+        <span id="carousel-content-label" class="sr-only" hidden>Carousel</span>
+ 
+        <ul
+            x-ref="slider"
+            tabindex="0"
+            role="listbox"
+            aria-labelledby="carousel-content-label"
+            class="flex items-start w-full px-4 overflow-x-scroll snap-x snap-mandatory"
+        >
+            <li x-bind="disableNextAndPreviousButtons" class="flex flex-col items-center justify-center w-full p-2 shrink-0 snap-start" role="option">
+              <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-base-100">
+                    <img src="./img/lynn.png" class="object-cover w-full h-full rounded-full">
+                  </div>
+                  <div class="flex flex-col">
+                    <a href="https://social.coop/@lynnfoster" target="_blank" class="font-bold link link-hover text-base-content">Lynn Foster</a>
+                    <div class="text-sm font-light text-base-content/80">lynnfoster@social.coop</div>
+                  </div>
+                </div>
+                <div class="mt-4 text-base text-base-content/60">The most exciting thing about Bonfire to me is that they have set the stage to add all kinds of features integrated with the social networking core.  Circles and groups to start, offers/wants... some day whole social/economic networks and ecosystems.  Looking into the campfire, I can see a bright future for the fediverse.</div>
+              </div>
+            </li>
+
+            <li x-bind="disableNextAndPreviousButtons" class="flex flex-col items-center justify-center w-full p-2 shrink-0 snap-start" role="option">
+              <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-base-100">
+                    <img src="./img/jorge.jpeg" class="object-cover w-full h-full rounded-full">
+                  </div>
+                  <div class="flex flex-col">
+                    <a href="https://red.niboe.info/@jorge" target="_blank" class="font-bold link link-hover text-base-content">Jorge Saturno</a>
+                    <div class="text-sm font-light text-base-content/80">jorge@red.niboe.info</div>
+                  </div>
+                </div>
+                <div class="mt-4 text-base text-base-content/60">Bonfire has the potential to bring federated social media to a new level. Its modular design will facilitate the creation of applications for all kind of purposes. We believe Bonfire will become the backbone of our future developments in the fields of open knowledge and science communication.</div>
+              </div>
+            </li>
+
+            <li x-bind="disableNextAndPreviousButtons" class="flex flex-col items-center justify-center w-full p-2 shrink-0 snap-start" role="option">
+              <div class="bg-[#282736] break-inside-avoid rounded-2xl p-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-base-100">
+                    <img src="./img/bob.jpeg" class="object-cover w-full h-full rounded-full">
+                  </div>
+                  <div class="flex flex-col">
+                    <a href="https://social.coop/@bhaugen" target="_blank" class="font-bold link link-hover text-base-content">Bob Haugen</a>
+                    <div class="text-sm font-light text-base-content/80">bhaugen@social.coop</div>
+                  </div>
+                </div>
+                <div class="mt-4 text-base text-base-content/60">While I like Bonfire already, and love their care at making everything work smoothly, I am most excited by their future plans. I am working on community economic systems where the future Bonfire could be the main coordination medium.</div>
+              </div>
+            </li>
+
+            
+ 
+            
+        </ul>
+ 
+        <button
+            x-on:click="next"
+            class="text-6xl"
+            :aria-disabled="atEnd"
+            :tabindex="atEnd ? -1 : 0"
+            :class="{ 'opacity-50 cursor-not-allowed': atEnd }"
+        >
+            <span aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </span>
+            <span class="sr-only">Skip to next slide page</span>
+        </button>
+    </div>
+</div>  
+</div>
+  </div>
+</div> -->
+
+
+
+
+
+
+  <div class="md:p-20 rounded-none lg:px-20 bg-[#1B1A27] lg:mx-0">
+
+  <div class="relative mt-16 isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+    <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+      <img src="/img/footer.png" alt="footer screenshot" class="w-full max-w-none">
+    </div>
+  </div>
+
+  
+
+
+</div>
+
+  
+
+
+
+
+
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
+  <div>
+    <div class="items-center flex-1 grid-flow-col">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+    </div> 
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+  </div> 
+  <div>
+    <span class="footer-title">Developers</span> 
+    <a href="/docs" class="link link-hover">Documentation</a> 
+    <a href="/roadmap" class="link link-hover">Roadmap</a> 
+    
+    <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="link link-hover">Code</a>
+  </div> 
+  <div>
+    <span class="footer-title">Apps</span> 
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/docs/faq" class="link link-hover">FAQs</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="footer-title">More</span> 
+    <a href="/community" class="link link-hover">Community</a> 
+    <a href="/docs/conduct" class="link link-hover">Terms of use</a> 
+    <a href="/docs/privacy" class="link link-hover">Privacy policy</a> 
+    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="link link-hover">Support</a> 
+  </div>
+</footer>
+
+</div>
+    <!-- Current page: / -->
+  </body>
+</html>

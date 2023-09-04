@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style_v2.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div>
+      <header 
+        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+        <div class="navbar-start">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+
+          <div class="hidden lg:flex ml-10">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+            <a href="/faq" class=" ">
+              <span class="text-sm font-regular">FAQs</span>
+            </a>
+            </li>
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/community" class=" ">
+                <span class="text-sm font-regular">Community</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="lg:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/roadmap" class=" ">
+            <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      
+<div class="max-w-screen-lg mx-auto mt-12">
+ <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
+      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </div>
+        <span class="text-sm font-medium text-blueGray-300">Back to Newsroom</span>
+    </a>
+    <h1 class="font-medium text-left text-xl text-base-content">Articles tagged <span class="underline">product</span></h1>
+    <ol>
+    
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/release.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/release_096/">
+                  
+                      Bonfire 0.9.6
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">09 Aug 2023</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We&#39;re thrilled to announce the release of Bonfire version 0.9.6! 
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/release_096/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/composer.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/making_things_intuitive_is_complex/">
+                  
+                      Making things intuitive is complex! Or, what we discovered via user testing
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">19 Jul 2023</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Notes about our latest user testing research to gather feedback and insights on the bonfire composer component.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/making_things_intuitive_is_complex/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/boundaries_post.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/how_to_boundaries/">
+                  
+                      How to use boundaries, circles and roles
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">30 May 2023</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  &quot;One does not need to set themselves on fire to keep other people warm.&quot;
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/how_to_boundaries/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/blog_boundaries.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/introducing_boundaries/">
+                  
+                      Introducing circles and boundaries
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">19 Jul 2022</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  How will our online experiences be different once we take back control over exactly who should see, interact with, and even collaborate on our content and activities at the most granular level?
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/introducing_boundaries/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/1a.jpg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/not_just_yet_another_microblog/">
+                  
+                      Not Just &#39;Yet Another Microblog&#39;
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">18 Jun 2022</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We&#39;re now days away from the beta release of Bonfire, a federated app toolkit. When beta users get their hands on it, however, they might be confused wait, this looks like just another microblogging app! haven&#39;t we already got enough of those?
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/not_just_yet_another_microblog/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/testing.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/notes_on_first_usability_testing/">
+                  
+                      Notes on our first usability testing round
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">21 May 2022</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  On May 10th we published a toot asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/notes_on_first_usability_testing/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/1.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/zappa_report/">
+                  
+                      First version of report published sharing findings from Zappa project user research
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">05 Mar 2022</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/zappa_report/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/2.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/zappa_some_interesting_finding/">
+                  
+                      Some interesting findings from user research for the Zappa project (so far!)
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">18 Feb 2022</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  One of the things about working openly is, fairly obviously, sharing your work as you go. This can be difficult for many reasons, not least because of the human tendency toward narrative, to completed stories with start, middle, and end...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/zappa_some_interesting_finding/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/3.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/zappa-project/">
+                  
+                      Countering misinformation in federated social networks, an introduction to the Zappa project
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">08 Feb 2022</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/zappa-project/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(https://i.imgur.com/XoQvDCW.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_ui_social/">
+                  
+                      A UI toolbox for customizable social network apps
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">23 Jul 2021</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Bonfire:UI:Social is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_ui_social/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/flowers.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/let_thousand_bonfires_bloom/">
+                  
+                      Let a thousand bonfires bloom
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">20 Jul 2021</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Dopamine and attention manipulation are not inherent properties of a social network. It is time to reconsider some fundamental questions.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/let_thousand_bonfires_bloom/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/my_tasks.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_coordination/">
+                  
+                      First steps toward federated project coordination
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">14 Jul 2021</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We are building a coordination tool that shares a lot of functionality with most to-do apps out there. But how is it different?
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_coordination/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/brand.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_identity/">
+                  
+                      The story of Bonfire&#39;s visual identity
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">21 May 2021</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Our journey through brainstorming and creating the bonfire logotype
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_identity/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    </ol>
+</div>
+
+
+
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
+  <div>
+    <div class="items-center flex-1 grid-flow-col">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+    </div> 
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+  </div> 
+  <div>
+    <span class="footer-title">Developers</span> 
+    <a href="/docs" class="link link-hover">Documentation</a> 
+    <a href="/roadmap" class="link link-hover">Roadmap</a> 
+    
+    <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="link link-hover">Code</a>
+  </div> 
+  <div>
+    <span class="footer-title">Apps</span> 
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/docs/faq" class="link link-hover">FAQs</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="footer-title">More</span> 
+    <a href="/community" class="link link-hover">Community</a> 
+    <a href="/docs/conduct" class="link link-hover">Terms of use</a> 
+    <a href="/docs/privacy" class="link link-hover">Privacy policy</a> 
+    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="link link-hover">Support</a> 
+  </div>
+</footer>
+
+</div>
+    <!-- Current page: /tags/product/ -->
+  </body>
+</html>

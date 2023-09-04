@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style_v2.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div>
+      <header 
+        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+        <div class="navbar-start">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+
+          <div class="hidden lg:flex ml-10">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+            <a href="/faq" class=" ">
+              <span class="text-sm font-regular">FAQs</span>
+            </a>
+            </li>
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+            <li>
+              <a href="/community" class=" ">
+                <span class="text-sm font-regular">Community</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="lg:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class="underline decoration-primary decoration-2 text-primary  underline-offset-8 ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/roadmap" class="underline decoration-primary decoration-2 underline-offset-8 ">
+            <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      <div x-data="{open: false}" class="flex mx-auto max-w-screen-xl">
+  <div 
+    x-show="open"
+    x-cloak
+    @click="open = false" 
+    class="lg:!hidden cursor-pointer backdrop-blur backdrop-filter inset-0 z-10 bg-black/30 absolute"></div>
+  <aside 
+  :class="open ? 'block px-4' : 'hidden'"  
+  class="sticky top-[104px] z-20 h-screen w-72 xl:w-80 lg:!block">
+    <div class="block h-screen  overflow-y-auto pointer-events-auto w-72 xl:w-80">
+      
+      
+      <nav 
+        class="flex">
+        <ul role="list">        
+          <li class="relative md:mt-0">
+            <h2 class="text-xs font-semibold uppercase text-base-content/60">Get started</h2>
+            <div class="relative mt-3">
+              <ul role="list" class="flex flex-col gap-1.5">
+                <li class="relative">
+                                                                                                                                                                
+                  <a href="/docs" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 " >
+                    <svg  class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M9.5 9.325v5.35q0 .6.525.875t1.025-.05l4.15-2.65q.475-.275.475-.85t-.475-.85L11.05 8.5q-.5-.325-1.025-.05q-.525.275-.525.875ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Zm0-10Zm0 8q3.325 0 5.663-2.337Q20 15.325 20 12t-2.337-5.663Q15.325 4 12 4T6.338 6.337Q4 8.675 4 12t2.338 5.663Q8.675 20 12 20Z"/></svg>
+                    <span class="truncate">Introduction</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/deploy" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100  !text-primary/90 font-semibold ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><rect x="0" y="0" width="48" height="48" fill="none" stroke="none" /><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 21c0 7.18-5.82 13-13 13s-13-5.82-13-13s5-10 7-17c8 3.5 8 14 8 14s2-6 8-7.5c.5 5.5 3 7.434 3 10.5ZM7 36l32 8M7 44l32-8"/></svg>
+                    <span class="truncate">Deploy a new instance</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/hacking" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><rect x="0" y="0" width="256" height="256" fill="none" stroke="none" /><path fill="currentColor" d="M128 128a7.9 7.9 0 0 1-3 6.2l-40 32a7.9 7.9 0 0 1-5 1.8a7.8 7.8 0 0 1-6.2-3a7.9 7.9 0 0 1 1.2-11.2l32.2-25.8L75 102.2a8 8 0 1 1 10-12.4l40 32a7.9 7.9 0 0 1 3 6.2Zm48 24h-40a8 8 0 0 0 0 16h40a8 8 0 0 0 0-16Zm56.5-95.5v143a17 17 0 0 1-17 17h-175a17 17 0 0 1-17-17v-143a17 17 0 0 1 17-17h175a17 17 0 0 1 17 17Zm-17 143v-143h-175v143Z"/></svg>
+                    <span class="truncate">Set up a dev environment</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/faq" class="flex items-center gap-5 py-1 md-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10zm0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1a1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z"/></svg>
+                    <span class="truncate">FAQs</span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+
+          <li class="relative pt-4 mt-4 border-t border-base-content/10">
+            <h2 class="text-xs font-semibold uppercase text-base-content/60">Topics</h2>
+            <div class="relative mt-3">
+              <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
+                <li class="relative">
+                  <a href="/docs/architecture" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><rect x="0" y="0" width="256" height="256" fill="none" stroke="none" /><path fill="currentColor" d="M200 154a29.8 29.8 0 0 0-19.5 7.2l-25.6-19.9A29.6 29.6 0 0 0 158 128c0-1.2-.1-2.4-.2-3.6L174 119a30 30 0 1 0-4-15c0 1.2.1 2.4.2 3.6L154 113a30 30 0 0 0-26-15a28.1 28.1 0 0 0-6.5.7l-8.1-18.3A30 30 0 1 0 96 86a28.1 28.1 0 0 0 6.5-.7l8.1 18.3A29.9 29.9 0 0 0 98 128a29.3 29.3 0 0 0 4.1 15L74 168a29.7 29.7 0 0 0-18-6a30 30 0 1 0 30 30a29.3 29.3 0 0 0-4.1-15l28.1-25a30 30 0 0 0 37.5-1.2l25.6 19.9A29.6 29.6 0 0 0 170 184a30 30 0 1 0 30-30Zm0-68a18 18 0 1 1-18 18a18.1 18.1 0 0 1 18-18ZM78 56a18 18 0 1 1 18 18a18.1 18.1 0 0 1-18-18ZM56 210a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Zm72-64a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Zm72 56a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Z"/></svg>
+                    <span class="truncate">Architecture overview</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/bonfire-flavoured-elixir" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 " aria-current="page">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M16.7 17.3q-.275.275-.687.275q-.413 0-.713-.3t-.3-.713q0-.412.3-.712l3.875-3.875l-3.9-3.9Q15 7.8 15.012 7.387q.013-.412.288-.687q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.3.3.3.7q0 .4-.3.7Zm-9.4 0l-4.6-4.6q-.3-.3-.3-.7q0-.4.3-.7l4.6-4.6q.275-.275.7-.288q.425-.012.725.288t.3.712q0 .413-.3.713l-3.9 3.9l3.9 3.9q.275.275.263.687q-.013.413-.288.688q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
+                    <span class="truncate">Bonfire code styles</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/boundaries" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M6 22q-.825 0-1.412-.587Q4 20.825 4 20V10q0-.825.588-1.413Q5.175 8 6 8h1V6q0-2.075 1.463-3.538Q9.925 1 12 1t3.538 1.462Q17 3.925 17 6v2h1q.825 0 1.413.587Q20 9.175 20 10v10q0 .825-.587 1.413Q18.825 22 18 22Zm0-2h12V10H6v10Zm6-3q.825 0 1.413-.587Q14 15.825 14 15q0-.825-.587-1.413Q12.825 13 12 13q-.825 0-1.412.587Q10 14.175 10 15q0 .825.588 1.413Q11.175 17 12 17ZM9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6ZM6 20V10v10Z"/></svg>
+                    <span class="truncate">Boundaries</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/database" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.59 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4m6 14c0 .5-2.13 2-6 2s-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23s4.39-.45 6-1.23V17m0-4.55c-1.3.95-3.58 1.55-6 1.55s-4.7-.6-6-1.55V9.64c1.47.83 3.61 1.36 6 1.36s4.53-.53 6-1.36v2.81M12 9C8.13 9 6 7.5 6 7s2.13-2 6-2s6 1.5 6 2s-2.13 2-6 2Z"/></svg>
+                    <span class="truncate">Database</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/graphql" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13h5m3 3V8h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-3m8-5v8M9 16v-5.5a2.5 2.5 0 0 0-5 0V16"/></svg>
+                    <span class="truncate">GraphQL</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/mrf" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-2 -2.5 24 24"><rect x="-2" y="-2.5" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M3.656 17.979A1 1 0 0 1 2 17.243V15a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H8.003l-4.347 2.979zm.844-3.093a.536.536 0 0 0 .26-.069l2.355-1.638A1 1 0 0 1 7.686 13H12a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v5c0 .54.429.982 1 1c.41.016.707.083.844.226c.128.134.135.36.156.79c.003.063.003.177 0 .37a.5.5 0 0 0 .5.5zm11.5-4.87a7.136 7.136 0 0 0 0 .37v-.37c.02-.43.028-.656.156-.79c.137-.143.434-.21.844-.226c.571-.018 1-.46 1-1V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5V2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2v2.243a1 1 0 0 1-1.656.736L16 13.743v-3.726z"/></svg>
+                    <span class="truncate">MRF</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          
+
+          <li class="relative pt-4 mt-4 border-t border-base-content/10">
+            <h2 class="text-xs font-semibold uppercase text-base-content/60">More</h2>
+            <div class="relative mt-3">
+              <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
+                
+                <li class="relative">
+                  <a href="/docs/conduct" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><rect x="0" y="0" width="16" height="16" fill="none" stroke="none" /><path fill="currentColor" d="M8.048 2.241c.964-.709 2.079-1.238 3.325-1.241a4.616 4.616 0 0 1 3.282 1.355c.41.408.757.86.996 1.428c.238.568.348 1.206.347 1.968c0 2.193-1.505 4.254-3.081 5.862c-1.496 1.526-3.213 2.796-4.249 3.563l-.22.163a.749.749 0 0 1-.895 0l-.221-.163c-1.036-.767-2.753-2.037-4.249-3.563C1.51 10.008.007 7.952.002 5.762a4.614 4.614 0 0 1 1.353-3.407C3.123.585 6.223.537 8.048 2.24Zm-1.153.983c-1.25-1.033-3.321-.967-4.48.191a3.115 3.115 0 0 0-.913 2.335c0 1.556 1.109 3.24 2.652 4.813C5.463 11.898 6.96 13.032 8 13.805c.353-.262.758-.565 1.191-.905l-1.326-1.223a.75.75 0 0 1 1.018-1.102l1.48 1.366c.328-.281.659-.577.984-.887L9.99 9.802a.75.75 0 1 1 1.019-1.103l1.384 1.28c.295-.329.566-.661.81-.995L12.92 8.7l-1.167-1.168c-.674-.671-1.78-.664-2.474.03c-.268.269-.538.537-.802.797c-.893.882-2.319.843-3.185-.032c-.346-.35-.693-.697-1.043-1.047a.75.75 0 0 1-.04-1.016c.162-.191.336-.401.52-.623c.62-.748 1.356-1.637 2.166-2.417Zm7.112 4.442c.313-.65.491-1.293.491-1.916v-.001c0-.614-.088-1.045-.23-1.385c-.143-.339-.357-.633-.673-.949a3.111 3.111 0 0 0-2.218-.915c-1.092.003-2.165.627-3.226 1.602c-.823.755-1.554 1.637-2.228 2.45l-.127.154l.562.566a.755.755 0 0 0 1.066.02l.794-.79c1.258-1.258 3.312-1.31 4.594-.032c.396.394.792.791 1.173 1.173Z"/></svg>
+                    <span class="truncate">Code of Conduct</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/privacy" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M17.06 13c-1.86 0-3.42 1.33-3.82 3.1c-.95-.41-1.82-.3-2.48-.01C10.35 14.31 8.79 13 6.94 13C4.77 13 3 14.79 3 17s1.77 4 3.94 4c2.06 0 3.74-1.62 3.9-3.68c.34-.24 1.23-.69 2.32.02c.18 2.05 1.84 3.66 3.9 3.66c2.17 0 3.94-1.79 3.94-4s-1.77-4-3.94-4M6.94 19.86c-1.56 0-2.81-1.28-2.81-2.86s1.26-2.86 2.81-2.86c1.56 0 2.81 1.28 2.81 2.86s-1.25 2.86-2.81 2.86m10.12 0c-1.56 0-2.81-1.28-2.81-2.86s1.25-2.86 2.81-2.86s2.82 1.28 2.82 2.86s-1.27 2.86-2.82 2.86M22 10.5H2V12h20v-1.5m-6.47-7.87c-.22-.49-.78-.75-1.31-.58L12 2.79l-2.23-.74l-.05-.01c-.53-.15-1.09.13-1.29.64L6 9h12l-2.44-6.32l-.03-.05Z"/></svg>
+                    <span class="truncate">Privacy policy</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="/docs/changelog" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 ">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><g fill="none"><path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"/><path fill="currentColor" d="M16 3a3 3 0 0 1 2.995 2.824L19 6v10h.75c.647 0 1.18.492 1.244 1.122l.006.128V19a3 3 0 0 1-2.824 2.995L18 22H8a3 3 0 0 1-2.995-2.824L5 19V9H3.25a1.25 1.25 0 0 1-1.244-1.122L2 7.75V6a3 3 0 0 1 2.824-2.995L5 3h11Zm0 2H7v14a1 1 0 1 0 2 0v-1.75c0-.69.56-1.25 1.25-1.25H17V6a1 1 0 0 0-1-1Zm3 13h-8v1c0 .35-.06.687-.17 1H18a1 1 0 0 0 1-1v-1Zm-7-6a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm2-4a1 1 0 1 1 0 2h-4a1 1 0 0 1 0-2h4ZM5 5a1 1 0 0 0-.993.883L4 6v1h1V5Z"/></g></svg>
+                    <span class="truncate">Changelog</span>
+                  </a>
+                </li>
+              </ul>
+              </li>
+                <li class="relative pt-4 mt-4 border-t border-base-content/10">
+            <h2 class="text-xs font-semibold uppercase text-base-content/60">Useful links</h2>
+            <div class="relative mt-3">
+              <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
+                <li class="relative">
+                  <a href="https://github.com/bonfire-networks/bonfire-app/issues" target="_blank" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2q1.625 0 3.075.475q1.45.475 2.675 1.325L16.3 5.275q-.95-.6-2.025-.938Q13.2 4 12 4Q8.675 4 6.338 6.337Q4 8.675 4 12t2.338 5.663Q8.675 20 12 20q3.325 0 5.663-2.337Q20 15.325 20 12q0-.45-.05-.9t-.15-.875L21.425 8.6q.275.8.425 1.65q.15.85.15 1.75q0 2.075-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Zm-1.4-5.4l-4.25-4.25l1.4-1.4l2.85 2.85l10-10.025l1.4 1.4Z"/></svg>
+                    <span class="truncate">Issue tracker</span>
+                  </a>
+                </li>
+
+                
+
+                <li class="relative">
+                  <a href="https://doc.bonfirenetworks.org/api-reference.html" target="_blank" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M16.7 17.3q-.275.275-.687.275q-.413 0-.713-.3t-.3-.713q0-.412.3-.712l3.875-3.875l-3.9-3.9Q15 7.8 15.012 7.387q.013-.412.288-.687q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.3.3.3.7q0 .4-.3.7Zm-9.4 0l-4.6-4.6q-.3-.3-.3-.7q0-.4.3-.7l4.6-4.6q.275-.275.7-.288q.425-.012.725.288t.3.712q0 .413-.3.713l-3.9 3.9l3.9 3.9q.275.275.263.687q-.013.413-.288.688q-.275.275-.7.275q-.425 0-.7-.275Z"/></svg>
+                    <span class="truncate">Code API references</span>
+                  </a>
+                </li>
+
+                <li class="relative">
+                  <a href="https://github.com/bonfire-networks" target="_blank" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476c0-.237-.013-1.024-.013-1.862c-2.512.463-3.162-.612-3.362-1.175c-.113-.288-.6-1.175-1.025-1.413c-.35-.187-.85-.65-.013-.662c.788-.013 1.35.725 1.538 1.025c.9 1.512 2.338 1.087 2.912.825c.088-.65.35-1.087.638-1.337c-2.225-.25-4.55-1.113-4.55-4.938c0-1.088.387-1.987 1.025-2.688c-.1-.25-.45-1.275.1-2.65c0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337c1.912-1.3 2.75-1.024 2.75-1.024c.55 1.375.2 2.4.1 2.65c.637.7 1.025 1.587 1.025 2.687c0 3.838-2.337 4.688-4.562 4.938c.362.312.675.912.675 1.85c0 1.337-.013 2.412-.013 2.75c0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/></svg>
+                    <span class="truncate">Check out the code</span>
+                  </a>
+                </li>
+                <li class="relative">
+                  <a href="https://opencollective.com/bonfire-networks" target="_blank" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Zm-5 0a4 4 0 1 1-8 0a4 4 0 0 1 8 0Z"/></svg>
+                    <span class="truncate">Support the project</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </aside>
+    
+    <main class="w-full">
+      <div class="top-0 z-10 overflow-hidden lg:sticky">
+        <div @click="open = ! open" class="lg:hidden backdrop-blur backdrop-filter bg-[#1B1A27]/80 flex cursor-pointer items-center gap-4 px-5 py-3 border-b border-base-content/10">
+          <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Zm1-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H5Z"/></svg>
+          <div class="text-sm tracking-wider">Menu</div>
+        </div>
+      </div>
+      <div class="max-w-screen-xl p-8 mx-auto lg:px-12">
+        
+<div class="max-w-3xl prose">
+<h1 id="deployment-guide">Deployment guide <a class="direct-link" href="#deployment-guide">#</a></h1>
+<h3 id="warning%3A-beta-status---have-fun-but-don't-rely-on-it-yet-%F0%9F%99%8F">WARNING: beta status - have fun but don't rely on it yet 🙏 <a class="direct-link" href="#warning%3A-beta-status---have-fun-but-don't-rely-on-it-yet-%F0%9F%99%8F">#</a></h3>
+<p>Bonfire is currently beta software. While it's fun to play with it, we would not recommend running any production instances yet (meaning not using it for your primary fediverse identity) because it's not quite ready for that today.</p>
+<p><em>These instructions are for setting up Bonfire in production. If you want to run the backend in development, please refer to our developer guide instead.</em></p>
+<h2 id="security-warning">Security Warning <a class="direct-link" href="#security-warning">#</a></h2>
+<p>We recommend only granting an account to people you trust to minimise the attack surface. Accordingly, Bonfire ships with public registration disabled. The admin panel has an <code>invite</code> facility.</p>
+<hr>
+<h2 id="step---0---decide-how-you-want-to-deploy-and-manage-the-app">Step - 0 - Decide how you want to deploy and manage the app <a class="direct-link" href="#step---0---decide-how-you-want-to-deploy-and-manage-the-app">#</a></h2>
+<ul>
+<li>Option A - Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects. In this case, jump straight to step 4.</li>
+<li>Option B - Install using Docker containers (easy mode)
+<ul>
+<li>Option B1 - Using pre-built Docker images</li>
+<li>Option B2 - Building your own Docker image (if you want to make changes to the code)</li>
+</ul>
+</li>
+<li>Option C - Manual installation (without Docker)</li>
+</ul>
+<h2 id="step-1---download-and-configure-the-app">Step 1 - Download and configure the app <a class="direct-link" href="#step-1---download-and-configure-the-app">#</a></h2>
+<h3 id="option-a---install-using-co-op-cloud-(recommended)">Option A - Install using Co-op Cloud (recommended) <a class="direct-link" href="#option-a---install-using-co-op-cloud-(recommended)">#</a></h3>
+<ol>
+<li>Install <a href="https://docs.coopcloud.tech/abra/">Abra</a> on your machine</li>
+<li><a href="https://docs.coopcloud.tech/operators/">Set up a server with co-op cloud</a></li>
+<li>Use the <a href="https://recipes.coopcloud.tech/bonfire">Bonfire recipe</a> and follow the instructions there.</li>
+</ol>
+<h3 id="options-b-and-c">Options B and C <a class="direct-link" href="#options-b-and-c">#</a></h3>
+<ol>
+<li>
+<p>Install dependencies.<br>
+You may need to install <a href="https://github.com/casey/just#packages">just</a>, and other requirements such as Docker (check the exact list of requirements based on the option you choose in step 2.)</p>
+</li>
+<li>
+<p>Clone this repository and change into the directory:</p>
+</li>
+</ol>
+<pre class="language-sh"><code class="language-sh"><span class="token function">git</span> clone <span class="token parameter variable">--depth</span> <span class="token number">1</span> https://github.com/bonfire-networks/bonfire-app.git bonfire <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> bonfire</code></pre>
+<ol start="3">
+<li>Specify what flavour you want to run in production:</li>
+</ol>
+<p>The first thing to do is choose what flavour of Bonfire (eg. classic, community, or cooperation) you want to deploy, as each flavour uses different Docker images and set of configs. For example if you want to run the <code>classic</code> flavour:</p>
+<ul>
+<li><code>export MIX_ENV=prod FLAVOUR=classic</code></li>
+</ul>
+<p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
+<p>If you're not planning on using Docker, you'll also need:</p>
+<ul>
+<li><code>export WITH_DOCKER=no</code></li>
+</ul>
+<p>## Step 2- Prepare the config</p>
+<ul>
+<li>
+<p><strong>Option A</strong>: if deploying with co-op cloud, edit the env file at <code>~/.abra/servers/your_server/your_app.env</code> instead.</p>
+</li>
+<li>
+<p><strong>Option B and C</strong>:</p>
+</li>
+</ul>
+<ul>
+<li>Run <code>just config</code> to initialise some default config and then edit the config in the <code>./.env</code> file.</li>
+</ul>
+<h3 id="config-keys-you-should-pay-special-attention-to%3A">Config keys you should pay special attention to: <a class="direct-link" href="#config-keys-you-should-pay-special-attention-to%3A">#</a></h3>
+<p>The app needs these environment variables to be configured in order to work.</p>
+<ul>
+<li><code>FLAVOUR</code> should reflect your chosen flavour</li>
+<li><code>HOSTNAME</code> (your domain name, eg: <code>bonfire.example.com</code>)</li>
+<li><code>PUBLIC_PORT</code> (usually 443)</li>
+<li><code>MAIL_DOMAIN</code> and <code>MAIL_KEY</code> and related keys to configure transactional email, for example set <code>MAIL_BACKEND=mailgun</code> and sign up at <a href="https://www.mailgun.com/">Mailgun</a> and then configure the domain name and key (you may also need to set <code>MAIL_BASE_URI</code> if your domain is not setup in EU, as the default <code>MAIL_BASE_URI</code> is set as <code>https://api.eu.mailgun.net/v3</code>).</li>
+<li>SMTP is supported as well, through the following env vars</li>
+</ul>
+<pre><code>MAIL_SERVER (smtp domain of the mail server)
+MAIL_DOMAIN (the bit after the @ in your email)
+MAIL_USER
+MAIL_PASSWORD
+MAIL_FROM
+MAIL_PORT (optional)
+MAIL_SSL (optional)
+</code></pre>
+<ul>
+<li><code>UPLOADS_S3_BUCKET</code> and the related API key and secret for uploads. WARNING: If you want to store uploads in an object storage rather than directly on your server (which you probably want, to not run out of space), you need to configure that up front, otherwise URLs will break if you change it later. See <code>config/runtime.exs</code> for extra variables to set if you're not using the default service and region (which is <a href="https://www.scaleway.com/en/object-storage/">Scaleway</a> Paris).</li>
+</ul>
+<h3 id="secret-keys-for-which-you-should-put-random-secrets.">Secret keys for which you should put random secrets. <a class="direct-link" href="#secret-keys-for-which-you-should-put-random-secrets.">#</a></h3>
+<p>You can run <code>just secrets</code> to generate some for you.</p>
+<ul>
+<li><code>SECRET_KEY_BASE</code></li>
+<li><code>SIGNING_SALT</code></li>
+<li><code>ENCRYPTION_SALT</code></li>
+<li><code>POSTGRES_PASSWORD</code></li>
+<li><code>MEILI_MASTER_KEY</code></li>
+</ul>
+<h3 id="further-information-on-config">Further information on config <a class="direct-link" href="#further-information-on-config">#</a></h3>
+<p>In the <code>./config/</code> (which is a symbolic link to the config of the flavour you choose to run) directory of the codebase, there are following config files:</p>
+<ul>
+<li><code>config.exs</code>: default base configuration, which itself loads many other config files, such as one for each installed Bonfire extension.</li>
+<li><code>prod.exs</code>: default extra configuration for <code>MIX_ENV=prod</code></li>
+<li><code>runtime.exs</code>: extra configuration which is loaded at runtime (vs the others which are only loaded once at compile time, i.e. when you build a release)</li>
+<li><code>bonfire_*.exs</code>: configs specific to different extensions, which are automatically imported by <code>config.exs</code></li>
+</ul>
+<p>You should <em>not</em> have to modify the files above. Instead, overload any settings from the above files using env variables or in <code>./.env</code>. If any settings in the <code>.exs</code> config files are not available in env or in the instance settings UI, please open an issue or PR.</p>
+<h2 id="step-3---install">Step 3 - Install <a class="direct-link" href="#step-3---install">#</a></h2>
+<h3 id="option-a---install-using-co-op-cloud-(recommended)-1">Option A - Install using Co-op Cloud (recommended) <a class="direct-link" href="#option-a---install-using-co-op-cloud-(recommended)-1">#</a></h3>
+<p>Follow the instructions in the coop-cloud recipe readme.</p>
+<h3 id="option-b---install-using-docker-containers-(easy-mode)">Option B - Install using Docker containers (easy mode) <a class="direct-link" href="#option-b---install-using-docker-containers-(easy-mode)">#</a></h3>
+<p>The easiest way to launch the docker image is using the just commands.<br>
+The <code>docker-compose.release.yml</code> uses <code>config/prod/.env</code> to launch a container with the necessary environment variables along with its dependencies, currently that means an extra postgres container, along with a reverse proxy (Caddy server, which you may want to replace with nginx or whatever you prefer).</p>
+<p>Make sure you have <a href="https://www.docker.com/">Docker</a>, with the <a href="https://docs.docker.com/compose/install/#install-compose">compose</a> plugin, and <a href="https://github.com/casey/just#packages">just</a> installed:</p>
+<pre class="language-sh"><code class="language-sh">$ <span class="token function">docker</span> version<br>Docker Engine - Community - <span class="token number">23.0</span>.1<br><br>$ <span class="token function">docker</span> compose version<br>Docker Compose version v2.16.0<br><br>$ just <span class="token parameter variable">--version</span><br>just <span class="token number">1.13</span>.0<br><span class="token punctuation">..</span>.</code></pre>
+<p>Now that your tooling is set up, you have the choice of using pre-built images or building your own. For example if your flavour does not have a prebuilt image on Docker Hub, or if you want to customise any of the extensions, you can build one yourself - see option B2 below.</p>
+<h4 id="option-b1---using-pre-built-docker-images-(recommended-to-start-with)">Option B1 - Using pre-built Docker images (recommended to start with) <a class="direct-link" href="#option-b1---using-pre-built-docker-images-(recommended-to-start-with)">#</a></h4>
+<ul>
+<li>The <code>image</code> entry in <code>docker-compose.release.yml</code> will by default use the image on Docker Hub which corresponds to your chosen flavour (see step 1 above for choosing your flavour).</li>
+</ul>
+<p>You can see the images available per flavour, version (we currently recommend using the <code>latest</code> tag), and architecture at <a href="https://hub.docker.com/r/bonfirenetworks/bonfire/tags">https://hub.docker.com/r/bonfirenetworks/bonfire/tags</a></p>
+<ul>
+<li>Start the docker containers with docker-compose:</li>
+</ul>
+<pre><code>just rel-run
+</code></pre>
+<p>Run this at the prompt:</p>
+<p><code>bin/bonfire remote</code> to enter Elixir's iex environment<br>
+<code>Bonfire.Common.Repo.migrate</code> to initialise your database</p>
+<p>The backend should now be running at <a href="http://localhost:4000/">http://localhost:4000/</a>.</p>
+<ul>
+<li>If that worked, start the app as a daemon next time:</li>
+</ul>
+<pre><code>just rel-run-bg
+</code></pre>
+<h4 id="docker-related-handy-commands">Docker-related handy commands <a class="direct-link" href="#docker-related-handy-commands">#</a></h4>
+<ul>
+<li><code>just update</code> to update to the latest release of Bonfire</li>
+<li><code>just rel-run</code>                        Run the app in Docker, in the foreground</li>
+<li><code>just rel-run-bg</code>                     Run the app in Docker, and keep running in the background</li>
+<li><code>just rel-stop</code>                       Stop the running release</li>
+<li><code>just rel-shell</code>                      Runs a simple shell inside of the container, useful to explore the image</li>
+</ul>
+<p>Once in the shell, you can run <code>bin/bonfire</code> with the following commands:<br>
+Usage: <code>bonfire COMMAND [ARGS]</code></p>
+<p>The known commands are:</p>
+<ul>
+<li><code>start</code>          Starts the system</li>
+<li><code>start_iex</code>      Starts the system with IEx attached</li>
+<li><code>daemon</code>         Starts the system as a daemon</li>
+<li><code>daemon_iex</code>     Starts the system as a daemon with IEx attached</li>
+<li><code>eval &quot;EXPR&quot;</code>    Executes the given expression on a new, non-booted system</li>
+<li><code>rpc &quot;EXPR&quot;</code>     Executes the given expression remotely on the running system</li>
+<li><code>remote</code>         Connects to the running system via a IEx remote shell</li>
+<li><code>restart</code>        Restarts the running system via a remote command</li>
+<li><code>stop</code>           Stops the running system via a remote command</li>
+<li><code>pid</code>            Prints the operating system PID of the running system via a remote command</li>
+<li><code>version</code>        Prints the release name and version to be booted</li>
+</ul>
+<p>There are some useful database-related release tasks under <code>EctoSparkles.Migrator.</code> that can be run in an <code>iex</code> console (which you get to with <code>just rel.shell</code> followed by <code>bin/bonfire remote</code>, assuming the app is already running):</p>
+<ul>
+<li><code>migrate</code> runs all up migrations</li>
+<li><code>rollback(step)</code> roll back to step X</li>
+<li><code>rollback_to(version)</code> roll back to a specific version</li>
+<li><code>rollback_all</code> rolls back all migrations back to zero (caution: this means losing all data)</li>
+</ul>
+<p>You can also directly call some functions in the code from the command line, for example:</p>
+<ul>
+<li>to migrate: <code>docker exec bonfire_web bin/bonfire rpc 'Bonfire.Common.Repo.migrate'</code></li>
+<li>to just yourself an admin: <code>docker exec bonfire_web bin/bonfire rpc 'Bonfire.Me.Users.make_admin(&quot;my_username&quot;)'</code></li>
+</ul>
+<h4 id="option-b2---building-your-own-docker-image">Option B2 - Building your own Docker image <a class="direct-link" href="#option-b2---building-your-own-docker-image">#</a></h4>
+<p><code>Dockerfile.release</code> uses the <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multistage build</a> feature to just the image as small as possible. It generates the OTP release which is later copied into the final image packaged in an Alpine linux container.</p>
+<p>There is a <code>justfile</code> with relevant commands (make sure set the <code>MIX_ENV=prod</code> env variable):</p>
+<ul>
+<li><code>just rel-build-release</code> which builds the docker image of the latest release</li>
+<li><code>just rel-build</code> which builds the docker image, including local changes to any cloned extensions in <code>./extensions/</code></li>
+<li><code>just rel-tag</code> adds the &quot;latest&quot; tag to your last build, so that it will be used when running</li>
+</ul>
+<p>Once you've built and tagged your image, you may need to update the <code>image</code> name in <code>docker-compose.release.release.yml</code> to match (either your local image name if running on the same machine you used for the build, or a remote image on Docker Hub if you pushed it) and then follow the same steps as for option A1.</p>
+<p>For production, we recommend to set up a CI workflow to automate this, for an example you can look at the one <a href="../github/workflows/release.yaml">we currently use</a>.</p>
+<hr>
+<h3 id="option-c---manual-installation-(without-docker)">Option C - Manual installation (without Docker) <a class="direct-link" href="#option-c---manual-installation-(without-docker)">#</a></h3>
+<h4 id="dependencies">Dependencies <a class="direct-link" href="#dependencies">#</a></h4>
+<ul>
+<li>Postgres (or Postgis) version 12 or newer</li>
+<li><a href="https://github.com/casey/just#packages">just</a></li>
+<li>Elixir version 1.15+ with OTP 25+. If your distribution only has an old version available, check <a href="https://elixir-lang.org/install.html">Elixir's install page</a> or use a tool like <a href="https://github.com/jdxcode/rtx">rtx</a> (run <code>rtx install</code> in this directory).</li>
+</ul>
+<h4 id="c-1.-building-the-release">C-1. Building the release <a class="direct-link" href="#c-1.-building-the-release">#</a></h4>
+<ul>
+<li>
+<p>Make sure you have erlang and elixir installed (check <code>Dockerfile</code> for what version we're currently using)</p>
+</li>
+<li>
+<p><code>export WITH_DOCKER=no</code> OR add <code>WITH_DOCKER=no</code> to the end of <code>.env</code> and source it with <code>source .env</code></p>
+</li>
+<li>
+<p>Run <code>just rel-build</code> to create an elixir release. This will create an executable in your <code>_build/prod/rel/bonfire</code> directory. Note that you will need <code>just</code> to pass in the <code>.env</code> file to the executable, like so: <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Alternatively, this file can be sourced by <code>source .env</code> instead. We will be using the <code>bin/bonfire</code> executable as called from <code>just</code> from here on.</p>
+</li>
+</ul>
+<h4 id="c-2.-running-the-release">C-2. Running the release <a class="direct-link" href="#c-2.-running-the-release">#</a></h4>
+<ul>
+<li>
+<p>Create a database, and a user, fill out the <code>.env</code> with your credentials and secrets</p>
+</li>
+<li>
+<p>You will need to use <code>just</code> in order to pass the <code>.env</code> file to the executable. This can be accomplished by running <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Just works from the root directory of the <code>justfile</code>, not your current directory.</p>
+</li>
+<li>
+<p>If you’re using RDS or some other locked down DB, you may need to run <code>CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;</code> on your database with elevated privileges.</p>
+</li>
+<li>
+<p>You can check if your instance is configured correctly and get to the iex console by running <code>bin/bonfire start</code></p>
+</li>
+<li>
+<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>Bonfire.Common.Repo.migrate()</code> in the iex console.</p>
+</li>
+<li>
+<p>To run the instance as a daemon, use <code>bin/bonfire start daemon</code>.</p>
+</li>
+</ul>
+<hr>
+<h3 id="option-d---with-nix">Option D - with Nix <a class="direct-link" href="#option-d---with-nix">#</a></h3>
+<p>This repo is a Flake and includes a Nix module.</p>
+<p>Here are the detailed steps to deploy it:</p>
+<ul>
+<li>run a recent version of Nix or NixOS: <a href="https://nixos.wiki">https://nixos.wiki</a></li>
+<li>enable Flakes: <a href="https://nixos.wiki/wiki/Flakes#Installing_flakes">https://nixos.wiki/wiki/Flakes#Installing_flakes</a></li>
+<li>add <code>sandbox = false</code> in your nix.conf</li>
+<li>fetch and build the app and dependencies: <code>nix run github:bonfire-networks/bonfire-app start_iex</code></li>
+<li>add it as an input to your system flake.</li>
+<li>add an overlay to just the package available</li>
+<li>add the required configuration in your system</li>
+</ul>
+<p>Your <code>flake.nix</code> file would look like the following. Remember to replace <code>myHostName</code> with your actual hostname or however your deployed system is called.</p>
+<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span><br>  inputs<span class="token punctuation">.</span>bonfire<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"github:happysalada/bonfire-app/main"</span><span class="token punctuation">;</span><br>  outputs <span class="token operator">=</span> <span class="token punctuation">{</span> self<span class="token punctuation">,</span> nixpkgs<span class="token punctuation">,</span> bonfire <span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>    overlay <span class="token operator">=</span> final<span class="token punctuation">:</span> prev<span class="token punctuation">:</span> <span class="token keyword">with</span> final<span class="token punctuation">;</span><span class="token punctuation">{</span><br>      <span class="token comment"># a package named bonfire already exists on nixpkgs so we put it under a different name</span><br>      elixirBonfire <span class="token operator">=</span> bonfire<span class="token punctuation">.</span>packages<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux<span class="token punctuation">.</span>default<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    nixosConfigurations<span class="token punctuation">.</span>myHostName <span class="token operator">=</span> nixpkgs<span class="token punctuation">.</span>lib<span class="token punctuation">.</span>nixosSystem <span class="token punctuation">{</span><br>      system <span class="token operator">=</span> <span class="token string">"x86_64-linux"</span><span class="token punctuation">;</span><br>      modules <span class="token operator">=</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          environment<span class="token punctuation">.</span>systemPackages <span class="token operator">=</span> <span class="token punctuation">[</span> agenix<span class="token punctuation">.</span>defaultPackage<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux <span class="token punctuation">]</span><span class="token punctuation">;</span><br>          nixpkgs<span class="token punctuation">.</span>overlays <span class="token operator">=</span> <span class="token punctuation">[</span> self<span class="token punctuation">.</span>overlay <span class="token punctuation">]</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>        <span class="token url">./myHostName.nix</span><br>        bonfire<span class="token punctuation">.</span>nixosModules<span class="token punctuation">.</span>bonfire<br>      <span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Then your <code>myHostName.nix</code> would look like the following:</p>
+<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span> config<span class="token punctuation">,</span> lib<span class="token punctuation">,</span> pkgs<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">:</span><br><br><span class="token punctuation">{</span><br>  services<span class="token punctuation">.</span>bonfire <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token comment"># you will additionally need to expose bonfire with a reverse proxy, for example caddy</span><br>    port <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">;</span><br>    package <span class="token operator">=</span> pkgs<span class="token punctuation">.</span>elixirBonfire<span class="token punctuation">;</span><br>    dbName <span class="token operator">=</span> <span class="token string">"bonfire"</span><span class="token punctuation">;</span><br>    <span class="token comment"># the environment should contain a minimum of</span><br>    <span class="token comment">#   SECRET_KEY_BASE</span><br>    <span class="token comment">#   SIGNING_SALT</span><br>    <span class="token comment">#   ENCRYPTION_SALT</span><br>    <span class="token comment">#   RELEASE_COOKIE</span><br>    <span class="token comment"># have a look into nix/module.nix for more details</span><br>    <span class="token comment"># the way to deploy secrets is beyond this readme, but I would recommend agenix</span><br>    environmentFile <span class="token operator">=</span> <span class="token string">"/run/secrets/bonfireEnv"</span><span class="token punctuation">;</span><br>    dbSocketDir <span class="token operator">=</span> <span class="token string">"/var/run/postgresql"</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br>	<br>	<span class="token comment"># this is specifically for a reverse proxy, which is primarily used for SSL certs</span><br>	services<span class="token punctuation">.</span>ngnix <span class="token operator">=</span> <span class="token punctuation">{</span><br>		enable <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>		forceSSL <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>		enableACME <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>		virtualHosts<span class="token punctuation">.</span><span class="token string">"myHostName"</span><span class="token punctuation">.</span>locations<span class="token punctuation">.</span>proxyPass <span class="token operator">=</span> <span class="token string">"http://localhost:4000"</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><span class="token punctuation">;</span><br>	<br>	<span class="token comment"># You will need to accept ACME's terms and conditions if you haven't elsewhere in your configuration</span><br>	security<span class="token punctuation">.</span>acme<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>email <span class="token operator">=</span> <span class="token string">"you@myHostName.com"</span><span class="token punctuation">;</span><br>	security<span class="token punctuation">.</span>acme<span class="token punctuation">.</span>acceptTerms <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br><br>  <span class="token comment"># this is uniquely for database backup purposes</span><br>  <span class="token comment"># replace myBackupUserName with the user name that will do the backups</span><br>  <span class="token comment"># if you want to do backups differently, feel free to remove this part of the config</span><br>  services<span class="token punctuation">.</span>postgresql <span class="token operator">=</span> <span class="token punctuation">{</span><br>    ensureDatabases <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"bonfire"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><br>    ensureUsers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>      name <span class="token operator">=</span> <span class="token string">"myBackupUserName"</span><span class="token punctuation">;</span><br>      ensurePermissions <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"DATABASE bonfire"</span> <span class="token operator">=</span> <span class="token string">"ALL PRIVILEGES"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="option-c-with-nixos">Option C with nixos <a class="direct-link" href="#option-c-with-nixos">#</a></h3>
+<p>this repo is a flake and includes a nixos module.<br>
+Here are the detailed steps to deploy it.</p>
+<ul>
+<li>add it as an input to your system flake.</li>
+<li>add an overlay to just the package available</li>
+<li>add the required configuration in your system</li>
+</ul>
+<p>Your flake.nix file would look like the following. Remember to replace myHostName with your actual hostname or however your deployed system is called.</p>
+<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span><br>  inputs<span class="token punctuation">.</span>bonfire<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"github:happysalada/bonfire-app/main"</span><span class="token punctuation">;</span><br>  outputs <span class="token operator">=</span> <span class="token punctuation">{</span> self<span class="token punctuation">,</span> nixpkgs<span class="token punctuation">,</span> bonfire <span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>    overlay <span class="token operator">=</span> final<span class="token punctuation">:</span> prev<span class="token punctuation">:</span> <span class="token keyword">with</span> final<span class="token punctuation">;</span><span class="token punctuation">{</span><br>      <span class="token comment"># a package named bonfire already exists on nixpkgs so we put it under a different name</span><br>      elixirBonfire <span class="token operator">=</span> bonfire<span class="token punctuation">.</span>defaultPackage<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    nixosConfigurations<span class="token punctuation">.</span>myHostName <span class="token operator">=</span> nixpkgs<span class="token punctuation">.</span>lib<span class="token punctuation">.</span>nixosSystem <span class="token punctuation">{</span><br>      system <span class="token operator">=</span> <span class="token string">"x86_64-linux"</span><span class="token punctuation">;</span><br>      modules <span class="token operator">=</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>          environment<span class="token punctuation">.</span>systemPackages <span class="token operator">=</span> <span class="token punctuation">[</span> agenix<span class="token punctuation">.</span>defaultPackage<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux <span class="token punctuation">]</span><span class="token punctuation">;</span><br>          nixpkgs<span class="token punctuation">.</span>overlays <span class="token operator">=</span> <span class="token punctuation">[</span> self<span class="token punctuation">.</span>overlay <span class="token punctuation">]</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>        <span class="token url">./myHostName.nix</span><br>        bonfire<span class="token punctuation">.</span>nixosModules<span class="token punctuation">.</span>bonfire<br>      <span class="token punctuation">]</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>then in myHostName.nix would look like the following</p>
+<p>TODO: add the caddy config</p>
+<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span> config<span class="token punctuation">,</span> lib<span class="token punctuation">,</span> pkgs<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">:</span><br><br><span class="token punctuation">{</span><br>  services<span class="token punctuation">.</span>bonfire <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token comment"># you will need to expose bonfire with a reverse proxy, for example caddy</span><br>    port <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">;</span><br>    package <span class="token operator">=</span> pkgs<span class="token punctuation">.</span>elixirBonfire<span class="token punctuation">;</span><br>    dbName <span class="token operator">=</span> <span class="token string">"bonfire"</span><span class="token punctuation">;</span><br>    <span class="token comment"># the environment should contain a minimum of</span><br>    <span class="token comment">#   SECRET_KEY_BASE</span><br>    <span class="token comment">#   SIGNING_SALT</span><br>    <span class="token comment">#   ENCRYPTION_SALT</span><br>    <span class="token comment">#   RELEASE_COOKIE</span><br>    <span class="token comment"># have a look into nix/module.nix for more details</span><br>    <span class="token comment"># the way to deploy secrets is beyond this readme, but I would recommend agenix</span><br>    environmentFile <span class="token operator">=</span> <span class="token string">"/run/secrets/bonfireEnv"</span><span class="token punctuation">;</span><br>    dbSocketDir <span class="token operator">=</span> <span class="token string">"/var/run/postgresql"</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>  <span class="token comment"># this is uniquely for database backup purposes</span><br>  <span class="token comment"># replace myBackupUserName with the user name that will do the backups</span><br>  <span class="token comment"># if you want to do backups differently, feel free to remove this part of the config</span><br>  services<span class="token punctuation">.</span>postgresql <span class="token operator">=</span> <span class="token punctuation">{</span><br>    ensureDatabases <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"bonfire"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><br>    ensureUsers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>      name <span class="token operator">=</span> <span class="token string">"myBackupUserName"</span><span class="token punctuation">;</span><br>      ensurePermissions <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"DATABASE bonfire"</span> <span class="token operator">=</span> <span class="token string">"ALL PRIVILEGES"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h2 id="step-4---run">Step 4 - Run <a class="direct-link" href="#step-4---run">#</a></h2>
+<p>By default, the backend listens on port 4000 (TCP), so you can access it on <a href="http://localhost:4000/">http://localhost:4000/</a> (if you are on the same machine). In case of an error it will restart automatically.</p>
+<p>Once you've signed up, you will automatically be an instance admin if you were the first to register.</p>
+<blockquote>
+<p>NOTE: If you are running in a restricted environment such as Amazon RDS, you will need to execute some sql against the database before migrations can run: <code>CREATE EXTENSION IF NOT EXISTS citext;</code></p>
+</blockquote>
+<h4 id="step-5---adding-https">Step 5 - Adding HTTPS <a class="direct-link" href="#step-5---adding-https">#</a></h4>
+<p>The common and convenient way for adding HTTPS is by using a reverse proxy like Nginx or Caddyserver (the latter of which is bundled as part of the docker compose setup).</p>
+<p>Caddyserver and other servers can handle generating and setting up HTTPS certificates automatically, but if you need TLS/SSL certificates for nginx, you can look get some for free with <a href="https://letsencrypt.org/">letsencrypt</a>. The simplest way to obtain and install a certificate is to use <a href="https://certbot.eff.org">Certbot.</a>. Depending on your specific setup, certbot may be able to get a certificate and configure your web server automatically.</p>
+<p>If you've built from source, you should point the nginx root directory to be <code>_build/prod/rel/bonfire/lib/bonfire-0.1.0-*/priv/static</code></p>
+<h2 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h2>
+<p>Some common issues that may arise during deployment and our suggestions for resolving them.</p>
+<h4 id="websocket-connections-not-establishing-behind-a-reverse-proxy">WebSocket connections not establishing behind a reverse proxy <a class="direct-link" href="#websocket-connections-not-establishing-behind-a-reverse-proxy">#</a></h4>
+<p>If you are running Bonfire behind your own reverse proxy (e.g. nginx), you might experience issues with WebSocket connections not establishing. WebSocket connections require specific configuration to work, in nginx the following configuration is necessary for websockets to work:</p>
+<pre><code>location /live/websocket {
+    proxy_pass http://127.0.0.1:4000;
+    
+    # these configurations are necessary to proxy WebSocket requests
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection &quot;upgrade&quot;;
+}
+</code></pre>
+
+</div>
+      </div>
+    </main>
+</div>
+
+
+<div class="border-base-content/10 border-t">
+  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
+  <div>
+    <div class="items-center flex-1 grid-flow-col">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+    </div> 
+    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+  </div> 
+  <div>
+    <span class="footer-title">Developers</span> 
+    <a href="/docs" class="link link-hover">Documentation</a> 
+    <a href="/roadmap" class="link link-hover">Roadmap</a> 
+    
+    <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="link link-hover">Code</a>
+  </div> 
+  <div>
+    <span class="footer-title">Apps</span> 
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/docs/faq" class="link link-hover">FAQs</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="footer-title">More</span> 
+    <a href="/community" class="link link-hover">Community</a> 
+    <a href="/docs/conduct" class="link link-hover">Terms of use</a> 
+    <a href="/docs/privacy" class="link link-hover">Privacy policy</a> 
+    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="link link-hover">Support</a> 
+  </div>
+</footer>
+
+</div>
+    <!-- Current page: /docs/deploy/ -->
+  </body>
+</html>

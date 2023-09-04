@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bonfire</title>
+  <subtitle>Tend to your digital life in community: host your own online space and control your experience at the most granular level.</subtitle>
+  <link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
+  <link href="https://bonfirenetworks.org/"/>
+  <updated>2023-08-09T00:00:00Z</updated>
+  <id>https://bonfirenetworks.org/</id>
+  <author>
+    <name>Bonfire</name>
+  </author>
+  
+  <entry>
+    <title>The story of Bonfire&#39;s visual identity</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire_identity/"/>
+    <updated>2021-05-21T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire_identity/</id>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Everyone carries a history of contamination, purity is not an option.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This short statement by &lt;a href=&quot;https://en.wikipedia.org/wiki/Anna_Tsing&quot;&gt;Anna Tsing&lt;/a&gt; in &lt;a href=&quot;https://en.wikipedia.org/wiki/The_Mushroom_at_the_End_of_the_World&quot;&gt;Mushroom at the end of the world&lt;/a&gt; encompasses a lot of the visions and needs that inspired our work on Bonfire.&lt;/p&gt;
+&lt;p&gt;We are building this piece of software for us and for the diverse communities we care about, so we strive for diversity and flexibility in every aspect of the Bonfire codebase.&lt;/p&gt;
+&lt;p&gt;We want each Bonfire instance to be autonomous and unique in its own particular way, while having a shared purpose with the other bonfires:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To create safe environments for users to inhabit and create their own culture together, while remaining in control of their personal data and experience, and being able to communicate with the fediverse at their own pace and on their own terms.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It was no surprise that words like &lt;strong&gt;contamination&lt;/strong&gt;, &lt;strong&gt;burn&lt;/strong&gt;, &lt;strong&gt;revolution&lt;/strong&gt;, &lt;strong&gt;rebirth&lt;/strong&gt;, &lt;strong&gt;bottom up&lt;/strong&gt;, &lt;strong&gt;diverse&lt;/strong&gt;, &lt;strong&gt;autonomous&lt;/strong&gt;, &lt;strong&gt;nature&lt;/strong&gt; and &lt;strong&gt;ecosystem&lt;/strong&gt; were among the most used during our brainstorming about Bonfire&#39;s visual identity.&lt;/p&gt;
+&lt;p&gt;We wanted our visual identity to reflect such ideas without obfuscating itself under an overly sanitised and minimalist design. We enjoy navigating through complexity, without the burning desire to be in control of everything, and wanted to avoid the flat, metallo-plastic, stark, silicon valley style that has dominated the web in recent years.&lt;/p&gt;
+&lt;p&gt;Other than a social network, Bonfire is a playground and experimentation platform, we are learning how to take care of it and take care of ourselves - building in the open so that Bonfire can become an ecosystem open to many other peers.&lt;/p&gt;
+&lt;p&gt;We had the pleasure to work with &lt;a href=&quot;http://lalberosfregiato.blogspot.com/&quot;&gt;Rocco Lombardi&lt;/a&gt;, a talented artist living somewhere near the Bolognese Apennines, who guided us and turned our wishes into meaningful visual representations of the project.&lt;/p&gt;
+&lt;p&gt;We asked Rocco to work on our visual identity primarly because of the style and subjects of his artwork. Forests and trees that emerge by scratching the light away from black paper, animals that fight capitalism, all sort of organics - wild and lived entities contaminate his drawings and we wanted that world to contaminate our software as well.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://assets.bigcartel.com/product_images/287784678/Squirrels.jpg?auto=format&amp;amp;fit=max&amp;amp;w=600&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;block -mt-6 text-base italic text-blueGray-400&quot;&gt;&quot;Squirrels on the air&quot; - Illustration by Rocco Lombardi - &lt;a href=&quot;https://roccolombardi.bigcartel.com/product/squirrels-on-the-air&quot; target=&quot;blank&quot;&gt;Link&lt;/a&gt;&lt;/figcaption&gt;
+&lt;p&gt;The end result is very much in tune with our expectations, and we hope you like it too.&lt;/p&gt;
+&lt;p&gt;As we&#39;re progressing toward a first release of our software, we are happy to have added this important step and we thank Rocco to have joined us on this journey. :-)&lt;/p&gt;
+&lt;img src=&quot;https://bonfirenetworks.org/img/brand2.png&quot; /&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>First steps toward federated project coordination</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire_coordination/"/>
+    <updated>2021-07-14T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire_coordination/</id>
+    <content type="html">&lt;h3 id=&quot;tl%3Bdr&quot;&gt;tl;dr &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#tl%3Bdr&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In March 2021, the Bonfire project was awarded a &lt;a href=&quot;https://nlnet.nl/discovery/&quot;&gt;&amp;quot;Next Generation Search &amp;amp; Discovery&amp;quot; grant&lt;/a&gt; from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of federated software.&lt;/p&gt;
+&lt;p&gt;This is the first of a series of posts discussing the development process, work coordination strategies and the challenges we are currently facing.&lt;/p&gt;
+&lt;p&gt;One of the funded &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/milestone/7&quot;&gt;milestones&lt;/a&gt; led us to build a project coordination app as a bonfire extension and &lt;a href=&quot;https://bonfirenetworks.org/apps/&quot;&gt;flavour&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;but-wait%3A-why-are-you-building-another-project-coordination-app%3F&quot;&gt;But wait: why are you building another project coordination app? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#but-wait%3A-why-are-you-building-another-project-coordination-app%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/VFz9YMY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Our coordination tool shares a lot of functionality with most to-do apps out there - you can create lists, add tasks to lists, commit to complete work, set a due date, and so on...&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;So how is this different?&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1)-we-want-to-federate-coordination-between-many-people%2C-groups-and-organisations-on-different-instances&quot;&gt;1) We want to federate coordination between many people, groups and organisations on different instances &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#1)-we-want-to-federate-coordination-between-many-people%2C-groups-and-organisations-on-different-instances&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;On top of the usual features like writing posts, following users and browsing feeds, a Bonfire instance using the coordination extension will make it possible to create lists and tasks. Users can then favourite, boost, comment, flag and adjust the visibility settings (or in the case of a Bonfire instance, choose the boundaries and circles their lists and tasks are published to).&lt;/p&gt;
+&lt;p&gt;As soon as users start publishing tasks, a new type of activity appears in the feeds like below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/E2Gu7s6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Users can interact with such activities by assigning a task to themselves, searching for tasks that fit with their skills or interests, or following a task to be notified about future discussions or progress.&lt;/p&gt;
+&lt;p&gt;Users from any instance can thus start &lt;strong&gt;planning&lt;/strong&gt; together: sofware projects, events, creative collaborations, peer production, etc - without having to leave the app and with the same account they already use.&lt;/p&gt;
+&lt;p&gt;A user can decide to create a private list to share with specific people, or open it to all users of their instance or beyond. At every point the user will be able to control both the visibility (who can see todos or comments), as well as the permissions and roles for each list and task (who can add/edit/comment/vote/assign/etc).&lt;/p&gt;
+&lt;h3 id=&quot;2)-we-needed-it&quot;&gt;2) We needed it &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#2)-we-needed-it&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We are always seeking to improve the coordination between  contributors and the various projects linked to Bonfire. We aim to iterate on the design and build a p2p coordination system that we are happy to work with and would welcome other non-hierarchical and cooperative-minded groups to join us in designing and building these tools together.&lt;/p&gt;
+&lt;h3 id=&quot;3)-interoperability&quot;&gt;3) Interoperability &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#3)-interoperability&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;powered-by-valueflows&quot;&gt;Powered by ValueFlows &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#powered-by-valueflows&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;We are building upon a well designed and tested &lt;a href=&quot;https://valueflo.ws/&quot;&gt;vocabulary&lt;/a&gt; to bring p2p coordination to a whole new level. In short, ValueFlows does for economic activities what &lt;a href=&quot;https://www.w3.org/TR/activitystreams-core/#introduction&quot;&gt;ActivityStreams&lt;/a&gt; (the main vocabulary of the &lt;a href=&quot;https://activitypub.rocks/&quot;&gt;ActivityPub&lt;/a&gt;-powered fediverse) does for social activities. Using these standard vocabularies means that every feature and user interaction can federate not only with other Bonfire instances, but also with instances of other software which implement them.&lt;/p&gt;
+&lt;p&gt;Lists (which can represent projects or milestones within a larger project) can include dependencies from other lists, as well as tracking work, but also resources, shared inventories and needs (this ties in to our work around mutual aid, which will be the topic of a future blog post).&lt;/p&gt;
+&lt;p&gt;Users can have discussions around a task, as well as record different kinds of economic activities to keep track of physical or digital resources. They can also simply log the amount of hours or the outputs (eg. git commits) of their work on a specific task.&lt;/p&gt;
+&lt;p&gt;Furthermore, it will be possible to define formulas (aka &lt;a href=&quot;https://valueflo.ws/appendix/equations.html&quot;&gt;value equations&lt;/a&gt;) to help calculate the distribution of value generated by a project to all of its participants, based on their recorded contributions and previous agreements.&lt;/p&gt;
+&lt;p&gt;So what looks on the surface like another to-do list app, is actually a small UI layer (the &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_coordination&quot;&gt;bonfire_ui_coordination&lt;/a&gt; extension, with only 1110 lines of code) on top of larger and more general economic extensions which are poised to be used for many different kinds of applications. These are &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_valueflows&quot;&gt;bonfire_ui_valueflows&lt;/a&gt; (which currently has over 2500 lines of reusable UI components) and &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_valueflows&quot;&gt;bonfire_valueflows&lt;/a&gt; (sitting at a whopping 16150 lines of database and API schemas and logic), and &lt;a href=&quot;https://bonfirenetworks.org/extensions/&quot;&gt;many more&lt;/a&gt;...&lt;/p&gt;
+&lt;h4 id=&quot;forgefed&quot;&gt;ForgeFed &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#forgefed&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Besides ValueFlows, we plan to participate in the &lt;a href=&quot;https://forgefed.peers.community/&quot;&gt;ForgeFed&lt;/a&gt; effort.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ForgeFed is an upcoming federation protocol for enabling interoperability between version control services. It is built as an extension to the ActivityPub protocol, allowing users of any ForgeFed-compliant service to interact with the repositories hosted on other instances.&lt;br /&gt;
+The goal of the project is to support all of the major activities connected to project management, including bug reports, merge requests and notifications across instances.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Given that we are coordinating our development using this tool, it makes sense to connect the dots between issue reporting and work coordination, code contributions (version control and merge requests) and economic contributions (along with the related value calculations). We hope to implement ForgeFed functionality to do more of this and interoperate with other tools in the near future.&lt;/p&gt;
+&lt;h2 id=&quot;join-us!&quot;&gt;Join us! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/#join-us!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Would you be interested in trying alpha-stage software and participate in its design and creation process? These tools are still missing some important features, several of which we&#39;ve committed to build as part of other milestones, and we greatly appreciate your input about how to design and build it futher according to your needs. Please get in touch.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Let a thousand bonfires bloom</title>
+    <link href="https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/"/>
+    <updated>2021-07-20T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/</id>
+    <content type="html">&lt;h3 id=&quot;tl%3Bdr&quot;&gt;tl;dr &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/#tl%3Bdr&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In March 2021, the Bonfire project was awarded a &lt;a href=&quot;https://nlnet.nl/discovery/&quot;&gt;&amp;quot;Next Generation Search &amp;amp; Discovery&amp;quot; grant&lt;/a&gt; from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of federated software.&lt;/p&gt;
+&lt;p&gt;This is the second of a series of posts discussing the development process, work coordination strategies and the challenges we are currently facing.&lt;/p&gt;
+&lt;p&gt;The first post was about &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/&quot;&gt;creating a coordination tool.&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The second &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/milestone/10&quot;&gt;funded milestone&lt;/a&gt; was about creating themeable User Interface modules.&lt;/p&gt;
+&lt;h2 id=&quot;why-building-themeable-apps-%3F&quot;&gt;Why building themeable apps ? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/#why-building-themeable-apps-%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dopamine and attention manipulation are not inherent properties of a social network. They can be replaced by healthier behaviours and other ways of connecting humans and exploring collective intelligence.&lt;/p&gt;
+&lt;p&gt;It is time to reconsider questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What should appear in my feed?&lt;/li&gt;
+&lt;li&gt;Are number of likes and followers important to me?&lt;/li&gt;
+&lt;li&gt;What do I want to be notified about?&lt;/li&gt;
+&lt;li&gt;How do we want to take decisions within our community?&lt;/li&gt;
+&lt;li&gt;Does the UX reflects our identity and priorities?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course the Bonfire team have opinions about all of this. But we think our opinions are valid mostly for ourselves, and we do not want to impose our views upon others. There is a diversity of valid answers worth exploring.&lt;/p&gt;
+&lt;p&gt;Social networking plays a critical role in our lives, and everyone should be able to decide how to define their online identities and how to interact with others, without an app imposing the boundaries of their experience in one way or another.&lt;/p&gt;
+&lt;h2 id=&quot;how-we&#39;re-building-it&quot;&gt;How we&#39;re building it &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/#how-we&#39;re-building-it&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A Bonfire &lt;a href=&quot;https://bonfirenetworks.org/apps/&quot;&gt;app (or flavour)&lt;/a&gt; is basically a set of configurations that describes how a bunch of &lt;a href=&quot;https://bonfirenetworks.org/extensions/&quot;&gt;extensions&lt;/a&gt; should plug and play together.&lt;/p&gt;
+&lt;p&gt;Extensions can include new sections in an existing page (e.g. a widget that shows one&#39;s most used hashtags on a user&#39;s profile page), whole new pages (e.g. a map page that shows me where my friends are located). They can use existing data from any extension (aggregating, transforming and filtering it to create meaningful and new information for the user), or new sets of information stored in the database.&lt;/p&gt;
+&lt;p&gt;Imagine installing an identity extension that enables every user to define how to represent themselves online with fined-grained controls.&lt;/p&gt;
+&lt;p&gt;Or installing the &lt;a href=&quot;https://bonfirenetworks.org/extensions/valueFlows.html&quot;&gt;ValueFlows&lt;/a&gt; extension, which can give the instance economic superpowers: users can now record the production or transfer of any kind of physical or non-tangible resource, keep track of inventories, assign tasks, record work done, and reward the community based on a set of parameters previously defined.&lt;/p&gt;
+&lt;p&gt;Each community may need the ValueFlows extension for very different purposes. One instance may only need a &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/&quot;&gt;shared todo list&lt;/a&gt;, and the whole economic network idea might be overwhelming for them. A mutual aid network on the other hand, may be looking to define and keep track of different types of economic resources and activities within their community, and would need a more detailed dashboard and set of pages, widgets and relationships between the data produced to deal with such level of complexity.&lt;/p&gt;
+&lt;p&gt;That&#39;s how modularity really makes a difference: the ValueFlows extension does not impose a user experience or user interface. Based on each specific use case, users can pick (or create) a compatible UI extension that better fits their exact needs. Using the ValueFlows example, it means that so far we have more than 4 extensions: with data schemas and application logic in &lt;a href=&quot;https://bonfirenetworks.org/extensions/valueFlows.html&quot;&gt;bonfire_valueflows&lt;/a&gt;, reusable/customisable UI components in &lt;a href=&quot;https://bonfirenetworks.org/extensions/ui_valueflows.html&quot;&gt;bonfire_ui_valueflows&lt;/a&gt;, todo/coordination UI in &lt;a href=&quot;https://bonfirenetworks.org/extensions/ui_coordination.html&quot;&gt;bonfire_ui_coordination&lt;/a&gt;, mutual aid UI in &lt;a href=&quot;https://bonfirenetworks.org/extensions/breadpub.html&quot;&gt;bonfire_breadpub&lt;/a&gt;...&lt;/p&gt;
+&lt;h2 id=&quot;federation-will-be-a-mess&quot;&gt;Federation will be a mess &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/#federation-will-be-a-mess&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Yes, and it will be fun!&lt;/p&gt;
+&lt;p&gt;Each instance will likely have to deal with different and sometime unknown data types that will come through federation from users of other instances.&lt;/p&gt;
+&lt;p&gt;Imagine an extension for book lovers, used to catalog, recommend, and review books. It will likely have a specific way to represent such activities in feeds with a set of actions to perform over them (add to reading list, review, reply...).&lt;/p&gt;
+&lt;p&gt;Other instances may not have that extension installed, so they will have to decide how to handle unknown activities, if and how display them (this is because on the &amp;quot;fediverse&amp;quot;, users from different instances running different software can all follow each other).&lt;/p&gt;
+&lt;p&gt;An instance (or individual user) could choose to display the unknown activities, using a preview widget contributed by the authors of the book lovers extension (and added to a shared Bonfire extension used by all instance, such as &lt;a href=&quot;https://bonfirenetworks.org/extensions/social.html&quot;&gt;bonfire_social&lt;/a&gt;), or deal with unknown activities using a default component which shows only the main information (such as a title, summary and link) formatted in a standard way, or just not displaying extra activities in feeds.&lt;/p&gt;
+&lt;p&gt;That&#39;s quite a new usability challenge, which seems inevitable when dealing with the fediverse and open networks in general, and one we are embracing as a way of welcoming and encouraging diversity and plurality - rather than hiding them away for the sake of &amp;quot;clean UX&amp;quot;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>A UI toolbox for customizable social network apps</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire_ui_social/"/>
+    <updated>2021-07-23T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire_ui_social/</id>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://bonfirenetworks.org/extensions/ui_social.html&quot;&gt;Bonfire:UI:Social&lt;/a&gt; is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.&lt;/p&gt;
+&lt;p&gt;The UI:Social extension is meant to be used by extensions like &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_social&quot;&gt;Bonfire:Social&lt;/a&gt; and &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_me&quot;&gt;Bonfire:Me&lt;/a&gt;, which both provide logic for the UI to work with, and define the routes and top-level views which in turn embed UI:Social components.&lt;/p&gt;
+&lt;p&gt;UI:Social also provides components used by other extensions including: &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_common&quot;&gt;Bonfire:Common&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_search&quot;&gt;Bonfire:Search&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_tag&quot;&gt;Bonfire:Tag&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_boundaries&quot;&gt;Bonfire:Boundaries&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;stack&quot;&gt;Stack &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#stack&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;So far, Bonfire UI extensions are built with the PETALS stack (note that is not a requirement), which means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.phoenixframework.org/&quot;&gt;Phoenix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://elixir-lang.org/&quot;&gt;Elixir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://tailwindcss.com/&quot;&gt;TailwindCSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alpinejs.dev/&quot;&gt;Alpine.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/phoenixframework/phoenix_live_view#readme&quot;&gt;LiveView&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://surface-ui.org/&quot;&gt;Surface&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&#39;re currently in the middle of a refactor to convert all components and templates from LiveView to Surface, which is a server-side rendering component library (built on top of Phoenix and LiveView) that inherits a lot of design patterns from popular JS framework like Vue.js and React, while being almost JavaScript-free compared to common SPAs.&lt;/p&gt;
+&lt;h3 id=&quot;scaffolding&quot;&gt;Scaffolding &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#scaffolding&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The relevant folders are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/components&quot;&gt;Components&lt;/a&gt;: Surface stateless and stateful components.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/layout&quot;&gt;Layout&lt;/a&gt;: Main app templates, they include guest, logged or specific view templates (eg. the setting layout)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/views&quot;&gt;Views&lt;/a&gt;: The main pages that are rendered when navigating to a specific route&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bonfire-networks/bonfire_ui_social/tree/main/test&quot;&gt;Test&lt;/a&gt;: All the unit tests for the specific module.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other-resources&quot;&gt;Other resources &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_ui_social/#other-resources&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/&quot;&gt;A blog post that introduces the concept of themeable bonfire apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Notes on the first neapolitan meeting</title>
+    <link href="https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/"/>
+    <updated>2021-10-14T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/</id>
+    <content type="html">&lt;div class=&quot;p-4 text-base text-gray-200 rounded-lg bg-blueGray-600&quot;&gt;
+  The image above is a photo taken at the &lt;a href=&quot;http://www.exasilofilangieri.it/&quot; target=&quot;blank&quot;&gt;ex-asilo filangeri&lt;/a&gt;, one of the Neapolitan urban commons. &lt;br /&gt; It is a neapolitan way of saying which means: &lt;i&gt;&quot;every head is a court&quot;&lt;/i&gt;. This article is the first of a set of posts about an hopeful fruitful interaction with a group of neapolitan activists interested in experimenting with bonfire.
+&lt;/div&gt;
+&lt;p&gt;As we’re approaching a new phase in which bonfire is not anymore a chimera among few devs, but it’s starting to come together as a nice tool, some of us are anxious to make raids in the analogic world and spread the big news: &lt;strong&gt;bonfire exists!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Today I visited Naples for the first time after the beginning of the pandemic. I met some friends and discussed about how bonfire could be useful to their communities and practices and how communities and practices can be useful to bonfire.&lt;/p&gt;
+&lt;p&gt;There’s many reasons I always thought at Naples as the first place to discuss a possible bonfire adoption, all of them rotate around a single yet powerful concept: contamination.&lt;br /&gt;
+In my experience as a developer, contamination is one of the most feared and therefore dismissed aspect when building a software. Speaking of bonfire, being able to respond and adapt to contamination is its  core value proposition. Needless to say, Naples is the shangri-la of contaminations and I am lucky enough to have friends who navigate this ocean of contaminations and contradictions in a superb way.&lt;br /&gt;
+When I cite Naples i&#39;m referring to participants of the &lt;a href=&quot;https://commonsnapoli.org/&quot;&gt;urban commons network&lt;/a&gt;. Activists that most of the time cross different places, communities and initiatives. In front of the oldest restaurant of Via dei Decumani, we started wondering about the possibility of lighting a few bonfires in Naples.&lt;/p&gt;
+&lt;p&gt;Below a list of not exhaustive topics we brainstormed during the day:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;There is a general tension to restore practices after the pandemic&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;It&#39;s hard for a community already used to communicate/work with a specific software (even if closed source or whatever) to shift to a different one. It&#39;s a lot about changing habits, and picking new habits requires trust, energy, time, mental effort...&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;For some users, dealing with huge and complex apps is an overwhelming experience - sometime they just need a little app that solves a functional/pressing issue, leaving everything else aside.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Sometime community members have difficulties using even the most trivial/hegemonic/widespread apps like whatsapp, facebook or google drive - or they feel repulsion for the digital world at scale, how could it be possible to not exclude them from the community flow of discussions / coordinations / decisions that takes place online ?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Different participants have different priorities and needs about how to be part and be involved with each community and such differences are reflected in the tools they are up to adopt and how they want to use them.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Nonetheless it sounds to be a good historic moment for the neapolitan network to bring back the discussion about adopting a platform for the urban commons network.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Speaking of using bonfire for coordinating work and productions - there&#39;s an on-going, crucial even if sometime stale conversation that gravitate around income, activism, distribution of value and commons goods.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Is it possible to envision and approach a software as a common good itself rather than a mere service/product?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;What would it mean for a software to be a common good?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;In which ways a community can take care of a software?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;What would imply for a software to be a common good from the governance perspective?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;How bonfire can foster co-design and community-driven development?&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;suggestions-for-next-extensions&quot;&gt;Suggestions for next extensions &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/#suggestions-for-next-extensions&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Current bonfire extensions: Social, Kanban and Offers/Needs - even if still under development - caught the eye because in a way or another they answered current needs of different communities.&lt;br /&gt;
+Nonetheless during our conversations two new extensions were cited several times as worth to note.&lt;/p&gt;
+&lt;h3 id=&quot;federated-calendar&quot;&gt;Federated calendar &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/#federated-calendar&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It&#39;s hard to coordinate initiatives among different communities and organize events that do not cross existing ones. At today, this requires lot of chats and schedule changes at last moment. Having a federated calendar would allow activists to have a general view across everything that&#39;s happening within the network. This would greatly enhance the activities planning and coordination.&lt;br /&gt;
+The calendar should span across different levels: it would allow users to view all the activities planned in the wider network and zoom in/out to specific area/communities, as well as filter for specific topics or date range. We didn&#39;t investigate further how such federated calendar should work, but it&#39;s all good food for thoughts.&lt;/p&gt;
+&lt;h3 id=&quot;federated-governance&quot;&gt;Federated governance &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/#federated-governance&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;How to take decisions and how to implement a governance system that reflect the community vision was also briefly touched during the brainstorming session. At present some experimentations were made using Framavox and loomio - mostly as a sentiment analysis tool when discussing new proposals.&lt;/p&gt;
+&lt;h2 id=&quot;where-to-go-next&quot;&gt;Where to go next &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/#where-to-go-next&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;During our chats we didn&#39;t pretend to answer any of the questions that arose - neither It was the scope of this post. We agreed to meet again in a couple of weeks - bringing more minds to the table - and keep the discussion going as well as start playing with bonfire.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Announcing the Zappa project</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire_cos/"/>
+    <updated>2021-12-26T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire_cos/</id>
+    <content type="html">&lt;p&gt;We are pleased to announce that Bonfire has been awarded a grant from the &lt;a href=&quot;https://culturalfoundation.eu/stories/culture-of-solidarity-fund/&quot;&gt;Culture of Solidarity Fund&lt;/a&gt; to support cross-border cultural initiatives of solidarity in times of uncertainty and &amp;quot;infodemic&amp;quot;.&lt;/p&gt;
+&lt;p&gt;The grant will be used to release a beta version of &lt;a href=&quot;https://bonfirenetworks.org/bonfire_classic/&quot;&gt;Bonfire Social&lt;/a&gt; and to develop Zappa – a custom bonfire extension to empower communities with a dedicated tool to deal with the coronavirus &amp;quot;infodemic&amp;quot; and online misinformation in general.&lt;/p&gt;
+&lt;h2 id=&quot;the-zappa-extension&quot;&gt;The Zappa extension &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_cos/#the-zappa-extension&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.rollingstone.it/wp-content/uploads/2017/09/frank-zappa.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Zappa will be powered by user communities&#39; assessments of content (links, news, videos, pictures) to develop common practices and patterns to fight misinformation.&lt;/p&gt;
+&lt;p&gt;These assessments will then be used to train experimental artificial intelligence engines.&lt;/p&gt;
+&lt;p&gt;The user ratings (along with optional input from AI predictions) will generate decentralised &amp;quot;Zappa scores&amp;quot; which may help users classify and act upon content based on each community’s methodology and preferences.&lt;/p&gt;
+&lt;p&gt;We didn&#39;t go much further in outlining how Zappa might work, for the time being preferring to &lt;a href=&quot;https://dougbelshaw.com/ambiguity/&quot;&gt;stay with ambiguity&lt;/a&gt; as much as possible, because while we have some ideas, we want to co-design it together with interested communities and we welcome you to join the discussion and participate.&lt;/p&gt;
+&lt;h2 id=&quot;how-to-participate-in-the-zappa-project%3F&quot;&gt;How to participate in the Zappa project? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire_cos/#how-to-participate-in-the-zappa-project%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We will keep track of our work and deliverables in our &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/milestones&quot;&gt;milestones&lt;/a&gt;, which includes running sessions to come up with &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/milestone/12&quot;&gt;user stories&lt;/a&gt; that will guide development.&lt;/li&gt;
+&lt;li&gt;Feedback and open discussions will take place on the &lt;a href=&quot;https://socialhub.activitypub.rocks/t/discussing-zappa-a-bonfire-extension-to-deal-with-online-misinformation/2187&quot;&gt;Zappa topic&lt;/a&gt; on the SocialHub forum (we may create more topics when needed)&lt;/li&gt;
+&lt;li&gt;You are welcome to join the &lt;a href=&quot;https://matrix.to/#/#bonfire-networks:matrix.org&quot;&gt;Bonfire chat&lt;/a&gt; and engage with the team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As always, we will report progress and news here on the blog, so stay tuned!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Countering misinformation in federated social networks, an introduction to the Zappa project</title>
+    <link href="https://bonfirenetworks.org/posts/zappa-project/"/>
+    <updated>2022-02-08T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/zappa-project/</id>
+    <content type="html">&lt;div class=&quot;my-3 alert alert-info&quot;&gt;
+&lt;div&gt;This post was originally published on Doug Belshaw&#39;s &lt;a class=&quot;mx-2&quot; href=&quot;https://dougbelshaw.com/blog/2022/02/08/zappa-project/&quot; target=&quot;blank&quot;&gt; Open Thinkering &lt;/a&gt; blog&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t &lt;strong&gt;do&lt;/strong&gt; something with the stuff you’ve bookmarked. Usually, for me, that means turning what I’ve filed away into some kind of blog post. It’s basically the reason &lt;a href=&quot;https://thoughtshrapnel.com/&quot;&gt;Thought Shrapnel&lt;/a&gt; exists.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Last week I started some new work with the Bonfire team called the &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_cos/&quot;&gt;Zappa project&lt;/a&gt;. Bonfire is a fork of CommonsPub, the underlying codebase for MoodleNet.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Self-host your online community and shape your experience at the most granular level: add and remove features, change behaviours and appearance, tune, swap or turn off algorithms. You are in total control.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bonfire is modular, with different extensions allowing communities to customise their own social network. The focus of Zappa is shaped by a grant from the Culture of Solidarity Fund.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The grant will be used to release a beta version of Bonfire Social and to develop Zappa – a custom bonfire extension to empower communities with a dedicated tool to deal with the coronavirus “infodemic” and online misinformation in general.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The announcement blog post talks of “experimental artificial intelligence engines” and “Zappa scores” which may be longer-term goals, while my job is to talk to people with real-world needs &lt;em&gt;right now&lt;/em&gt;. As I’ve learned from being involved in quite a few innovation projects over the last 20 years, there’s a sweet spot between what’s useful, theoretically sound, and technically achievable.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Last week, I met with &lt;a href=&quot;https://ivan.cafe/&quot;&gt;Ivan&lt;/a&gt; to try and do some definition of user groups and the initial scope of the project. It’s easy to think that the possible target audience is ‘everyone’ but it’s of much more value to think about who the Zappa project is likely to be useful for in the near future.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/whimsical.png&quot; alt=&quot;Whimsical preview&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Priority areas for stakeholders, user groups, and themes&lt;br /&gt;
+The above Whimsical board shows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a list of people we can/should speak to (we’ve spoken with two orgs so far)&lt;/li&gt;
+&lt;li&gt;themes of which we should be aware/cognisant&lt;/li&gt;
+&lt;li&gt;groups of people we should talk with&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The latter two lists are prioritised based on our current thinking and, as you can see, it’s biased towards action, towards those who don’t have merely an academic interest in the Zappa project, but who have some skin in the anti-misinformation game.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A note in passing: many people use ‘misinformation’ and ‘disinformation’ as near-synonyms of one another. But, even in common usage, it’s clear that they have an important difference in meaning.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;We’d say, for example, that someone was ‘misinformed’, in which case their lack of having the correct information wouldn’t necessarily be their fault. On the other hand, we might talk about state actors waging a ‘disinformation’ campaign, which very much &lt;strong&gt;would&lt;/strong&gt; be intentional, and probably focused on creating a mixture of fear, uncertainty, and/or doubt.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The line between misinformation and disinformation can be blurry, but it’s probably helpful to conceptualise what we’re doing in the terms of the grant: to help “empower communities with a dedicated tool to deal with the coronavirus ‘infodemic’ and online &lt;strong&gt;misinformation&lt;/strong&gt; in general”.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;One of the resources that I’ve found particularly helpful (and which I wish I’d seen before presenting on &lt;a href=&quot;https://archive.org/details/ithaka-next-wave-part-3-truth-lies-and-digital-fluency&quot;&gt;Truth, Lies &amp;amp; Digital Fluency&lt;/a&gt; a couple of years ago) is &lt;a href=&quot;https://firstdraftnews.org/articles/fake-news-complicated/&quot;&gt;Fake news. It’s complicated&lt;/a&gt;. Its author, Claire Wardle from &lt;em&gt;First Draft&lt;/em&gt;, lays out &lt;strong&gt;7 Types of Mis- and Disinformation&lt;/strong&gt; on a spectrum from ‘satire or parody’ (which some wouldn’t even conceptualise as misinformation) through ‘fabricated content’ (which most people would definitely consider disinformation).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/7-types-misinformation.jpeg&quot; alt=&quot;7 types of misinformation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Some of the differences between these types can be quite nuanced, and so I found the &lt;strong&gt;Misinformation Matrix&lt;/strong&gt; in the post really useful for looking at the reasons for the misinformation being published in the first place. These range from sloppy journalistic practices, through to flat-out propaganda.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/misinformation-matrix.jpeg&quot; alt=&quot;Misinformation matrix&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;What the user research we’re doing at the moment is focused upon is what types of misinformation human rights organisations, scientists, and other front-line orgs are suffering from, how and where these are manifested, and what they’ve tried to do about it.&lt;/p&gt;
+&lt;p&gt;So far, we’ve discovered that countering misinformation can be a &lt;em&gt;huge&lt;/em&gt; time suck for people who are often volunteering for charities, non-profits, or loosely-organised groups. It seems that some areas of the world seem to suffer more than others, and particular platforms are currently doing worse than others. All of them could, of course, could do much better.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We’re still gathering people and organisations for this project.&lt;/strong&gt; So if, based on the above, you know someone who you think it might help us to talk to, then please get in touch! You can leave a comment below, or get in contact via &lt;a href=&quot;mailto:hello@dynamicskillset.com&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Some interesting findings from user research for the Zappa project (so far!)</title>
+    <link href="https://bonfirenetworks.org/posts/zappa_some_interesting_finding/"/>
+    <updated>2022-02-18T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/zappa_some_interesting_finding/</id>
+    <content type="html">&lt;div class=&quot;my-3 alert alert-info&quot;&gt;
+&lt;div&gt;This post was originally published on Doug Belshaw&#39;s &lt;a class=&quot;mx-2&quot; href=&quot;https://dougbelshaw.com/blog/2022/02/18/user-research-zappa/&quot; target=&quot;blank&quot;&gt; Open Thinkering &lt;/a&gt; blog&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;One of the things about working openly is, fairly obviously, sharing your work as you go. This can be difficult for many reasons, not least because of the human tendency toward narrative, to completed stories with start, middle, and end.&lt;/p&gt;
+&lt;p&gt;The value of resisting this tendency and &lt;a href=&quot;https://ambiguiti.es/sitting-with-ambiguity/&quot;&gt;sitting in ambiguity&lt;/a&gt; for a while is that allows for &lt;a href=&quot;https://www.youtube.com/watch?v=NugRZGDbPFU&quot;&gt;slow hunches&lt;/a&gt; to form and &lt;a href=&quot;http://discours.es/2016/increasing-your-serendipity-surface/&quot;&gt;serendipitous connections&lt;/a&gt; to be made. So it is with user research I’m doing as part of the &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_cos/&quot;&gt;Zappa project&lt;/a&gt; for the Bonfire team. We need time to talk to lots of different types of people who meet our criteria, and to spend some time reflecting on what they’ve told us.&lt;/p&gt;
+&lt;p&gt;As I wrote in my &lt;a href=&quot;https://bonfirenetworks.org/posts/zappa-project/&quot;&gt;previous post&lt;/a&gt; about the project, we’d identified some of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a list of people we can/should speak with&lt;/li&gt;
+&lt;li&gt;themes of which we should be aware/cognisant&lt;/li&gt;
+&lt;li&gt;groups of people we should talk with&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Inevitably, since this initial work, we’ve come up with some obvious gaps in the people we should speak to (UX designers!). The people we’ve spoken with have recommended other people to contact as well as avenues of enquiry to follow. This is such an interesting topic that we need to be careful that the project doesn’t grow legs and run away with us…&lt;/p&gt;
+&lt;h3 id=&quot;10-interesting-things-people-have-told-us-so-far&quot;&gt;10 interesting things people have told us so far &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/zappa_some_interesting_finding/#10-interesting-things-people-have-told-us-so-far&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We haven’t started synthesising any of what our user research participants have said so far, but as we’re around halfway through the process of conducting interviews, I thought it might be worth sharing 10 interesting things they’ve told us. These are not any any particular order.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Countering misinformation is time-consuming&lt;/strong&gt; — to fact-check articles takes time and by the time the result is published the majority of the people who were going to read it have done so anyway.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chat apps&lt;/strong&gt; — public social networks are blamed for not dealing with mis/disinformation but some of the most problematic stuff is being shared via messaging services such as WhatsApp and Telegram.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difference between human and bot accounts&lt;/strong&gt; — it’s possible to reason with a human being but impossible to do with a bot account.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metaphor of adblock list&lt;/strong&gt; — a way of reducing the burden of moderation on administrators and moderators* of a federated social network instance by creating a more systematised version of something like the #Fediblock hashtag.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Subscribing to moderator(s)&lt;/strong&gt; — delegating moderation explicitly to another user, perhaps by automatically blocking/muting whatever they do.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Different categories of approaches&lt;/strong&gt; — for example, reputational solutions that deal with trusted parties, technical solutions that prove something hasn’t been tampered with, and process-based solutions which make transparent the context in which the content was created and transmitted.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Visualising connections&lt;/strong&gt; — visualising the social graph could make it easier to spot outlier accounts which may be less trusted than those that lots of your other contacts are connected to.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fact-checking platforms can be problematic&lt;/strong&gt; — they promote an assumption that there is a single ‘Truth’ and one version of events. They can be useful in some instances but also be used to present a distorted view of the world.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Frictionless design&lt;/strong&gt; — by ‘decomplexifying’ the design of user interfaces we hide the system behind the tool and the trade-offs that have been made in creating it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Disappearing content&lt;/strong&gt; — content that no longer exists can be a problem for derivative works / articles / posts that reference and rely on it to make valid claims.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s been fascinating to see the different ways that people have approached our conversations, whether from a technical, design, political, scientific, or philosophical perspective (or, indeed, all five!)&lt;/p&gt;
+&lt;h3 id=&quot;next-steps&quot;&gt;Next steps &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/zappa_some_interesting_finding/#next-steps&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We’ve still got some people to talk with next week, but we are always looking to ensure a diverse range of user research participants with a decent geographical spread. As such, we could do with some help identifying people &lt;strong&gt;located in Asia&lt;/strong&gt; (yes, the whole continent!) who might be interested in talking about their experiences, as well as people from &lt;strong&gt;minority and historically under-represented backgrounds&lt;/strong&gt; in tech.&lt;/p&gt;
+&lt;p&gt;In addition, we could also do with talking with &lt;strong&gt;people who have suffered from mis/disinformation&lt;/strong&gt;, any &lt;strong&gt;admins or moderators of federated social network instances&lt;/strong&gt;, and &lt;strong&gt;UX designers who have a particular interest in mis/disinformation&lt;/strong&gt;. You can get in touch via the comments below or at: &lt;a href=&quot;mailto:hello@dynamicskillset.com&quot;&gt;hello@dynamicskillset.com&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>First version of report published sharing findings from Zappa project user research</title>
+    <link href="https://bonfirenetworks.org/posts/zappa_report/"/>
+    <updated>2022-03-05T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/zappa_report/</id>
+    <content type="html">&lt;div class=&quot;my-3 alert alert-info&quot;&gt;
+&lt;div&gt;This post was originally published on Doug Belshaw&#39;s &lt;a class=&quot;mx-2&quot; href=&quot;https://dougbelshaw.com/blog/2022/03/05/zappa-project-report/&quot; target=&quot;blank&quot;&gt; Open Thinkering &lt;/a&gt; blog&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Over the last month, I’ve been working with the &lt;a href=&quot;https://bonfirenetworks.org/&quot;&gt;Bonfire&lt;/a&gt; team to perform some initial user research on the &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_cos/&quot;&gt;Zappa project&lt;/a&gt;. The aim of the project, funded by a grant from the &lt;a href=&quot;https://culturalfoundation.eu/stories/culture-of-solidarity-fund/&quot;&gt;Culture of Solidarity Fund&lt;/a&gt;, is to empower communities with a dedicated tool to deal with the coronavirus “infodemic” and online misinformation in general.&lt;/p&gt;
+&lt;p&gt;We ended up speaking with 11 individuals and organisations, and have synthesised our initial user research into the first version of a report which is now available.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://whimsical.com/report-DEiDgckNvj6hVvno9au7FP&quot;&gt;📄 Click here to access the report&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Notes on our first usability testing round</title>
+    <link href="https://bonfirenetworks.org/posts/notes_on_first_usability_testing/"/>
+    <updated>2022-05-21T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/notes_on_first_usability_testing/</id>
+    <content type="html">&lt;p&gt;On May 10th &lt;a href=&quot;https://indieweb.social/@bonfire/108278057442956190&quot;&gt;we published a toot&lt;/a&gt; asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions. It was such a great opportunity to see how a diverse range of people interacted and used our platform, what they found easy and familiar and what instead felt weird, clunky or buggy.&lt;/p&gt;
+&lt;p&gt;We ended up with a valuable list of suggestions, feature proposals, bugs and some appreciations for the work done so far :-)&lt;/p&gt;
+&lt;p&gt;A huge thanks to &lt;a href=&quot;https://fosstodon.org/@dajbelshaw&quot;&gt;@dougbelshaw&lt;/a&gt;, &lt;a href=&quot;https://social.coop/@django&quot;&gt;@django&lt;/a&gt;, &lt;a href=&quot;https://mastodon.la/@edumerco&quot;&gt;@edumerco&lt;/a&gt;, @asteroidrainfall, @bea for their time, feedback and sharp observations &amp;lt;3.&lt;/p&gt;
+&lt;h2 id=&quot;participants&quot;&gt;Participants &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_first_usability_testing/#participants&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This first round included 5 testers (we picked this number based on this &lt;a href=&quot;https://www.nngroup.com/articles/usability-testing-101/&quot;&gt;NNG article&lt;/a&gt; about usability testing). Though small, the group was diverse enough in terms of background, interests and geography. It included educators, activists and developers, among which some were already well versed with the fediverse, while others discovered it recently.&lt;/p&gt;
+&lt;p&gt;They all were interested in using Bonfire via servers operated by and for themselves, their family or their local community. Some of them were even keen to set up and maintain an instance.&lt;/p&gt;
+&lt;h2 id=&quot;main-takeaways&quot;&gt;Main takeaways &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_first_usability_testing/#main-takeaways&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We ended up creating an ad-hoc &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues?q=label%3Abeta-testing+&quot;&gt;beta-testing tag&lt;/a&gt; on our issue tracker to keep track of the bugs and feedback that came out of the sessions.&lt;/p&gt;
+&lt;p&gt;Among all the amazing input we received, we found some that were shared by the majority of testers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It should be more obvious to know how to tailor and extend your instance to go beyond the standard microblogging use case.&lt;/li&gt;
+&lt;li&gt;Trending topics are a great way to discover the network. They play an important role in how users search, find, avoid, or subscribe to certain topics and people.&lt;/li&gt;
+&lt;li&gt;The text input for writing a post is too small to go beyond microblogging. It does not encourage deeper and structured conversations. We should definitively provide an option for distraction-free writing.&lt;/li&gt;
+&lt;li&gt;It would be awesome to have federated groups.&lt;/li&gt;
+&lt;li&gt;It would be useful to have moderation and instance rules shown on the homepage, together with other meaningful information about the instance.&lt;/li&gt;
+&lt;li&gt;It would help to have a wizard to guide new users on their first time using the platform or participating in the fediverse.&lt;/li&gt;
+&lt;li&gt;Pinning one or more posts to the top of your timeline is a simple but powerful way to customise one&#39;s profile.&lt;/li&gt;
+&lt;li&gt;It would help to have more flexibility on how users define the audience of their posts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/notes_on_first_usability_testing/#final-thoughts&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Beta testing is not only a great way to spot bugs, but can also be powerful in finding more inclusive and participatory ways of co-designing the platform itself.&lt;/p&gt;
+&lt;p&gt;We therefore plan to continue with iterative usability testing sessions on a monthly basis - feel free to contact us if you want to join in :)&lt;/p&gt;
+&lt;p&gt;Thanks also to the &lt;a href=&quot;https://culturalfoundation.eu/&quot;&gt;Cultural Foundation&lt;/a&gt;, who helped fund our work on the beta milestones.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Not Just &#39;Yet Another Microblog&#39;</title>
+    <link href="https://bonfirenetworks.org/posts/not_just_yet_another_microblog/"/>
+    <updated>2022-06-18T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/not_just_yet_another_microblog/</id>
+    <content type="html">&lt;p&gt;We’re days away now from the beta release of our &lt;a href=&quot;https://bonfirenetworks.org/&quot;&gt;Bonfire&lt;/a&gt; federated app toolkit. So close to the launch, we thought it’d be a great opportunity to write to future beta users - especially those whose first impressions of it might be something along the lines of: &lt;em&gt;wait, this looks like just another microblogging app! haven&#39;t we already got enough of those?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Well, our reasoning is that everything is social. Political activities are social. Economic activities are social. Artistic activities are social. The way we work and coordinate activities... is social. That&#39;s why at the heart of Bonfire is a set of social components that underpins what is yet to come.&lt;/p&gt;
+&lt;h2 id=&quot;bonfire-is-a-toolkit-for-assembling-federated-apps&quot;&gt;Bonfire is a toolkit for assembling federated apps &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/#bonfire-is-a-toolkit-for-assembling-federated-apps&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In a &lt;a href=&quot;https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/&quot;&gt;previous post&lt;/a&gt;, we wrote:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Social networking plays a critical role in our lives, and everyone should be able to decide how to define their online identities and how to interact with others, without an app imposing the boundaries of their experience in one way or another.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;An app built with Bonfire is a preset configuration describing how a collection of extensions should plug and play together. And users can then add more extension to end up with an app that fits their specific needs. For example, imagine installing an extension that adds end-to-end encryption to the messaging functionality, or an extension that adds a calendar view showing any-date based information from other extensions (like the kanban app, or events federated from &lt;a href=&quot;https://joinmobilizon.org/&quot;&gt;Mobilizon&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;With this beta launch we&#39;re looking to test both the user experience of the social components of Bonfire, and also to ask for help (from the &lt;a href=&quot;https://activitypub.rocks/&quot;&gt;ActivityPub&lt;/a&gt; savvy people who are willing to set up test instances) to ensure Bonfire instances are first-class citizens of the Fediverse. By this we mean that federation works as expected with other networks such as &lt;a href=&quot;https://joinmastodon.org/&quot;&gt;Mastodon&lt;/a&gt;, &lt;a href=&quot;https://joinpeertube.org/&quot;&gt;Peertube&lt;/a&gt;, and &lt;a href=&quot;https://pixelfed.org/&quot;&gt;Pixelfed&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;other-apps&quot;&gt;Other apps &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/#other-apps&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We have plenty of ideas and work-in-progress for Bonfire apps within the existing team and the wider network of people and organisations around us. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/&quot;&gt;Kanban&lt;/a&gt; - federated project coordination.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bonfirenetworks.org/tags/zappa/&quot;&gt;Zappa&lt;/a&gt; - empowering communities to tackle online misinformation.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bonfirenetworks.org/posts/notes_on_neapoletan_meeting/#suggestions-for-next-extensions&quot;&gt;Offers &amp;amp; needs&lt;/a&gt; - a federated way for people to share offers and requests, as one of the many apps that will use &lt;a href=&quot;https://valueflo.ws/&quot;&gt;ValueFlows&lt;/a&gt;, an open protocol for economic activities&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And we&#39;d love to see many other apps emerge, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Collective decision-making - perhaps in a similar way to &lt;a href=&quot;https://ukuvota.world/&quot;&gt;Ukuvota&lt;/a&gt; or &lt;a href=&quot;https://www.loomio.com/&quot;&gt;Loomio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Federated calendar &amp;amp; scheduling tool - to help plan and coordinate intitiatives across different communities and timezones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&#39;re also excited to see ideas coming from the community, including designers or developers who may have the expertise to collaborate on making some of these ideas into reality!&lt;/p&gt;
+&lt;h2 id=&quot;customisation&quot;&gt;Customisation &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/#customisation&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Everything in Bonfire is customisable at one level or another, a nice example is how the whole UI is themeable, but it goes much further than that.&lt;/p&gt;
+&lt;p&gt;In general, we&#39;re getting into the habit where any hesitation or disagreement about a feature is used as an opportunity to add a &lt;em&gt;user setting&lt;/em&gt; for it, meaning that the user is the one to decide how it should work. Developers and instance admins still hold power in setting the defaults, but ultimately it should be up to the people using Bonfire.&lt;/p&gt;
+&lt;h3 id=&quot;%22forkability%22&quot;&gt;&amp;quot;Forkability&amp;quot; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/#%22forkability%22&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;From the beginning, we&#39;ve built Bonfire to be extremely customisable and configurable. One of the great things about Free Software is the ability to fork the project and take it in your own direction. However, a fork of a big complex app is a lot of work to maintain by one person or a small group, let alone someone who isn&#39;t very technical (or not experienced in the particular tech stack).&lt;/p&gt;
+&lt;p&gt;By separating the code in dozens of different extensions (each in their own git repository), the maintainance burden is greatly reduced. By putting data models, backend functionality and user interfaces in separate extensions, it’s easier to, for example, fork an UI extension to customise the experience (or create a completely different one) while retaining the same functionality.&lt;/p&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;Next steps &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/#next-steps&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We couldn&#39;t be more excited about the first release of Bonfire and we hope it can truly revolutionise the way online communities are formed and maintained. If you’re interested in helping us test the upcoming beta version of Bonfire, please add your email address below and we’ll get back to you very soon.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>What you can expect from the Bonfire beta</title>
+    <link href="https://bonfirenetworks.org/posts/beta_what_to_expect/"/>
+    <updated>2022-06-21T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/beta_what_to_expect/</id>
+    <content type="html">&lt;p&gt;In a few days&#39; time we&#39;d like to invite you to experiment with a &#39;playground&#39; instance of Bonfire, the federated social networking toolkit for communities. As we explained in the &lt;a href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/&quot;&gt;previous post&lt;/a&gt;, we&#39;re focusing on getting the core social functionality of Bonfire ready, and we need your help!&lt;/p&gt;
+&lt;p&gt;We&#39;re looking for people who want to play around with Bonfire and who can help spot bugs and possible improvements around the user experience. We&#39;re also looking for those who might want to set up their own Bonfire instance to help test federation.&lt;/p&gt;
+&lt;h2 id=&quot;features-and-functionality&quot;&gt;Features and functionality &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/beta_what_to_expect/#features-and-functionality&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Lots of what you&#39;ll see in the Bonfire beta will be recognisable from other social and/or federated apps: for example, navigating timelines and profiles, following users and boosting or favouriting activities. You&#39;ll be able to create posts, engage in discussions, flag or block problematic content, and pick your preferred language (with three languages available to start, we need &lt;a href=&quot;https://www.transifex.com/bonfire/bonfire/&quot;&gt;help with translations in more languages&lt;/a&gt; if you can!).&lt;/p&gt;
+&lt;p&gt;There is some functionality that may be a little different with Bonfire as well. Choosing what you see in your home feed, changing the interface theme and font, switching between multiple profiles, rich text formatting in posts, setting a title for threads, and granular blocking options are a few features that may be new to beta testers. We&#39;re looking forward to seeing what you think of them!&lt;/p&gt;
+&lt;h2 id=&quot;get-involved!&quot;&gt;Get involved! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/beta_what_to_expect/#get-involved!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you would like to test the user experience of Bonfire, please enter your email address below. We&#39;ll ensure you get an invite to the test instance as soon as it&#39;s ready.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Meet us at the playground: Bonfire Social beta launch </title>
+    <link href="https://bonfirenetworks.org/posts/meet_us_at_the_playground/"/>
+    <updated>2022-06-25T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/meet_us_at_the_playground/</id>
+    <content type="html">&lt;p&gt;Today, the Bonfire team is asking for &lt;em&gt;your&lt;/em&gt; help with beta testing. Bonfire still needs a lot of work - be it bugs, federation, missing features, configurability and user experience - but that&#39;s the point: we decided to launch the playground at this gnarly stage with the specific intention of moving toward the 1.0 release as a community. We think the best way to rapidly improve Bonfire and its modularity is to test it and discuss it together!&lt;/p&gt;
+&lt;p&gt;By setting up a workflow within the playground instance to report issues or share feedback, both devs and non-devs alike will be able to input their ideas and co-design our 1.0 release in an open and inclusive way.&lt;/p&gt;
+&lt;h2 id=&quot;watch-the-video-walkthrough&quot;&gt;Watch the video walkthrough &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#watch-the-video-walkthrough&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class=&quot;w-full h-[440px]&quot;&gt;&lt;div class=&quot;rounded-lg border-8 border-base-300/40 h-full&quot;&gt;  &lt;iframe title=&quot;Bonfire social beta screencast&quot; src=&quot;https://tube.tchncs.de/videos/embed/59353f51-17a1-4dd7-9935-e74c5e4ae1e2&quot; allowfullscreen=&quot;yes&quot; sandbox=&quot;allow-same-origin allow-scripts allow-popups&quot; width=&quot;560&quot; height=&quot;315&quot; frameborder=&quot;0&quot; style=&quot;width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;sign-up-to-the-bonfire-playground&quot;&gt;Sign up to the Bonfire playground &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#sign-up-to-the-bonfire-playground&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you would like to test the user experience of Bonfire, please sign up on the instance at &lt;a href=&quot;https://playground.bonfire.cafe/&quot;&gt;playground.bonfire.cafe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;When you come across a bug or something that could work better/different (for example, an option within Settings to set the default boundary for all new posts), you will have the opportunity to easily share it to the Bonfire team from within the app. Simply click on the &amp;quot;share feedback&amp;quot; button after signing in to the playground instance: this will start a thread mentioning &lt;a href=&quot;https://playground.bonfire.cafe/@BonfireBuilders&quot;&gt;@BonfireBuilders&lt;/a&gt; and adding #bonfire_feedback as a hashtag. Please feel free to report anything you see which is unexpected, even if you&#39;re not sure what it &#39;should&#39; be like! You can also look up &lt;a href=&quot;https://playground.bonfire.cafe/tag/bonfire_feedback&quot;&gt;existing posts tagged with #bonfire_feedback&lt;/a&gt; to participate in discussions started by others.&lt;/p&gt;
+&lt;p&gt;We will be monitoring and participating in these discussions with zeal! Discussions about new features and extensions will shape our &lt;a href=&quot;https://changemap.co/bonfire/bonfire/&quot;&gt;open roadmap&lt;/a&gt;, and bugs or technical implementation discussions will be found in the &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;what-is-in-scope-for-this-beta%3F&quot;&gt;What is in scope for this beta? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#what-is-in-scope-for-this-beta%3F&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If you haven&#39;t yet read our updates from this week, please check out these posts where we show how Bonfire is &lt;a href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/&quot;&gt;not just another microblog&lt;/a&gt;, and &lt;a href=&quot;https://bonfirenetworks.org/posts/beta_what_to_expect/&quot;&gt;what you can expect from the beta&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;a-note-on-federation&quot;&gt;A note on federation &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#a-note-on-federation&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Federation is a key part of Bonfire and is included by default with all fresh installs. However, please note that federation will be disabled on the playground instance. This is for three reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We don&#39;t want to spam the fediverse with too many test posts or meta discussions.&lt;/li&gt;
+&lt;li&gt;The playground instance isn&#39;t meant to be your main home on the Fediverse. We want to encourage decentralisation in this regard.&lt;/li&gt;
+&lt;li&gt;We need more testing and tweaking to ensure federation works as expected with all the federated apps out there.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Having said that, we also want to test and improve the federation functionality, so if you&#39;ve got the ability to set up your own instance of Bonfire, we would very much appreciate it! Please &lt;a href=&quot;https://bonfirenetworks.org/docs/&quot;&gt;check out the docs&lt;/a&gt; and get in touch.&lt;/p&gt;
+&lt;h2 id=&quot;upcoming-events&quot;&gt;Upcoming events &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#upcoming-events&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In addition to discussions on the Bonfire playground instance, we&#39;re planning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ask us anything&lt;/strong&gt; sessions - opportunities to ask the Bonfire team any questions you might have.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Install parties&lt;/strong&gt; - peer support for people looking to set up and test their own Bonfire instances.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Build parties&lt;/strong&gt; - peer support for builders looking to set up a development environment, along with some pair programming sessions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sign up for updates below if you want to be notified of any of these. Of course, we&#39;re also reachable by @ mentioning the &lt;a href=&quot;https://playground.bonfire.cafe/@BonfireBuilders&quot;&gt;@BonfireBuilders&lt;/a&gt; account within the Bonfire playground instance, or sending an email.&lt;/p&gt;
+&lt;h2 id=&quot;beta-launch-faq&quot;&gt;Beta launch FAQ &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#beta-launch-faq&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Do I need any technical skills to get involved in the beta testing?&lt;/strong&gt;&lt;br /&gt;
+If you would like to test Bonfire as a user rather than as an administrator then the skills required are the same as for any social network. However, if you would like to install your own instance, you will need to be familiar with the command line and general knowledge on operating a web server (configuring DNS, etc).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;If I want to be involved, how much time do I need to set aside for beta testing?&lt;/strong&gt;&lt;br /&gt;
+We would appreciate any and all help with beta testing. You may be able to spend 15 minutes looking around and sharing your thoughts on anything that doesn&#39;t work as expected. You might be able to experiment with the Bonfire playground over a number of days or weeks, and give us more in-depth feedback. Whatever works for you, works for us. After all, &lt;em&gt;given enough eyeballs, all bugs are shallow!&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What happens if I come across inappropriate content while involved in user testing?&lt;/strong&gt;&lt;br /&gt;
+As part of the sign-up process, all users will be asked to agree to a &lt;a href=&quot;https://bonfirenetworks.org/docs/conduct/&quot;&gt;Code of Conduct&lt;/a&gt;. The Bonfire team has spent time and effort in crafting this document, and expect it to be followed in all spaces operated by us. Of course, feedback on improving future versions of the code of conduct is welcome. Please follow the guildelines for &lt;a href=&quot;https://bonfirenetworks.org/docs/conduct/#6.-reporting-issues&quot;&gt;reporting issues&lt;/a&gt; should you come across anything which contravenes the Code of Conduct.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our general FAQ section can be found on the &lt;a href=&quot;https://bonfirenetworks.org/faq/&quot;&gt;Bonfire website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;subscribe-to-updates&quot;&gt;Subscribe to updates &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/meet_us_at_the_playground/#subscribe-to-updates&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you would like to keep informed about what&#39;s happening in and around the Bonfire ecosystem, please &lt;a href=&quot;https://indieweb.social/@bonfire&quot;&gt;follow us on the fediverse&lt;/a&gt; and/or enter your email below to subscribe to occasional updates.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Introducing circles and boundaries</title>
+    <link href="https://bonfirenetworks.org/posts/introducing_boundaries/"/>
+    <updated>2022-07-19T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/introducing_boundaries/</id>
+    <content type="html">&lt;p&gt;&lt;strong&gt;How will our online experiences be different once we take back control over exactly who should see, interact with, and even collaborate on our content and activities at the most granular level?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;With our last update to the beta of Bonfire, we wanted to release the initial functionality to experiment with this question, and embark on a quest to find some answers and pose many more crucial questions together with our community.&lt;/p&gt;
+&lt;p&gt;Within bonfire, you now have the possibility to define circles and boundaries: a way to privately group some of your contacts and then grant them permissions to interact with you and each piece of content you share at the most granular level.&lt;/p&gt;
+&lt;p&gt;Boundaries go beyond the typical permissions on social &lt;em&gt;media&lt;/em&gt; (i.e. who can see your content) and &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues/406&quot;&gt;include a long list of verbs&lt;/a&gt; in order to represent all kinds of meaningful interactions and collaboration that should be possible on a real social &lt;em&gt;network&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;People don’t fit in binary boxes labeled “follower” or “friend”. Circles and boundaries are a way to empower us to come up with our own groupings and sets of permissions.&lt;/p&gt;
+&lt;p&gt;But this is really just the beginning: boundaries are a core feature in bonfire that many other extensions and features will rely on. The same functionality will soon be used to introduce custom roles, going beyond catch-all titles like &amp;quot;instance admin&amp;quot; and &amp;quot;moderator&amp;quot; with the possibility for communities to define a multitude of roles that fit with how they want to distribute power and responsibility.&lt;/p&gt;
+&lt;p&gt;How can circles and boundaries allow more flexible governance models in online communities? How can they empower new forms of peer coordination? How can we create user experiences where every user has total control without feeling overwhelmed?&lt;/p&gt;
+&lt;p&gt;If you are interested in taking part in this journey, &lt;a href=&quot;https://playground.bonfire.cafe/&quot;&gt;start by joining our playground instance&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Bonfire presentation @ PrivacyWeek</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire_at_privacyweek/"/>
+    <updated>2022-10-01T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire_at_privacyweek/</id>
+    <content type="html">&lt;p&gt;In September we have been invited to present bonfire at the &lt;a href=&quot;https://privacyweek.it/&quot;&gt;Italian PrivacyWeek&lt;/a&gt;. We joined Francesco Macchia and Filippo Delle Bianca in a speech titled: &lt;a href=&quot;https://privacyweek.it/event/ce-spazio-per-un-nuovo-social-network/&quot;&gt;&amp;quot;Does it exist an alternative and a future for social media?&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Below you can see the bonfire presentation translated in English:&lt;/p&gt;
+&lt;div style=&quot;position: relative; padding-bottom: 56.25%; height: 0;&quot;&gt;&lt;iframe src=&quot;https://www.loom.com/embed/ccc0425af2934d0ea1d05a7796b2d86b&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to Francesco Macchia for the invitation :)&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>How to use boundaries, circles and roles</title>
+    <link href="https://bonfirenetworks.org/posts/how_to_boundaries/"/>
+    <updated>2023-05-30T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/how_to_boundaries/</id>
+    <content type="html">&lt;p&gt;Bonfire&#39;s circles and boundaries system is a powerful tool with which you can create custom groups of contacts and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want.&lt;/p&gt;
+&lt;p&gt;It may help to start by defining some general concepts:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Boundaries&lt;/strong&gt; are limits that you set for yourself or others to define what you&#39;re comfortable with.&lt;/p&gt;
+&lt;p&gt;These limits can be physical, like curtains or doors; digital, like sharing settings on social media; in writing, like codes of conduct; emotional, like feeling comfortable to take time for self-care; or mental, like choosing what you pay attention to. In Bonfire, boundaries can help limit the type of interactions that others may have with you or things you post.&lt;/p&gt;
+&lt;p&gt;Boundaries are important because they help you protect yourself, maintain your autonomy, and communicate your needs and expectations clearly.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Circles&lt;/strong&gt; are a tool that can be used to establish relationships. They are representations of multifaceted relationships that you have with people in your life. Circles can help you understand the different levels of intimacy and trust that you have with different people, as well the different contexts or topics which are relevant to particular relationships, and can help build stronger, healthier relationships.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://shiftdesign.org/content/uploads/2019/03/circles2-1024x769.png&quot; alt=&quot;A theoretical way of looking at circles based on intimacy and trust&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In Bonfire, you can define circles based on your unique style of relationships and interests. For example, you might create a circle for your &lt;em&gt;colleagues&lt;/em&gt;, which can help you keep track of work-related content and collaborate with them more efficiently. You could also have a &lt;em&gt;locals&lt;/em&gt; circle, with which you may share and discover local events, news, and recommendations. You might also create a &lt;em&gt;comrades&lt;/em&gt; circle, to stay connected with fellow activists and organise around shared goals. Finally, you could create a &lt;em&gt;happy hour&lt;/em&gt; circle, to coordinate social gatherings with local friends or colleagues, and &lt;em&gt;the crew&lt;/em&gt; for your inner circle. With circles, you have the flexibility to manage your relationships and social activities in a way that makes sense for you.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/circles-example.png&quot; alt=&quot;An example of circles&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;using-circles&quot;&gt;Using circles &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/how_to_boundaries/#using-circles&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When you share content on Bonfire, you can simply choose to share it with specific circles instead of sharing it publicly.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to your settings page.&lt;/li&gt;
+&lt;li&gt;Click on the &amp;quot;Circles&amp;quot; section on the left sidebar.&lt;/li&gt;
+&lt;li&gt;Click on the &amp;quot;New Circle&amp;quot; button located at the top-right corner of the page.&lt;/li&gt;
+&lt;li&gt;Enter a name for the circle in the modal and click &amp;quot;Create.&amp;quot;&lt;/li&gt;
+&lt;li&gt;Once you&#39;ve created your circle, you can start adding people to it by typing their names or usernames in the input. The search input will provide autocomplete suggestions as you type.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now you can use that circle when making a post:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click &amp;quot;Compose&amp;quot; in the sidebar&lt;/li&gt;
+&lt;li&gt;Click the boundary menu which by default says &amp;quot;Public&amp;quot;&lt;/li&gt;
+&lt;li&gt;Click &amp;quot;Custom&amp;quot;&lt;/li&gt;
+&lt;li&gt;Click the box which says &amp;quot;Select one or more circles or people&amp;quot;&lt;/li&gt;
+&lt;li&gt;Select the circle you created&lt;/li&gt;
+&lt;li&gt;Now next to the circle that appears in the list you can select what role you want that circle to have with regards to your post. The default is &amp;quot;Participate&amp;quot; which means they can read, boost and reply to it.&lt;/li&gt;
+&lt;li&gt;Click &amp;quot;Done&amp;quot; and you can now write and publish your post&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can also save time by defining boundaries in your settings to reuse the same selection of circles and permissions when posting and avoid having to select multiple circles and give them a role every time, which we&#39;ll cover in the next section.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That&#39;s it! With these steps, you can create and add people to circles in Bonfire and use them to share content with specific groups of people.&lt;/p&gt;
+&lt;div style=&quot;position: relative; padding-bottom: 56.25%; height: 0;&quot;&gt;&lt;iframe src=&quot;https://www.loom.com/embed/c063e8b219524f858192fc9a82b9f41a&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;h2 id=&quot;using-boundaries&quot;&gt;Using boundaries &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/how_to_boundaries/#using-boundaries&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Boundaries takes things the next level by enabling you to combine one or more circles and then grant specific roles to each circle. For example, you might create a &amp;quot;Fitness&amp;quot; boundary and grant the &amp;quot;Participate&amp;quot; role to your gym buddies, allowing them to interact with your fitness-related content, while granting the &amp;quot;Interact&amp;quot; role to your family and friends, who can view and react to your posts but not comment on them.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to your settings page.&lt;/li&gt;
+&lt;li&gt;Click on the &amp;quot;Boundaries&amp;quot; section on the left sidebar.&lt;/li&gt;
+&lt;li&gt;Click on the &amp;quot;New boundary&amp;quot; button located at the top-right corner of the page.&lt;/li&gt;
+&lt;li&gt;Enter a name for the new boundary (e.g., &amp;quot;Fitness&amp;quot;) and click on create.&lt;/li&gt;
+&lt;li&gt;On the newly created boundary page, start typing the name of a circle you want to add to the boundary (or an individual user, though it&#39;s recommended to use circles to group users who you want to assign the same role to). The search input will provide autocomplete suggestions as you type.&lt;/li&gt;
+&lt;li&gt;Click on the desired circle or user to add them to the boundary.&lt;/li&gt;
+&lt;li&gt;Next to the name, click on the &amp;quot;Role&amp;quot; dropdown menu and select the appropriate role (e.g., &amp;quot;Interact&amp;quot; if you want them to be able to read/like/boost your activities or &amp;quot;Cannot participate&amp;quot; if you don&#39;t want them to be able to reply).&lt;/li&gt;
+&lt;li&gt;Repeat steps 5-7 for each user/circle you want to add to the boundary.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now you can use that boundary when making a post:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click &amp;quot;Compose&amp;quot; in the sidebar&lt;/li&gt;
+&lt;li&gt;Click the boundary menu which by default says &amp;quot;Public&amp;quot;&lt;/li&gt;
+&lt;li&gt;Select the boundary you created&lt;/li&gt;
+&lt;li&gt;You can now write and publish your post&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div style=&quot;position: relative; padding-bottom: 56.25%; height: 0;&quot;&gt;&lt;iframe src=&quot;https://www.loom.com/embed/6fc942fb149c457d97148730eb5fd333&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;h2 id=&quot;what-are-roles%3F&quot;&gt;What are roles? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/how_to_boundaries/#what-are-roles%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Roles&lt;/strong&gt; in Bonfire are a way to assign a set of permissions to users or circles, allowing them to perform specific actions.&lt;/p&gt;
+&lt;p&gt;Roles play a crucial role in defining the scope of engagement and participation for users. By assigning roles, you can establish specific permissions and restrictions, ensuring that users or circles have appropriate levels of access and abilities based on their relationship with you or the purpose of the boundary or nature of the content on which they&#39;re applied.&lt;/p&gt;
+&lt;p&gt;Here are some preset roles and their associated actions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Read&lt;/strong&gt;: can discover the content in lists (like feeds) and read it; request permission for another verb (e.g., request to follow).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Interact&lt;/strong&gt;: can read, plus like an object (and notify the author); follow a user or thread; boost an object (and notify the author); pin something to highlight it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Participate&lt;/strong&gt;: can interact, plus reply to an activity or post; mention a user or object (and notify them); send a message.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Contribute&lt;/strong&gt;: can participate, plus create a post or other object; tag a user or object or publish in a topic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Caretaker&lt;/strong&gt;: can perform all of the above actions and more, including actions like deletion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are also negative roles, indicating actions which you specifically do not want to allow a particular circle or user to do, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cannot Read&lt;/strong&gt;: not discoverable in lists or readable, and also can&#39;t interact or participate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cannot Interact&lt;/strong&gt;: cannot perform any actions related to interaction, including liking, following, boosting, and pinning, and also can&#39;t participate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cannot Participate&lt;/strong&gt;: cannot perform any actions related to participation, including replying, mentioning, and sending messages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Negative permissions always take precedence over positive or undefined permissions. For example, let&#39;s say you share something and allow all your followers to read and reply to it. However, if you assign the Cannot Participate role to your Likely to troll circle, the people in that circle will be able to read the content but will not be able to reply to it. In other words, the negative permission restricts the permissions they would otherwise have.&lt;/p&gt;
+&lt;p&gt;It&#39;s important to note that these negative roles do not grant any additional permissions. Assigning the Cannot Participate role to someone who wouldn&#39;t otherwise be able to read the content does not mean they will now have the ability to do so. Negative roles simply limit or override any permissions defined elsewhere, ensuring that the specified actions are explicitly restricted.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;By using boundaries, circles, and roles in Bonfire, you can take control of your online presence and ensure that your content is shared only with the people you want. So why not give it a try and see how it can help you connect with your contacts in a more meaningful way?&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Dev Diary: Implementing federated groups in Bonfire</title>
+    <link href="https://bonfirenetworks.org/posts/dev_diary_groups_1/"/>
+    <updated>2023-06-08T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/dev_diary_groups_1/</id>
+    <content type="html">&lt;p&gt;As part of our commitment to empower communities with tools to foster coordination, meaningful communications and a greater sense of caring and belonging, we are thrilled to announce the development of federated groups in Bonfire. In this blog post, we&#39;ll delve into the work in progress of implementing the core features of groups and explore the potential benefits this feature can bring to the whole fediverse.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Group development is made possible by the NLnet Entrust Grant. The grant will let us research and develop an intial set of features to create and manage groups, as well as federate them with other platforms, such as &lt;a href=&quot;https://a.gup.pe/&quot;&gt;Guppe&lt;/a&gt;, Mobilizon, Lemmy, and Mastodon.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;the-power-of-groups&quot;&gt;The Power of Groups &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_groups_1/#the-power-of-groups&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With groups users can create context-specific and cross-instances spaces, define their own rules and governance, to better organize their participation across the fediverse. Key features of groups in Bonfire so far include:&lt;/p&gt;
+&lt;h3 id=&quot;creation-%26-discovery&quot;&gt;Creation &amp;amp; Discovery &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_groups_1/#creation-%26-discovery&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Bonfire users will have the ability to create their own groups, specifying the group&#39;s purpose, rules, and other settings. Each group will have a unique username, based on the instance where it was created (e.g., @climatenews@zomia.zone), and will be discoverable (depending on its privacy settings) across the whole fediverse to enable users to find and join groups aligned with their interests, ensuring that everyone can find or build their communities on the fediverse.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/PQIQXMh.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;boundaries-%26-privacy&quot;&gt;Boundaries &amp;amp; Privacy &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_groups_1/#boundaries-%26-privacy&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Group caretakers will have granular control over privacy settings, allowing them to determine whether a group is open, visible, or private. This flexibility ensures that users can participate in groups that suit their comfort levels and maintain control over their personal data. Private groups will only show their activities to members, while open or visible groups allow anyone to read group contents, and members can add posts or participate in conversations.&lt;br /&gt;
+&lt;img src=&quot;https://i.imgur.com/KwTGMEb.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;roles-%26-moderation&quot;&gt;Roles &amp;amp; Moderation &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_groups_1/#roles-%26-moderation&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Group caretakers will also have the ability to define custom roles and assign to certain members, thus simplifying and decentralising the management and moderation of groups. Members who are granted a relevant role may see and address flagged activities, invite other users, edit the group appearance and details, create and edit roles, or publish announcements, etc.&lt;/p&gt;
+&lt;p&gt;When a user flags an activity or a member of the group, the group moderators are the first to be notified. This helps distribute the moderation workload and reduces the burden on instance moderators. If a flagged user breaks not only the group rules but also those of their respective instances, group moderators have the option to escalate the case to instance moderators, to help maintain a healthy and respectful environment across the fediverse.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/GE1cDgt.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;To ensure the best possible user experience, we intend to launch an initial version on groups to be tested within our playground instance. This will enable us to gather valuable feedback from our community and engage in collaborative discussions to refine and enhance the platform as we progress.&lt;/p&gt;
+&lt;p&gt;In an upcoming post, we will delve into more details, including our ideas for federating groups and the technical challenges we&#39;re facing. Stay tuned 😎&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Empowering Bonfire users with advanced roles &amp; permissions</title>
+    <link href="https://bonfirenetworks.org/posts/custom_roles/"/>
+    <updated>2023-06-15T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/custom_roles/</id>
+    <content type="html">&lt;p&gt;Greetings, Bonfire Community!&lt;/p&gt;
+&lt;p&gt;We are happy to announce that the next Bonfire release will introduce the capacity to define and assign custom roles. This feature, far from being limited to instance administrators, will also be available to individual users and to group caretakers (as part of our &lt;a href=&quot;https://bonfirenetworks.org/posts/dev_diary_groups_1/&quot;&gt;groups extension which is currently in development&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The addition of custom roles will empower users define a set of permissions to grant to other users or circles. This paves the way for a more nuanced and personalised way to define interaction within and across communities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/jfHFP0e.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now instance admins and group caretakers will be able to define and assign custom roles to other members, to distribute responsibilities among broader groups of trusted users, fostering a more diverse and inclusive governance structure within each community.&lt;/p&gt;
+&lt;p&gt;Imagine a group caretaker creating a custom role named &amp;quot;Mediator&amp;quot;. This role could allow certain members to review and act upon flagged content. The Mediators would be notified of flags, and start a dialogue with the author of the flagged post or the person who flagged it, remove the content from the group and/or block a member if necessary, or escalate the issue to instance moderators when further action is waranted.&lt;/p&gt;
+&lt;p&gt;Moreover, other users could be granted the &amp;quot;Gatekeeper&amp;quot; role, making them responsible for creating invites, managing join requests or manually adding and removing users from the group.&lt;/p&gt;
+&lt;p&gt;Custom roles aim to alleviate the workload and emotional burden traditionally associated with admin roles. By distributing power among the users, we aspire to foster healthier governance and cultivate more participative and empowered communities.&lt;/p&gt;
+&lt;p&gt;Outside of group and instance governance, individual users will also benefit from roles by being able to define exactly how other users can or cannot interact with them and their contents, by using custom roles when &lt;a href=&quot;https://bonfirenetworks.org/posts/how_to_boundaries/&quot;&gt;defining their circles and boundaries&lt;/a&gt; or when making a post.&lt;/p&gt;
+&lt;p&gt;This is just the beginning for custom roles, we plan to refine and enhance this feature based on your feedback and ideas and our iterative design process. As we progress toward the release of Bonfire 1.0, our goal is to make custom roles a robust and integral part of our platform.&lt;/p&gt;
+&lt;p&gt;Therefore, we wholeheartedly encourage you to share your experiences and feedback with us. Your insights are invaluable in helping us shape and perfect this feature.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Group development is made possible by the NLnet Entrust Grant. The grant will let us research and develop an intial set of features to create and manage groups, as well as federate them with other platforms, such as Guppe, Mobilizon, Lemmy, and Mastodon&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Could you help us with user research?</title>
+    <link href="https://bonfirenetworks.org/posts/user_research/"/>
+    <updated>2023-06-28T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/user_research/</id>
+    <content type="html">&lt;p&gt;As we approach v1.0 of Bonfire, we’re looking for volunteers to help us with some user research. We’re particularly interested in hearing from a diverse range of people who may be interested in using Bonfire in a personal or professional capacity .&lt;/p&gt;
+&lt;p&gt;You do not need any particular technical knowledge, skills, or prior experience of Bonfire.   The user research interviews will be carried out in English by &lt;a href=&quot;https://dynamicskillset.com/&quot;&gt;Dynamic Skillset&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;If you are interested in helping us out, please &lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSfrMnj7MBtapIlbiHbPfGFHuuL1Dg9zaNO_Srltcu6Nfno3Zw/viewform&quot;&gt;complete the form&lt;/a&gt;. Thanks in advance!&lt;/p&gt;
+&lt;p&gt;As much as we value and appreciate the effort to participate in our user research, we are unable to offer compensation to the participants at this time. If you have any further questions or concerns, please don&#39;t hesitate to reach out to us. Thank you!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Making things intuitive is complex! Or, what we discovered via user testing</title>
+    <link href="https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/"/>
+    <updated>2023-07-19T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/</id>
+    <content type="html">&lt;p&gt;The Bonfire team is committed to creating a federated app toolkit that is intuitive, user-friendly, and meets the diverse needs of our community. A key part of how people interact with Bonfire is the composer — the space where users craft their post and decide who can see and interact with it. To ensure this is as effective and easy to use as possible, we recently conducted user research to gather feedback and insights.&lt;/p&gt;
+&lt;h2 id=&quot;the-user-research-process&quot;&gt;The User Research Process &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/#the-user-research-process&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Our user research involved in-depth sessions with a diverse range of participants. These 45-minute sessions included a mix of questions and prototype testing, using screen-sharing and a prototype created with Figma. Our participants spanned a variety of locations, backgrounds, technical proficiency, and amounts of previous exposure to Bonfire, providing us with a wealth of perspectives and insights.&lt;/p&gt;
+&lt;h2 id=&quot;what-we-found-out&quot;&gt;What we found out &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/#what-we-found-out&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The feedback we received was invaluable in highlighting areas for improvement. Many users found the concepts and/or UX of boundaries, circles and roles confusing, particularly the ‘caretaker’ role and the way you could deny or combine permissions. There was a desire for greater clarity in the include/exclude sections, about understanding the details of each specific role, and for the ability to edit boundaries after posting.&lt;/p&gt;
+&lt;p&gt;Interestingly, we found a surprising uniformity in user behaviour, with all participants choosing the same initial workflow in the prototype, though participants each suggested several different ways to improve the composer feature.&lt;/p&gt;
+&lt;h2 id=&quot;our-response&quot;&gt;Our response &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/#our-response&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As a team, we&#39;ve taken this feedback on board and have been discussing the best ways to iterate based on the insights and sugestions shared by participants.&lt;/p&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;Next steps &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/#next-steps&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We&#39;re now in the process of implementing changes based on the feedback received. In a couple of months, we plan to conduct further user research to assess the impact of these changes and gather more user insights. We encourage members of the Bonfire community to get involved in this process by providing feedback and participating in future user research. You can do this by discussing this post on the Fediverse and mentioning &lt;a href=&quot;https://indieweb.social/@bonfire&quot;&gt;@bonfire@indieweb.social &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Users who want to provide further feedbacks to the bonfire team can go through the composer on our campground instance, and report any suggestion using the #bonfire_feedback hashtags.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/#conclusion&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This user research process has been extremely helpful in refining the composer and improving the overall user experience on Bonfire. We&#39;re grateful to all the participants for their valuable feedback and to our community for their ongoing support. We look forward to sharing updates on our progress and continuing to work together to make Bonfire the best it can be.&lt;/p&gt;
+&lt;p&gt;(Thanks to &lt;a href=&quot;https://social.coop/@dajb&quot;&gt;Doug Belshaw&lt;/a&gt; of &lt;a href=&quot;https://dynamicskillset.com/&quot;&gt;Dynamic Skillset&lt;/a&gt; who volunteered his time to run this user research for us and provide us with insights.)&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Bonfire 0.9.6</title>
+    <link href="https://bonfirenetworks.org/posts/release_096/"/>
+    <updated>2023-08-09T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/release_096/</id>
+    <content type="html">&lt;p&gt;We&#39;re thrilled to announce the release of Bonfire version 0.9.6! This latest update brings a host of improvements and new features aimed at enhancing usability and providing more control over the content you engage with. Here&#39;s what&#39;s new:&lt;/p&gt;
+&lt;h2 id=&quot;expanded-messaging-and-thread-views&quot;&gt;Expanded Messaging and Thread Views &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/release_096/#expanded-messaging-and-thread-views&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We&#39;ve successfully completed the &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/milestone/43?closed=1&quot;&gt;messaging milestone&lt;/a&gt;, now users can seamlessly see all their direct messages or send a message to one or more people.&lt;/p&gt;
+&lt;p&gt;Threads (for both messages and regular posts) can now be viewed in both nested and flat layout, providing a more comprehensive or streamlined way to navigate conversations.&lt;/p&gt;
+&lt;p&gt;Sorting options on threads now include chronological views, sorting by replies, boosts, likes, and more, allowing users to tailor their view according to preference.&lt;/p&gt;
+&lt;h2 id=&quot;enhanced-feeds&quot;&gt;Enhanced Feeds &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/release_096/#enhanced-feeds&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sorting options have been expanded on feeds, offering chronological, reply, boost, and like-based sorting.&lt;/p&gt;
+&lt;p&gt;Users can also filter feeds based on time frames such as Today, Week, Month, Year, and All Time, giving more refined control over content discovery, at the same time offering alternatives to the addictive infinite scrolling pattern.&lt;/p&gt;
+&lt;h2 id=&quot;rich-text-editor-and-composer-improvements&quot;&gt;Rich Text Editor and Composer Improvements &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/release_096/#rich-text-editor-and-composer-improvements&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The addition of a rich text editor in our composer enables markdown use with a WYSIWYG interface.&lt;/p&gt;
+&lt;p&gt;The composer can also now be stretched and expanded, enhancing focus and ease of use, especially when writing longer posts.&lt;/p&gt;
+&lt;h2 id=&quot;refined-boundaries&quot;&gt;Refined Boundaries &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/release_096/#refined-boundaries&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We&#39;ve started integrating the valuable insights gained from our &lt;a href=&quot;https://bonfirenetworks.org/posts/making_things_intuitive_is_complex/&quot;&gt;user testing interviews&lt;/a&gt; into the boundary system, enhancing the overall user experience.&lt;/p&gt;
+&lt;p&gt;This update simplifies the process of defining custom permissions and includes a convenient option to preview the resulting boundaries, allowing for more intuitive and flexible control.&lt;/p&gt;
+&lt;h2 id=&quot;and-more!&quot;&gt;And more! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/release_096/#and-more!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Plus, we&#39;ve tweaked and fixed many more things to make the Bonfire experience smoother and more intuitive.&lt;br /&gt;
+We encourage everyone to explore these new features and continue to provide feedback as we work towards our next milestone. Your insights drive our progress, and we look forward to growing together with the Bonfire community.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;Explore Bonfire 0.9.6 now&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>
