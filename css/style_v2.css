@@ -612,7 +612,7 @@ html {
   --tw-shadow-colored: 0 0 #0000;
 }
 
-.ring-1, .ring, .ring-inset, .focus\:ring-2, .focus\:ring-inset {
+.ring-1, .ring, .ring-inset, .focus\:ring-2 {
   --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
@@ -5491,6 +5491,10 @@ details.collapse summary::-webkit-details-marker {
   margin-left: 2.5rem;
 }
 
+.\!ml-0 {
+  margin-left: 0px !important;
+}
+
 .-ml-4 {
   margin-left: -1rem;
 }
@@ -5505,10 +5509,6 @@ details.collapse summary::-webkit-details-marker {
 
 .mb-auto {
   margin-bottom: auto;
-}
-
-.\!ml-0 {
-  margin-left: 0px !important;
 }
 
 .block {
@@ -7014,8 +7014,8 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 57%;
 }
 
-.pb-8 {
-  padding-bottom: 2rem;
+.\!pl-0 {
+  padding-left: 0px !important;
 }
 
 .pr-3 {
@@ -7026,8 +7026,8 @@ details.collapse summary::-webkit-details-marker {
   padding-left: 0.5rem;
 }
 
-.\!pl-0 {
-  padding-left: 0px !important;
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .text-left {
@@ -7419,15 +7419,6 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(244 114 182 / var(--tw-text-opacity));
 }
 
-.\!text-primary {
-  --tw-text-opacity: 1 !important;
-  color: hsl(var(--p) / var(--tw-text-opacity)) !important;
-}
-
-.text-primary\/80 {
-  color: hsl(var(--p) / 0.8);
-}
-
 .\!text-primary\/90 {
   color: hsl(var(--p) / 0.9) !important;
 }
@@ -7706,10 +7697,6 @@ details.collapse summary::-webkit-details-marker {
   color: hsl(var(--bc) / 1);
 }
 
-.hover\:text-opacity-100:hover {
-  --tw-text-opacity: 1;
-}
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -7731,18 +7718,9 @@ details.collapse summary::-webkit-details-marker {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
-.focus\:ring-inset:focus {
-  --tw-ring-inset: inset;
-}
-
 .focus\:ring-indigo-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(99 102 241 / var(--tw-ring-opacity));
-}
-
-.focus\:ring-white:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-offset-2:focus {
@@ -7868,10 +7846,6 @@ details.collapse summary::-webkit-details-marker {
 
   .md\:mt-0 {
     margin-top: 0px;
-  }
-
-  .md\:\!mr-0 {
-    margin-right: 0px !important;
   }
 
   .md\:flex {
