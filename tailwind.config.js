@@ -27,9 +27,8 @@ module.exports = {
           "base-100": "#1E2023"
         },
         bonfire: {
-          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
-          "primary": "#fde047",
-          "primary-content": "#112A46"
+          ...require("daisyui/src/theming/themes")["[data-theme=dracula]"],
+          "primary": "#fde047"
         }
       },
     ]
