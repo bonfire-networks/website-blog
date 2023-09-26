@@ -31,8 +31,7 @@
     </div> #}
 
     <div>
-      <header 
-        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+      <header class="relative z-30 px-4 lg:px-8 mx-auto navbar">
         <div class="navbar-start">
           <div class="flex items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -43,7 +42,14 @@
             </a>
           </div>
 
-          <div class="hidden lg:flex ml-10">
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+            <div class="hidden lg:flex mr-4">
           <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
             <li class="dropdown">
               <label tabindex="0" class="">
@@ -90,7 +96,7 @@
             </li> #}
             <li>
             <a href="/blog" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/blog' in page.url }} ">
-              <span class="text-sm font-regular">Blog</span>
+              <span class="text-sm font-regular">News</span>
             </a>
             </li>
             <li class="dropdown">
@@ -123,12 +129,6 @@
             </li> #}
           </ul>
         </div>
-
-
-
-        </div>
-        
-        <div class="navbar-end">
           <a href="/start/" >
             <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
           </a>

@@ -8,8 +8,9 @@ eleventyNavigation:
 {% include "hero.njk" %}
 {% include "general_intro.njk" %}
 
-    <div class="max-w-screen-lg px-4 md:px-0 lg:mx-auto mt-32">
-      <div class="text-5xl leading-[70px] text-center font-semibold mb-16 text-base-content">Latest from the blog</div>
+<div class="bg-base-200">
+    <div class="max-w-screen-lg  px-4 md:px-0 lg:mx-auto mt-24">
+      <div class="text-5xl leading-[70px] text-center pt-24 font-semibold mb-16 text-base-content">Latest from the blog</div>
       {% set postslist = collections.posts  %}
       {% set postslistCounter = collections.posts | length %}
       {% include "postshome.njk" %}
@@ -49,6 +50,7 @@ eleventyNavigation:
       </div>
     </div>
     </div>
+  </div>
 
 {% include "testimonials.njk" %}
 {# {% include "plugins.njk" %} #}
