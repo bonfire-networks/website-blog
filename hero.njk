@@ -8,10 +8,15 @@
   </a> #}
 
 
-<div class="max-w-screen-lg h-[calc(100vh_-_64px)] place-content-center mb-12 mx-auto w-full relative flex items-center justify-center">
-  <h1 class="absolute bottom-16 z-50 font-bold leading-[68px] text-5xl mb-4 tracking-tight">
-      Modular, Federated, Self-governed. Welcome to the digital spaces of the future.
-    </h1>
+<div class="max-w-screen-lg h-[calc(100vh_-_64px)] place-content-center mb-12 mx-auto w-full relative flex flex-col items-center justify-center">
+  <img src="/img/banner.png" class="object-cover w-full max-w-[620px]" />
+  <h1 class=" z-50 font-bold lg:leading-[68px] text-3xl lg:text-5xl tracking-tight text-center mt-12">
+    Modular, Federated, Self-governed. <br/>Welcome to the digital spaces of the future.
+  </h1>
+  <div class="flex items-center gap-4 mt-8">
+    <a class="btn btn-outline rounded-full !border !border-base-content/30 normal-case" href="https://campground.bonfire.cafe" target="blank">Explore the campground</a>
+    <a class="btn btn-ghost rounded-full  normal-case" href="/docs" target="blank">Read the docs</a>
+  </div>
 </div>
   {# <div class="max-w-screen-xl mx-auto mt-12">
     <div class="flex flex-col items-center justify-center grid-cols-1 gap-16">
@@ -28,28 +33,36 @@
     </div>
   </div> #}
 
-<div class="bg-base-100 ">
-<div class="max-w-screen-xl border-t-2  mx-auto">
-  <div class="text-4xl mb-12 pt-8 font-medium tracking-wider">Our works</div>
-  <div class="grid grid-cols-3 gap-12">
-        {# <div class="flex  mt-8 gap-4">
+<div class="">
+<div class="max-w-screen-xl  mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-12">
 
-      <div class="p-8 flex-1 rounded-box bg-base-content/10">
+      <div class="p-8 flex-1 rounded-box bg-base-100">
           <div class="badge badge-xl uppercase badge-primary">New</div>
 
         <div class="text-2xl mt-4 font-medium">Bonfire Classic in Beta, now available!</div>
-        <div class="text-xl mt-6 text-base-content/70">Your friendly assistant. Fast, capable, and truly conversational.</div>
+        <div class="text-xl mt-6 text-base-content/70">Test our foundational social network. Help spotting bugs and suggest improvements.</div>
         <a href="https://campground.bonfire.cafe" target="blank" class="mt-8 btn rounded-full normal-case btn-primary w-full">Explore the playground</a>
 
       </div>
-      <div class="p-8 flex-1 rounded-box bg-base-content/10">
-        <div class="badge !px-0 badge-xl uppercase bg-transparent !border-0">Enterprise</div>
-        <div class="text-2xl mt-4 font-medium">Build with Bonfire, unlock infinite possibilities</div>
-        <div class="text-xl mt-6 text-base-content/70">Start using Claude and unlock business value with AI.</div>
-        <a href="https://campground.bonfire.cafe" target="blank" class="mt-8 btn rounded-full normal-case btn-outline w-full">Get in touch</a>
+      <div class="flex-1 rounded-box bg-gradient-to-t from-primary/5 to-primary/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
+          <div class="badge badge-ghost bg-base-content/10 badge-xl uppercase bg-transparent !border-0">Communities</div>
+          <div class="text-2xl mt-4 font-medium">Build with Bonfire, unlock infinite possibilities</div>
+          <div class="text-xl mt-6 text-base-content/70">Develop new modules, or get in touch with the bonfire team to bring your unique ideas to life.</div>
+          <a href="mailto:team@bonfire.cafe" target="blank" class="mt-8 btn !border border-base-content/30 rounded-full normal-case btn-outline w-full">Get in touch</a>
+        </div>
       </div>
-    </div> #}
-    <a href="/zappa" class="cursor-pointer rounded-box bg-base-100 group relative">
+      <div class="flex-1 rounded-box bg-gradient-to-t from-primary/5 to-primary/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
+          <div class="badge badge-ghost bg-base-content/10 badge-xl uppercase bg-transparent !border-0">Research</div>
+          <div class="text-2xl mt-4 font-medium">GAIA Connect: Connect with the other-than-human worlds</div>
+          <div class="text-xl mt-6 text-base-content/70">We dream of a world where you can converse with our planet just like you chat with a friend.</div>
+          <a href="/gaia" target="blank" class="mt-8 btn !border border-base-content/30 rounded-full normal-case btn-outline w-full">Read more</a>
+        </div>
+      </div>
+    </div>
+    {# <a href="/zappa" class="cursor-pointer rounded-box bg-base-100 group relative">
         <div class="text-2xl font-bold text-base-content group-hover:text-base-content/70">Fighting misinformation on social networks</div>
         <div class="mt-6 flex items-center gap-2 bottom-6 link">
           <span>Learn about our research</span>
@@ -66,8 +79,7 @@
         <div class="text-2xl font-bold text-base-content group-hover:text-base-content/70">GAIA Connect: Digest from the other-than-human worlds</div>
         <div class="mt-6 flex items-center gap-2 bottom-6 link"><span>Learn about GAIA Connect</span>
           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 19L19 6m0 0v12.48M19 6H6.52"/></svg></div>
-    </a>
-  </div>
+    </a> #}
   </div>
 </div>
 
@@ -111,23 +123,30 @@
 
 <div class=""> 
   <div class="max-w-screen-xl mt-24 mx-auto">
-  <div id="customisable" class="text-5xl text-center font-semibold text-base-content">Bonfire Classic </div>
-  <div class="text-xl mt-6 text-center text-base-content/70">Your friendly assistant. Fast, capable, and truly conversational.</div>
-
-  <div class="mt-24">
+    <div class="flex pt-6 mb-24 lg:items-center flex-col lg:flex-row lg:justify-between">
+      <div class="text-4xl font-semibold tracking-wider">Around a bonfire, <span class="font-bold">civilisations started</span></div>
+      <a href="/features" class="mt-6 lg:mt-0 btn btn-outline !border !border-base-content/30 rounded-full normal-case">View all features</a>
+    </div>
+  <div class="">
   {# <div class="font-semibold text-xl tracking-wider">Social network as a common good</div> #}
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6">
-    
-      <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
-          <div class="flex items-center">
-            <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Have meaningful and safer interactions</div>
-          </div>
-          <div class="text-base-content/80 text-base mt-4">Thanks to bonfire modularity, you can customize your experience to fit your exact values and needs, and easily adjust your setup at any time.</div>
-          <img src="/img/c1.png" class="mx-auto my-4 h-[400px]" />
+    <div class="grid grid-cols-1 lg:gap-8 gap-y-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+      <div class="card w-full col-span-2 bg-base-300 shadow-xl">
+        <figure  class="min-w-full"><img src="/img/1.png" /></figure>
+        <div class="card-body mt-4 !p-0">
+          <h2 class="card-title">Have meaningful and safer interactions</h2>
+          <p class="text-lg text-base-content/80">Thanks to bonfire modularity, you can customize your experience to fit your exact values and needs, and easily adjust your setup at any time.</p>
         </div>
       </div>
-
+      {# <div class="col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+          <div class="flex items-center">
+            <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col"></div>
+          </div>
+          <div class="text-base-content/80 text-base mt-4"></div>
+          <img src="/img/c1.png" class="mx-auto my-4 h-[400px]" />
+        </div>
+      </div> #}
+{# 
       <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
         <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
           <div class="flex items-center">
@@ -136,44 +155,56 @@
           <div class="text-base-content/80 text-base mt-4">With groups users can create context-specific and cross-instances spaces, define their own rules and governance, to better organize their participation across the fediverse.</div>
           <img src="/img/c2.png" class="mx-auto my-4 h-[400px]" />
         </div>
+      </div> #}
+      <div class="card w-full col-span-2 bg-base-300 shadow-xl">
+        <figure  class="min-w-full"><img src="/img/2.png" /></figure>
+        <div class="card-body mt-4 !p-0">
+          <h2 class="card-title">Build safer boundaries</h2>
+          <p class="text-lg text-base-content/80">Create custom circles of contacts and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want.</p>
+        </div>
       </div>
-
-      <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+      {# <div class="col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="rounded-lg flex-1 h-full border-base-content/20 bg-base-content/10">
+          <img src="/img/c3.png" class="mx-auto h-[400px]" />
           <div class="flex items-center">
             <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Build safer boundaries</div>
           </div>
           <div class="text-base-content/80 text-base mt-4">Create custom circles of contacts and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want.</div>
-          <img src="/img/c3.png" class="mx-auto my-4 h-[400px]" />
+        </div>
+      </div> #}
+      <div class="card w-full col-span-2 bg-base-300 shadow-xl">
+        <figure  class="min-w-full"><img src="/img/3.png" /></figure>
+        <div class="card-body mt-4 !p-0">
+          <h2 class="card-title">Connect with other communities</h2>
+          <p class="text-lg text-base-content/80">Engage with diverse communities across the fediverse at a pace that suits you. Bonfire ensures a personalized interaction experience, connecting you with like-minded networks while maintaining your comfort and control.</p>
         </div>
       </div>
-
-      <div class="col-span-3 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      {# <div class="col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
         <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
           <div class="flex items-center">
-            <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col">Connect with other communities</div>
+            <div class="text-base-content text-xl font-semibold flex flex-row xl:flex-col"></div>
           </div>
-          <div class="text-base-content/80 text-base mt-4">Engage with diverse communities across the fediverse at a pace that suits you. Bonfire ensures a personalized interaction experience, connecting you with like-minded networks while maintaining your comfort and control.</div>
+          <div class="text-base-content/80 text-base mt-4"></div>
           <img src="/img/c4.png" class="mx-auto my-4 h-[400px]" />
         </div>
-      </div>
+      </div> #}
     
-      <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="col-span-3 mt-6 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
         <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
           <div class="flex items-center">
             <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Create Circles</div>
           </div>
-          <div class="text-base-content/80 text-sm mt-4">Circles are a tool that can be used to establish relationships. They are representations of multifaceted relationships that you have with people in your life.</div>
+          <div class="text-base-content/80 mt-4">Circles are a tool that can be used to establish relationships. They are representations of multifaceted relationships that you have with people in your life.</div>
           <img src="/img/c5.png" class="mx-auto my-4 h-[80px]" />
         </div>
       </div>
     
-      <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="col-span-3 mt-6 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
         <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
           <div class="flex items-center">
             <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Assign Roles</div>
           </div>
-          <div class="text-base-content/80 text-sm mt-4">Create and assign custom roles to grant different permissions to users and circles. Roles affect what actions users can take and what information they can view, interact with, or even edit.</div>
+          <div class="text-base-content/80 mt-4">Create and assign custom roles to grant different permissions to users and circles. Roles affect what actions users can take and what information they can view, interact with, or even edit.</div>
           <img src="/img/c6.png" class="mx-auto my-4 h-[80px]" />
         </div>
       </div>
@@ -183,17 +214,17 @@
         <div class="flex items-center">
           <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Moderate your posts</div>
         </div>
-        <div class="text-base-content/80 text-sm mt-4">engage in meaningful conversations by harnessing the collective intelligence of your community, fostering insightful exchanges that are free from algorithmic interference and centered around topics and projects of mutual interest.</div>
+        <div class="text-base-content/80 mt-4">engage in meaningful conversations by harnessing the collective intelligence of your community, fostering insightful exchanges that are free from algorithmic interference and centered around topics and projects of mutual interest.</div>
         <img src="/img/c7.png" class="mx-auto my-4 h-[80px]" />
       </div>
     </div> #}
 
-    <div class="col-span-3 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+    <div class="col-span-3 mt-6 md:col-span-2 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
       <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
         <div class="flex items-center">
-          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">You are free to leave</div>
+          <div class="text-base-content text-lg font-semibold flex flex-row xl:flex-col">Import / Export your data</div>
         </div>
-        <div class="text-base-content/80 text-sm mt-4">Your profile, posts, or network belong to you. On the fediverse, you are not restricted to a specific software or instance; you are free to leave, transfer all your data, and move to a different instance.</div>
+        <div class="text-base-content/80 mt-4">Your data belong to you. On the fediverse, you are not restricted to a specific software or instance; you are free to leave, transfer all your data, and move to a different instance.</div>
         <img src="/img/c8.png" class="mx-auto my-4 h-[80px]" />
       </div>
     </div>
@@ -206,23 +237,22 @@
   </div>
 
 
-<div class="bg-base-100 py-24 mt-24 w-full">
-  <div class="max-w-screen-xl mx-auto">
-    <div class="text-center flex mb-12 flex-col gap-4 items-center">
-      <div class="text-5xl text-center font-semibold text-base-content">What communities plan to build with bonfire</div>
-    </div>
+<div class="max-w-screen-xl mt-24 mx-auto">
+  <div class="flex pt-6 mb-12 items-center justify-between">
+      <div class="text-4xl text-center lg:text-left font-semibold tracking-wider">Who's lighting a bonfire</div>
+      </div>
 
-    <div class="flex justify-evenly w-full mx-auto text-center">
+    {# <div class="flex justify-evenly w-full mx-auto text-center">
       <div class="btn btn-secondary rounded-full normal-case">Citizen Science</div>
       <div class="btn hidden md:flex btn-ghost relative rounded-full normal-case">Learners Community <span class="badge-outline badge badge-sm">Coming soon</span></div>
       <div class="btn hidden md:flex btn-ghost relative rounded-full normal-case">Non-profit <span class="badge-outline badge badge-sm">Coming soon</span></div>
       <div class="btn hidden md:flex btn-ghost relative rounded-full normal-case">Neighborhood <span class="badge-outline badge badge-sm">Coming soon</span></div>
-    </div>
+    </div> #}
 
     <div class="col-span-2  mt-16 w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
       <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200">
         <div class="relative">
-          <div class="mx-auto lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+          <div class="mx-auto lg:grid lg:grid-cols-12 lg:gap-x-16 lg:px-8">
             <div class="px-6 lg:col-span-7 lg:px-0 xl:col-span-6">
               <div class="mx-auto max-w-2xl lg:mx-0">
                 <h2 class="mt-24 text-3xl font-bold text-base-content sm:mt-10">How Niboe plans to use bonfire to facilitate open peer reviews and boost scientific divulgation. </h2>
@@ -233,7 +263,7 @@
               </div>
             </div>
             <div class="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
-              <img class="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full" src="https://i.imgur.com/UTp45o0.jpg" alt="">
+              <img class="aspect-[3/2] w-full bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full" src="/img/niboe.png" alt="">
             </div>
           </div>
         </div>
@@ -241,7 +271,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
 
 </div>
