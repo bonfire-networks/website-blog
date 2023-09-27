@@ -3,5 +3,5 @@ layout: layouts/docs.njk
 ---
 
 <div class="max-w-3xl prose">
-{{ boundaries |  markdown | safe }}
+{% remote_markdown "https://raw.githubusercontent.com/bonfire-networks/bonfire-app/main/docs/BOUNDARIES.md" %}  
 </div>

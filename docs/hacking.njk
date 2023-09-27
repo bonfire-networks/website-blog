@@ -3,5 +3,6 @@ layout: layouts/docs.njk
 ---
 
 <div class="max-w-3xl prose">
-{{ hacking |  markdown | safe }}
-</div>
+{% remote_markdown "https://raw.githubusercontent.com/bonfire-networks/bonfire-app/main/docs/HACKING.md" %}  
+
+</div> 

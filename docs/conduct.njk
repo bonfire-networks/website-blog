@@ -3,5 +3,9 @@ layout: layouts/docs.njk
 ---
 
 <div class="max-w-3xl prose">
-{{ conduct |  markdown | safe }}
+{# {% remote_markdown "https://raw.githubusercontent.com/bonfire-networks/blog/master/code_of_conduct.md" %}   #}
+
+  {% set snippet %}{% include 'code_of_conduct.md' %}{% endset %}
+  {{ snippet | markdown | safe }}
+
 </div>

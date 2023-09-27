@@ -44,6 +44,15 @@ permalink: "extensions/{{extensions.slug}}"
     </div>
     <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
       <dt class="text-sm font-medium text-blueGray-400">
+        Documentation
+      </dt>
+      <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
+        <a class="font-bold underline" href="https://doc.bonfirenetworks.org/extension-{{extensions.repo_name}}.html">Readme</a> -
+        <a class="font-bold underline" href="https://doc.bonfirenetworks.org/{{extensions.main_module or (["Bonfire.", extensions.name] | join)}}.html">API docs</a>
+      </dd>
+    </div>
+    <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+      <dt class="text-sm font-medium text-blueGray-400">
         Repository
       </dt>
       <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
@@ -78,3 +87,5 @@ permalink: "extensions/{{extensions.slug}}"
     
   </dl>
 </div>
+
+{# {% remote_markdown ["https://doc.bonfirenetworks.org/extension-", extensions.repo_name, ".html"] | join %} #}

@@ -3,5 +3,9 @@ layout: layouts/docs.njk
 ---
 
 <div class="max-w-3xl prose">
-{{ privacy |  markdown | safe }}
+{# {% remote_markdown "https://raw.githubusercontent.com/bonfire-networks/blog/master/privacy_policy.md" %}   #}
+
+  {% set snippet %}{% include 'privacy_policy.md' %}{% endset %}
+  {{ snippet | markdown | safe }}
+  
 </div>

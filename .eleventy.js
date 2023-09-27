@@ -8,6 +8,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -65,7 +66,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
 
   // Customize Markdown library and settings:
-  let markdownLibrary = markdownIt({
+  const markdownLibrary = markdownIt({
     html: true,
     breaks: true,
     linkify: true
@@ -77,15 +78,23 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   
-  
   eleventyConfig.addFilter('markdown', function(value) {
     return markdownLibrary.render(value);
 });
 
   eleventyConfig.addNunjucksShortcode(
     "markdown",
-    content => `<div class="md-block">${markdown.render(content)}</div>`
+    content => `<div class="prose md-block">${markdown.render(content)}</div>`
   );
+
+  eleventyConfig.addAsyncShortcode("remote_markdown", async function (url) {
+    const res = await fetchRemoteMarkdown(url);
+    if (!res) {
+      return "";
+    }
+    return `${markdownLibrary.render(res)}`;
+  });
+
  
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({
@@ -104,6 +113,7 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
 
   return {
     // Control which files Eleventy will process
@@ -147,3 +157,14 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+
+
+async function fetchRemoteMarkdown(url) {
+  if (!url) {
+    return;
+  }
+  return EleventyFetch(url, {
+    duration: "10m",
+    type: "markdown",
+  });
+}
