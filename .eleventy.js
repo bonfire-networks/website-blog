@@ -88,11 +88,12 @@ module.exports = function(eleventyConfig) {
   );
 
   eleventyConfig.addAsyncShortcode("remote_markdown", async function (url) {
-    const res = await fetchRemoteMarkdown(url);
-    if (!res) {
-      return "";
-    }
-    return `${markdownLibrary.render(res)}`;
+    // const res = await fetchRemoteMarkdown(url);
+    // if (!res) {
+    //   return "";
+    // }
+    // return `${markdownLibrary.render(res)}`;
+    return ""
   });
 
  
@@ -159,12 +160,12 @@ module.exports = function(eleventyConfig) {
 };
 
 
-async function fetchRemoteMarkdown(url) {
-  if (!url) {
-    return;
-  }
-  return EleventyFetch(url, {
-    duration: "10m",
-    type: "markdown",
-  });
-}
+// async function fetchRemoteMarkdown(url) {
+//   if (!url) {
+//     return;
+//   }
+//   return EleventyFetch(url, {
+//     duration: "10m",
+//     type: "markdown",
+//   });
+// }
