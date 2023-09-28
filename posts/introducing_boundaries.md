@@ -23,4 +23,4 @@ But this is really just the beginning: boundaries are a core feature in bonfire 
 
 How can circles and boundaries allow more flexible governance models in online communities? How can they empower new forms of peer coordination? How can we create user experiences where every user has total control without feeling overwhelmed? 
 
-If you are interested in taking part in this journey, [start by joining our playground instance](https://playground.bonfire.cafe/)! 
+If you are interested in taking part in this journey, [start by joining our campground instance](https://campground.bonfire.cafe/)! 
