@@ -68,6 +68,30 @@ templateClass: tmpl-pages
             </div>
           </li>
 
+
+          <li class="relative pt-4 mt-4 border-t border-base-content/10">
+            <h2 class="text-xs font-semibold uppercase text-base-content/60">Modularity</h2>
+            <div class="relative mt-3">
+              <ul role="list" class="border-l flex flex-col gap-1.5 border-transparent">
+                <li class="relative">
+                  <a href="/apps" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 {% if '/apps' in page.url %} !text-primary/90 font-semibold {% endif %}">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><rect x="0" y="0" width="256" height="256" fill="none" stroke="none" /><path fill="currentColor" d="M200 154a29.8 29.8 0 0 0-19.5 7.2l-25.6-19.9A29.6 29.6 0 0 0 158 128c0-1.2-.1-2.4-.2-3.6L174 119a30 30 0 1 0-4-15c0 1.2.1 2.4.2 3.6L154 113a30 30 0 0 0-26-15a28.1 28.1 0 0 0-6.5.7l-8.1-18.3A30 30 0 1 0 96 86a28.1 28.1 0 0 0 6.5-.7l8.1 18.3A29.9 29.9 0 0 0 98 128a29.3 29.3 0 0 0 4.1 15L74 168a29.7 29.7 0 0 0-18-6a30 30 0 1 0 30 30a29.3 29.3 0 0 0-4.1-15l28.1-25a30 30 0 0 0 37.5-1.2l25.6 19.9A29.6 29.6 0 0 0 170 184a30 30 0 1 0 30-30Zm0-68a18 18 0 1 1-18 18a18.1 18.1 0 0 1 18-18ZM78 56a18 18 0 1 1 18 18a18.1 18.1 0 0 1-18-18ZM56 210a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Zm72-64a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Zm72 56a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Z"/></svg>
+                    <span class="truncate">App flavours</span>
+                  </a>
+                </li>
+
+                <li class="relative">
+                  <a href="/extensions" class="flex items-center gap-5 py-1 pr-3 text-[15px]  transition text-base-content/80 hover:text-base-content/100 {% if '/extensions' in page.url %} !text-primary/90 font-semibold {% endif %}">
+                    <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><rect x="0" y="0" width="256" height="256" fill="none" stroke="none" /><path fill="currentColor" d="M200 154a29.8 29.8 0 0 0-19.5 7.2l-25.6-19.9A29.6 29.6 0 0 0 158 128c0-1.2-.1-2.4-.2-3.6L174 119a30 30 0 1 0-4-15c0 1.2.1 2.4.2 3.6L154 113a30 30 0 0 0-26-15a28.1 28.1 0 0 0-6.5.7l-8.1-18.3A30 30 0 1 0 96 86a28.1 28.1 0 0 0 6.5-.7l8.1 18.3A29.9 29.9 0 0 0 98 128a29.3 29.3 0 0 0 4.1 15L74 168a29.7 29.7 0 0 0-18-6a30 30 0 1 0 30 30a29.3 29.3 0 0 0-4.1-15l28.1-25a30 30 0 0 0 37.5-1.2l25.6 19.9A29.6 29.6 0 0 0 170 184a30 30 0 1 0 30-30Zm0-68a18 18 0 1 1-18 18a18.1 18.1 0 0 1 18-18ZM78 56a18 18 0 1 1 18 18a18.1 18.1 0 0 1-18-18ZM56 210a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Zm72-64a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Zm72 56a18 18 0 1 1 18-18a18.1 18.1 0 0 1-18 18Z"/></svg>
+                    <span class="truncate">Extensions / add-ons</span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+
+
           <li class="relative pt-4 mt-4 border-t border-base-content/10">
             <h2 class="text-xs font-semibold uppercase text-base-content/60">Topics</h2>
             <div class="relative mt-3">
@@ -208,6 +232,20 @@ templateClass: tmpl-pages
           <div class="text-sm tracking-wider">Menu</div>
         </div>
       </div>
+
+      {% if title or description %}
+        <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-3xl lg:mx-0 lg:max-w-none">
+    <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+      {% if title %}
+        <div class="text-[46px] mt-4 font-extrabold text-center text-neutral-content">{{ title }}</div>
+        {% endif %}
+      {% if description %}
+        <div class="text-[24px] mt-5 text-center text-neutral-content">{{ description }}</div>
+        {% endif %}
+    </div>
+  </div>
+        {% endif %}
+
       <div class="max-w-screen-xl p-8 mx-auto lg:px-12">
         {{ content | safe }}
       </div>

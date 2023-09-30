@@ -9,7 +9,7 @@ author: Bonfire Builders
 
 ---
 
-[Bonfire:UI:Social](/extensions/ui_social.html) is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.
+[Bonfire:UI:Social](/extension/ui_social.html) is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.
 
 The UI:Social extension is meant to be used by extensions like [Bonfire:Social](https://github.com/bonfire-networks/bonfire_social) and [Bonfire:Me](https://github.com/bonfire-networks/bonfire_me), which both provide logic for the UI to work with, and define the routes and top-level views which in turn embed UI:Social components.
 

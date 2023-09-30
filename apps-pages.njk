@@ -4,19 +4,25 @@ pagination:
     data: apps
     size: 1
     alias: apps
-permalink: "apps/{{apps.slug}}"
+permalink: "app/{{apps.flavour}}"
 ---
 
-<a class="flex place-content-center lg:place-content-start" href="/use-bonfire">
+<div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-xl lg:mx-auto">
+<a class="flex place-content-center lg:place-content-start" href="/apps">
   <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
     </svg>
-    <span class="text-sm text-blueGray-300 font-medium">Back to apps</span>
+    <span class="text-sm text-blueGray-300 font-medium">Back to flavours</span>
   </div>
 </a>
-<div class="lg:flex lg:space-x-8">
+
+{% include ["_includes/flavours/", apps.flavour, ".njk"] | join %}
+
+<div class="lg:flex mt-2 lg:space-x-8">
+  {% if apps.icon %}
   <div style="background-image: url({{apps.icon}})" class="w-32 h-32 mx-auto lg:m-0 bg-contain bg-no-repeat bg-center rounded-3xl"></div>
+  {% endif %}
     <div class="flex-1 text-center lg:text-left mt-4 lg:mt-0">
         <h1 class="text-blueGray-200 text-3xl font-bold">{{apps.name}}</h1>
         <p class="text-blueGray-300 w-full mx-auto lg:m-0 prose  prose-md max-w-prose mt-2">{{apps.description}}</p>
@@ -31,6 +37,8 @@ permalink: "apps/{{apps.slug}}"
         
     </div>
 </div>
+
+
 <div class="border-t border-blueGray-600 mt-12 py-5 sm:p-0">
     <dl class="sm:divide-y sm:divide-blueGray-600">
 
@@ -73,7 +81,7 @@ permalink: "apps/{{apps.slug}}"
         </dt>
         <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
         {% for item in apps.extensions %}
-          <a class="underline font-bold mr-2" href="{{item.link}}">{{item.name}}</a>
+          <a class="underline font-bold mr-2" href="/extension/{{item.repo_name}}">{{item.name}}</a>
         {% endfor %}
         </dd>
       </div>
@@ -117,4 +125,5 @@ permalink: "apps/{{apps.slug}}"
         </dd>
       </div>
     </dl>
+  </div>
   </div>

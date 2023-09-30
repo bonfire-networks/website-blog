@@ -37,17 +37,17 @@ Social networking plays a critical role in our lives, and everyone should be abl
 
 ## How we're building it
 
-A Bonfire [app (or flavour)](/apps/) is basically a set of configurations that describes how a bunch of [extensions](/extensions/) should plug and play together.
+A Bonfire [app (or flavour)](/apps/) is basically a set of configurations that describes how a bunch of [extensions](/extensions) should plug and play together.
 
 Extensions can include new sections in an existing page (e.g. a widget that shows one's most used hashtags on a user's profile page), whole new pages (e.g. a map page that shows me where my friends are located). They can use existing data from any extension (aggregating, transforming and filtering it to create meaningful and new information for the user), or new sets of information stored in the database.
 
 Imagine installing an identity extension that enables every user to define how to represent themselves online with fined-grained controls. 
 
-Or installing the [ValueFlows](/extensions/valueFlows.html) extension, which can give the instance economic superpowers: users can now record the production or transfer of any kind of physical or non-tangible resource, keep track of inventories, assign tasks, record work done, and reward the community based on a set of parameters previously defined. 
+Or installing the [ValueFlows](/extension/valueflows.html) extension, which can give the instance economic superpowers: users can now record the production or transfer of any kind of physical or non-tangible resource, keep track of inventories, assign tasks, record work done, and reward the community based on a set of parameters previously defined. 
 
 Each community may need the ValueFlows extension for very different purposes. One instance may only need a [shared todo list](/posts/bonfire_coordination/), and the whole economic network idea might be overwhelming for them. A mutual aid network on the other hand, may be looking to define and keep track of different types of economic resources and activities within their community, and would need a more detailed dashboard and set of pages, widgets and relationships between the data produced to deal with such level of complexity. 
 
-That's how modularity really makes a difference: the ValueFlows extension does not impose a user experience or user interface. Based on each specific use case, users can pick (or create) a compatible UI extension that better fits their exact needs. Using the ValueFlows example, it means that so far we have more than 4 extensions: with data schemas and application logic in [bonfire_valueflows](/extensions/valueFlows.html), reusable/customisable UI components in [bonfire_ui_valueflows](/extensions/ui_valueflows.html), todo/coordination UI in [bonfire_ui_coordination](/extensions/ui_coordination.html), mutual aid UI in [bonfire_breadpub](/extensions/breadpub.html)...
+That's how modularity really makes a difference: the ValueFlows extension does not impose a user experience or user interface. Based on each specific use case, users can pick (or create) a compatible UI extension that better fits their exact needs. Using the ValueFlows example, it means that so far we have more than 4 extensions: with data schemas and application logic in [bonfire_valueflows](/extension/valueflows.html), reusable/customisable UI components in [bonfire_ui_valueflows](/extension/ui_valueflows.html), todo/coordination UI in [bonfire_ui_coordination](/extension/ui_coordination.html), mutual aid UI in [bonfire_breadpub](/extension/breadpub.html)...
 
 ## Federation will be a mess
 
@@ -59,6 +59,6 @@ Imagine an extension for book lovers, used to catalog, recommend, and review boo
 
 Other instances may not have that extension installed, so they will have to decide how to handle unknown activities, if and how display them (this is because on the "fediverse", users from different instances running different software can all follow each other).
 
-An instance (or individual user) could choose to display the unknown activities, using a preview widget contributed by the authors of the book lovers extension (and added to a shared Bonfire extension used by all instance, such as [bonfire_social](/extensions/social.html)), or deal with unknown activities using a default component which shows only the main information (such as a title, summary and link) formatted in a standard way, or just not displaying extra activities in feeds.
+An instance (or individual user) could choose to display the unknown activities, using a preview widget contributed by the authors of the book lovers extension (and added to a shared Bonfire extension used by all instance, such as [bonfire_social](/extension/social.html)), or deal with unknown activities using a default component which shows only the main information (such as a title, summary and link) formatted in a standard way, or just not displaying extra activities in feeds.
 
 That's quite a new usability challenge, which seems inevitable when dealing with the fediverse and open networks in general, and one we are embracing as a way of welcoming and encouraging diversity and plurality - rather than hiding them away for the sake of "clean UX".
