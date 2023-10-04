@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html  data-theme="bonfire" class="w-full bg-base-200 antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,17 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
     <div
       class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-200 text-base-content': atTop }"
       @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     
 
     <div>
-      <header 
-        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+      <header class="relative z-30 px-4 lg:px-8 mx-auto navbar">
         <div class="navbar-start">
           <div class="flex items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -37,70 +36,89 @@
             </a>
           </div>
 
-          <div class="hidden lg:flex ml-10">
-          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
-            <li class="dropdown">
-              <label tabindex="0" class="">
-                <div class="flex items-center gap-2">
-                  <span>Developers</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              </label>
-              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
-                      <div class="font-bold">Documentation</div>
-                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
-                    <div class="font-bold">Roadmap</div>
-                    <div class="text-sm text-base-content/70">See what's coming next</div>
-                  </a>
-                </li>
-                
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                    <div class="font-bold">Get the code</div>
-                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-            <a href="/faq" class=" ">
-              <span class="text-sm font-regular">FAQs</span>
-            </a>
-            </li>
-            <li>
-            <a href="/blog" class=" ">
-              <span class="text-sm font-regular">Blog</span>
-            </a>
-            </li>
-            <li>
-              <a href="/community" class=" ">
-                <span class="text-sm font-regular">Community</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        
 
 
 
         </div>
         
         <div class="navbar-end">
+            <div class="hidden xl:flex mr-4">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            
+            
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Community</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/community">
+                      <div class="font-bold">Join</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm text-base-content/70">Most asked questions</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+          </ul>
+        </div>
           <a href="/start/" >
-            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get started</span>
           </a>
 
-          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
             <a href="/start/" >
-              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
             </a>
               <span class="sr-only">Open main menu</span>
-              <label class="btn btn-circle swap swap-rotate">
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
   
               <!-- this hidden checkbox controls the state -->
               <input type="checkbox" />
@@ -122,7 +140,7 @@
     </div>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
-      class="lg:hidden" 
+      class="xl:hidden" 
       id="mobile-menu" 
       x-show="open" 
       style="display: none;">
@@ -135,6 +153,11 @@
           <li>
             <a href="/roadmap" class=" ">
             <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          <li>
+            <a href="/features" class=" ">
+            <span class="text-base font-regular">Features</span>
           </a>
           </li>
           
@@ -167,39 +190,31 @@
 
       
 
-<div class="max-w-screen-lg px-6 mx-auto mt-0 mb-12 lg:px-0">
-  <div class="max-w-screen-md py-8 pb-8 mx-auto">
-    <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
-      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </div>
-        <span class="text-sm font-medium text-blueGray-300">Back to Newsroom</span>
-    </a>
+<div class="max-w-screen-sm px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    
     <div class="">
-       <div class="my-6 mt-8 text-base text-base-content/70">
-          <span>Published 18 Feb 2022 in<a href="/tags/product/">
-            <span class="link capitalize">
-              product
-            </span>
-            </a></span>
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/product/">
+        <span class="badge capitalize badge-lg badge-outline">
+          product
+        </span>
+        </a>
+      </div>
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Some interesting findings from user research for the Zappa project (so far!)</h1>
+     <div class="mt-4 mb-8 text-base text-center text-base-content/80">
+        <span>Published 18 Feb 2022</span>
       </div>
      
 
-      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-2xl lg:text-4xl mt-6 font-bold text-left">Some interesting findings from user research for the Zappa project (so far!)</h1>
-     
-     
-
       
-        <img src="/img/2.png" alt="post image" class="w-full max-h-[400px] mt-6 rounded-lg object-fit object-cover" />
+        <img src="/img/2.png" alt="post image" class="w-full max-h-[400px] mt-6 rounded-box object-fit object-cover" />
       
- 
+        
     </div>
   </div>
 
-  <article class="max-w-screen-md mx-auto mt-0">
-    <div class="max-w-screen-md mx-auto mt-0 prose prose-light">
+  <article class="max-w-screen-md mx-auto mt-12 prose prose-lg">
     <div class="my-3 alert alert-info">
 <div>This post was originally published on Doug Belshaw's <a class="mx-2" href="https://dougbelshaw.com/blog/2022/02/18/user-research-zappa/" target="blank"> Open Thinkering </a> blog</div></div>
 <p>One of the things about working openly is, fairly obviously, sharing your work as you go. This can be difficult for many reasons, not least because of the human tendency toward narrative, to completed stories with start, middle, and end.</p>
@@ -230,7 +245,6 @@
 <p>We’ve still got some people to talk with next week, but we are always looking to ensure a diverse range of user research participants with a decent geographical spread. As such, we could do with some help identifying people <strong>located in Asia</strong> (yes, the whole continent!) who might be interested in talking about their experiences, as well as people from <strong>minority and historically under-represented backgrounds</strong> in tech.</p>
 <p>In addition, we could also do with talking with <strong>people who have suffered from mis/disinformation</strong>, any <strong>admins or moderators of federated social network instances</strong>, and <strong>UX designers who have a particular interest in mis/disinformation</strong>. You can get in touch via the comments below or at: <a href="mailto:hello@dynamicskillset.com">hello@dynamicskillset.com</a></p>
 
-    </div>
   </article>
 
 
@@ -283,12 +297,18 @@
 
 
 <div class="border-base-content/10 border-t">
-  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
-  <div>
-    <div class="items-center flex-1 grid-flow-col">
+  <footer class="max-w-screen-xl px-4 lg:mx-auto  py-12  footer text-base-content">
+  <div class="flex items-start gap-4 flex-row lg:flex-col">
+    <div class=" flex-1 ">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
     </div> 
-    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+    <div>
+      <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+      <div class="flex items-center gap-3">
+        <svg class="w-4 h-4 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6m-2 0l-8 5l-8-5h16m0 12H4V8l8 5l8-5v10Z"/></svg>  
+        <span>team@bonfire.cafe</span>
+      </div>
+    </div>
   </div> 
   <div>
     <span class="footer-title">Developers</span> 

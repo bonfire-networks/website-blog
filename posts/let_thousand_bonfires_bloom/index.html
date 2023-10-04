@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html  data-theme="bonfire" class="w-full bg-base-200 antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,17 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
     <div
       class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-200 text-base-content': atTop }"
       @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     
 
     <div>
-      <header 
-        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+      <header class="relative z-30 px-4 lg:px-8 mx-auto navbar">
         <div class="navbar-start">
           <div class="flex items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -37,70 +36,89 @@
             </a>
           </div>
 
-          <div class="hidden lg:flex ml-10">
-          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
-            <li class="dropdown">
-              <label tabindex="0" class="">
-                <div class="flex items-center gap-2">
-                  <span>Developers</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              </label>
-              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
-                      <div class="font-bold">Documentation</div>
-                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
-                    <div class="font-bold">Roadmap</div>
-                    <div class="text-sm text-base-content/70">See what's coming next</div>
-                  </a>
-                </li>
-                
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                    <div class="font-bold">Get the code</div>
-                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-            <a href="/faq" class=" ">
-              <span class="text-sm font-regular">FAQs</span>
-            </a>
-            </li>
-            <li>
-            <a href="/blog" class=" ">
-              <span class="text-sm font-regular">Blog</span>
-            </a>
-            </li>
-            <li>
-              <a href="/community" class=" ">
-                <span class="text-sm font-regular">Community</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        
 
 
 
         </div>
         
         <div class="navbar-end">
+            <div class="hidden xl:flex mr-4">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            
+            
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Community</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/community">
+                      <div class="font-bold">Join</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm text-base-content/70">Most asked questions</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+          </ul>
+        </div>
           <a href="/start/" >
-            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get started</span>
           </a>
 
-          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
             <a href="/start/" >
-              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
             </a>
               <span class="sr-only">Open main menu</span>
-              <label class="btn btn-circle swap swap-rotate">
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
   
               <!-- this hidden checkbox controls the state -->
               <input type="checkbox" />
@@ -122,7 +140,7 @@
     </div>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
-      class="lg:hidden" 
+      class="xl:hidden" 
       id="mobile-menu" 
       x-show="open" 
       style="display: none;">
@@ -135,6 +153,11 @@
           <li>
             <a href="/roadmap" class=" ">
             <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          <li>
+            <a href="/features" class=" ">
+            <span class="text-base font-regular">Features</span>
           </a>
           </li>
           
@@ -167,39 +190,31 @@
 
       
 
-<div class="max-w-screen-lg px-6 mx-auto mt-0 mb-12 lg:px-0">
-  <div class="max-w-screen-md py-8 pb-8 mx-auto">
-    <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
-      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </div>
-        <span class="text-sm font-medium text-blueGray-300">Back to Newsroom</span>
-    </a>
+<div class="max-w-screen-sm px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    
     <div class="">
-       <div class="my-6 mt-8 text-base text-base-content/70">
-          <span>Published 20 Jul 2021 in<a href="/tags/product/">
-            <span class="link capitalize">
-              product
-            </span>
-            </a></span>
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/product/">
+        <span class="badge capitalize badge-lg badge-outline">
+          product
+        </span>
+        </a>
+      </div>
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Let a thousand bonfires bloom</h1>
+     <div class="mt-4 mb-8 text-base text-center text-base-content/80">
+        <span>Published 20 Jul 2021</span>
       </div>
      
 
-      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-2xl lg:text-4xl mt-6 font-bold text-left">Let a thousand bonfires bloom</h1>
-     
-     
-
       
-        <img src="/img/flowers.png" alt="post image" class="w-full max-h-[400px] mt-6 rounded-lg object-fit object-cover" />
+        <img src="/img/flowers.png" alt="post image" class="w-full max-h-[400px] mt-6 rounded-box object-fit object-cover" />
       
- 
+        
     </div>
   </div>
 
-  <article class="max-w-screen-md mx-auto mt-0">
-    <div class="max-w-screen-md mx-auto mt-0 prose prose-light">
+  <article class="max-w-screen-md mx-auto mt-12 prose prose-lg">
     <h3 id="tl%3Bdr">tl;dr <a class="direct-link" href="#tl%3Bdr">#</a></h3>
 <p>In March 2021, the Bonfire project was awarded a <a href="https://nlnet.nl/discovery/">&quot;Next Generation Search &amp; Discovery&quot; grant</a> from NLNet Foundation, and since then the team has been working on a series of Bonfire extensions to help create the next generation of federated software.</p>
 <p>This is the second of a series of posts discussing the development process, work coordination strategies and the challenges we are currently facing.</p>
@@ -218,21 +233,20 @@
 <p>Of course the Bonfire team have opinions about all of this. But we think our opinions are valid mostly for ourselves, and we do not want to impose our views upon others. There is a diversity of valid answers worth exploring.</p>
 <p>Social networking plays a critical role in our lives, and everyone should be able to decide how to define their online identities and how to interact with others, without an app imposing the boundaries of their experience in one way or another.</p>
 <h2 id="how-we're-building-it">How we're building it <a class="direct-link" href="#how-we're-building-it">#</a></h2>
-<p>A Bonfire <a href="/apps/">app (or flavour)</a> is basically a set of configurations that describes how a bunch of <a href="/extensions/">extensions</a> should plug and play together.</p>
+<p>A Bonfire <a href="/apps/">app (or flavour)</a> is basically a set of configurations that describes how a bunch of <a href="/extensions">extensions</a> should plug and play together.</p>
 <p>Extensions can include new sections in an existing page (e.g. a widget that shows one's most used hashtags on a user's profile page), whole new pages (e.g. a map page that shows me where my friends are located). They can use existing data from any extension (aggregating, transforming and filtering it to create meaningful and new information for the user), or new sets of information stored in the database.</p>
 <p>Imagine installing an identity extension that enables every user to define how to represent themselves online with fined-grained controls.</p>
-<p>Or installing the <a href="/extensions/valueFlows.html">ValueFlows</a> extension, which can give the instance economic superpowers: users can now record the production or transfer of any kind of physical or non-tangible resource, keep track of inventories, assign tasks, record work done, and reward the community based on a set of parameters previously defined.</p>
+<p>Or installing the <a href="/extension/valueflows.html">ValueFlows</a> extension, which can give the instance economic superpowers: users can now record the production or transfer of any kind of physical or non-tangible resource, keep track of inventories, assign tasks, record work done, and reward the community based on a set of parameters previously defined.</p>
 <p>Each community may need the ValueFlows extension for very different purposes. One instance may only need a <a href="/posts/bonfire_coordination/">shared todo list</a>, and the whole economic network idea might be overwhelming for them. A mutual aid network on the other hand, may be looking to define and keep track of different types of economic resources and activities within their community, and would need a more detailed dashboard and set of pages, widgets and relationships between the data produced to deal with such level of complexity.</p>
-<p>That's how modularity really makes a difference: the ValueFlows extension does not impose a user experience or user interface. Based on each specific use case, users can pick (or create) a compatible UI extension that better fits their exact needs. Using the ValueFlows example, it means that so far we have more than 4 extensions: with data schemas and application logic in <a href="/extensions/valueFlows.html">bonfire_valueflows</a>, reusable/customisable UI components in <a href="/extensions/ui_valueflows.html">bonfire_ui_valueflows</a>, todo/coordination UI in <a href="/extensions/ui_coordination.html">bonfire_ui_coordination</a>, mutual aid UI in <a href="/extensions/breadpub.html">bonfire_breadpub</a>...</p>
+<p>That's how modularity really makes a difference: the ValueFlows extension does not impose a user experience or user interface. Based on each specific use case, users can pick (or create) a compatible UI extension that better fits their exact needs. Using the ValueFlows example, it means that so far we have more than 4 extensions: with data schemas and application logic in <a href="/extension/valueflows.html">bonfire_valueflows</a>, reusable/customisable UI components in <a href="/extension/ui_valueflows.html">bonfire_ui_valueflows</a>, todo/coordination UI in <a href="/extension/ui_coordination.html">bonfire_ui_coordination</a>, mutual aid UI in <a href="/extension/breadpub.html">bonfire_breadpub</a>...</p>
 <h2 id="federation-will-be-a-mess">Federation will be a mess <a class="direct-link" href="#federation-will-be-a-mess">#</a></h2>
 <p>Yes, and it will be fun!</p>
 <p>Each instance will likely have to deal with different and sometime unknown data types that will come through federation from users of other instances.</p>
 <p>Imagine an extension for book lovers, used to catalog, recommend, and review books. It will likely have a specific way to represent such activities in feeds with a set of actions to perform over them (add to reading list, review, reply...).</p>
 <p>Other instances may not have that extension installed, so they will have to decide how to handle unknown activities, if and how display them (this is because on the &quot;fediverse&quot;, users from different instances running different software can all follow each other).</p>
-<p>An instance (or individual user) could choose to display the unknown activities, using a preview widget contributed by the authors of the book lovers extension (and added to a shared Bonfire extension used by all instance, such as <a href="/extensions/social.html">bonfire_social</a>), or deal with unknown activities using a default component which shows only the main information (such as a title, summary and link) formatted in a standard way, or just not displaying extra activities in feeds.</p>
+<p>An instance (or individual user) could choose to display the unknown activities, using a preview widget contributed by the authors of the book lovers extension (and added to a shared Bonfire extension used by all instance, such as <a href="/extension/social.html">bonfire_social</a>), or deal with unknown activities using a default component which shows only the main information (such as a title, summary and link) formatted in a standard way, or just not displaying extra activities in feeds.</p>
 <p>That's quite a new usability challenge, which seems inevitable when dealing with the fediverse and open networks in general, and one we are embracing as a way of welcoming and encouraging diversity and plurality - rather than hiding them away for the sake of &quot;clean UX&quot;.</p>
 
-    </div>
   </article>
 
 
@@ -285,12 +299,18 @@
 
 
 <div class="border-base-content/10 border-t">
-  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
-  <div>
-    <div class="items-center flex-1 grid-flow-col">
+  <footer class="max-w-screen-xl px-4 lg:mx-auto  py-12  footer text-base-content">
+  <div class="flex items-start gap-4 flex-row lg:flex-col">
+    <div class=" flex-1 ">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
     </div> 
-    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+    <div>
+      <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+      <div class="flex items-center gap-3">
+        <svg class="w-4 h-4 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6m-2 0l-8 5l-8-5h16m0 12H4V8l8 5l8-5v10Z"/></svg>  
+        <span>team@bonfire.cafe</span>
+      </div>
+    </div>
   </div> 
   <div>
     <span class="footer-title">Developers</span> 

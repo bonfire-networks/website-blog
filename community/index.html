@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html  data-theme="bonfire" class="w-full bg-base-200 antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,17 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-base-300 antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
     <div
       class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-200 text-base-content': atTop }"
       @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     
 
     <div>
-      <header 
-        class="relative z-30 px-2 md:!px-0 max-w-screen-xl mx-auto navbar">
+      <header class="relative z-30 px-4 lg:px-8 mx-auto navbar">
         <div class="navbar-start">
           <div class="flex items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -37,70 +36,89 @@
             </a>
           </div>
 
-          <div class="hidden lg:flex ml-10">
-          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
-            <li class="dropdown">
-              <label tabindex="0" class="">
-                <div class="flex items-center gap-2">
-                  <span>Developers</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              </label>
-              <ul tabindex="0" class="dropdown-content !ml-0 !pl-0 menu p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="/docs">
-                      <div class="font-bold">Documentation</div>
-                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="/roadmap">
-                    <div class="font-bold">Roadmap</div>
-                    <div class="text-sm text-base-content/70">See what's coming next</div>
-                  </a>
-                </li>
-                
-                <li>
-                  <a class="flex flex-col flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                    <div class="font-bold">Get the code</div>
-                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-            <a href="/faq" class=" ">
-              <span class="text-sm font-regular">FAQs</span>
-            </a>
-            </li>
-            <li>
-            <a href="/blog" class=" ">
-              <span class="text-sm font-regular">Blog</span>
-            </a>
-            </li>
-            <li>
-              <a href="/community" class="underline decoration-primary decoration-2 text-primary  underline-offset-8 ">
-                <span class="text-sm font-regular">Community</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        
 
 
 
         </div>
         
         <div class="navbar-end">
+            <div class="hidden xl:flex mr-4">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            
+            
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Community</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/community">
+                      <div class="font-bold">Join</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm text-base-content/70">Most asked questions</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+          </ul>
+        </div>
           <a href="/start/" >
-            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary lg:flex">Get started</span>
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get started</span>
           </a>
 
-          <div class="inset-y-0 right-0 flex gap-3 items-center lg:hidden">
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
             <a href="/start/" >
-              <span class="normal-case rounded btn btn-sm btn-primary lg:flex">Get started</span>
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
             </a>
               <span class="sr-only">Open main menu</span>
-              <label class="btn btn-circle swap swap-rotate">
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
   
               <!-- this hidden checkbox controls the state -->
               <input type="checkbox" />
@@ -122,7 +140,7 @@
     </div>
     <div 
       x-description="Mobile menu, show/hide based on menu state." 
-      class="lg:hidden" 
+      class="xl:hidden" 
       id="mobile-menu" 
       x-show="open" 
       style="display: none;">
@@ -135,6 +153,11 @@
           <li>
             <a href="/roadmap" class=" ">
             <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          <li>
+            <a href="/features" class=" ">
+            <span class="text-base font-regular">Features</span>
           </a>
           </li>
           
@@ -168,14 +191,12 @@
       
 
 
-    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-xl lg:mx-auto">
-      <div class="relative flex flex-col items-center grid-cols-1 gap-4 text-center place-content-center">
-        <div class="text-[32px] font-extrabold leading-[1.3] tracking-wider text-base-content">Community</div>
-          <div class="prose prose-sm mx-auto text-center">Bonfire is an open source software built by a small team. Any contribution is valuable to push the development further. If you don't see how you can help or have something else in mind, don't hesitate to get in touch with us.</div>
-        </div>
+      <div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-xl lg:mx-auto">
+        <h1 class="mt-20 mb-4 text-center text-3xl font-extrabold sm:text-4xl">Community</h1>
+        <h2 class="text-2xl max-w-screen-md mx-auto text-center text-base-content/50">Bonfire is an open source software built by a small team. Any contribution is valuable to push the development further. If you don't see how you can help or have something else in mind, don't hesitate to get in touch with us.</h2>
         <div class="flex items-center place-content-center gap-3 mt-8">
-          <a href="https://indieweb.social/@bonfire" target="_blank" class="normal-case rounded btn btn-outline btn-sm">Follow</a>
-          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="normal-case rounded btn btn-sm">Join our Matrix chat</a>
+          <a href="https://indieweb.social/@bonfire" target="_blank" class="normal-case rounded-full !border !border-base-content/30 btn btn-outline ">Follow</a>
+          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="normal-case rounded-full btn-ghost btn ">Join our Matrix chat</a>
         </div>
       </div>
     </div>
@@ -190,7 +211,8 @@
                 <div class="text-[32px] font-bold tracking-wider">Participate</div>
             </div>
             <ul class="lg:ml-[74px] mt-2 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+              <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+                <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Play</b>
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Create a account on our test instance and report any feedback and bugs you encounter. We may reset the data from time to time, so do not rely on it for main account.</span>
@@ -199,8 +221,10 @@
                         <span>Sign up on the campground</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
-                </li>
-                <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                </div>
+              </li>
+              <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+                <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="font-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Code</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">There are different ways to start contributing to the codebase; Check out the docs to setup a local environment, or look at a good first issue.</span>
@@ -209,9 +233,11 @@
                         <span>Good first issues</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                  </div>
                 </li>
                  
-                 <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                 <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+                  <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Discuss</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Have an idea about a new feature or a better user experience for an existing one? We're all ears, we're currently using GitHub to collect all the suggestions</span>
@@ -220,8 +246,10 @@
                         <span>Open an issue</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
-                <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Translate</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">We are looking for people to help translate the project into different languages on Transifex.</span>
@@ -230,8 +258,10 @@
                         <span>Go to transifex</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
-                 <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Share</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Promote the project on social media, mention @bonfire@indieweb.social or link to the website - trusted word of mouths is invaluable.</span>
@@ -240,10 +270,12 @@
                         <span>Find us on the fediverse</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
+                
                  
-                 
-                <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                 <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Organize</b>
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">We're always happy to engage with communities, coops, collectives and groups to discuss how bonfire can fit as their digital space.</span>
@@ -252,6 +284,7 @@
                         <span>Let's chat</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
             </ul>
         </div>
@@ -264,7 +297,8 @@
                 <div class="text-[32px] font-bold tracking-wider">Stay up to date</div>
             </div>
             <ul class="lg:ml-[74px] mt-2 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="font-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Follow</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Follow us on the fediverse, where we try to communicate any news and updates and engage in discussions (when we can)</span>
@@ -273,8 +307,10 @@
                         <span>Follow on the fediverse</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
-                 <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Read</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">From time to time, we publish blogposts that span from development updates to events participation.</span>
@@ -283,8 +319,10 @@
                         <span>Read the blog</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
-                 <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Subscribe</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Every 2 week (maximum) we try to send a short newsletter that summarizes the latest Bonfire news.</span>
@@ -293,8 +331,10 @@
                         <span>Subscribe to the newsletter</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
-                 <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Talk</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Want to engage more directly with the team and the community? Join our chat for more day to day discussions and updates.</span>
@@ -303,6 +343,7 @@
                         <span>Join matrix chat</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
                  
             </ul>
@@ -316,7 +357,8 @@
                 <div class="text-[32px] font-bold tracking-wider">Support</div>
             </div>
             <ul class="lg:ml-[74px] mt-2 grid grid-cols-1">
-                <li class="flex items-start flex-col flex-1 w-full rounded shadow bg-base-100 p-6  hover:shadow-2xl">
+                <li class="flex-1 rounded-box bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-200 p-8">
                     <b class="font-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Donate</b> 
                     <div class="flex items-center mt-3 gap-3">
                         <span class="text-base-content/70 text-base">Bonfire is supported by folks like you who want to invest in safe, reusable and long lasting federated tools to rely on.</span>
@@ -325,6 +367,7 @@
                         <span>Contribute on Open Collective</span>
                         <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
                     </a>
+                </div>
                 </li>
                  
             </ul>
@@ -336,12 +379,18 @@
 
 
 <div class="border-base-content/10 border-t">
-  <footer class="max-w-screen-xl mx-auto  py-12  footer  text-base-content">
-  <div>
-    <div class="items-center flex-1 grid-flow-col">
+  <footer class="max-w-screen-xl px-4 lg:mx-auto  py-12  footer text-base-content">
+  <div class="flex items-start gap-4 flex-row lg:flex-col">
+    <div class=" flex-1 ">
       <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
     </div> 
-    <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+    <div>
+      <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
+      <div class="flex items-center gap-3">
+        <svg class="w-4 h-4 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6m-2 0l-8 5l-8-5h16m0 12H4V8l8 5l8-5v10Z"/></svg>  
+        <span>team@bonfire.cafe</span>
+      </div>
+    </div>
   </div> 
   <div>
     <span class="footer-title">Developers</span> 
