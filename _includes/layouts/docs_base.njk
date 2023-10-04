@@ -1,0 +1,222 @@
+<!doctype html>
+<html  data-theme="bonfire" class="w-full bg-base-200 antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="{{ '/css/style_v2.css' | url }}">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
+  <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-200 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    {# <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
+      <div class="w-[108rem] flex-none flex justify-end">
+          <source srcset="/img/bgover.png" type="image/avif">
+          <img src="/img/bgover.png" alt="" class="w-[90rem] flex-none max-w-none block" decoding="async">
+        </picture>
+      </div>
+    </div> #}
+
+    <div>
+      <header class="relative z-30 px-4 lg:px-8 mx-auto navbar">
+        <div class="navbar-start">
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              {# <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary">{{ latest_version | safe }}</div> #}
+              </span>
+            </a>
+          </div>
+
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+            <div class="hidden xl:flex mr-4">
+          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Developers</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/roadmap">
+                    <div class="font-bold">Roadmap</div>
+                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                  </a>
+                </li>
+                {# <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="text-sm text-base-content/70">See the latest updates and improvements</div>
+                  </a></li> #}
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            {# <li>
+            <a href="/features" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/features' in page.url }} ">
+              <span class="text-sm font-regular">Features</span>
+            </a>
+            </li> #}
+            {# <li>
+            <a href="/faq" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/faq' in page.url }} ">
+              <span class="text-sm font-regular">FAQs</span>
+            </a>
+            </li> #}
+            
+            <li class="dropdown dropdown-end">
+              <label tabindex="0" class="">
+                <div class="flex items-center gap-2">
+                  <span>Community</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              </label>
+              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/community">
+                      <div class="font-bold">Join</div>
+                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm text-base-content/70">Most asked questions</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            {# <li>
+              <a href="/community" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/community' in page.url }} ">
+                <span class="text-sm font-regular">Community</span>
+              </a>
+            </li> #}
+
+            <li>
+            <a href="/blog" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/blog' in page.url }} ">
+              <span class="text-sm font-regular">Blog</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get started</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu">
+          <li>
+            <a href="/docs" class="{{ 'rounded underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/docs' in page.url }} ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+          <li>
+            <a href="/roadmap" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/docs' in page.url }} ">
+            <span class="text-base font-regular">Roadmap</span>
+          </a>
+          </li>
+          <li>
+            <a href="/features" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/features' in page.url }} ">
+            <span class="text-base font-regular">Features</span>
+          </a>
+          </li>
+          {# <li>
+            <a href="/docs/changelog" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/docs' in page.url }} ">
+            <span class="text-base font-regular">Changelog</span>
+          </a>
+          </li> #}
+          
+          <li>
+            <a href="/faq" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/faq' in page.url }} ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/blog' in page.url }} ">
+            <span class="text-base font-regular">Blog</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/contribute' in page.url }} ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/contribute' in page.url }} ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+      {{ content | safe }}
+
+
+    <!-- Current page: {{ page.url | url }} -->
+  </body>
+</html>
