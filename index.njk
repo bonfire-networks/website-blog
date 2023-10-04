@@ -6,13 +6,17 @@ eleventyNavigation:
 ---
 
 {% include "hero.njk" %}
-{% include "general_intro.njk" %}
+{# {% include "general_intro.njk" %} #}
+<div class="max-w-screen-xl mx-4 lg:mx-auto">
+  {% include "_includes/flavours/classic_features.njk" %}
+</div>
+{% include "testimonials.njk" %}
 
 <div class="">
     <div class="max-w-screen-xl mx-4 lg:mx-auto mt-24">
-      <div class="flex pt-6 mb-24 lg:items-center flex-col lg:flex-row lg:justify-between">
+      <div class="flex pt-6 mb-24 items-center flex-col">
         <div class="text-4xl  font-semibold tracking-wider">Latest from the blog</div>
-        <a href="/blog" class="btn mt-4 lg:mt-0 btn-outline !border !border-base-content/30 rounded-full normal-case">View all articles</a>
+        <a href="/blog" class="btn mt-4 btn-outline !border !border-base-content/30 rounded-full normal-case">View all articles</a>
       </div>
       {% set postslist = collections.posts  %}
       {% set postslistCounter = collections.posts | length %}
@@ -55,7 +59,6 @@ eleventyNavigation:
     </div>
   </div>
 
-{% include "testimonials.njk" %}
 {# {% include "plugins.njk" %} #}
 {# {% include "developers.njk" %}  #}
 {# {% include "testimonials.njk" %}
