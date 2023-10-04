@@ -598,7 +598,7 @@ html {
   --rounded-btn: 1.9rem;
 }
 
-.-translate-x-1\/2, .translate-x-1\/2, .translate-y-16, .-rotate-180, .rotate-0, .skew-y-2, .transform, .lg\:translate-y-16 {
+.-translate-x-1\/2, .translate-x-1\/2, .-rotate-180, .rotate-0, .skew-y-2, .transform, .lg\:translate-y-16 {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -608,7 +608,7 @@ html {
   --tw-scale-y: 1;
 }
 
-.from-\[\#7B4397\], .from-amber-200, .from-base-200, .from-base-content\/0, .from-base-content\/5, .from-pink-600, .from-primary\/20, .from-primary\/5, .from-sky-900, .from-primary\/10, .via-base-content\/70, .via-violet-600, .to-\[\#DC2430\], .to-base-content, .to-base-content\/0, .to-base-content\/40, .to-indigo-600, .to-primary\/0, .to-primary\/40, .to-sky-900, .to-white\/70 {
+.from-\[\#7B4397\], .from-amber-200, .from-base-200, .from-base-content\/0, .from-base-content\/5, .from-pink-600, .from-primary\/10, .from-primary\/5, .from-sky-900, .via-base-content\/70, .via-violet-600, .to-\[\#DC2430\], .to-base-content, .to-base-content\/0, .to-base-content\/40, .to-indigo-600, .to-primary\/0, .to-primary\/40, .to-sky-900, .to-white\/70 {
   --tw-gradient-from-position:  ;
   --tw-gradient-via-position:  ;
   --tw-gradient-to-position:  ;
@@ -6141,16 +6141,16 @@ details.collapse summary::-webkit-details-marker {
   height: 80px;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .max-h-12 {
@@ -6384,11 +6384,6 @@ details.collapse summary::-webkit-details-marker {
 
 .translate-x-1\/2 {
   --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-16 {
-  --tw-translate-y: 4rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -7158,8 +7153,8 @@ details.collapse summary::-webkit-details-marker {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-primary\/20 {
-  --tw-gradient-from: hsl(var(--p) / 0.2) var(--tw-gradient-from-position);
+.from-primary\/10 {
+  --tw-gradient-from: hsl(var(--p) / 0.1) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--p) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -7173,12 +7168,6 @@ details.collapse summary::-webkit-details-marker {
 .from-sky-900 {
   --tw-gradient-from: #0c4a6e var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(12 74 110 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-primary\/10 {
-  --tw-gradient-from: hsl(var(--p) / 0.1) var(--tw-gradient-from-position);
-  --tw-gradient-to: hsl(var(--p) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -7454,6 +7443,10 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 2rem;
 }
 
+.pb-0 {
+  padding-bottom: 0px;
+}
+
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -7508,10 +7501,6 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pb-0 {
-  padding-bottom: 0px;
 }
 
 .text-left {
@@ -8438,16 +8427,16 @@ details.collapse summary::-webkit-details-marker {
     grid-column: span 2 / span 2;
   }
 
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
   .lg\:col-span-5 {
     grid-column: span 5 / span 5;
   }
 
   .lg\:col-span-7 {
     grid-column: span 7 / span 7;
-  }
-
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
   }
 
   .lg\:col-start-2 {
@@ -8698,11 +8687,6 @@ details.collapse summary::-webkit-details-marker {
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .lg\:leading-\[56px\] {
