@@ -32,7 +32,7 @@ layout: layouts/home.njk
       <template x-for="(b, index) in backers" class="flex shrink-0">
         <template x-if="b.profile">
           <a :href="b.website || b.twitter || b.github || b.profile" :title="b.name || b.description" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
-            <img :src="b.image || 'https://unavatar.io/' + (b.profile || b.twitter || b.github || b.createdAt).replace('https://opencollective.com/', '').replace('https://github.com/', '').replace('https://twitter.com/', '') + '?fallback=https://source.boringavatars.com'" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
+            <img :src="b.image || 'https://unavatar.io/' + (b.profile || b.twitter || b.github || b.createdAt).replace('https://opencollective.com/', '').replace('https://github.com/', '').replace('https://twitter.com/', '') + '?fallback=https://source.boringavatars.com'" type="image/png" class="bg-contain  bg-base-100 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
           </a>
         </template>
       </template>
@@ -49,7 +49,7 @@ layout: layouts/home.njk
       <template x-for="(b, index) in contributors" class="flex shrink-0">
         <template x-if="b.html_url">
           <a :href="b.html_url" :title="b.login" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
-            <img :src="b.avatar_url || 'https://unavatar.io/' + b.login" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
+            <img :src="b.avatar_url || 'https://unavatar.io/' + b.login" type="image/png" class="bg-contain  bg-base-100 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
           </a>
         </template>
       </template>
