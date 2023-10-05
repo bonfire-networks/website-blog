@@ -1,5 +1,5 @@
 <!doctype html>
-<html  data-theme="bonfire" class="w-full bg-base-200 antialiased" lang="en">
+<html  data-theme="bonfire" class="w-full bg-base-100 antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-100 antialiased"> 
     <div
       class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-200 text-base-content': atTop }"
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
       @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     
@@ -195,7 +195,7 @@
   <div class="grid grid-cols-1 gap-10 my-10 lg:grid-cols-3">
 
       <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-100 p-4">
           <div class="text-2xl font-bold text-neutral-content text-center">Explore the campground</div>
           <div class="text-lg text-center text-neutral-content/70 mt-4">Join our beta test instance, get a feeling for Bonfire's core functionality and social extensions, and connect with other community participants.</div>
           <div class="flex flex-col mt-10 space-y-3 text-center place-content-center items-center lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6">
@@ -205,7 +205,7 @@
       </div>
 
       <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-100 p-4">
             <div class="text-2xl text-neutral-content font-bold text-center">Setup your own instance</div>
             <div class="text-lg text-center text-neutral-content/70 mt-4">Set up your own instance, and see how you can tailor it for your communities values and needs. Be aware, bonfire software is still in beta.</div>
             <div class="flex flex-col mt-10 space-y-3 text-center items-center place-content-center lg:space-y-0 lg:flex-row lg:items-center lg:space-x-6">
@@ -215,7 +215,7 @@
       </div>
     
     <div class="w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-200 p-4">
+        <div class="border-b rounded-lg flex-1 h-full border-base-content/20 bg-base-100 p-4">
           
           <div class="text-2xl text-neutral-content font-bold text-center">Develop on bonfire</div>
           <div class="text-lg text-center text-neutral-content/70 mt-4">Check out the code and set up a development environment.</div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html  data-theme="bonfire" class="w-full bg-base-200 antialiased" lang="en">
+<html  data-theme="bonfire" class="w-full bg-base-100 antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-base-200 antialiased"> 
+  <body data-theme="bonfire" class="w-full bg-base-100 antialiased"> 
     <div
       class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-200 text-base-content': atTop }"
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
       @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     
@@ -214,7 +214,7 @@
       <template x-for="(b, index) in backers" class="flex shrink-0">
         <template x-if="b.profile">
           <a :href="b.website || b.twitter || b.github || b.profile" :title="b.name || b.description" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
-            <img :src="b.image || 'https://unavatar.io/' + (b.profile || b.twitter || b.github || b.createdAt).replace('https://opencollective.com/', '').replace('https://github.com/', '').replace('https://twitter.com/', '') + '?fallback=https://source.boringavatars.com'" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
+            <img :src="b.image || 'https://unavatar.io/' + (b.profile || b.twitter || b.github || b.createdAt).replace('https://opencollective.com/', '').replace('https://github.com/', '').replace('https://twitter.com/', '') + '?fallback=https://source.boringavatars.com'" type="image/png" class="bg-contain  bg-base-100 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
           </a>
         </template>
       </template>
@@ -231,7 +231,7 @@
       <template x-for="(b, index) in contributors" class="flex shrink-0">
         <template x-if="b.html_url">
           <a :href="b.html_url" :title="b.login" class="avatar shrink-0 mr-2 mb-2 w-12 h-12" target="_blank"  rel="noopener noreferrer">
-            <img :src="b.avatar_url || 'https://unavatar.io/' + b.login" type="image/png" class="bg-contain  bg-base-200 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
+            <img :src="b.avatar_url || 'https://unavatar.io/' + b.login" type="image/png" class="bg-contain  bg-base-100 bg-no-repeat bg-center w-12 h-12 rounded-full flex-1 shrink-0"/>
           </a>
         </template>
       </template>
