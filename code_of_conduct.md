@@ -92,8 +92,8 @@ We do not have to suffer in silence, or see others harassed without feeling like
 If we feel able and safe to, we may want to directly discuss our concerns with the person. It helps to start by assuming positive intent - the person making us feel uncomfortable may not be aware of what they are doing, and politely bringing their behaviour to their attention is encouraged. Here's a suggested structure:
 
 1. I read/noticed... *an observation, free of judgement*
-2. I feel... *[emotions](https://www.cnvc.org/training/resource/feelings-inventory), rather than a projection or thought*
-3. Because I need/value/care about... *[needs](https://www.cnvc.org/training/resource/needs-inventory), boundaries, shared values, or specific community guidelines*
+2. I feel... *[emotions](https://www.sociocracyforall.org/nvc-feelings-and-needs-list/), rather than a projection or thought*
+3. Because I need/value/care about... *[needs](https://www.sociocracyforall.org/nvc-feelings-and-needs-list/), boundaries, shared values, or specific community guidelines*
 4. Would you be willing to... *specific request*
 
 > It can also be helpful to:
