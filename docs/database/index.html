@@ -359,7 +359,7 @@
 <p>This usually means that a field containing a reference has to be pre-defined with a foreign key pointing to a specific field (typically a primary key, like an ID column) <em>in a specific table</em>.</p>
 <p>A simple example would be a blogging app, which might have a <code>post</code> table with <code>author</code> field that references the <code>user</code> table.</p>
 <p>A social network, by contrast, is actually a graph of objects. Objects need to be able to refer to other objects by their ID without knowing their type.</p>
-<p>A simple example would be likes, you might have a <code>likes</code> table with <code>liked_object</code> field that references the <code>post</code> table. But you don't just have posts that can be liked, but also videos, images, polls, etc, each with their own table?</p>
+<p>A simple example would be likes, you might have a <code>likes</code> table with <code>liked_post_id</code> field that references the <code>post</code> table. But you don't just have posts that can be liked, but also videos, images, polls, etc, each with their own table, but probably do not want to have to add <code>liked_video_id</code>, <code>liked_image_id</code>, etc?</p>
 <p>We needed the flexibility to have a foreign key that can reference any referenceable object. We call our system <code>Pointers</code>.</p>
 <p>This guide is a brief introduction to Pointers. It assumes some foundational knowledge:</p>
 <ul>
