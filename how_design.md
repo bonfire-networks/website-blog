@@ -21,7 +21,6 @@ Imagine a digital landscape where your community can exchange ideas, collaborate
 - **Data privacy and autonomy are the norms**, not the exceptions.
 - **Diverse voices flourish** in a secure, inclusive environment.
 
-Bonfire is more than a platform; it's a tool for creating digital spaces that reflect the identity and needs of your community.
 
 
 ## 🤔 Thinking with Bonfire
