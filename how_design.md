@@ -178,23 +178,78 @@ They envisioned a digital space tailored for inventory tracking across different
 ---
 But most of the time you don't want to create a whole new platform from scratch, instead you may want to add a new feature to your classic bonfire instace, edit an existing feature or tweak the settings in new ways:
 
-### Proposing a new feature
-If there's a functionality you feel is missing from Bonfire, this is your opportunity to introduce a new feature. This could be anything from a unique tool for community engagement to a specialized function for content sharing. For instance, you might envision a feature that facilitates collaborative storytelling or a new method for organizing community-driven projects. The goal here is to think creatively and propose features that bring fresh dynamics and capabilities to social networking to empower communities.
+<div class="flex flex-col gap-2">
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Proposing a new feature
+  </div>
+  <div class="collapse-content"> 
+    <p>If there's a functionality you feel is missing from Bonfire, this is your opportunity to introduce a new feature. This could be anything from a unique tool for community engagement to a specialized function for content sharing. For instance, you might envision a feature that facilitates collaborative storytelling or a new method for organizing community-driven projects. The goal here is to think creatively and propose features that bring fresh dynamics and capabilities to social networking to empower communities.</p>
+  </div>
+</div>
 
-### Proposing some addition or deletion to an existing feature
-If there's an existing feature on Bonfire that almost meets your needs but requires tweaking, you can propose modifications. For example, you might want to add a layer of privacy to a public messaging feature, or remove certain elements from a community dashboard that aren't relevant to your group. This is your chance to refine Bonfire’s features to better align with your community's specific requirements.
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Proposing some addition or deletion to an existing feature
+  </div>
+  <div class="collapse-content"> 
+    <p>If there's an existing feature on Bonfire that almost meets your needs but requires tweaking, you can propose modifications. For example, you might want to add a layer of privacy to a public messaging feature, or remove certain elements from a community dashboard that aren't relevant to your group. This is your chance to refine Bonfire’s features to better align with your community's specific requirements.</p>
+  </div>
+</div>
 
-### Proposing a new way to use the same feature
-Sometimes, innovation lies not in changing the feature itself, but in altering how it is used. For instance, a feature originally designed for event planning could be repurposed for organizing community volunteer efforts. This category is all about creative reimagining of existing tools for new, unexpected uses.
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Proposing a new way to use the same feature
+  </div>
+  <div class="collapse-content"> 
+    <p>Sometimes, innovation lies not in changing the feature itself, but in altering how it is used. For instance, a feature originally designed for event planning could be repurposed for organizing community volunteer efforts. This category is all about creative reimagining of existing tools for new, unexpected uses.</p>
+  </div>
+</div>
 
-### Proposing a change to the user interface or user experience of a feature
-User interface (UI) and User Experience play a crucial role in how interactively and comfortably users engage with a feature. If you believe a feature's UI could be more intuitive, accessible, or visually appealing, or you envision a different user journey to perform the same action, this is where you can suggest those changes. Perhaps it's as simple as increasing font size for better readability or restructuring a page layout for fostering specific outcomes.
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Proposing a change to the user interface or user experience of a feature
+  </div>
+  <div class="collapse-content"> 
+    <p>User interface (UI) and User Experience (UX) play a crucial role in how interactively and comfortably users engage with a feature. If you believe a feature's UI could be more intuitive, accessible, or visually appealing, or you envision a different user journey to perform the same action, this is where you can suggest those changes. Perhaps it's as simple as increasing font size for better readability or restructuring a page layout for fostering specific outcomes.</p>
+  </div>
+</div>
 
-### Deleting an existing feature
-In some cases, less is more. If you feel a certain feature is redundant, not useful, or even counterproductive for your community, proposing its removal can streamline and improve the user experience. The key here is to explain why eliminating this feature will benefit the overall functionality and usability of the platform.
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Deleting an existing feature
+  </div>
+  <div class="collapse-content"> 
+    <p>In some cases, less is more. If you feel a certain feature is redundant, not useful, or even counterproductive for your community, proposing its removal can streamline and improve the user experience. The key here is to explain why eliminating this feature will benefit the overall functionality and usability of the platform.</p>
+  </div>
+</div>
 
-### Adding a new setting preference
-This involves introducing new options or preferences in the settings to give users more control over how they use Bonfire. For instance, adding a setting that allows users to customize notification frequencies or choose different themes for their interface can enhance personalization and user satisfaction. This is about empowering users with more choices to tailor their experience on the platform.
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Adding a new setting preference
+  </div>
+  <div class="collapse-content"> 
+    <p>This involves introducing new options or preferences in the settings to give users more control over how they use Bonfire. For instance, adding a setting that allows users to customize notification frequencies or choose different themes for their interface can enhance personalization and user satisfaction. This is about empowering users with more choices to tailor their experience on the platform.</p>
+  </div>
+</div>
+
+<div class="collapse collapse-arrow bg-base-200">
+  <input type="radio" name="my-accordion-2" checked="checked" /> 
+  <div class="collapse-title text-xl font-medium">
+    Adding a new setting preference
+  </div>
+  <div class="collapse-content"> 
+    <p>This involves introducing new options or preferences in the settings to give users more control over how they use Bonfire. For instance, adding a setting that allows users to customize notification frequencies or choose different themes for their interface can enhance personalization and user satisfaction. This is about empowering users with more choices to tailor their experience on the platform.</p>
+  </div>
+</div>
+
+</div>
 
 
 
