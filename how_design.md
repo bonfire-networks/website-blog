@@ -323,7 +323,7 @@ Effectively sharing your insights and discoveries with the Bonfire community is 
 - **Suggest implications or solutions:** If applicable, suggest what this may imply for the Bonfire ecosystem or propose potential solutions or improvements.
 
 ### Engage in discussion
-- **Be open to feedback:** Community feedback is invaluable. Please keep <a href="/conduct/">our code of conduct</em> in mind and engage constructively.
+- **Be open to feedback:** Community feedback is invaluable. Please keep <a href="/conduct/">our code of conduct</a> in mind and engage constructively.
 - **Collaborate on solutions:** Please be open to collaborating with other community members.
 
 ### Follow up
