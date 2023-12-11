@@ -263,15 +263,6 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow border border-base-content/20">
-  <input type="radio" name="my-accordion-3" /> 
-  <div class="collapse-title text-xl font-medium">
-    Adding a new setting preference
-  </div>
-  <div class="collapse-content"> 
-    <p>This involves introducing new options or preferences in the settings to give users more control over how they use Bonfire. For instance, adding a setting that allows users to customize notification frequencies or choose different themes for their interface can enhance personalization and user satisfaction. This is about empowering users with more choices to tailor their experience on the platform.</p>
-  </div>
-</div>
 
 </div>
 
