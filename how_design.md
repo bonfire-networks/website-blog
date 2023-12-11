@@ -36,7 +36,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
 ## ❓ Foundational concepts and glossary
 
 <div class="flex flex-col gap-2">
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" checked="checked" /> 
   <div class="collapse-title text-xl font-medium">
     Fediverse
@@ -45,7 +45,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
     <p>The Fediverse is a collective term for the network of interconnected, federated websites. It represents an ecosystem of interconnected yet independent platforms that communicate with each other using open source protocols.</p>
   </div>
 </div>
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Instance
@@ -54,7 +54,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
     <p>An instance is a specific installation of a federated platform. Each instance can be independently operated and customized, hosting a unique community with its own rules and features. Instances are the building blocks of the federated network.</p>
   </div>
 </div>
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Community
@@ -64,7 +64,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Code of Conduct
@@ -74,7 +74,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Admin
@@ -84,7 +84,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Moderator
@@ -94,7 +94,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Plugin / Extension
@@ -104,7 +104,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Circle
@@ -114,7 +114,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Roles
@@ -124,7 +124,7 @@ As we explore how to think with Bonfire, it's essential to understand some found
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
+<div class="collapse collapse-arrow border border-base-content/20">
   <input type="radio" name="my-accordion-2" /> 
   <div class="collapse-title text-xl font-medium">
     Boundaries
@@ -176,8 +176,8 @@ They envisioned a digital space tailored for inventory tracking across different
 But most of the time you don't want to create a whole new platform from scratch, instead you may want to add a new feature to your classic bonfire instace, edit an existing feature or tweak the settings in new ways:
 
 <div class="flex flex-col gap-2">
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" checked="checked" /> 
   <div class="collapse-title text-xl font-medium">
     Proposing a new feature
   </div>
@@ -186,8 +186,8 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" /> 
   <div class="collapse-title text-xl font-medium">
     Proposing some addition or deletion to an existing feature
   </div>
@@ -196,8 +196,8 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" /> 
   <div class="collapse-title text-xl font-medium">
     Proposing a new way to use the same feature
   </div>
@@ -206,8 +206,8 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" /> 
   <div class="collapse-title text-xl font-medium">
     Proposing a change to the user interface or user experience of a feature
   </div>
@@ -216,8 +216,8 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" /> 
   <div class="collapse-title text-xl font-medium">
     Deleting an existing feature
   </div>
@@ -226,8 +226,8 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" /> 
   <div class="collapse-title text-xl font-medium">
     Adding a new setting preference
   </div>
@@ -236,8 +236,8 @@ But most of the time you don't want to create a whole new platform from scratch,
   </div>
 </div>
 
-<div class="collapse collapse-arrow bg-base-200">
-  <input type="radio" name="my-accordion-2" checked="checked" /> 
+<div class="collapse collapse-arrow border border-base-content/20">
+  <input type="radio" name="my-accordion-3" /> 
   <div class="collapse-title text-xl font-medium">
     Adding a new setting preference
   </div>
