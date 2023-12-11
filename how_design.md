@@ -1,13 +1,12 @@
 <div role="alert" class="alert alert-info text-sm">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-  <span> This document is a work in progress. We invite you to share feedbacks and contributions to make it better.</span>
+  <span> This document is a work in progress. We invite you to share feedbacks and contributions to improve it along the journey.</span>
 </div>
 
-**😫 Tired of social networks that prioritize profit over people?**
+### 😫 Tired of social networks that prioritize profit over people?
 
 Today's digital landscape, dominated by a few major platforms, has led to societal polarization, community fragmentation, rampant disinformation, and the rise of extremist ideologies. It's time for a change.
 
-**🔥 Enter Bonfire**
 
 More than just a social network, Bonfire is a toolkit for creating digital spaces that empower communities. Designed with autonomy, safety, and meaningful interactions in mind, Bonfire enables communities to take control of their features, data, and digital environment, free from algorithmic bias and corporate oversight. 
 
@@ -15,11 +14,39 @@ More than just a social network, Bonfire is a toolkit for creating digital space
 
 Imagine a digital landscape where your community can exchange ideas, collaborate, and grow alongside others, not limited by the platform boundaries, all while maintaining your own autonomy and identity. With Bonfire, you're tapping into a vast, interconnected federation of communities, enriching your experience with diverse perspectives and interactions. 
  
-**🌟 Imagine a digital space where...**
+ 🌟 Imagine a digital space where...
 
-- **Communities set their own features and interaction rules**, not algorithms designed to maximize profit.
-- **Data privacy and autonomy are the norms**, not the exceptions.
-- **Diverse voices flourish** in a secure, inclusive environment.
+
+ <div class="mx-auto grid max-w-screen-xl mt-8 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
+  <div class="card border-base-content/30 card-compact border text-left">
+    <div class="card-body">
+      <div class="flex text-base-content/100 text-base font-bold items-center gap-2">
+        Communities set their own features and rules
+      </div>
+    </div> 
+  </div>
+
+  <div class="card border-base-content/30 card-compact border text-left">
+    <div class="card-body">
+      <div class="flex text-base-content/100 text-base font-bold items-center gap-2">
+            Data privacy and autonomy are the norms, not the exceptions.
+      </div> 
+    </div> 
+  </div>
+
+  <div class="card border-base-content/30 card-compact border text-left">
+    <div class="card-body">
+      <div class="flex text-base-content/100 text-base font-bold items-center gap-2">
+      Diverse voices flourish in a secure environment
+      </div> 
+    </div> 
+  </div>
+
+
+
+  
+
+</div>
 
 
 
