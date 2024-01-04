@@ -4451,6 +4451,14 @@ input.tab:checked + .tab-content,
   color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
 }
 
+.badge-success {
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-su,oklch(var(--su)/var(--tw-bg-opacity)));
+  --tw-text-opacity: 1;
+  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+}
+
 .badge-warning {
   border-color: transparent;
   --tw-bg-opacity: 1;
@@ -9995,6 +10003,10 @@ details.collapse summary::-webkit-details-marker {
   background-image: none;
 }
 
+.bg-\[url\(\'\/img\/4a\.jpg\'\)\] {
+  background-image: url('/img/4a.jpg');
+}
+
 .from-\[\#7B4397\] {
   --tw-gradient-from: #7B4397 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(123 67 151 / 0) var(--tw-gradient-to-position);
@@ -11504,6 +11516,10 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:col-span-7 {
     grid-column: span 7 / span 7;
+  }
+
+  .lg\:col-start-2 {
+    grid-column-start: 2;
   }
 
   .lg\:mx-0 {
