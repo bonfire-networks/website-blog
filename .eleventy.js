@@ -18,6 +18,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+  eleventyConfig.addNunjucksFilter("keys", function(obj) {
+    return Object.keys(obj);
+  });
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
 

@@ -3,15 +3,119 @@ layout: layouts/base.njk
 title: "Themes"
 description: "Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs."
 ---
-<div class="bg-accent">
-  <div class="max-w-screen-xl  flex flex-col mx-auto py-12">  
-    <h1 class="text-6xl font-medium text-accent-content  ">Themes</h1>
-    <h2 class="text-xl text-accent-content mt-4 max-w-screen-sm">Bonfire is not a single app, but comes in many flavours.</h2>
+
+<div class="bg-base-300">
+  <div class="max-w-screen-xl place-content-center items-center  flex flex-col mx-auto py-12">  
+    <h1 class="text-3xl font-bold">Explore Custom Themes</h1>
+    <h2 class="text-xl text-center text-base-content mt-4 max-w-screen-sm">Personalize Bonfire with your favourite colors and brand</h2>
   </div>
 </div>
-<div class="max-w-screen-xl mx-auto my-12">
-  <div class="grid grid-cols-3 gap-4">
 
+
+<div class="max-w-screen-xl mx-auto my-12">
+  <div class="grid grid-cols-4 gap-4">
+
+    {% for theme in themes %}
+      {% if theme is string %}
+        <div class="border border-base-content/10 bg-base-200 rounded">
+          <header class="px-3 py-2 text-sm font-semibold">
+            {{ theme }}
+          </header>
+          <div data-theme="{{theme}}" class="">
+            <svg class="w-full" width="292" height="126" viewBox="0 0 292 126" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="fill-base-100" x="0.5" y="0.5" width="291" height="125"></rect>
+              {# <rect x="10" y="10" width="38" height="106" rx="4" fill="#1e1e1e"></rect> #}
+              <rect class="fill-primary"         x="18" y="8" width="22" height="6" rx="1" fill="#353535"></rect>
+              <rect class="fill-base-content/70" x="18" y="24" width="22" height="4" rx="1"></rect>
+              <rect class="fill-base-content/70" x="18" y="34" width="22" height="4" rx="1"></rect>
+              <rect class="fill-base-content/70" x="18" y="44" width="22" height="4" rx="1"></rect>
+              <rect class="fill-base-content/70" x="18" y="54" width="22" height="4" rx="1"></rect>
+              
+              <rect class="stroke-base-content/20" x="56" y="-2" width="162" height="130" ></rect>
+              <rect class="fill-base-content/90" x="64.8767" y="10" width="51.0411" height="3" rx="1.5" fill="#dcdcaa"></rect>
+              {# <rect x="123.374" y="18" width="40.8329" height="3" rx="1.5" fill="#ce9178"></rect> #}
+              <rect class="fill-base-content/20" x="56" y="22" width="162" height="1" rx="1.5" fill="#C78FFF"></rect>
+              {# <rect x="96.8329" y="29" width="67.3743" height="3" rx="1.5" fill="#d16969"></rect> #}
+              <rect x="64.8767" y="40" width="42.8745" height="3" rx="1.5" fill="#b5cea8"></rect>
+              <rect x="115.208" y="40" width="87.7907" height="3" rx="1.5" fill="#4ec9b0"></rect>
+              <rect x="64.8767" y="51" width="75.5408" height="3" rx="1.5" fill="#C78FFF"></rect>
+              <rect x="147.874" y="51" width="46.9578" height="3" rx="1.5" fill="#6a9955"></rect>
+              <rect x="64.8767" y="62" width="40.8329" height="3" rx="1.5" fill="#F2E088"></rect>
+              <rect x="113.166" y="62" width="32.6663" height="3" rx="1.5" fill="#569cd6"></rect>
+              <rect x="151.07" y="62" width="38.7912" height="3" rx="1.5" fill="#C78FFF"></rect>
+              <rect x="64.8767" y="84" width="77.5825" height="3" rx="1.5" fill="#6a9955"></rect>
+              <rect x="149.915" y="84" width="51.0411" height="3" rx="1.5" fill="#6a9955"></rect>
+              
+              <rect class="fill-base-content/10" x="64.8767" y="95" width="53.0827" height="3" rx="1.5" fill="#6a9955"></rect>
+              <rect class="fill-base-content/10"x="226" y="6" width="56" height="58" rx="4" fill="#1e1e1e"></rect>
+              {# <rect x="245" y="30" width="18" height="14" rx="4" fill="#353535"></rect> #}
+              {# <path d="M256.092 39L250.833 41.8921L250.833 36.1079L256.092 39Z" fill="white" stroke="white" stroke-width="2"></path> #}
+              <rect class="fill-base-300" x="226.5" y="72" width="55" height="39" rx="3.5" ></rect>
+              <circle class="fill-primary" cx="238" cy="84" r="4"></circle>
+              <circle class="fill-secondary" cx="254" cy="84" r="4"></circle>
+              <circle class="fill-accent" cx="270" cy="84" r="4"></circle>
+              <circle class="fill-base-100" cx="238" cy="100" r="4"></circle>
+              <circle class="fill-base-200" cx="254" cy="100" r="4"></circle>
+              <circle class="fill-base-300" cx="270" cy="100" r="4"></circle>
+              {# <rect x="226.5" y="76.5" width="55" height="39" rx="3.5" stroke="#1e1e1e"></rect> #}
+            </svg>
+          </div>
+          <footer class="p-3">
+            <div class="line-clamp-2 text-base-content/90 text-sm">DaisuUI custom theme</div>
+          </footer>  
+        </div>
+        {% else %}
+        {% for key in theme | keys %}
+          <div class="border border-base-content/10 bg-base-200 rounded">
+          <header class="px-3 py-2 text-sm font-semibold">
+            {{ key }}
+          </header>
+          <div data-theme="{{key}}" class="">
+            <svg class="w-full" width="292" height="126" viewBox="0 0 292 126" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="fill-base-100" x="0.5" y="0.5" width="291" height="125"></rect>
+              {# <rect x="10" y="10" width="38" height="106" rx="4" fill="#1e1e1e"></rect> #}
+              <rect class="fill-primary"         x="18" y="8" width="22" height="6" rx="1" fill="#353535"></rect>
+              <rect class="fill-base-content/70" x="18" y="24" width="22" height="4" rx="1"></rect>
+              <rect class="fill-base-content/70" x="18" y="34" width="22" height="4" rx="1"></rect>
+              <rect class="fill-base-content/70" x="18" y="44" width="22" height="4" rx="1"></rect>
+              <rect class="fill-base-content/70" x="18" y="54" width="22" height="4" rx="1"></rect>
+              
+              <rect class="stroke-base-content/20" x="56" y="-2" width="162" height="130" ></rect>
+              <rect class="fill-base-content/90" x="64.8767" y="10" width="51.0411" height="3" rx="1.5" fill="#dcdcaa"></rect>
+              {# <rect x="123.374" y="18" width="40.8329" height="3" rx="1.5" fill="#ce9178"></rect> #}
+              <rect class="fill-base-content/20" x="56" y="22" width="162" height="1" rx="1.5" fill="#C78FFF"></rect>
+              {# <rect x="96.8329" y="29" width="67.3743" height="3" rx="1.5" fill="#d16969"></rect> #}
+              <rect x="64.8767" y="40" width="42.8745" height="3" rx="1.5" fill="#b5cea8"></rect>
+              <rect x="115.208" y="40" width="87.7907" height="3" rx="1.5" fill="#4ec9b0"></rect>
+              <rect x="64.8767" y="51" width="75.5408" height="3" rx="1.5" fill="#C78FFF"></rect>
+              <rect x="147.874" y="51" width="46.9578" height="3" rx="1.5" fill="#6a9955"></rect>
+              <rect x="64.8767" y="62" width="40.8329" height="3" rx="1.5" fill="#F2E088"></rect>
+              <rect x="113.166" y="62" width="32.6663" height="3" rx="1.5" fill="#569cd6"></rect>
+              <rect x="151.07" y="62" width="38.7912" height="3" rx="1.5" fill="#C78FFF"></rect>
+              <rect x="64.8767" y="84" width="77.5825" height="3" rx="1.5" fill="#6a9955"></rect>
+              <rect x="149.915" y="84" width="51.0411" height="3" rx="1.5" fill="#6a9955"></rect>
+              
+              <rect class="fill-base-content/10" x="64.8767" y="95" width="53.0827" height="3" rx="1.5" fill="#6a9955"></rect>
+              <rect class="fill-base-content/10"x="226" y="6" width="56" height="58" rx="4" fill="#1e1e1e"></rect>
+              {# <rect x="245" y="30" width="18" height="14" rx="4" fill="#353535"></rect> #}
+              {# <path d="M256.092 39L250.833 41.8921L250.833 36.1079L256.092 39Z" fill="white" stroke="white" stroke-width="2"></path> #}
+              <rect class="fill-base-300" x="226.5" y="72" width="55" height="39" rx="3.5" ></rect>
+              <circle class="fill-primary" cx="238" cy="84" r="4"></circle>
+              <circle class="fill-secondary" cx="254" cy="84" r="4"></circle>
+              <circle class="fill-accent" cx="270" cy="84" r="4"></circle>
+              <circle class="fill-base-100" cx="238" cy="100" r="4"></circle>
+              <circle class="fill-base-200" cx="254" cy="100" r="4"></circle>
+              <circle class="fill-base-300" cx="270" cy="100" r="4"></circle>
+              {# <rect x="226.5" y="76.5" width="55" height="39" rx="3.5" stroke="#1e1e1e"></rect> #}
+            </svg>
+          </div>
+          <footer class="p-3">
+            <div class="line-clamp-2 text-base-content/90 text-sm">Bonfire official theme</div>
+          </footer>  
+        </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
 
   </div>
 </div>

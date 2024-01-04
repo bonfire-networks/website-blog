@@ -23,8 +23,11 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["nord"]
-        },
+          ...require("daisyui/src/theming/themes")["nord"],
+          "primary": "#fde047"
+        }
+      },
+      {
         bonfire: {
           ...require("daisyui/src/theming/themes")["dracula"],
           "primary": "#fde047"
