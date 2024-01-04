@@ -29,8 +29,12 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter('remoteMarkdown', async function(url) {
-    const response = await axios.get(url);
-    return md.render(response.data);
+    const response = await axios.get(url).catch(function (error) {
+      console.log(url)
+      console.log(error.toJSON());
+    }) || {};
+
+    return md.render(response.data || "");
 });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

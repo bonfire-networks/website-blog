@@ -27,12 +27,12 @@
           <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
             <li class="dropdown">
               
-              <div role="button" tabindex="0" class="flex items-center gap-2">
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
                 <span>About</span>
-                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-              </div>
+                {# <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg> #}
+              </a>
               
-              <ul tabindex="0" class="dropdown-content border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg w-80">
+              {# <ul tabindex="0" class="dropdown-content border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg w-80">
                 <li>
                    <a class="flex flex-col rounded-lg flex-wrap items-start" href="/about">
                       <div class="font-bold">About Bonfire</div>
@@ -45,9 +45,7 @@
                       <div class="font-light -mt-1  text-sm text-base-content/70 font-light">The starting point for hacking on Bonfire.</div>
                   </a>
                 </li>
-                
-                
-              </ul>
+              </ul> #}
             </li>
             <li class="dropdown">
                 <div tabindex="0" class="flex items-center gap-2">
@@ -79,6 +77,11 @@
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/fediverse">
                       <div class="font-medium">Fediverse</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/community">
+                      <div class="font-medium">How to participate</div>
                   </a>
                 </li>
               </ul>
