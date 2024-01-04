@@ -8701,6 +8701,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: auto;
 }
 
+.mr-12 {
+  margin-right: 3rem;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -10389,6 +10393,11 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 17vw;
 }
 
+.py-\[4vmin\] {
+  padding-top: 4vmin;
+  padding-bottom: 4vmin;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -10629,6 +10638,10 @@ details.collapse summary::-webkit-details-marker {
   text-transform: capitalize;
 }
 
+.\!capitalize {
+  text-transform: capitalize !important;
+}
+
 .normal-case {
   text-transform: none;
 }
@@ -10852,6 +10865,15 @@ details.collapse summary::-webkit-details-marker {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.\!text-base-content\/100 {
+  color: var(--fallback-bc,oklch(var(--bc)/1)) !important;
+}
+
+.\!text-base-content {
+  --tw-text-opacity: 1 !important;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity))) !important;
 }
 
 .text-opacity-50 {
@@ -11187,6 +11209,11 @@ details.collapse summary::-webkit-details-marker {
   color: var(--fallback-bc,oklch(var(--bc)/1));
 }
 
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -11240,6 +11267,14 @@ details.collapse summary::-webkit-details-marker {
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
   }
 
   .sm\:gap-4 {
@@ -11344,6 +11379,10 @@ details.collapse summary::-webkit-details-marker {
 
   .md\:mt-16 {
     margin-top: 4rem;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 
   .md\:h-\[220px\] {
