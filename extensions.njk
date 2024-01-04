@@ -1,28 +1,36 @@
 ---
-layout: layouts/docs.njk
+layout: layouts/base.njk
 title: "Extensions"
 description: "Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs."
 ---
+<div class="bg-base-300">
+  <div class="max-w-screen-xl place-content-center items-center  flex flex-col mx-auto py-12">  
+    <h1 class="text-3xl font-bold  ">Extensions</h1>
+    <h2 class="text-xl text-base-content mt-4 max-w-screen-sm">Bonfire is not a single app, but comes in many flavours.</h2>
+  </div>
+</div>
+<div class="max-w-screen-xl mx-auto my-12">
 
-{% include "building_blocks.njk" %}
 
-<div>
-  <div class="colums-1 md:columns-2 lg:columns-3 gap-10 mt-20">
+  <div class="grid grid-cols-3 gap-4">
+
+{# {% include "building_blocks.njk" %} #}
+
+
    {% for item in extensions %}
     <a href="/extension/{{item.repo_name}}">
-      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
-          <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
-          <span>{{item.status}}</span>
-        </span>
-        <div class="flex items-center mt-2">
-          <div class="flex-1">
-            <h2 class="text-blueGray-700 font-bold truncate word-break">{{item.name}}</h2>
-            <p class="prose-sm text-blueGray-700">{{item.note}}</p>
-          </div>
-        </div>
-      </div>  
+    <div class="bg-base-content/10 rounded-box h-[120px]  flex items-start border-base-content/30">
+      <div class="p-4 flex items-center place-content-center bg-base-content/10 shrink-0 rounded-box ml-4 mt-4 w-[72px]">
+        <span class="block bg-center bg-no-repeat bg-cover grayscale" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+      </div>
+      <div class="p-4">
+        <div class="font-semibold text-base ">{{item.name}}</div>
+        <div class="text-sm line-clamp-3 text-base-content/90">{{item.note}}</div> 
+      </div>
+    </div>
     </a>
     {% endfor %}
+
+
   </div>
 </div>

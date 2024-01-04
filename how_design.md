@@ -52,7 +52,7 @@ Imagine a digital landscape where your community can exchange ideas, collaborate
 
 ## 🤔 Thinking with Bonfire
 
-Bonfire is a framework designed not just for digital engagement but for community-driven experimentation in creating and governing digital spaces. It goes beyond standard platform boundaries, encouraging communities to use its modular architecture for innovation, customization, and reimagined digital interaction.
+Bonfire is a framework designed for community-driven experimentation in creating and governing digital spaces. It goes beyond standard platform boundaries, encouraging communities to use its modular architecture for innovation, customization, and reimagined digital interaction.
 
 The aim here is not just to adapt to digital ecosystems, but to actively create them. With Bonfire, communities write their own rules, constructing digital spaces that cater to their unique needs.
 

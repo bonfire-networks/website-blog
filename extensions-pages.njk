@@ -1,5 +1,5 @@
 ---
-layout: layouts/docs.njk
+layout: layouts/base.njk
 pagination:
     data: extensions
     size: 1
@@ -8,30 +8,92 @@ permalink: "extension/{{extensions.repo_name}}/"
 
 ---
 
-<a href="/extensions"> 
-<div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-  </svg>
-  <span class="text-sm text-blueGray-300 font-medium">Back to extensions</span>
-</div>
-</a>
-<div class="flex">
-  <div class="flex-1">
-      <h1 class="text-blueGray-200 text-3xl font-bold">{{extensions.name}}</h1>
-      <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2">{{extensions.note}}</p>
-      <div class="flex items-center space-x-3 mt-3">
-        <a href="{{extensions.repository}}" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          Contribute
-        </a>
-        <a href="/contribute/" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Donate
-        </a>
-      </div>
+
+<div class="bg-base-300">
+  <div class="max-w-screen-lg py-12 mx-4  lg:mx-auto">
+    <div class="text-sm breadcrumbs">
+      <ul>
+        <li><a href="/extensions">Extensions</a></li> 
+        <li>{{extensions.name}}</li>
+      </ul>
+    </div>
+    <h1 class="text-3xl font-bold text-base-content  ">{{extensions.name}}</h1>
+    <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2">{{extensions.note}}</p>
+    <div class="relative inline-block mt-6">
       
+    <input value="just dep-clone-local {{extensions.repo_name}} {{extensions.repository}}" class="input w-[420px] input-bordered text-sm" />
+    <span class="absolute right-[8px] top-[8px] btn btn-sm btn-square">
+        <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"/><path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1"/></g></svg>
+      </span>
+    </div>
+    {# <div class="flex items-center space-x-3 mt-4">
+      <a href="{{extensions.repository}}" target="_blank" class="btn btn-outline border-base-content/30 rounded-full">
+        Contribute
+      </a>
+      <a href="/contribute/" class="btn btn-primary rounded-full">
+          Donate
+      </a>
+    </div> #}
+
   </div>
 </div>
-<div class="border-t border-blueGray-600 mt-12 py-5 sm:p-0">
+<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-7 gap-4">
+
+  <div class="col-span-5">
+
+    <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
+
+    <div class="border-base-content/30 rounded-lg border p-4 mt-8 prose-sm prose max-w-full">
+      <div class="uppercase tracking-widest mb-6">Readme</div>
+
+      {% set url = 'https://raw.githubusercontent.com/bonfire-networks/' ~ extensions.repo_name ~ '/main/README.md' %}
+      {% remote_markdown url %}  
+      {# {{ url | remoteMarkdown | safe }}  #}
+    </div>
+  </div>
+  <div class="col-span-2 gap-4 flex flex-col">
+      <div class="flex items-center space-x-3">
+        <a href="{{extensions.repository}}" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
+          Get Code
+        </a>
+        <a target="_blank" href="{{extensions.repository}}/issues/new/choose" class="btn rounded-full flex-1 w-full btn-outline border-base-content/30  btn-sm">
+            Report bugs
+        </a>
+    </div>
+    
+    <div class="bg-base-content/5 mt-4 rounded-lg p-3">
+      <div class="uppercase text-xs tracking-widest mb-6">Used in</div>
+      <div class="flex flex-col gap-3">
+            {% for item in extensions.used_in %}
+              <a href="/app/{{item.flavour}}"
+              <span class="font-semibold text-lg link">
+                {{item.name}}
+              </span>
+              </a>
+            {% endfor %}
+          </div>
+    </div>
+    <div class="bg-base-content/5 rounded-lg p-3">
+      <div class="uppercase text-xs tracking-widest mb-6">Dependants</div>
+    </div>
+    <div class="bg-base-content/5 rounded-lg p-3">
+      <div class="uppercase text-xs tracking-widest mb-6">Dependencies</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{# <div class="border-t border-blueGray-600 mt-12 py-5 sm:p-0">
   <dl class="sm:divide-y sm:divide-blueGray-600">
     <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
       <dt class="text-sm font-medium text-blueGray-400">
@@ -87,6 +149,6 @@ permalink: "extension/{{extensions.repo_name}}/"
     </div>
     
   </dl>
-</div>
+</div> #}
 
 {# {% remote_markdown ["https://doc.bonfirenetworks.org/extension-", extensions.repo_name, ".html"] | join %} #}

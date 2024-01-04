@@ -1,27 +1,30 @@
 ---
-layout: layouts/docs.njk
+layout: layouts/base.njk
 title: "Apps"
 description: "Bonfire is not a single app, but comes in many flavours..."
 ---
 
 
-<div>
-  <div class="colums-1 md:columns-2 lg:columns-3 gap-10 mt-20">
+<div class="bg-base-300">
+  <div class="max-w-screen-xl place-content-center items-center  flex flex-col mx-auto py-12">  
+    <h1 class="text-3xl font-bold  ">Apps</h1>
+    <h2 class="text-xl text-center text-base-content mt-4 max-w-screen-sm">Bonfire is not a single app, but comes in many flavours. Choose the app that makes more sense for your community, and then install extensions and theme to tailor it even further.</h2>
+  </div>
+</div>
+
+
+<div class="max-w-screen-xl mx-auto my-12">
+  <div class="grid grid-cols-3 gap-4">
    {% for item in apps %}
-    <a href="/app/{{item.flavour}}">
-      <div class="bg-[#282736] break-inside-avoid mb-10 rounded-2xl px-8 py-12">
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
-          <svg width="14" height="14" class="mr-2" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="6" stroke="#f2c94c" stroke-width="2" fill="none"></rect><path fill="#f2c94c" stroke="none" d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z" transform="translate(3.5,3.5)"></path></svg>
-          <span>{{item.status}}</span>
-        </span>
-        <div class="flex items-center mt-2">
-          <div class="flex-1">
-            <h2 class="text-blueGray-700 font-bold truncate word-break">{{item.name}}</h2>
-            <p class="prose-sm text-blueGray-700">{{item.note}}</p>
+      <a href="/app/{{item.flavour}}">
+      <div class="border border-base-content/30 rounded break-inside-avoid">
+          <img src={{item.icon}} class="object-cover rounded-t mx-auto w-full h-80" />
+          <div class="p-4">
+            <h2 class="font-bold text-lg truncate word-break">{{item.name}}</h2>
+            <p class="prose-sm mb-2">{{item.description}}</p>
           </div>
-        </div>
       </div>  
-    </a>
+      </a>
     {% endfor %}
   </div>
 </div>

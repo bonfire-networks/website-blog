@@ -8,6 +8,10 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Geist', 'sans-serif'],
+        'mono': ['GeistMono', 'mono']
+      },
       colors: {
         bonfire: colors.amber,
       }
@@ -19,18 +23,14 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
-          "primary": "#1B74E4",
-          "primary-content": "#fff",
-          "base-300": "#131415",
-          "base-200": "#F7F9F9",
-          "base-100": "#1E2023"
+          ...require("daisyui/src/theming/themes")["nord"]
         },
         bonfire: {
-          ...require("daisyui/src/theming/themes")["[data-theme=forest]"],
+          ...require("daisyui/src/theming/themes")["dracula"],
           "primary": "#fde047"
         }
       },
+      "cupcake", "dark", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter", "dim", "nord", "sunset"
     ]
   },
   plugins: [

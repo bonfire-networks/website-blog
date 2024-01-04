@@ -7,115 +7,206 @@ pagination:
 permalink: "app/{{apps.flavour}}"
 ---
 
-<div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-xl lg:mx-auto">
-<a class="flex place-content-center lg:place-content-start" href="/apps">
+<div class="max-w-screen-lg my-12 mx-4  lg:mx-auto">
+{# <a class="flex place-content-center lg:place-content-start" href="/apps">
   <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
     </svg>
     <span class="text-sm text-blueGray-300 font-medium">Back to flavours</span>
   </div>
-</a>
+</a> #}
 
+<div class="text-sm breadcrumbs">
+  <ul>
+    <li><a href="/apps">Apps</a></li> 
+    <li>{{apps.name}}</li>
+  </ul>
+</div>
+<h1 class="text-3xl font-bold text-base-content  ">{{apps.name}}</h1>
+<div class="grid mt-4 grid-cols-5  items-start gap-12">
+  <div class="col-span-3">
+      <img src="{{apps.screenshot}}" class="object-cover rounded-box border border-base-content/10 h-[470px] w-full">
 
-
-{% include ["_includes/flavours/", apps.flavour, ".njk"] | join %}
-
-
-
-<div class="border rounded-lg mt-8 p-4 border-base-content/30">
-  <div class="lg:flex mt-2 lg:space-x-8">
-    {% if apps.icon %}
-    <div style="background-image: url({{apps.icon}})" class="w-32 h-32 mx-auto lg:m-0 bg-contain bg-no-repeat bg-center rounded-3xl"></div>
-    {% endif %}
-      <div class="flex-1 text-center lg:text-left mt-4 lg:mt-0">
-          <h1 class="text-blueGray-200 text-3xl font-bold">{{apps.name}}</h1>
-          <p class="text-blueGray-300 w-full mx-auto lg:m-0 prose  prose-md max-w-prose mt-2">{{apps.description}}</p>
-          <div class="flex items-center place-content-center lg:place-content-start space-x-3 mt-3">
-            <a href="{{apps.repository}}" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Contribute
-            </a>
-            <a href="/contribute/" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                Donate
-            </a>
-          </div>
-          
-      </div>
+      <div class="prose mt-6 max-w-full">{{apps.long_description}}</div>
   </div>
+  <div class="col-span-2 gap-12 flex flex-col ">
+    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
+      <div class="prose">{{apps.description}}</div>
+      <div class="flex  items-center gap-3">
+        <a href="{{apps.preview}}" class="flex-1 btn btn-outline border-base-content/30  rounded-full">Preview</a>
+        <a class="flex-1 btn btn-primary  rounded-full">Get the app</a>
+      </div>
+      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">{{apps.status}}</span></div>
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Latest release</span> <span class="font-bold">1 day ago</span></div>
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">{{apps.license}}</span></div>
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="{{apps.repository}}">{{apps.repo_name}}</a></div>
+      </div>
+    </div>
 
-
-  <div class="border-t border-base-content/30 mt-12 py-5 sm:p-0">
-    <dl class="sm:divide-y sm:divide-base-content/30">
-
-      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt class="text-sm font-medium text-blueGray-400">
-          License
-        </dt>
-        <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
-            {{apps.license}}
-          </span>
-        </dd>
-      </div>
-      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt class="text-sm font-medium text-blueGray-400">
-          Code repository
-        </dt>
-        <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
-          <a class="font-bold underline" href="{{apps.repository}}">{{apps.repo_name}}</a>
-        </dd>
-      </div>
-      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt class="text-sm font-medium text-blueGray-400">
-          Uses extensions
-        </dt>
-        <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2">
-        {% for item in apps.extensions %}
-          <a class="underline font-bold mr-2" href="/extension/{{item.repo_name}}">{{item.name}}</a>
-        {% endfor %}
-        </dd>
-      </div>
-      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt class="text-sm font-medium text-blueGray-400">
-          Supported by
-        </dt>
-        <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2 space-x-2">
-          {% for item in apps.supported_by %}
-          <a href="{{item.link}}" target="_blank">
-            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-            {{item.name}}
-          </span></a>
-          {% endfor %}
-          
-          <a href="/contribute/" target="_blank">
-            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-              Support the project
-            </span>
-          </a>
-        </dd>
-      </div>
-      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt class="text-sm font-medium text-blueGray-400">
-          Developed by
-        </dt>
-        <dd class="mt-1 text-sm text-blueGray-200 sm:mt-0 sm:col-span-2 space-x-2">
-          {% for item in apps.developed_by %}
-            <a href="{{item.link}}" target="_blank">
-              <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                {{item.name}}
+    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
+      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
+        <div class="pt-2 flex justify-between items-center text-sm">
+          <span class="font-light">Developed by</span>  
+          <div class="flex items-center gap-3">
+            {% for item in apps.developed_by %}
+              <a href="{{item.link}}" target="_blank">
+                <span class="font-semibold text-lg link">
+                  {{item.name}}
+                </span>
+              </a>
+            {% endfor %}
+            <a href="{{apps.repository}}" target="_blank">
+              <span class="btn btn-sm btn-outline rounded-full border-base-content/30">
+                Participate
               </span>
             </a>
-          {% endfor %}
-          
-          <a href="{{apps.repository}}" target="_blank">
-            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-              Participate
-            </span>
-          </a>
-        </dd>
+          </div>
+        </div>
+
+        <div class="pt-2 flex justify-between items-center text-sm">
+          <span class="font-light">Supported by</span>  
+          <div class="flex items-center gap-3">
+             {% for item in apps.supported_by %}
+              <a href="{{item.link}}" target="_blank">
+                <span class="font-semibold text-lg link">
+                {{item.name}}
+              </span></a>
+              {% endfor %}
+              <a href="/contribute/" target="_blank">
+                <span class="btn btn-sm btn-outline rounded-full border-base-content/30">
+                  Support the project
+                </span>
+              </a>
+          </div>
+        </div>
+        </div>  
       </div>
-    </dl>
+
+
+        <div class="">
+          <span class="font-medium text-2xl">Extensions included</span>  
+          <div class="flex flex-wrap items-center gap-3 mt-4">
+             {% for item in apps.extensions %}
+              <a href="/extension/{{item.repo_name}}" target="_blank">
+                <span class="link-primary link-hover text-sm">
+                {{item.name}}
+              </span>
+              </a>
+              {% endfor %}
+          </div>   
+        </div>
+
+
+        <div class="">
+          <span class="font-medium text-2xl">Translations</span>  
+          <div class="flex flex-wrap items-center gap-3 mt-4">
+             {% for item in apps.translations %}
+                <span class=" text-sm">
+                {{item}}
+              </span>
+              {% endfor %}
+          </div>   
+        </div>
+      
+    </div>
+  
   </div>
+
+
+<!-- Tabs -->
+<div
+    x-data="{
+        selectedId: null,
+        init() {
+            // Set the first available tab on the page on page load.
+            this.$nextTick(() => this.select(this.$id('tab', 1)))
+        },
+        select(id) {
+            this.selectedId = id
+        },
+        isSelected(id) {
+            return this.selectedId === id
+        },
+        whichChild(el, parent) {
+            return Array.from(parent.children).indexOf(el) + 1
+        }
+    }"
+    x-id="['tab']"
+    class=""
+>
+    <!-- Tab List -->
+    <ul
+        x-ref="tablist"
+        @keydown.right.prevent.stop="$focus.wrap().next()"
+        @keydown.home.prevent.stop="$focus.first()"
+        @keydown.page-up.prevent.stop="$focus.first()"
+        @keydown.left.prevent.stop="$focus.wrap().prev()"
+        @keydown.end.prevent.stop="$focus.last()"
+        @keydown.page-down.prevent.stop="$focus.last()"
+        role="tablist"
+        class="-mb-px  mt-6 flex items-stretch"
+    >
+        <!-- Tab -->
+        <li>
+            <button
+                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                @click="select($el.id)"
+                @mousedown.prevent
+                @focus="select($el.id)"
+                type="button"
+                :tabindex="isSelected($el.id) ? 0 : -1"
+                :aria-selected="isSelected($el.id)"
+                :class="isSelected($el.id) ? 'border-base-content/30 bg-base-100' : 'border-transparent'"
+                class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
+                role="tab"
+            >Features</button>
+        </li>
+
+        <li>
+            <button
+                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                @click="select($el.id)"
+                @mousedown.prevent
+                @focus="select($el.id)"
+                type="button"
+                :tabindex="isSelected($el.id) ? 0 : -1"
+                :aria-selected="isSelected($el.id)"
+                :class="isSelected($el.id) ? 'border-base-content/30 bg-base-100' : 'border-transparent'"
+                class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
+                role="tab"
+            >Readme</button>
+        </li>
+    </ul>
+
+    <!-- Panels -->
+    <div role="tabpanels" class="rounded-b-md border border-base-content/30 bg-base-100">
+        <!-- Panel -->
+        <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+            role="tabpanel"
+            class="p-8"
+        >
+           {% include ["_includes/flavours/", apps.flavour, ".njk"] | join %}
+        </section>
+
+        <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+            role="tabpanel"
+            class="p-8 prose prose-sm"
+        >
+           {% set url = 'https://raw.githubusercontent.com/bonfire-networks/' ~ apps.readme ~ '/README.md' %}
+           {{ url | remoteMarkdown | safe }}
+        </section>
+    </div>
 </div>
+
+
+
+</div>
+
 
   </div>

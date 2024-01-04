@@ -9,6 +9,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyFetch = require("@11ty/eleventy-fetch");
+const axios = require('axios');
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -27,6 +28,11 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
 
+  eleventyConfig.addFilter('remoteMarkdown', async function(url) {
+    const response = await axios.get(url);
+    return md.render(response.data);
+});
+
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
@@ -41,6 +47,19 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+    // Customize Markdown library and settings:
+    const markdownLibrary = markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true
+    }).use(markdownItAnchor, {
+      permalink: true,
+      permalinkClass: "direct-link",
+      permalinkSymbol: "#"
+    });
+    eleventyConfig.setLibrary("md", markdownLibrary);
+
+    
   // Return the smallest number argument
   eleventyConfig.addFilter("min", (...numbers) => {
     return Math.min.apply(null, numbers);
@@ -65,18 +84,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
-  // Customize Markdown library and settings:
-  const markdownLibrary = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
-  });
-  eleventyConfig.setLibrary("md", markdownLibrary);
-
+  const md = new markdownIt();
   
   eleventyConfig.addFilter('markdown', function(value) {
     return markdownLibrary.render(value);
