@@ -2,13 +2,101 @@
 layout: layouts/base.njk
 ---
 
-<div class="max-w-screen-md items-center place-content-center flex flex-col mx-4 my-12 prose prose-lg lg:mx-auto">
+
+<div class="max-w-screen-md items-center place-content-center flex flex-col mx-4 mt-12 prose prose-lg lg:mx-auto">
     <a href="/docs/tutorials" class="btn btn-outline border-base-content/30 btn-sm no-underline	 rounded-full">View all tutorials</a>
-    <h1 class="text-5xl mt-6 text-center font-bold">Useful commands when working with Bonfire</h1>
+    <h1 class="text-5xl mt-6 text-center font-bold">Quick Guide to Bonfire most used commands</h1>
     <div class="rounded-lg mx-auto w-full max-w-[680px] h-[240px] flex items-center place-content-center rounded bg-gradient-to-r from-[#ef709b] to-[#fa9372]">
         <span class="text-8xl">◆</span>
     </div>
-  
-
-
 </div>
+
+<section class="my-0 mx-auto p-[6vmin] sm:py-[6vw] sm:px-[6vmin]">
+  <div class="my-0 mx-auto max-w-8xl w-full">
+    <div class="max-w-prose mx-auto prose prose-lg">
+      <p class="mt-5 text-2xl font-medium tracking-tight text-base-content">Welcome to your guide on navigating the world of Bonfire development! This tutorial is crafted especially for developers who are either taking their first steps in Bonfire or looking to refine their workflow.</p>
+      <p class="mt-5 text-2xl font-medium tracking-tight text-base-content">By the end of our journey together, you'll not only be familiar with these commands but also understand how to apply them effectively in your day-to-day development tasks. So, let's dive in and get you up to speed with the ins and outs of Bonfire development!</p>
+      
+      <div class="p-4 border-info rounded bg-info/10">
+        <h2 class="text-xs !m-0  uppercase text-info font-meidum tracking-widest">Prerequisites</h2>
+        {# <p class="prose mt-2 !mb-0">Before diving into this tutorial, there are a few things you should have in place:<br/> #}
+          <ul class="prose mt-0">
+            <li>A Working Bonfire Local Setup: It's important that you have Bonfire up and running locally. If you're encountering any hiccups in setting it up, don't worry - just <a href="">check out our step-by-step guide to run Bonfire locally</a> for a smooth start.</li>
+            <li>Understanding of Git and the Command Line: A foundational knowledge of Git and Command Line is essential since we'll be using these tools. If you're not entirely confident with them yet, consider a brief review to get the most out of this tutorial.</li>
+          </ul>
+        </p>
+      </div>
+      
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">General Setup Related Commands</h2>
+      <p class="mt-5 !font-light md:text-xl text-base-content">As you dive into developing your own extension or app with the Bonfire framework, you'll quickly encounter an array of dependencies and extensions to deal with. An extension that includes a function or a component from a different extension is not an exception, but rather a common pattern.</p>
+      <p class="mt-5 !font-light md:text-xl text-base-content">This setup means you might likely soon find yourself contributing to multiple extensions simultaneously. Navigating this landscape can be intimidating at first, but Bonfire provides tools to streamline the process.</p>
+      <p class="mt-5 !font-light md:text-xl text-base-content">They help you effortlessly synchronize the latest updates across different extensions or efficiently push your updates to all relevant repositories. Understanding these facilities is key to a smooth and productive development experience in the Bonfire ecosystem.</p>
+      
+      <p class="mt-5 !font-light md:text-xl text-base-content">The full list of available commands are available in the <code>./justfile</code>. Below is a small selection of the most used commands.</p>
+      
+      
+        <ul class="">
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just update</code>
+              <p class="!my-0">Update the dev app and all dependencies/extensions/forks, and run migrations. Use this command to ensure you're in sync with the most recent changes across your development environment. </p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just update-app</code>
+              <p class="!my-0">This command updates the app along with Bonfire extensions located in <code>./deps</code>. It's ideal for updating the app while excluding the extensions currently under development located in <code>./extensions</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just dep-clone *dep* *repo*</code>
+              <p class="!my-0">Clone a git dependency and use the local version, eg: <code>just dep-clone-local bonfire_me https://github.com/bonfire-networks/bonfire_me</code>. Active extensions need to be added in <code>./config/deps.path</code>. To switch between local and remote dependencies, simply comment or uncomment the corresponding lines in this file.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just contrib</code>
+              <p class="!my-0">Push all changes to the app and extensions in <code>./forks</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just contrib-release</code>
+              <p class="!my-0">Push all changes to the app and extensions in <code>./forks</code>, increment the app version number, and push a new version/release</p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just test *dep*</code>
+              <p class="!my-0">Update the dev app and all dependencies/extensions/forks, and run migrations. Use this command to ensure you're in sync with the most recent changes across your development environment. </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just test-watch *dep*</code>
+              <p class="!my-0">Update the dev app and all dependencies/extensions/forks, and run migrations. Use this command to ensure you're in sync with the most recent changes across your development environment. </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just test-federation *dep*</code>
+              <p class="!my-0">Update the dev app and all dependencies/extensions/forks, and run migrations. Use this command to ensure you're in sync with the most recent changes across your development environment. </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-start flex-col gap-2">
+              <code class="text-lg inline">Just test-federation-dance *dep*</code>
+              <p class="!my-0">Update the dev app and all dependencies/extensions/forks, and run migrations. Use this command to ensure you're in sync with the most recent changes across your development environment. </p>
+            </div>
+          </li>
+        </ul>
+      
+    </div>
+  </div>
+</section>
+

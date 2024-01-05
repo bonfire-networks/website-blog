@@ -21,6 +21,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("keys", function(obj) {
     return Object.keys(obj);
   });
+
+  const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
 

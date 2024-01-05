@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+---
+
+
+<div class="max-w-screen-md items-center place-content-center flex flex-col mx-4 mt-12 prose prose-lg lg:mx-auto">
+    <a href="/docs/tutorials" class="btn btn-outline border-base-content/30 btn-sm no-underline	 rounded-full">View all tutorials</a>
+    <h1 class="text-5xl mt-6 text-center font-bold">Clone, Enable, Contribute: Editing Bonfire Extensions</h1>
+    <div class="rounded-lg mx-auto w-full max-w-[680px] h-[240px] flex items-center place-content-center rounded bg-gradient-to-r from-[#ef709b] to-[#fa9372]">
+        <span class="text-8xl">▖</span>
+    </div>
+</div>
+
+<section class="my-0 mx-auto p-[6vmin] sm:py-[6vw] sm:px-[6vmin]">
+  <div class="my-0 mx-auto max-w-8xl w-full">
+    <div class="max-w-prose mx-auto prose prose-lg">
+        <p class="mt-5 text-2xl font-medium tracking-tight text-base-content">This tutorial guides you through the process of editing an existing Bonfire extension. We'll cover how to clone, enable, and contribute to an extension, ensuring you can test and implement your changes effectively.</p>
+        <p class="mt-5 text-2xl font-medium tracking-tight text-base-content">Ideal for developers looking to modify and enhance Bonfire's functionalities.</p>
+        <p class="mt-5 text-2xl font-medium tracking-tight text-base-content">By the end, you'll be adept at including and working with extensions in the Bonfire development environment.</p>
+      
+      
+      <div class="p-4 border-info rounded bg-info/10">
+        <h2 class="text-xs !m-0  uppercase text-info font-meidum tracking-widest">Prerequisites</h2>
+        {# <p class="prose mt-2 !mb-0">Before diving into this tutorial, there are a few things you should have in place:<br/> #}
+          <ul class="prose mt-0">
+            <li>Basic understanding of Git.</li>
+            <li>A local Bonfire development environment already set up. If you're encountering any hiccups in setting it up, don't worry - just <a href="">check out our step-by-step guide to run Bonfire locally</a> for a smooth start.</li>
+            <li>Familiarity with the Bonfire framework and its extension architecture.</li>
+          </ul>
+        </p>
+      </div>
+      
+      <p class="mt-5 !font-light md:text-xl text-base-content">In Bonfire, in order to edit an existing extension and test the changes you need to properly include the extension in the development process. The process is quite straightforward:</p>
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Cloning the extension</h2>
+      <p class="mt-5 !font-light md:text-xl text-base-content">
+        Use <code>just dep-clone *dep* *repo*</code> to clone an extension from its Git repository. Replace <i>dep</i> with the extension name and <i>repo</i> with the full url. The cloned extension will be cloned in <code>./extensions</code>. The folder will include all the needed files, included the <code>.git</code> folder.
+       <br/>Example:</p>
+       
+       {% highlight "bash" %}
+       just dep-clone-local bonfire_me https://github.com/bonfire-networks/bonfire_me
+        {% endhighlight %}
+
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Enabling the Extension</h2>
+      <p class="mt-5 !font-light md:text-xl text-base-content">
+        After cloning, choose to use the local version by editing <code>./config/deps.path</code> (create it if it doesn’t exist). <br/>
+        The format to follow is the following: <code>dep_name = "dep_path" </code>.<br/>
+        To disable a local extension, comment or delete its line in .deps.path.<br/>
+        Use just dev to run the app with changes hot-reloading.
+      </p>
+      {% highlight "bash" %}
+      # ./config/deps.path
+bonfire_me = "./extensions/bonfire_me"
+# bonfire_boundaries = "./extensions/bonfire_boundaries" ### disabled extension
+      {% endhighlight %}
+
+
+       # Add a paragraph on how to enable js hook
+
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Pushing Changes Upstream</h2>
+      <p class="mt-5 !font-light md:text-xl text-base-content">You can push your changes remotely by navigate to the extension's root folder, and use Git to push changes.
+      Alternatively, use Bonfire's helpers like <code>just contrib</code> if you need to commit files that belong to multiple extensions or <code>just update-dep *dep*</code> for specific ones (e.g., <i>just update-dep bonfire_me</i>).</p>
+
+      <p class="mt-5 !font-light md:text-xl text-base-content">You're now equipped to contribute to Bonfire extensions, enhancing the framework's capabilities. Your contributions are vital to the Bonfire community, and we encourage you to keep exploring and improving the project.</p>
+    </div>
+  </div>
+</section>
+
