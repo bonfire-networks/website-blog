@@ -1,30 +1,27 @@
 <!doctype html>
-<html  data-theme="bonfire" class="w-full bg-base-100 antialiased" lang="en">
+<html data-theme="bonfire" class="w-full bg-base-100 antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="{{ '/css/style_v2.css' | url }}">
-    <!-- Place this tag in your head or just before your close body tag. -->  
+    <link
+    rel="stylesheet" href="{{ '/css/style_v2.css' | url }}">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
-    <script nomodule  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
-    </head>
-  <body data-theme="bonfire" class="w-full   bg-base-100 antialiased"> 
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="w-full   bg-base-100 antialiased">
     {% include "header.njk" %}
     {{ content | safe }}
-    {% include "footer.njk" %}
-
-
+  {# {% include "footer.njk" %} #}
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>
