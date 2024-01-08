@@ -4,19 +4,69 @@ title: "Extensions"
 description: "Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs."
 ---
 <div class="bg-base-300">
-  <div class="max-w-screen-xl place-content-center items-center  flex flex-col mx-auto py-12">  
-    <h1 class="text-3xl font-bold  ">Extensions</h1>
-    <h2 class="text-xl text-base-content mt-4 max-w-screen-sm">Bonfire is not a single app, but comes in many flavours.</h2>
+  <div class="max-w-screen-xl px-4 xl:px-0 flex flex-col mx-auto py-12">  
+    <h1 class="text-5xl font-bold  ">Extensions</h1>
+    <h2 class="text-xl text-base-content mt-4 max-w-screen-sm">Explore our growing list of extensions to customise your digital space.</h2>
+    {# <input class="input mt-6 input-bordered" placeholder="Search extension..." /> #}
+    {# <div class="flex items-center mt-3 gap-6">
+      <div class="form-control">
+        <label class="label cursor-pointer gap-2">
+          <input type="checkbox" checked="checked" class="checkbox" />
+          <span class="label-text">Data schema</span> 
+        </label>
+      </div>
+
+      <div class="form-control">
+        <label class="label cursor-pointer gap-2">
+          <input type="checkbox" checked="checked" class="checkbox" />
+          <span class="label-text">User Interface</span> 
+        </label>
+      </div>
+
+      <div class="form-control">
+        <label class="label cursor-pointer gap-2">
+          <input type="checkbox" checked="checked" class="checkbox" />
+          <span class="label-text">Data schema</span> 
+        </label>
+      </div>
+
+      <div class="form-control">
+        <label class="label cursor-pointer gap-2">
+          <input type="checkbox" checked="checked" class="checkbox" />
+          <span class="label-text">Utility</span> 
+        </label>
+      </div>
+    </div> #}
   </div>
 </div>
-<div class="max-w-screen-xl mx-auto my-12">
+<div class="max-w-screen-xl px-4 xl:px-0 mx-auto my-12">
 
 
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
+{% for repo in repos %}
+  <a href="/extension/{{repo.name}}">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      {# <div class="p-4 flex items-center place-content-center bg-base-content/10 shrink-0 rounded-box ml-4 mt-4 w-[72px]">
+        <span class="block bg-center bg-no-repeat bg-cover grayscale" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+      </div> #}
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">{{repo.name}}</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">{{repo.owner.login}}</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">{{repo.description}}</div> 
 
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>{{repo.stargazers_count}}</span></span>
+          {% for topic in repo.topics %}
+            <span class="badge badge-outline !border-base-content/30">{{topic}}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    </a>
+{% endfor %}
 {# {% include "building_blocks.njk" %} #}
 
-
+{# 
    {% for item in extensions %}
     <a href="/extension/{{item.repo_name}}">
     <div class="bg-base-content/10 rounded-box h-[120px]  flex items-start border-base-content/30">
@@ -29,7 +79,7 @@ description: "Extensions are the building blocks of Bonfire apps. Each extension
       </div>
     </div>
     </a>
-    {% endfor %}
+    {% endfor %} #}
 
 
   </div>

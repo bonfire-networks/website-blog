@@ -24,6 +24,24 @@ module.exports = function(eleventyConfig) {
 
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+  eleventyConfig.addNunjucksAsyncFilter('fetchRepoData', async (repo, callback) => {
+    const slug = typeof repo === 'string' ? repo : repo.name;
+      try {
+        const response = await axios.get(`https://api.github.com/repos/bonfire-networks/${repo.name}`, {
+          headers: {
+            'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        callback(null, response.data);
+      } catch (error) {
+        console.error('GitHub API error:', error);
+        callback(error);
+      }
+    
+    
+  });
+
   eleventyConfig.addPlugin(syntaxHighlight);
 
   // https://www.11ty.dev/docs/data-deep-merge/
@@ -32,8 +50,14 @@ module.exports = function(eleventyConfig) {
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+  eleventyConfig.addFilter("readableDate", dateStr => {
+    const date = DateTime.fromISO(dateStr, {zone: 'utc'});
+    if (date.isValid) {
+      return date.toFormat("dd LLL yyyy");
+    } else {
+      console.error(`Invalid date: ${dateStr}`);
+      return dateStr;  // Return the original string if it can't be parsed
+    }
   });
 
   eleventyConfig.addFilter('remoteMarkdown', async function(url) {
