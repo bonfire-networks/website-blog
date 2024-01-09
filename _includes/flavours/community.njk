@@ -1,81 +1,52 @@
 
-<div class="max-w-screen-lg mx-4 2xl:max-w-screen-xl lg:mx-auto">
 
-<div class="container relative max-w-screen-xl mx-auto mt-6">
-  <div style="width: 1px;" class="h-24 mx-auto mb-4 bg-gradient-to-b from-blueGray-800 to-blueGray-200"></div>
-</div>
+<div class="flex flex-col gap-6">
 
-<div class="flex flex-col items-center mx-auto mt-2">
-  <img src="../img/bonfire_brand.png" class="mx-auto mt-2 w-80"/>
-  <div style="letter-spacing: 7px; padding-left: 14px" class="mt-2 text-3xl font-black tracking-widest text-center uppercase text-base-content">Community</div>
-  <span class="mx-auto mt-3 badge badge-success">Coming soon</span>
-</div>
-
-<div class="max-w-3xl mx-auto mt-8 text-2xl font-semibold leading-relaxed text-center text-opacity-80 text-base-content">
-   Groups, topics, and events.
-</div>
-
-
-  <div class="relative max-w-screen-lg pt-8 mx-auto mt-24 overflow-hidden pb-28">
-    
-    <div class="mt-12">
-      <div class="items-center gap-24 lg:mx-auto lg:grid lg:grid-cols-2 lg:grid-flow-col-dense">
-        <div class="order-last max-w-xl px-4 mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
-          <div>
-            <div class="">
-              <h2 class="text-2xl font-bold tracking-wide text-neutral-content">
-                <span class="underline decoration-wavy decoration-amber-400 underline-offset-2">Organise</span> events and build a shared calendar
-              </h2>
-              <p class="mt-4 leading-relaxed text-md text-neutral-content text-opacity-60">
-                Create and manage local or virtual events, and share invite links for people to RSVP. Users can browse events on a map or calendar, filtering them by tags, location, topic and more...</p>
-            </div>
-          </div>
-        </div>
-      <div class="px-4 mt-4 md:mt-16 lg:mt-0 md:px-8">
-          <div class="bg-contain bg-no-repeat h-[330px] w-[330px] mx-auto bg-[url('/img/4a.jpg')]">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-12">
-      <div class="items-center gap-24 lg:mx-auto lg:grid lg:grid-cols-2 lg:grid-flow-col-dense">
-        <div class="max-w-xl px-4 mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
-          <div>
-            <div class="">
-              <h2 class="text-2xl font-bold tracking-wide text-neutral-content">
-                <span class="underline decoration-wavy decoration-amber-400 underline-offset-4">Organise</span> in groups to have more focused discussions
-              </h2>
-              <p class="mt-4 leading-relaxed text-md text-neutral-content text-opacity-60">
-                With groups users can create context-specific and cross-instances spaces, define their own rules and governance, to better organize their participation across the fediverse. 
-
-              </p>
-               <p> <a href="/posts/dev_diary_groups_1" class="link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div class="px-4 mt-4 md:mt-16 lg:mt-0 md:px-8">
-          <div class="bg-contain bg-no-repeat h-[330px] w-[330px] mx-auto bg-[url('/img/1a.jpg')]">
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class="flex items-center gap-8 ">
+  <div class="bg-cover bg-no-repeat h-[180px] w-[180px] min-w-[180px] bg-[url('/img/1a.jpg')]"></div>
   <div class="">
-    <div class="max-w-3xl px-4 py-16 mx-auto text-center sm:py-20 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        <span class="block">It's all connected.</span>
-      </h2>
-      <p class="mt-4 text-lg leading-6 text-base-content text-opacity-90"><b>All the features and extensions are interconnected</b>, so that Bonfire Community benefits from everything that's in the Bonfire Classic, such as: social feeds, discussions, boosting, liking, creating circles and setting boundaries.</p>
-      <a href="/docs" class="mt-6 btn btn-outline">
-        Set up an instance
-      </a>
-    </div>
+    <h2 class="text-2xl font-bold tracking-wide text-base-content">
+      Create public and private groups
+    </h2>
+    <p class="mt-1  text-base-content/90">
+      This feature allows users to form open groups for wide-reaching discussions or private groups for confidential, selective conversations. This flexibility supports both inclusive community engagement and controlled, private interactions.</p>
+  </div>
+</div>
+  
+<div class="flex items-center gap-8 ">
+  <div class="bg-cover bg-no-repeat h-[180px] w-[180px] min-w-[180px] bg-[url('/img/4a.jpg')]"></div>
+  <div class="">
+    <h2 class="text-2xl font-bold tracking-wide text-base-content">Organize your discussions in topics</h2>
+    <p class="mt-1  text-base-content/90">
+      Users can streamline their conversations by creating topics. This functionality allows for the categorization of discussions into distinct topics, fostering focused dialogue and easier navigation through group interactions.</p>
   </div>
 </div>
 
-{% include "support_footer.njk" %}
+
+
+<div class="flex items-center gap-8 ">
+  <div class="bg-cover bg-no-repeat h-[180px] w-[180px] min-w-[180px] bg-[url('/img/3a.jpg')]"></div>
+  <div class="">
+    <h2 class="text-2xl font-bold tracking-wide text-base-content">
+      Create and assign custom roles 
+    </h2>
+    <p class="mt-1  text-base-content/90">
+      Users can create and assign multiple roles in groups. This feature allows for personalized management of group dynamics and responsibilities. This flexibility in role assignment enables tailored governance structures within communities, enhancing both organization and user engagement.</p>
+  </div>
+</div>
+
+{# <div class="flex items-center gap-8 ">
+  <div class="bg-cover bg-no-repeat h-[180px] w-[180px] min-w-[180px] bg-[url('/img/4a.jpg')]"></div>
+  <div class="">
+    <h2 class="text-2xl font-bold tracking-wide text-base-content">
+      Organise events and build a shared calendar
+    </h2>
+    <p class="mt-1  text-base-content/90">
+      Create and manage local or virtual events, and share invite links for people to RSVP. Users can browse events on a map or calendar, filtering them by tags, location, topic and more...</p>
+  </div> #}
+</div>
+
+
+
+
+</div>

@@ -12,7 +12,7 @@ eleventyComputed:
 
 
 <div class="bg-base-300">
-  <div class="max-w-screen-lg py-12 mx-4  lg:mx-auto">
+  <div class="max-w-screen-lg py-12 px-4 lg:px-0  lg:mx-auto">
     <div class="text-sm breadcrumbs">
       <ul>
         <li><a href="/extensions">Extensions</a></li> 
@@ -39,9 +39,9 @@ eleventyComputed:
 
   </div>
 </div>
-<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8">
+<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8 px-4 lg:px-0">
 
-  <div class="col-span-8"
+  <div class="lg:col-span-8 order-last lg:order-first col-span-12"
     <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
 
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
@@ -50,7 +50,7 @@ eleventyComputed:
         {% remote_markdown url %}
     </div>
   </div>
-  <div class="col-span-4 gap-4 flex flex-col">
+  <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col">
       <div class="flex items-center space-x-3">
         <a href="{{extension.html_url}}" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
           Get Code

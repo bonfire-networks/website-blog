@@ -6,7 +6,7 @@
         <div class="flex items-center gap-4">
             <div class="flex items-center space-x-2">
                 <span class="flex items-center gap-4 mb-2">
-                    <time class="text-sm text-base-content/70">{{ post.date | readableDate }}</time>
+                    {# <time class="text-sm text-base-content/70">{{ post.date | readableDate }}</time> #}
                     <div class="">
                         {%- for tag in post.data.tags -%}
                           {% if tag != "posts" %}
