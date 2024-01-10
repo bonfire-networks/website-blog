@@ -24,7 +24,6 @@ module.exports = {
       {
         light: {
           ...require("daisyui/src/theming/themes")["nord"],
-          "primary": "#fde047"
         }
       },
       {
