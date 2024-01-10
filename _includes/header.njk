@@ -72,6 +72,12 @@
                       <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your favourite colors and brand.</div>
                   </a>
                 </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with.</div>
+                  </a>
+                </li>
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
                       <div class="font-bold">How to participate</div>
@@ -290,21 +296,21 @@
 
  <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-        const themeController = document.querySelector('.theme-controller');
-        const htmlElement = document.querySelector('.body-theme');
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
 
-        // Load the saved theme from localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            themeController.checked = savedTheme === 'bonfire';
-            htmlElement.setAttribute('data-theme', savedTheme);
-        }
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
 
-        // Save the theme to localStorage whenever it changes
-        themeController.addEventListener('change', (event) => {
-            const theme = event.target.checked ? 'light' : 'bonfire';
-            localStorage.setItem('theme', theme);
-            htmlElement.setAttribute('data-theme', theme);
-        });
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
     });
+});
 </script>
