@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Public bonfire website.",
   "scripts": {
-    "start": "eleventy --serve & npx tailwindcss -i css/index.css -o css/style_v2.css --watch",
+    "start": "eleventy --watch --serve & npx tailwindcss -i css/index.css -o css/style_v2.css --watch ",
     "build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss css/index.css --o css/style_v2.css"
   },
   "repository": {

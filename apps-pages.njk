@@ -26,7 +26,7 @@ permalink: "app/{{apps.flavour}}"
 <h1 class="text-3xl font-bold text-base-content  ">{{apps.name}}</h1>
 <div class="grid mt-4 grid-cols-5  items-start gap-12">
   <div class="col-span-5 order-last lg:order-first lg:col-span-3">
-      <img src="{{apps.screenshot}}" class="object-cover rounded-box border border-base-content/10 h-[470px] w-full">
+      <img src="{{apps.screenshot}}" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
       <div class="prose mt-6 max-w-full">{{apps.long_description}}</div>
   </div>
