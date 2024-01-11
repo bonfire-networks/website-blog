@@ -98,7 +98,7 @@ permalink: "app/{{apps.flavour}}"
           </div>   
         </div>
 
-
+{% if apps.translations %}
         <div class="">
           <span class="font-medium text-2xl">Translations</span>  
           <div class="flex flex-wrap items-center gap-3 mt-4">
@@ -109,6 +109,7 @@ permalink: "app/{{apps.flavour}}"
               {% endfor %}
           </div>   
         </div>
+        {% endif %}
       
     </div>
   
