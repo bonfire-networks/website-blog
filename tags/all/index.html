@@ -1,21 +1,22 @@
 <!doctype html>
-<html  data-theme="bonfire" class="w-full bg-base-100 antialiased" lang="en">
+<html class="w-full antialiased" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonfire</title>
     <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/css/style_v2.css">
+    <link
+    rel="stylesheet" href="/css/style_v2.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
     <script src="//unpkg.com/alpinejs" defer></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>  </head>
-  <body data-theme="bonfire" class="w-full bg-base-100 antialiased"> 
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
     <div
       class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
@@ -24,18 +25,135 @@
     >
     
 
-    <div>
-      <header class="relative z-30 px-4 lg:px-8 mx-auto navbar">
-        <div class="navbar-start">
-          <div class="flex items-center flex-shrink-0">
+    <div class="bg-base-300">
+      <header class="relative z-30 lg:px-8 mx-auto navbar">
+        <div class="navbar-start w-[70%]">
+          <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
               <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class="flex items-center"><span class="text-lg font-medium tracking-wider text-white">Bonfire</span> 
+              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
               
               </span>
             </a>
           </div>
+           <div class="ml-4 hidden xl:flex">
+          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+                <span>About</span>
+                
+              </a>
+              
+              
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
+                      <div class="font-bold">Themes</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
+                      <div class="font-bold">Tutorials</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-bold">Design</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-bold">Community</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                  </a></li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/hosting" class=" ">
+              <span class="text-sm font-regular">Hosting</span>
+            </a>
+            </li>
+            
+       
 
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
         
 
 
@@ -43,73 +161,20 @@
         </div>
         
         <div class="navbar-end">
-            <div class="hidden xl:flex mr-4">
-          <ul class="flex-row gap-3 p-0 font-medium menu menu-compact menu-horizontal">
-            <li class="dropdown dropdown-end">
-              <label tabindex="0" class="">
-                <div class="flex items-center gap-2">
-                  <span>Developers</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              </label>
-              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="/docs">
-                      <div class="font-bold">Documentation</div>
-                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                  </a>
-                </li>
-                
-                
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start gap-1" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                    <div class="font-bold">Get the code</div>
-                    <div class="text-sm text-base-content/70">Bonfire is open source and AGPL3 licensed</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            
-            <li>
-            <a href="/case_studies" class=" ">
-              <span class="text-sm font-regular">Case Studies</span>
-            </a>
-            </li>
-            
-            <li class="dropdown dropdown-end">
-              <label tabindex="0" class="">
-                <div class="flex items-center gap-2">
-                  <span>Community</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              </label>
-              <ul tabindex="0" class="dropdown-content menu !ml-0 p-1 mt-2 shadow bg-base-100 rounded-lg w-92">
-                <li>
-                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/community">
-                      <div class="font-bold">Join</div>
-                      <div class="flex-wrap text-sm text-base-content/70">Everything you need to get started with bonfire</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="flex rounded-lg flex-col flex-wrap items-start gap-1" href="/faq">
-                    <div class="font-bold">FAQ</div>
-                    <div class="text-sm text-base-content/70">Most asked questions</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            
-
-            <li>
-            <a href="/blog" class=" ">
-              <span class="text-sm font-regular">Blog</span>
-            </a>
-            </li>
-          </ul>
-        </div>
+           <label for="theme_controller" class="swap swap-rotate mr-4">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+              
+            </label>
           <a href="/start/" >
-            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get started</span>
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
           </a>
 
           <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
@@ -123,10 +188,10 @@
               <input type="checkbox" />
               
               <!-- hamburger icon -->
-              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
               
               <!-- close icon -->
-              <svg @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
               
             </label>
           </div>
@@ -143,17 +208,48 @@
       id="mobile-menu" 
       x-show="open" 
       style="display: none;">
-      <ul class="p-0 menu">
+      <ul class="p-0 menu bg-base-300">
           <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/themes" class=" ">
+            <span class="text-base font-regular">Themes</span>
+          </a>
+          </li>
+
+
+            <li>
             <a href="/docs" class=" ">
             <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/courses" class=" ">
+            <span class="text-base font-regular">courses</span>
           </a>
           </li>
           
           
           <li>
-            <a href="/case_studies" class=" ">
-            <span class="text-base font-regular">Case Studies</span>
+            <a href="/pilots" class=" ">
+            <span class="text-base font-regular">Pilots</span>
           </a>
           </li>
           
@@ -164,7 +260,7 @@
           </li>
           <li>
           <a href="/blog" class=" ">
-            <span class="text-base font-regular">Blog</span>
+            <span class="text-base font-regular">News</span>
           </a>
           </li>
           <li>
@@ -183,7 +279,27 @@
     </div>
   </div>
 
-      
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
 <div class="max-w-screen-lg mx-auto mt-12">
  <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
       <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
@@ -212,7 +328,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -243,7 +359,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -253,6 +369,41 @@
           </div>
           <div>
               <a href="/what/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/themes/">
+                  
+                      Themes
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs.
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/themes/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -274,7 +425,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -305,7 +456,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -336,7 +487,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -367,7 +518,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -398,7 +549,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -429,7 +580,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -464,7 +615,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -495,7 +646,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -526,7 +677,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -557,7 +708,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -588,7 +739,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -598,6 +749,37 @@
           </div>
           <div>
               <a href="/plugins/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/pilots/">
+                  
+                      Pilots
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/pilots/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -619,7 +801,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -650,7 +832,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -681,7 +863,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -691,6 +873,41 @@
           </div>
           <div>
               <a href="/joinus/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/integrations/">
+                  
+                      Integrations
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs.
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/integrations/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -712,7 +929,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -743,7 +960,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -753,6 +970,37 @@
           </div>
           <div>
               <a href="/how_design/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/hosting/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/hosting/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -774,7 +1022,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -805,7 +1053,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -836,7 +1084,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -867,7 +1115,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -889,7 +1137,7 @@
           <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
               <a href="/features/">
                   
-                      What can I do with Bonfire Classic?
+                      Untitled
                   
               </a>
           </h2>
@@ -898,7 +1146,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -929,7 +1177,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -960,7 +1208,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -991,7 +1239,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1015,37 +1263,6 @@
         <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
         <div class="flex-1 mt-4 lg:mt-0">
           <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
-              <a href="/extension/bonfire_me/">
-                  
-                      Untitled
-                  
-              </a>
-          </h2>
-          <div class="flex items-center space-x-2">
-              <span class="flex items-center space-x-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                    </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
-              </span>
-          </div>
-          
-          
-          
-          <div class="my-2">
-          </div>
-          <div>
-              <a href="/extension/bonfire_me/" class="text-pink-400 font-bold text-sm">
-                  Read more →
-              </a>
-          </div>
-        </div>
-      </article>
-    
-    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
-        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
-        <div class="flex-1 mt-4 lg:mt-0">
-          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
               <a href="/docs/privacy/">
                   
                       Untitled
@@ -1057,7 +1274,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1088,7 +1305,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1098,6 +1315,37 @@
           </div>
           <div>
               <a href="/docs/mrf/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/just_commands/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/just_commands/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -1119,7 +1367,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1150,7 +1398,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1160,6 +1408,37 @@
           </div>
           <div>
               <a href="/docs/graphql/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/glossary/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/glossary/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -1181,7 +1460,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1212,7 +1491,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1243,7 +1522,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1274,7 +1553,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1284,6 +1563,37 @@
           </div>
           <div>
               <a href="/docs/database/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/courses/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/courses/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -1305,7 +1615,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1336,7 +1646,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1367,7 +1677,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1398,7 +1708,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1429,7 +1739,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1460,7 +1770,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1491,7 +1801,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1522,7 +1832,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1553,7 +1863,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1584,7 +1894,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1594,6 +1904,161 @@
           </div>
           <div>
               <a href="/cta/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/how_to_fork_extension/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/how_to_fork_extension/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/extension/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/extension/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/extension/how_to_create_extension/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/extension/how_to_create_extension/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/extension/add_settings/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/extension/add_settings/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -1615,7 +2080,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1646,7 +2111,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1677,7 +2142,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1699,7 +2164,7 @@
           <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
               <a href="/community/">
                   
-                      Community
+                      Participate in the ecosystem
                   
               </a>
           </h2>
@@ -1708,7 +2173,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1739,7 +2204,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1770,7 +2235,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1805,7 +2270,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1836,7 +2301,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1867,7 +2332,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1898,7 +2363,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1933,7 +2398,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">11 Dec 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -1943,6 +2408,37 @@
           </div>
           <div>
               <a href="/app/classic" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/about/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:36:36 GMT+0000 (Coordinated Universal Time)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/about/" class="text-pink-400 font-bold text-sm">
                   Read more →
               </a>
           </div>
@@ -1964,7 +2460,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">04 Oct 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Wed Oct 04 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2006,7 +2502,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">14 Sep 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Thu Sep 14 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2055,7 +2551,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">09 Aug 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Wed Aug 09 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2104,7 +2600,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">19 Jul 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Wed Jul 19 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2153,7 +2649,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">28 Jun 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Wed Jun 28 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2202,7 +2698,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">15 Jun 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jun 15 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2251,7 +2747,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">08 Jun 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jun 08 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2300,7 +2796,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">30 May 2023</time>
+                <time class="text-xs text-base-content text-opacity-70">Tue May 30 2023 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2349,7 +2845,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">01 Oct 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Sat Oct 01 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2398,7 +2894,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">19 Jul 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Tue Jul 19 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2447,7 +2943,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">25 Jun 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Sat Jun 25 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2496,7 +2992,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">21 Jun 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Tue Jun 21 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2545,7 +3041,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">18 Jun 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Sat Jun 18 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2594,7 +3090,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">21 May 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Sat May 21 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2643,7 +3139,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">05 Mar 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Sat Mar 05 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2692,7 +3188,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">18 Feb 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Feb 18 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2741,7 +3237,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">08 Feb 2022</time>
+                <time class="text-xs text-base-content text-opacity-70">Tue Feb 08 2022 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2790,7 +3286,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">26 Dec 2021</time>
+                <time class="text-xs text-base-content text-opacity-70">Sun Dec 26 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2839,7 +3335,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">14 Oct 2021</time>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 14 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2888,7 +3384,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">23 Jul 2021</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jul 23 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2937,7 +3433,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">20 Jul 2021</time>
+                <time class="text-xs text-base-content text-opacity-70">Tue Jul 20 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -2986,7 +3482,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">14 Jul 2021</time>
+                <time class="text-xs text-base-content text-opacity-70">Wed Jul 14 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -3035,7 +3531,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                     </svg>
-                <time class="text-xs text-base-content text-opacity-70">21 May 2021</time>
+                <time class="text-xs text-base-content text-opacity-70">Fri May 21 2021 00:00:00 GMT+0000 (Coordinated Universal Time)</time>
               </span>
           </div>
           
@@ -3073,44 +3569,55 @@
 </div>
 
 
+  <div class="border-base-content/10 bg-base-300 border-t">
+ 
 
-
-<div class="border-base-content/10 border-t">
-  <footer class="max-w-screen-xl px-4 lg:mx-auto  py-12  footer text-base-content">
-  <div class="flex items-start gap-4 flex-row lg:flex-col">
-    <div class=" flex-1 ">
-      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
     </div> 
-    <div>
-      <p>Bonfire Networks<br/><span class="text-base-content/70">Proudly FLOSS since 2020</span></p>
-      <div class="flex items-center gap-3">
-        <svg class="w-4 h-4 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6m-2 0l-8 5l-8-5h16m0 12H4V8l8 5l8-5v10Z"/></svg>  
-        <span>team@bonfire.cafe</span>
-      </div>
-    </div>
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
   </div> 
   <div>
-    <span class="footer-title">Developers</span> 
-    <a href="/docs" class="link link-hover">Documentation</a> 
-    <a href="/roadmap" class="link link-hover">Roadmap</a> 
-    
-    <a href="https://github.com/bonfire-networks/bonfire-app" target="_blank" class="link link-hover">Code</a>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
+    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
+    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
   </div> 
   <div>
-    <span class="footer-title">Apps</span> 
-    <a href="/start" class="link link-hover">Get started</a> 
-    <a href="/docs/faq" class="link link-hover">FAQs</a> 
-    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
   </div> 
   <div>
-    <span class="footer-title">More</span> 
-    <a href="/community" class="link link-hover">Community</a> 
-    <a href="/docs/conduct" class="link link-hover">Terms of use</a> 
-    <a href="/docs/privacy" class="link link-hover">Privacy policy</a> 
-    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="link link-hover">Support</a> 
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a href="/privacy" class="link link-hover text-base-content/70">Privacy policy</a>
   </div>
 </footer>
-
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      <a class="inline-block px-2 hover:text-white" href="/contact/">Contact</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
 </div>
     <!-- Current page: /tags/all/ -->
   </body>
