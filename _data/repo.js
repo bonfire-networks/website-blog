@@ -8,7 +8,7 @@ module.exports = async function() {
   try {
     const response = await axios.get(`https://api.github.com/repos/bonfire-networks/${repoName}`, {
       headers: {
-        'Authorization': `token ${process.env.TOKEN_GITHUB}`,
+        'Authorization': `token ${process.env.API_TOKEN}`,
         'Accept': 'application/vnd.github.v3+json'
       }
     });

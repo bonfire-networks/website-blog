@@ -4,7 +4,7 @@ require('dotenv').config();
 async function fetchRepos(page = 1) {
   const response = await axios.get(`https://api.github.com/orgs/bonfire-networks/repos?per_page=100&page=${page}`, {
     headers: {
-      'Authorization': `token ${process.env.TOKEN_GITHUB}`,
+      'Authorization': `token ${process.env.API_TOKEN}`,
       'Accept': 'application/vnd.github.mercy-preview+json'
     }
   });
