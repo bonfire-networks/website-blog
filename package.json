@@ -4,7 +4,7 @@
   "description": "Public bonfire website.",
   "scripts": {
     "start": "eleventy --watch --serve & npx tailwindcss -i css/index.css -o css/style_v2.css --watch ",
-    "build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss css/index.css --o css/style_v2.css"
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss css/index.css --o css/style_v2.css"
   },
   "repository": {
     "type": "git",
