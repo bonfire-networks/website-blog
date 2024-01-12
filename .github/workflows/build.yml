@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies & build
         env:
-          API_TOKEN: ${{secrets.API_TOKEN}}
+          API_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           npm ci
           npm run build          
@@ -35,4 +35,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           cname: bonfirenetworks.org
         env:
-          API_TOKEN: ${{secrets.API_TOKEN}}
+          API_TOKEN: ${{secrets.GITHUB_TOKEN}}
