@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies & build
         env:
-          API_TOKEN: ${{secrets.TOKEN_GITHUB}}
+          TOKEN_GITHUB: ${{secrets.TOKEN_GITHUB}}
         run: |
           npm ci
           npm run build          
