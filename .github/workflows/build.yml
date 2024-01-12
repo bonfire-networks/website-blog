@@ -23,8 +23,7 @@ jobs:
 
       - name: Install dependencies & build
         env:
-          API_TOKEN: ${{secrets.API_TOKEN}}
-          TOKEN_GITHUB: ${{secrets.TOKEN_GITHUB}}
+          API_TOKEN: ${{secrets.TOKEN_GITHUB}}
         run: |
           npm ci
           npm run build          
@@ -33,7 +32,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./_site
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.API_TOKEN }}
           cname: bonfirenetworks.org
         env:
           API_TOKEN: ${{secrets.API_TOKEN}}
