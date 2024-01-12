@@ -1,0 +1,3624 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link
+    rel="stylesheet" href="/css/style_v2.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div class="bg-base-300">
+      <header class="relative z-30 lg:px-8 mx-auto navbar">
+        <div class="navbar-start w-[70%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           <div class="ml-4 hidden xl:flex">
+          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+                <span>About</span>
+                
+              </a>
+              
+              
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
+                      <div class="font-bold">Themes</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
+                      <div class="font-bold">Tutorials</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-bold">Design</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-bold">Community</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                  </a></li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/hosting" class=" ">
+              <span class="text-sm font-regular">Hosting</span>
+            </a>
+            </li>
+            
+       
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+           <label for="theme_controller" class="swap swap-rotate mr-4">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+              
+            </label>
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/themes" class=" ">
+            <span class="text-base font-regular">Themes</span>
+          </a>
+          </li>
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/courses" class=" ">
+            <span class="text-base font-regular">courses</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/pilots" class=" ">
+            <span class="text-base font-regular">Pilots</span>
+          </a>
+          </li>
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+<div class="max-w-screen-lg mx-auto mt-12">
+ <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
+      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </div>
+        <span class="text-sm font-medium text-blueGray-300">Back to blog</span>
+    </a>
+    <h1 class="font-medium text-left text-xl text-base-content">Articles tagged <span class="underline">all</span></h1>
+    <ol>
+    
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/start/">
+                  
+                      Get Started
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 13:06:16 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  How do you want to use or build with Bonfire?
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/start/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/pilots/">
+                  
+                      Pilots
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:06:14 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/pilots/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/apps/">
+                  
+                      Apps
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jan 12 2024 10:06:14 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Bonfire is not a single app, but comes in many flavours...
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/apps/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/app/classic">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 15:00:54 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/app/classic" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/about/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 15:00:54 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/about/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/support_footer/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 15:00:54 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/support_footer/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 15:00:54 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/hero/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 15:00:54 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/hero/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/features/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 15:00:54 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/features/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/testimonials/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/testimonials/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/postshome/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/postshome/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/hosting/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/hosting/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/just_commands/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/just_commands/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/courses/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/courses/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/how_to_fork_extension/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/how_to_fork_extension/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/extension/how_to_create_extension/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/extension/how_to_create_extension/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/extension/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/extension/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/extension/add_settings/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/extension/add_settings/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/courses/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 11 2024 09:34:12 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/courses/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/themes/">
+                  
+                      Themes
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Mon Jan 08 2024 10:16:25 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs.
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/themes/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/joinus/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Mon Jan 08 2024 10:16:25 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/joinus/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/extensions/">
+                  
+                      Extensions
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Mon Jan 08 2024 10:16:25 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs.
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/extensions/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Mon Jan 08 2024 10:16:25 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/contact/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Mon Jan 08 2024 10:16:25 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/contact/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/community/">
+                  
+                      Participate in the ecosystem
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 04 2024 13:17:47 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/community/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/how_design/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 04 2024 12:34:40 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/how_design/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/integrations/">
+                  
+                      Integrations
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 04 2024 12:34:36 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs.
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/integrations/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/glossary/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jan 04 2024 12:34:36 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/glossary/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/design/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Mon Dec 11 2023 09:37:51 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/design/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/zappa/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/zappa/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/tags/all/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/tags/all/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/roadmap/">
+                  
+                      Roadmap
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/roadmap/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/newsletter/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/newsletter/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/general_intro/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/general_intro/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/gaia/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/gaia/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/faqs/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/faqs/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/privacy/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/privacy/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/mrf/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/mrf/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/hacking/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/hacking/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/graphql/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/graphql/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/deploy/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/deploy/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/database/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/database/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/conduct/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/conduct/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/changelog/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/changelog/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/boundaries/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/boundaries/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/bonfire-flavoured-elixir/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/bonfire-flavoured-elixir/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/architecture/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/architecture/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/developers/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/developers/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/contribute/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/contribute/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/case_studies/">
+                  
+                      Case Studies
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Dive into Bonfire Networks&#39; case studies to witness the power of autonomous social networks in empowering digital and local communities.
+              </p>
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/case_studies/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/building_blocks/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/building_blocks/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/blog/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:48 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/blog/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/subscribe/">
+                  
+                      Subscribe
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:43 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/subscribe/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/plugins/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:43 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/plugins/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/faq/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:43 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/faq/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/docs/faq/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:43 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/docs/faq/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/cta/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:43 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/cta/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/code_of_conduct/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:43 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/code_of_conduct/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/what/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/what/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/privacy_policy/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/privacy_policy/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/privacy/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/privacy/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/getting_started/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/getting_started/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/demo/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/demo/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/customize/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/customize/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/conduct/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 05 2023 17:30:25 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/conduct/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/gaia.jpg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/open_science/">
+                  
+                      Toward an open-science ecosystem
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Wed Oct 04 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Dive into Bonfire Networks&#39; case studies to witness the power of autonomous social networks in empowering digital and local communities.
+              </p>
+          
+          <div class="my-2"><a href="/tags/flavour/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  flavour
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/open_science/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/road_to_bonfire.jpg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/road_to_public/">
+                  
+                      The Road to Bonfire 1.0
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Sep 14 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We&#39;ve spent the past two years building, iterating, experimenting, and refactoring the Bonfire codebase — to explore our assumptions, co-design with our community, and stretch the limits of social networking, all while having fun!
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/development/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  development
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/road_to_public/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/release.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/release_096/">
+                  
+                      Bonfire 0.9.6
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Wed Aug 09 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We&#39;re thrilled to announce the release of Bonfire version 0.9.6! 
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/release_096/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/composer.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/making_things_intuitive_is_complex/">
+                  
+                      Making things intuitive is complex! Or, what we discovered via user testing
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Wed Jul 19 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Notes about our latest user testing research to gather feedback and insights on the bonfire composer component.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/making_things_intuitive_is_complex/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/ux.jpeg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/user_research/">
+                  
+                      Could you help us with user research?
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Wed Jun 28 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  As we approach v1.0 of Bonfire, we’re looking for volunteers to help us with some user research.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/community/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  community
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/user_research/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/roles.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/custom_roles/">
+                  
+                      Empowering Bonfire users with advanced roles &amp; permissions
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jun 15 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We are happy to announce that the next Bonfire release will introduce the capacity to define and assign custom roles.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/extension/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  extension
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/custom_roles/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/groups1.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/dev_diary_groups_1/">
+                  
+                      Dev Diary: Implementing federated groups in Bonfire
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Jun 08 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  As part of our commitment to empower communities with tools to foster coordination, we are thrilled to announce the development of federated groups in Bonfire.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/tech/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  tech
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/dev_diary_groups_1/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/boundaries_post.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/how_to_boundaries/">
+                  
+                      How to use boundaries, circles and roles
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Tue May 30 2023 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  &quot;One does not need to set themselves on fire to keep other people warm.&quot;
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/how_to_boundaries/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/pweek.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_at_privacyweek/">
+                  
+                      Bonfire presentation @ PrivacyWeek
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Sat Oct 01 2022 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  In September we have been invited to present bonfire at the italian privacy week conference. This is the bonfire presentation translated in english.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/announcement/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  announcement
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_at_privacyweek/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/blog_boundaries.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/introducing_boundaries/">
+                  
+                      Introducing circles and boundaries
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Tue Jul 19 2022 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  How will our online experiences be different once we take back control over exactly who should see, interact with, and even collaborate on our content and activities at the most granular level?
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/introducing_boundaries/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/bonfire_beta.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/meet_us_at_the_playground/">
+                  
+                      Meet us at the playground: Bonfire Social beta launch 
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Sat Jun 25 2022 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Today, the Bonfire team is asking for *your* help with beta testing. Bonfire still needs a lot of work - be it bugs, federation, missing features, configurability and user experience - but that&#39;s the point, we decided to launch the playground at this gnarly stage with the specific intention of moving toward the 1.0 release as a community.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/announcement/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  announcement
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/meet_us_at_the_playground/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/beta-screenshot.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/beta_what_to_expect/">
+                  
+                      What you can expect from the Bonfire beta
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Tue Jun 21 2022 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  In a few days&#39; time we&#39;d like to invite you to experiment with a &#39;playground&#39; instance of Bonfire, the federated social networking toolkit for communities. Lots of what you&#39;ll see in the Bonfire beta will be recognisable from other social and/or federated apps. There is some functionality that may be a little different with Bonfire as well.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/community/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  community
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/beta_what_to_expect/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/1a.jpg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/not_just_yet_another_microblog/">
+                  
+                      Not Just &#39;Yet Another Microblog&#39;
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Sat Jun 18 2022 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We&#39;re now days away from the beta release of Bonfire, a federated app toolkit. When beta users get their hands on it, however, they might be confused wait, this looks like just another microblogging app! haven&#39;t we already got enough of those?
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/not_just_yet_another_microblog/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/testing.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/notes_on_first_usability_testing/">
+                  
+                      Notes on our first usability testing round
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Sat May 21 2022 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  On May 10th we published a toot asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/notes_on_first_usability_testing/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/1.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/zappa_report/">
+                  
+                      First version of report published sharing findings from Zappa project user research
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Sat Mar 05 2022 00:00:00 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/zappa_report/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/2.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/zappa_some_interesting_finding/">
+                  
+                      Some interesting findings from user research for the Zappa project (so far!)
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Feb 18 2022 00:00:00 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  One of the things about working openly is, fairly obviously, sharing your work as you go. This can be difficult for many reasons, not least because of the human tendency toward narrative, to completed stories with start, middle, and end...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/zappa_some_interesting_finding/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/3.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/zappa-project/">
+                  
+                      Countering misinformation in federated social networks, an introduction to the Zappa project
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Tue Feb 08 2022 00:00:00 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  One thing I’ve learned from spending all of my adult life online and being involved in lots of innovation projects is that you can have the best bookmarking system in the world, but it means nothing if you don’t do something with the stuff you’ve bookmarked...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/zappa-project/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/cos.jpeg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_cos/">
+                  
+                      Announcing the Zappa project
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Sun Dec 26 2021 00:00:00 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We are pleased to announce that Bonfire has been awarded a grant from the Culture of Solidarity Fund to support cross-border cultural initiatives of solidarity in times of uncertainty and &quot;infodemic&quot;.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/announcement/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  announcement
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_cos/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/tags/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Nov 25 2021 02:36:06 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/tags/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/page-list/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Nov 25 2021 02:36:06 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/page-list/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url()"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/">
+                  
+                      Untitled
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Nov 25 2021 02:36:06 GMT+0000 (GMT)</time>
+              </span>
+          </div>
+          
+          
+          
+          <div class="my-2">
+          </div>
+          <div>
+              <a href="/posts/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/naples.jpg)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/notes_on_neapoletan_meeting/">
+                  
+                      Notes on the first neapolitan meeting
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Thu Oct 14 2021 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  As we’re approaching a new phase in which bonfire is not anymore a chimera among few devs, but it’s starting to come together as a nice tool, some of us are anxious to make raids in the analogic world and spread the big news...
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/announcement/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  announcement
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/notes_on_neapoletan_meeting/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(https://i.imgur.com/XoQvDCW.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_ui_social/">
+                  
+                      A UI toolbox for customizable social network apps
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri Jul 23 2021 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Bonfire:UI:Social is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_ui_social/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/flowers.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/let_thousand_bonfires_bloom/">
+                  
+                      Let a thousand bonfires bloom
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Tue Jul 20 2021 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Dopamine and attention manipulation are not inherent properties of a social network. It is time to reconsider some fundamental questions.
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/let_thousand_bonfires_bloom/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/my_tasks.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_coordination/">
+                  
+                      First steps toward federated project coordination
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Wed Jul 14 2021 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  We are building a coordination tool that shares a lot of functionality with most to-do apps out there. But how is it different?
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_coordination/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    <article class="my-16 lg:my-8 lg:flex lg:space-x-6">
+        <div class="w-full h-60 lg:w-32 lg:h-32 bg-blueGray-400 rounded bg-cover bg-no-repeat bg-center shadow-xl" style="background-image: url(/img/brand.png)"></div>
+        <div class="flex-1 mt-4 lg:mt-0">
+          <h2 class="font-bold text-2xl text-blueGray-200 hover:text-blueGray-200 hover:underline mb-2">
+              <a href="/posts/bonfire_identity/">
+                  
+                      The story of Bonfire&#39;s visual identity
+                  
+              </a>
+          </h2>
+          <div class="flex items-center space-x-2">
+              <span class="flex items-center space-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content text-opacity-70" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                <time class="text-xs text-base-content text-opacity-70">Fri May 21 2021 01:00:00 GMT+0100 (GMT+01:00)</time>
+              </span>
+          </div>
+          
+          
+          
+              <p class="text-sm text-base-content text-opacity-80 my-2">
+                  Our journey through brainstorming and creating the bonfire logotype
+              </p>
+          
+          <div class="my-2"><a href="/tags/posts/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  posts
+                  </span>
+                  </a><a href="/tags/product/">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                  <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  product
+                  </span>
+                  </a>
+          </div>
+          <div>
+              <a href="/posts/bonfire_identity/" class="text-pink-400 font-bold text-sm">
+                  Read more →
+              </a>
+          </div>
+        </div>
+      </article>
+    
+    </ol>
+</div>
+
+
+  <div class="border-base-content/10 bg-base-300 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
+    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
+    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a href="/privacy" class="link link-hover text-base-content/70">Privacy policy</a>
+  </div>
+</footer>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      <a class="inline-block px-2 hover:text-white" href="/contact/">Contact</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+    <!-- Current page: /tags/all/ -->
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link
+    rel="stylesheet" href="/css/style_v2.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div class="bg-base-300">
+      <header class="relative z-30 lg:px-8 mx-auto navbar">
+        <div class="navbar-start w-[70%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           <div class="ml-4 hidden xl:flex">
+          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+                <span>About</span>
+                
+              </a>
+              
+              
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
+                      <div class="font-bold">Themes</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
+                      <div class="font-bold">Tutorials</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-bold">Design</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-bold">Community</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                  </a></li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/hosting" class=" ">
+              <span class="text-sm font-regular">Hosting</span>
+            </a>
+            </li>
+            
+       
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+           <label for="theme_controller" class="swap swap-rotate mr-4">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+              
+            </label>
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/themes" class=" ">
+            <span class="text-base font-regular">Themes</span>
+          </a>
+          </li>
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/courses" class=" ">
+            <span class="text-base font-regular">courses</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/pilots" class=" ">
+            <span class="text-base font-regular">Pilots</span>
+          </a>
+          </li>
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+<div class="hero p-16 bg-primary w-full rounded-box">
+  <div class="text-center hero-content ">
+    <div class="max-w-md mx-auto">
+      <h1 class="mb-5 text-5xl font-bold">Customize</h1> 
+      <p class="mb-5">Discover how bonfire can be tailored to resonate with your community needs and visions.</p> 
+    </div>
+  </div>
+</div>
+<div class="flex space-x-8 mt-12">
+  <ul class="menu py-3 w-64 shadow-lg bg-base-100 rounded-box">
+    <li class="menu-title">
+      <span>Menu Title</span>
+    </li> 
+    <li>
+      <a>Introduction</a>
+    </li> 
+    <li>
+      <a>Appearence</a>
+    </li> 
+    <li>
+      <a>Features</a>
+    </li> 
+    <li>
+      <a>Behaviours</a>
+    </li> 
+    <li>
+      <a>Alghoritms</a>
+    </li> 
+    
+    
+  </ul>
+  <div class="prose">
+    <h2>Introduction</h2>
+    <p>Once you installed daisyUI, you can use component classes like btn, card, etc...So instead of making a button like this:</p>
+  </div>
+</div>
+
+  <div class="border-base-content/10 bg-base-300 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
+    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
+    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a href="/privacy" class="link link-hover text-base-content/70">Privacy policy</a>
+  </div>
+</footer>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      <a class="inline-block px-2 hover:text-white" href="/contact/">Contact</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+    <!-- Current page: /customize/ -->
+  </body>
+</html>
