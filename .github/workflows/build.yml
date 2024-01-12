@@ -21,12 +21,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies & build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site with Eleventy
         env:
-          API_TOKEN: ${{secrets.API_TOKEN}}
-        run: |
-          npm ci
-          npm run build          
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}  # Make TOKEN_GITHUB available to Eleventy
+        run: npm run build   
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -34,6 +35,3 @@ jobs:
           publish_dir: ./_site
           github_token: ${{ secrets.API_TOKEN }}
           cname: bonfirenetworks.org
-        env:
-          API_TOKEN: ${{secrets.API_TOKEN}}
-          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
