@@ -1,0 +1,727 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link
+    rel="stylesheet" href="/css/style_v2.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div class="bg-base-300">
+      <header class="relative z-30 lg:px-8 mx-auto navbar">
+        <div class="navbar-start w-[70%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           <div class="ml-4 hidden xl:flex">
+          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+                <span>About</span>
+                
+              </a>
+              
+              
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
+                      <div class="font-bold">Themes</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
+                      <div class="font-bold">Tutorials</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-bold">Design</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-bold">Community</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                  </a></li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/hosting" class=" ">
+              <span class="text-sm font-regular">Hosting</span>
+            </a>
+            </li>
+            
+       
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+           <label for="theme_controller" class="swap swap-rotate mr-4">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+              
+            </label>
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/themes" class=" ">
+            <span class="text-base font-regular">Themes</span>
+          </a>
+          </li>
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/courses" class=" ">
+            <span class="text-base font-regular">courses</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/pilots" class=" ">
+            <span class="text-base font-regular">Pilots</span>
+          </a>
+          </li>
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+
+
+<div class="bg-base-300">
+  <div class="max-w-screen-lg py-12 px-4 lg:px-0  lg:mx-auto">
+    <div class="text-sm breadcrumbs">
+      <ul>
+        <li><a href="/extensions">Extensions</a></li> 
+        <li>needle</li>
+      </ul>
+    </div>
+    <h1 class="text-3xl font-bold text-base-content  ">needle</h1>
+    <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2">One foreign key to rule them all and in the darkness, bind them.</p>
+    <div class="relative inline-block mt-6">
+      
+    <input value="just dep-clone-local needle https://github.com/bonfire-networks/needle" class="input w-[420px] input-bordered text-sm" />
+    <span class="absolute right-[8px] top-[8px] btn btn-sm btn-square">
+        <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"/><path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1"/></g></svg>
+      </span>
+    </div>
+    
+
+  </div>
+</div>
+<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8 px-4 lg:px-0">
+
+  <div class="lg:col-span-8 order-last lg:order-first col-span-12"
+    <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
+
+    <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
+      <div class="uppercase tracking-widest mb-6">Readme</div>
+        
+        <h1 id="needle">Needle <a class="direct-link" href="#needle">#</a></h1>
+<p><a href="https://hex.pm/packages/needle"><img src="https://img.shields.io/hexpm/v/needle" alt="hex.pm"></a><br>
+<a href="https://hexdocs.pm/needle">hexdocs</a></p>
+<p>Universal foreign keys, virtual schemas, and shared data mixins for Ecto</p>
+<blockquote>
+<p>One foreign key to rule them all and in the darkness, bind them.</p>
+</blockquote>
+<p>-- Gandalf, paraphrased.</p>
+<p>A means of foreign keying many tables in one field. Designed for<br>
+highly interlinked data in highly dynamic schemata where tracking all<br>
+the foreign keys is neither desired nor practical.</p>
+<p>Note: a universal foreign key is actually a hard problem. Many<br>
+approaches are on offer with a variety of tradeoffs. You should<br>
+carefully consider a variety of approaches rather than just blindly<br>
+adopting the one that fitted our project's needs the best!</p>
+<h2 id="background">Background <a class="direct-link" href="#background">#</a></h2>
+<p>A <code>Table</code> is a record of a table that may be linked to by a pointer.<br>
+A <code>Pointer</code> is a pointer id and a table id.</p>
+<p>With these two ingredients, we can construct a means of pointing to<br>
+any table that has a <code>Table</code> entry.</p>
+<p><code>Pointer</code> and <code>Table</code> IDs are both <code>Needle.ULID</code>, a UUID-like type<br>
+that combines a millisecond-precision timestamp and some randomness to<br>
+reduce the likelihood of a clash. It naturally sorts both in binary<br>
+and text form by time and as far as postgres is concerned, it's a UUID.</p>
+<h2 id="installation">Installation <a class="direct-link" href="#installation">#</a></h2>
+<p>Aside from the hex dependency, you will also need to write a simple<br>
+migration to set up the database before you can start writing your<br>
+regular migrations:</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">InitPointers</span>  <span class="token keyword">do</span>
+  <span class="token attribute variable">@moduledoc</span> <span class="token boolean">false</span>
+  <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+  <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+
+  <span class="token keyword">def</span> <span class="token function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> <span class="token function">inits</span><span class="token punctuation">(</span><span class="token atom symbol">:up</span><span class="token punctuation">)</span>
+  <span class="token keyword">def</span> <span class="token function">down</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> <span class="token function">inits</span><span class="token punctuation">(</span><span class="token atom symbol">:down</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">defp</span> <span class="token function">inits</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">init_pointers_ulid_extra</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token comment"># this one is optional but recommended</span>
+    <span class="token function">init_pointers</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token comment"># this one is not optional</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<h2 id="defining-a-pointable-type">Defining a Pointable Type <a class="direct-link" href="#defining-a-pointable-type">#</a></h2>
+<p>Pointable tables require a unique sentinel ULID to identify<br>
+them. These must be 26 characters long and in the alphabet of<br>
+<a href="https://en.wikipedia.org/wiki/Base32#Crockford's_Base32">Crockford's Base32</a>.<br>
+They should be easy to identify in a printout and might be silly.</p>
+<p>There is a helper function, <code>synthesise!/1</code> in <code>Needle.ULID</code> to<br>
+assist with this process - give it a 26-character long binary of ascii<br>
+alphanumerics and it will give you the closest ULID that matches back.</p>
+<p>Let's look at a simple schema:</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Greeting</span> <span class="token keyword">do</span>
+  <span class="token keyword">use</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Pointable</span><span class="token punctuation">,</span>
+    <span class="token attr-name">otp_app:</span> <span class="token atom symbol">:my_app</span><span class="token punctuation">,</span>
+    <span class="token attr-name">source:</span> <span class="token string">"myapp_greeting"</span><span class="token punctuation">,</span>
+    <span class="token attr-name">table_id:</span> <span class="token string">"GREET1NGSFR0MD0CEXAMP1E000"</span>
+
+  pointable_schema <span class="token keyword">do</span>
+    field <span class="token atom symbol">:greeting</span><span class="token punctuation">,</span> <span class="token atom symbol">:string</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<p>To declare a pointable schema, we start by using <code>Needle.Pointable</code>,<br>
+providing the name of our otp application, the source table's name in<br>
+the database and our chosen sentinel ULID.</p>
+<p>We then call <code>pointable_schema</code> and define any fields we wish to put<br>
+directly in the table. For the most part, <code>pointable_schema</code> is like<br>
+Ecto's <code>schema</code> macro, except you do not provide the table name and<br>
+let it handle the primary key.</p>
+<p>If for some reason you wished to turn autogeneration off, you could<br>
+pass <code>autogenerate: false</code> to the options provided when using<br>
+<code>Needle.Pointable</code>.</p>
+<p>Now let's define the migration for our schema:</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">Greeting</span>  <span class="token keyword">do</span>
+  <span class="token attribute variable">@moduledoc</span> <span class="token boolean">false</span>
+  <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+  <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+
+  <span class="token keyword">def</span> <span class="token function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">create_pointable_table</span><span class="token punctuation">(</span><span class="token atom symbol">:greeting</span><span class="token punctuation">,</span> <span class="token string">"GREET1NGSFR0MD0CEXAMP1E000"</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+      add <span class="token atom symbol">:greeting</span><span class="token punctuation">,</span> <span class="token atom symbol">:text</span><span class="token punctuation">,</span> <span class="token attr-name">null:</span> <span class="token boolean">false</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">def</span> <span class="token function">down</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">drop_pointable_table</span><span class="token punctuation">(</span><span class="token atom symbol">:greeting</span><span class="token punctuation">,</span> <span class="token string">"GREET1NGSFR0MD0CEXAMP1E000"</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<p>As you can see, it's pretty similar to defining a regular migration,<br>
+except you use <code>create_pointable_table</code> and<br>
+<code>drop_pointable_table</code>. Notice that our sentinel ULID makes an<br>
+appearance again here. It's <em>very</em> important that these match what we<br>
+declared in the schema.</p>
+<h2 id="referencing-needle">Referencing Needle <a class="direct-link" href="#referencing-needle">#</a></h2>
+<p>Ecto does not know anything about our scheme, so unless we<br>
+specifically want something to reference one of the pointed tables, we<br>
+typically <code>belongs_to</code> with <code>Needle.Pointer</code>. The table in which we<br>
+do this does not itself need to be pointable.</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Foo</span> <span class="token keyword">do</span>
+
+  <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Schema</span>
+  <span class="token keyword">alias</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Pointer</span>
+
+  <span class="token comment"># regular ecto table, not pointable!</span>
+  schema <span class="token string">"hello"</span> <span class="token keyword">do</span>
+    belongs_to <span class="token atom symbol">:pointer</span><span class="token punctuation">,</span> <span class="token module class-name">Pointer</span> <span class="token comment"># who knows what it points to?</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<p>You may choose to reference a specific schema rather than Pointer if it<br>
+will only point to a single table. If you do this, you must ensure<br>
+that the referenced record exists in that table in the normal<br>
+way. There may be some performance benefit, we didn't benchmark it.</p>
+<p>The migration is slightly more complex, we have to decide what type of<br>
+a pointer it is. Needle come in three categories:</p>
+<ul>
+<li>A strong pointer is not nullable and is deleted when the object it<br>
+points to is deleted.</li>
+<li>A weak pointer is nullable and is nilified when the object it points<br>
+to is deleted.</li>
+<li>An unbreakable pointer will raise when you attempt to delete the<br>
+object it points to.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Nullable?</th>
+<th>On Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strong</td>
+<td>No</td>
+<td>Cascade</td>
+</tr>
+<tr>
+<td>Weak</td>
+<td>Yes</td>
+<td>Set Null</td>
+</tr>
+<tr>
+<td>Unbreakable</td>
+<td>No</td>
+<td>Raise</td>
+</tr>
+</tbody>
+</table>
+<p>In this case we will use a strong pointer, because we want it to be<br>
+deleted if the pointed object is deleted.</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">Hello</span>  <span class="token keyword">do</span>
+  <span class="token attribute variable">@moduledoc</span> <span class="token boolean">false</span>
+  <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+  <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+
+  <span class="token keyword">def</span> <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    create_if_not_exists <span class="token function">table</span><span class="token punctuation">(</span><span class="token atom symbol">:hello</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+      add <span class="token atom symbol">:pointer</span><span class="token punctuation">,</span> <span class="token function">strong_pointer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">null:</span> <span class="token boolean">false</span>
+      add <span class="token atom symbol">:greeting</span><span class="token punctuation">,</span> <span class="token atom symbol">:text</span><span class="token punctuation">,</span> <span class="token attr-name">null:</span> <span class="token boolean">false</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<p>If you are pointing to a specific table instead of pointer,<br>
+<code>strong_pointer/1</code> allows you to pass the name of that module<br>
+(<code>strong_pointer/0</code> calls this with <code>Needle.Pointer</code>).</p>
+<h2 id="dereferencing-needle">Dereferencing Needle <a class="direct-link" href="#dereferencing-needle">#</a></h2>
+<p>It is common that even though you have a universal foreign key, you<br>
+will want to issue different queries based upon the type that is being<br>
+pointed to. For this reason, it is up to you to decide how to perform<br>
+an onward query.</p>
+<p><code>Needle.Pointers.schema/1</code> turns a <code>Pointer</code> into an Ecto schema module name<br>
+you can switch against. <code>Needle.Pointers.plan</code> breaks down a list of Needle<br>
+into a map of ids keyed by schema module. It is handy to define some<br>
+functions in your (non-library) application that can load any type of<br>
+pointer in given contexts.</p>
+<h2 id="querying-needle">Querying Needle <a class="direct-link" href="#querying-needle">#</a></h2>
+<p>Since <code>Pointer</code> has a table, you can use its <code>table_id</code> field to<br>
+filter by pointed type. <code>Needle.Tables.id!/1</code> (or <code>ids!/1</code> for a<br>
+list) can be used to obtain the IDs for a table or tables.</p>
+<p>Then you run into another problem, that even though you know all of<br>
+the tables you're working with will have a certain field, you need to<br>
+know which table they are to work with them! The solution to this is<br>
+what we are calling 'mixin tables' for convenience.</p>
+<p>A mixin table has a <code>Pointer</code> primary key along with any other fields<br>
+you wish to store in this mixin. By moving fields out to mixin tables,<br>
+you gain knowledge of the table name to which you need to join.</p>
+<p>An example mixin schema:</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span>  <span class="token keyword">do</span>
+  <span class="token keyword">use</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Mixin</span><span class="token punctuation">,</span>
+    <span class="token attr-name">otp_app:</span> <span class="token atom symbol">:my_app</span><span class="token punctuation">,</span>
+    <span class="token attr-name">source:</span> <span class="token string">"creator"</span>
+
+  mixin_schema <span class="token keyword">do</span>
+    belongs_to <span class="token atom symbol">:creator</span><span class="token punctuation">,</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">User</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<p>Mixin tables are not themselves pointable, so there is no need to<br>
+specify a table id as when defining a pointable schema.</p>
+<p>The migration for this is slightly more complicated:</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span> <span class="token keyword">do</span>
+
+  <span class="token keyword">import</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+  <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
+
+  <span class="token keyword">defp</span> <span class="token function">creator_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span><span class="token punctuation">.</span><span class="token function">__schema__</span><span class="token punctuation">(</span><span class="token atom symbol">:source</span><span class="token punctuation">)</span>
+  <span class="token keyword">defp</span> <span class="token function">user_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">User</span><span class="token punctuation">.</span><span class="token function">__schema__</span><span class="token punctuation">(</span><span class="token atom symbol">:source</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">migrate_creator</span><span class="token punctuation">(</span>index_opts <span class="token operator">\\</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token attr-name">do:</span> <span class="token function">migrate_creator</span><span class="token punctuation">(</span>index_opts<span class="token punctuation">,</span> <span class="token function">direction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">defp</span> <span class="token function">migrate_creator</span><span class="token punctuation">(</span>index_opts<span class="token punctuation">,</span> <span class="token atom symbol">:up</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">create_mixin_table</span><span class="token punctuation">(</span><span class="token function">creator_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+      add <span class="token atom symbol">:creator_id</span><span class="token punctuation">,</span> <span class="token function">strong_pointer</span><span class="token punctuation">(</span><span class="token function">user_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">null:</span> <span class="token boolean">false</span> 
+    <span class="token keyword">end</span>
+    <span class="token function">create_if_not_exists</span><span class="token punctuation">(</span><span class="token function">unique_index</span><span class="token punctuation">(</span><span class="token function">creator_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token atom symbol">:creator_id</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index_opts<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">defp</span> <span class="token function">migrate_creator</span><span class="token punctuation">(</span>index_opts<span class="token punctuation">,</span> <span class="token atom symbol">:down</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">drop_if_exists</span><span class="token punctuation">(</span><span class="token function">unique_index</span><span class="token punctuation">(</span><span class="token function">creator_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token atom symbol">:creator_id</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index_opts<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token function">drop_mixin_table</span><span class="token punctuation">(</span><span class="token function">creator_table</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<h2 id="virtual-pointables-(%22virtuals%22)">Virtual pointables (&quot;virtuals&quot;) <a class="direct-link" href="#virtual-pointables-(%22virtuals%22)">#</a></h2>
+<p>Virtuals are a new addition in needle 0.6.0. They behave like<br>
+pointables that you have not added any fields to.</p>
+<p>We noticed it was very common in bonfire to create pointables with no<br>
+extra fields just so we could use the needle system. Virtuals are<br>
+alternative for this case that requires less typing and provides a<br>
+reduced overhead vs pointables.</p>
+<p>Virtuals are backed by a writable view onto the <code>needle</code> table. This<br>
+means that when we can save the cost of maintaining a primary key in<br>
+that table and the associated disk space.</p>
+<p>In all other respects, they behave like pointables. You can have<br>
+changesets over them and select and insert as usual.</p>
+<h2 id="elixir-based-logic">Elixir-based logic <a class="direct-link" href="#elixir-based-logic">#</a></h2>
+<p>The practical result of needle is that it pushes a certain amount of<br>
+validation and consistency logic back into elixir land. It is<br>
+therefore your elixir code's responsibility to ensure that data is<br>
+inserted into the appropriate mixin tables when inserting a pointable<br>
+object and to manage deletions as appropriate.</p>
+<p>When assembling queries with mixin tables, pay careful attention to<br>
+the type of join you are performing. An inner join is explicitly<br>
+asking not to be shown objects that do not have a record for that<br>
+mixin. You quite possibly wanted to left join.</p>
+<h2 id="configuration-and-overrides">Configuration and overrides <a class="direct-link" href="#configuration-and-overrides">#</a></h2>
+<p>Every pointable or mixin schema is overrideable with configuration<br>
+during compilation (this is why using them requires an <code>:otp_app</code> to<br>
+be specified). For example, we could override <code>Needle.Table</code> (which<br>
+is a pointable table) thus:</p>
+<pre class="language-elixir"><code class="language-elixir">config <span class="token atom symbol">:needle</span><span class="token punctuation">,</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Table</span><span class="token punctuation">,</span> <span class="token attr-name">source:</span> <span class="token string">"my_pointers_table"</span></code></pre>
+<p>The <code>table_id</code> is also configurable, but we don't recommend you change it.</p>
+<p>In addition, all pointable and mixin schemas permit extension with<br>
+<a href="https://github.com/bonfire-networks/exto">Exto</a>. See the <a href="https://hexdocs.pm/exto/">Exto<br>
+docs</a> for more information about how to<br>
+extend schemas via configuration. You will probably at the very least<br>
+want to insert some <code>has_one</code> for mixins off your pointables.</p>
+<h2 id="tradeoffs">Tradeoffs <a class="direct-link" href="#tradeoffs">#</a></h2>
+<p>All solutions to the universal primary key problem have tradeofs. Here<br>
+are what we see as the deficiencies in our approach:</p>
+<ol>
+<li>It forces a ULID on you. This is great for us, but not<br>
+everyone. ULID exposes a timestamp with millisecond precision. If<br>
+the time of creation of a resource is sensitive information for<br>
+your purposes, ULIDs are not going to be suitable for you.</li>
+<li>Ecto has no knowledge of the specialty of <code>Pointer</code>,<br>
+e.g. <code>Repo.preload</code> does not work and you need to specify a join<br>
+condition to join through a pointer. Use our functions or add extra<br>
+associations with exto configuration.</li>
+<li>Dereferencing a list of needle requires a select query per table<br>
+type that occurs in the input set.</li>
+<li>Reliance on user attention. You have to follow the instructions<br>
+correctly to make the system work at all.</li>
+<li>There is likely some performance impact from postgres not<br>
+understanding the relationships between the various tables<br>
+properly. It's hard to gauge and we haven't even tried.</li>
+</ol>
+<p>These are not likely to change. If you're going to pick<br>
+this library, do so in the full knowledge of the tradeoffs it makes.</p>
+<p>Alternatives include (I'm sure you can think of others):</p>
+<ul>
+<li>Storing the table name in a second column alongside every foreign key.</li>
+<li>A compound datatype of id and table name.</li>
+<li>Byte/String manipulation tricks.</li>
+<li>Evil SQL hacks based upon compile time configuration.</li>
+</ul>
+<p>While we have our gripes with this approach, once you've gotten the<br>
+hang of using it, it works out pretty well for most purposes and it's<br>
+one of the simpler options to work with.</p>
+<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
+<p>Copyright (c) 2020 needle Contributors</p>
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);<br>
+you may not use this file except in compliance with the License.<br>
+You may obtain a copy of the License at</p>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Unless required by applicable law or agreed to in writing, software<br>
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,<br>
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>
+See the License for the specific language governing permissions and<br>
+limitations under the License.</p>
+
+    </div>
+  </div>
+  <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col">
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/bonfire-networks/needle" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
+          Get Code
+        </a>
+        <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="btn rounded-full flex-1 w-full btn-outline border-base-content/30  btn-sm">
+            Report bugs
+        </a>
+    </div>
+
+    
+
+    <div class="bg-base-content/5 mt-4 rounded-lg p-3">
+      <div class="uppercase text-xs tracking-widest mb-6">Details</div>
+        <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
+          
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">07 Jan 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
+            
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Owner</span> <a class="font-semibold flex gap-2 items-center" href="https://github.com/bonfire-networks"><img class="w-7 h-7 rounded-full" src="https://avatars.githubusercontent.com/u/62843502?v=4" />bonfire-networks</a></div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="border-base-content/10 bg-base-300 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
+    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
+    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a href="/privacy" class="link link-hover text-base-content/70">Privacy policy</a>
+  </div>
+</footer>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      <a class="inline-block px-2 hover:text-white" href="/contact/">Contact</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+    <!-- Current page: /extension/needle/ -->
+  </body>
+</html>

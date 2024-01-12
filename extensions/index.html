@@ -1,0 +1,1574 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extensions</title>
+    <meta name="description" content="Extensions are the building blocks of Bonfire apps. Each extension is modular and composable with the rest, and can be forked and customised for your exact needs.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link
+    rel="stylesheet" href="/css/style_v2.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div class="bg-base-300">
+      <header class="relative z-30 lg:px-8 mx-auto navbar">
+        <div class="navbar-start w-[70%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           <div class="ml-4 hidden xl:flex">
+          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+                <span>About</span>
+                
+              </a>
+              
+              
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
+                      <div class="font-bold">Themes</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content w-64 border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                      <div class="font-bold">Documentation</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
+                      <div class="font-bold">Tutorials</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-bold">Design</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-bold">Community</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                  </a></li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/hosting" class=" ">
+              <span class="text-sm font-regular">Hosting</span>
+            </a>
+            </li>
+            
+       
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+           <label for="theme_controller" class="swap swap-rotate mr-4">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+              
+            </label>
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class="rounded underline decoration-primary decoration-2 text-primary  underline-offset-8 ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/themes" class=" ">
+            <span class="text-base font-regular">Themes</span>
+          </a>
+          </li>
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/courses" class=" ">
+            <span class="text-base font-regular">courses</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/pilots" class=" ">
+            <span class="text-base font-regular">Pilots</span>
+          </a>
+          </li>
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    <div class="bg-base-300">
+  <div class="max-w-screen-xl px-4 xl:px-0 flex flex-col mx-auto py-12">  
+    <h1 class="text-5xl font-bold  ">Extensions</h1>
+    <h2 class="text-xl text-base-content mt-4 max-w-screen-sm">Explore our growing list of extensions to customise your digital space.</h2>
+    
+    
+  </div>
+</div>
+<div class="max-w-screen-xl px-4 xl:px-0 mx-auto my-12">
+
+
+  <div class="grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
+
+  <a href="/extension/activity_pub">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">activity_pub</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Modular ActivityPub library in Elixir </div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>67</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/iconify_ex">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">iconify_ex</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Iconify</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>19</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_valueflows">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_valueflows</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">ValueFlows economic extension for Bonfire</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>18</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_me">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_me</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Me (identity, onboarding, authentication, user switching, user profile, etc) extension for Bonfire</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>13</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_social">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_social</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">An extension for bonfire handling social functions</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>11</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/needle">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">needle</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">One foreign key to rule them all and in the darkness, bind them.</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>10</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_social">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_social</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">UI components for Bonfire:Me and Bonfire:Social extensions</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>10</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/ecto_sparkles">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">ecto_sparkles</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Some helpers to sparkle on top of Ecto to make queries easier, and to better join + preload associations, plus some changeset helpers and slow query logger</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>10</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_common">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_common</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Common utils</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>8</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/exto">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">exto</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Configuration-driven ecto schemas!</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>5</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_geolocate">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_geolocate</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Geolocation schema / Optional GraphQL API for geolocations / Geocoding of addresses / Reverse geocoding</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>5</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_breadpub">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_breadpub</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">a mutual aid bonfire extension</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>5</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/untangle">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">untangle</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Logging and inspecting with location information</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>5</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/needle_ulid">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">needle_ulid</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">A ULID datatype for Ecto with access to timestamp information</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>4</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_search">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_search</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Search indexing / Ultra-fast search / LiveView search UI</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>4</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_boundaries">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_boundaries</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Circles, ACLs, etc</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>4</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/arrows">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">arrows</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">A handful of (mostly) arrow macros with superpowers.</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>4</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_open_id">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_open_id</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Use OpenID and OAuth with your Bonfire identity or connect to Bonfire with an external identity</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>4</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_common">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_common</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Common utilities and components for Bonfire UIs</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>4</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_identity">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_identity</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>3</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/mess">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">mess</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Simple, file-based dependency management with git and local overrides.</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>3</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_access_control">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_access_control</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>3</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_valueflows">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_valueflows</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">UI components and views for ValueFlows</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>3</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_classify">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_classify</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Classify posts and other things using categories and taxonomies</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>3</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_me">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_me</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>3</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_web_phoenix">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_web_phoenix</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/messctl">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">messctl</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">a little utility for updating mess dep lists</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/nodeinfo">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">nodeinfo</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Nodeinfo is a library for serving up instance information using the NodeInfo standard</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_social">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_social</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_notify">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_notify</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"> Web push notifications</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_quantify">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_quantify</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Units &amp; Measures</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_api_graphql">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_api_graphql</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Boilerplate for including a GraphQL API to an app</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_mailer">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_mailer</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Sending email (using Bamboo) / Checking hypothetical email or domain validity</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_fail">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_fail</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Mapping of error atoms to HTTP codes and friendly messages </div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_tag">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_tag</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Tagging, @ mentions, hashtags </div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_valueflows_observe">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_valueflows_observe</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Observations of Economic Resources and the like</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_federate_activitypub">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_federate_activitypub</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Bonfire Adapter to federate via ActivityPub </div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/linkify">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">linkify</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Linkify is a basic package for turning website names into links.</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_coordination">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_coordination</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">UI views and specific components for coordination extensions</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/voodoo">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">voodoo</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Voodoo is a drop-in replacement for Phoenix path helpers which is more convenient to use.</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_livebook">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_livebook</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_editor_ck">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_editor_ck</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Rich text editor for Bonfire</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_edges">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_edges</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/jungle">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">jungle</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">bonfire&#39;s forthcoming build tool</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_epics">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_epics</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">A way of structuring task pipelines that is friendly to extensions and customisability</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_invite_links">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_invite_links</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_editor_quill">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_editor_quill</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_valueflows_api_schema">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_valueflows_api_schema</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Implements API schemas for ValueFlows for federated networks to conduct economic activities.</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_spark">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_spark</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>2</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/twinkle_star">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">twinkle_star</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Elixir library for extracting metadata from files</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_activity_pub">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_activity_pub</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_taxonomy_seeder">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_taxonomy_seeder</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Import existing data into Bonfire:Classify</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_shared_user">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_shared_user</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_files">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_files</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">File management for bonfire apps</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_tasks">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_tasks</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_kanban">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_kanban</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_data_assort">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_data_assort</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire-deploy">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire-deploy</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">A coop-cloud recipe for deploying Bonfire</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_groups">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_groups</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Bonfire default ui components for groups</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_editor_milkdown">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_editor_milkdown</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">bonfire composer based on milkdown editor</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>1</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_pages">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_pages</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ecto">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ecto</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_pages_beacon">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_pages_beacon</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/http_signatures">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">http_signatures</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">Mirror of https://git.pleroma.social/pleroma/elixir-libraries/http_signatures</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_encrypt">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_encrypt</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_topics">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_topics</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_gatherings">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_gatherings</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90">events extension for bonfire, used for learning purposes</div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_social_graph">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_social_graph</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_posts">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_posts</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_messages">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_messages</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_messages">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_messages</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_posts">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_posts</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_moderation">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_moderation</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_social_graph">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_social_graph</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+  <a href="/extension/bonfire_ui_reactions">
+    <div class="border-base-content/20 border rounded-lg h-[176px]">
+      
+      <div class="p-4 h-full flex flex-col">
+        <div class="font-semibold text-base ">bonfire_ui_reactions</div>
+        <div class="font-normal  text-base-content/90 text-xs ">by <span class="link">bonfire-networks</span></div>
+        <div class="text-sm line-clamp-3 flex-1 mt-2 text-base-content/90"></div> 
+
+        <div class="flex sticky bottom-0 items-center gap-3 mt-3">
+          <span class="text-sm text-base-content/70 flex items-center gap-1"><svg class="w-4 h-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="m234.5 114.38l-45.1 39.36l13.51 58.6a16 16 0 0 1-23.84 17.34l-51.11-31l-51 31a16 16 0 0 1-23.84-17.34l13.49-58.54l-45.11-39.42a16 16 0 0 1 9.11-28.06l59.46-5.15l23.21-55.36a15.95 15.95 0 0 1 29.44 0L166 81.17l59.44 5.15a16 16 0 0 1 9.11 28.06Z"/></svg> <span>0</span></span>
+          
+        </div>
+      </div>
+    </div>
+    </a>
+
+
+
+
+
+
+  </div>
+</div>
+  <div class="border-base-content/10 bg-base-300 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
+    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
+    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a href="/privacy" class="link link-hover text-base-content/70">Privacy policy</a>
+  </div>
+</footer>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      <a class="inline-block px-2 hover:text-white" href="/contact/">Contact</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+    <!-- Current page: /extensions/ -->
+  </body>
+</html>
