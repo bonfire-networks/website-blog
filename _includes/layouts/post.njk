@@ -4,16 +4,8 @@ templateClass: tmpl-post
 ---
 
 
-<div class="max-w-screen-sm px-6 mx-auto mt-0 mb-12 lg:px-0">
+<div class="max-w-screen-md px-6 mx-auto mt-0 mb-12 lg:px-0">
   <div class="py-8 pb-8 mx-auto">
-    {# <a class="link mb-12  link-hover inline-flex items-center gap-2" href="/blog">
-      <div class="rounded-full border w-8 h-8 border-base-content/30 border flex place-content-center items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </div>
-        <span class="text-sm font-medium text-blueGray-300">Back to blog</span>
-    </a> #}
     <div class="">
        
      <div class="items-center justify-center mb-6 place-content-center flex gap-4">
@@ -35,13 +27,13 @@ templateClass: tmpl-post
       {% if header_html %}
         {{ header_html | safe }}
       {% else %}
-        <img src="{{image}}" alt="post image" class="w-full max-h-[400px] mt-6 rounded-box object-fit object-cover" />
+        <img src="{{image}}" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
       {% endif %}
         
     </div>
   </div>
 
-  <article class="max-w-screen-md mx-auto mt-12 prose prose-lg">
+  <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
     {{ content | safe }}
   </article>
 
