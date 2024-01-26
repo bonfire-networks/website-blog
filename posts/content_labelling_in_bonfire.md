@@ -55,7 +55,7 @@ While implementing the design pattern, we encountered several thought-provoking 
 	<li>How can labels be used in a federated environment? At the moment moderators are tied to specific instances, at least until groups are introduced. Should we extend this feature to enable federated content labelling teams, so users (or entire instance) could subscribe to several trusted teams? </li>
 </ul>
 
-Although we have potential answers to these questions, we believe it would be much more beneficial to open up the discussion and start a feedback loop where research, experimentation, and community feedback are all incorporated into documented design pattern itself and our implementation of it. This would provide a more comprehensive and holistic approach to building and evolving such features.
+Although we have potential answers to these questions, we believe it would be much more beneficial to open up the discussion and start a feedback loop where research, experimentation, and community feedback are all incorporated into both the documented design pattern and our implementation of it. This would provide a more comprehensive and holistic approach to building and evolving such features.
 
 However, there is still some work to be done before we can include this feature in our [campground instance](https://campground.bonfire.cafe) and testing it live with our community. Key among these tasks is the ability for moderators to edit or remove a content label and to adding a dedicated page for moderators where all labelled content is listed and can be reviewed, as listed in [the relevant issue](https://github.com/bonfire-networks/bonfire-app/issues/831).
 
