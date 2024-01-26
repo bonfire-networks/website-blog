@@ -57,6 +57,8 @@ While implementing the design pattern, we encountered several thought-provoking 
 
 Although we have potential answers to these questions, we believe it would be much more beneficial to open up the discussion and start a feedback loop where research, experimentation, and community feedback are all incorporated into both the documented design pattern and our implementation of it. This would provide a more comprehensive and holistic approach to building and evolving such features.
 
+It is worth noting that mitigating misinformation has been a crucial topic for the Bonfire team, and we have been [conducting research](https://bonfirenetworks.org/zappa) that leads to the design and development of custom roles, boundaries, and circles - features that lie at the core of Bonfire's architecture.
+
 However, there is still some work to be done before we can include this feature in our [campground instance](https://campground.bonfire.cafe) and testing it live with our community. Key among these tasks is the ability for moderators to edit or remove a content label and to adding a dedicated page for moderators where all labelled content is listed and can be reviewed, as listed in [the relevant issue](https://github.com/bonfire-networks/bonfire-app/issues/831).
 
 ## Potential for collaboration 
