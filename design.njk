@@ -2,13 +2,23 @@
 layout: layouts/home.njk
 ---
 
-<div class="max-w-screen-md mx-4 my-12 prose prose-lg lg:mx-auto">
-<h1 class="text-5xl text-center font-bold">Design with Bonfire</h1>
-    <img src="/img/hwd.png" class="object-cover rounded-lg mx-auto w-full max-w-[680px]" />
-    
+<div class="max-w-screen-md mx-4 my-12 lg:mx-auto">
+
+<h1 class="mb-6 text-5xl text-center font-bold">Design with Bonfire</h1>
+
+<img src="/img/hwd.png" class="object-cover rounded-lg mx-auto w-full max-w-[680px]" />
+  
+<div class="mt-6 prose prose-lg">
   {% set snippet %}{% include 'how_design.md' %}{% endset %}
   {{ snippet | markdown | safe }}
-  
+</div>
 
+  <div class="flex mt-12 items-center place-content-center">
+  <div class="btn gap-3 items-center btn-ghost text-3xl font-medium h-16 px-8 btn-xl rounded-full normal-case " >
+    <a href="/docs" class=link-hover">Read the docs</a> or 
+    <a href="/contact" class=link-hover">get in touch</a>
+    <span><svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span>
+    </div>
+  </div>
 
 </div>
