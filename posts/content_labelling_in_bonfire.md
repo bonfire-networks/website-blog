@@ -67,3 +67,6 @@ This experiment showcases Bonfire's extensibility and highlights its potential a
 
 We are eager to explore partnerships that can leverage Bonfire’s capabilities, furthering our collective quest of creating safer, more engaging, and enjoyable federated digital spaces.
 
+## Comments
+
+Please join the [discussion on the fediverse](https://indieweb.social/@bonfire/111822653600466648) if you have thoughts or suggestions, and get in touch if you'd like to collaborate. 
