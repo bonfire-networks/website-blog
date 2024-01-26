@@ -61,7 +61,7 @@ However, there is still some work to be done before we can include this feature 
 
 ## Potential for collaboration 
 
-This experiment with Bonfire not only showcases the framework's flexibility but also highlights its potential as a collaborative toolkit for organizations aiming to improve our digital environments and discourse. The modularity and ease of use of Bonfire make it an ideal playground for testing and implementing innovative design patterns in the open. 
+This experiment showcases Bonfire's extensibility and highlights its potential as a collaborative toolkit for organizations aiming to improve our digital environments and discourse. The modularity and ease of use of Bonfire make it an ideal playground for testing and implementing innovative design patterns in the open. 
 
 We are eager to explore partnerships that can leverage Bonfire’s capabilities, furthering our collective quest of creating safer, more engaging, and enjoyable federated digital spaces.
 
