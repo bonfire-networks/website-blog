@@ -4,7 +4,7 @@
   <subtitle>Tend to your digital life in community: host your own online space and control your experience at the most granular level.</subtitle>
   <link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
   <link href="https://bonfirenetworks.org/"/>
-  <updated>2023-09-14T00:00:00Z</updated>
+  <updated>2024-01-26T00:00:00Z</updated>
   <id>https://bonfirenetworks.org/</id>
   <author>
     <name>Bonfire</name>
@@ -709,6 +709,47 @@ We encourage everyone to explore these new features and continue to provide feed
 &lt;p&gt;Together, let&#39;s make Bonfire 1.0 a milestone release that raises the bar for decentralised and customisable social networking. It&#39;s only working together that we can empower communities and build a platform that truly serves our diverse needs.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Thank you all, for your ongoing support and enthusiasm!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;We&#39;d also like to extend a shoutout to the NLnet Foundation for their continued backing during this critical phase.&lt;/em&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Safer social networking - Bonfire&#39;s recent experiment with Prosocial Design Patterns</title>
+    <link href="https://bonfirenetworks.org/posts/content_labelling_in_bonfire/"/>
+    <updated>2024-01-26T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/content_labelling_in_bonfire/</id>
+    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/content_labelling_in_bonfire/#introduction&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As we gear up for the release of Bonfire Classic 1.0 – which includes not just the software but also extensive documentation and tutorials for people to customise and extend functionality in-depth – we&#39;re testing the framework&#39;s modularity. Our goal is to understand the workflow involved in planning, designing, implementing, and shipping a Bonfire extension from scratch. Our first experiment involved implementing a design pattern from the &lt;a href=&quot;https://www.prosocialdesign.org/&quot;&gt;Prosocial Design Network&lt;/a&gt;, a community dedicated to pioneering safer social networks.&lt;/p&gt;
+&lt;p&gt;The results were quite encouraging. We were able to prototype the researched pattern, package it as &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_label&quot;&gt;a distinct Bonfire extension&lt;/a&gt;, and integrate it with the Bonfire codebase, all within a matter of hours. This not only demonstrates the power of Bonfire&#39;s modularity but also aims to initiate closer collaboration with researchers, activists, and organisations that are committed to designing and fostering safer digital spaces.&lt;/p&gt;
+&lt;p&gt;Through Bonfire, we can challenge the limitations of current digital platforms, which are often constrained by dark patterns, closed and centralised (not just in terms of interoperability but also in terms of design choices) and/or profit-driven. By partnering with communities, foundations, and anyone whose mission is to truly improve our digital tools and environments, and leveraging the open and interoperable nature of the Fediverse, Bonfire can significantly reduce development time, making it easier to experiment with alternative patterns and foster a more collaborative and open experimentation on building better digital spaces in such crucial times.&lt;/p&gt;
+&lt;h2 id=&quot;experiment-overview&quot;&gt;Experiment overview &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/content_labelling_in_bonfire/#experiment-overview&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We chose to implement a feature allowing moderators to add content labels to posts, following a design pattern documented by the Prosocial Design Network: &lt;a href=&quot;https://www.prosocialdesign.org/library/label-misleading-content-add-links-to-reliable-related-content&quot;&gt;label misleading content; add links to reliable, related content&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This pattern aims to reduce the spread of misinformation by adding context to potentially misleading posts, by displaying accurate information and sources alongside them.&lt;/p&gt;
+&lt;p&gt;In the following example, a user has published a misleading post.&lt;/p&gt;
+&lt;img src=&quot;https://bonfirenetworks.org/img/posttolabel.png&quot; /&gt;
+&lt;p&gt;Our development process began with the creation of necessary user interface (UI) components. The first was simply adding a button in the dropdown menu next to every activity on Bonfire to allow moderators to add a label to a post.&lt;/p&gt;
+&lt;img src=&quot;https://bonfirenetworks.org/img/labeltoaction.png&quot; /&gt;
+&lt;p&gt;Moderators can then select a label in a modal. As outlined in the design pattern, we provided three default options: &lt;em&gt;Stay informed&lt;/em&gt;, &lt;em&gt;Get the latest&lt;/em&gt;, and &lt;em&gt;Misleading&lt;/em&gt;, though instance admins or moderators could add their own labels as well. Additionally, a text box is available for adding broader context, and up to three links can be included to offer reliable sources.&lt;/p&gt;
+&lt;img src=&quot;https://bonfirenetworks.org/img/labelmodal.png&quot; /&gt;
+&lt;p&gt;Once published, these notes become visible underneath the post for all instance users or visitors, and a preview is included for each of the reference links.&lt;/p&gt;
+&lt;img src=&quot;https://bonfirenetworks.org/img/labelled.png&quot; /&gt;
+&lt;p&gt;Once the UI components were built, along with the necessary backend functionality, it was just a matter of adding the new extension into the desired Bonfire flavour.&lt;/p&gt;
+&lt;h2 id=&quot;results-and-insights&quot;&gt;Results and insights &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/content_labelling_in_bonfire/#results-and-insights&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We are extremely pleased with the outcomes of our experiment and the opportunity to benefit from the design patterns and research conducted by organizations like &lt;a href=&quot;https://newpublic.org/&quot;&gt;NewPublic&lt;/a&gt;, &lt;a href=&quot;https://integrityinstitute.org/&quot;&gt;Integrity Institute&lt;/a&gt;, &lt;a href=&quot;https://openfuture.eu/&quot;&gt;Open Future&lt;/a&gt;, and the &lt;a href=&quot;https://www.prosocialdesign.org/&quot;&gt;Prosocial Design Network&lt;/a&gt; and others.&lt;/p&gt;
+&lt;p&gt;While implementing the design pattern, we encountered several thought-provoking questions, such as:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;How can users suggest notes and reference links to moderators?&lt;/li&gt;
+    &lt;li&gt;How can users contribute feedback to those added by moderators?&lt;/li&gt;
+	&lt;li&gt;How can different moderators collaborate effectively on creating or improving these notes?&lt;/li&gt;
+	&lt;li&gt;What steps should be taken if a note or reference links are found to be inaccurate or misleading?&lt;/li&gt;
+	&lt;li&gt;Initially, only moderators can add labels. Should we leverage Bonfire&#39;s custom roles to enable specific users review and label content, easing the load on instance moderators?&lt;/li&gt;
+	&lt;li&gt;How can labels be used in a federated environment? At the moment moderators are tied to specific instances, at least until groups are introduced. Should we extend this feature to enable federated content labelling teams, so users (or entire instance) could subscribe to several trusted teams? &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Although we have potential answers to these questions, we believe it would be much more beneficial to open up the discussion and start a feedback loop where research, experimentation, and community feedback are all incorporated into both the documented design pattern and our implementation of it. This would provide a more comprehensive and holistic approach to building and evolving such features.&lt;/p&gt;
+&lt;p&gt;It is worth noting that mitigating misinformation has been a crucial topic for the Bonfire team, and we have &lt;a href=&quot;https://bonfirenetworks.org/zappa&quot;&gt;conducted research&lt;/a&gt; that informed the design and development of custom roles, boundaries, and circles - features that lie at the core of Bonfire&#39;s architecture.&lt;/p&gt;
+&lt;p&gt;However, there is still some work to be done before we can include this feature in our &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;campground instance&lt;/a&gt; and testing it live with our community. Key among these tasks is the ability for moderators to edit or remove a content label and to adding a dedicated page for moderators where all labelled content is listed and can be reviewed, as listed in &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues/831&quot;&gt;the relevant issue&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;potential-for-collaboration&quot;&gt;Potential for collaboration &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/content_labelling_in_bonfire/#potential-for-collaboration&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This experiment showcases Bonfire&#39;s extensibility and highlights its potential as a collaborative toolkit for organizations aiming to improve our digital environments and discourse. The modularity and ease of use of Bonfire make it an ideal playground for testing and implementing innovative design patterns in the open.&lt;/p&gt;
+&lt;p&gt;We are eager to explore partnerships that can leverage Bonfire’s capabilities, furthering our collective quest of creating safer, more engaging, and enjoyable federated digital spaces.&lt;/p&gt;
 </content>
   </entry>
 </feed>

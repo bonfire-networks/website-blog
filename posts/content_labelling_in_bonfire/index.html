@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes on our first usability testing round</title>
-    <meta name="description" content="On May 10th we published a toot asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions.">
+    <title>Safer social networking - Bonfire&#39;s recent experiment with Prosocial Design Patterns</title>
+    <meta name="description" content="To better understand the workflow involved in building Bonfire extension from scratch, we implemented a design pattern from the Prosocial Design Network: label misleading content; add links to reliable, related content.">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link
     rel="stylesheet" href="/css/style_v2.css">
@@ -305,47 +305,57 @@
   <div class="py-8 pb-8 mx-auto">
     <div class="">
        
-     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/product/">
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/community/">
         <span class="badge capitalize badge-lg badge-outline">
-          product
+          community
         </span>
         </a>
       </div>
-      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Notes on our first usability testing round</h1>
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Safer social networking - Bonfire&#39;s recent experiment with Prosocial Design Patterns</h1>
      
      
 
       
-        <img src="/img/testing.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+        <img src="/img/labelbg.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
       
         
     </div>
   </div>
 
   <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
-    <p>On May 10th <a href="https://indieweb.social/@bonfire/108278057442956190">we published a toot</a> asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions. It was such a great opportunity to see how a diverse range of people interacted and used our platform, what they found easy and familiar and what instead felt weird, clunky or buggy.</p>
-<p>We ended up with a valuable list of suggestions, feature proposals, bugs and some appreciations for the work done so far :-)</p>
-<p>A huge thanks to <a href="https://fosstodon.org/@dajbelshaw">@dougbelshaw</a>, <a href="https://social.coop/@django">@django</a>, <a href="https://mastodon.la/@edumerco">@edumerco</a>, @asteroidrainfall, @bea for their time, feedback and sharp observations &lt;3.</p>
-<h2 id="participants">Participants <a class="direct-link" href="#participants">#</a></h2>
-<p>This first round included 5 testers (we picked this number based on this <a href="https://www.nngroup.com/articles/usability-testing-101/">NNG article</a> about usability testing). Though small, the group was diverse enough in terms of background, interests and geography. It included educators, activists and developers, among which some were already well versed with the fediverse, while others discovered it recently.</p>
-<p>They all were interested in using Bonfire via servers operated by and for themselves, their family or their local community. Some of them were even keen to set up and maintain an instance.</p>
-<h2 id="main-takeaways">Main takeaways <a class="direct-link" href="#main-takeaways">#</a></h2>
-<p>We ended up creating an ad-hoc <a href="https://github.com/bonfire-networks/bonfire-app/issues?q=label%3Abeta-testing+">beta-testing tag</a> on our issue tracker to keep track of the bugs and feedback that came out of the sessions.</p>
-<p>Among all the amazing input we received, we found some that were shared by the majority of testers:</p>
+    <h2 id="introduction">Introduction <a class="direct-link" href="#introduction">#</a></h2>
+<p>As we gear up for the release of Bonfire Classic 1.0 – which includes not just the software but also extensive documentation and tutorials for people to customise and extend functionality in-depth – we're testing the framework's modularity. Our goal is to understand the workflow involved in planning, designing, implementing, and shipping a Bonfire extension from scratch. Our first experiment involved implementing a design pattern from the <a href="https://www.prosocialdesign.org/">Prosocial Design Network</a>, a community dedicated to pioneering safer social networks.</p>
+<p>The results were quite encouraging. We were able to prototype the researched pattern, package it as <a href="https://github.com/bonfire-networks/bonfire_label">a distinct Bonfire extension</a>, and integrate it with the Bonfire codebase, all within a matter of hours. This not only demonstrates the power of Bonfire's modularity but also aims to initiate closer collaboration with researchers, activists, and organisations that are committed to designing and fostering safer digital spaces.</p>
+<p>Through Bonfire, we can challenge the limitations of current digital platforms, which are often constrained by dark patterns, closed and centralised (not just in terms of interoperability but also in terms of design choices) and/or profit-driven. By partnering with communities, foundations, and anyone whose mission is to truly improve our digital tools and environments, and leveraging the open and interoperable nature of the Fediverse, Bonfire can significantly reduce development time, making it easier to experiment with alternative patterns and foster a more collaborative and open experimentation on building better digital spaces in such crucial times.</p>
+<h2 id="experiment-overview">Experiment overview <a class="direct-link" href="#experiment-overview">#</a></h2>
+<p>We chose to implement a feature allowing moderators to add content labels to posts, following a design pattern documented by the Prosocial Design Network: <a href="https://www.prosocialdesign.org/library/label-misleading-content-add-links-to-reliable-related-content">label misleading content; add links to reliable, related content</a>.</p>
+<p>This pattern aims to reduce the spread of misinformation by adding context to potentially misleading posts, by displaying accurate information and sources alongside them.</p>
+<p>In the following example, a user has published a misleading post.</p>
+<img src="/img/posttolabel.png">
+<p>Our development process began with the creation of necessary user interface (UI) components. The first was simply adding a button in the dropdown menu next to every activity on Bonfire to allow moderators to add a label to a post.</p>
+<img src="/img/labeltoaction.png">
+<p>Moderators can then select a label in a modal. As outlined in the design pattern, we provided three default options: <em>Stay informed</em>, <em>Get the latest</em>, and <em>Misleading</em>, though instance admins or moderators could add their own labels as well. Additionally, a text box is available for adding broader context, and up to three links can be included to offer reliable sources.</p>
+<img src="/img/labelmodal.png">
+<p>Once published, these notes become visible underneath the post for all instance users or visitors, and a preview is included for each of the reference links.</p>
+<img src="/img/labelled.png">
+<p>Once the UI components were built, along with the necessary backend functionality, it was just a matter of adding the new extension into the desired Bonfire flavour.</p>
+<h2 id="results-and-insights">Results and insights <a class="direct-link" href="#results-and-insights">#</a></h2>
+<p>We are extremely pleased with the outcomes of our experiment and the opportunity to benefit from the design patterns and research conducted by organizations like <a href="https://newpublic.org/">NewPublic</a>, <a href="https://integrityinstitute.org/">Integrity Institute</a>, <a href="https://openfuture.eu/">Open Future</a>, and the <a href="https://www.prosocialdesign.org/">Prosocial Design Network</a> and others.</p>
+<p>While implementing the design pattern, we encountered several thought-provoking questions, such as:</p>
 <ul>
-<li>It should be more obvious to know how to tailor and extend your instance to go beyond the standard microblogging use case.</li>
-<li>Trending topics are a great way to discover the network. They play an important role in how users search, find, avoid, or subscribe to certain topics and people.</li>
-<li>The text input for writing a post is too small to go beyond microblogging. It does not encourage deeper and structured conversations. We should definitively provide an option for distraction-free writing.</li>
-<li>It would be awesome to have federated groups.</li>
-<li>It would be useful to have moderation and instance rules shown on the homepage, together with other meaningful information about the instance.</li>
-<li>It would help to have a wizard to guide new users on their first time using the platform or participating in the fediverse.</li>
-<li>Pinning one or more posts to the top of your timeline is a simple but powerful way to customise one's profile.</li>
-<li>It would help to have more flexibility on how users define the audience of their posts.</li>
+    <li>How can users suggest notes and reference links to moderators?</li>
+    <li>How can users contribute feedback to those added by moderators?</li>
+	<li>How can different moderators collaborate effectively on creating or improving these notes?</li>
+	<li>What steps should be taken if a note or reference links are found to be inaccurate or misleading?</li>
+	<li>Initially, only moderators can add labels. Should we leverage Bonfire's custom roles to enable specific users review and label content, easing the load on instance moderators?</li>
+	<li>How can labels be used in a federated environment? At the moment moderators are tied to specific instances, at least until groups are introduced. Should we extend this feature to enable federated content labelling teams, so users (or entire instance) could subscribe to several trusted teams? </li>
 </ul>
-<h2 id="final-thoughts">Final thoughts <a class="direct-link" href="#final-thoughts">#</a></h2>
-<p>Beta testing is not only a great way to spot bugs, but can also be powerful in finding more inclusive and participatory ways of co-designing the platform itself.</p>
-<p>We therefore plan to continue with iterative usability testing sessions on a monthly basis - feel free to contact us if you want to join in :)</p>
-<p>Thanks also to the <a href="https://culturalfoundation.eu/">Cultural Foundation</a>, who helped fund our work on the beta milestones.</p>
+<p>Although we have potential answers to these questions, we believe it would be much more beneficial to open up the discussion and start a feedback loop where research, experimentation, and community feedback are all incorporated into both the documented design pattern and our implementation of it. This would provide a more comprehensive and holistic approach to building and evolving such features.</p>
+<p>It is worth noting that mitigating misinformation has been a crucial topic for the Bonfire team, and we have <a href="https://bonfirenetworks.org/zappa">conducted research</a> that informed the design and development of custom roles, boundaries, and circles - features that lie at the core of Bonfire's architecture.</p>
+<p>However, there is still some work to be done before we can include this feature in our <a href="https://campground.bonfire.cafe">campground instance</a> and testing it live with our community. Key among these tasks is the ability for moderators to edit or remove a content label and to adding a dedicated page for moderators where all labelled content is listed and can be reviewed, as listed in <a href="https://github.com/bonfire-networks/bonfire-app/issues/831">the relevant issue</a>.</p>
+<h2 id="potential-for-collaboration">Potential for collaboration <a class="direct-link" href="#potential-for-collaboration">#</a></h2>
+<p>This experiment showcases Bonfire's extensibility and highlights its potential as a collaborative toolkit for organizations aiming to improve our digital environments and discourse. The modularity and ease of use of Bonfire make it an ideal playground for testing and implementing innovative design patterns in the open.</p>
+<p>We are eager to explore partnerships that can leverage Bonfire’s capabilities, furthering our collective quest of creating safer, more engaging, and enjoyable federated digital spaces.</p>
 
   </article>
 
@@ -446,6 +456,6 @@
     </nav>
   </div>
 </div>
-    <!-- Current page: /posts/notes_on_first_usability_testing/ -->
+    <!-- Current page: /posts/content_labelling_in_bonfire/ -->
   </body>
 </html>

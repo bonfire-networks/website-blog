@@ -861,7 +861,7 @@ Here are the detailed steps to deploy it.</p>
 <h4 id="step-5---adding-https">Step 5 - Adding HTTPS <a class="direct-link" href="#step-5---adding-https">#</a></h4>
 <p>The common and convenient way for adding HTTPS is by using a reverse proxy like Nginx or Caddyserver (the latter of which is bundled as part of the docker compose setup).</p>
 <p>Caddyserver and other servers can handle generating and setting up HTTPS certificates automatically, but if you need TLS/SSL certificates for nginx, you can look get some for free with <a href="https://letsencrypt.org/">letsencrypt</a>. The simplest way to obtain and install a certificate is to use <a href="https://certbot.eff.org">Certbot.</a>. Depending on your specific setup, certbot may be able to get a certificate and configure your web server automatically.</p>
-<p>If you've built from source, you should point the nginx root directory to be <code>_build/prod/rel/bonfire/lib/bonfire-0.1.0-*/priv/static</code></p>
+<p>If you've built from source, you should point the nginx root directory to be <code>_build/prod/rel/bonfire/lib/bonfire-[current-version]/priv/static</code></p>
 <h2 id="admin-tools">Admin tools <a class="direct-link" href="#admin-tools">#</a></h2>
 <ul>
 <li>LiveDashboard for viewing real-time metrics and logs at <code>/admin/system/</code></li>
