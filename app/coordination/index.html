@@ -300,182 +300,302 @@
 });
 </script>
     
+<div class="max-w-screen-lg my-12 px-4 lg:px-0  lg:mx-auto">
 
 
-<div class="bg-base-300">
-  <div class="max-w-screen-lg py-12 px-4 lg:px-0  lg:mx-auto">
-    <div class="text-sm breadcrumbs">
-      <ul>
-        <li><a href="/extensions">Extensions</a></li> 
-        
-      </ul>
-    </div>
-    <h1 class="text-3xl font-bold text-base-content  ">activity_pub</h1>
-    <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2">Modular ActivityPub library in Elixir </p>
-    <div class="relative inline-block mt-6">
+<div class="text-sm breadcrumbs">
+  <ul>
+    <li><a href="/apps">Apps</a></li> 
+    <li>Bonfire Coordination</li>
+  </ul>
+</div>
+<h1 class="text-3xl font-bold text-base-content  ">Bonfire Coordination</h1>
+<div class="grid mt-4 grid-cols-5  items-start gap-12">
+  <div class="col-span-5 order-last lg:order-first lg:col-span-3">
+      <img src="/img/hwd3.png" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
+
+      <div class="prose mt-6 max-w-full">Bonfire Cooperation is tailored for communities needing collaborative solutions, providing features for task assignment and progress tracking. With federated Kanban boards and task management, it enhances teamwork efficiency and empowers users. It uses the ValueFlows open economic vocabulary, which offers lots of potential to foster countless decentralised and cooperative community workflows.</div>
+  </div>
+  <div class="col-span-5 lg:col-span-2 gap-4 lg:gap-12 flex flex-col ">
+    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
+      <div class="prose">Federated and collaborative tools for decentralized project coordination, such as task lists and Kanban.</div>
       
-    <input value="just dep-clone-local activity_pub https://github.com/bonfire-networks/activity_pub" class="input w-[420px] input-bordered text-sm" />
-    <span class="absolute right-[8px] top-[8px] btn btn-sm btn-square">
-        <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"/><path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1"/></g></svg>
-      </span>
-    </div>
-    
-
-  </div>
-</div>
-<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8 px-4 lg:px-0">
-
-  <div class="lg:col-span-8 order-last lg:order-first col-span-12"
-    <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
-
-    <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
-      <div class="uppercase tracking-widest mb-6">Readme</div>
+      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">In development</span></div>
         
-        <h1 id="activitypub">ActivityPub <a class="direct-link" href="#activitypub">#</a></h1>
-<p>ActivityPub Library for elixir.</p>
-<p><strong>WORK IN PROGRESS, TESTING FEDERATION WITH DIFFERENT IMPLEMENTATIONS IS UNDERWAY</strong></p>
-<h2 id="installation">Installation <a class="direct-link" href="#installation">#</a></h2>
-<ol>
-<li>Add this library to your dependencies in <code>mix.exs</code></li>
-</ol>
-<pre><code>defp deps do
-  [...]
-  {:activity_pub, git: &quot;https://github.com/bonfire-networks/activity_pub.git&quot;, branch: &quot;stable&quot;} # branch can &quot;stable&quot;, or &quot;develop&quot; for the bleeding edge
-end
-</code></pre>
-<ol start="2">
-<li>Create an adapter module. To start, one created at<br>
-<code>lib/my_app/adapter.ex</code> might look like</li>
-</ol>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Adapter</span> <span class="token keyword">do</span>
-  <span class="token doc"><span class="token attribute">@moduledoc</span> <span class="token string">"""
-  Adapter functions delegated from the `ActivityPub` Library
-  """</span></span>
-
-  <span class="token attribute variable">@behaviour</span> <span class="token module class-name">ActivityPub</span><span class="token punctuation">.</span><span class="token module class-name">Federator</span><span class="token punctuation">.</span><span class="token module class-name">Adapter</span>
-<span class="token keyword">end</span></code></pre>
-<p>Note that, due to the defined <code>@behavior</code>, Elixir will warn you that<br>
-the required functions</p>
-<ul>
-<li><code>base_url/0</code></li>
-<li><code>get_actor_by_id/1</code></li>
-<li><code>get_actor_by_username/1</code></li>
-<li><code>get_follower_local_ids/1</code></li>
-<li><code>get_following_local_ids/1</code></li>
-<li><code>get_redirect_url/1</code></li>
-<li><code>handle_activity/1</code></li>
-<li><code>maybe_create_remote_actor/1</code></li>
-<li><code>maybe_publish_object/2</code></li>
-<li><code>update_local_actor/2</code></li>
-<li><code>update_remote_actor/1</code></li>
-</ul>
-<p>have not yet been implemented though you will be able to start your<br>
-app. Defining these allows <code>ActivityPub</code> to handle ActivityPub HTTP<br>
-and database calls and operations. An example of an implemented<br>
-adaptor can be found<br>
-<a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/tree/main/lib/adapter" title="Link to file hosted on GitHub">here</a>.</p>
-<p>Then set it in config</p>
-<pre><code>config :activity_pub, :adapter, MyApp.Adapter
-</code></pre>
-<ol start="3">
-<li>Set your application repo in config</li>
-</ol>
-<pre><code>config :activity_pub, :repo, MyApp.Repo
-</code></pre>
-<ol start="4">
-<li>
-<p>Create a new ecto migration and call <code>ActivityPub.Migration.up/0</code> from it</p>
-</li>
-<li>
-<p>Inject AP routes to your router by adding <code>use ActivityPub.Web.Router</code> to your app's router module</p>
-</li>
-<li>
-<p>Copy the default AP config to your app's confix.exs</p>
-</li>
-</ol>
-<pre><code>config :activity_pub, :mrf_simple,
-  media_removal: [],
-  media_nsfw: [],
-  report_removal: [],
-  accept: [],
-  avatar_removal: [],
-  banner_removal: []
-
-config :activity_pub, :instance,
-  hostname: &quot;example.com&quot;,
-  federation_publisher_modules: [ActivityPub.Federator.APPublisher],
-  federation_reachability_timeout_days: 7,
-  federating: true,
-  rewrite_policy: []
-
-config :activity_pub, :http,
-  proxy_url: nil,
-  user_agent: &quot;Your app name&quot;,
-  send_user_agent: true,
-  adapter: [
-    ssl_options: [
-      # Workaround for remote server certificate chain issues
-      partial_chain: &amp;:hackney_connect.partial_chain/1,
-      # We don't support TLS v1.3 yet
-      versions: [:tlsv1, :&quot;tlsv1.1&quot;, :&quot;tlsv1.2&quot;]
-    ]
-  ]
-</code></pre>
-<ol start="7">
-<li>
-<p>Change the hostname value in the instance config block to your instance's hostname</p>
-</li>
-<li>
-<p>If you don't already have Oban set up, follow the <a href="https://hexdocs.pm/oban/installation.html#content">Oban installation intructions</a> and add the AP queues:</p>
-</li>
-</ol>
-<pre><code>config :my_app, Oban, queues: [federator_incoming: 50, federator_outgoing: 50, remote_fetcher: 20]
-</code></pre>
-<p>Now you should be able to compile and run your app and move over to integration.</p>
-
-    </div>
-  </div>
-  <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col">
-      <div class="flex items-center space-x-3">
-        <a href="https://github.com/bonfire-networks/activity_pub" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
-          Get Code
-        </a>
-        <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="btn rounded-full flex-1 w-full btn-outline border-base-content/30  btn-sm">
-            Report bugs
-        </a>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Fedi Group</span> <a class="font-bold underline" href=""></a></div>
+        
+        
+        
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">AGPL</span></div>
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/coordination">bonfire-app/flavours/coordination</a></div>
+      </div>
     </div>
 
-    
-
-    <div class="bg-base-content/5 mt-4 rounded-lg p-3">
-      <div class="uppercase text-xs tracking-widest mb-6">Details</div>
-        <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-          
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">26 Jan 2024</span></div>
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
+    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
+      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
+        <div class="pt-2 flex justify-between items-center text-sm">
+          <span class="font-light">Developed by</span>  
+          <div class="flex items-center gap-3">
             
-          
+              <a href="https://bonfirenetworks.org" target="_blank">
+                <span class="font-semibold text-lg link">
+                  Bonfire
+                </span>
+              </a>
+            
+            <a href="https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/coordination" target="_blank">
+              <span class="btn btn-sm btn-outline rounded-full border-base-content/30">
+                Participate
+              </span>
+            </a>
+          </div>
         </div>
+
+        
+
+        <div class="pt-2 flex justify-between items-center text-sm">
+          <span class="font-light">Supported by</span>  
+          <div class="flex items-center gap-3">
+             
+              <a href="https://nlnet.nl/project/Bonfire/" target="_blank">
+                <span class="font-semibold text-lg link">
+                NlNet
+              </span></a>
+              
+              <a href="/contribute/" target="_blank">
+                <span class="btn btn-sm btn-outline rounded-full border-base-content/30">
+                  Support the project
+                </span>
+              </a>
+          </div>
+        </div>
+        </div>  
+      </div>
+
+
+        <div class="">
+          <span class="font-medium text-2xl">Extensions included</span>  
+          <div class="flex flex-wrap items-center gap-3 mt-4">
+             
+              <a href="/extension/bonfire_ui_coordination">
+                <span class="link-primary link-hover text-sm">
+                UI.Coordination
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_ui_kanban">
+                <span class="link-primary link-hover text-sm">
+                UI.Kanban
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_valueflows">
+                <span class="link-primary link-hover text-sm">
+                ValueFlows
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_ui_valueflows">
+                <span class="link-primary link-hover text-sm">
+                UI.ValueFlows
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_quantify">
+                <span class="link-primary link-hover text-sm">
+                Quantify
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_tag">
+                <span class="link-primary link-hover text-sm">
+                Tag
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_classify">
+                <span class="link-primary link-hover text-sm">
+                Classify
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_common">
+                <span class="link-primary link-hover text-sm">
+                Common
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_me">
+                <span class="link-primary link-hover text-sm">
+                Me
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_social">
+                <span class="link-primary link-hover text-sm">
+                Social
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_boundaries">
+                <span class="link-primary link-hover text-sm">
+                Boundaries
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_federate_activitypub">
+                <span class="link-primary link-hover text-sm">
+                Federate:ActivityPub
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_search">
+                <span class="link-primary link-hover text-sm">
+                Search
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_files">
+                <span class="link-primary link-hover text-sm">
+                Files
+              </span>
+              </a>
+              
+              <a href="/extension/bonfire_api_graphql">
+                <span class="link-primary link-hover text-sm">
+                API:Graphql
+              </span>
+              </a>
+              
+          </div>   
+        </div>
+
+
+      
     </div>
-    
+  
   </div>
+
+
+<!-- Tabs -->
+<div
+id="main"
+    x-data="{
+        selectedId: null,
+        init() {
+            // Set the first available tab on the page on page load.
+            this.$nextTick(() => this.select(this.$id('tab', 1)))
+        },
+        select(id) {
+            this.selectedId = id
+        },
+        isSelected(id) {
+            return this.selectedId === id
+        },
+        whichChild(el, parent) {
+            return Array.from(parent.children).indexOf(el) + 1
+        }
+    }"
+    x-id="['tab']"
+    class=""
+>
+    <!-- Tab List -->
+    <ul
+        x-ref="tablist"
+        @keydown.right.prevent.stop="$focus.wrap().next()"
+        @keydown.home.prevent.stop="$focus.first()"
+        @keydown.page-up.prevent.stop="$focus.first()"
+        @keydown.left.prevent.stop="$focus.wrap().prev()"
+        @keydown.end.prevent.stop="$focus.last()"
+        @keydown.page-down.prevent.stop="$focus.last()"
+        role="tablist"
+        class="-mb-px  mt-6 flex items-stretch"
+    >
+        <!-- Tab -->
+        <li>
+            <button
+                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                @click="select($el.id)"
+                @mousedown.prevent
+                @focus="select($el.id)"
+                type="button"
+                :tabindex="isSelected($el.id) ? 0 : -1"
+                :aria-selected="isSelected($el.id)"
+                :class="isSelected($el.id) ? 'border-base-content/30 bg-base-100' : 'border-transparent'"
+                class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
+                role="tab"
+            >Features</button>
+        </li>
+
+        <li>
+            <button
+                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                @click="select($el.id)"
+                @mousedown.prevent
+                @focus="select($el.id)"
+                type="button"
+                :tabindex="isSelected($el.id) ? 0 : -1"
+                :aria-selected="isSelected($el.id)"
+                :class="isSelected($el.id) ? 'border-base-content/30 bg-base-100' : 'border-transparent'"
+                class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
+                role="tab"
+            >Readme</button>
+        </li>
+    </ul>
+
+    <!-- Panels -->
+    <div role="tabpanels" class="rounded-b-md border border-base-content/30 bg-base-100">
+        <!-- Panel -->
+        <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+            role="tabpanel"
+            class="p-8"
+        >
+           <div role="alert" class="alert alert-warning">
+  <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+  <span>In development!</span>
+</div>
+        </section>
+
+        <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+            role="tabpanel"
+            class="p-8 prose prose-sm"
+        >
+           
+           <h1>Bonfire Coordination</h1>
+<p>This app is a flavour of <a href="https://bonfirenetworks.org/">Bonfire</a> and bundles the following extensions:</p>
+<ul>
+<li><a href="https://github.com/bonfire-networks/bonfire_common">Bonfire.Common</a> - common utils</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_me">Bonfire.Me</a> - accounts, user profiles...</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_social">Bonfire.Social</a> - feeds, activities, posts, boosting, flagging, etc...</li>
+<li><a href="https://github.com/bonfire-ecosystem/bonfire_ui_social">Bonfire.UI.Social</a> - interface for basic social activities</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_boundaries">Bonfire.Boundaries</a> - define circles and associated privacy or permissions</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_federate_activitypub">Bonfire.Federate.ActivityPub</a> - federates activities with ActivityPub to participate in the fediverse</li>
+<li><a href="https://github.com/bonfire-ecosystem/bonfire_tag">Bonfire.Tag</a> - @ mentions, hashtags, and tagging using topics/categories from Bonfire.Classify</li>
+<li><a href="https://github.com/bonfire-ecosystem/bonfire_classify">Bonfire.Classify</a> - categories &amp; classifications in taxonomies</li>
+<li><a href="https://github.com/bonfire-ecosystem/bonfire_valueflows">Bonfire.ValueFlows</a> - economic activities with ValueFlows</li>
+<li><a href="https://github.com/bonfire-ecosystem/bonfire_api_graphql">Bonfire.API.GraphQL</a> - a GraphQL client API</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_valueflows">Bonfire.UI.ValueFlows</a> - reusable frontend components for economic activities</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_coordinatio">Bonfire.UI.Coordination</a> - basic coordination UI for projects and communities</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_kanban">Bonfire.UI.Kanban</a> - coordination tools with drag-and-drop card based UI</li>
+</ul>
+<h2>More information</h2>
+<p>See the <a href="../../README.md">main docs</a>.</p>
+
+        </section>
+    </div>
 </div>
 
 
 
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+  </div>
   <div class="border-base-content/10 bg-base-300 border-t">
  
 
@@ -528,6 +648,6 @@ config :activity_pub, :http,
     </nav>
   </div>
 </div>
-    <!-- Current page: /extension/activity_pub/ -->
+    <!-- Current page: /app/coordination/ -->
   </body>
 </html>

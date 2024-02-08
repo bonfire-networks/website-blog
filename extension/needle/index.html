@@ -359,7 +359,7 @@ and text form by time and as far as postgres is concerned, it's a UUID.</p>
 <p>Aside from the hex dependency, you will also need to write a simple<br>
 migration to set up the database before you can start writing your<br>
 regular migrations:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">InitPointers</span>  <span class="token keyword">do</span>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">InitPointers</span> <span class="token keyword">do</span>
   <span class="token attribute variable">@moduledoc</span> <span class="token boolean">false</span>
   <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
   <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
@@ -402,7 +402,7 @@ let it handle the primary key.</p>
 pass <code>autogenerate: false</code> to the options provided when using<br>
 <code>Needle.Pointable</code>.</p>
 <p>Now let's define the migration for our schema:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">Greeting</span>  <span class="token keyword">do</span>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">Greeting</span> <span class="token keyword">do</span>
   <span class="token attribute variable">@moduledoc</span> <span class="token boolean">false</span>
   <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
   <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
@@ -479,7 +479,7 @@ object it points to.</li>
 </table>
 <p>In this case we will use a strong pointer, because we want it to be<br>
 deleted if the pointed object is deleted.</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">Hello</span>  <span class="token keyword">do</span>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Repo</span><span class="token punctuation">.</span><span class="token module class-name">Migrations</span><span class="token punctuation">.</span><span class="token module class-name">Hello</span> <span class="token keyword">do</span>
   <span class="token attribute variable">@moduledoc</span> <span class="token boolean">false</span>
   <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
   <span class="token keyword">import</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Migration</span>
@@ -516,7 +516,7 @@ what we are calling 'mixin tables' for convenience.</p>
 you wish to store in this mixin. By moving fields out to mixin tables,<br>
 you gain knowledge of the table name to which you need to join.</p>
 <p>An example mixin schema:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span>  <span class="token keyword">do</span>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span> <span class="token keyword">do</span>
   <span class="token keyword">use</span> <span class="token module class-name">Needle</span><span class="token punctuation">.</span><span class="token module class-name">Mixin</span><span class="token punctuation">,</span>
     <span class="token attr-name">otp_app:</span> <span class="token atom symbol">:my_app</span><span class="token punctuation">,</span>
     <span class="token attr-name">source:</span> <span class="token string">"creator"</span>
