@@ -10,7 +10,7 @@ Unless otherwise noted, this **code of conduct applies to all Bonfire spaces***,
 
 > *It should be noted that because anyone can set up and operate a Bonfire instance, your community may have a different code of conduct (which should be posted on the instance itself) - this document only governs the spaces that choose to abide by it. 
 
-This code of conduct is *long*. **We appreciate that it may take a good few minutes** over a cup of [insert favourite beverage here], to read through these guidelines.
+This code of conduct is *long*. We **appreciate that it may take a good few minutes** over a cup of your favourite beverage to read through these guidelines.
 
 
 ## Community Guidelines
