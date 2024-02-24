@@ -1,9 +1,18 @@
 ---
 layout: layouts/home.njk
 ---
+<style type="text/css">
+  #coc blockquote {
+  color: var(--fallback-bc,oklch(var(--bc)/0.65));
+  font-size: 0.85em;
+  }
+  #coc :where(blockquote p:first-of-type):not(:where([class~="not-prose"], [class~="not-prose"] *))::before {
+  content: ""
+  }
+</style>
 
-<div class="max-w-screen-lg mx-4 mt-12 prose prose-lg lg:mx-auto">
-
+<div id="coc" class="max-w-screen-lg mx-4 mt-12 prose prose-lg lg:mx-auto">
+  
   {% set snippet %}{% include 'code_of_conduct.md' %}{% endset %}
   {{ snippet | markdown | safe }}
   

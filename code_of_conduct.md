@@ -1,10 +1,17 @@
-# Code of Conduct - v0.2
+# Code of Conduct - v0.3
 
 ## Introduction
 
-Please read and commit to the following Code of Conduct before engaging in any community discussions or other forms of participation in any Bonfire space: in other words, please commit to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, healthy, and sustainable community. Being a community means we support each others’ emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work. 
+Please read and commit to the following Code of Conduct before engaging in any community discussions or other forms of participation in a Bonfire space: in other words, please commit to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, healthy, and sustainable community. Being a community means we support each others’ emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work. 
 
 Is there an emergency? go straight to [REPORT AN ISSUE](#6.-reporting-issues). 
+
+Unless otherwise noted, this **code of conduct applies to all Bonfire spaces***, including interactions, discussions and other content, both online or offline. Some spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by these rules. 
+
+> *It should be noted that because anyone can set up and operate a Bonfire instance, your community may have a different code of conduct (which should be posted on the instance itself) - this document only governs the spaces that choose to abide by it. 
+
+This code of conduct is *long*. **We appreciate that it may take a good few minutes** over a cup of [insert favourite beverage here], to read through these guidelines.
+
 
 ## Community Guidelines
 
@@ -89,7 +96,7 @@ We do not have to suffer in silence, or see others harassed without feeling like
 
 #### Setting boundaries
 
-If we feel able and safe to, we may want to directly discuss our concerns with the person. It helps to start by assuming positive intent - the person making us feel uncomfortable may not be aware of what they are doing, and politely bringing their behaviour to their attention is encouraged. Here's a suggested structure:
+If we feel able and safe to, we may want to directly discuss our concerns with the person making us feel uncomfortable. It helps to start by assuming positive intent - they may not be aware of what they are doing, and politely bringing it to their attention is encouraged. Here's a suggested structure:
 
 1. I read/noticed... *an observation, free of judgement*
 2. I feel... *[emotions](https://www.sociocracyforall.org/nvc-feelings-and-needs-list/), rather than a projection or thought*
@@ -144,7 +151,7 @@ We are intolerant of intolerance, harassment, exploitation and domination. This 
 
 * Stalking or following. This includes virtual following (locating someone in other web spaces in order to continue unwelcome contact).
 
-* Non-consensual photography or recording, including logging online activity for harassment purposes (or reading logs one has access to), doxxing, screenshotting without permission or to carry out acts of aggression or trolling.
+* Non-consensual photography or recording, including logging online activity for harassment purposes (or reading logs one has access to), doxxing, or screenshotting to carry out acts of aggression or trolling.
 
 * Deliberate “outing” of any aspect of a person’s identity without their consent (except when necessary to protect from intentional abuse).
 
@@ -221,13 +228,11 @@ With this, we have a clear expectation about what we consider to be a reasonable
 
 ### Wrapping up
 
-This **code of conduct applies to all Bonfire spaces**, including interactions, discussions and other content, both online or offline. Some spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by these rules. 
-
-We are participants in a decentralised software ecosystem and various online discussion and collaboration spaces, but we also aim to be a community. A community is different than a “forum” or a “debate hall”, it means we support each others' emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work, and foster respect, diversity, inclusion, wellbeing and learning.
+As participants in a decentralised software ecosystem and various online discussion and collaboration spaces, we also aim to be a community. A community is different than a “forum” or a “debate hall”, it means we support each others' emotional and intellectual needs so that we can sustainably engage in discussion and collaborative work, and foster respect, diversity, inclusion, wellbeing and learning.
 
 > This community is made up of disparate online collections of people committed to exploring and building a p2p ecosystem with the awareness and sensitivity of intersectionality. This requires us to have *challenging conversations* about privilege, power, history, culture, inequality, pain, injustice, trauma, and the influence of hegemonic ideas, institutions and practices. Our goal is to have these dialogues and debates from a place of compassion that honours our shared humanity. We recognise this may require us to *level up our conversational skills*, both as individuals and as a collective. Hence the spirit of learning together must try to describe this process in detail. We believe this kind of work is transformative, and any learning here will initiate similar changes in the other communities we participate in. 
 
-This code of conduct is long. **We realise that it may take a good few minutes** over a cup of [insert favourite beverage here], to read through these guidelines. If we think about how difficult conversations can be online, we might consider the following points:
+If we think about how difficult conversations can be online, we might consider the following points:
 
 > - In the ‘flesh’ world of in-person conversation, we have centuries of methods that we have developed that enable people to attempt to communicate and act appropriately when situations break down.
 > - Online and social media platforms are often more like a social wilderness by default, setting people up to fail. See the classic [Tyranny of Structurelessness](https://www.jofreeman.com/joreen/tyranny.htm) about the perils of insufficient social structures. 
@@ -242,28 +247,29 @@ This code of conduct outlines our expectations for participants within our share
 These expectations include the idea that anyone who violates this code of conduct may face restrictions, including temporary or permanent banning from community spaces.
 
 
-### Extra Resources: NVC (Nonviolent Communication)
+### Extra Resources
+
+#### NVC (Nonviolent Communication)
 
 Any investment in learning NVC is an investment in better relationships in our life. NVC can help diffuse conflicts, by getting to what is underneath them.
 
 There are two aspects to NVC - one is the deeper attitude (spirit) behind it and the other aspect is the technique. If the technique is applied without the deeper attitude behind it, it can be used as a weapon, like any technique used in bad faith.
 
-There are four practical components to the technique. Remember that _It is a practice_. Most of us are not trained to think in these ways. Each component requires practice. It is really useful to know and understand the philosophy behind each one.
+There are four practical components to the technique. Remember that _it is a practice_. Most of us are not trained to think in these ways. Each component requires practice. It is really useful to know and understand the philosophy behind each one.
 
-If you're not familiar with it, you can start with this [introduction to NVC](http://www.artofwellbeing.com/2017/11/24/nonviolent-communication/). You can go further with this article about [NVC in the context of code reviews](https://dev.to/dkassen/nonviolent-communication-in-code-reviews-3jh2).
+If you're not familiar with it, you can start with this [introduction to NVC](https://baynvc.org/basics-of-nonviolent-communication/). You can go further with [these resources](https://www.cnvc.org/learn/nvc-101#!/c/0) or this article about [NVC in the context of code reviews](https://dev.to/dkassen/nonviolent-communication-in-code-reviews-3jh2).
 
-Please note: NVC IS NOT A PANACEA. There are times in life when you would not have time to use it and it would not be appropriate. 
-
-Communication is not easy
+Let's keep in mind that communication is not easy:
 * it is hard in real life
 * it is harder online when conflicts occur
 * it is harder still when we are dealing with conflicts on difficult topics
 * it is even harder at a time when these topics are showing up everywhere.. it can wear you down - and everyone involved.
 
-We’re not saying this to get everyone down. We are saying this to honour how well we do, in fact, considering all these challenges, most of the time. We don’t always get it right. But the point is to learn together, gradually. And sometimes we are pushed to accelerate our learning because of events that lead to fractioning, frictions, conflicts and group forking.
+> NVC IS NOT A PANACEA. There are times in life when you would not have time to use it and it would not be appropriate. 
+> We’re not saying this to get everyone down. We are saying this to honour how well we do, in fact, considering all these challenges, most of the time. We don’t always get it right. But the point is to learn together, gradually. And sometimes we are pushed to accelerate our learning because of events that lead to fractioning, frictions, conflicts and group forking.
 
 
-### Trolling and bad-faith tactics
+#### Trolling and bad-faith tactics
 
 We live in an age of tactical online aggression. With regard to social engineering, we take extra exception to the following tactics and practices: Dogpiling, Camping, misdirection, gish gallop, “Angry Jack Syndrome”, baiting (reductio ad X), suppressing power level, crowd cover, crypto/redpilling, and “silent identity attacks.”
 
@@ -271,13 +277,14 @@ We want to promote our community's literacies with regard to identifying and com
 
 * [A Field Guide to Bad Faith Arguments](https://medium.com/s/story/a-field-guide-to-bad-faith-arguments-7-terrible-arguments-in-your-mentions-ee4f194afbc9)
 * [The Rhetoric Tricks, Traps, and Tactics of White Nationalism](https://medium.com/@DeoTasDevil/the-rhetoric-tricks-traps-and-tactics-of-white-nationalism-b0bca3caeb84)  
+* [The Alt-Right Playbook](https://www.youtube.com/playlist?list=PLJA_jUddXvY7v0VkYRbANnTnzkA_HMFtQ) video series
 
 
 ### Attribution & Acknowledgements
 
 We acknowledge the many communities and projects that established code of conducts, which inspired this one, particularly: 
 - The authors of [Designing Care and Commoning into a Code of Conduct](https://dl.designresearchsociety.org/nordes/nordes2019/exploratorypapers/10/), who put a lot of care into their community guidelines, which were in large part copied for this document.
-- Geek Feminism's Community Policy 
-- Enspiral's handbook
-- Sunbeam.city cooperative
-- Contributor Covenant
+- [Geek Feminism's Community Policy](https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/#:~:text=The%20Geek%20Feminism%20(GF)%20community,of%20participants%20in%20any%20form.) 
+- [Enspiral's handbook](https://handbook.enspiral.com)
+- [Sunbeam City Co-operative](https://wiki.sunbeam.city/doku.php?id=code_of_conduct)
+- [Contributor Covenant](https://www.contributor-covenant.org)
