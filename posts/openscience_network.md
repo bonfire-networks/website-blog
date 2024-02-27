@@ -87,7 +87,7 @@ We will iteratively test the open science digital space with pilots to ensure th
 
 
 ## How to contribute
-- If you wish to propose a new feature or refine an existing one, please o[open an issue](https://github.com/bonfire-networks/bonfire-app/milestone/56). 
+- If you wish to propose a new feature or refine an existing one, please [open an issue](https://github.com/bonfire-networks/bonfire-app/milestone/56). 
 - To join the network or participate as a pilot community, contact us at team@openscience.network 
 - If you're interested in contributing through coding, design, facilitation, social media, or other tasks, please get in touch at team@openscience.network 
 - We won’t take private capital or venture funds, but we do need more resources to onboard additional collaborators to partner with pilot projects to test and iterate features. We would greatly appreciate support for our work through donations or grants. Please reach out to us at team@openscience.network or donate directly via our [Open Collective account](https://opencollective.com/bonfire-networks/projects/open-science-network). 
