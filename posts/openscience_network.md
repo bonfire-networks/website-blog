@@ -66,7 +66,7 @@ Beyond reading publications, users can start discussing them with authors and am
 <img src="/img/osreply.png" />
 
 
-All the code is open source and available for anyone to pick up and try out or extend. We published a new [Open Science bonfire extension](https://github.com/bonfire-networks/bonfire_open_science) that includes code for most of the features requested (other bits live in different extensions as they are transversal to different use cases, such as federated groups and topics).
+All the code is open source and available for anyone to pick up and try out or extend. We published a new [Open Science extension for Bonfire](https://github.com/bonfire-networks/bonfire_open_science) that includes code for most of the features requested (other bits live in different extensions as they are transversal to different use cases, such as federated groups and topics).
 
 We did enough work to confidently say.... 
 
