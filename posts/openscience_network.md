@@ -1,5 +1,5 @@
 ---
-title: Open Source meets Open Science - Announcing the Open Science Network initiative
+title: Open source meets open science - announcing the Open Science Network initiative
 description: "We’re excited to present the Open Science Network initiative, a first step towards open and federated digital spaces designed to push the boundaries of open science and scholarly communication."
 date: 2024-02-27
 tags: community
@@ -20,7 +20,7 @@ A digital space is an online place where people gather and interact with one ano
 An ‘open science digital space’ includes a set of bespoke features and UX paired with a community dedicated to fostering open science practices. This means the space is intentionally designed to support the sharing of scientific knowledge, collaboration, and transparency in scientific research, promoting open reviews and production of scientific knowledge. 
 
 
-## Our Journey So Far
+## Our journey so far
 
 The idea of building a federated tool for sharing research on the social web started with [Nibö](https://niboe.info), a science communication collective, wanting to build a social tool for academics and researchers. Nibö contacted the Bonfire team with innovative ideas on how a federated digital space specifically designed for scientific communities could benefit open science – promoting better practices and knowledge sharing for both scientists and users, and moving beyond the conventional use of social media as a mere content broadcasting tool. They wondered if such a federated digital space could be built atop Bonfire's modular and extensible architecture.
 
@@ -34,7 +34,7 @@ The Open Science Network has been shaped by many contributions and ideas and ben
 With such an amount of grey matter in place, the next logical step was to validate the feasibility of these ideas and how they would play in a federated network.
 
 
-## The Open Science Extension prototype
+## The open science extension prototype
 
 <img src="/img/ospreview.png" />
 
@@ -45,22 +45,22 @@ This widget not only displays the paper's title and abstract (like standard link
 
 Based on that enthusiastic response, we ventured further to develop other features requested including:
 
-### ORCID Single Sign-On
+### ORCID single sign-on
 Researchers can sign in to their open science digital space using either their email and password or their [ORCID](https://orcid.org/) credentials. This integration simplifies the login process and ensures that users can have a trusted provider to log into their digital space.
 
 <iframe class="w-full rounded-xl ring-4 ring-base-content/40" title="orcid single sign on in Bonfire" width="560" height="400" src="https://tube.tchncs.de/videos/embed/0ebcbb97-6c23-43c1-801b-320ba81129de" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 
-### Automatic Import of Publications Using ORCID Credentials
+### Automatic import of publications using ORCID credentials
 Linking a user's ORCID profile also enables the automatic import of their publications, using the ORCID API, which are then showcased on a dedicated "publications" tab within their profiles. This feature not only highlights the researcher's work but also facilitates easy access to their scientific contributions - evolving their social profile into a professional one.
 
 <iframe class="w-full rounded-xl ring-4 ring-base-content/40" title="Automatic Import of Publications using ORCID credentials" width="560" height="400" src="https://tube.tchncs.de/videos/embed/b2f258f9-fe4e-477f-b721-b67978e73939" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 
-### Creation of a Publications feed
+### Publications feed
 A new "publications" feed aggregates all papers fetched via users’ ORCID profiles or added via post links, so users can discover publications of other members of their digital space, including those from followed users on remote instances. This fosters a wide-ranging view of scientific contributions within a digital space federated network. 
 
 <iframe class="w-full rounded-xl ring-4 ring-base-content/40" title="Publications feed" width="560" height="400" src="https://tube.tchncs.de/videos/embed/b758c6c2-4975-4d21-bc50-bae6d8fa2918" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 
-### Start a discussion on publications
+### Conduct a discussion around a publication
 Beyond reading publications, users can start discussing them with authors and amongst themselves. This means going beyond content distribution and fostering academic discourse and open collaboration, enriching scientific cooperation within the community and beyond.  
 
 <img src="/img/osreply.png" />
