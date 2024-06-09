@@ -335,13 +335,14 @@
 <p>Logging/inspecting data, and timing functions, with code location information.</p>
 <h2 id="logging%2Finspecting">Logging/inspecting <a class="direct-link" href="#logging%2Finspecting">#</a></h2>
 <p><code>Untangle</code> provides alternatives for <code>IO.inspect</code> and the macros in Elixir's <code>Logger</code> to output code location information. It also provides a polyfill for <code>dbg</code> which was introduce in Elixir 1.14</p>
+<p><img src="priv/screenshot.png" alt="screenshot" title="Screenshot showing sample logs (shown when running the library tests)"></p>
 <p>The first argument is <code>inspect</code>ed and the second argument (if provided) is used as a label:</p>
-<pre><code>iex(1)&gt; import Untangle
+<pre><code>&gt; import Untangle
 Untangle
-iex(2)&gt; debug(:no, &quot;the answer is&quot;) # log at debug
+&gt; debug(:no, &quot;the answer is&quot;) # log at debug
 11:19:09.915 [debug] [iex:2] the answer is: :no
 :no
-iex(3)&gt; dump(%{a: :map}, &quot;it&quot;) # inspect something on stdout
+&gt; dump(%{a: :map}, &quot;it&quot;) # inspect something on stdout
 [iex:3] it: %{a: :map}
 %{a: :map}
 </code></pre>
@@ -403,7 +404,7 @@ limitations under the License.</p>
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">07 Jan 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">02 Jun 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
             
           

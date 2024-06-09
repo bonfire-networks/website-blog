@@ -332,12 +332,12 @@
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
         <h1 id="arrows">Arrows <a class="direct-link" href="#arrows">#</a></h1>
-<p>A handful of (mostly) arrow macros.</p>
+<p>A handful of (mostly) arrow macros with superpowers.</p>
 <h2 id="installation">Installation <a class="direct-link" href="#installation">#</a></h2>
-<p>The package can be installed by adding <code>arrows</code> to your list of dependencies in <code>mix.exs</code>: --&gt;</p>
+<p>The package can be installed by adding <code>arrows</code> to your list of dependencies in <code>mix.exs</code>:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">def</span> deps <span class="token keyword">do</span>
   <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span><span class="token atom symbol">:arrows</span><span class="token punctuation">,</span> <span class="token string">"~> 0.1.0"</span><span class="token punctuation">}</span>
+    <span class="token punctuation">{</span><span class="token atom symbol">:arrows</span><span class="token punctuation">,</span> <span class="token string">"~> 0.2.0"</span><span class="token punctuation">}</span>
   <span class="token punctuation">]</span>
 <span class="token keyword">end</span></code></pre>
 <p>Or via git:</p>
@@ -349,7 +349,8 @@
 <h2 id="documentation">Documentation <a class="direct-link" href="#documentation">#</a></h2>
 <p>The Elixir <a href="https://hexdocs.pm/elixir/Kernel.html#%7C%3E/2">|&gt; (&quot;pipe&quot;) operator</a> is one of the things that seems to get people excited about elixir. Probably in part because you then don't have to keep coming up with function names. Unfortunately it's kind of limiting.<br>
 The moment you need to pipe a parameter into a position that isn't the first one, it breaks down and you have to drop out of the pipeline format or write a secondary function to handle it.</p>
-<p>Not any more! By simply inserting <code>...</code> where you would like the value to be inserted, <code>Arrows</code> will override where it is placed. This allows you to keep on piping while accommodating that function with the annoying argument order. <code>Arrows</code> was inspired by <a href="https://hexdocs.pm/magritte/Magritte.html">an existing library</a>. Here is part of the test suite in lieu of examples:</p>
+<p>Not any more! By simply inserting <code>...</code> where you would like the value to be inserted, <code>Arrows</code> will override where it is placed. This allows you to keep on piping while accommodating that function with the annoying argument order. <code>Arrows</code> was inspired by <a href="https://hexdocs.pm/magritte/Magritte.html">an existing library</a>.</p>
+<p>Here is part of the test suite in lieu of examples:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">ArrowsTest</span> <span class="token keyword">do</span>
   <span class="token keyword">use</span> <span class="token module class-name">ExUnit</span><span class="token punctuation">.</span><span class="token module class-name">Case</span>
   <span class="token keyword">use</span> <span class="token module class-name">Arrows</span>
@@ -435,7 +436,7 @@ double will be called before the parameter is passed to <code>double_fst</code>.
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">25 Feb 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">24 May 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold"></span></div>
             
           

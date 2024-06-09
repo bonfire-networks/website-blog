@@ -501,11 +501,11 @@
 <hr>
 <h2 id="step---0---decide-how-you-want-to-deploy-and-manage-the-app">Step - 0 - Decide how you want to deploy and manage the app <a class="direct-link" href="#step---0---decide-how-you-want-to-deploy-and-manage-the-app">#</a></h2>
 <ul>
-<li>Option A - Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects. In this case, jump straight to step 4.</li>
-<li>Option B - Install using Docker containers (easy mode)
+<li>Option A - Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects.</li>
+<li>Option B - Install using Docker containers
 <ul>
-<li>Option B1 - Using pre-built Docker images</li>
-<li>Option B2 - Building your own Docker image (if you want to make changes to the code)</li>
+<li>Option B1 - Using pre-built Docker images (easy mode)</li>
+<li>Option B2 - Building your own Docker image (if you want to make code changes or add your own extensions)</li>
 </ul>
 </li>
 <li>Option C - Manual installation (without Docker)</li>
@@ -516,6 +516,7 @@
 <li>Install <a href="https://docs.coopcloud.tech/abra/">Abra</a> on your machine</li>
 <li><a href="https://docs.coopcloud.tech/operators/">Set up a server with co-op cloud</a></li>
 <li>Use the <a href="https://recipes.coopcloud.tech/bonfire">Bonfire recipe</a> and follow the instructions there.</li>
+<li><a href="#step-4-run">Done!</a></li>
 </ol>
 <h3 id="options-b-and-c">Options B and C <a class="direct-link" href="#options-b-and-c">#</a></h3>
 <ol>
@@ -681,7 +682,9 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 <li><a href="https://github.com/casey/just#packages">just</a></li>
 <li>Elixir version 1.15+ with OTP 25+. If your distribution only has an old version available, check <a href="https://elixir-lang.org/install.html">Elixir's install page</a> or use a tool like <a href="https://github.com/jdx/mise">mise</a> (run <code>mise install</code> in this directory) or asdf.</li>
 </ul>
-<h4 id="c-1.-building-the-release">C-1. Building the release <a class="direct-link" href="#c-1.-building-the-release">#</a></h4>
+<ol>
+<li>Building the release</li>
+</ol>
 <ul>
 <li>
 <p>Make sure you have erlang and elixir installed (check <code>Dockerfile</code> for what version we're currently using)</p>
@@ -693,7 +696,9 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 <p>Run <code>just rel-build</code> to create an elixir release. This will create an executable in your <code>_build/prod/rel/bonfire</code> directory. Note that you will need <code>just</code> to pass in the <code>.env</code> file to the executable, like so: <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Alternatively, this file can be sourced by <code>source .env</code> instead. We will be using the <code>bin/bonfire</code> executable as called from <code>just</code> from here on.</p>
 </li>
 </ul>
-<h4 id="c-2.-running-the-release">C-2. Running the release <a class="direct-link" href="#c-2.-running-the-release">#</a></h4>
+<ol start="2">
+<li>Running the release</li>
+</ol>
 <ul>
 <li>
 <p>Create a database, and a user, fill out the <code>.env</code> with your credentials and secrets</p>
@@ -729,7 +734,7 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 </ul>
 <p>Your <code>flake.nix</code> file would look like the following. Remember to replace <code>myHostName</code> with your actual hostname or however your deployed system is called.</p>
 <pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span>
-  inputs<span class="token punctuation">.</span>bonfire<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"github:happysalada/bonfire-app/main"</span><span class="token punctuation">;</span>
+  inputs<span class="token punctuation">.</span>bonfire<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"github:bonfire-networks/bonfire-app/main"</span><span class="token punctuation">;</span>
   outputs <span class="token operator">=</span> <span class="token punctuation">{</span> self<span class="token punctuation">,</span> nixpkgs<span class="token punctuation">,</span> bonfire <span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     overlay <span class="token operator">=</span> final<span class="token punctuation">:</span> prev<span class="token punctuation">:</span> <span class="token keyword">with</span> final<span class="token punctuation">;</span><span class="token punctuation">{</span>
       <span class="token comment"># a package named bonfire already exists on nixpkgs so we put it under a different name</span>
@@ -779,67 +784,6 @@ Usage: <code>bonfire COMMAND [ARGS]</code></p>
 	<span class="token comment"># You will need to accept ACME's terms and conditions if you haven't elsewhere in your configuration</span>
 	security<span class="token punctuation">.</span>acme<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>email <span class="token operator">=</span> <span class="token string">"you@myHostName.com"</span><span class="token punctuation">;</span>
 	security<span class="token punctuation">.</span>acme<span class="token punctuation">.</span>acceptTerms <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-
-  <span class="token comment"># this is uniquely for database backup purposes</span>
-  <span class="token comment"># replace myBackupUserName with the user name that will do the backups</span>
-  <span class="token comment"># if you want to do backups differently, feel free to remove this part of the config</span>
-  services<span class="token punctuation">.</span>postgresql <span class="token operator">=</span> <span class="token punctuation">{</span>
-    ensureDatabases <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"bonfire"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
-    ensureUsers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-      name <span class="token operator">=</span> <span class="token string">"myBackupUserName"</span><span class="token punctuation">;</span>
-      ensurePermissions <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"DATABASE bonfire"</span> <span class="token operator">=</span> <span class="token string">"ALL PRIVILEGES"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="option-c-with-nixos">Option C with nixos <a class="direct-link" href="#option-c-with-nixos">#</a></h3>
-<p>this repo is a flake and includes a nixos module.<br>
-Here are the detailed steps to deploy it.</p>
-<ul>
-<li>add it as an input to your system flake.</li>
-<li>add an overlay to just the package available</li>
-<li>add the required configuration in your system</li>
-</ul>
-<p>Your flake.nix file would look like the following. Remember to replace myHostName with your actual hostname or however your deployed system is called.</p>
-<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span>
-  inputs<span class="token punctuation">.</span>bonfire<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"github:happysalada/bonfire-app/main"</span><span class="token punctuation">;</span>
-  outputs <span class="token operator">=</span> <span class="token punctuation">{</span> self<span class="token punctuation">,</span> nixpkgs<span class="token punctuation">,</span> bonfire <span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    overlay <span class="token operator">=</span> final<span class="token punctuation">:</span> prev<span class="token punctuation">:</span> <span class="token keyword">with</span> final<span class="token punctuation">;</span><span class="token punctuation">{</span>
-      <span class="token comment"># a package named bonfire already exists on nixpkgs so we put it under a different name</span>
-      elixirBonfire <span class="token operator">=</span> bonfire<span class="token punctuation">.</span>defaultPackage<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    nixosConfigurations<span class="token punctuation">.</span>myHostName <span class="token operator">=</span> nixpkgs<span class="token punctuation">.</span>lib<span class="token punctuation">.</span>nixosSystem <span class="token punctuation">{</span>
-      system <span class="token operator">=</span> <span class="token string">"x86_64-linux"</span><span class="token punctuation">;</span>
-      modules <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-          environment<span class="token punctuation">.</span>systemPackages <span class="token operator">=</span> <span class="token punctuation">[</span> agenix<span class="token punctuation">.</span>defaultPackage<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux <span class="token punctuation">]</span><span class="token punctuation">;</span>
-          nixpkgs<span class="token punctuation">.</span>overlays <span class="token operator">=</span> <span class="token punctuation">[</span> self<span class="token punctuation">.</span>overlay <span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token url">./myHostName.nix</span>
-        bonfire<span class="token punctuation">.</span>nixosModules<span class="token punctuation">.</span>bonfire
-      <span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>then in myHostName.nix would look like the following</p>
-<p>TODO: add the caddy config</p>
-<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span> config<span class="token punctuation">,</span> lib<span class="token punctuation">,</span> pkgs<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">:</span>
-
-<span class="token punctuation">{</span>
-  services<span class="token punctuation">.</span>bonfire <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment"># you will need to expose bonfire with a reverse proxy, for example caddy</span>
-    port <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">;</span>
-    package <span class="token operator">=</span> pkgs<span class="token punctuation">.</span>elixirBonfire<span class="token punctuation">;</span>
-    dbName <span class="token operator">=</span> <span class="token string">"bonfire"</span><span class="token punctuation">;</span>
-    <span class="token comment"># the environment should contain a minimum of</span>
-    <span class="token comment">#   SECRET_KEY_BASE</span>
-    <span class="token comment">#   SIGNING_SALT</span>
-    <span class="token comment">#   ENCRYPTION_SALT</span>
-    <span class="token comment">#   RELEASE_COOKIE</span>
-    <span class="token comment"># have a look into nix/module.nix for more details</span>
-    <span class="token comment"># the way to deploy secrets is beyond this readme, but I would recommend agenix</span>
-    environmentFile <span class="token operator">=</span> <span class="token string">"/run/secrets/bonfireEnv"</span><span class="token punctuation">;</span>
-    dbSocketDir <span class="token operator">=</span> <span class="token string">"/var/run/postgresql"</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
   <span class="token comment"># this is uniquely for database backup purposes</span>
   <span class="token comment"># replace myBackupUserName with the user name that will do the backups</span>

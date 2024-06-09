@@ -337,7 +337,7 @@
 <h2 id="installation">Installation <a class="direct-link" href="#installation">#</a></h2>
 <p>The package can be installed by adding <code>linkify</code> to your list of dependencies in <code>mix.exs</code>:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">def</span> deps <span class="token keyword">do</span>
-  <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token atom symbol">:linkify</span><span class="token punctuation">,</span> <span class="token string">"~> 0.5"</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token atom symbol">:linkify</span><span class="token punctuation">,</span> <span class="token attr-name">git:</span> <span class="token string">"https://github.com/bonfire-networks/linkify"</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token keyword">end</span></code></pre>
 <h2 id="usage">Usage <a class="direct-link" href="#usage">#</a></h2>
 <p>The following examples illustrate some examples on how to use the auto linker.</p>
@@ -354,14 +354,18 @@ iex<span class="token operator">></span> <span class="token module class-name">L
 iex<span class="token operator">></span> <span class="token module class-name">Linkify</span><span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token string">"google.com"</span><span class="token punctuation">,</span> <span class="token attr-name">new_window:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token attr-name">rel:</span> <span class="token string">"noopener noreferrer"</span><span class="token punctuation">)</span>
 <span class="token string">"&lt;a href=\"http://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">google.com&lt;/a>"</span>
 
-iex<span class="token operator">></span> <span class="token module class-name">Linkify</span><span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token string">"Hello @niceguy17@pleroma.com"</span><span class="token punctuation">,</span> <span class="token attr-name">mention:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token attr-name">mention_prefix:</span> <span class="token string">"/users/"</span><span class="token punctuation">)</span>
-<span class="token string">"Hello &lt;a href=\"/users/niceguy17@pleroma.com\">@niceguy17@pleroma.com&lt;/a>"</span></code></pre>
-<p>See the <a href="https://hexdocs.pm/linkify/">Docs</a> for more examples</p>
+iex<span class="token operator">></span> <span class="token module class-name">Linkify</span><span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token string">"Hello @alice@social.com"</span><span class="token punctuation">,</span> <span class="token attr-name">mention:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token attr-name">mention_prefix:</span> <span class="token string">"/users/"</span><span class="token punctuation">)</span>
+<span class="token string">"Hello &lt;a href=\"/users/alice@social.com\">@alice@social.com&lt;/a>"</span>
+
+iex<span class="token operator">></span> <span class="token module class-name">Linkify</span><span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token string">"one #two three"</span><span class="token punctuation">,</span> <span class="token attr-name">hashtag:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token attr-name">hashtag_prefix:</span> <span class="token string">"https://example.local/tag/"</span><span class="token punctuation">)</span>
+<span class="token string">"one &lt;a href=\"https://example.local/tag/2two\">#two&lt;/a> three"</span></code></pre>
+<!-- See the [Docs](https://hexdocs.pm/linkify/) for more examples -->
 <h2 id="acknowledgments">Acknowledgments <a class="direct-link" href="#acknowledgments">#</a></h2>
-<p>This is a fork of <a href="https://github.com/smpallen99/auto_linker">auto_linker</a> by <a href="https://github.com/smpallen99">Steve Pallen</a>.</p>
+<p>This is a fork of <a href="https://akkoma.dev/AkkomaGang/linkify.git">Akkoma's Linkify</a>, itself a fork of <a href="https://github.com/smpallen99/auto_linker">auto_linker</a> by <a href="https://github.com/smpallen99">Steve Pallen</a>.</p>
 <h2 id="license">License <a class="direct-link" href="#license">#</a></h2>
 <p>Copyright © 2017-2018 E-MetroTel</p>
-<p>Copyright © 2019-2022 Pleroma Authors</p>
+<p>Copyright © 2019-2022 Akkoma and Pleroma Authors</p>
+<p>Copyright © 2022-2024 Bonfire Authors</p>
 <p>SPDX-License-Identifier: MIT AND CC0-1.0</p>
 <p>Check <a href="https://reuse.software/spec/">REUSE Specification</a> on how to get more information.</p>
 
@@ -383,7 +387,7 @@ iex<span class="token operator">></span> <span class="token module class-name">L
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">07 Jan 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">23 Apr 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold"></span></div>
             
           

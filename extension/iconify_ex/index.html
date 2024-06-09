@@ -385,6 +385,7 @@
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>#Icon</span> <span class="token attr-name">iconify</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heroicons-solid:collection<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
 <p>If your icon is dynamic, you'll still want to use the first form:</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>.iconify</span> <span class="token attr-name">icon</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{@my_icon}</span> <span class="token punctuation">/></span></span></code></pre>
+<p>Note: when using the CSS mode, there's sometimes a race condition that adds an icon several times. Until a fix is found you can run something like <code>sort -u -o icons_dir/icons.css icons_dir/icons.css</code> to clean up the CSS file.</p>
 
     </div>
   </div>
@@ -404,7 +405,7 @@
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">18 Feb 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">02 Jun 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold"></span></div>
             
           
