@@ -15,7 +15,7 @@ That's why we're thrilled to announce **Bonfire Expeditions** - a series of co-d
 Each Bonfire Expedition will focus on one of the following areas:
 
 - **Surveying:** Developer Experience, Onboarding and Documentation 
-- **Making camp:** Instance Configuration and Tools
+- **Camp:** Instance Configuration and Tools
 - **Care:** Safety and Moderation Features and UX
 - **Party:** Installation and Admin 
 
