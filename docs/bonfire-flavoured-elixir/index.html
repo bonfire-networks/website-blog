@@ -93,15 +93,9 @@
                 </div>
               <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-bold">Documentation</div>
                       <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
-                      <div class="font-bold">Tutorials</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
                   </a>
                 </li>
                  <li>
@@ -491,114 +485,7 @@
 
         <div class=" mx-6 lg:mx-8 py-8">
           
-<div class="max-w-full prose prose-lg">
-<h1 id="bonfire-flavoured-elixir">Bonfire-flavoured Elixir <a class="direct-link" href="#bonfire-flavoured-elixir">#</a></h1>
-<p>Bonfire has a few libraries that are widely used in the codebase and make writing Elixir feel a little bit different. To help you get less confused by this, here's a guide on what we can call &quot;bonfire-flavoured elixir&quot;!</p>
-<p>Please note this guide assumes you already know <a href="https://elixir-lang.org/getting-started/introduction.html">Elixir</a>.</p>
-<h2 id="arrows"><code>Arrows</code> <a class="direct-link" href="#arrows">#</a></h2>
-<p>The Elixir <a href="https://hexdocs.pm/elixir/Kernel.html#%7C%3E/2">|&gt; (&quot;pipe&quot;) operator</a> is one of the things that seems to get people excited about elixir. Probably in part because you then don't have to keep coming up with function names. Unfortunately it's kind of limiting.<br>
-The moment you need to pipe a parameter into a position that isn't the first one, it breaks down and you have to drop out of the pipeline format or write a secondary function to handle it.</p>
-<p>Not any more! By simply inserting <code>...</code> where you would like the value to be inserted, <code>Arrows</code> will override where it is placed. This allows you to keep on piping while accommodating that function with the annoying argument order. <code>Arrows</code> was inspired by <a href="https://hexdocs.pm/magritte/Magritte.html">an existing library</a>. Here is part of the test suite in lieu of examples:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">ArrowsTest</span> <span class="token keyword">do</span>
-  <span class="token keyword">use</span> <span class="token module class-name">ExUnit</span><span class="token punctuation">.</span><span class="token module class-name">Case</span>
-  <span class="token keyword">use</span> <span class="token module class-name">Arrows</span>
 
-  <span class="token keyword">def</span> <span class="token function">double</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">*</span> <span class="token number">2</span>
-  <span class="token keyword">def</span> <span class="token function">double_fst</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> _<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">*</span> <span class="token number">2</span>
-  <span class="token keyword">def</span> <span class="token function">double_snd</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">*</span> <span class="token number">2</span>
-  <span class="token keyword">def</span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">+</span> y
-
-  test <span class="token string">"|>"</span> <span class="token keyword">do</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> double<span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">8</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_fst</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_fst</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">8</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_fst</span><span class="token punctuation">(</span><span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_snd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">8</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_snd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">3</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">6</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> x <span class="token operator">&lt;-</span> <span class="token punctuation">[</span><span class="token atom symbol">:yes</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span> <span class="token keyword">do</span>
-      assert <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> x<span class="token punctuation">}</span> <span class="token operator">==</span> <span class="token punctuation">(</span>x <span class="token operator">|></span> <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">end</span>
-  <span class="token keyword">end</span>
-<span class="token keyword">end</span></code></pre>
-<p>A few little extra features you might notice here:</p>
-<ul>
-<li>You can move the parameter into a subexpression, as in <code>2 |&gt; double_fst(double(...), 1)</code> where double will be called before the parameter is passed to <code>double_fst</code>.</li>
-<li>You can use <code>...</code> multiple times, substituting it in multiple places.</li>
-<li>The right hand side need not even be a function call, you can use any expression with <code>...</code>.</li>
-</ul>
-<h3 id="ok-pipe">Ok-pipe <a class="direct-link" href="#ok-pipe">#</a></h3>
-<p><code>Arrows</code> also provides an <code>ok-pipe</code> operator, <code>~&gt;</code>, which only pipes into the next function if the result from the last one was considered a success. It's inspired by <a href="https://hexdocs.pm/ok/readme.html">OK</a>, but we have chosen to do things slightly differently so it better fits with our regular pipe.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">input</th>
-<th style="text-align:left">result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>{:ok, x}</code></td>
-<td style="text-align:left"><code>fun.(x)</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>{:error, e}</code></td>
-<td style="text-align:left"><code>{:error, e}</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>nil</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>x when not is_nil(x)</code></td>
-<td style="text-align:left"><code>fun.(x)</code></td>
-</tr>
-</tbody>
-</table>
-<p>In the case of a function returning an ok/error tuple being on the left hand side, this is straightforward to determine. In the event of <code>{:ok, x}</code>, x will be passed into the right hand side to call. In the event of <code>{:error, x}</code>, the result will be <code>{:error, x}</code>.</p>
-<p>We also deal with a lot of functions that indicate failure by returning nil. <code>~&gt;</code> tries to 'do what I mean' for both of these so you can have one pipe operator to rule them all. If <code>nil</code> is a valid result, you must thus be sure to wrap it in an <code>ok</code> tuple when it occurs on the left hand side of <code>~&gt;</code>.</p>
-<p><code>|&gt;</code> and <code>~&gt;</code> compose in the way you'd expect; i.e. a <code>~&gt;</code> receiving an error tuple or nil will stop executing the rest of the chain of (mixed) pipes.</p>
-<h2 id="untangle">Untangle <a class="direct-link" href="#untangle">#</a></h2>
-<p><code>Untangle</code> provides replacements for the macros in Elixir's <code>Logger</code> module and the <code>IO.inspect</code> function to output code location information. The first argument will be <code>inspect</code>ed and the second (where provided) will be used as a label:</p>
-<pre><code>iex(1)&gt; import Untangle
-Untangle
-iex(2)&gt; debug(:no, &quot;the answer is&quot;) # log at debug
-11:19:09.915 [debug] [iex:2] the answer is: :no
-:no
-iex(3)&gt; dump(%{a: :map}, &quot;it&quot;) # inspect something on stdout
-[iex:3] it: %{a: :map}
-%{a: :map}
-</code></pre>
-<p>When used in a code file, the location information becomes slightly more useful, e.g.:</p>
-<pre><code>[lib/test_untangle.ex:15@Test.Untangle.example/2] Here's an empty list: []
-</code></pre>
-<p>You may also notice from the iex output that it returns its first argument. This makes it ideal for<br>
-inserting into a pipeline for debugging purposes:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token function">do_something</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">|></span> <span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"output of do_something/0"</span><span class="token punctuation">)</span></code></pre>
-<p>When you are done debugging something, the location of the debug statement is already in the output so you know where to remove it or comment it out! Bliss!</p>
-<p>You will find the codebase uses this a lot, though the debugs are frequently commented out. Just uncomment the ones that would help you with a particular debugging task and you're off.</p>
-<h2 id="error-handling">Error handling <a class="direct-link" href="#error-handling">#</a></h2>
-<p><code>Bonfire.Fail</code> is an <code>Exception</code> handler, which you can use to stop the show anywhere in the code, e.g:</p>
-<p><code>id = ulid(object) || raise(Bonfire.Fail, :not_found)</code></p>
-<p>You can use this special exception when you want to redirect the user to the login page rather than just show an error:<br>
-<code>user = current_user(assigns) || raise(Bonfire.Fail.Auth, :needs_login)</code></p>
-<p>Advantages include:</p>
-<ul>
-<li>standardised error messages (defaults are defined at <a href="https://github.com/bonfire-networks/bonfire_fail/blob/main/lib/runtime_config.ex#L16">https://github.com/bonfire-networks/bonfire_fail/blob/main/lib/runtime_config.ex#L16</a>) which can be overridden in your app's config using <code>config :bonfire_fail, :common_errors</code></li>
-<li>friendly error messages are defined in one place, which means no duplicated localisation efforts</li>
-<li>uses the elixir/OTP pattern of &quot;let it crash&quot;</li>
-<li>returns the correct HTTP code when applicable</li>
-<li>no need to wrap blocks in if/else or the like</li>
-<li>for users of the LiveView frontend, this will make the corresponding friendly error message appear in a flash overlay (if using <code>Bonfire.UI.Common.LiveHandlers</code> and/or <code>Bonfire.UI.Common.undead/3</code>)</li>
-</ul>
-  
-</div>
         </div>
       </main>
     </div>

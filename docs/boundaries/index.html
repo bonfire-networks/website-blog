@@ -93,15 +93,9 @@
                 </div>
               <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-bold">Documentation</div>
                       <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
-                      <div class="font-bold">Tutorials</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
                   </a>
                 </li>
                  <li>
@@ -491,94 +485,7 @@
 
         <div class=" mx-6 lg:mx-8 py-8">
           
-<div class="max-w-full prose prose-lg">
-<h1 id="boundaries-%26-access-control">Boundaries &amp; Access Control <a class="direct-link" href="#boundaries-%26-access-control">#</a></h1>
-<p>Boundaries is Bonfire's flexible framework for full per-user/per-object/per-action access control. It makes it easy to ensure that users may only see or do what they are supposed to.</p>
-<h2 id="users-and-circles">Users and Circles <a class="direct-link" href="#users-and-circles">#</a></h2>
-<p>Ignoring any future bot support, boundaries ultimately apply to users.</p>
-<p>Circles are a way of categorising users. Each user has their own set of circles that they can add to and categorise other users in as they please.</p>
-<p>Circles allow a user to categorise work colleagues differently from friends, for example. They can choose to allow different interactions from users in the two circles or limit which content each sees on a per-item basis.</p>
-<h2 id="verbs">Verbs <a class="direct-link" href="#verbs">#</a></h2>
-<p>Verbs represent actions that the user could perform, such as reading a post or replying to a message.</p>
-<p>Each verb has a unique ID, like the table IDs from <code>Needle</code>, which must be known to the system through configuration.</p>
-<h2 id="permissions">Permissions <a class="direct-link" href="#permissions">#</a></h2>
-<p>Permissions can take one of three values:</p>
-<ul>
-<li><code>true</code></li>
-<li><code>false</code></li>
-<li><code>nil</code> (or <code>null</code> to postgresql).</li>
-</ul>
-<p><code>true</code> and <code>false</code> are easy enough to understand as yes and no, but what is <code>nil</code>?</p>
-<p><code>nil</code> represents <code>no answer</code> - in isolation, it is the same as <code>false</code>.</p>
-<p>Because a user could be in more than one circle and each circle may have a different permission, we need a way of combining permissions to produce a final result permission. <code>nil</code> is treated differently here:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">left</th>
-<th style="text-align:left">right</th>
-<th style="text-align:left">result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>nil</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>false</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left"><code>true</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>false</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>nil</code></td>
-<td style="text-align:left"><code>false</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>true</code></td>
-<td style="text-align:left"><code>false</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>false</code></td>
-<td style="text-align:left"><code>false</code></td>
-</tr>
-</tbody>
-</table>
-<p>To be considered granted, the result of combining the permissions must be <code>true</code> (<code>nil</code> is as good as <code>false</code> again here).</p>
-<p><code>nil</code> can thus be seen as a sort of <code>weak false</code>, being easily overridden by a true, but also not by itself granting anything.</p>
-<p>At first glance, this may seem a little odd, but it gives us a little additional flexibility which is useful for implementing features such as blocks (where <code>false</code> is really useful!). With a little practice, it feels quite natural to use.</p>
-<h2 id="acls-and-grants">ACLs and Grants <a class="direct-link" href="#acls-and-grants">#</a></h2>
-<p>An <code>ACL</code> is &quot;just&quot; a collection of <code>Grant</code>s.</p>
-<p>Grants combine the ID of the ACL they exist in with a verb id, a user or circle id and a permission, thus providing a decision about whether a particular action is permitted for a particular user (or all users in a particular circle).</p>
-<p>Conceptually, an ACL contains a grant for every user-or-circle/verb combination, but most of the permissions are <code>nil</code>. We do not record grants with <code>nil</code> permissions in the database, saving substantially on storage space and compute requirements.</p>
-<h2 id="controlled---applying-boundaries-to-an-object">Controlled - Applying boundaries to an object <a class="direct-link" href="#controlled---applying-boundaries-to-an-object">#</a></h2>
-<p>An object is linked to one or more <code>ACL</code>s by the <code>Controlled</code> multimixin, which pairs an object ID with an ACL ID. Because it is a multimixin, a given object can have multiple ACLs applied. In the case of overlap, permissions are combined in the manner described earlier.</p>
-<p>See also <a href="https://doc.bonfirenetworks.org/extension-bonfire_data_access_control.html">https://doc.bonfirenetworks.org/extension-bonfire_data_access_control.html</a> for more docs (TODO: merge/deduplicate)</p>
-  
-</div>
+
         </div>
       </main>
     </div>

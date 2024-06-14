@@ -93,15 +93,9 @@
                 </div>
               <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-bold">Documentation</div>
                       <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
-                      <div class="font-bold">Tutorials</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
                   </a>
                 </li>
                  <li>
@@ -492,13 +486,20 @@
         <div class=" mx-6 lg:mx-8 py-8">
           
 <div class="max-w-full prose prose-lg">
-<h1 id="development-guide">Development guide <a class="direct-link" href="#development-guide">#</a></h1>
-<p><em>These instructions are for hacking on Bonfire. If you wish to deploy in production, please refer to our deployment guide instead.</em></p>
+<h1 id="installation">Installation <a class="direct-link" href="#installation">#</a></h1>
+<blockquote>
+<h4 id="info-%7B%3A-.info%7D">Info {: .info} <a class="direct-link" href="#info-%7B%3A-.info%7D">#</a></h4>
+<p>These instructions are for hacking on Bonfire. If you wish to deploy in production, please refer to our deployment guide instead.</p>
+</blockquote>
 <p>Hello, potential contributor! :-)</p>
 <p>This is a work in progress guide to getting up and running as a developer. Please ask questions in the issue tracker if something is not clear and we'll try to improve it.</p>
 <p>Happy hacking!</p>
 <h2 id="status%3A-beta---have-fun-and-provide-feedback-%F0%9F%99%8F">Status: beta - have fun and provide feedback 🙏 <a class="direct-link" href="#status%3A-beta---have-fun-and-provide-feedback-%F0%9F%99%8F">#</a></h2>
 <p>Bonfire is currently beta software. While it's fun to play with it, we would not recommend running any production instances (meaning not using it for your primary fediverse identity) yet because it's not quite ready for that today.</p>
+<h2 id="system-requirements">System Requirements <a class="direct-link" href="#system-requirements">#</a></h2>
+<ul>
+<li><a href="https://github.com/casey/just#packages">Just</a>: a handy tool (a <code>make</code> alternative) to run commands defined in <code>./justfile</code>.</li>
+</ul>
 <h2 id="download">Download <a class="direct-link" href="#download">#</a></h2>
 <p>Either way, you need to first clone this repository and change into the directory and then do some configuration:</p>
 <pre class="language-sh"><code class="language-sh">$ <span class="token function">git</span> clone https://github.com/bonfire-networks/bonfire-app bonfire
@@ -513,83 +514,71 @@ $ <span class="token builtin class-name">cd</span> bonfire</code></pre>
 <li><code>coordination</code> (for coordinating around tasks and projects)</li>
 <li><code>cooperation</code> (for building cooperative economic networks)</li>
 </ul>
-<p>Note that at the current time, the core team are focusing most of their efforts on the classic flavour and this is where we recommend you start.</p>
-<p>You first need to install <a href="https://github.com/casey/just#packages">just</a> which is a handy tool (a <code>make</code> alternative) to run commands defined in <code>./justfile</code>.</p>
-<p>So for example if you want to run the <code>classic</code> flavour, with a fully-docker-managed setup (see the other options available below), run:</p>
-<ul>
-<li><code>export FLAVOUR=classic WITH_DOCKER=total</code></li>
-</ul>
+<p>Note that at the current time, the core team are focusing most of their efforts on the <code>classic</code> flavour and this is where we <strong>recommend</strong> you start.</p>
+<p>So for example if you want to run the <code>classic</code> flavour run:</p>
+<pre class="language-sh"><code class="language-sh"><span class="token builtin class-name">export</span> <span class="token assign-left variable">FLAVOUR</span><span class="token operator">=</span>classic</code></pre>
 <p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
-<ul>
-<li>
-<p>Make sure docker daemon is running if you chose a docker managed setup.</p>
-</li>
-<li>
-<p>Then run <code>just config</code> to initialise some config.</p>
-</li>
-</ul>
-<h3 id="configure-1">Configure <a class="direct-link" href="#configure-1">#</a></h3>
-<ul>
-<li>Then edit the config (especially the secrets) for the current flavour in <code>./.env</code></li>
-</ul>
-<h3 id="option-a---the-entry-way-(fully-managed-via-docker-compose%2C-recommended-when-you're-first-exploring)">Option A - the entry way (fully managed via docker-compose, recommended when you're first exploring) <a class="direct-link" href="#option-a---the-entry-way-(fully-managed-via-docker-compose%2C-recommended-when-you're-first-exploring)">#</a></h3>
-<ul>
-<li>
-<p>Dependencies:</p>
+<h3 id="choose-your-development-environment">Choose your development environment <a class="direct-link" href="#choose-your-development-environment">#</a></h3>
+<p>You can choose to run bonfire in a variety of ways, from fully managed via docker-compose, to bare metal with local postgres and elixir, to a combination of the two, we also offer the possibility to run Bonfire with nix.</p>
+<!-- tabs-open -->
+<h3 id="total">Total <a class="direct-link" href="#total">#</a></h3>
+<p>The entry-way is fully managed via docker-compose, recommended when you're first exploring</p>
+<h4 id="dependencies">Dependencies <a class="direct-link" href="#dependencies">#</a></h4>
 <ul>
 <li>Recent versions of Docker &amp; <a href="https://docs.docker.com/compose/install/">docker-compose</a></li>
+<li>Make sure you've set the environment variable to indicate your choice:</li>
 </ul>
-</li>
-<li>
-<p>Make sure you've set the environment variable to indicate your choice: <code>export WITH_DOCKER=total</code></p>
-</li>
-<li>
-<p>Make sure you've edited your .env file (see above) before getting started and proceed to Hello world!</p>
-</li>
-</ul>
-<h3 id="option-b---the-easy-way-(with-bare-metal-elixir%2C-and-docker-managed-tooling%2C-database-%26-search-index%2C-recommended-for-active-development)">Option B - the easy way (with bare-metal elixir, and docker-managed tooling, database &amp; search index, recommended for active development) <a class="direct-link" href="#option-b---the-easy-way-(with-bare-metal-elixir%2C-and-docker-managed-tooling%2C-database-%26-search-index%2C-recommended-for-active-development)">#</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">WITH_DOCKER</span><span class="token operator">=</span>total</code></pre>
+<h3 id="easy">Easy <a class="direct-link" href="#easy">#</a></h3>
+<p>The easy way consist in using bare-metal elixir, and docker-managed tooling, database &amp; search index, recommended for active development.</p>
 <blockquote>
+<h4 id="info-%7B%3A-.info%7D-1">Info {: .info} <a class="direct-link" href="#info-%7B%3A-.info%7D-1">#</a></h4>
 <p>Note: you can use a tool like <a href="https://mise.jdx.dev/">mise</a> or asdf to setup the environment (run <code>mise install</code> in the root directory).</p>
 </blockquote>
+<h4 id="dependencies%3A">Dependencies: <a class="direct-link" href="#dependencies%3A">#</a></h4>
 <ul>
 <li>
-<p>Dependencies:</p>
-<ul>
-<li>Recent versions of <a href="https://elixir-lang.org/install.html">Elixir</a> (1.15+) and OTP/erlang (25+)</li>
-<li><a href="https://yarnpkg.com">yarn</a></li>
-<li>Recent versions of Docker &amp; <a href="https://docs.docker.com/compose/install/">docker-compose</a></li>
-</ul>
+<p>Recent versions of <a href="https://elixir-lang.org/install.html">Elixir</a> (1.15+) and OTP/erlang (25+)</p>
 </li>
 <li>
-<p>Make sure you've set the env to indicate your choice: <code>export WITH_DOCKER=easy</code></p>
+<p><a href="https://yarnpkg.com">yarn</a></p>
 </li>
 <li>
-<p>Make sure you've edited your .env file (see above) before getting started and proceed to Hello world!</p>
+<p>Recent versions of Docker &amp; <a href="https://docs.docker.com/compose/install/">docker-compose</a></p>
+</li>
+<li>
+<p>Make sure you've set the env to indicate your choice</p>
 </li>
 </ul>
-<h3 id="option-c---the-partial-way-(with-bare-metal-elixir-and-tooling%2C-and-docker-managed-database-%26-search-index)">Option C - the partial way (with bare-metal elixir and tooling, and docker-managed database &amp; search index) <a class="direct-link" href="#option-c---the-partial-way-(with-bare-metal-elixir-and-tooling%2C-and-docker-managed-database-%26-search-index)">#</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">WITH_DOCKER</span><span class="token operator">=</span>easy</code></pre>
+<h3 id="partial">Partial <a class="direct-link" href="#partial">#</a></h3>
+<p>The partial way consist in using bare-metal elixir and tooling, and docker-managed database &amp; search index.</p>
 <blockquote>
+<h4 id="info-%7B%3A-.info%7D-2">Info {: .info} <a class="direct-link" href="#info-%7B%3A-.info%7D-2">#</a></h4>
 <p>Note: you can use a tool like <a href="https://mise.jdx.dev/">mise</a> or asdf to setup the environment (run <code>mise install</code> in the root directory).</p>
 </blockquote>
+<h4 id="dependencies%3A-1">Dependencies: <a class="direct-link" href="#dependencies%3A-1">#</a></h4>
 <ul>
 <li>
-<p>Dependencies:</p>
-<ul>
-<li>Recent versions of <a href="https://elixir-lang.org/install.html">Elixir</a> (1.15+) and OTP/erlang (25+)</li>
-<li>Recent versions of <a href="https://www.rust-lang.org/tools/install">Rust</a> and Cargo</li>
-<li><a href="https://yarnpkg.com">yarn</a></li>
-<li>Recent versions of Docker &amp; <a href="https://docs.docker.com/compose/install/">docker-compose</a></li>
-</ul>
+<p>Recent versions of <a href="https://elixir-lang.org/install.html">Elixir</a> (1.15+) and OTP/erlang (25+)</p>
 </li>
 <li>
-<p>Make sure you've set the environment variable to indicate your choice: <code>export WITH_DOCKER=partial</code></p>
+<p>Recent versions of <a href="https://www.rust-lang.org/tools/install">Rust</a> and Cargo</p>
 </li>
 <li>
-<p>Make sure you've edited your .env file (see above) before getting started and proceed to Hello world!</p>
+<p><a href="https://yarnpkg.com">yarn</a></p>
+</li>
+<li>
+<p>Recent versions of Docker &amp; <a href="https://docs.docker.com/compose/install/">docker-compose</a></p>
+</li>
+<li>
+<p>Make sure you've set the environment variable to indicate your choice</p>
 </li>
 </ul>
-<h3 id="option-d---the-bare-metal-(if-you-don't-use-docker)">Option D - the bare metal (if you don't use docker) <a class="direct-link" href="#option-d---the-bare-metal-(if-you-don't-use-docker)">#</a></h3>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">WITH_DOCKER</span><span class="token operator">=</span>partial</code></pre>
+<h3 id="no-docker">No Docker <a class="direct-link" href="#no-docker">#</a></h3>
 <blockquote>
+<h4 id="info-%7B%3A-.info%7D-3">Info {: .info} <a class="direct-link" href="#info-%7B%3A-.info%7D-3">#</a></h4>
 <p>Note: you can use a tool like <a href="https://mise.jdx.dev/">mise</a> or asdf to setup the environment (run <code>mise install</code> in the root directory). You will still need to install Postgres and Meili seperately though.</p>
 </blockquote>
 <ul>
@@ -604,33 +593,23 @@ $ <span class="token builtin class-name">cd</span> bonfire</code></pre>
 </ul>
 </li>
 <li>
-<p>You will need to set the relevant environment variables in the .env file (see above) to match your local install of Postgres.</p>
-</li>
-<li>
 <p>If you want search capabilities, you'll also need to setup a Meili server and set the relevant env variables as well.</p>
 </li>
 <li>
-<p>Make sure you've set the environment variable to indicate your choice: <code>export WITH_DOCKER=no</code> and proceed to Hello world!</p>
+<p>Make sure you've set the environment variable to indicate your choice</p>
 </li>
 </ul>
-<h3 id="option-e---the-nix-one-(dev-environment-with-nix)">Option E - the nix one (dev environment with Nix) <a class="direct-link" href="#option-e---the-nix-one-(dev-environment-with-nix)">#</a></h3>
-<p>Dependencies:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">WITH_DOCKER</span><span class="token operator">=</span>no</code></pre>
+<h3 id="the-nix-way">The nix way <a class="direct-link" href="#the-nix-way">#</a></h3>
+<p>You can also choose to use nix to setup your development environment.</p>
+<h4 id="dependencies%3A-2">Dependencies: <a class="direct-link" href="#dependencies%3A-2">#</a></h4>
 <ul>
-<li>
-<p>Run a recent version of Nix or NixOS: <a href="https://nixos.org/download.html">https://nixos.org/download.html</a></p>
-</li>
-<li>
-<p>Enable Flakes: <a href="https://nixos.wiki/wiki/Flakes#Installing_flakes">https://nixos.wiki/wiki/Flakes#Installing_flakes</a></p>
-</li>
-<li>
-<p>Install <a href="https://direnv.net/">direnv</a> through nix if you don't have the tool already: <code>nix profile install nixpkgs#direnv</code> and add it to your shell: <a href="https://direnv.net/docs/hook.html">https://direnv.net/docs/hook.html</a></p>
-</li>
-<li>
-<p>Clone the bonfire-app repo if you haven't already and allow direnv to use environment variables:</p>
-<pre><code>git clone https://github.com/bonfire-networks/bonfire-app
-cd `bonfire-app`
-direnv allow
-</code></pre>
+<li>Run a recent version of Nix or NixOS: <a href="https://nixos.org/download.html">https://nixos.org/download.html</a></li>
+<li>Enable Flakes: <a href="https://nixos.wiki/wiki/Flakes#Installing_flakes">https://nixos.wiki/wiki/Flakes#Installing_flakes</a></li>
+<li>Install <a href="https://direnv.net/">direnv</a> through nix if you don't have the tool already: <code>nix profile install nixpkgs#direnv</code> and add it to your shell: <a href="https://direnv.net/docs/hook.html">https://direnv.net/docs/hook.html</a></li>
+<li>Clone the bonfire-app repo if you haven't already and allow direnv to use environment variables:<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/bonfire-networks/bonfire-app
+<span class="token builtin class-name">cd</span> <span class="token variable"><span class="token variable">`</span>bonfire-app<span class="token variable">`</span></span>
+direnv allow</code></pre>
 </li>
 </ul>
 <p>The tool direnv is necessary for the nix setup as the nix shell environment will use variables defined on <code>.envrc</code> to set itself up.</p>
@@ -648,39 +627,39 @@ just nix-db stop
 # start postgres server running locally
 just nix-db start
 </code></pre>
-<h2 id="hello-world!">Hello world! <a class="direct-link" href="#hello-world!">#</a></h2>
-<ul>
-<li>From a fresh checkout of this repository, this command will fetch the app's dependencies and setup the database (the same commands apply for all three options above):</li>
-</ul>
+<!-- tabs-close -->
+<h3 id="configure-1">Configure <a class="direct-link" href="#configure-1">#</a></h3>
+<p>Edit the config (especially the secrets) for the current flavour in <code>./.env</code></p>
+<p>The only required config to startup bonfire are the secrets for sessions/cookies (<code>SECRET_KEY_BASE</code>, <code>SIGNING_SALT</code>, <code>ENCRYPTION_SALT</code>), you can generate strings for these by running:</p>
+<pre class="language-sh"><code class="language-sh">just secrets</code></pre>
+<p>(You need to manually copy/paste the value on the <code>.env</code> file, we will soon automatize this task)</p>
+<p>Then run <code>just config</code> to initialise the needed config.</p>
+<pre class="language-sh"><code class="language-sh">just config</code></pre>
+<h2 id="light-a-fire!">Light a fire! <a class="direct-link" href="#light-a-fire!">#</a></h2>
+<p>From a fresh checkout of this repository, this command will fetch the app's dependencies and setup the database (the same commands apply for all three options above):</p>
 <pre><code>just setup-dev
 </code></pre>
-<ul>
-<li>You should then be able to run the app with:</li>
-</ul>
+<p>This command will take a while to complete. Soon we will streamiline the setup process to be more lightway, bear with us for the moment.</p>
+<p>You should now be able to run the app with:</p>
 <pre><code>just dev
 </code></pre>
-<ul>
-<li>See the <code>just</code> commands below for more things you may want to do.</li>
-</ul>
+<p>Read more about the available <code>just</code> commands in the <a href="./just-commands"><code>just</code> commands</a> page.</p>
 <h2 id="onboarding">Onboarding <a class="direct-link" href="#onboarding">#</a></h2>
-<p>By default, the back-end listens on port 4000 (TCP), so you can access it on <a href="http://localhost:4000/">http://localhost:4000/</a></p>
-<p>Your first step will be to create an account to log in with. The<br>
-easiest way to do this is with our mix task:</p>
-<pre><code>$ just mix bonfire.account.new
-Enter an email address: root@localhost
-Enter a password:
-</code></pre>
-<p>Your password must be at least 10 characters long and the output could be more helpful if you don't do that. This task seems to work most reliably if you open a second terminal window with the devserver running. We're not sure why.</p>
-<p>You should then be able to log in and create a user through the web interface.</p>
-<p>If you would like to become an administrator, there is a mix task for that too:</p>
-<pre class="language-shell"><code class="language-shell">just mix bonfire.user.admin.promote your_username </code></pre>
+<h3 id="getting-started">Getting Started <a class="direct-link" href="#getting-started">#</a></h3>
+<p>The back-end server runs on port 4000 (TCP) by default. Access it by navigating to <a href="http://localhost:4000/">http://localhost:4000/</a> in your web browser.</p>
+<h3 id="creating-an-account">Creating an Account <a class="direct-link" href="#creating-an-account">#</a></h3>
+<p>To create an account, go to <a href="http://localhost:4000/signup">http://localhost:4000/signup</a> and enter your email address and password.<br>
+When running the server locally, you won't receive a confirmation email. However, you can find the confirmation link in the server logs.<br>
+Search for a link starting with <a href="https://localhost:4000/signup/email/confirm/">https://localhost:4000/signup/email/confirm/</a> in the logs and follow the complete link to confirm your account.</p>
+<h3 id="admin-permissions">Admin Permissions <a class="direct-link" href="#admin-permissions">#</a></h3>
+<p>The first user registered on the platform is automatically granted Admin permissions.</p>
+<h3 id="successful-onboarding">Successful Onboarding <a class="direct-link" href="#successful-onboarding">#</a></h3>
+<p>After successfully creating and confirming your account, you should see an empty dashboard.</p>
+<p>That's it! You have now successfully onboarded and can start using the application.</p>
 <h2 id="the-bonfire-environment">The Bonfire Environment <a class="direct-link" href="#the-bonfire-environment">#</a></h2>
-<p>We like to think of bonfire as a comfortable way of developing software - there are a lot of<br>
-conveniences built in once you know how they all work. The gotcha is that while you don't know them, it can be a bit overwhelming. Don't worry, we've got your back.</p>
+<p>We like to think of bonfire as a comfortable way of developing software - there are a lot of conveniences built in once you know how they all work. The gotcha is that while you don't know them, it can be a bit overwhelming. Don't worry, we've got your back.</p>
 <ul>
 <li><a href="./ARCHITECTURE.md">Architecture</a> - an overview of the stack and code structure.</li>
-</ul>
-<ul>
 <li><a href="./BONFIRE-FLAVOURED-ELIXIR.md">Bonfire-flavoured Elixir</a> - an introduction to the way we write Elixir.</li>
 <li><a href="./DATABASE.md">Bonfire's Database: an Introduction</a> - an overview of how our database is designed.</li>
 <li><a href="./BOUNDARIES.md">Boundaries</a> - an introduction to our access control system.</li>
@@ -691,7 +670,7 @@ conveniences built in once you know how they all work. The gotcha is that while 
 <h2 id="additional-information">Additional information <a class="direct-link" href="#additional-information">#</a></h2>
 <ul>
 <li>
-<p>messctl is a little utility for programmatically updating the .deps files from which the final elixir dependencies list is compiled by the mess script. The only use of it is in the dep-* tasks of the Makefile. It is used by some of the project developers and the build does not rely on it.</p>
+<p><code>messctl</code> is a little utility for programmatically updating the .deps files from which the final elixir dependencies list is compiled by the mess script. The only use of it is in the dep-* tasks of the Makefile. It is used by some of the project developers and the build does not rely on it.</p>
 </li>
 <li>
 <p><code>./extensions/</code> is used to hack on local copies of Bonfire extensions. You can clone an extension from its git repo and use the local version during development, eg: <code>just dep-clone-local bonfire_me https://github.com/bonfire-networks/bonfire_me</code></p>
@@ -709,16 +688,6 @@ conveniences built in once you know how they all work. The gotcha is that while 
 <h3 id="usage-under-windows-(wsl%2C-msys-or-cygwin)">Usage under Windows (WSL, MSYS or CYGWIN) <a class="direct-link" href="#usage-under-windows-(wsl%2C-msys-or-cygwin)">#</a></h3>
 <p>By default, the <code>justfile</code> requires symlinks, which can be enabled with the help of <a href="https://stackoverflow.com/a/59761201">this link</a>.</p>
 <p>See the <a href="https://github.com/bonfire-networks/bonfire-app/pull/111">pull request adding WSL support</a> for details about usage without symlinks.</p>
-<h2 id="just-commands"><code>just</code> commands <a class="direct-link" href="#just-commands">#</a></h2>
-<p>Run <code>just</code> followed by any of these commands when appropriate rather than directly using the equivalent commands like <code>mix</code>, <code>docker</code>, <code>docker-compose</code>, etc. For example, <code>just setup</code> will get you started, and <code>just dev</code> will run the app.</p>
-<p>You can first set an env variable to control which mode these commands will assume you're using. Here are your options:</p>
-<ul>
-<li><code>WITH_DOCKER=total</code> : use docker for everything (default)</li>
-<li><code>WITH_DOCKER=partial</code> : use docker for services like the DB</li>
-<li><code>WITH_DOCKER=easy</code> : use docker for services like the DB &amp; compiled utilities like messctl</li>
-<li><code>WITH_DOCKER=no</code> : please no</li>
-</ul>
-<p>Run <code>just help</code> to see the list of possible commands and what they do.</p>
 <h2 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h2>
 <h3 id="eacces-permissions-error">EACCES Permissions Error <a class="direct-link" href="#eacces-permissions-error">#</a></h3>
 <p>If you get a permissions error when following any of the steps, run the following command and it should be fixed:</p>

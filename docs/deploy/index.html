@@ -93,15 +93,9 @@
                 </div>
               <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs">
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-bold">Documentation</div>
                       <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/courses">
-                      <div class="font-bold">Tutorials</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Everything you need to get started </div>
                   </a>
                 </li>
                  <li>
@@ -492,24 +486,29 @@
         <div class=" mx-6 lg:mx-8 py-8">
           
 <div class="max-w-full prose prose-lg">
-<h1 id="deployment-guide">Deployment guide <a class="direct-link" href="#deployment-guide">#</a></h1>
-<h3 id="warning%3A-beta-status---have-fun-but-don't-rely-on-it-yet-%F0%9F%99%8F">WARNING: beta status - have fun but don't rely on it yet 🙏 <a class="direct-link" href="#warning%3A-beta-status---have-fun-but-don't-rely-on-it-yet-%F0%9F%99%8F">#</a></h3>
+<h1 id="hosting-guide">Hosting guide <a class="direct-link" href="#hosting-guide">#</a></h1>
+<p>A short guide to running Bonfire in a production environment and setting up a digital space connected to the fediverse.</p>
+<blockquote>
+<h4 id="warning-%7B%3A-.warning%7D">Warning {: .warning} <a class="direct-link" href="#warning-%7B%3A-.warning%7D">#</a></h4>
 <p>Bonfire is currently beta software. While it's fun to play with it, we would not recommend running any production instances yet (meaning not using it for your primary fediverse identity) because it's not quite ready for that today.</p>
-<p><em>These instructions are for setting up Bonfire in production. If you want to run the backend in development, please refer to our developer guide instead.</em></p>
+</blockquote>
+<p><em>These instructions are for setting up Bonfire in production. If you want to run the backend in development, please refer to our <a href="./hacking">Installation guide</a> instead.</em></p>
 <h2 id="security-warning">Security Warning <a class="direct-link" href="#security-warning">#</a></h2>
 <p>We recommend only granting an account to people you trust to minimise the attack surface. Accordingly, Bonfire ships with public registration disabled. The admin panel has an <code>invite</code> facility.</p>
 <hr>
 <h2 id="step---0---decide-how-you-want-to-deploy-and-manage-the-app">Step - 0 - Decide how you want to deploy and manage the app <a class="direct-link" href="#step---0---decide-how-you-want-to-deploy-and-manage-the-app">#</a></h2>
-<ul>
-<li>Option A - Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects.</li>
-<li>Option B - Install using Docker containers
+<!-- tabs-open -->
+<h3 id="co-op-cloud">Co-op Cloud <a class="direct-link" href="#co-op-cloud">#</a></h3>
+<p>Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects.</p>
+<h3 id="docker">Docker <a class="direct-link" href="#docker">#</a></h3>
+<p>Install using Docker containers</p>
 <ul>
 <li>Option B1 - Using pre-built Docker images (easy mode)</li>
 <li>Option B2 - Building your own Docker image (if you want to make code changes or add your own extensions)</li>
 </ul>
-</li>
-<li>Option C - Manual installation (without Docker)</li>
-</ul>
+<h3 id="manual">Manual <a class="direct-link" href="#manual">#</a></h3>
+<p>Install without Docker</p>
+<!-- tabs-close -->
 <h2 id="step-1---download-and-configure-the-app">Step 1 - Download and configure the app <a class="direct-link" href="#step-1---download-and-configure-the-app">#</a></h2>
 <h3 id="option-a---install-using-co-op-cloud-(recommended)">Option A - Install using Co-op Cloud (recommended) <a class="direct-link" href="#option-a---install-using-co-op-cloud-(recommended)">#</a></h3>
 <ol>
