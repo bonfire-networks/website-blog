@@ -486,7 +486,7 @@
         <div class=" mx-6 lg:mx-8 py-8">
           
 <div class="max-w-full prose prose-lg">
-<h1 id="installation">Installation <a class="direct-link" href="#installation">#</a></h1>
+<h1 id="development-setup">Development setup <a class="direct-link" href="#development-setup">#</a></h1>
 <blockquote>
 <h4 id="info-%7B%3A-.info%7D">Info {: .info} <a class="direct-link" href="#info-%7B%3A-.info%7D">#</a></h4>
 <p>These instructions are for hacking on Bonfire. If you wish to deploy in production, please refer to our deployment guide instead.</p>
@@ -629,12 +629,11 @@ just nix-db start
 </code></pre>
 <!-- tabs-close -->
 <h3 id="configure-1">Configure <a class="direct-link" href="#configure-1">#</a></h3>
-<p>Edit the config (especially the secrets) for the current flavour in <code>./.env</code></p>
+<p>Run <code>just config</code> to initialise the needed config.</p>
+<pre class="language-sh"><code class="language-sh">just config</code></pre>
+<p>Then you can edit the config for the current flavour in <code>./.env</code></p>
 <p>The only required config to startup bonfire are the secrets for sessions/cookies (<code>SECRET_KEY_BASE</code>, <code>SIGNING_SALT</code>, <code>ENCRYPTION_SALT</code>), you can generate strings for these by running:</p>
 <pre class="language-sh"><code class="language-sh">just secrets</code></pre>
-<p>(You need to manually copy/paste the value on the <code>.env</code> file, we will soon automatize this task)</p>
-<p>Then run <code>just config</code> to initialise the needed config.</p>
-<pre class="language-sh"><code class="language-sh">just config</code></pre>
 <h2 id="light-a-fire!">Light a fire! <a class="direct-link" href="#light-a-fire!">#</a></h2>
 <p>From a fresh checkout of this repository, this command will fetch the app's dependencies and setup the database (the same commands apply for all three options above):</p>
 <pre><code>just setup-dev
@@ -643,7 +642,7 @@ just nix-db start
 <p>You should now be able to run the app with:</p>
 <pre><code>just dev
 </code></pre>
-<p>Read more about the available <code>just</code> commands in the <a href="./just-commands"><code>just</code> commands</a> page.</p>
+<p>Read more about the available <code>just</code> commands in the <a href="./topics/JUST.md"><code>just</code> commands</a> page.</p>
 <h2 id="onboarding">Onboarding <a class="direct-link" href="#onboarding">#</a></h2>
 <h3 id="getting-started">Getting Started <a class="direct-link" href="#getting-started">#</a></h3>
 <p>The back-end server runs on port 4000 (TCP) by default. Access it by navigating to <a href="http://localhost:4000/">http://localhost:4000/</a> in your web browser.</p>
