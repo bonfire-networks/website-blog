@@ -85,18 +85,18 @@ eleventyNavigation:
             class="btn lg:btn-lg rounded-full ">Connect</button></li>
     </ul> #}
 
-<div class="flex flex-col" role="tabpanels">
+<div class="grid grid-cols-3 gap-8 mt-12" role="tabpanels">
     {# x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid grid-cols-4 items-center border border-base-content/30  mt-16">
-    <div class="lg:col-span-2 col-span-4 p-12 pb-6">
-      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Effortlessly configure your favourite features, settings, and theme.</div>
-      <div class="mt-3 prose prose-lg">Setting up your digital space should be seamless and enjoyable. Whether it's fine-tuning the interactions, adding new features, adjusting the privacy settings, or choosing a custom theme, every aspect is under your control. With Bonfire, you can shape a space that truly reflects your community's spirit and aesthetic.</div>
+    class="flex flex-col items-center border border-base-content/30 rounded-xl shadow-sm">
+    <div class="w-full rounded-t-xl">
+      <div style="background-image: url(/img/1.png)" class="bg-cover h-[300px] w-full rounded-t-xl"></div>
     </div>
-    <div class="lg:col-span-2 col-span-4">
-      <div style="background-image: url(/img/4.png)" class="bg-cover h-[400px] w-full"></div>
+    <div class="p-6">
+      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Built by you</div>
+      <div class="mt-3 prose prose-lg">Search and install modules, change theme and define preferences and default. With Bonfire, you can shape a space that truly reflects your community's spirit and aesthetic.</div>
     </div>
   </section>
 
@@ -105,14 +105,13 @@ eleventyNavigation:
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid grid-cols-4 items-center border border-base-content/30 border-t-0 ">
-    <div class="lg:col-span-2 col-span-4">
-      <div style="background-image: url(/img/conn.png)" class="bg-cover h-[405px] w-full"></div>
+    class="flex flex-col items-center border border-base-content/30 rounded-xl shadow-sm">
+    <div class="w-full rounded-t-xl">
+      <div style="background-image: url(/img/2.png)" class="bg-cover h-[300px] w-full rounded-t-xl"></div>
     </div>
-    <div class="lg:col-span-2 col-span-4 p-12 pb-6">
-      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Connect, share, and engage with purpose.</div>
-      <div class="mt-3 prose prose-lg">Follow users and organise your network with circles. 
-         Determine who sees your publications and activities and how your audience can interact with you for relevant and meaningful interactions. This approach deepens conversations and makes interactions more relevant and impactful.</div>
+    <div class="p-6">
+      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Grown your community</div>
+      <div class="mt-3 prose prose-lg">Follow users and organise your network with circles. Determine who sees your publications and activities and how your audience can interact with you for relevant and meaningful interactions.</div>
     </div>
   </section>
 
@@ -121,14 +120,14 @@ eleventyNavigation:
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid grid-cols-4 items-center border border-base-content/30 border-t-0 ">
-    <div class="lg:col-span-2 col-span-4 p-12 pb-6">
-      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Moderate your network: safe, empowered, and inclusive</div>
+    class="flex flex-col items-center border border-base-content/30 rounded-xl shadow-sm">
+    <div class="w-full rounded-t-xl">
+      <div style="background-image: url(/img/4.png)" class="bg-cover h-[300px] w-full rounded-t-xl"></div>
+    </div>
+    <div class="p-6">
+      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Safe, empowered</div>
       <div class="mt-3 prose prose-lg">
-        Foster a safe community environment with tools for users and moderators to flag or remove problematic content, and to silence, ghost, or block users or instances, fostering a harmonious community. Utilise custom roles to decentralize power, moving away from traditional admin-centered models.</div>
-    </div>
-    <div class="lg:col-span-2 col-span-4">
-      <div style="background-image: url(/img/mod.png)" class="bg-cover h-[400px] w-full"></div>
+        Foster a safe community environment with tools for users and moderators to flag or remove problematic content, and to silence, ghost, or block users or instances, fostering a harmonious community.</div>
     </div>
   </section>
 
@@ -137,28 +136,79 @@ eleventyNavigation:
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid grid-cols-4 items-center border border-base-content/30 border-t-0 ">
-    <div class="lg:col-span-2 col-span-4">
-      <div style="background-image: url(/img/fed.png)" class="bg-cover h-[400px] w-full"></div>
+    class="flex col-span-3 items-center border border-base-content/30 rounded-xl shadow-sm">
+    <div class="w-full rounded-l-xl">
+      <div style="background-image: url(/img/3.png)" class="bg-cover h-[400px] w-full rounded-l-xl"></div>
     </div>
-    <div class="lg:col-span-2 col-span-4 p-12 pb-6">
-      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Global reach: connect with communities far and wide</div>
+    <div class="p-6">
+      <div class="font-semibold max-w-screen-sm leading-[48px] text-3xl">Join the fediverse</div>
       <div class="mt-3 prose prose-lg">
         Embrace federation to interconnect with users on the wider <em>fediverse</em>, broadening your network and breaking down barriers. With Bonfire, seamlessly join a diverse tapestry of communities, expanding your community's reach and participating in a connected global ecosystem.</div>
     </div>
   </section>
 </div>
 
-  <div class="flex mt-24 items-center place-content-center">
+  {# <div class="flex mt-24 items-center place-content-center">
   <a class="btn gap-3 items-center btn-ghost text-3xl font-medium h-16 px-8 btn-xl rounded-full  normal-case" href="/start">
     <span>Get Bonfire </span>
     <span><svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
+  </div> #}
+
+
+{# <div class="grid grid-cols-12 mt-8 border rounded-box border-base-content/30  gap-6">
+  <div class="col-span-7"></div>
+  <div class="col-span-5 p-8 flex flex-col gap-3">
+    <div class="text-3xl font-semibold">What is bonfire</div>
+    <div class="text-lg">Ethereum is a technology that's home to digital money, global payments, and applications. The community has built a booming digital economy, bold new ways for creators to earn online, and so much more. It's open to everyone, wherever you are in the world – all you need is the internet.</div>
+    <div class="flex items-center gap-3">
+      <a class="btn btn-primary">Read more</a>
+    </div>
   </div>
+</div> #}
+<div class="grid grid-cols-12 mt-8 border rounded-box border-base-content/30  gap-6">
+  
+  <div class="col-span-5 p-8 flex flex-col gap-3">
+    <div class="text-3xl font-semibold">Join the fediverse</div>
+    <div class="text-lg">Ethereum is a technology that's home to digital money, global payments, and applications. The community has built a booming digital economy, bold new ways for creators to earn online, and so much more. It's open to everyone, wherever you are in the world – all you need is the internet.</div>
+    <div class="flex items-center gap-3">
+      <a class="btn btn-primary">Read more</a>
+    </div>
+  </div>
+  <div class="col-span-7"></div>
+</div>
+ 
+ <div class="grid grid-cols-12 mt-8 border rounded-box border-base-content/30  gap-6">
+    <div class="col-span-7"></div>
+  <div class="col-span-5 p-8 flex flex-col gap-3">
+    <div class="text-3xl font-semibold">Build social network plugins</div>
+    <div class="text-lg">The Bonfire framework provides essential modules for crafting complex social networking apps and plugins – all with significantly less time and resources.</div>
+    <div class="flex items-center gap-3">
+      <a class="btn btn-primary">Developer portal</a>
+    </div>
+  </div>
+</div>
+{# 
 
-<div class="max-w-screen-lg my-52 mx-4 lg:mx-auto">
 
-  <div class="text-5xl leading-[70px] text-center font-semibold mt-4">Build social apps with ease</div>
-  <div class="prose mx-auto text-center max-w-screen-md prose-2xl mt-3 font-light">The Bonfire toolkit provides essential modules for crafting complex social networking apps, tailored to communities' needs – all with significantly less time and resources.</div>
+
+<div>A modular framwework</div> #}
+<div class="grid grid-cols-12 mt-8 gap-8">
+
+  <div class="p-6 col-span-4 border border-base-content/30 rounded-xl">Bonfire for enterprise</div>
+  <div class="p-6 col-span-4 border border-base-content/30 rounded-xl">Bonfire for enterprise</div>
+  <div class="p-6 col-span-4 border border-base-content/30 rounded-xl">Bonfire for enterprise</div>
+  {# <div class="p-6 col-span-3 border border-base-content/30 rounded-xl">Bonfire for enterprise</div> #}
+</div>
+
+
+<div class="max-w-screen-lg my-8 mx-4 lg:mx-auto">
+
+
+
+
+
+  {# <div class="text-5xl leading-[70px] text-center font-semibold mt-4">Build social apps with ease</div>
+  <div class="prose mx-auto text-center max-w-screen-md prose-2xl mt-3 font-light"></div>
 
 
   <div class="grid mt-12 md:grid-cols-2 grid-cols-1 lg:grid-cols-3 divide-x divide-y border-b border-r divide-base-content/30 border-base-content/30">
@@ -235,6 +285,7 @@ eleventyNavigation:
     <span><svg class="w-12 h-12 text-base-content/90" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
   </div>
   </div>
+</div> #}
 </div>
 
 <div class="max-w-screen-xl my-40 px-4 lg:mx-auto">
@@ -364,6 +415,7 @@ eleventyNavigation:
     </div> 
   </div>
 
+</div>
 </div>
 </div>
 {# </div> #}

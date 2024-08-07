@@ -1,7 +1,7 @@
 <div
-      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      class="sticky top-0 z-[999999999999999999] bg-base-100 transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+       :class="{ 'border-b border-base-content/10': atTop, 'text-base-content': !atTop, 'text-base-content': atTop }"
       @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     {# <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
@@ -12,13 +12,13 @@
       </div>
     </div> #}
 
-    <div class="bg-base-300">
-      <header class="relative z-30 lg:px-8 mx-auto navbar">
+    <div class="bg-base-100 max-w-screen-xl mx-auto">
+      <header class="relative z-30  mx-auto navbar">
         <div class="navbar-start w-[70%]">
           <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
               <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              {# <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span>  #}
               {# <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary">{{ latest_version | safe }}</div> #}
               </span>
             </a>
@@ -53,7 +53,7 @@
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
               
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
                 <li>
                   <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
                       <div class="font-bold">Apps</div>
@@ -91,7 +91,7 @@
                   <span>Learn</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg ">
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-bold">Documentation</div>
@@ -181,7 +181,7 @@
               
             </label>
           <a href="/start/" >
-            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+            <span class="hidden  btn btn-sm btn-primary xl:flex">Get Bonfire</span>
           </a>
 
           <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
@@ -215,7 +215,7 @@
       id="mobile-menu" 
       x-show="open" 
       style="display: none;">
-      <ul class="p-0 menu bg-base-300">
+      <ul class="p-0 menu bg-base-100">
           <li>
             <a href="/about" class="{{ 'rounded underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/about' in page.url }} ">
             <span class="text-base font-regular">About</span>

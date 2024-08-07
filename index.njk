@@ -10,6 +10,11 @@ eleventyNavigation:
 {% include "features.njk" %}
 {# {% include "testimonials.njk" %} #}
 
+
+
+
+
+
 <div class="">
     <div class="max-w-screen-xl px-4 lg:mx-auto my-40">
       <div class="">
@@ -25,6 +30,14 @@ eleventyNavigation:
     </div>
   </div>
 
+<script>
+  const updateCursor = ({ x, y }) => {
+  document.documentElement.style.setProperty('--x', x)
+  document.documentElement.style.setProperty('--y', y)
+}
+
+document.body.addEventListener('pointermove', updateCursor)
+</script>
 {# {% include "plugins.njk" %} #}
 {# {% include "developers.njk" %}  #}
 {# {% include "testimonials.njk" %}

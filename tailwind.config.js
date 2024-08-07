@@ -8,9 +8,13 @@ module.exports = {
   },
   theme: {
     extend: {
+      // fontFamily: {
+      //   'sans': ['Geist', 'sans-serif'],
+      //   'mono': ['GeistMono', 'mono']
+      // },
       fontFamily: {
-        'sans': ['Geist', 'sans-serif'],
-        'mono': ['GeistMono', 'mono']
+        'sans': ['IBM Plex Sans', 'ui-sans-serif', 'system-ui'],
+        'serif': ['Playfair Display', 'ui-serif', 'Georgia']
       },
       colors: {
         bonfire: colors.amber,
@@ -23,12 +27,12 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["nord"],
+          ...require("daisyui/src/theming/themes")["light"],
         }
       },
       {
         bonfire: {
-          ...require("daisyui/src/theming/themes")["dracula"],
+          ...require("daisyui/src/theming/themes")["black"],
           "primary": "#fde047"
         }
       },
