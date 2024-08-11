@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonfire</title>
-    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <title>Bonfire Expeditions - Camp! A bounty programme</title>
+    <meta name="description" content="This initiative aims to inspire developers to learn the stack and framework and to create Bonfire extensions, while helping to close some issues along the way.">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link
     rel="stylesheet" href="/css/style_v2.css">
@@ -295,116 +295,139 @@
 </script>
     
 
+<div class="max-w-screen-md px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    <div class="">
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/community/">
+        <span class="badge capitalize badge-lg badge-outline">
+          community
+        </span>
+        </a>
+      </div>
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Bonfire Expeditions - Camp! A bounty programme</h1>
+     
+     
 
-<div class="bg-base-300">
-  <div class="max-w-screen-lg py-12 px-4 lg:px-0  lg:mx-auto">
-    <div class="text-sm breadcrumbs">
-      <ul>
-        <li><a href="/extensions">Extensions</a></li> 
-        
-      </ul>
-    </div>
-    <h1 class="text-3xl font-bold text-base-content  ">bonfire_ui_moderation</h1>
-    <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2"></p>
-    <div class="relative inline-block mt-6">
       
-    <input value="just dep-clone-local bonfire_ui_moderation https://github.com/bonfire-networks/bonfire_ui_moderation" class="input w-[420px] input-bordered text-sm" />
-    <span class="absolute right-[8px] top-[8px] btn btn-sm btn-square">
-        <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"/><path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1"/></g></svg>
-      </span>
-    </div>
-    
-
-  </div>
-</div>
-<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8 px-4 lg:px-0">
-
-  <div class="lg:col-span-8 order-last lg:order-first col-span-12"
-    <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
-
-    <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
-      <div class="uppercase tracking-widest mb-6">Readme</div>
+        <img src="/img/camp.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+      
         
-        <h1 id="bonfire.ui.moderation">Bonfire.UI.Moderation <a class="direct-link" href="#bonfire.ui.moderation">#</a></h1>
-<p><img src="https://i.imgur.com/XoQvDCW.png" alt=""></p>
-<p><code>Bonfire.UI.Moderation</code> is an extension that includes some User Interfaces (routes, pages and components) for flagging content and moderation in Bonfire.</p>
-<p>You can customise it by forking, but we recommend creating an extension which uses this one as a dependency, and defines your custom components, views, and/or routes (you can then comment <code>Bonfire.UI.Social.Routes</code> from your top-level Router to use your custom routes and views instead).</p>
-<h3 id="stack">Stack <a class="direct-link" href="#stack">#</a></h3>
-<p>So far, Bonfire UI extensions are built with the PETALS stack (note that is not a requirement), which means:</p>
-<ul>
-<li><a href="https://www.phoenixframework.org/">Phoenix</a></li>
-<li><a href="https://elixir-lang.org/">Elixir</a></li>
-<li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-<li><a href="https://alpinejs.dev/">Alpine.js</a></li>
-<li><a href="https://github.com/phoenixframework/phoenix_live_view#readme">LiveView</a></li>
-<li><a href="https://surface-ui.org/">Surface</a></li>
-</ul>
-<p>Surface is a server-side rendering component library (built on top of Phoenix and LiveView) that inherits a lot of design patterns from popular JS framework like Vue.js and React, while being almost JavaScript-free compared to common SPAs.</p>
-<h3 id="scaffolding">Scaffolding <a class="direct-link" href="#scaffolding">#</a></h3>
-<p>The relevant folders are:</p>
-<ul>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_moderation/tree/main/lib/components">Components</a>: Surface stateless and stateful components.</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_moderation/tree/main/lib/views">Views</a>: The main pages that are rendered when navigating to a specific route</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_moderation/tree/main/test">Test</a>: All the unit tests for the specific module.</li>
-</ul>
-<h3 id="other-resources">Other resources <a class="direct-link" href="#other-resources">#</a></h3>
-<ul>
-<li><a href="https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/">A blog post that introduces the concept of themeable bonfire apps</a></li>
-</ul>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
-<p>Copyright (c) 2020 Bonfire, and CommonsPub Contributors</p>
-<p>This program is free software: you can redistribute it and/or modify<br>
-it under the terms of the GNU Affero General Public License as<br>
-published by the Free Software Foundation, either version 3 of the<br>
-License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but<br>
-WITHOUT ANY WARRANTY; without even the implied warranty of<br>
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU<br>
-Affero General Public License for more details.</p>
-<p>You should have received a copy of the GNU Affero General Public<br>
-License along with this program.  If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
-
     </div>
   </div>
-  <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col">
-      <div class="flex items-center space-x-3">
-        <a href="https://github.com/bonfire-networks/bonfire_ui_moderation" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
-          Get Code
-        </a>
-        <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="btn rounded-full flex-1 w-full btn-outline border-base-content/30  btn-sm">
-            Report bugs
-        </a>
-    </div>
+
+  <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
+    <h2 id="%F0%9F%8E%89-welcome-to-the-bonfire-bounty-programme">🎉 Welcome to the Bonfire Bounty Programme <a class="direct-link" href="#%F0%9F%8E%89-welcome-to-the-bonfire-bounty-programme">#</a></h2>
+<p><a href="https://bonfirenetworks.org">Bonfire</a> is an open source framework written in Elixir that enables communities to create their own federated digital space. These spaces can range from simple group chats to complex infrastructures for municipalities, and everything in between.</p>
+<p>The Bonfire Bounty Programme offers monetary compensation for tackling specific challenges.</p>
+<p>This initiative aims to inspire developers to learn the stack and framework and to create Bonfire extensions, while helping to close some issues along the way.</p>
+<h2 id="%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F-camp!-expedition">🏴‍☠️ Camp! expedition <a class="direct-link" href="#%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F-camp!-expedition">#</a></h2>
+<p>We've started a <a href="https://bonfirenetworks.org/posts/surveying_expedition/">series of expeditions</a> to increase developers contributions and get help to reach our v1.0 release.</p>
+<p>The <a href="https://elixirforum.com/t/logging-our-journey-improving-developer-experience-of-bonfire/64204">first expedition: Surveying</a>, is currently ongoing and focuses on improving docs and dev onboarding by doing 1-to-1 sessions with developers.<br>
+Our second expedition: Camp!  includes a series of bounties for developers to help us with current technical blockers.</p>
+<p>The Camp! expedition will target a specific set of bounties that is currently preventing Bonfire to be used and adopted more widely and it is focused on the features in the Bonfire Classic flavour. All submissions are evaluated based on the quality of the code, performance and documentation.</p>
+<h2 id="bounties">Bounties <a class="direct-link" href="#bounties">#</a></h2>
+<h3 id="open-bounties">Open bounties <a class="direct-link" href="#open-bounties">#</a></h3>
+<ul>
+<li><a href="https://github.com/bonfire-networks/bounties/issues/1">Improve DB query performance</a> <code>€1,000</code> + half of donations to the <a href="https://opencollective.com/bonfire-networks/projects/improve-db-query-performance">dedicated Open Collective</a></li>
+<li><a href="https://github.com/bonfire-networks/bounties/issues/2">Improve feed rendering performance</a> <code>€1,000</code> + half of donations to the <a href="https://opencollective.com/bonfire-networks/projects/feed-render-performance">dedicated Open Collective</a></li>
+</ul>
+<h3 id="upcoming-bounties">Upcoming bounties <a class="direct-link" href="#upcoming-bounties">#</a></h3>
+<ul>
+<li>Validate OpenID Connect and OAuth (client and server) implementation</li>
+<li>Refactor and unify feed logic</li>
+</ul>
+<h2 id="%F0%9F%AB%B6-collaborative-approach-to-bounties">🫶 Collaborative approach to bounties <a class="direct-link" href="#%F0%9F%AB%B6-collaborative-approach-to-bounties">#</a></h2>
+<p>We want to experiment with a bounty system designed to foster collaboration rather than competition. We aim to:</p>
+<ul>
+<li>Organically grow the number of developers contributing to Bonfire.</li>
+<li>Make Bonfire a go-to framework for experimentation, both for people new to Elixir or even to coding and for seasoned developers, with clear design patterns and a robust documentation.</li>
+</ul>
+<p>We encourage developers to work openly by:</p>
+<ul>
+<li>Digging into the problem and sharing insights or potential solutions in each dedicated bounty issue.</li>
+<li>Collaborating with others developers to improve the overall quality of solutions.</li>
+</ul>
+<p>Additionally, the Bonfire Team organizes recorded sessions to discuss each issue, navigate the relevant code, address blocking issues, tests, and provide pertinent information to ensure developers can effectively work on the bounty.</p>
+<h2 id="%F0%9F%92%B0-compensation">💰 Compensation <a class="direct-link" href="#%F0%9F%92%B0-compensation">#</a></h2>
+<h3 id="primary-bounty">Primary bounty <a class="direct-link" href="#primary-bounty">#</a></h3>
+<p>One developer will receive the full bounty amount for the selected solution, plus half of donations to the dedicated Open Collective.</p>
+<p>Each submission (likely to consist of pull requests on multiple Bonfire repositories) will be tested and benchmarked on the <a href="https://playground.bonfire.cafe">playground</a> instance.</p>
+<p>To be selected, the contribution must demonstrate a deep understanding of the core problem, and solve it effectively and efficiently. Alongside the technical correctness, it should also be submitted with a clean code, clear explanations and a complete documentation.</p>
+<h3 id="additional-compensation">Additional compensation <a class="direct-link" href="#additional-compensation">#</a></h3>
+<p>We have allocated a separate fund to reward valuable contributions beyond the winning solution. Depending on available funding, 2 or more developers per bounty can receive €200 each for the following:</p>
+<ul>
+<li><strong>Significant code contribution</strong>: You created pull request(s) that while not satisfying all the criteria or fully solving the bounty,  inspired and helped other developers to do so. Also valid if you commented on issues or pull requests with additional code to improve other developers’ solutions.</li>
+<li><strong>Meaningful support</strong>: You supported other developers in solving the bounty by clarifying issues, reviewing code, running tests and benchmarks, suggesting solutions or improvements, writing documentation, or explaining concepts that helped.</li>
+</ul>
+<blockquote>
+<p>We acknowledge that the funding allocated does not reflect the labour and time that's likely to be involved. To hopefully increase the compensation, we're asking for help from the community: <strong>half of the donations collected through each respective Open Collective page will be go to the primary bounty and the other half will be distributed to people who make meaningful contributions</strong>, as a way to recognize and encourage broader participation and share responsibility for the project's sustainability with the broader community.</p>
+</blockquote>
+<h2 id="%F0%9F%92%BB-how-to-participate">💻 How to participate <a class="direct-link" href="#%F0%9F%92%BB-how-to-participate">#</a></h2>
+<h3 id="requisites">Requisites <a class="direct-link" href="#requisites">#</a></h3>
+<p>Ensure you have read <a href="https://bonfirenetworks.org/conduct/">our Code of Conduct</a> and these guidelines to know what you will expect by participating to our bounty programme. Then read through the bounty details and requirements carefully.</p>
+<h3 id="work-on-the-challenge">Work on the challenge <a class="direct-link" href="#work-on-the-challenge">#</a></h3>
+<p>Use the provided resources and fork the relevant git repositories to work on. If you have any questions during your work, feel free to comment directly on the bounty issue and we will be happy to assist you.</p>
+<h3 id="submission">Submission <a class="direct-link" href="#submission">#</a></h3>
+<p>Once you have started your work (or at any stage you prefer, though we recommend working in the open), create a draft pull request with your code. You can then ask for feedback and iterate on the same pull request until ready to submit.</p>
+<h3 id="discussion-and-compensation">Discussion and compensation <a class="direct-link" href="#discussion-and-compensation">#</a></h3>
+<p>The Bonfire team will review and discuss submitted pull requests and merge the one that satisfies all requirements most effectively, and proceed with awarding the bounty (please note that payment may take up to a month).</p>
+<p>At the same time, besides the awarded developer, we will optionally compensate other contributors with 200€ each, based on their effort, support, and impact in helping to close the bounty.</p>
+<h2 id="%E2%84%B9%EF%B8%8F-support">ℹ️ Support <a class="direct-link" href="#%E2%84%B9%EF%B8%8F-support">#</a></h2>
+<ul>
+<li>For questions on a specific bounty, comment on the dedicated issue</li>
+<li>Matrix channels for realtime chat: <a href="https://matrix.to/#/%23bonfire-networks:matrix.org">General</a> &amp; <a href="https://matrix.to/#/%23bonfire-tech:matrix.org">Technical</a></li>
+<li>Forum for technical discussions: <a href="https://elixirforum.com/tag/bonfire">Elixir Forum</a></li>
+<li>Email for private questions: team@bonfire.cafe</li>
+</ul>
+
+  </article>
+
 
     
-
-    <div class="bg-base-content/5 mt-4 rounded-lg p-3">
-      <div class="uppercase text-xs tracking-widest mb-6">Details</div>
-        <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-          
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">10 Aug 2024</span></div>
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
-            
-          
-        </div>
-    </div>
-    
-  </div>
 </div>
 
+  <div class="mx-4 mt-8 lg:mx-auto">
+    
+  
 
+  <div class="my-24 mx-auto max-w-screen-lg w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-100 p-4">
 
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
 
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
+  
 
 
   <div class="border-base-content/10 bg-base-300 border-t">
@@ -459,6 +482,6 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
     </nav>
   </div>
 </div>
-    <!-- Current page: /extension/bonfire_ui_moderation/ -->
+    <!-- Current page: /posts/camp/ -->
   </body>
 </html>

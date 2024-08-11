@@ -326,20 +326,188 @@
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
         <h1 id="bonfire.epics">Bonfire.Epics <a class="direct-link" href="#bonfire.epics">#</a></h1>
-<p>Epics are a way of structuring tasks that is extension and customisability friendly.</p>
-<!-- ## Installation -->
-<!-- If [available in Hex](https://hex.pm/docs/publish), the package can be installed -->
-<!-- by adding `bonfire_epic` to your list of dependencies in `mix.exs`: -->
-<!-- ```elixir -->
-<!-- def deps do -->
-<!--   [ -->
-<!--     {:bonfire_epics, "~> 0.1.0"} -->
-<!--   ] -->
-<!-- end -->
-<!-- ``` -->
-<!-- Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc) -->
-<!-- and published on [HexDocs](https://hexdocs.pm). Once published, the docs can -->
-<!-- be found at [https://hexdocs.pm/bonfire_epic](https://hexdocs.pm/bonfire_epic). -->
+<p>Epics are a extensible way of structuring tasks.</p>
+<p>This library is designed to provide a structured way to define and execute complex workflows in Elixir applications. It introduces the concept of &quot;Epics&quot; and &quot;Acts&quot; to organize and run sequences of operations.</p>
+<h2 id="key-components-and-concepts%3A">Key components and concepts: <a class="direct-link" href="#key-components-and-concepts%3A">#</a></h2>
+<ul>
+<li><code>Bonfire.Epics.Epic</code>: An Epic represents a complete workflow or process. It's a container that holds a sequence of Acts to be executed, along with state information, errors, and assigned values.</li>
+<li><code>Bonfire.Epics.Act</code>: An Act is an individual step or operation within an Epic. Each Act is typically a module that implements a specific task or functionality.</li>
+<li>Execution Flow &amp; Parallel Execution: Epics are executed by running their Acts in sequence. The library provides mechanisms to define, modify, and run these sequences. The library supports running multiple Acts in parallel for improved performance in certain scenarios.</li>
+<li>Shared State: An Epic can maintain state throughout its execution using the 'assigns' map, allowing data to be passed between Acts.</li>
+<li>Configurable: Epics can be defined in configuration, including at runtime, making it easy to set up and modify workflows without changing code.</li>
+<li>Database Transactions: See the <code>Bonfire.Ecto</code> library for helpers to queue changeset operations within Acts and then run them all together in a single transaction: <a href="https://github.com/bonfire-networks/bonfire_ecto">https://github.com/bonfire-networks/bonfire_ecto</a></li>
+<li>Error Handling: The library includes built-in error handling, allowing errors to be captured and associated with specific Acts within an Epic.</li>
+</ul>
+<p>This library is particularly useful for applications that need to manage complex, multi-step tasks with error handling and state management. It provides a flexible and extensible way to define, configure, and execute these processes, making it easier to maintain and modify complex workflows.</p>
+<h2 id="how-it-works">How it works <a class="direct-link" href="#how-it-works">#</a></h2>
+<ol>
+<li>Each Act is implemented as a module with a <code>run/2</code> function that performs a specific task.</li>
+<li>Users define an Epic, either in code or configuration, as sequences of Acts.</li>
+<li>When the Epic is run, it executes each Act in sequence (or with some Acts optionally running in parallel), maintaining state and handling errors along the way. Acts can update the Epic's state, adding errors, and assigning values that can be used by subsequent Acts.</li>
+<li>After all Acts are executed, the final state of the Epic is returned, including any errors or assigned values.</li>
+</ol>
+<h2 id="1.-how-to-write-an-act">1. How to write an Act <a class="direct-link" href="#1.-how-to-write-an-act">#</a></h2>
+<p>Write a module with a <code>run/2</code> function that takes an Epic and an Act, performs a specific task, and returns an Epic.</p>
+<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Label</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">LabelObject</span> <span class="token keyword">do</span>
+  <span class="token doc"><span class="token attribute">@moduledoc</span> <span class="token string">"""
+  Takes an object and label and returns a changeset for labeling that object. 
+  Implements `Bonfire.Epics.Act`.
+
+  Epic Options:
+    * `:current_user` - user that will create the page, required.
+
+  Act Options:
+    * `:as` - key to where we find the label(s) to add, and then assign changeset to, default: `:label`.
+    * `:object` (configurable) - id to use for the thing to label
+    * `:attrs` - epic options key to find the attributes at, default: `:attrs`.
+  """</span></span>
+
+  <span class="token keyword">use</span> <span class="token module class-name">Arrows</span>
+  <span class="token keyword">import</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Epics</span>
+
+  <span class="token attribute variable">@doc</span> <span class="token boolean">false</span>
+  <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>epic<span class="token punctuation">,</span> act<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    current_user <span class="token operator">=</span> epic<span class="token punctuation">.</span>assigns<span class="token punctuation">[</span><span class="token atom symbol">:options</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token atom symbol">:current_user</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">cond</span> <span class="token keyword">do</span>
+      epic<span class="token punctuation">.</span>errors <span class="token operator">!=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">-></span>
+        <span class="token function">maybe_debug</span><span class="token punctuation">(</span>
+          epic<span class="token punctuation">,</span>
+          act<span class="token punctuation">,</span>
+          <span class="token function">length</span><span class="token punctuation">(</span>epic<span class="token punctuation">.</span>errors<span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token string">"Skipping due to epic errors"</span>
+        <span class="token punctuation">)</span>
+
+        epic
+
+      <span class="token function">not</span> <span class="token punctuation">(</span><span class="token function">is_struct</span><span class="token punctuation">(</span>current_user<span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token function">is_binary</span><span class="token punctuation">(</span>current_user<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-></span>
+        <span class="token function">maybe_debug</span><span class="token punctuation">(</span>
+          epic<span class="token punctuation">,</span>
+          act<span class="token punctuation">,</span>
+          current_user<span class="token punctuation">,</span>
+          <span class="token string">"Skipping due to missing current_user"</span>
+        <span class="token punctuation">)</span>
+
+        epic
+
+      <span class="token boolean">true</span> <span class="token operator">-></span>
+        as <span class="token operator">=</span> <span class="token module class-name">Keyword</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>act<span class="token punctuation">.</span>options<span class="token punctuation">,</span> <span class="token atom symbol">:as</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token module class-name">Keyword</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>act<span class="token punctuation">.</span>options<span class="token punctuation">,</span> <span class="token atom symbol">:on</span><span class="token punctuation">,</span> <span class="token atom symbol">:label</span><span class="token punctuation">)</span>
+        object_key <span class="token operator">=</span> <span class="token module class-name">Keyword</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>act<span class="token punctuation">.</span>options<span class="token punctuation">,</span> <span class="token atom symbol">:object</span><span class="token punctuation">,</span> <span class="token atom symbol">:object</span><span class="token punctuation">)</span>
+
+        label <span class="token operator">=</span> <span class="token module class-name">Keyword</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>epic<span class="token punctuation">.</span>assigns<span class="token punctuation">[</span><span class="token atom symbol">:options</span><span class="token punctuation">]</span><span class="token punctuation">,</span> as<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        object <span class="token operator">=</span> <span class="token module class-name">Keyword</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>epic<span class="token punctuation">.</span>assigns<span class="token punctuation">[</span><span class="token atom symbol">:options</span><span class="token punctuation">]</span><span class="token punctuation">,</span> object_key<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+
+        <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Label</span><span class="token punctuation">.</span><span class="token module class-name">Labelling</span><span class="token punctuation">.</span><span class="token function">label_object</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> object<span class="token punctuation">,</span>
+          <span class="token attr-name">return:</span> <span class="token atom symbol">:changeset</span><span class="token punctuation">,</span>
+          <span class="token attr-name">current_user:</span> current_user
+        <span class="token punctuation">)</span>
+        <span class="token operator">|></span> <span class="token module class-name">Map</span><span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token atom symbol">:action</span><span class="token punctuation">,</span> <span class="token atom symbol">:insert</span><span class="token punctuation">)</span>
+        <span class="token operator">|></span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Epics</span><span class="token punctuation">.</span><span class="token module class-name">Epic</span><span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>epic<span class="token punctuation">,</span> as<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span>
+        <span class="token operator">|></span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Work</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token atom symbol">:label</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span></code></pre>
+<h2 id="2.-how-to-define-an-epic">2. How to define an Epic <a class="direct-link" href="#2.-how-to-define-an-epic">#</a></h2>
+<h3 id="simple-epic-where-each-act-executes-sequentially">Simple Epic where each Act executes sequentially <a class="direct-link" href="#simple-epic-where-each-act-executes-sequentially">#</a></h3>
+<pre class="language-elixir"><code class="language-elixir">     <span class="token attribute variable">@page_act_opts</span> <span class="token punctuation">[</span><span class="token attr-name">on:</span> <span class="token atom symbol">:page</span><span class="token punctuation">,</span> <span class="token attr-name">attrs:</span> <span class="token atom symbol">:page_attrs</span><span class="token punctuation">]</span>
+
+     config <span class="token atom symbol">:bonfire_pages</span><span class="token punctuation">,</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Pages</span><span class="token punctuation">,</span>
+      <span class="token attr-name">epics:</span> <span class="token punctuation">[</span>
+        <span class="token attr-name">create:</span> <span class="token punctuation">[</span>
+          <span class="token comment"># Create a changeset for insertion</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Pages</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Page</span><span class="token punctuation">.</span><span class="token module class-name">Create</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># with a sanitised body and tags extracted,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">PostContents</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># a caretaker,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Me</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Caretaker</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># and a creator,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Me</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># and possibly fetch contents of URLs,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Files</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">URLPreviews</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># possibly with uploaded files,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Files</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">AttachMedia</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># with extracted tags fully hooked up,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Tag</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Tag</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment"># and the appropriate boundaries established,</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">SetBoundaries</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+          <span class="token comment"># Now we open a Postgres transaction and actually do the insertions in DB</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Begin</span><span class="token punctuation">,</span>
+          <span class="token comment"># Run our inserts</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Work</span><span class="token punctuation">,</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Commit</span><span class="token punctuation">,</span>
+
+          <span class="token comment"># Enqueue for indexing by meilisearch</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Search</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Queue</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">]</span></code></pre>
+<h3 id="advanced-epic%2C-where-some-acts-execute-in-parallel">Advanced Epic, where some Acts execute in parallel <a class="direct-link" href="#advanced-epic%2C-where-some-acts-execute-in-parallel">#</a></h3>
+<pre class="language-elixir"><code class="language-elixir">    config <span class="token atom symbol">:bonfire_posts</span><span class="token punctuation">,</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span><span class="token punctuation">,</span>
+      <span class="token attr-name">epics:</span> <span class="token punctuation">[</span>
+        <span class="token attr-name">publish:</span> <span class="token punctuation">[</span>
+          <span class="token comment"># Create a changeset for insertion</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span><span class="token punctuation">.</span><span class="token module class-name">Publish</span><span class="token punctuation">,</span>
+          <span class="token comment"># These next 3 Acts are run in parallel</span>
+          <span class="token punctuation">[</span>
+            <span class="token comment"># with a sanitised body and tags extracted,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">PostContents</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># assign a caretaker,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Me</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Caretaker</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># record the creator,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Me</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Creator</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token comment"># These next 4 Acts are run in parallel (they run after the previous 3 because they depend on the outputs of those Acts)</span>
+          <span class="token punctuation">[</span>
+            <span class="token comment"># possibly fetch contents of URLs,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Files</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">URLPreviews</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># possibly occurring in a thread,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Threaded</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># with extracted tags/mentions fully hooked up,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Tag</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Tag</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># maybe set as sensitive,</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Sensitivity</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token comment"># These next 3 Acts are run in parallel (they run after the previous 4 because they depend on the outputs of those Acts)</span>
+          <span class="token punctuation">[</span>
+            <span class="token comment"># possibly with uploaded/linked media (optionally depends on URLPreviews),</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Files</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">AttachMedia</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># with appropriate boundaries established (depends on Threaded),</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">SetBoundaries</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># summarised by an activity (possibly appearing in feeds),</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Activity</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+          <span class="token comment"># Now we open a Postgres transaction and actually do the insertions in DB</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Begin</span><span class="token punctuation">,</span>
+          <span class="token comment"># Run our inserts</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Work</span><span class="token punctuation">,</span>
+          <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Commit</span><span class="token punctuation">,</span>
+
+          <span class="token comment"># Preload data &amp; Publish live feed updates via (in-memory) PubSub</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">LivePush</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+          <span class="token comment"># These steps are run in parallel</span>
+          <span class="token punctuation">[</span>
+            <span class="token comment"># Enqueue for indexing by meilisearch</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Search</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Queue</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+            <span class="token comment"># Prepare JSON for federation and add to queue (oban).</span>
+            <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Federate</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+          <span class="token comment"># Once the activity/object exists (depends on federation being done)</span>
+          <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Tags</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">AutoBoost</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">]</span></code></pre>
+<h2 id="3.-how-to-run-an-epic">3. How to run an Epic <a class="direct-link" href="#3.-how-to-run-an-epic">#</a></h2>
+<pre class="language-elixir"><code class="language-elixir"><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Epics</span><span class="token punctuation">.</span><span class="token function">run_epic</span><span class="token punctuation">(</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span><span class="token punctuation">,</span> <span class="token atom symbol">:publish</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">)</span></code></pre>
 <h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
 <p>Copyright (c) 2022 Bonfire Contributors</p>
 <p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);<br>
@@ -370,7 +538,7 @@ limitations under the License.</p>
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">22 Jul 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">05 Aug 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
             
           

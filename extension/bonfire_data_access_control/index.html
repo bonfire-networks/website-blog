@@ -326,95 +326,7 @@
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
         <h1 id="bonfire.data.accesscontrol">Bonfire.Data.AccessControl <a class="direct-link" href="#bonfire.data.accesscontrol">#</a></h1>
-<p>See also <a href="https://bonfirenetworks.org/docs/boundaries/">https://bonfirenetworks.org/docs/boundaries/</a> for more docs (TODO: merge/deduplicate)</p>
-<p>Bonfire has a slightly unusual way of dealing with access control.<br>
-It's not so different from role-based access control (RBAC), but we do<br>
-a few things differently and there are quite a lot of pieces to get<br>
-your head around. We'll start gently.</p>
-<p>Bonfire has a <code>Verb</code> table containing strings like &quot;comment&quot; and<br>
-&quot;delete&quot; that represent actions a user might wish to perform. They are<br>
-a basic part of the bonfire vocabulary within the codebase.</p>
-<p>A permission is a decision about whether the action may be performed<br>
-it not. There are 3 decisions we support:</p>
-<ul>
-<li><code>true</code> (permitted)</li>
-<li><code>false</code> (explicitly not permitted, never permit)</li>
-<li><code>null</code>/<code>nil</code> (not explicitly permitted)</li>
-</ul>
-<p>It may seem odd to have the <code>null</code> here. We will come back to this<br>
-after we've introduced a few more pieces of the puzzle.</p>
-<p>A boundary is simply an unordered list or group of permissions. Each<br>
-permission may only occur once. Any permissions that are not specified<br>
-are assumed to be <code>null</code>. This loosely corresponds to a <code>role</code> in RBAC.</p>
-<p>A <code>Grant</code> links a <code>subject</code> (user or circle) to a boundary. It<br>
-determines what permissions are considered for a given subject.</p>
-<p>A <code>Acl</code> is simply an unordered list or group of <code>Grant</code>s. Subjects may<br>
-appear more than once in a list (with different boundaries) and the<br>
-permissions will be merged according to the following truth table:</p>
-<table>
-<thead>
-<tr>
-<th>input</th>
-<th>input</th>
-<th>output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>false</td>
-<td>false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>false</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>false</td>
-<td>null</td>
-<td>false</td>
-</tr>
-<tr>
-<td>true</td>
-<td>false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>true</td>
-<td>true</td>
-<td>true</td>
-</tr>
-<tr>
-<td>true</td>
-<td>null</td>
-<td>true</td>
-</tr>
-<tr>
-<td>null</td>
-<td>false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>null</td>
-<td>true</td>
-<td>true</td>
-</tr>
-<tr>
-<td>null</td>
-<td>null</td>
-<td>null</td>
-</tr>
-</tbody>
-</table>
-<p>Or in words: take the highest value where <code>false &gt; true &gt; null</code>.</p>
-<p>At the end of this combination process, the user is only permitted if<br>
-the result is true. You can see this as requiring an affirmative<br>
-answer to permit something, while always allowing you a bigger <code>no</code> to<br>
-deny when things are combined. Null values are additionally not<br>
-required to be present in the database, saving us resources. That is<br>
-to say we default to null if there is no relevant record.</p>
-<p>Finally, an object is linked to one or more <code>Acl</code>s by the <code>Controlled</code> multimixin, which pairs an object ID with an ACL ID. Because it is a multimixin, a given object can have multiple ACLs applied. In the case of overlap, permissions are combined in the manner described earlier.</p>
+<p>See <code>Bonfire.Boundaries</code> for docs: <a href="https://github.com/bonfire-networks/bonfire_boundaries">https://github.com/bonfire-networks/bonfire_boundaries</a></p>
 <h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
 <p>Copyright (c) 2020 James Laver, <code>bonfire_data_access_control</code> Contributors</p>
 <p>This Source Code Form is subject to the terms of the Mozilla Public<br>
@@ -439,7 +351,7 @@ file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">07 Jan 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">30 Jul 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">mpl-2.0</span></div>
             
           

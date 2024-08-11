@@ -327,20 +327,49 @@
         
         <h1 id="bonfire.ecto">Bonfire.Ecto <a class="direct-link" href="#bonfire.ecto">#</a></h1>
 <p><code>Bonfire.Ecto</code> contains <code>Ecto</code> transactional support as acts for <code>Bonfire.Epics</code></p>
-<!-- **TODO: Add description** -->
-<!-- ## Installation -->
-<!-- If [available in Hex](https://hex.pm/docs/publish), the package can be installed -->
-<!-- by adding `bonfire_ecto` to your list of dependencies in `mix.exs`: -->
-<!-- ```elixir -->
-<!-- def deps do -->
-<!--   [ -->
-<!--     {:bonfire_ecto, "~> 0.1.0"} -->
-<!--   ] -->
-<!-- end -->
-<!-- ``` -->
-<!-- Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc) -->
-<!-- and published on [HexDocs](https://hexdocs.pm). Once published, the docs can -->
-<!-- be found at [https://hexdocs.pm/bonfire_ecto](https://hexdocs.pm/bonfire_ecto). -->
+<h2 id="introduction">Introduction <a class="direct-link" href="#introduction">#</a></h2>
+<p><code>Bonfire.Ecto</code> is designed to facilitate complex Ecto transaction handling within an Elixir application that uses <code>Bonfire.Epics</code> to execute a sequence of operations (or <code>Acts</code>). These modules provide a structured way to manage database transactions as a series of acts and managing them within an <code>Epic</code>, offering flexibility and control over database interactions, ensuring that transactions are executed efficiently.</p>
+<h3 id="modules-overview">Modules Overview <a class="direct-link" href="#modules-overview">#</a></h3>
+<ol>
+<li>
+<p><code>Bonfire.Ecto.Acts.Begin</code></p>
+<ul>
+<li>Responsible for initiating a transaction if certain conditions are met. It ensures that the transaction is only started when it is sensible to do so, based on the current state of the <code>Epic</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>Bonfire.Ecto.Acts.Work</code></p>
+<ul>
+<li>Handles queued database operations within a transaction. Operations are queued using the <code>Bonfire.Ecto.Acts.Work.add/2</code> function and executed if there are no errors in the <code>Epic</code> or changesets.</li>
+</ul>
+</li>
+<li>
+<p><code>Bonfire.Ecto.Acts.Commit</code></p>
+<ul>
+<li>A placeholder marker used by <code>Bonfire.Ecto.Acts.Begin</code> to identify when to commit the transaction.</li>
+</ul>
+</li>
+</ol>
+<h3 id="usage">Usage <a class="direct-link" href="#usage">#</a></h3>
+<h4 id="1.-initial-setup">1. Initial Setup <a class="direct-link" href="#1.-initial-setup">#</a></h4>
+<p>Ensure that you have <code>Ecto</code> and <code>Bonfire.Epics</code> installed and configured in your application, and then install this linrary.</p>
+<h4 id="2.-using-bonfire.ecto.acts.begin">2. Using <code>Bonfire.Ecto.Acts.Begin</code> <a class="direct-link" href="#2.-using-bonfire.ecto.acts.begin">#</a></h4>
+<p>Refer to <code>Bonfire.Epics</code> docs to define some <code>Act</code>s and <code>Epic</code>s: <a href="https://github.com/bonfire-networks/bonfire_epics">https://github.com/bonfire-networks/bonfire_epics</a></p>
+<h4 id="3.-queue-database-operation(s)-in-an-act">3. Queue database operation(s) in an Act <a class="direct-link" href="#3.-queue-database-operation(s)-in-an-act">#</a></h4>
+<p>Queue operations by calling the <code>Bonfire.Ecto.Acts.Work.add/2</code> function, providing the epic and a key representing the changeset to be processed.</p>
+<pre class="language-elixir"><code class="language-elixir">epic <span class="token operator">=</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Work</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>epic<span class="token punctuation">,</span> <span class="token atom symbol">:some_changeset</span><span class="token punctuation">)</span></code></pre>
+<h4 id="3.-add-the-three-bonfire.ecto-acts-to-your-epic">3. Add the three <code>Bonfire.Ecto</code> Acts to your Epic <a class="direct-link" href="#3.-add-the-three-bonfire.ecto-acts-to-your-epic">#</a></h4>
+<pre><code>    # First come the Acts that prepare the changeset and call `Bonfire.Ecto.Acts.Work.add/2` to queue it
+
+    # Open a Postgres transaction and actually do the insertions in DB
+    Bonfire.Ecto.Acts.Begin,
+
+    # Run our inserts
+    Bonfire.Ecto.Acts.Work,
+    Bonfire.Ecto.Acts.Commit,
+
+    # Then can come some Acts that process the result of the transaction 
+</code></pre>
 
     </div>
   </div>
@@ -360,7 +389,7 @@
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">05 May 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">11 Aug 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold"></span></div>
             
           

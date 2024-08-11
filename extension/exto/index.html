@@ -330,7 +330,7 @@
 <a href="https://hexdocs.pm/exto">hexdocs</a></p>
 <p><code>Exto</code> provides configuration-driven Ecto schema extensibility</p>
 <h2 id="usage">Usage <a class="direct-link" href="#usage">#</a></h2>
-<p>Example Schema:</p>
+<h3 id="example-schema">Example Schema <a class="direct-link" href="#example-schema">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Schema</span> <span class="token keyword">do</span>
   <span class="token keyword">use</span> <span class="token module class-name">Ecto</span><span class="token punctuation">.</span><span class="token module class-name">Schema</span>
   <span class="token keyword">import</span> <span class="token module class-name">Exto</span><span class="token punctuation">,</span> <span class="token attr-name">only:</span> <span class="token punctuation">[</span><span class="token attr-name">flex_schema:</span> <span class="token number">1</span><span class="token punctuation">]</span>
@@ -340,7 +340,8 @@
     <span class="token function">flex_schema</span><span class="token punctuation">(</span><span class="token atom symbol">:my_app</span><span class="token punctuation">)</span> <span class="token comment"># boom! give me the stuff</span>
   <span class="token keyword">end</span>
 <span class="token keyword">end</span></code></pre>
-<p>Example configuration</p>
+<p>Or if you want the <code>Access</code> protocol to be auto-implemented on the struct (because <a href="https://hexdocs.pm/elixir/Access.html#module-maps-and-structs">the reasoning</a> for not having it on structs doesn't apply as much when using Exto), you can pull in the <code>Accessible</code> library by simply using <code>use Exto</code> instead of <code>import Exto</code>.</p>
+<h3 id="example-configuration">Example configuration <a class="direct-link" href="#example-configuration">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir">config <span class="token atom symbol">:my_app</span><span class="token punctuation">,</span> <span class="token module class-name">My</span><span class="token punctuation">.</span><span class="token module class-name">Schema</span><span class="token punctuation">,</span>
   <span class="token attr-name">belongs_to:</span> <span class="token punctuation">[</span>
     <span class="token attr-name">foo:</span> <span class="token module class-name">Foo</span><span class="token punctuation">,</span>                   <span class="token comment"># belongs_to :foo, Foo</span>
@@ -362,14 +363,11 @@
     <span class="token attr-name">foo:</span> <span class="token module class-name">Foo</span><span class="token punctuation">,</span>                         <span class="token comment"># many_to_many :foo, Foo</span>
     <span class="token attr-name">bar:</span> <span class="token punctuation">{</span><span class="token module class-name">Bar</span><span class="token punctuation">,</span> <span class="token attr-name">join_through:</span> <span class="token module class-name">FooBar</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment"># many_to_many :bar, Bar, :join_through: FooBar</span>
   <span class="token punctuation">]</span></code></pre>
-<p>This one won't work very well because we define <code>foo</code> and <code>bar</code> 5<br>
-times each, but I think you get the point.</p>
-<p>Reading of configuration is done during compile time. The relations<br>
-will be baked in during compilation, thus:</p>
+<p>This example won't work very well because it is redefining <code>foo</code> and <code>bar</code> 5 times, but you get the point.</p>
+<p>Reading of configuration is done during compile time. The relations will be baked in during compilation, thus:</p>
 <ul>
 <li>Do not expect this to work in runtime config.</li>
-<li>You will need to rebuild all dependencies which use this macro<br>
-when you change their configuration.</li>
+<li>You will need to rebuild all dependencies which use this macro when you change their configuration.</li>
 </ul>
 <h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
 <p>Copyright (c) 2020 Exto Contributors</p>
@@ -401,7 +399,7 @@ limitations under the License.</p>
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">16 May 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">05 Aug 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
             
           
