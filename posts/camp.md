@@ -47,7 +47,7 @@ We encourage developers to work openly by:
 - Digging into the problem and sharing insights or potential solutions in each dedicated bounty issue.
 - Collaborating with others developers to improve the overall quality of solutions.
 
-Additionally, the Bonfire Team organizes recorded sessions to discuss each issue, navigate the relevant code, address blocking issues, tests, and provide pertinent information to ensure developers can effectively work on the bounty.
+Additionally, the Bonfire Team will organize recorded sessions to discuss each issue, navigate the relevant code, address blocking issues, tests, and provide pertinent information to ensure developers can effectively work on the bounty.
 
 
 ## 💰 Compensation
