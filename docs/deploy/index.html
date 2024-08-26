@@ -553,7 +553,7 @@ just <span class="token number">1.13</span>.0
 <p><code>Dockerfile.release</code> uses the <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multistage build</a> feature to just the image as small as possible. It generates the OTP release which is later copied into the final image packaged in an Alpine linux container.</p>
 <p>There is a <code>justfile</code> with relevant commands (make sure set the <code>MIX_ENV=prod</code> env variable):</p>
 <ul>
-<li><code>just rel-build-release</code> which builds the docker image of the latest release</li>
+<li><code>just rel-build-locked</code> which builds the docker image of the latest release</li>
 <li><code>just rel-build</code> which builds the docker image, including local changes to any cloned extensions in <code>./extensions/</code></li>
 <li><code>just rel-tag</code> adds the &quot;latest&quot; tag to your last build, so that it will be used when running</li>
 </ul>

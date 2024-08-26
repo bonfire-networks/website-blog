@@ -342,8 +342,8 @@
     <span class="token punctuation">{</span><span class="token atom symbol">:iconify_ex</span><span class="token punctuation">,</span> <span class="token string">"~> 0.1.0"</span><span class="token punctuation">}</span>
   <span class="token punctuation">]</span>
 <span class="token keyword">end</span></code></pre>
-<p>You then need to fetch the latest <a href="https://github.com/iconify/icon-sets">iconify icon sets</a> by running:</p>
-<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> deps/iconify_ex/assets <span class="token operator">&amp;&amp;</span> <span class="token function">yarn</span></code></pre>
+<p>After running <code>mix deps.get</code> you need to fetch the latest <a href="https://github.com/iconify/icon-sets">iconify icon sets</a> by running something like:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> deps/iconify_ex/assets <span class="token operator">&amp;&amp;</span> <span class="token function">yarn</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> -</code></pre>
 <h2 id="usage">Usage <a class="direct-link" href="#usage">#</a></h2>
 <ol>
 <li>
@@ -359,7 +359,7 @@
 <li><code>config :iconify_ex, :mode, :inline</code></li>
 <li><code>config :iconify_ex, :mode, :set</code></li>
 </ul>
-<p>If using CSS mode, you'll need to set some default styles that apply to all icons, either by adding something like this to your app's main CSS:</p>
+<p>If using CSS mode, you'll need to include the CSS file in your layout (e.g. <code>&lt;link phx-track-static rel=&quot;stylesheet&quot; href={~p&quot;/images/icons/icons.css&quot;} /&gt;</code> in your app's equivalent of <code>lib/my_app_web/components/layouts/root.html.heex</code>) and set some default styles that will be applied to all icons, by adding something like this to your app's main CSS (e.g. <code>assets/css/app.css</code>):</p>
 <pre class="language-css"><code class="language-css"><span class="token selector">[iconify]</span> <span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> currentColor<span class="token punctuation">;</span>
   <span class="token property">-webkit-mask-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
@@ -367,8 +367,13 @@
   <span class="token property">min-width</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
   <span class="token property">min-height</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
+<p>Other configurations include:</p>
+<pre class="language-elixir"><code class="language-elixir">config <span class="token atom symbol">:iconify_ex</span><span class="token punctuation">,</span> <span class="token atom symbol">:fallback_icon</span><span class="token punctuation">,</span> <span class="token string">"heroicons-solid:question-mark-circle"</span> <span class="token comment"># when an icon is not found</span>
+config <span class="token atom symbol">:iconify_ex</span><span class="token punctuation">,</span> <span class="token atom symbol">:generated_icon_modules_path</span><span class="token punctuation">,</span> <span class="token string">"./lib/web/icons"</span> <span class="token comment"># for :inline mode</span>
+config <span class="token atom symbol">:iconify_ex</span><span class="token punctuation">,</span> <span class="token atom symbol">:generated_icon_static_path</span><span class="token punctuation">,</span> <span class="token string">"./priv/static/images/icons"</span> <span class="token comment"># where CSS and images are stored</span>
+config <span class="token atom symbol">:iconify_ex</span><span class="token punctuation">,</span> <span class="token atom symbol">:generated_icon_static_url</span><span class="token punctuation">,</span> <span class="token string">"/images/icons/"</span> <span class="token comment"># where CSS and images are served from</span></code></pre>
 <ol start="3">
-<li>In all three cases, usage is simple and remains the same:</li>
+<li>In all three cases, usage is the same (meaning you can easily switch between modes at any time) by including a component:</li>
 </ol>
 <p>Embed an icon using default classes (copy the icon name from the <a href="https://icon-sets.iconify.design">iconify website</a>):</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>.iconify</span> <span class="token attr-name">icon</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heroicons-solid:collection<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
@@ -399,7 +404,7 @@
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">10 Aug 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">26 Aug 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold"></span></div>
             
           

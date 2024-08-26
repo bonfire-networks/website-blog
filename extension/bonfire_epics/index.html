@@ -367,7 +367,7 @@
 
   <span class="token attribute variable">@doc</span> <span class="token boolean">false</span>
   <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>epic<span class="token punctuation">,</span> act<span class="token punctuation">)</span> <span class="token keyword">do</span>
-    current_user <span class="token operator">=</span> epic<span class="token punctuation">.</span>assigns<span class="token punctuation">[</span><span class="token atom symbol">:options</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token atom symbol">:current_user</span><span class="token punctuation">]</span>
+    current_user <span class="token operator">=</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Common</span><span class="token punctuation">.</span><span class="token module class-name">Utils</span><span class="token punctuation">.</span><span class="token function">current_user</span><span class="token punctuation">(</span>epic<span class="token punctuation">.</span>assigns<span class="token punctuation">[</span><span class="token atom symbol">:options</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
     <span class="token keyword">cond</span> <span class="token keyword">do</span>
       epic<span class="token punctuation">.</span>errors <span class="token operator">!=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">-></span>
@@ -538,7 +538,7 @@ limitations under the License.</p>
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">05 Aug 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">21 Aug 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
             
           
