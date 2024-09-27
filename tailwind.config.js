@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         bonfire: {
-          ...require("daisyui/src/theming/themes")["black"],
+          ...require("daisyui/src/theming/themes")["dracula"],
           "primary": "#fde047"
         }
       },
