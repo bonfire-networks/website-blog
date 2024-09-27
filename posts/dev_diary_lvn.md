@@ -21,7 +21,7 @@ We're focusing on iOS first because the current LVN release targets the Apple ec
 
 > "Because we are leveraging the LiveView programming model, if you already have a LiveView application built you already have 75% of the work done to build a LiveView Native application. State management and event handling are shared between target destinations."
 
-This approach is a perfect match for an open-source project like Bonfire. By building upon existing code and staying within the Elixir ecosystem, we can invest more time in strengthening our codebase without needing a traditional client-server API or splitting efforts across different languages, while still using each platform's unique native UI framework (e.g. SwiftUI and Android Jetpack) to deliver a state-of-the-art user experience. 
+This approach is a perfect match for an open-source project like Bonfire. By building upon existing code and staying within the Elixir ecosystem, we can invest more time in strengthening our codebase without needing a traditional client-server API or splitting efforts across different languages, while still using each platform's unique native UI framework to deliver a state-of-the-art user experience (e.g. using SwiftUI and Android Jetpack for the native UI in shared components and views, alongside the HTML/CSS already used in the web app). 
 
 Through this dev diary, we aim to open up our development process and share our challenges and progress with the wider Elixir community. We'll share code, lessons learned, and materials starting from the very first mock-ups, inviting the community to jump in, provide feedback, and ask questions along the way.
 
