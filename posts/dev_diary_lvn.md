@@ -81,7 +81,7 @@ In the upcoming posts, we'll dive into:
 
 - **Enhancing the Mockups:** Adding user flows, interactive components and animations, and more detailed screens - eventually publishing the Bonfire design library in Figma for anyone to use and build upon.
 - **Translating Designs to SwiftUI:** Once we're satisfied with the design, we'll start converting them into SwiftUI code, discussing challenges and learnings along the way.
-- **Exploring LiveView Native:** Attempting to port SwiftUI code to LVN, including the hurdles and triumphs of using an experimental framework to implement a federated social network's moving parts and design patterns.
+- **Exploring LiveView Native:** Attempting to port SwiftUI code to LVN, including the hurdles and triumphs of using an experimental framework to implement federated social network's moving parts and design patterns.
 - **Leveraging LLMs:** Experimenting with language models to automate parts of the translation from SwiftUI to LVN.
 - **Publishing on the Apple App Store:** Documenting the process and requirements to publish the app.
 
