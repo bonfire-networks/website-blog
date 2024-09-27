@@ -4,7 +4,7 @@
   <subtitle>Tend to your digital life in community: host your own online space and control your experience at the most granular level.</subtitle>
   <link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
   <link href="https://bonfirenetworks.org/"/>
-  <updated>2024-08-07T00:00:00Z</updated>
+  <updated>2024-09-27T00:00:00Z</updated>
   <id>https://bonfirenetworks.org/</id>
   <author>
     <name>Bonfire</name>
@@ -915,6 +915,72 @@ Our second expedition: Camp!  includes a series of bounties for developers to he
 &lt;li&gt;Matrix channels for realtime chat: &lt;a href=&quot;https://matrix.to/#/%23bonfire-networks:matrix.org&quot;&gt;General&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://matrix.to/#/%23bonfire-tech:matrix.org&quot;&gt;Technical&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Forum for technical discussions: &lt;a href=&quot;https://elixirforum.com/tag/bonfire&quot;&gt;Elixir Forum&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Email for private questions: team@bonfire.cafe&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Building Bonfire Native Apps with LiveView Native</title>
+    <link href="https://bonfirenetworks.org/posts/dev_diary_lvn/"/>
+    <updated>2024-09-27T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/dev_diary_lvn/</id>
+    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#introduction&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Welcome to the first post of our development diary for the Bonfire iOS app. In this series, we&#39;ll journey together through the entire process of designing and publishing Bonfire on the Apple App Store using &lt;a href=&quot;https://github.com/liveview-native&quot;&gt;LiveView Native (LVN)&lt;/a&gt;, an experimental framework that enables developers to build native mobile applications using Elixir.&lt;/p&gt;
+&lt;p&gt;We&#39;re focusing on iOS because the current LVN release targets the Apple ecosystem, with Android support under active development. At the time of writing, LVN is at version 0.3, so some approaches and solutions we explore may evolve over time. We aim to provide the most accurate and up-to-date information but encourage readers to verify details and contribute their knowledge along the way.&lt;/p&gt;
+&lt;h2 id=&quot;why-liveview-native-and-elixir&quot;&gt;Why LiveView Native and Elixir &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#why-liveview-native-and-elixir&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;LVN is an exciting new framework developed by &lt;a href=&quot;https://dockyard.com/&quot;&gt;DockYard&lt;/a&gt; that extends Phoenix LiveView to native platforms, enabling real-time, interactive native applications with a unified codebase. &lt;a href=&quot;https://dockyard.com/blog/2024/09/09/liveview-native-is-here&quot;&gt;As DockYard mentions in their announcement&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Because we are leveraging the LiveView programming model, if you already have a LiveView application built you already have 75% of the work done to build a LiveView Native application. State management and event handling are shared between target destinations.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This approach is a perfect match for an open-source project like Bonfire. By building upon existing code and staying within the Elixir ecosystem, we can invest more time in strengthening our codebase rather than splitting efforts across different languages and platforms.&lt;/p&gt;
+&lt;p&gt;Through this dev diary, we aim to open up our development process and share our challenges and progress with the wider Elixir community. We&#39;ll share code, lessons learned, and materials starting from the very first Figma mockups, inviting the community to jump in, provide feedback, and ask questions along the way.&lt;/p&gt;
+&lt;p&gt;We also plan to experiment with existing Figma plugins to convert designs to code (SwiftUI) and later attempt to convert that code into LVN. There will be a lot of trial and error, especially since we don&#39;t have prior experience with SwiftUI, but that&#39;s part of the experiment.&lt;/p&gt;
+&lt;h2 id=&quot;the-journey-begins%3A-designing-initial-mockups-with-figma&quot;&gt;The Journey Begins: Designing Initial Mockups with Figma &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#the-journey-begins%3A-designing-initial-mockups-with-figma&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Using &lt;a href=&quot;https://www.figma.com/&quot;&gt;Figma&lt;/a&gt;, we&#39;ve created initial mockups that lay the groundwork for Bonfire&#39;s user interface and experience. While these mockups are still in the early stages, they represent our vision for the app&#39;s basic look and feel. We won&#39;t include all of Bonfire&#39;s functionalities in the first release of the iOS app; instead, we&#39;ll adopt an incremental approach. We&#39;ll publish a basic iOS app that lets users perform essential social networking features, then expand its complexity and give more control to users as we become more confident using the LVN framework and as it becomes more stable.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/figma.png&quot; alt=&quot;Figma&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;setting-up-the-figma-environment&quot;&gt;Setting Up the Figma Environment &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#setting-up-the-figma-environment&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Apple recently published the &lt;a href=&quot;https://www.figma.com/community/file/1385659531316001292/ios-18-and-ipados-18&quot;&gt;iOS and iPadOS 18 UI Kit&lt;/a&gt; for Figma—a set of components and assets, including variables and Apple&#39;s color palette, to use in our Figma mockups. This is essential for properly designing iOS mockups following Apple&#39;s design guidelines.&lt;/p&gt;
+&lt;p&gt;Before creating our first mockup, we also downloaded the latest &lt;a href=&quot;https://developer.apple.com/sf-symbols/&quot;&gt;SF Symbols app&lt;/a&gt; from the Apple Developer website as we&#39;ll use Apple&#39;s icon set across all views and components.&lt;/p&gt;
+&lt;p&gt;Finally, we also downloaded the Figma desktop app to benefit from local fonts installed on our machines. By default, we&#39;ll use Apple&#39;s San Francisco font for our application.&lt;/p&gt;
+&lt;p&gt;With the standard iOS assets, icons, and fonts in place, we&#39;ve created our first view using the iPhone 14 &amp;amp; 15 Pro frame as a reference.&lt;/p&gt;
+&lt;p&gt;Before building our mockups, we found it helpful to define layout grids. Layout grids help maintain order and structure, ensuring all elements are well-aligned and proportionate by defining both row and column configurations.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Columns:&lt;/strong&gt; A common grid column configuration for iPhone is 6 columns with a 16px gutter and margin. Set the columns to &amp;quot;Stretch&amp;quot; to automatically adapt to different screen sizes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rows:&lt;/strong&gt; We set the count to &amp;quot;Auto,&amp;quot; type to &amp;quot;Top,&amp;quot; height to 44 (the standard touch target size in iOS), and offset to 54 (to start the grid just below the status bar) with a gutter of 16 points.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This configuration results in a view like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/grids.png&quot; alt=&quot;Figma&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bonfire&#39;s-basic-views&quot;&gt;Bonfire&#39;s Basic Views &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#bonfire&#39;s-basic-views&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In our initial design, we&#39;ve defined the following basic app views:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Main Timeline Page&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Profile&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discussion&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compose Page&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There&#39;s nothing too fancy; we&#39;ve mostly used iOS assets where possible and leveraged Apple&#39;s color palette and typography for all the custom components we&#39;ve created.&lt;/p&gt;
+&lt;p&gt;We&#39;ve added a &lt;strong&gt;Components&lt;/strong&gt; page listing all the component instances, which we clone to include in our views. We detach components from the main instance when custom edits are needed.&lt;/p&gt;
+&lt;p&gt;We&#39;re striving to keep things clean and maintain our Figma files in an organized and well-structured manner. We can&#39;t promise adherence to all best practices, as our experience with Figma is quite limited. However, we&#39;ve loved using the auto layout feature to create more structured components, and we highly recommend building components using auto layout—it may seem daunting at first, but it&#39;s very easy to work with once you delve into it.&lt;/p&gt;
+&lt;p&gt;In the next post, we&#39;ll expand on these mockups, adding more details and including interactive flows, additional screens, and animations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Access the Figma File:&lt;/strong&gt; &lt;a href=&quot;https://www.figma.com/design/BwQln11Fccd6alJeNe53EW/iOS?node-id=0-1&amp;amp;t=jq5jEWSN9gFUqOkP-1&quot;&gt;Bonfire iOS App Mockups&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;By clicking the link, you can view the current designs, leave comments directly on the mockups, and provide suggestions to design a better Bonfire native app. Your feedback is invaluable, whether it&#39;s about aesthetics, user experience, or features you&#39;d like to see.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;what&#39;s-next%3F&quot;&gt;What&#39;s Next? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#what&#39;s-next%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the upcoming posts, we&#39;ll dive into:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enhancing the Mockups:&lt;/strong&gt; Adding user flows, interactive components and animations, and more detailed screens - eventually publishing the Bonfire design library in Figma for anyone to use and build upon.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Translating Designs to SwiftUI:&lt;/strong&gt; Once we&#39;re satisfied with the design, we&#39;ll start converting them into SwiftUI code, discussing challenges and learnings along the way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exploring LiveView Native:&lt;/strong&gt; Attempting to port SwiftUI code to LVN, including the hurdles and triumphs of using an experimental framework to implement a federated social network&#39;s moving parts and design patterns.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Leveraging LLMs:&lt;/strong&gt; Experimenting with language models to automate parts of the translation from SwiftUI to LVN.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Publishing on the Apple App Store:&lt;/strong&gt; Documenting the process and requirements to publish the app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;join-the-journey&quot;&gt;Join the Journey &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn/#join-the-journey&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Beyond sharing our experience, we aim for Bonfire to become a place where both beginner and experienced developers can learn, build, experiment, and collaborate using the Elixir programming language to design open and federated social networks. We invite developers to dive into the framework, provide feedback, ask questions, and help push the boundaries of federated and open-source digital spaces.&lt;/p&gt;
+&lt;p&gt;Here&#39;s how you can get involved:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Feedback and Suggestions:&lt;/strong&gt; Follow us on the &lt;a href=&quot;https://indieweb.social/@bonfire&quot;&gt;Fediverse&lt;/a&gt; and join our discussions on the &lt;a href=&quot;https://elixirforum.com/t/bonfire-networks-an-open-source-framework-for-building-federated-digital-spaces/65587&quot;&gt;Elixir Forum&lt;/a&gt;, &lt;a href=&quot;https://app.slack.com/client/TMQ3PKXT9/C077S4K94CV&quot;&gt;#Bonfire Room in Elixir Slack&lt;/a&gt;, or our &lt;a href=&quot;https://matrix.to/#/%23bonfire-networks:matrix.org&quot;&gt;official Bonfire Matrix space&lt;/a&gt; to stay updated.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collaborate:&lt;/strong&gt; If you&#39;re interested in contributing code or ideas, you can have a look at our &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues&quot;&gt;Open Issues&lt;/a&gt; or check out our &lt;a href=&quot;https://github.com/bonfire-networks/bounties&quot;&gt;Bounties&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>

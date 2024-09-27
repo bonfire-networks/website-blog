@@ -362,15 +362,15 @@
 <blockquote>
 <p>A universal foreign key is actually a hard problem. Many approaches are on offer with a variety of tradeoffs. If plugging into Bonfire's Needle-based core extensions isn't a requirement for you (i.e. you don't need to put things into feeds or use boundaries for access-control) should carefully consider a variety of approaches rather than just blindly adopting the one that fitted our project's needs the best!</p>
 </blockquote>
-<h2 id="identifying-objects---the-ulid-type">Identifying objects - the ULID type <a class="direct-link" href="#identifying-objects---the-ulid-type">#</a></h2>
-<p>All referenceable objects in the system have a unique ID (primary key) whose type is the <code>Needle.ULID</code>. <a href="https://github.com/ulid/spec">ULIDs</a> are a lot like a <code>UUID</code> in that you can generate unique ones independently of the database. It's also a little different, being made up of two parts:</p>
+<h2 id="identifying-objects---the-uid-type">Identifying objects - the UID type <a class="direct-link" href="#identifying-objects---the-uid-type">#</a></h2>
+<p>All referenceable objects in the system have a unique ID (primary key) whose type is the <code>Needle.UID</code>. <code>UUIDv7</code> and <a href="https://github.com/ulid/spec">ULIDs</a> are a lot like standard <code>UUID</code> in that you can generate unique ones independently of the database. It's also a little different, being made up of two parts:</p>
 <ul>
 <li>The current timestamp, to millisecond precision.</li>
 <li>Strong random padding for uniqueness.</li>
 </ul>
 <p>This means that it naturally sorts by time to the millisecond (close enough for us), giving us a performance advantage compared to queries ordered by a separate creation datetime field (by contrast, UUIDv4 is randomly distributed).</p>
 <p>If you've only worked with integer primary keys before, you are probably used to letting the database dispense an ID for you. With <code>ULID</code> (or <code>UUID</code>), IDs can be known <em>before</em> they are stored, greatly easing the process of storing a graph of data and allowing us to do more of the preparation work outside of a transaction for increased performance.</p>
-<p>In PostgreSQL, we actually store <code>ULID</code>s as <code>UUID</code> columns, thanks to both being the same size (and the lack of a <code>ULID</code> column type shipping with postgresql). You mostly will not notice this because it's handled for you, but there are a few places it can come up:</p>
+<p>In PostgreSQL, we actually store <code>UUIDv7</code> and <code>ULID</code>s as <code>UUID</code> columns, thanks to both being the same size (and the lack of specific column types shipping with postgresql). You mostly will not notice this because it's handled for you, but there are a few places it can come up:</p>
 <ul>
 <li>Ecto debug and error output may show either binary values or UUID-formatted values.</li>
 <li>Hand-written SQL may need to convert table IDs to the <code>UUID</code> format before use.</li>
@@ -378,8 +378,8 @@
 <h2 id="it's-just-a-table">It's just a table <a class="direct-link" href="#it's-just-a-table">#</a></h2>
 <p>The <code>Needle</code> system is mostly based around a single table represented by the <code>Needle.Pointer</code> schema with the following fields:</p>
 <ul>
-<li><code>id</code> (ULID) - the database-wide unique id for the object, primary key.</li>
-<li><code>table_id</code> (ULID) - identifies the type of the object, references <code>Needle.Table</code>.</li>
+<li><code>id</code> (UID) - the database-wide unique id for the object, primary key.</li>
+<li><code>table_id</code> (UID) - identifies the type of the object, references <code>Needle.Table</code>.</li>
 <li><code>deleted_at</code> (timestamp, default: <code>null</code>) - when the object was deleted.</li>
 </ul>
 <p>Every object that is stored in the system will have a record in this table. It may also have records in other tables (handy for storing more than 3 fields about the object!).</p>
@@ -406,26 +406,26 @@ With these two ingredients, we can construct a means of pointing to any table th
 </blockquote>
 <h2 id="declaring-object-types">Declaring Object Types <a class="direct-link" href="#declaring-object-types">#</a></h2>
 <h3 id="picking-a-table-id">Picking a table id <a class="direct-link" href="#picking-a-table-id">#</a></h3>
-<p>The first step to declaring a new type is picking a unique table ID in ULID format.</p>
-<p>You could just generate a random ULID, but since these IDs are special, we tend to assign a synthetic ULID that are readable as words so they stand out in debug output.</p>
+<p>The first step to declaring a new type is picking a unique table ID in UID format.</p>
+<p>You could just generate a random UID, but since these IDs are special, we tend to assign a synthetic UID that are readable as words so they stand out in debug output.</p>
 <p>For example, the ID for the <code>Feed</code> table is: <code>1TFEEDS0NTHES0V1S0FM0RTA1S</code>, which can be read as &quot;It feeds on the souls of mortals&quot;. Feel free to have a little fun coming up with them, it makes debug output a little more cheery! The rules are:</p>
 <ul>
 <li>The alphabet is <a href="https://en.wikipedia.org/wiki/Base32#Crockford's_Base32">Crockford's Base32</a>.</li>
 <li>They must be 26 characters in length.</li>
 <li>The first character must be a digit in the range 0-7.</li>
 </ul>
-<p>To help you with this, the <code>Needle.ULID.synthesise!/1</code> method takes an alphanumeric binary and tries to return you it transliterated into a valid ULID. Example usage:</p>
-<pre><code>iex(1)&gt; Needle.ULID.synthesise!(&quot;itfeedsonthesouls&quot;)
+<p>To help you with this, the <code>Needle.UID.synthesise!/1</code> method takes an alphanumeric binary and tries to return you it transliterated into a valid UID. Example usage:</p>
+<pre><code>iex(1)&gt; Needle.UID.synthesise!(&quot;itfeedsonthesouls&quot;)
 
 11:20:28.299 [error] Too short, need 9 chars.
 :ok
-iex(2)&gt; Needle.ULID.synthesise!(&quot;itfeedsonthesoulsofmortalsandothers&quot;)
+iex(2)&gt; Needle.UID.synthesise!(&quot;itfeedsonthesoulsofmortalsandothers&quot;)
 
 11:20:31.819 [warn]  Too long, chopping off last 9 chars
 &quot;1TFEEDS0NTHES0V1S0FM0RTA1S&quot;
-iex(3)&gt; Needle.ULID.synthesise!(&quot;itfeedsonthesoulsofmortals&quot;)
+iex(3)&gt; Needle.UID.synthesise!(&quot;itfeedsonthesoulsofmortals&quot;)
 &quot;1TFEEDS0NTHES0V1S0FM0RTA1S&quot;
-iex(4)&gt; Needle.ULID.synthesise!(&quot;gtfeedsonthesoulsofmortals&quot;)
+iex(4)&gt; Needle.UID.synthesise!(&quot;gtfeedsonthesoulsofmortals&quot;)
 
 11:21:03.268 [warn]  First character must be a digit in the range 0-7, replacing with 7
 &quot;7TFEEDS0NTHES0V1S0FM0RTA1S&quot;
@@ -479,7 +479,7 @@ iex(4)&gt; Needle.ULID.synthesise!(&quot;gtfeedsonthesoulsofmortals&quot;)
   <span class="token keyword">end</span>
 <span class="token keyword">end</span></code></pre>
 <blockquote>
-<p>As you can see, to declare a pointable schema, we start by using <code>Needle.Pointable</code>, providing the name of our otp application, the source table's name in the database and our chosen sentinel ULID.</p>
+<p>As you can see, to declare a pointable schema, we start by using <code>Needle.Pointable</code>, providing the name of our otp application, the source table's name in the database and our chosen sentinel UID.</p>
 </blockquote>
 <blockquote>
 <p>We then call <code>pointable_schema</code> and define any fields we wish to put directly in the table. For the most part, <code>pointable_schema</code> is like Ecto's <code>schema</code> macro, except you do not provide the table name and let it handle the primary key.</p>
@@ -497,7 +497,7 @@ record or not record information for each mixin. Sample mixins include:</p>
 <li>created (containing the id of the object creator)</li>
 </ul>
 <p>In this way, they are reusable across different object types. One mixin may (or may not) be used by any number of objects. This is mostly driven by the type of the object we are storing, but can also be driven by user input.</p>
-<p>Mixins are just tables too! The only requirement is they have a <code>ULID</code> primary key which references <code>Needle.Pointer</code>. The developer of the mixin is free to put whatever other fields they want in the table, so long as they have that primary-key-as-reference (which will be automatically added for you by the <code>mixin_schema</code> macro).</p>
+<p>Mixins are just tables too! The only requirement is they have a <code>UID</code> primary key which references <code>Needle.Pointer</code>. The developer of the mixin is free to put whatever other fields they want in the table, so long as they have that primary-key-as-reference (which will be automatically added for you by the <code>mixin_schema</code> macro).</p>
 <p>Here is a sample mixin definition for a user profile:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Data</span><span class="token punctuation">.</span><span class="token module class-name">Social</span><span class="token punctuation">.</span><span class="token module class-name">Profile</span> <span class="token keyword">do</span>
 
@@ -634,7 +634,7 @@ This results in ecto recording a compound primary key of <code>(id, feed_id)</co
 <span class="token keyword">end</span></code></pre>
 <blockquote>
 <p>As you can see, it's pretty similar to defining a regular migration, except you use <code>create_pointable_table</code> and<br>
-<code>drop_pointable_table</code>. Notice that our sentinel ULID makes an appearance again here. It's <em>very</em> important that these match what we declared in the schema.</p>
+<code>drop_pointable_table</code>. Notice that our sentinel UID makes an appearance again here. It's <em>very</em> important that these match what we declared in the schema.</p>
 </blockquote>
 <h3 id="mixins">Mixins <a class="direct-link" href="#mixins">#</a></h3>
 <p>Mixins look much like pointables:</p>
@@ -861,10 +861,10 @@ list) can be used to obtain the IDs for a table or tables.</p>
 <p>All solutions to the universal primary key problem have tradeofs. Here<br>
 are what we see as the deficiencies in our approach:</p>
 <ol>
-<li>It forces a ULID on you. This is great for us, but not<br>
-everyone. ULID exposes a timestamp with millisecond precision. If<br>
-the time of creation of a resource is sensitive information for<br>
-your purposes, ULIDs are not going to be suitable for you.</li>
+<li>It forces a UUIDv7 or ULID on you. This is great for us, but not<br>
+everyone. They both expose a timestamp with millisecond precision.<br>
+If the time of creation of a resource is sensitive information for<br>
+your purposes, they may not going to be suitable for you.</li>
 <li>Ecto has no knowledge of the specialty of <code>Pointer</code>,<br>
 e.g. <code>Repo.preload</code> does not work and you need to specify a join<br>
 condition to join through a pointer. Use our functions or add extra<br>
@@ -919,7 +919,7 @@ limitations under the License.</p>
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">25 Aug 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">23 Sep 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
             
           
