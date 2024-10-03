@@ -9,6 +9,10 @@ author: Bonfire Builders
 
 ---
 
+**Read part one: [Building Bonfire Native Apps with LiveView Native](/posts/dev_diary_lvn)**
+
+---
+
 With our initial mockups complete, we were eager to start coding in LiveView Native (LVN). There are two primary ways to debug an iOS app: using Xcode or LVN Go. [**LVN Go** is an application available on macOS, iPad, and iPhone that allows you to test a LiveView Native app directly on a device by pointing it to the Phoenix server URL](https://dockyard.com/blog/2024/09/10/introducing-lvn-go).
 
 We chose to use **Xcode** because we need to build custom SwiftUI views in the future for our specific use case.
@@ -28,7 +32,7 @@ I just had to open the project by running:
 open native/swiftui/Counter.xcodeproj
 ```
 
-Xcode begins fetching dependencies and may trigger some errors. Enable permissions for plugins used by LiveView Native, as outlined in the [official guide](https://hexdocs.pm/live_view_native_swiftui/create-a-swiftui-application.html), solves all of them.
+Xcode begins fetching dependencies and may trigger some errors. Enabling permissions for plugins used by LiveView Native, as outlined in the [official guide](https://hexdocs.pm/live_view_native_swiftui/create-a-swiftui-application.html), solves all of them.
 
 At this point, I was ready to build and run the app on the iPhone simulator.
 
@@ -44,13 +48,13 @@ Other resources I found useful were the [LVN CookBook](https://github.com/LiveVi
 
 ### Leveraging AI and Community Support
 
-There were some parts I needed to understand better, but using AI tools like **Claude 3.5 sonnet** and **GPT-4o** helped in navigating component design in SwiftUI and translating SwiftUI code into LVN. When I wasn't able to do it on my own, the LiveView Native slack community was very supportive.
+There were some parts I still need to understand better, but using AI tools like **Claude 3.5 sonnet** and **GPT-4o** often helped in navigating component design in SwiftUI and translating SwiftUI code into LVN. When I wasn't able to do it on my own, the LiveView Native slack community was very supportive.
 
 ---
 
 ## Prototyping Components
 
-At this point, I just wanted to get a feel of how to build native components in LVN, before starting to build the main pages of the app. I ended up prototyping a few components that are going to be part of the main views of the Bonfire iOS app, such as the Dropdown Menu and the Modal.
+At this point, I just wanted to get a feel of how to build native components in LVN, before starting to build the main pages of the app. I ended up prototyping a few components that are trasversal to the main views of the Bonfire iOS app, such as the Dropdown Menu and the Modal.
 
 ### Dropdown Menu
 
@@ -155,6 +159,17 @@ To achieve this result, I included a few custom classes in the `VStack`'s `:cont
 In my `app.swiftui.ex` file, I've defined the classes used above:
 
 ```elixir
+
+~SHEET"""
+"dragindicator:" <> do
+  presentationDragIndicator(.{props})
+end
+
+"ultrathinmaterial" do
+  presentationBackground(.ultraThinMaterial)
+end
+"""
+
 def class("detents:" <> props) do
   [start, end] = String.split(props, ":")
   ~RULES"""
@@ -162,17 +177,6 @@ def class("detents:" <> props) do
   """
 end
 
-def class("dragindicator:" <> props) do
-  ~RULES"""
-    presentationDragIndicator(.{props})
-  """
-end
-
-def class("ultrathinmaterial") do
-  ~RULES"""
-    presentationBackground(.ultraThinMaterial)
-  """
-end
 ```
 
 ---
