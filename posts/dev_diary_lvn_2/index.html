@@ -317,7 +317,9 @@
   </div>
 
   <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
-    <p>With our initial mockups complete, we were eager to start coding in LiveView Native (LVN). There are two primary ways to debug an iOS app: using Xcode or LVN Go. <a href="https://dockyard.com/blog/2024/09/10/introducing-lvn-go"><strong>LVN Go</strong> is an application available on macOS, iPad, and iPhone that allows you to test a LiveView Native app directly on a device by pointing it to the Phoenix server URL</a>.</p>
+    <p><strong>Read part one: <a href="/posts/dev_diary_lvn">Building Bonfire Native Apps with LiveView Native</a></strong></p>
+<hr>
+<p>With our initial mockups complete, we were eager to start coding in LiveView Native (LVN). There are two primary ways to debug an iOS app: using Xcode or LVN Go. <a href="https://dockyard.com/blog/2024/09/10/introducing-lvn-go"><strong>LVN Go</strong> is an application available on macOS, iPad, and iPhone that allows you to test a LiveView Native app directly on a device by pointing it to the Phoenix server URL</a>.</p>
 <p>We chose to use <strong>Xcode</strong> because we need to build custom SwiftUI views in the future for our specific use case.</p>
 <p>For reference, I'm using <strong>Xcode beta</strong> with the <strong>iPhone 16 simulator</strong> running <strong>iOS 18</strong> on <strong>macOS Sequoia</strong>, and <code>live_view_native_swiftui</code> version <strong>0.3.0</strong>.<br>
 iOS 17 should work fine as well; however, I experienced some SwiftUI errors with older versions.</p>
@@ -326,7 +328,7 @@ iOS 17 should work fine as well; however, I experienced some SwiftUI errors with
 <p>To debug my app, I needed to run the project on Xcode. Fortunately, the basic code to set up the SwiftUI app and connect to the Phoenix server is automatically generated when running the <code>mix lvn.setup.gen</code> task.</p>
 <p>I just had to open the project by running:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">open</span> native/swiftui/Counter.xcodeproj</code></pre>
-<p>Xcode begins fetching dependencies and may trigger some errors. Enable permissions for plugins used by LiveView Native, as outlined in the <a href="https://hexdocs.pm/live_view_native_swiftui/create-a-swiftui-application.html">official guide</a>, solves all of them.</p>
+<p>Xcode begins fetching dependencies and may trigger some errors. Enabling permissions for plugins used by LiveView Native, as outlined in the <a href="https://hexdocs.pm/live_view_native_swiftui/create-a-swiftui-application.html">official guide</a>, solves all of them.</p>
 <p>At this point, I was ready to build and run the app on the iPhone simulator.</p>
 <hr>
 <h3 id="understanding-swiftui-and-lvn">Understanding SwiftUI and LVN <a class="direct-link" href="#understanding-swiftui-and-lvn">#</a></h3>
@@ -334,10 +336,10 @@ iOS 17 should work fine as well; however, I experienced some SwiftUI errors with
 <p>Other resources I found useful were the <a href="https://github.com/LiveViewNative/recipes">LVN CookBook</a> (a collection of useful design patterns) and the <a href="https://github.com/LiveViewNative/lax">Lax GitHub repository</a> (a minimal Slack clone built with LVN).</p>
 <hr>
 <h3 id="leveraging-ai-and-community-support">Leveraging AI and Community Support <a class="direct-link" href="#leveraging-ai-and-community-support">#</a></h3>
-<p>There were some parts I needed to understand better, but using AI tools like <strong>Claude 3.5 sonnet</strong> and <strong>GPT-4o</strong> helped in navigating component design in SwiftUI and translating SwiftUI code into LVN. When I wasn't able to do it on my own, the LiveView Native slack community was very supportive.</p>
+<p>There were some parts I still need to understand better, but using AI tools like <strong>Claude 3.5 sonnet</strong> and <strong>GPT-4o</strong> often helped in navigating component design in SwiftUI and translating SwiftUI code into LVN. When I wasn't able to do it on my own, the LiveView Native slack community was very supportive.</p>
 <hr>
 <h2 id="prototyping-components">Prototyping Components <a class="direct-link" href="#prototyping-components">#</a></h2>
-<p>At this point, I just wanted to get a feel of how to build native components in LVN, before starting to build the main pages of the app. I ended up prototyping a few components that are going to be part of the main views of the Bonfire iOS app, such as the Dropdown Menu and the Modal.</p>
+<p>At this point, I just wanted to get a feel of how to build native components in LVN, before starting to build the main pages of the app. I ended up prototyping a few components that are trasversal to the main views of the Bonfire iOS app, such as the Dropdown Menu and the Modal.</p>
 <h3 id="dropdown-menu">Dropdown Menu <a class="direct-link" href="#dropdown-menu">#</a></h3>
 <p>LVN includes the <a href="https://developer.apple.com/documentation/swiftui/menu/">SwiftUI</a> default <code>Menu</code> component:</p>
 <pre class="language-elixir"><code class="language-elixir">&lt;<span class="token module class-name">Menu</span>> 
@@ -407,24 +409,24 @@ Specifically, I wanted to:</p>
 <hr>
 <h4 id="defining-custom-classes">Defining Custom Classes <a class="direct-link" href="#defining-custom-classes">#</a></h4>
 <p>In my <code>app.swiftui.ex</code> file, I've defined the classes used above:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">def</span> <span class="token function">class</span><span class="token punctuation">(</span><span class="token string">"detents:"</span> <span class="token operator">&lt;></span> props<span class="token punctuation">)</span> <span class="token keyword">do</span>
+<pre class="language-elixir"><code class="language-elixir">
+~<span class="token module class-name">SHEET</span><span class="token string">"""
+"dragindicator:" &lt;> do
+  presentationDragIndicator(.{props})
+end
+
+"ultrathinmaterial" do
+  presentationBackground(.ultraThinMaterial)
+end
+"""</span>
+
+<span class="token keyword">def</span> <span class="token function">class</span><span class="token punctuation">(</span><span class="token string">"detents:"</span> <span class="token operator">&lt;></span> props<span class="token punctuation">)</span> <span class="token keyword">do</span>
   <span class="token punctuation">[</span>start<span class="token punctuation">,</span> <span class="token keyword">end</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token module class-name">String</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>props<span class="token punctuation">,</span> <span class="token string">":"</span><span class="token punctuation">)</span>
   ~<span class="token module class-name">RULES</span><span class="token string">"""
     presentationDetents([.{start}, .{end}])
   """</span>
 <span class="token keyword">end</span>
-
-<span class="token keyword">def</span> <span class="token function">class</span><span class="token punctuation">(</span><span class="token string">"dragindicator:"</span> <span class="token operator">&lt;></span> props<span class="token punctuation">)</span> <span class="token keyword">do</span>
-  ~<span class="token module class-name">RULES</span><span class="token string">"""
-    presentationDragIndicator(.{props})
-  """</span>
-<span class="token keyword">end</span>
-
-<span class="token keyword">def</span> <span class="token function">class</span><span class="token punctuation">(</span><span class="token string">"ultrathinmaterial"</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
-  ~<span class="token module class-name">RULES</span><span class="token string">"""
-    presentationBackground(.ultraThinMaterial)
-  """</span>
-<span class="token keyword">end</span></code></pre>
+</code></pre>
 <hr>
 <p>And that's it!</p>
 <hr>
