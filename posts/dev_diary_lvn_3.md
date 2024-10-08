@@ -107,7 +107,7 @@ Then we just had to import them into our view like this:
 
 And this is the result:
 
-![Tab View Screenshot](/img/nav.png)
+![Tab View Screenshot](/img/basic.gif)
 
 
 > **Note**: Currently, you can include only functional components as slots within each `<.tab>`. It is not possible to include sub-LiveViews—this may evolve with future releases of the LiveView Native Core library.
