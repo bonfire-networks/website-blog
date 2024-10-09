@@ -323,6 +323,7 @@
 <blockquote>
 <p><strong>Note</strong>: This entry may evolve over time as the LiveView Native team pushes improvements and releases major versions of the libraries. Please bear with us as we test and implement the main navigation patterns in our upcoming Bonfire native app! Also, this article reflects our current understanding of SwiftUI and LiveView Native; we would love to get feedback and improve any parts that are not accurate!</p>
 </blockquote>
+<p><em>Thanks to the LiveView Native team for their feedback and support! 🔥</em></p>
 <p>In our previous article, we experimented with building some simple UI components that we'll be using across the Bonfire app, and at the same time, we've developed some initial confidence in writing LiveView Native (LVN) code.</p>
 <p>Today, we'll go through the implementation of the main navigation patterns needed to traverse our app's sections and views.</p>
 <h2 id="liveview-native-navigation">LiveView Native Navigation <a class="direct-link" href="#liveview-native-navigation">#</a></h2>
@@ -667,15 +668,15 @@ slot <span class="token atom symbol">:header_menu</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token punctuation">.</span>main_header<span class="token operator">></span></code></pre>
 <p>This is what the result looks like:</p>
 <iframe width="100%" height="515" src="https://www.youtube.com/embed/JOjgITS6rQg?si=3yoBrxvPnMADIk9V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p>We can optimize the code by using a single class and adding props to it, something along the lines of:</p>
+<p>We can optimize the code by using a single class and concatenating dynamic props, something along the lines of:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">def</span> <span class="token function">class</span><span class="token punctuation">(</span><span class="token string">"main_header:"</span> <span class="token operator">&lt;></span> props<span class="token punctuation">)</span> <span class="token keyword">do</span>
 
 ~<span class="token module class-name">RULES</span><span class="token string">"""
   ...
 """</span>
 <span class="token keyword">end</span></code></pre>
-<p>But that's enough for now.</p>
-<p>We're too excited to move on to the next step: porting our LVN code into our existing Bonfire app and keep building the main UI components!</p>
+<p>Additionally, we can use <code>push_patch</code> to remember the current tab when navigating back to previous page from the Search view. We also need to iron our understanding about how SwiftUI handles the navigation stack.</p>
+<p>We'll continue this work in the next article, where we'll clean up the code and make it more robust. We'll also try to include some transition effects to change the header content when scrolling down the profile page.</p>
 <blockquote>
 <p>From the next article, all the code will be pushed to our GitHub, making it easier for contributors to read and navigate the code.</p>
 </blockquote>

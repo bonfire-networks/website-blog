@@ -1119,6 +1119,7 @@ end
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This entry may evolve over time as the LiveView Native team pushes improvements and releases major versions of the libraries. Please bear with us as we test and implement the main navigation patterns in our upcoming Bonfire native app! Also, this article reflects our current understanding of SwiftUI and LiveView Native; we would love to get feedback and improve any parts that are not accurate!&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Thanks to the LiveView Native team for their feedback and support! 🔥&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In our previous article, we experimented with building some simple UI components that we&#39;ll be using across the Bonfire app, and at the same time, we&#39;ve developed some initial confidence in writing LiveView Native (LVN) code.&lt;/p&gt;
 &lt;p&gt;Today, we&#39;ll go through the implementation of the main navigation patterns needed to traverse our app&#39;s sections and views.&lt;/p&gt;
 &lt;h2 id=&quot;liveview-native-navigation&quot;&gt;LiveView Native Navigation &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/dev_diary_lvn_3/#liveview-native-navigation&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -1463,15 +1464,15 @@ slot &lt;span class=&quot;token atom symbol&quot;&gt;:header_menu&lt;/span&gt;
 &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;main_header&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is what the result looks like:&lt;/p&gt;
 &lt;iframe width=&quot;100%&quot; height=&quot;515&quot; src=&quot;https://www.youtube.com/embed/JOjgITS6rQg?si=3yoBrxvPnMADIk9V&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;We can optimize the code by using a single class and adding props to it, something along the lines of:&lt;/p&gt;
+&lt;p&gt;We can optimize the code by using a single class and concatenating dynamic props, something along the lines of:&lt;/p&gt;
 &lt;pre class=&quot;language-elixir&quot;&gt;&lt;code class=&quot;language-elixir&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;main_header:&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&gt;&lt;/span&gt; props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
 
 ~&lt;span class=&quot;token module class-name&quot;&gt;RULES&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&quot;
   ...
 &quot;&quot;&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;But that&#39;s enough for now.&lt;/p&gt;
-&lt;p&gt;We&#39;re too excited to move on to the next step: porting our LVN code into our existing Bonfire app and keep building the main UI components!&lt;/p&gt;
+&lt;p&gt;Additionally, we can use &lt;code&gt;push_patch&lt;/code&gt; to remember the current tab when navigating back to previous page from the Search view. We also need to iron our understanding about how SwiftUI handles the navigation stack.&lt;/p&gt;
+&lt;p&gt;We&#39;ll continue this work in the next article, where we&#39;ll clean up the code and make it more robust. We&#39;ll also try to include some transition effects to change the header content when scrolling down the profile page.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;From the next article, all the code will be pushed to our GitHub, making it easier for contributors to read and navigate the code.&lt;/p&gt;
 &lt;/blockquote&gt;
