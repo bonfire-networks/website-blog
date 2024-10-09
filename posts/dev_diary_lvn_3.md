@@ -16,6 +16,8 @@ author: Bonfire Builders
 
 > **Note**: This entry may evolve over time as the LiveView Native team pushes improvements and releases major versions of the libraries. Please bear with us as we test and implement the main navigation patterns in our upcoming Bonfire native app! Also, this article reflects our current understanding of SwiftUI and LiveView Native; we would love to get feedback and improve any parts that are not accurate!
 
+*Thanks to the LiveView Native team for their feedback and support! 🔥*
+
 In our previous article, we experimented with building some simple UI components that we'll be using across the Bonfire app, and at the same time, we've developed some initial confidence in writing LiveView Native (LVN) code.
 
 Today, we'll go through the implementation of the main navigation patterns needed to traverse our app's sections and views. 
@@ -452,7 +454,7 @@ This is what the result looks like:
 
 <iframe width="100%" height="515" src="https://www.youtube.com/embed/JOjgITS6rQg?si=3yoBrxvPnMADIk9V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-We can optimize the code by using a single class and adding props to it, something along the lines of:
+We can optimize the code by using a single class and concatenating dynamic props, something along the lines of:
 
 ```elixir
 def class("main_header:" <> props) do
@@ -463,9 +465,9 @@ def class("main_header:" <> props) do
 end
 ```
 
-But that's enough for now.
+Additionally, we can use `push_patch` to remember the current tab when navigating back to previous page from the Search view. We also need to iron our understanding about how SwiftUI handles the navigation stack.
 
-We're too excited to move on to the next step: porting our LVN code into our existing Bonfire app and keep building the main UI components!
+We'll continue this work in the next article, where we'll clean up the code and make it more robust. We'll also try to include some transition effects to change the header content when scrolling down the profile page.
 
 > From the next article, all the code will be pushed to our GitHub, making it easier for contributors to read and navigate the code.
 
