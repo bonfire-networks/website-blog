@@ -1,0 +1,636 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link
+    rel="stylesheet" href="/css/style_v2.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
+      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+    >
+    
+
+    <div class="bg-base-300">
+      <header class="relative z-30 lg:px-8 mx-auto navbar">
+        <div class="navbar-start w-[70%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           <div class="ml-4 hidden xl:flex">
+          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
+            <li class="dropdown">
+              
+              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+                <span>About</span>
+                
+              </a>
+              
+              
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
+                      <div class="font-bold">Themes</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                  </a>
+                </li>
+                  <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
+                      <div class="font-bold">Pilots</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
+                      <div class="font-bold">Documentation</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-bold">Design</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-bold">Community</div>
+                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-bold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
+                    <div class="font-bold">Changelog</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                  </a></li>
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-bold">Get the code</div>
+                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/hosting" class=" ">
+              <span class="text-sm font-regular">Hosting</span>
+            </a>
+            </li>
+            
+       
+
+            
+
+            <li>
+            <a href="/blog" class=" ">
+              <span class="text-sm font-regular">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end">
+           <label for="theme_controller" class="swap swap-rotate mr-4">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+              
+            </label>
+          <a href="/start/" >
+            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/themes" class=" ">
+            <span class="text-base font-regular">Themes</span>
+          </a>
+          </li>
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/courses" class=" ">
+            <span class="text-base font-regular">courses</span>
+          </a>
+          </li>
+          
+          
+          <li>
+            <a href="/pilots" class=" ">
+            <span class="text-base font-regular">Pilots</span>
+          </a>
+          </li>
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+<div class="relative">
+  <div class="relative z-20 grid items-start max-w-screen-md text-center grid-cols-1 gap-12 px-6 py-6 mx-auto lg:px-0 xl:gap-24 lg:pt-24 lg:pb-12">
+    <div class="">
+      <h1 class="font-serif text-[3rem] lg:text-[5.25rem] leading-[64px] lg:leading-[105px] font-black tracking-wide">Your Digital Presence, Unified</h1>
+      <div class="mt-3 lg:mt-6 text-base-content/90 text-2xl lg:text-3xl lg:leading-[48px]">Bonfire Mosaic uplifts your digital space by integrating your website, social network, custom and federated tools into one platform.</div>
+      <a href="/#pricing" data-scroll="#pricing" class="lg:mt-8 mt-4 btn btn-lg text-lg shadow-xl uppercase btn-primary rounded-full">Book a demo</a>
+    </div>
+    
+  </div>
+  
+</div>
+
+
+
+<div id="features" class="relative z-20 max-w-screen-lg px-6 mx-auto my-16 lg:px-0">
+  
+  <h1 class="text-3xl text-center font-black tracking-widest mb-8">Bonfire Mosaic empowers your project with</h1>
+  
+  
+  <ul class="grid grid-cols-1 mt-[80px] gap-[3rem]">
+    <li class="group relative card bg-base-100 grid lg:grid-cols-2 gap-4 !h-auto !bg-base-100 border border-base-content/20 rounded-xl !w-full">
+      <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+      <div class="px-8 pb-8 p-4">
+        <div class="mt-2 font-serif text-3xl font-bold  text-base-content">A presentational website</div>
+        <div class="mt-8">
+          <div class="flex items-center gap-3">
+            
+            <svg class="w-5 h-5 text-base-content/80" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-blend"><circle cx="9" cy="9" r="7"/><circle cx="15" cy="15" r="7"/></svg>
+            <div class="font-bold text-lg tracking-wide">Custom designs</div>
+          </div>
+          <div class="text-base text-base-content/80 mt-2">Tailor your website's pages and posts to reflect your identity with flexible and customizable layouts.</div>
+        </div>
+        <div class="mt-10">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-base-content/80" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-lock"><path d="M15.686 15A14.5 14.5 0 0 1 12 22a14.5 14.5 0 0 1 0-20 10 10 0 1 0 9.542 13"/><path d="M2 12h8.5"/><path d="M20 6V4a2 2 0 1 0-4 0v2"/><rect width="8" height="5" x="14" y="6" rx="1"/></svg>
+            <div class="font-bold text-lg tracking-wide">Privacy-friendly analytics</div>
+          </div>
+          <div class="text-base text-base-content/80 mt-2">Track engagement and performance with comprehensive metrics, all while maintaining visitor privacy—no more cookie banners required!</div>
+        </div>
+      </div>
+      <div class="order-first lg:order-last">
+        <div style="background-image: url(/img/landing2.png)" class="bg-no-repeat bg-cover h-[300px] lg:h-full w-full bg-center rounded-xl lg:lg:rounded-r-xl"></div>
+      </div>
+    </li>
+    
+    <li class="group relative card bg-base-100 grid lg:grid-cols-2 gap-4 !h-auto !bg-base-100 border border-base-content/20 rounded-xl !w-full">
+      <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+      <div>
+        <div style="background-image: url(/img/social.png)" class="bg-no-repeat bg-cover h-[300px] lg:h-full w-full bg-center rounded-xl lg:rounded-l-xl"></div>
+      </div>
+      <div class="px-8 pb-8 p-4">
+        <div class="mt-2 font-serif text-3xl font-bold  text-base-content">A Federated Social Network</div>
+        <div class="mt-8">
+          <div class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-base-content/80" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+          <div class="font-bold text-lg tracking-wide">Engagement galore</div>
+          </div>
+          <div class="text-base text-base-content/80 mt-2">Visitors can follow pages, authors, groups, and topics. Enable interactions like boosts, likes, and replies on content. All seamless for Fediverse users, with no extra sign-up!</div>
+        </div>
+        <div class="mt-10">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-base-content/80" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>
+            <div class="font-bold text-lg tracking-wide">Moderated and Safe</div>
+          </div>
+          <div class="text-base text-base-content/80 mt-2">You have tools and services to moderate your space to ensure it is a safe space for your community.</div>
+        </div>
+      </div>
+    </li>
+    
+    <li class="group relative card bg-base-100 grid lg:grid-cols-2 gap-4 !h-auto !bg-base-100 border border-base-content/20 rounded-xl !w-full">
+      <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+      <div class="px-8 pb-8 p-4">
+        <div class="mt-2 font-serif text-3xl font-bold  text-base-content">Ad-hoc Tools & Integrations</div>
+        <div class="mt-8">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-base-content/80" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-waypoints"><circle cx="12" cy="4.5" r="2.5"/><path d="m10.2 6.3-3.9 3.9"/><circle cx="4.5" cy="12" r="2.5"/><path d="M7 12h10"/><circle cx="19.5" cy="12" r="2.5"/><path d="m13.8 17.7 3.9-3.9"/><circle cx="12" cy="19.5" r="2.5"/></svg>
+            <div class="font-bold text-lg tracking-wide">Custom development</div>
+          </div>
+          <div class="text-base text-base-content/80 mt-2">Whether you need a custom features or to implement an existing one with a different user experience, that is tailored to your needs, the Bonfire modular framework allows for easy development.</div>
+        </div>
+        <div class="mt-10">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-base-content/80" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mails"><rect width="16" height="13" x="6" y="4" rx="2"/><path d="m22 7-7.1 3.78c-.57.3-1.23.3-1.8 0L6 7"/><path d="M2 8v11c0 1.1.9 2 2 2h14"/></svg>
+            <div class="font-bold text-lg tracking-wide">External integrations</div>
+          </div>
+          <div class="text-base text-base-content/80 mt-2">Integrate external tools and services that you already use into your Bonfire Mosaic instance to streamline your operations and save time. Your favourite tools are just one extension away.</div>
+        </div>
+      </div>
+      <div class="order-first lg:order-last">
+        <div style="background-image: url(/img/communication.png)" class="bg-no-repeat bg-cover h-[300px] lg:h-full w-full bg-center rounded-xl lg:rounded-r-xl"></div>
+      </div>
+    </li>
+  </ul>  
+</div> 
+
+
+<div id="amplify" class="relative z-20 max-w-screen-lg px-6 mx-auto my-16 lg:my-24 xl:px-0">
+  <h2 class="text-3xl text-center font-black tracking-widest mb-8 leading-[3rem]">Amplify your impact and productivity, <br/> Reduce costs and complexity.</h2>
+  <div class="mt-4 items-top gap-8">
+  <div class="text-xl max-w-screen-md mx-auto text-center text-base-content/90 font-medium tracking-wider">Unlike traditional websites or consumer social media platforms, Mosaic empowers you with standards-based federation to seamlessly connect with millions of users across a multitude of compatible apps.</div>  
+  </div>
+  <ul class="grid grid-cols-1 lg:grid-cols-2 grid-rows-3 mt-12 gap-2">
+  <li class="relative group card bg-base-100 lg:row-span-2 border border-base-content/20 h-full rounded-xl !w-full">
+    <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+    <div class="h-full flex place-content-center items-center w-full block">
+      <div class="relative w-[160px] h-[160px] rounded-xl bg-gradient-to-br from-[#3494E6] via-[#EC6EAD] to-[#FFB88C] overflow-hidden shadow-lg">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#3494E6]/10 via-[#EC6EAD]/10 to-[#FFB88C]/10 animate-gradient"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-36 h-36 rounded-full bg-gradient-to-r from-[#3494E6]/40 via-[#EC6EAD]/40 to-[#FFB88C]/40 flex items-center justify-center shadow-inner">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 text-white drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-piggy-bank"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/><path d="M16 11h.01"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-2 left-2 w-3 h-3 rounded-full bg-[#3494E6]/70 animate-pulse"></div>
+        <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-[#FFB88C]/70 animate-pulse"></div>
+        
+      </div>
+    </div>
+    <span class="p-4">
+      <div class="mt-2 font-serif text-2xl font-bold text-center text-base-content">Cost-Effective Unified Platform</div>
+      <div class="text-lg mt-2 text-base-content/80 text-center">Manage your website and social network from a single dashboard, consolidating multiple tools to streamline digital strategy and operations while significantly reducing development and maintenance expenses.</div>
+    </span>
+  </li>
+  <li class="relative group card bg-base-100 border border-base-content/20 rounded-xl !w-full">
+    <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+    <div class="h-[280px] flex place-content-center items-center w-full block">
+      <div class="relative w-[160px] h-[160px] rounded-xl bg-gradient-to-br from-[#3494E6] via-[#EC6EAD] to-[#FFB88C] overflow-hidden shadow-lg">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#3494E6]/10 via-[#EC6EAD]/10 to-[#FFB88C]/10 animate-gradient"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-36 h-36 rounded-full bg-gradient-to-r from-[#3494E6]/40 via-[#EC6EAD]/40 to-[#FFB88C]/40 flex items-center justify-center shadow-inner">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg"  class="w-16 text-white drop-shadow-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1M1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25"/><path fill="currentColor" d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-2 left-2 w-3 h-3 rounded-full bg-[#3494E6]/70 animate-pulse"></div>
+        <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-[#FFB88C]/70 animate-pulse"></div>
+        
+      </div>
+    </div>
+    <span class="p-4">
+      <div class="mt-2 font-serif text-2xl font-bold text-center text-base-content">Enhanced Engagement</div>
+      <div class="text-lg mt-2 text-base-content/80 text-center">Build a vibrant community and expand your reach by seamlessly connecting with the Fediverse, fostering active participation and visibility.</div>
+    </span>
+  </li>
+  <li class="relative group card bg-base-100 border border-base-content/20 rounded-xl !w-full">
+    <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+    <div class="h-[280px] flex place-content-center items-center w-full block">
+      <div class="relative w-[160px] h-[160px] rounded-xl bg-gradient-to-br from-[#3494E6] via-[#EC6EAD] to-[#FFB88C] overflow-hidden shadow-lg">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#3494E6]/10 via-[#EC6EAD]/10 to-[#FFB88C]/10 animate-gradient"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-36 h-36 rounded-full bg-gradient-to-r from-[#3494E6]/40 via-[#EC6EAD]/40 to-[#FFB88C]/40 flex items-center justify-center shadow-inner">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 text-white drop-shadow-lg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r=".5" fill="currentColor"/><path d="M5 12a7 7 0 1 0 14 0a7 7 0 1 0-14 0m7-9v2m-9 7h2m7 7v2m7-9h2"/></g></svg>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-2 left-2 w-3 h-3 rounded-full bg-[#3494E6]/70 animate-pulse"></div>
+        <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-[#FFB88C]/70 animate-pulse"></div>
+        
+      </div>
+    </div>
+    <span class="p-4">
+      <div class="mt-2 font-serif text-2xl font-bold text-center text-base-content">Productivity without compromises</div>
+      <div class="text-lg mt-2 text-base-content/80 text-center">Ensure the platform is accessible to anyone, with user-friendly design and standards-based features and APIs that support interoperability across various technologies.</div>
+    </span>
+  </li>
+  <li class="relative group card bg-base-100 border border-base-content/20 rounded-xl !w-full">
+    <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+    <div class="h-[280px] flex place-content-center items-center w-full block">
+      <div class="relative w-[160px] h-[160px] rounded-xl bg-gradient-to-br from-[#3494E6] via-[#EC6EAD] to-[#FFB88C] overflow-hidden shadow-lg">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#3494E6]/10 via-[#EC6EAD]/10 to-[#FFB88C]/10 animate-gradient"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-36 h-36 rounded-full bg-gradient-to-r from-[#3494E6]/40 via-[#EC6EAD]/40 to-[#FFB88C]/40 flex items-center justify-center shadow-inner">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg"  class="w-16 h-16 text-white drop-shadow-lg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-drive"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-2 left-2 w-3 h-3 rounded-full bg-[#3494E6]/70 animate-pulse"></div>
+        <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-[#FFB88C]/70 animate-pulse"></div>
+        
+      </div>
+    </div>
+    <span class="p-4">
+      <div class="mt-2 font-serif text-2xl font-bold text-center text-base-content">Data Sovereignty</div>
+      <div class="text-lg mt-2 text-base-content/80 text-center">Choose self-hosting or our coop-hosting service to retain control over your data. Enable users to interact from anywhere while retaining ownership of their data.</div>
+    </span>
+  </li>
+  <li class="relative group card bg-base-100 border border-base-content/20 rounded-xl !w-full">
+    <div class="card-mosaic group-hover:opacity-50 absolute inset-0"></div>
+    <div class="h-[280px] flex place-content-center items-center w-full block">
+      <div class="relative w-[160px] h-[160px] rounded-xl bg-gradient-to-br from-[#3494E6] via-[#EC6EAD] to-[#FFB88C] overflow-hidden shadow-lg">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#3494E6]/10 via-[#EC6EAD]/10 to-[#FFB88C]/10 animate-gradient"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-36 h-36 rounded-full bg-gradient-to-r from-[#3494E6]/40 via-[#EC6EAD]/40 to-[#FFB88C]/40 flex items-center justify-center shadow-inner">
+            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 text-white drop-shadow-lg" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M5.338 1.59a61 61 0 0 0-2.837.856a.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025a1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453a7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625a11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43A63 63 0 0 1 5.072.56"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="absolute top-2 left-2 w-3 h-3 rounded-full bg-[#3494E6]/70 animate-pulse"></div>
+        <div class="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-[#FFB88C]/70 animate-pulse"></div>
+        
+      </div>
+    </div>
+    <span class="p-3 pb-6">
+      <div class="font-serif text-2xl font-bold text-center text-base-content">Safety & Privacy</div>
+      <div class="text-lg mt-2 text-base-content/80 text-center">Implement robust features, policies, and governance tools to protect data, users, and interactions across the platform, prioritising safety and privacy at every level.</div>
+    </span>
+  </li>
+  
+  
+</ul>
+</div>
+
+ 
+  
+<div id="pricing" class="py-24">
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl sm:text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-base-content sm:text-4xl">Plans for projects of all sizes</h2>
+      <p class="mt-6 text-lg leading-8 text-base-content/80">We offer a range of plans to suit the needs of your project. Whether you need basic customisations or a more advanced development, we have you covered. <p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-base-content/20 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+      <div class="p-8 sm:p-10 lg:flex-auto">
+        <h3 class="text-2xl font-bold tracking-tight text-base-content">Get in touch to discuss your project</h3>
+        <p class="mt-6 text-base leading-7 text-base-content/80">Your project will be developed using Bonfire's open-source framework, crafted by a network of Bonfire developers to ensure it is fully customized to meet your specific needs.</p>
+        <div class="mt-10 flex items-center gap-x-4">
+          <h4 class="flex-none text-sm font-semibold leading-6 text-primary">What’s included</h4>
+          <div class="h-px flex-auto bg-base-content/20"></div>
+        </div>
+        <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-base-content/80 sm:grid-cols-2 sm:gap-6">
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Authentication and authorization
+          </li>
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Social features
+          </li>
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Moderation and safety tools
+          </li>
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Custom development and integrations
+          </li>
+        </ul>
+      </div>
+      <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+        <div class="rounded-2xl bg-base-content/5 py-10 text-center ring-1 ring-inset ring-base-content/10 lg:flex lg:flex-col lg:justify-center lg:py-16">
+          <div class="mx-auto max-w-xs px-8">
+            <p class="text-lg font-bold text-base-content">Get in touch to discuss your project</p>
+            <a href="#" class="mt-10  w-full rounded-full btn btn-primary">Book a call</a>
+            <div class="mt-6 text-base-content/80">or send us an email at <span class="text-base-content tracking-wide ml-1 font-semibold">mosaic@bonfirenetworks.org</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const updateCursor = ({ x, y }) => {
+  document.documentElement.style.setProperty('--x', x)
+  document.documentElement.style.setProperty('--y', y)
+}
+
+document.body.addEventListener('pointermove', updateCursor)
+</script>
+  <div class="border-base-content/10 bg-base-300 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
+    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
+    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    
+    <a class="link link-hover text-base-content/70" href="/contact/">Contact</a>
+
+  </div>
+</footer>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+    <!-- Current page: /mosaic/ -->
+  </body>
+</html>
