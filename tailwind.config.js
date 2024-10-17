@@ -23,12 +23,15 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["nord"],
+          ...require("daisyui/src/theming/themes")["retro"],
+           "base-100": "#fdfdfc",
+          "base-200": "#f1f1ef",
+          "primary": "#fde047"
         }
       },
       {
         bonfire: {
-          ...require("daisyui/src/theming/themes")["dracula"],
+          ...require("daisyui/src/theming/themes")["forest"],
           "primary": "#fde047"
         }
       },

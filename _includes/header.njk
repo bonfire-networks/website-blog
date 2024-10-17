@@ -1,8 +1,6 @@
 <div
-      class="sticky top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      class="sticky bg-base-100 border-b border-base-content/10 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
-       :class="{ 'shadow-lg': atTop, 'bg-transparent text-base-content': !atTop, 'bg-base-100 text-base-content': atTop }"
-      @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
     >
     {# <div class="absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden pointer-events-none">
       <div class="w-[108rem] flex-none flex justify-end">
@@ -12,125 +10,114 @@
       </div>
     </div> #}
 
-    <div class="bg-base-300">
+    <div class="max-w-screen-xl mx-auto">
       <header class="relative z-30 lg:px-8 mx-auto navbar">
         <div class="navbar-start w-[70%]">
           <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
               <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class="flex items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire</span> 
+              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire</span> 
               {# <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-primary">{{ latest_version | safe }}</div> #}
               </span>
             </a>
           </div>
            <div class="ml-4 hidden xl:flex">
-          <ul class="flex-row  p-0 font-medium menu menu-compact menu-horizontal">
-            <li class="dropdown">
-              
-              <a href="/about" role="button" tabindex="0" class="flex items-center gap-2">
+          <ul class="flex-row  p-0 font-medium menu font-bold menu-horizontal">
+            <li>
+              <a href="/about" role="button" tabindex="0" class="flex font-semibold text-[16px] items-center gap-2 {{ 'opacity-100' if '/about' in page.url }}">
                 <span>About</span>
-                {# <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg> #}
               </a>
-              
-              {# <ul tabindex="0" class="dropdown-content border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
-                <li>
-                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/about">
-                      <div class="font-bold">About Bonfire</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">If you want to start a new digital space or migrate to an existing one.</div>
-                  </a>
-                </li>
-                <li>
-                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/conduct">
-                      <div class="font-bold">Code of Conduct</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">The starting point for hacking on Bonfire.</div>
-                  </a>
-                </li>
-              </ul> #}
             </li>
             <li class="dropdown">
-                <div tabindex="0" class="flex items-center gap-2">
+                <div tabindex="0" class="flex    font-semibold text-[16px] items-center gap-2">
                   <span>Ecosystem</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
               
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
                 <li>
                   <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
                       <div class="font-bold">Apps</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Apps built with Bonfire</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Apps built with Bonfire</div>
                   </a>
                 </li>
                 <li>
                   <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
                       <div class="font-bold">Extensions</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Explore available extensions</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Hosting</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
                       <div class="font-bold">Themes</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Personalize Bonfire with your preferred colors and styling</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Personalize Bonfire with your preferred colors and styling</div>
                   </a>
                 </li>
                   <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
                       <div class="font-bold">Pilots</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Some of the communities we are working with</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Some of the communities we are working with</div>
                   </a>
                 </li>
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
                       <div class="font-bold">How to participate</div>
-                      <div class="font-light -mt-1.5  text-sm text-base-content/70 font-light">Contribute to Bonfire</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Contribute to Bonfire</div>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="dropdown">
-                <div tabindex="0" class="flex items-center gap-2">
+                <div tabindex="0" class="flex    font-semibold text-[16px] items-center gap-2">
                   <span>Learn</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
               <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
-                      <div class="font-bold">Documentation</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Dive into using or building on Bonfire</div>
+                      <div class="font-semibold">Documentation</div>
+                      <div class="font-light text-sm    -mt-1.5">Dive into using or building on Bonfire</div>
                   </a>
                 </li>
                  <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
-                      <div class="font-bold">Design</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                      <div class="font-semibold">Design</div>
+                      <div class="font-light text-sm    -mt-1.5">Think with Bonfire to create better digital spaces</div>
                   </a>
                 </li>
                 <li>
                   <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
-                      <div class="font-bold">Community</div>
-                      <div class="font-light text-sm text-base-content/70 -mt-1.5">How to participate in the ecosystem</div>
+                      <div class="font-semibold">Community</div>
+                      <div class="font-light text-sm    -mt-1.5">How to participate in the ecosystem</div>
                   </a>
                 </li>
                 <li>
                   <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
-                    <div class="font-bold">FAQ</div>
-                    <div class="text-sm -mt-1.5 font-light text-base-content/70">Frequently asked questions</div>
+                    <div class="font-semibold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light   ">Frequently asked questions</div>
                   </a>
                 </li>
                 {# <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/roadmap">
-                    <div class="font-bold">Roadmap</div>
-                    <div class="text-sm text-base-content/70">See what's coming next</div>
+                    <div class="font-semibold">Roadmap</div>
+                    <div class="text-sm   ">See what's coming next</div>
                   </a>
                 </li>  #}
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
-                    <div class="font-bold">Changelog</div>
-                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Latest updates and improvements</div>
+                    <div class="font-semibold">Changelog</div>
+                    <div class="font-light text-sm    -mt-1.5">Latest updates and improvements</div>
                   </a></li>
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                    <div class="font-bold">Get the code</div>
-                    <div class="font-light text-sm text-base-content/70 -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                    <div class="font-semibold">Get the code</div>
+                    <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
                   </a>
                 </li>
               </ul>
@@ -141,8 +128,8 @@
             </a>
             </li> #}
             <li>
-            <a href="/hosting" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/hosting' in page.url }} ">
-              <span class="text-sm font-regular">Hosting</span>
+            <a href="/mosaic" class="font-semibold    text-[16px] {{ 'opacity-100' if '/mosaic' in page.url }} ">
+              <span class="">Mosaic</span>
             </a>
             </li>
             
@@ -155,8 +142,8 @@
             </li> #}
 
             <li>
-            <a href="/blog" class="{{ 'underline decoration-primary decoration-2 text-primary  underline-offset-8' if '/blog' in page.url }} ">
-              <span class="text-sm font-regular">News</span>
+            <a href="/blog" class="font-semibold    text-[16px] {{ 'opacity-100' if '/blog' in page.url }} ">
+              <span class="">News</span>
             </a>
             </li>
           </ul>
@@ -181,7 +168,7 @@
               
             </label>
           <a href="/start/" >
-            <span class="hidden  normal-case rounded-full btn btn-sm btn-primary xl:flex">Get Bonfire</span>
+            <span class="text-[16px] hidden font-bold normal-case btn btn-primary xl:flex btn-wide">Get Bonfire</span>
           </a>
 
           <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
