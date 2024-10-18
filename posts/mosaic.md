@@ -29,7 +29,7 @@ Enter **Mosaic**—a fresh approach to meet today’s needs. In a networked envi
 
 Unfortunately, most platforms just aren’t designed for this. They are stuck in the past, limiting what organisations can achieve. That’s where **Mosaic** is ready to ignite change. Together, we can co-create the tools necessary to thrive in a networked world—flexible, federated, and designed to help communities, organisations, collectives, and consortia collaborate and grow in meaningful, unexpected, and interconnected ways.
 
-## Why should you care about the Fediverse? 
+## Why should you care about the fediverse? 
 The **fediverse** is a growing network of independent yet interconnected digital spaces, which can empower organisations in ways Big Tech cannot. It enables you to own your data, control your algorithms, and connect directly with your community—without the unpredictability of profit-driven platforms.
 
 Unlike proprietary apps like Instagram and Twitter, the fediverse prioritises trust and safety. Organisations can build meaningful connections, collaborate freely, and maintain control over their tools and online spaces. Thanks to standardised protocols like ActivityPub, users can easily export their data and migrate between instances, ensuring you’re never locked in.
