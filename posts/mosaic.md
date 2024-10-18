@@ -9,46 +9,49 @@ author: Bonfire Builders
 
 ---
 
-We are thrilled to announce [Mosaic](https://bonfirenetworks.org/mosaic/), a venture by the Bonfire team designed to empower organizations by creating fully customized, federated digital spaces tailored to their unique needs.
 
-🧐 Cool, but why?
-🥸 Glad you've asked... mainly because:
+We’re excited to introduce **[Mosaic](https://bonfirenetworks.org/mosaic/)**, a new initiative from the Bonfire team that empowers organisations by creating fully customised, federated digital spaces—built just for them.
 
-## Yesterday, we used to work in companies. Today, we work in networks.
+## What is Mosaic?
+Mosaic is a unique service where the Bonfire team collaborates with you to co-design and build a bespoke web presence that serves as a hybrid between a traditional website and a social networking platform—going well beyond merely sharing pictures or short posts. Depending on your specific needs, we will incorporate, build, or customise Bonfire extensions to facilitate all kinds of information sharing, community building, and collaboration. 
 
-An organization’s success today heavily relies on its relationships, partnerships, and alliances Unfortunately, most mainstream platforms are built with a Web 1.0 mindset—focused on resource optimization and profit maximization; designed for hierarchical, fixed structures, and with little regard for externalities. In contrast, **Bonfire Mosaic** recognizes that externalities play a critical role in networks, particularly how information flows between different companies. 
-These aspects are essential for an organization’s ability to thrive in a fast-evolving world.
+With Mosaic, we build a bespoke software application that you can choose to self-host, ensuring you’re not locked into a monthly subscription with per-user costs and have complete control over your digital space. 
 
-Effective communication flow fosters collaborations, uncovers opportunities, and builds new partnerships, ultimately shaping the success of projects. It helps organizations overcome bottlenecks, resolve conflicts, and manage knowledge gaps. 
-The modern organizational landscape is no longer about working in isolation; it’s about thriving within networks.
+*You can visit the [Mosaic website](/mosaic/) for more details, or the [Bonfire website](/) for information about the software project that makes Mosaic possible.*
 
-Yet, most platforms aren’t designed to support network-based work. **Bonfire Mosaic** is a collaborative venture to co-design and develop tailored tools that help organizations, collectives, foundations, and consortia transition from outdated, limiting platforms to modern, federated tools that empower them to work and thrive in networks.
+## Why does it matter?
+Great question! In short, the way we work has changed dramatically, and our tools need to keep up. Here’s our perspective…
 
-## But why the fediverse? 
+### Yesterday, we used to work in companies. Today, we thrive in networks.
+In today’s landscape, an organisation’s success hinges not only on internal efficiency but also on how effectively it can communicate and flourish within a broader network of relationships, partnerships, and collaborations. The challenge? Most platforms were designed for what’s hopefully a bygone era—one dominated by rigid hierarchies and a focus on profit over inclusivity and cooperation, often overlooking the importance of externalities.
 
-The **Fediverse** is a growing network of interconnected digital spaces, offering organizations freedom from big tech control and the ability to seamlessly connect with other communities. More importantly, the Fediverse is a hub for innovation in safety, facilitation and moderation design, where people gather to build more meaningful and trusted connections and partnerships, control their tools, and establish relationships free from proprietary algorithms  (Hello Instagram and TikTok), or from the private profit purposes hidden behind the cultrain of the paid fanbase of an egomaniac idiot (Hello X).
+Enter **Mosaic**—a fresh approach to meet today’s needs. In a networked environment, the flow of information between teams, partners, and different layers of collaborators is a key factor for success. Seamless communication uncovers opportunities, fosters partnerships, and drives innovation. It’s no longer about working in isolation; it’s about thriving through connection. Today’s working world blurs the lines between internal staff and the public, encompassing a vibrant community of team members, collaborators, early adopters, advisors, partners, advocates, ambassadors, community members, followers, and more. 
 
-The fediverse is an open network where organisations can either fully join or form [their own islands network](https://writer.oliphant.social/oliphant/islands) - based on their own visions and needs.
+Unfortunately, most platforms just aren’t designed for this. They are stuck in the past, limiting what organisations can achieve. That’s where **Mosaic** is ready to ignite change. Together, we can co-create the tools necessary to thrive in a networked world—flexible, federated, and designed to help communities, organisations, collectives, and consortia collaborate and grow in meaningful, unexpected, and interconnected ways.
+
+## Why should you care about the Fediverse? 
+The **fediverse** is a growing network of independent yet interconnected digital spaces, which can empower organisations in ways Big Tech cannot. It enables you to own your data, control your algorithms, and connect directly with your community—without the unpredictability of profit-driven platforms.
+
+Unlike proprietary apps like Instagram and Twitter, the fediverse prioritises trust and safety. Organisations can build meaningful connections, collaborate freely, and maintain control over their tools and online spaces. Thanks to standardised protocols like ActivityPub, users can easily export their data and migrate between instances, ensuring you’re never locked in.
+
+In the fediverse, you have options. You can join a vast network with millions of users or create an [island network](https://writer.oliphant.social/oliphant/islands) focused on your community's needs. Whether you integrate into the global network or build your own archipelago, the fediverse offers a refreshing alternative to the dystopic [enshitification](https://en.wikipedia.org/wiki/Enshittification) of Big Tech. 
 
 ## Build once, benefit for ever
+Bonfire’s framework is open source under the [AGPL](https://en.wikipedia.org/wiki/GNU_Affero_General_Public_License) 3.0 license, ensuring that any extension or fork remains open and available to all. This has two important benefits:
 
-The Bonfire framework adopts the **AGPL 3.0 license**, meaning any extensions, updates, or forks must follow the same open-source principles.
+1. **Every solution built for one organisation is available for anyone to use, improve, or adapt.** Whether you’re building a community space, knowledge-sharing platform, or anything else, the tools we create together will contribute to the commons and benefit the broader ecosystem. As organisations work with us, they are not only solving their own challenges but also contributing to the success of others in the fediverse. 
 
-This mainly reduces to two things:
+2. **Everyone benefits from contributions made by others**, so you can incorporate any new features and improvements. This creates a virtuous cycle of innovation and collaboration. We hope this approach encourages like-minded organisations to cooperate, co-design and co-fund features, and work together for collective impact.
 
-1. **All the work we do with any company will be open-source and available for anyone to use.**
+With Mosaic, you’re not just solving your own problems—you’re investing in an ecosystem where everyone wins. You’re helping build a digital commons that empowers both your organisation and others to thrive in an increasingly networked world. 
 
-![](/img/skele.png)
+## A real-world example
+Our first Mosaic project is a great example of the possibilities it offers: an independent cinema archive needed a platform where visitors could explore their extensive film catalog and related information, while community members could contribute to further enrich the archive. With Mosaic, we’re building a federated digital space where members can for example add annotations to specific sections of videos, and visitors can search the collection, follow topics, watch films, and engage with community activities. This transforms it from a static archive into a living, evolving space where users actively contribute to preserving independent cinema, enriching the collection over time. 
 
+All annotations and posts will be federated via the ActivityPub protocol, meaning users on platforms like Mastodon can discover and engage with the archive. And by building a Bonfire extension that integrates with the open-source software already used for film metadata and video hosting , we’re extending their toolset with social functionality tailored to their needs—without requiring them to switch platforms or manually copy information. This project exemplifies how Mosaic empowers organisations to build collaborative, networked digital spaces that foster community and go far beyond simple microblogging.
 
-But because of this:
+## Ready to build with us?
 
-2. **Everyone benefits from improvements made for other Mosaic clients, creating a virtuous cycle of contributions to the commons that empower all Bonfire users.**
+If Mosaic sounds like a solution worth exploring—or if you’re unsure and want to discuss your options—we’d love to chat! **[Let’s schedule a call](https://calendly.com/bonfire-networks/call)** to discuss your specific needs and explore how we can collaborate to create the ideal federated digital space for your community or organisation.
 
-We hope that this approach encourages organizations with similar needs to collaborate, crowdfund features, share costs, and maximize their collective impact. By paying for the Mosaic service, you are also supporting the open source Bonfire framework and all its contributors.
-
-## Build with Us!
-
-If you’re excited about what Mosaic can offer and want to explore how it could serve your organization, we’d love to hear from you. [Let’s schedule a call](https://calendly.com/bonfire-networks/call) to dive deeper into your specific needs and see how we can collaborate to create the ideal federated digital space for your community.
-Our team has limited capacity, as we continue to develop the core Bonfire framework alongside Mosaic projects. So, reach out soon to secure a spot and let’s start building something amazing together!
-
+Our team is balancing core development of the Bonfire framework alongside Mosaic projects, so availability is limited. Reach out soon to secure a spot, and let’s start building something amazing together!
