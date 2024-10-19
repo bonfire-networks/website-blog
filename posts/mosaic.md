@@ -13,7 +13,7 @@ author: Bonfire Builders
 We’re excited to introduce **[Mosaic](https://bonfirenetworks.org/mosaic/)**, a new initiative from the Bonfire team that empowers organisations by creating fully customised, federated digital spaces—built just for them.
 
 ## What is Mosaic?
-Mosaic is a unique service where the Bonfire team collaborates with you to co-design and build a bespoke web presence that serves as a hybrid between a traditional website and a social networking platform—going well beyond merely sharing pictures or short posts. Depending on your specific needs, we will incorporate, build, or customise Bonfire extensions to facilitate all kinds of information sharing, community building, and collaboration. 
+Mosaic is a unique service where the Bonfire team collaborates with you to co-design and build a bespoke online presence that serves as a hybrid between a traditional website and a social networking platform—going well beyond merely sharing pictures or short posts. Depending on your specific needs, we will incorporate, build, or customise Bonfire extensions to facilitate all kinds of information sharing, community building, and collaboration. 
 
 With Mosaic, we build a bespoke software application that you can choose to self-host, ensuring you’re not locked into a monthly subscription with per-user costs and have complete control over your digital space. 
 
