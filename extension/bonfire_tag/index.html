@@ -363,7 +363,7 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">19 Oct 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">26 Oct 2024</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
             
           
@@ -428,6 +428,29 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
 
   </div>
 </footer>
+<div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
+  <div class="flex items-center place-items-center">
+    <div class="flex items-center gap-3">
+      <p class="text-base-content/70">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img 
+          src="/img/b-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="light-img"
+        >
+        <img 
+          src="/img/w-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+    </div>
+  </div>
+</div>
 <div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
   <div class="flex items-center">
     <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
@@ -440,6 +463,33 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
     </nav>
   </div>
 </div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
     <!-- Current page: /extension/bonfire_tag/ -->
   </body>
 </html>
