@@ -4,23 +4,24 @@ title: "Apps"
 description: "Bonfire is not a single app, but comes in many flavours..."
 ---
 
-<div class="bg-base-300">
-  <div class="max-w-screen-xl px-4 xl:px-0 flex flex-col mx-auto py-12">  
-    <h1 class="text-5xl font-bold  ">Apps</h1>
+<div class="">
+  <div class="max-w-screen-lg px-4 xl:px-0 flex flex-col mx-auto py-12">  
+    <h1 class="text-5xl serif-bold">Apps</h1>
     <h2 class="text-xl text-base-content mt-4 max-w-screen-sm">
 Bonfire comes in diverse flavors, it's not a monolithic app. Tailor your experience by choosing the right one for your community, then enhance it further with extensions and themes for a perfect fit.</h2>
   </div>
 </div>
 
-<div class="max-w-screen-xl  px-4 xl:px-0  mx-auto my-12">
+<div class="max-w-screen-lg  px-4 xl:px-0  mx-auto my-12">
   <div class="grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
    {% for item in apps %}
       <a href="/app/{{item.flavour}}">
-      <div class="border border-base-content/30 rounded break-inside-avoid">
-          <img src={{item.icon}} class="object-cover rounded-t mx-auto w-full h-80" />
-          <div class="p-4 h-[140px]">
-            <h2 class="font-bold text-lg truncate word-break">{{item.name}}</h2>
-            <p class="prose-sm mb-2">{{item.description}}</p>
+      <div class="relative col-span-1 border border-base-content/20 rounded-2xl  h-full  p-4 hover:bg-base-content/5 group">
+          <span class="{{ 'badge badge-sm absolute right-4 top-4 badge-success' if 'Release' in item.status else 'badge badge-sm absolute right-3 top-3 badge-info' }} ">{{item.status}}</span>
+          <div style="background-image: url({{item.icon}})" class="bg-no-repeat bg-cover h-[250px] w-full bg-center rounded-xl"></div>
+          <div class="">
+            <h2 class="text-xl mt-8 font-black mb-2">{{item.name}}</h2>
+            <p class="text-base text-base-content/80">{{item.description}}</p>
           </div>
       </div>  
       </a>

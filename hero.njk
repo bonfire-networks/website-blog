@@ -1,14 +1,15 @@
 
 <div class="p-3 lg:mx-auto">
 
-  {# <a class="flex justify-between w-full  px-2 py-1 rounded-full gap-x-2 group text-[#434030] bg-[#e0e1a9] mt-12 max-w-sm mx-auto" href="posts/meet_us_at_the_playground/" role="alert">
-    <p class="flex-1 text-center">
-      🎉 <strong class="font-semibold">The beta is out!</strong> Meet us at the campground...
+<div class="max-w-screen-lg mx-auto">
+  <a class="flex justify-between w-full  px-2 py-1 rounded-full gap-x-2 group text-info bg-info/20 hover:bg-info/40 mt-12 max-w-lg" href="posts/meet_us_at_the_playground/" role="alert">
+    <p class="flex-1 px-2">
+      🎉 <strong class="ml-1 font-bold">The Release Candidate is out!</strong> Read our announcement post
     </p>
-  </a> #}
-
-<div class="min-h-[calc(100vh_-_90px)] flex flex-col">
-  <div class="max-w-screen-xl py-24 mx-auto ">
+  </a>
+</div>
+{# <div class="min-h-[calc(100vh_-_90px)] flex flex-col">
+  <div class="max-w-screen-lg py-24 mx-auto ">
       <div class="flex relative flex-col items-center items-center place-content-center"> 
         
         <h1 class="relative items-center flex gap-2 z-50 font-bold lg:leading-[68px] text-5xl text-center ">The Open Source Toolkit</h1> 
@@ -22,44 +23,54 @@
   </div>
   <div class="bg-[url(/img/bg12.png)] flex-1 rounded-[24px] bg-cover bg-no-repeat bg-center">
   </div>
-</div>
+</div> #}
 
 <div class="">
-<div class="max-w-screen-lg px-4 lg:px-8 py-24 text-center mx-auto">
-  <h1 class="text-3xl lg:text-5xl font-black lg:leading-[60px] text-base-content mb-4  mx-auto">Bonfire helps you build and run your own federated digital space.</h1>
-  <h2 class="text-2xl lg:text-3xl font-normal text-base-content/80  mx-auto">Designed for autonomy, safety, and meaningful interactions, Bonfire enables communities to take control over their features, data, and digital environment – free from algorithmic bias and profit-driven influences.</h2>
+<div class="max-w-screen-lg px-4 lg:px-0 py-16 pt-8 mx-auto">
+  <h1 class="text-3xl serif-bold lg:text-6xl lg:leading-[72px] text-base-content mx-auto">Public <br/> Interest<br/> Social Networks</h1>
+  <h2 class="text-xl max-w-screen-md font-normal text-base-content/90 mt-16">Designed for autonomy, safety, and meaningful interactions, Bonfire enables communities to take control and co-create their features, data, and digital environment – free from algorithmic bias and profit-driven influences.</h2>
 </div>
 
 </div>
 
 
 <div class=" ">
-<div class="max-w-screen-xl pb-12 px-4 mx-auto">
+<div class="max-w-screen-lg pb-12 px-4 lg:px-0 mx-auto">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
 
 
 
-        <a href="https://campground.bonfire.cafe/" target="blank">
+    <a href="https://campground.bonfire.cafe/" target="blank">
       <div class="col-span-1 border border-base-content/20 rounded-2xl  h-full  p-4 hover:bg-base-content/5 group">
         <div style="background-image: url(/img/social.png)" class="bg-no-repeat bg-cover h-[250px] w-full bg-center rounded-xl"></div>
         <div class="">
-        <div class="text-xl mt-8 font-black mb-2 group-hover:underline">Try</div>
-        <div class="text-base text-base-content/80">Test the foundational social network on our staging instance.</div>
+        <div class="text-xl mt-8 font-black mb-2">Try our demo</div>
+        <div class="text-base text-base-content/80">Test the foundational social network on our staging instance. Federation is disabled by default.</div>
         </div>
       </div>
-        </a>
+    </a>
 
-        <a href="https://docs.bonfirenetworks.org" target="blank">
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank">
+      <div class="col-span-1 border border-base-content/20 rounded-2xl  h-full  p-4 hover:bg-base-content/5 group">
+        <div style="background-image: url(/img/build.png)" class="bg-no-repeat bg-cover h-[250px] w-full bg-center rounded-xl"></div>
+        <div class="">
+        <div class="text-xl mt-8 font-black mb-2">Setup a new instance</div>
+        <div class="text-base text-base-content/80">Run bonfire on your server and connect with the rest of the fediverse, or use it as your local-only community.</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://docs.bonfirenetworks.org" target="blank">
       <div class="col-span-1 border border-base-content/20 rounded-2xl  h-full  p-4 hover:bg-base-content/5 group">
         <div style="background-image: url(/img/landing2.png)" class="bg-no-repeat bg-cover h-[250px] w-full bg-center rounded-xl"></div>
         <div class="">
-        <div class="text-xl mt-8 font-black mb-2 group-hover:underline">Develop</div>
-        <div class="text-base text-base-content/80">Start building new apps with the Bonfire Framework.</div>
+        <div class="text-xl mt-8 font-black mb-2">Build an extension</div>
+        <div class="text-base text-base-content/80">Start building new apps or publish a new feature with the Bonfire Framework.</div>
         </div>
       </div>
-        </a>
+    </a>
        
-        <a href="/mosaic" target="blank">
+        {# <a href="/mosaic" target="blank">
       <div class="col-span-1 border border-base-content/20 rounded-2xl h-full p-4 hover:bg-base-content/5 group">
         <div style="background-image: url(/img/build.png)" class="bg-no-repeat bg-cover h-[250px] w-full bg-center rounded-xl"></div>
         <div class="">
@@ -67,7 +78,7 @@
         <div class="text-base text-base-content/80">Leverage upon the bonfire team to co-design your tailored digital space.</div>
         </div>
       </div>
-        </a>
+        </a> #}
       
         {# <a href="/design">
           <div class="col-span-1 border border-base-content/20 rounded-2xl  h-full  p-12 hover:bg-base-content/5 group">

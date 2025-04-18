@@ -16,7 +16,7 @@ Imagine a digital landscape where your community can exchange ideas, collaborate
  🌟&nbsp; Imagine a digital space where...
 
 
- <div class="mx-auto grid max-w-screen-xl mt-8 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
+ <div class="mx-auto grid max-w-screen-lg mt-8 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
   <div class="card border-base-content/30 card-compact border text-left">
     <div class="card-body">
       <div class="flex text-base-content/100 text-base font-bold items-center gap-2">

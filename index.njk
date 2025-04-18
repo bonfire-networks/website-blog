@@ -6,15 +6,15 @@ eleventyNavigation:
 ---
 
 {% include "hero.njk" %}
-{# {% include "general_intro.njk" %} #}
+{% include "general_intro.njk" %}
 {% include "features.njk" %}
 {# {% include "testimonials.njk" %} #}
 
 <div class="">
-    <div class="max-w-screen-xl px-4 lg:mx-auto my-40">
+    <div class="max-w-screen-lg px-4 lg:mx-auto my-40">
       <div class="">
         <div class="h-[1px] my-12  bg-base-content/30  mx-auto"></div>
-        <div class="text-5xl leading-[70px] font-semibold mt-4">Latest news</div>
+        <div class="text-5xl serif-bold mt-4">Latest news</div>
         <a href="/blog" class="mb-12  btn mt-4 btn-outline !border !border-base-content/30 rounded-full normal-case">View all articles</a>
       </div>
       {% set postslist = collections.posts  %}

@@ -1,15 +1,13 @@
-<div 
-  
-    class="max-w-screen-xl my-24 px-4 lg:mx-auto">
-    <div class="text-3xl lg:text-5xl font-black lg:leading-[60px] text-base-content text-center mt-4  mx-auto">Digital spaces where you can <br /> <span> feel at home</span></div>
+<div class="max-w-screen-lg mx-auto my-12 px-4 lg:px-0">
+    {# <div class="text-3xl serif-bold  text-base-content mt-4 mx-auto">Digital spaces where you can safely feel at home</div> #}
    
 
-<div class="flex gap-2 flex-col" role="tabpanels">
+<div class="flex gap-6 flex-col" role="tabpanels">
     {# x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid border border-base-content/20 rounded-2xl  h-full p-2  lg:p-12 grid-cols-4 items-center  mt-16">
+    class="grid border border-base-content/20 rounded-2xl  h-full p-2 grid-cols-4 items-center  mt-8">
     <div class="lg:col-span-2 col-span-4 lg:p-12 lg:pb-6 pb-2">
       <div class="text-primary font-semibold font-mono uppercase mb-3">Configure</div>
       <div class="font-bold max-w-screen-sm lg:leading-[40px] text-2xl lg:text-3xl">Effortlessly configure your favourite features, settings, and theme.</div>
@@ -25,7 +23,7 @@
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid border border-base-content/20 rounded-2xl  h-full  p-2 lg:p-12 grid-cols-4 items-center">
+    class="grid border border-base-content/20 rounded-2xl h-full p-2 grid-cols-4 items-center">
     <div class="lg:col-span-2 col-span-4">
       <div style="background-image: url(/img/conn.png)" class="bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
     </div>
@@ -42,7 +40,7 @@
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid border border-base-content/20 rounded-2xl  h-full  p-2 lg:p-12 grid-cols-4 items-center">
+    class="grid border border-base-content/20 rounded-2xl  h-full  p-2 grid-cols-4 items-center">
     <div class="lg:col-span-2 col-span-4 lg:p-12 lg:pb-6 pb-2">
       <div class="text-primary font-semibold font-mono uppercase mb-3">Moderate</div>
       <div class="font-bold max-w-screen-sm lg:leading-[40px] text-2xl lg:text-3xl">Moderate your network: safe, empowered, and inclusive</div>
@@ -59,7 +57,7 @@
     :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
   <section 
     role="tabpanel"
-    class="grid border border-base-content/20 rounded-2xl  h-full  p-2 lg:p-12 grid-cols-4 items-center">
+    class="grid border border-base-content/20 rounded-2xl h-full p-2 grid-cols-4 items-center">
     <div class="lg:col-span-2 col-span-4">
       <div style="background-image: url(/img/fed.png)" class="bg-cover rounded-2xl lg:h-[400px] h-[200px] w-full"></div>
     </div>
@@ -73,13 +71,19 @@
   </section>
 </div>
 
-  <div class="flex mt-8 items-center place-content-center">
-  <a class="btn btn-primary btn-wide" href="/start">
-    <span>Get Bonfire </span>
+  <div class="flex mt-8 gap-3 items-center place-content-center">
+    <a class="btn btn-primary" href="/start">
+    <span>Install Bonfire</span>
+    <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
+    <a class="btn btn-primary" href="/start">
+    <span>Get help</span>
+    <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
+    <a class="btn btn-primary" href="/start">
+    <span>Learn about Mosaic </span>
     <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
   </div>
-
-<div class="max-w-screen-xl my-24 mx-4 lg:mx-auto">
+{# 
+<div class="max-w-screen-lg my-24 mx-4 lg:mx-auto">
 
   <div class="text-5xl font-black leading-[60px] text-base-content text-center mt-4  mx-auto">Build social apps with ease</div>
   <div class="text-2xl font-normal text-base-content/80  mx-auto text-center max-w-screen-md mt-4">The Bonfire toolkit provides essential modules for crafting complex social networking apps, tailored to communities' needs – all with significantly less time and resources.</div>
@@ -124,19 +128,6 @@
             <div class="font-bold text-lg ">Moderation</div>
           </div>
         </div>
-        
-        {# <div class="border flex flex-col border-base-content/20 rounded-2xl h-full p-12 ">
-          <div class="flex-1">
-          <div class="p-4 flex items-center place-content-center bg-base-content/10 shrink-0 rounded-box w-16 h-16">
-            <svg class="w-6 h-6 text-base-content" xmlns="http://www.w3.org/2000/svg" width="640" height="512" viewBox="0 0 640 512"><path fill="currentColor" d="M320 96v320a160.019 160.019 0 0 0 113.138-46.862a160.019 160.019 0 0 0 34.683-174.367a160.006 160.006 0 0 0-86.591-86.592A160.019 160.019 0 0 0 320 96M0 256l160.002 160l160.001-160L160.002 96zm480 0a160 160 0 0 0 160 160V96a160.002 160.002 0 0 0-160 160"/></svg>
-          </div>
-          </div>
-          <div class="mt-6">
-            <div class="font-bold text-lg ">Topics & Groups</div>
-          </div>
-        </div> #}
-        
-
         
         <div class="border flex flex-col border-base-content/20 rounded-2xl h-full p-12 ">
           <div class="flex-1">
@@ -204,14 +195,14 @@
     <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
   </div>
   </div>
-</div>
+</div> #}
 
-<div class="max-w-screen-xl my-40 px-4 lg:mx-auto">
+<div class="max-w-screen-lg my-40 px-4 lg:mx-auto">
   {# <div class="h-[1px] my-12  bg-base-content/30  mx-auto"></div> #}
-  <div class="text-5xl leading-[70px] text-center font-semibold mt-4">For communities, by communities</div>
+  <div class="text-5xl leading-[70px] text-center serif-bold mt-4">By people, for people</div>
   <div class="items-center flex place-content-center"><a href="https://indieweb.social/@bonfire" class="btn mt-4  btn-outline !border !border-base-content/30 rounded-full normal-case">Follow @bonfire</a></div>
 
-  <div class="mx-auto grid max-w-screen-xl mt-24 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
+  <div class="mx-auto grid max-w-screen-lg mt-24 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
   <div class="card border-base-content/10 card-compact border text-left">
     <div class="card-body">
       <div class="flex items-center gap-2">
@@ -333,6 +324,7 @@
     </div> 
   </div>
 
+</div>
 </div>
 </div>
 {# </div> #}

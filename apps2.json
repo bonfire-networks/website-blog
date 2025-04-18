@@ -1,21 +1,21 @@
  [
     {
-        "name": "Bonfire Social",
-        "flavour": "social",
+        "name": "Bonfire Classic",
+        "flavour": "classic",
         "contribute": true,
         "version": "0.9.26",
-        "status": "Release Candidate",
+        "status": "Beta",
         "pad": "",
         "group": "",
         "preview": "https://campground.bonfire.cafe",
-        "long_description": "Social is a federated microblogging platform, prioritizing user empowerment and meaningful discussions through features like circles and boundaries for tailored privacy and moderation. It stands out with customizable settings designed to counteract common 'dark patterns', such as disabling infinite scrolling and not displaying follow or reaction counts. This approach fosters a healthier, more controlled digital experience, particularly suitable for users seeking a solid, minimal, and accessible entry point to the fediverse.",
+        "long_description": "Bonfire Classic is a federated microblogging platform, prioritizing user empowerment and meaningful discussions through features like circles and boundaries for tailored privacy and moderation. It stands out with customizable settings designed to counteract common 'dark patterns', such as disabling infinite scrolling and not displaying follow or reaction counts. This approach fosters a healthier, more controlled digital experience, particularly suitable for users seeking a solid, minimal, and accessible entry point to the fediverse.",
         "description": "A customizable federated social network for following people, making posts, engaging in discussions, and more.",
         "icon": "/img/classic_sc.png",
         "screenshot": "/img/classic_sc.png",
         "license": "AGPL",
-        "repository": "https://github.com/bonfire-networks/social",
-        "repo_name": "social",
-        "readme": "social/main/",
+        "repository": "https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/classic",
+        "repo_name": "bonfire-app/flavours/classic",
+        "readme": "bonfire-app/main/flavours/classic",
         "supported_by": [
             {
                 "name": "NlNet",
@@ -72,51 +72,6 @@
 
     },
     {
-        "name": "Open Science",
-        "flavour": "open-science",
-        "contribute": true,
-        "pad": "https://notes.bonfire.cafe/niboe-use-case",
-        "group": {
-            "name": "@open_science@a.gup.pe",
-            "link": "https://a.gup.pe/u/open_science"
-        },
-        "communities": [
-            {"name": "Niboe","link": "https://niboe.info"}, 
-            {"name": "SciBeh","link": "https://www.scibeh.org/"}, 
-            {"name": "Layla Axul, UNAM", "link": "https://biogarabatos.blogspot.com/" }
-        ],
-        "status": "Release Candidate",
-        "description": "Fostering open and collaboration academic communities through federated protocols.",
-        "long_description": "A widespread adoption of federated protocols within academia would enhance open-science implementations and democratize knowledge production and dissemination processes by actively involving non-academic communities as well. Through a co-designing process, scientists, researchers, and activists are uniting to craft implementations in the open. This collaborative effort ensures that the developed features meet the meticulous standards of academic tools while leveraging the user-friendly experience of social networks. The ultimate goal is to spark meaningful conversations, broaden the accessibility of scientific discussions to a wider audience, and foster a vibrant, inclusive, and interconnected global knowledge community.",
-        "icon": "/img/hwd1.png",
-        "screenshot": "/img/hwd1.png",
-        "license": "AGPL",
-        "repository": "https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/open-science",
-        "repo_name": "open-science",
-        "readme": "bonfire-app/main/flavours/open-science",
-        "supported_by": [],
-        "developed_by": [
-            {
-                "name": "Bonfire",
-                "link": "https://bonfirenetworks.org"
-            }
-        ],
-        "extensions": [
-            {
-                "name": "Social",
-                "repo_name": "social"
-            },
-            {
-                "name": "Open.Id",
-                "repo_name": "bonfire_open_id"
-            },
-            {
-                "name": "Bonfire.Open.Science",
-                "repo_name": "bonfire_open_science"
-            }
-        ]
-    },
-    {
         "name": "Bonfire Community",
         "flavour": "community",
         "contribute": true,
@@ -130,7 +85,7 @@
             {"name": "Graviton Collective", "link": ""},
             {"name": "WeDistribute", "link": "https://wedistribute.org/"}
         ],
-        "status": "In development",
+        "status": "Coming soon",
         "description": "Federated digital spaces tailored for communities, enabling organizing around open and private groups, and topic-focused discussions",
         "long_description":  "Bonfire Community app is crafted for groups seeking expanded online interaction. It facilitates coordinated activities, topical discussions, and more nuanced governance structures. Key features include 'Groups' for flexible discussions and 'Topics' for organized conversation, promoting clarity and focus in community, along with the flexibility to set specific visibility and permission levels.",
         "icon": "/img/groups1.png",
@@ -153,10 +108,6 @@
         ],
         "extensions": [
             {
-                "name": "Social",
-                "repo_name": "social"
-            },
-            {
                 "name": "UI.Groups",
                 "repo_name": "bonfire_ui_groups"
             },
@@ -171,48 +122,38 @@
             {
                 "name": "Geolocate",
                 "repo_name": "bonfire_geolocate"
-            }
-        ]
-    },
-    {
-        "name": "Federated Archives",
-        "flavour": "federated_archives",
-        "contribute": false,
-        "pad": "",
-        "group": "",
-        "communities": [
-            {"name": "Matango", "link": "https://matango.tv/"},
-            {"name": "Bellaria", "link": "https://www.bellariafilmfestival.org/"},
-            {"name": "Archivio del Cinema Indipendente", "link": "https://archivioperilcinemaindipendenteitaliano.it/"}
-        ],
-        "status": "Beta",
-        "description": "Federated digital spaces tailored for communities, enabling organizing around open and private groups, and topic-focused discussions",
-        "long_description":  "Bonfire Community app is crafted for groups seeking expanded online interaction. It facilitates coordinated activities, topical discussions, and more nuanced governance structures. Key features include 'Groups' for flexible discussions and 'Topics' for organized conversation, promoting clarity and focus in community, along with the flexibility to set specific visibility and permission levels.",
-        "icon": "/img/federated_archives.png",
-        "screenshot": "/img/federated_archives.png",
-        "license": "AGPL",
-        "repository": "https://github.com/bonfire-networks/federated_archives",
-        "repo_name": "federated_archives",
-        "readme": "federated_archives",
-        "supported_by": [],
-        "developed_by": [
+            },
             {
-                "name": "Bonfire",
-                "link": "https://bonfirenetworks.org"
-            }
-        ],
-        "extensions": [
+                "name": "Common",
+                "repo_name": "bonfire_common"
+            },
+            {
+                "name": "Me",
+                "repo_name": "bonfire_me"
+            },
             {
                 "name": "Social",
-                "repo_name": "social"
+                "repo_name": "bonfire_social"
             },
             {
-                "name": "Open.Id",
-                "repo_name": "bonfire_open_id"
+                "name": "UI.Social",
+                "repo_name": "bonfire_ui_social"
             },
             {
-                "name": "Bonfire.Pandora",
-                "repo_name": "bonfire_pandora"
+                "name": "Boundaries",
+                "repo_name": "bonfire_boundaries"
+            },
+            {
+                "name": "Federate:ActivityPub",
+                "repo_name": "bonfire_federate_activitypub"
+            },
+            {
+                "name": "Search",
+                "repo_name": "bonfire_search"
+            },
+            {
+                "name": "Files",
+                "repo_name": "bonfire_files"
             }
         ]
     },
@@ -395,6 +336,36 @@
                 "repo_name": "bonfire_api_graphql"
             }
         ]
+    },
+    {
+        "name": "Open Science",
+        "flavour": "open-science",
+        "contribute": true,
+        "pad": "https://notes.bonfire.cafe/niboe-use-case",
+        "group": {
+            "name": "@open_science@a.gup.pe",
+            "link": "https://a.gup.pe/u/open_science"
+        },
+        "communities": [
+            {"name": "Niboe","link": "https://niboe.info"}, 
+            {"name": "Layla Axul, UNAM", "link": "https://biogarabatos.blogspot.com/" }
+        ],
+        "status": "Planning",
+        "description": "Fostering open and collaboration academic communities through federated protocols.",
+        "long_description": "A widespread adoption of federated protocols within academia would enhance open-science implementations and democratize knowledge production and dissemination processes by actively involving non-academic communities as well. Through a co-designing process, scientists, researchers, and activists are uniting to craft implementations in the open. This collaborative effort ensures that the developed features meet the meticulous standards of academic tools while leveraging the user-friendly experience of social networks. The ultimate goal is to spark meaningful conversations, broaden the accessibility of scientific discussions to a wider audience, and foster a vibrant, inclusive, and interconnected global knowledge community.",
+        "icon": "/img/hwd1.png",
+        "screenshot": "/img/hwd1.png",
+        "license": "AGPL",
+        "repository": "https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/open-science",
+        "repo_name": "open-science",
+        "readme": "bonfire-app/main/flavours/open-science",
+        "supported_by": [],
+        "developed_by": [
+            {
+                "name": "Bonfire",
+                "link": "https://bonfirenetworks.org"
+            }
+        ],
+        "extensions": []
     }
-    
 ]

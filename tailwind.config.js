@@ -26,7 +26,8 @@ module.exports = {
           ...require("daisyui/src/theming/themes")["retro"],
            "base-100": "#fdfdfc",
           "base-200": "#f1f1ef",
-          "primary": "#fde047"
+          "primary": "#fde047",
+          "base-content": "#fff",
         }
       },
       {

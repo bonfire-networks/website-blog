@@ -10,8 +10,8 @@
       </div>
     </div> #}
 
-    <div class="max-w-screen-xl mx-auto">
-      <header class="relative z-30 lg:px-8 mx-auto navbar">
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
         <div class="navbar-start w-[30%]">
           <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -62,18 +62,18 @@
                       <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
-                <li>
+                {# <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
                       <div class="font-bold">Themes</div>
                       <div class="font-light -mt-1.5  text-sm    font-light">Personalize Bonfire with your preferred colors and styling</div>
                   </a>
-                </li>
-                  <li>
+                </li> #}
+                  {# <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
                       <div class="font-bold">Pilots</div>
                       <div class="font-light -mt-1.5  text-sm    font-light">Some of the communities we are working with</div>
                   </a>
-                </li>
+                </li> #}
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
                       <div class="font-bold">How to participate</div>
@@ -118,12 +118,12 @@
                     <div class="text-sm   ">See what's coming next</div>
                   </a>
                 </li>  #}
-                <li>
+                {# <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
                     <div class="font-semibold">Changelog</div>
                     <div class="font-light text-sm    -mt-1.5">Latest updates and improvements</div>
-                  </a></li>
-                <li>
+                  </a></li>#}
+                <li> 
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
                     <div class="font-semibold">Get the code</div>
                     <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
@@ -216,11 +216,11 @@
           </a>
           </li>
 
-          <li>
+          {# <li>
             <a href="/themes" class="{{ 'rounded underline decoration-primary decoration-2 text-info  underline-offset-8' if '/themes' in page.url }} ">
             <span class="text-base font-regular">Themes</span>
           </a>
-          </li>
+          </li> #}
 
 
             <li>
@@ -229,11 +229,11 @@
           </a>
           </li>
 
-          <li>
+          {# <li>
             <a href="/courses" class="{{ 'rounded underline decoration-primary decoration-2 text-info  underline-offset-8' if '/courses' in page.url }} ">
             <span class="text-base font-regular">courses</span>
           </a>
-          </li>
+          </li> #}
           {# <li>
             <a href="/roadmap" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/docs' in page.url }} ">
             <span class="text-base font-regular">Roadmap</span>
@@ -244,12 +244,12 @@
             <span class="text-base font-regular">Features</span>
           </a>
           </li> #}
-          <li>
+          {# <li>
             <a href="/pilots" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/pilots' in page.url }} ">
             <span class="text-base font-regular">Pilots</span>
           </a>
           </li>
-          
+           #}
           <li>
             <a href="/faq" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/faq' in page.url }} ">
             <span class="text-base font-regular">FAQs</span>
@@ -267,7 +267,7 @@
           </li>
 
           <li>
-            <a href="https://github.com/bonfire-networks/bonfire-app" class="{{ 'rounded underline decoration-primary decoration-2 underline-offset-8' if '/contribute' in page.url }} ">
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
               <span class="text-base font-regular">Get the code</span>
             </a>
           </li>

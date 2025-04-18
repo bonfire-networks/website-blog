@@ -24,13 +24,13 @@ permalink: "app/{{apps.flavour}}/"
   </ul>
 </div>
 <h1 class="text-3xl font-bold text-base-content  ">{{apps.name}}</h1>
-<div class="grid mt-4 grid-cols-5  items-start gap-12">
+<div class="grid mt-4 grid-cols-5  items-start gap-4">
   <div class="col-span-5 order-last lg:order-first lg:col-span-3">
       <img src="{{apps.screenshot}}" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
       <div class="prose mt-6 max-w-full">{{apps.long_description}}</div>
   </div>
-  <div class="col-span-5 lg:col-span-2 gap-4 lg:gap-12 flex flex-col ">
+  <div class="col-span-5 lg:col-span-2 gap-4 flex flex-col ">
     <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
       <div class="prose">{{apps.description}}</div>
       {# <div class="flex  items-center gap-3">
@@ -54,11 +54,11 @@ permalink: "app/{{apps.flavour}}/"
     <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
       <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
         <div class="pt-2 flex justify-between items-center text-sm">
-          <span class="font-light">Developed by</span>  
+          <span class="font-light">Maintaned by</span>  
           <div class="flex items-center gap-3">
             {% for item in apps.developed_by %}
               <a href="{{item.link}}" target="_blank">
-                <span class="font-semibold text-lg link">
+                <span class="font-semibold link">
                   {{item.name}}
                 </span>
               </a>
@@ -96,7 +96,7 @@ permalink: "app/{{apps.flavour}}/"
           <div class="flex items-center gap-3">
              {% for item in apps.supported_by %}
               <a href="{{item.link}}" target="_blank">
-                <span class="font-semibold text-lg link">
+                <span class="font-semibold link">
                 {{item.name}}
               </span></a>
               {% endfor %}
@@ -113,10 +113,10 @@ permalink: "app/{{apps.flavour}}/"
 
         <div class="">
           <span class="font-medium text-2xl">Extensions included</span>  
-          <div class="flex flex-wrap items-center gap-3 mt-4">
+          <div class="flex flex-wrap items-center gap-2 mt-4">
              {% for item in apps.extensions %}
               <a href="/extension/{{item.repo_name}}">
-                <span class="link-primary link-hover text-sm">
+                <span class="badge badge-accent badge-sm">
                 {{item.name}}
               </span>
               </a>
@@ -143,7 +143,7 @@ permalink: "app/{{apps.flavour}}/"
 
 
 <!-- Tabs -->
-<div
+{# <div
 id="main"
     x-data="{
         selectedId: null,
@@ -164,7 +164,6 @@ id="main"
     x-id="['tab']"
     class=""
 >
-    <!-- Tab List -->
     <ul
         x-ref="tablist"
         @keydown.right.prevent.stop="$focus.wrap().next()"
@@ -176,7 +175,6 @@ id="main"
         role="tablist"
         class="-mb-px  mt-6 flex items-stretch"
     >
-        <!-- Tab -->
         <li>
             <button
                 :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
@@ -208,9 +206,7 @@ id="main"
         </li>
     </ul>
 
-    <!-- Panels -->
     <div role="tabpanels" class="rounded-b-md border border-base-content/30 bg-base-100">
-        <!-- Panel -->
         <section
             x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
             :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
@@ -230,8 +226,10 @@ id="main"
            {{ url | remoteMarkdown | safe }}
         </section>
     </div>
-</div>
+</div> #}
 
+
+ <section class="mt-20">{% include ["_includes/flavours/", apps.flavour, ".njk"] | join %}</section>
 
 
 </div>
