@@ -1,4 +1,4 @@
-# Code of Conduct - v0.3
+# Code of Conduct - v0.4
 
 ## Introduction
 
@@ -133,11 +133,17 @@ We are intolerant of intolerance, harassment, exploitation and domination. This 
 
 * Abuse of power relations, for example, role as an admin or moderator; privileged access or control over infrastructure or tools; technical knowledge or skills; privilege, ability or seniority, etc. 
 
-* Deliberate misgendering or mislabelling. This includes deadnaming or persistently using a pronoun that does not correctly reflect a person’s gender identity. We address people by their name/pronouns when provided, and otherwise don't make assumptions and use their username or handle. 
+* Intentionally spreading misinformation or disinformation that undermines safety, equity or consent.
 
 * Deliberate intimidation or bullying.
 
 * Violence, incitement or threats of violence (both physical and psychological) towards another participant, including encouraging someone to engage in self-harm.
+
+* Denial or attempting to cast doubt on historic or ongoing acts of genocide.
+
+* Displaying symbols, slogans or language associated with fascist, white supremacist, chauvinist or authoritarian movements.
+
+* Spam, such as repeatedly promoting products or services with no relevance to our ecosystem or values (spam), such as advertising or promoting for-profit companies or proprietary products or services, whether or not the company is involved. This does not include personal or commons-based projects (such as open source communities), cooperatives or non-profits. 
 
 * Pattern of inappropriate social contact, such as assuming inappropriate levels of intimacy with others.
 
@@ -145,23 +151,23 @@ We are intolerant of intolerance, harassment, exploitation and domination. This 
 
 * Inciting others to target an individual (also known as “dogpiling”);
 
+* Stalking or following. This includes virtual following (locating someone in other web spaces in order to continue unwelcome contact).
+
+* Sharing of non-harassing private communication (not including conversation that leads into harassing statements) or participants’ private personal information.
+
+* Deliberate “outing” of any aspect of a person’s identity without their consent (except when necessary to protect from intentional abuse).
+
+* Deliberate misgendering or mislabelling. This includes deadnaming or persistently using a pronoun that does not correctly reflect a person’s gender identity. We address people by their name/pronouns when provided, and otherwise don't make assumptions and use their username or handle. 
+
 * Physical contact and simulated physical contact (eg, textual descriptions like “kiss” or “backrub”) without consent or after a request to stop. 
 
 * Unwelcome sexual attention, including gratuitous or off-topic sexual images or behaviour.
 
-* Stalking or following. This includes virtual following (locating someone in other web spaces in order to continue unwelcome contact).
+* Non-consensual photography or recording, including logging online activity for harassment purposes (or reading logs one has access to), doxxing, or screenshotting to carry out acts of aggression or trolling. This includes non-consensual pornography and sexualized images of people who did not consent to their liking being shared.
 
-* Non-consensual photography or recording, including logging online activity for harassment purposes (or reading logs one has access to), doxxing, or screenshotting to carry out acts of aggression or trolling.
+* Promoting pedophilia or content involving the exploitation of minors in any form.
 
-* Deliberate “outing” of any aspect of a person’s identity without their consent (except when necessary to protect from intentional abuse).
-
-* Sharing of non-harassing private communication (not including conversation that leads into harassing statements) or participants’ private personal information.
-
-* Advertising or repeatedly promoting for-profit companies or proprietary products or services, whether or not the company is involved. This does not include personal or commons-based projects (such as open source communities), cooperatives or non-profits. 
-
-* Sharing NSFW or otherwise risky content without a content warning (use common sense). 
-
-* Threatening the physical, legal or ethical integrity of the community or shared infrastructure with malicious software or behaviour (spamming, DDoS, posting illegal content, etc).
+* Anything that threatens the physical, legal or ethical integrity of the community or shared infrastructure with malicious software or behaviour (e.g. spamming, DDoS, posting illegal content, etc).
 
 
 ### 5. Non-harassment
@@ -179,6 +185,21 @@ Our community prioritises marginalised people’s safety over privileged people�
 * Communicating in a ‘tone’ one doesn’t find congenial.
 
 
+#### 5.1 Content Warnings and Considerate Posting
+
+Without policing every post or conversation, we encourage all participants to be aware that others may be navigating trauma, neurodivergence, or sensory sensitivity.
+
+We therefore ask that you use Content Warnings (CW) where available and appropriate — especially when sharing:
+- Visual depictions of nudity
+- Graphic injury, violence, blood or medical procedures
+- Explicit depictions or detailed discussion of sex or drug use
+- Mentions of suicide, self-harm, abuse, rape or sexual assault not tied to immediate safety needs
+- Media spoilers (within reason)
+- Other NSFW or otherwise risky content (use common sense). 
+
+If a post is reported and does not contain a relevant CW, moderators may choose to add one and notify the author. Continued posting of sensitive content without CWs may result in moderation action. Let’s care for each other by making space for informed consent in our feeds. 
+
+
 ### 6. Reporting issues
 
 All reports will be handled with discretion, and all people involved will be treated with respect. 
@@ -191,37 +212,52 @@ In addition to the points specified in the [Setting Boundaries section](#setting
 - Links and/or screenshots to the relevant conversation or content
 - Any additional information or context that may be helpful
 
+Please keep in mind:
+- Reports that include links, screenshots, or context are much easier to assess.
+- While all good-faith reports are reviewed, not all result in the specific outcome requested.
+- You always have the right to mute or block others where needed, and these are valid forms of boundary-setting.
+
 In order to protect moderators from abuse and burnout, they reserve the right to reject any report believed to have been made in bad faith. Reports intended to silence legitimate criticism may be deleted without response. 
 
 Moderators will not name harassment victims without their affirmative consent, and will respect confidentiality requests for the purpose of protecting victims of abuse. At their discretion, they may publicly name a person about whom they've received harassment complaints, or privately warn third parties about them, if they believe that doing so will increase the safety of the community or the general public. 
+
+On the fediverse, we sometimes receive reports from users of other instances. When these reports are made, the identity of the reporter is often anonymous. In these cases, we may not be able to follow up directly with the person who made the report.
+
 
 ### 7. Violations of community guidelines
 
 First and foremost, these guidelines make it clear that **it is necessary for communities to self-regulate**. This means that asking people to follow community guidelines is not itself a violation of the spirit or intent of our community. It is important to make this clear, because trolls often attempt to put this into question. Subsequently the following agreements bind this document:
 
-  1. All participants of the community are expected to abide by behavioural norms.
-  2. It is okay to draw boundaries against those who are impeding a space’s community guidelines.
-  3. All communities should be able to create and enforce guidelines. 
+1. All participants of the community are expected to abide by behavioural norms.
+2. It is okay to draw boundaries against those who are impeding a space’s community guidelines.
+3. All communities should be able to create and enforce guidelines. 
 
 In the case that individuals do not adhere to the community guidelines, community members and moderators should be empowered to engage in the following tactics: 
 
-  * Protect the victim(s) and implement measures needed to ensure their safety.
-  * Confront the individuals involved. Participants asked to stop any harassing behavior are expected to stop immediately. 
-  * Talk with people involved or who witnessed the issue.
-  * Remove, edit, or block posts, comments, commits, wiki edits, issues, and other contributions, contributors or communities that do not align with this Code of Conduct, and communicate reasons for those decisions when and where appropriate. 
-  * Enlist support of other community moderators (power in numbers)
-  * Call out individuals to stop or change specific behaviour(s), privately and/or publicly. 
-  * Start by assuming good intent (i.e. that the person was just careless or had not realised). The moderator(s) will check that they understand why it is considered harassment or otherwise inappropriate. If they do not understand why, but they wish to understand, they will receive an explanation if the moderator(s) have the time, or they will be pointed in the direction of more information. 
+* Protect the victim(s) and implement measures needed to ensure their safety.
+* Confront the individuals involved. Participants asked to stop any harassing behavior are expected to stop immediately. 
+* Talk with people involved or who witnessed the issue.
+* Remove, edit, or block posts, comments, commits, wiki edits, issues, and other contributions, contributors or communities that do not align with this Code of Conduct, and communicate reasons for those decisions when and where appropriate. 
+* Enlist support of other community moderators (power in numbers)
+* Call out individuals to stop or change specific behaviour(s), privately and/or publicly. 
+* Start by assuming good intent (i.e. that the person was just careless or had not realised). The moderator(s) will check that they understand why it is considered harassment or otherwise inappropriate. If they do not understand why, but they wish to understand, they will receive an explanation if the moderator(s) have the time, or they will be pointed in the direction of more information. 
 
 > Whenever a participant has made a mistake, we expect them to take responsibility for it. If someone has been harmed or offended, it is our responsibility to listen carefully and respectfully, and do our best to right the wrong. If there is a need for education, the person causing offense can ask for more information. They will either be given an explanation or be referred to links and educative content if available. If relevant content is not yet available, or if nobody in the community has the ability or willingness to help, they may need to do their own research.
 
-  * The individuals may be given a chance to apologise to the person(s) they targeted, or make other reparations as appropriate, within a specified time frame. 
-  * If an understanding and positive outcome cannot be reached, one of these steps may be taken, temporarily or permanently:
-    * Suspension of participation privileges.
-    * Removal from the specific space (block the person from one group, but not all spaces). 
-    * Removal from the community (all spaces).
+* The individuals may be given a chance to apologise to the person(s) they targeted, or make other reparations as appropriate, within a specified time frame. 
+* If an understanding and positive outcome cannot be reached, one of these steps may be taken, temporarily or permanently:
+  * Suspension of participation privileges.
+  * Removal from the specific space (block the person from one group, but not all spaces). 
+  * Removal from the community (all spaces).
 
 With this, we have a clear expectation about what we consider to be a reasonable understanding to approach potential conflict, and to quickly settle those disputes peacefully.
+
+
+#### 7.1 Boundary Violations and Block Evasion
+
+Evading a block or mute, continuing to reply to someone who has clearly asked for space, or using alternate accounts to bypass boundaries is considered a form of harassment.
+
+We uphold the importance of consent in conversation, and repeated disregard for others’ limits — even under the guise of “debate” or “free speech” — is not aligned with our values. We are committed to open dialogue, but not at the cost of safety or dignity. Our goal is a low barrier to entry and a high standard of conduct. Let’s help each other learn how to meet that bar. 
 
 
 ## Appendix
@@ -246,6 +282,16 @@ This code of conduct outlines our expectations for participants within our share
 
 These expectations include the idea that anyone who violates this code of conduct may face restrictions, including temporary or permanent banning from community spaces.
 
+### Accessibility and Multilingual Support
+
+To help make Bonfire a welcoming space for all participants, we encourage the use of:
+
+- Alt text and image descriptions for any visual content.
+- Thoughtful use of emojis or decorative characters — avoiding those that disrupt screen reader functionality or comprehension.
+
+Bonfire spaces are multilingual and decentralized. While English, (along with French, Italian, and Spanish) may be the most commonly used language so far, many participants speak other languages. Where possible, we will seek support from multilingual contributors to bridge understanding, and we may also use translation tools to facilitate communication.
+
+Communication is not just what we say — it’s how we ensure others can receive it. Accessibility is a community value. 
 
 ### Extra Resources
 
@@ -286,5 +332,6 @@ We acknowledge the many communities and projects that established code of conduc
 - The authors of [Designing Care and Commoning into a Code of Conduct](https://dl.designresearchsociety.org/nordes/nordes2019/exploratorypapers/10/), who put a lot of care into their community guidelines, which were in large part copied for this document.
 - [Geek Feminism's Community Policy](https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/#:~:text=The%20Geek%20Feminism%20(GF)%20community,of%20participants%20in%20any%20form.) 
 - [Enspiral's handbook](https://handbook.enspiral.com)
-- [Sunbeam City Co-operative](https://wiki.sunbeam.city/doku.php?id=code_of_conduct)
+- [Sunbeam City co-operative](https://wiki.sunbeam.city/doku.php?id=code_of_conduct)
+- [kolektiva.social](https://kolektiva.social/about)
 - [Contributor Covenant](https://www.contributor-covenant.org)
