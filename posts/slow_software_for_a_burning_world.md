@@ -1,134 +1,113 @@
 ---
-title: "🐚 Slow Software for a Burning World"
+title: "🐌 Slow Software for a Burning World 🔥"
 description: "Bonfire 1.0 is nearly ready—but we’re not rushing the launch. This isn’t about shipping fast. It’s about building with care."
 date: 2025-04-20
 tags: [announcement]
 image: /img/caracol.jpg
 layout: layouts/post.njk
-author: Bonfire Builders
+author: Bonfire maintainers circle
 --- 
 
-<!-- # 🐚 **Slow Software for a Burning World** 🔥 -->
+#### _A reflection on Bonfire’s journey to 1.0 and an open invitation to shape what comes next._
 
-Bonfire 1.0 is nearly ready—but we’re not rushing the launch. This isn’t about shipping fast. It’s about building with care.
+As we approach the release of Bonfire 1.0, this isn’t your typical launch announcement. Instead, it’s a moment to reflect on **how** we’ve built Bonfire, a roadmap of values, methods, and intentions – and an invitation to define what comes next.
 
-In a world of “move fast and break things”, we’ve chosen a different tempo. We move slowly — and build what lasts. 
+> _You can [follow Bonfire on the fediverse](https://indieweb.social/@bonfire) for updates on the release, including highlights of unique features we’ll share over the next few days._
 
-## 💰 **Profit over people: at what cost?**
+In a world of “move fast and break things,” we’ve chosen a different tempo — one rooted in care, deep listening, and collective stewardship. Slow software means building for long-term resilience and meaningful participation, rather than chasing novelty, speed, or scale. 
 
-In the centralized, for-profit model, decisions are fast but unaccountable. Rules shift quietly, power is hoarded, and systems are shrouded in secrecy - and what gets broken as a result?
+## 🏦 **Profit over people: at what cost?**
 
-- **Trust:** Algorithms are bred to addict or manipulate rather than to inform or empower.
-- **Communities:** Platforms optimize for engagement and divisiveness becomes profitable.
+The Silicon Valley model delivers quick but unaccountable decisions. Rules are one-sided, power is hoarded, and systems operate behind closed doors. The casualties are many:
+
+- **Trust:** Algorithms bred to addict or manipulate rather than to inform or empower.
+- **Consent**: Secrecy quietly eroding autonomy. Invisible hands reshaping our lives without consent. 
+- **Community:** Platforms optimising for engagement, making division and hatred profitable.
 - **Attention:** Human focus becomes data—extracted like oil to fuel the surveillance economy.
-- **Environment:** Scale above all, sustainability be damned.
-- **Labour:** Care work such as content moderation is avoided or hidden, and workers are treated as expendable.
+- **Labour:** Care work like content moderation rendered invisible, workers treated as expendable.
+- **Environment:** Scale trumping sustainability at every turn.
 
-Secrecy quietly erodes autonomy. Invisible hands shape our lives **without consent**. As power concentrates, democracy withers and authoritarianism thrives. Algorithms tuned for "engagement" amplify fear, outrage, and division—because that’s what keeps us clicking.
+As power concentrates, democracy withers and authoritarianism thrives. Algorithms tuned for "engagement" amplify fear, outrage, and division—because that’s what keeps us clicking. In the end, **the tools meant to connect us are weaponized to divide us**.
 
-In the end, **the tools meant to connect us are weaponized to divide us**.
-
-
-## 🎨 **Co-design instead of "move fast and break things"**
-
-In the tech world, products are often hastily launched to test demand and scale, with little regard for broader social consequences. What happens if you flip this script entirely?
-
-At Bonfire, building slowly means making space for real participation. We work in the open, with [co-design](https://en.wikipedia.org/wiki/Participatory_design) starting at the idea stage and every feature treated as an open question. Rather than rushing to call it “done” and moving on, we listen, refine, and release with care — *with* communities, not just *for* them.
-
-- Feedback loops are based on accountability, not just engagement.
-- Scaling is replaced with multiplying autonomy.
-- The roadmap is shaped by communities, not founder whims or investor meetings.
-- Accessibility is designed from the start, not tacked on later.
-- Diversity is a strength, not a checkbox.
-- Ethics come first, not as damage control.
-- Care, community, and consent are foundational.
-- Documentation, sharing, and collaboration aren't a chore – they're part of the culture.
-
-We don’t just push out features and see what sticks. We ask: *Who does this serve? Who decides? Who benefits? Who might be harmed?*
-
+*We've witnessed the damage when tech scales without care. What could we build instead?*
+ 
 ## 🐌 **Caracol: a different outlook**
 
-Bonfire isn’t just another app. It’s a modular, federated system that gives you the power to choose, modify, and adapt the tools you need. You don’t just use Bonfire — you shape it. It’s not one tool, it’s a terrain. A toolkit. A network of digital "caracoles".
+Bonfire draws inspiration from the *caracol* (snail), a [Zapatista](https://en.wikipedia.org/wiki/Zapatista_Army_of_National_Liberation) symbol of slow, collective movement. The caracol is a spiral, with no top or center—only a shared heart. It stands for governance from the edges, listening before action, autonomy over hierarchy, and the conviction that *how* we build matters more than *what* we build.
 
-> The "caracol" (or snail) moves **“despacito pero con rumbo”: slowly, but with direction** and is a symbol used by the [Zapatistas](https://en.wikipedia.org/wiki/Zapatista_Army_of_National_Liberation) to describe their communities. It represents a spiral where the center is not at the top but at the heart, where everyone is connected. 
+These aren't lofty ideals—they're the backbone of Bonfire's design: a system built for flexibility, diversity, and overlapping needs. **You don’t just use Bonfire—you shape it.** It’s not one tool; it’s a terrain. A toolkit. Imagine digital spaces growing organically, communities determining how they connect, and tools that can be picked up, transformed, or set aside as needed. The *caracol* reminds us: meaningful progress comes from how we move, who we move with, and what kind of world we forge together.
+
+
+## ✊ **Governance: foundations of Bonfire**
+
+The way we build is part of what we create. Inspired by [sociocracy](https://en.wikipedia.org/wiki/Sociocracy)—a method of collaborative governance based on circles, consent, and distributed authority, and by [Bookchin’s municipal confederations](https://en.wikipedia.org/wiki/Municipalism), the Zapatistas, and [Rojava](https://en.wikipedia.org/wiki/Democratic_Autonomous_Administration_of_North_and_East_Syria), governance in Bonfire runs deep:
+
+- **Everything is modular—down to the core:** All features are provided by separate extensions, meaning the “core app” contains no code but just configuration. There also isn’t a single core; instead, there exists different “flavours” of Bonfire: sets of config and extensions adapted to various use cases or communities.
+- **Communities govern “flavours”:** Bonfire's modularity serves a political purpose—inviting communities to discuss, configure, and collectively govern every aspect of their experience.
+- **Shining a light on the power of defaults:** Whenever a choice about how something should work in Bonfire is unclear, we make it configurable. Code establishes an initial default, but flavours can override it, communities can set instance-wide settings, and individuals make final decisions in their own account or profiles.
+- **Custom roles:** Moving beyond binary admin/user hierarchies, communities and individuals define and assign roles with precisely calibrated permissions—distributing power and responsibility to match their unique contexts.
+- **Circles and boundaries:** Creating flexible "circles" (like "colleagues" or "book club") and "boundaries" (granular permission sets) to control exactly who can see, interact with, or collaborate on anything—putting people in charge of their online relationships.
+- **Tools that prioritise real people and relationships** over speed and simplicity. We make no assumptions about the “average” user, social needs are complex and overlapping, there are no no one-size-fits-all solutions. We center needs often marginalized or overlooked—making them foundational so everyone benefits from greater flexibility and control. 
+
+### 🛡️ **Guarding the commons**
+
+Values alone aren’t enough—many well-intentioned projects eventually drift, burn out, or sell out. Bonfire is federated at every level—protocol, code, and governance—so its purpose and values can’t be quietly eroded or easily overturned. This technical and political design aims to resist capture, prevent [enshittification](https://en.wikipedia.org/wiki/Enshittification), and safeguard community autonomy for the long term. 
+
+Here's how Bonfire can **resist capture:**
+- **AGPL licensing:** All code is AGPL, ensuring all modifications remain open and accessible, preventing capture by Big Tech or cloud services.
+- **Multi-layered modularity and forkability:** Everything is an extension—identity, moderation, groups. People can fork just an extension or a flavour–which encourages forking by lowering the maintainance effort.
+- **Community-governed flavours:** Communities decide what's included and how it evolves.
+- **Zero VC funding or ads:** Bonfire will remain free of venture capital and advertisement. No dark patterns. No pivoting away from responsibility or ethics. 
+
+We're also experimenting with:
+- **Sociocratic circles:** Self-organizing groups stewarding specific extensions or flavours, making decisions by consent. We're expanding this approach, creating pathways for communities to shape and protect their own digital spaces.
+- New models for **participatory funding** and resource allocation.
+
+The commons survive only when they can **regrow anywhere**. We design for resilience, adaptability, and collective stewardship.
  
-It’s a metaphor for self-organization, listening, and collaboration—not domination or hierarchy:
+## 🌐 **Federation: autonomy through connection**
 
-- **Listen before acting:** Decision-making is rooted in community, with power shared equally.
-- **Don’t break what you don’t understand:** Respect for history, environment, and diversity.
-- Process over result: **The “how” matters more than the “what.”**
-- **Autonomy > scale:** Systems are designed to fit people, not to scale beyond them.
-- Building is **thoughtful and deliberate**, with no single point of control.
-- Values nuance over simplicity, adaptability over standardization, and **coexistence over assimilation**.
-- Things may be slower and more complex because care and **real people are complex**.
+Bonfire federates (i.e., interconnects with other independent platforms) with Mastodon and the wider [fediverse](https://en.wikipedia.org/wiki/Fediverse), but federation is more than a technical protocol — it embodies our commitment to autonomy *and* collaboration:
+
+- Each community governs itself while connecting with others, maintaining distinct cultures, rules, and practices.
+- Federation isn't for scaling one model, but for interconnecting many. No central power dictates decisions—only connected, independent nodes working in concert.
+- Offboarding and freedom to migrate: Users should never be locked into platforms by their data or social connections.
 
 
-## 🏕️ **The shape of our patience**
-
-The time between an idea and its realisation shapes possibility. Most software gets scoped by the rush to ship something. At Bonfire, we move differently. We gave ourselves time to stretch the vision—beyond social *media* toward social, political, and cooperative *networking*. By chewing through complexity and refusing to compromise on architecture, we didn’t just build an app—we prepared a terrain where new forms of community, governance, and collaboration can take root.
-
-This approach made it possible to:
-
-- **Set a wide horizon** — Bonfire can power anything from a small online discussion space to a federation of municipalities sharing tools for governance and economic exchange.
-- **Build deep** — Laying reusable building blocks makes adding or changing features—like moderation systems or scientific collaboration tools—easier rather harder.
-- **Test potential, not just features** — Co-designing with real, opt-in research and experiments instead of rushing out MVPs ([Minimum Viable Products](https://en.wikipedia.org/wiki/Minimum_viable_product)).
-- **Choose sustainability over speed** — Prioritizing long-term goals over short-term wins or trend-chasing pivots.
-- **Practice [mutual aid](https://en.wikipedia.org/wiki/Mutual_aid) and hold space for care** — Making space for life and meeting each other’s needs as a team first, even when that meant slowing down or taking a detour to keep roofs over heads.
-- **Reject capitalist logic with intention** — Not just saying no to VC funding, but embodying a different way of building and relating.
-
-We didn’t just avoid the Silicon Valley model—we’re building something else in its place. A method rooted in care, shared power, and deep listening. Now that we’re approaching 1.0, we’re preparing for what often comes next: *first slowly, then suddenly*.
-
-But no matter how fast momentum grows, **we’ll protect our pace**—holding intentional buffers, taking inspiration from Debian’s stable/testing/unstable [release cycle](https://en.wikipedia.org/wiki/Debian_version_history), and staying grounded as the network grows.
-
-**We’re not here to ship fast. We’re here to build what lasts**.
-
-
-## 🌐 **Federation: multiplying autonomy**
-
-Bonfire federates (i.e., interconnects with other independent platforms) with Mastodon and the wider [fediverse](https://en.wikipedia.org/wiki/Fediverse), but for us, federation is more than a protocol—it’s a commitment to autonomy and collaboration:
-
-- Federation isn't for scaling one model, but for interconnecting many.
-- Communities govern themselves, connect when they need to, and choose, fork, or create their own tools.
-- People shape their tools, not the other way around.
-- No centralized power drives decisions—just connected, independent nodes working together.
-- Membership shouldn't be a two-tiered system (admins vs users), instead customizable roles, like moderators or curators, empower diverse forms of participation.
-- Developers and instance admins may set thoughtful defaults, but ultimate control rests with each individual who can adapt their experience to suit their needs.
-
-We’re not building one massive platform, but many interconnected worlds.
-
-## ✊ **Governance as the foundation**
-
-The way we build is part of what we’re building. Inspired by [sociocracy](https://www.sociocracyforall.org/), [Bookchin’s municipal confederations](https://en.wikipedia.org/wiki/Municipalism), the Zapatistas, and [Rojava](https://en.wikipedia.org/wiki/Democratic_Autonomous_Administration_of_North_and_East_Syria), governance in Bonfire isn’t bolted on. It’s in the DNA.
-
-- **Participatory decision-making** — Decisions are made collectively, usually by consent rather than consensus or majority vote.
-- **Decentralized power** — Modular structures (like sociocratic circles) let different parts of the network self-organize and govern themselves—whether that’s a federated instance, or a team working on a purpose-specific extension or Bonfire flavour.
-- **Autonomy in collaboration** — Communities can connect when needed, customize or fork extensions, or opt out of features without breaking the system—interoperable, not uniform.
-- **Respect for difference** — Systems are designed to honor diversity, prioritizing coexistence over assimilation.
-- **Transparency by default** — Rules, decisions, and source code are open and visible—no secret algorithms or agendas.
-- **Accountability** — Feedback loops prioritize accountability to communities over engagement metrics or external pressures.
-- **Process over product** — The “how” matters as much as the “what.”
-
-Where tech culture values velocity and replicates corporate hierarchies, Bonfire prioritizes listening, care, and autonomy.
+**We're building many interconnected worlds, not one massive platform.**  
 
 ## 🔥 **Bonfire: public interest social networks**
 
-Bonfire isn’t a platform—it’s a *[commons](https://en.wikipedia.org/wiki/Commons)*. It’s a place to gather, co-create, and build something that lasts, not a product to be sold or a service to use, abuse, or extract from you.
+Bonfire is a *[commons](https://en.wikipedia.org/wiki/Commons)*–a place to gather, co-create, and build networks that last–beyond products to be sold or services that use, abuse, or extract from you.
 
-Bonfire’s values, goals, and processes are shaped by the people and communities who choose to participate. As a starting point, we uphold these principles rooted in care, consent, and collective stewardship:
+Bonfire’s values, goals, and processes are shaped by the people and communities who choose to participate. As a starting point, we uphold principles rooted in care, consent, and collective stewardship.
 
-- Decisions are participatory and decentralized, not imposed.
-- Tools are designed to respect diversity and adapt to different needs.
-- Transparency is a default, not an afterthought.
-- No A/B testing on dignity or safety.
-- No growth for growth's sake.
-- No pivoting away from responsibility or ethics.
-- Tools that prioritize real people and relationships over speed and simplicity.
+Whether you're a community organiser, activist, builder or simply curious, join us:
 
-**Bonfire is built for the margins—not the median.** For the communities erased by online platforms in their race to scale. It’s for those who want more than an app—they want **a network they can shape**.
+- **Join the conversation:** Take part in our public discussion spaces. Share your experiences, needs, and questions.
+- **Help shape governance:** Participate in forming circles to govern specific extensions or Bonfire flavours, and share responsibility, decide by consent, and ensure Bonfire evolves with real community needs.
+- **Propose features or co-design new extensions:** Bring your ideas for how Bonfire can serve new purposes, or create new "flavours" and tools.
+- **Contribute feedback:** Help us spot issues, propose adaptations, or challenge assumptions so Bonfire can serve more people, more justly.
+- **Help shape the culture:** Share learnings from your own communities, organize workshops, or experiment with governance models.
 
-Built for the long haul. *By people, for people*. 
-
-Does this sound like the kind of network you want to be part of?
-**Let’s build it — slowly, autonomously, together**.
+Built for the long haul. *By people, for people*.
 
 
+### 🏕️ **Campground: a living laboratory**
+
+Our test instance, [the campground](https://campground.bonfire.cafe), is open as a local-only space for co-design and experimentation. Here, you can:
+
+- Experience what digital spaces built on consent, care, and mutual aid feel like.
+- Collaborate to co-design and test features — making Bonfire safer, more resilient, accessible, and truly centered on people and communities.
+
+This isn’t a product launch—we’re not looking for *users* but for *active participants*: people and groups who want to shape, critique, and experiment together — whether that’s on the campground, through their own Bonfire instances, or by joining others to co-create new digital spaces.
+
+## ✨ **Let’s build what lasts, together**
+
+If these ideas resonate, we invite you to reflect, dialogue, reach out, and co-create. Bonfire lives as a conversation in motion, beyond its code. The world needs many interconnected spaces built on care, autonomy, and collective power — not yet another app chasing scale.
+
+We hope these principles can ignite new approaches to digital community-building. The future is ours to build — intentionally, collectively, and with care. Join us in shaping what comes next.
+
+---
+
+_This post was written by the Bonfire maintainers' circle and shaped by feedback from the advisory circle. Join the conversation on [Matrix](https://matrix.to/#/#bonfire:matrix.org), comment on [this post on the fediverse](https://indieweb.social/@bonfire) or on [the campground](https://campground.bonfire.cafe), or email us at [team@bonfire.cafe](mailto:team@bonfire.cafe)._
