@@ -1,6 +1,6 @@
 ---
 title: "🐌 Slow Software for a Burning World 🔥"
-description: "Bonfire 1.0 is nearly ready—but we’re not rushing the launch. This isn’t about shipping fast. It’s about building with care."
+description: "In a world of “move fast and break things,” we’ve chosen a different tempo — one rooted in care, deep listening, and collective stewardship. Slow software means building for long-term resilience and meaningful participation, rather than chasing novelty, speed, or scale."
 date: 2025-04-20
 tags: [announcement]
 image: /img/caracol.jpg
