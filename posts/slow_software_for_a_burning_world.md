@@ -110,4 +110,6 @@ We hope these principles can ignite new approaches to digital community-building
 
 ---
 
-_This post was written by the Bonfire maintainers' circle and shaped by feedback from the advisory circle. Join the conversation on [Matrix](https://matrix.to/#/#bonfire:matrix.org), comment on [this post on the fediverse](https://indieweb.social/@bonfire) or on [the campground](https://campground.bonfire.cafe), or email us at [team@bonfire.cafe](mailto:team@bonfire.cafe)._
+_This post was written by the Bonfire maintainers' circle and shaped by feedback from the advisory circle. Join the conversation on [Matrix](https://matrix.to/#/#bonfire:matrix.org), comment on [this post on the fediverse](https://indieweb.social/@bonfire/114477426502965851) or on [the campground](https://campground.bonfire.cafe), or email us at [team@bonfire.cafe](mailto:team@bonfire.cafe)._
+
+_Credit for the art goes to Tomás, a Zapatista artist in a community near San Cristobal._
