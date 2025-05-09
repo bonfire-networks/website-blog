@@ -23,8 +23,8 @@
     >
     
 
-    <div class="max-w-screen-xl mx-auto">
-      <header class="relative z-30 lg:px-8 mx-auto navbar">
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
         <div class="navbar-start w-[30%]">
           <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -75,18 +75,8 @@
                       <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
-                      <div class="font-bold">Themes</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Personalize Bonfire with your preferred colors and styling</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
-                      <div class="font-bold">Pilots</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Some of the communities we are working with</div>
-                  </a>
-                </li>
+                
+                  
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
                       <div class="font-bold">How to participate</div>
@@ -126,12 +116,8 @@
                   </a>
                 </li>
                 
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
-                    <div class="font-semibold">Changelog</div>
-                    <div class="font-light text-sm    -mt-1.5">Latest updates and improvements</div>
-                  </a></li>
-                <li>
+                
+                <li> 
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
                     <div class="font-semibold">Get the code</div>
                     <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
@@ -220,11 +206,7 @@
           </a>
           </li>
 
-          <li>
-            <a href="/themes" class=" ">
-            <span class="text-base font-regular">Themes</span>
-          </a>
-          </li>
+          
 
 
             <li>
@@ -233,18 +215,9 @@
           </a>
           </li>
 
-          <li>
-            <a href="/courses" class=" ">
-            <span class="text-base font-regular">courses</span>
-          </a>
-          </li>
           
           
-          <li>
-            <a href="/pilots" class=" ">
-            <span class="text-base font-regular">Pilots</span>
-          </a>
-          </li>
+          
           
           <li>
             <a href="/faq" class=" ">
@@ -263,7 +236,7 @@
           </li>
 
           <li>
-            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
               <span class="text-base font-regular">Get the code</span>
             </a>
           </li>
@@ -484,340 +457,9 @@
 
         <div class=" mx-6 lg:mx-8 py-8">
           
-<div class="max-w-full prose prose-lg">
-<h1 id="hosting-guide">Hosting guide <a class="direct-link" href="#hosting-guide">#</a></h1>
-<p>A short guide to running Bonfire in a production environment and setting up a digital space connected to the fediverse.</p>
-<blockquote>
-<h4 id="warning-%7B%3A-.warning%7D">Warning {: .warning} <a class="direct-link" href="#warning-%7B%3A-.warning%7D">#</a></h4>
-<p>Bonfire is currently beta software. While it's fun to play with it, we would not recommend running any production instances yet (meaning not using it for your primary fediverse identity) because it's not quite ready for that today.</p>
-</blockquote>
-<p><em>These instructions are for setting up Bonfire in production. If you want to run the backend in development, please refer to our <a href="./hacking">Installation guide</a> instead.</em></p>
-<h2 id="security-warning">Security Warning <a class="direct-link" href="#security-warning">#</a></h2>
-<p>We recommend only granting an account to people you trust to minimise the attack surface. Accordingly, Bonfire ships with public registration disabled. The admin panel has an <code>invite</code> facility.</p>
-<hr>
-<h2 id="step-1---decide-how-you-want-to-deploy-and-manage-the-app">Step 1 - Decide how you want to deploy and manage the app <a class="direct-link" href="#step-1---decide-how-you-want-to-deploy-and-manage-the-app">#</a></h2>
-<!-- tabs-open -->
-<h3 id="co-op-cloud">Co-op Cloud <a class="direct-link" href="#co-op-cloud">#</a></h3>
-<p>Install using <a href="https://coopcloud.tech">Co-op Cloud</a> (recommended) which is an alternative to corporate cloud services built by tech co-ops, and provides handy tools for setting up and managing many self-hosted free software tools using ready-to-use &quot;recipes&quot;. Very useful if you'd like to host Bonfire alongside other open and/or federated projects.</p>
-<ol>
-<li>Install <a href="https://docs.coopcloud.tech/abra/">Abra</a> on your machine</li>
-<li><a href="https://docs.coopcloud.tech/operators/">Set up a server with co-op cloud</a></li>
-<li>Use the <a href="https://recipes.coopcloud.tech/bonfire">Bonfire recipe</a> and follow the instructions there, including editing the config in the env file at <code>~/.abra/servers/your_server/your_app.env</code> (see <a href="#preparing-the-config-in-env">prepare the config</a> for details about what to edit)</li>
-<li>Run the abra deploy command and <a href="#running-the-app">done!</a></li>
-</ol>
-<h3 id="docker-containers">Docker containers <a class="direct-link" href="#docker-containers">#</a></h3>
-<ol>
-<li>Install dependencies.</li>
-</ol>
-<p>The easiest way to manage the docker image is using just commands.</p>
-<p>The <code>docker-compose.release.yml</code> uses <code>config/prod/.env</code> to launch a container with the necessary environment variables along with its dependencies, currently that means an extra postgres container, along with a reverse proxy (Caddy server, which you may want to replace with nginx or whatever you prefer).</p>
-<p>Make sure you have <a href="https://www.docker.com/">Docker</a>, with the <a href="https://docs.docker.com/compose/install/#install-compose">compose</a> plugin, and <a href="https://github.com/casey/just#packages">just</a> installed:</p>
-<pre class="language-sh"><code class="language-sh">$ <span class="token function">docker</span> version
-Docker Engine - Community - <span class="token number">23.0</span>.1
+<meta http-equiv="refresh" content="0;url=https://docs.bonfirenetworks.org/deploy.html">
 
-$ <span class="token function">docker</span> compose version
-Docker Compose version v2.16.0
 
-$ just <span class="token parameter variable">--version</span>
-just <span class="token number">1.13</span>.0
-<span class="token punctuation">..</span>.</code></pre>
-<ol start="2">
-<li>Clone this repository and change into the directory:</li>
-</ol>
-<pre class="language-sh"><code class="language-sh"><span class="token function">git</span> clone <span class="token parameter variable">--depth</span> <span class="token number">1</span> https://github.com/bonfire-networks/bonfire-app.git bonfire <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> bonfire</code></pre>
-<ol start="3">
-<li>Specify what flavour you want to run in production:</li>
-</ol>
-<p>The first thing to do is choose what flavour of Bonfire (eg. classic, community, or cooperation) you want to deploy, as each flavour uses different Docker images and set of configs. For example if you want to run the <code>classic</code> flavour:</p>
-<ul>
-<li><code>export MIX_ENV=prod FLAVOUR=classic WITH_DOCKER=yes</code></li>
-</ul>
-<p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
-<ol start="4">
-<li>Run <code>just config</code> to initialise some default config and then edit the config in the <code>./.env</code> file (see <a href="#preparing-the-config-in-env">prepare the config</a> for details about what to edit).</li>
-</ol>
-<blockquote>
-<p>Now that your tooling is set up, you have the choice of using pre-built images or building your own. For example if your flavour does not have a prebuilt image on Docker Hub, or if you want to customise any of the extensions, you can build one yourself.</p>
-</blockquote>
-<h4 id="using-pre-built-docker-images-(easy-mode)">Using pre-built Docker images (easy mode) <a class="direct-link" href="#using-pre-built-docker-images-(easy-mode)">#</a></h4>
-<ul>
-<li>The <code>image</code> entry in <code>docker-compose.release.yml</code> will by default use the image on Docker Hub which corresponds to your chosen flavour (see step 1 above for choosing your flavour).</li>
-</ul>
-<p>You can see the images available per flavour, version (we currently recommend using the <code>latest</code> tag), and architecture at <a href="https://hub.docker.com/r/bonfirenetworks/bonfire/tags">https://hub.docker.com/r/bonfirenetworks/bonfire/tags</a></p>
-<ol start="5">
-<li>Try <a href="#running-with-docker">running the app</a>!</li>
-</ol>
-<h4 id="custom-docker-build">Custom Docker build <a class="direct-link" href="#custom-docker-build">#</a></h4>
-<p>Building your own Docker image is useful if you want to make code changes or add your own extensions.</p>
-<p><code>Dockerfile.release</code> uses the <a href="https://docs.docker.com/develop/develop-images/multistage-build/">multistage build</a> feature to just the image as small as possible. It generates the OTP release which is later copied into the final image packaged in an Alpine linux container.</p>
-<p>There is a <code>justfile</code> with relevant commands (make sure set the <code>MIX_ENV=prod</code> env variable):</p>
-<ul>
-<li><code>just rel-build-locked</code> which builds the docker image of the latest release</li>
-<li><code>just rel-build</code> which builds the docker image, including local changes to any cloned extensions in <code>./extensions/</code></li>
-<li><code>just rel-tag</code> adds the &quot;latest&quot; tag to your last build, so that it will be used when running</li>
-</ul>
-<p>Once you've built and tagged your image, you may need to update the <code>image</code> name in <code>docker-compose.release.release.yml</code> to match (either your local image name if running on the same machine you used for the build, or a remote image on Docker Hub if you pushed it) and then follow the same steps as for option A1.</p>
-<p>For production, we recommend to set up a CI workflow to automate this, for an example you can look at the one <a href="../github/workflows/release.yaml">we currently use</a>.</p>
-<p>Finally, try <a href="#running-with-docker">running the app</a>!</p>
-<p>#### Running with Docker</p>
-<ul>
-<li>Start the docker containers with docker-compose:</li>
-</ul>
-<pre><code>just rel-run
-</code></pre>
-<p>Run this at the prompt:</p>
-<p><code>bin/bonfire remote</code> to enter Elixir's iex environment<br>
-<code>Bonfire.Common.Repo.migrate</code> to initialise your database</p>
-<p>The backend should now be running at <a href="http://localhost:4000/">http://localhost:4000/</a>. <a href="#running-the-app">Yay, you're up and running!</a></p>
-<ul>
-<li>If that worked, start the app as a daemon next time:</li>
-</ul>
-<pre><code>just rel-run-bg
-</code></pre>
-<p>(Alternatively, <code>just rel-run-bg db</code> if you want to run the backend + db but not the web proxy, or <code>just rel-run-bg db search</code> if you want to run the full-text search index.)</p>
-<h3 id="bare-metal">Bare-metal <a class="direct-link" href="#bare-metal">#</a></h3>
-<p>Running a custom build without Docker.</p>
-<ol>
-<li>Install dependencies.</li>
-</ol>
-<ul>
-<li>Postgres (or Postgis) version 12 or newer</li>
-<li><a href="https://github.com/casey/just#packages">just</a></li>
-<li>Elixir version 1.15+ with OTP 25+ (see the <code>Dockerfile</code> to double check the versions we're currently using). If your distribution only has an old version available, check <a href="https://elixir-lang.org/install.html">Elixir's install page</a> or use a tool like <a href="https://github.com/jdx/mise">mise</a> (run <code>mise install</code> in this directory) or asdf.</li>
-</ul>
-<ol start="2">
-<li>Clone this repository and change into the directory:</li>
-</ol>
-<pre class="language-sh"><code class="language-sh"><span class="token function">git</span> clone <span class="token parameter variable">--depth</span> <span class="token number">1</span> https://github.com/bonfire-networks/bonfire-app.git bonfire <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> bonfire</code></pre>
-<ol start="3">
-<li>Specify what flavour you want to run in production:</li>
-</ol>
-<p>The first thing to do is choose what flavour of Bonfire (eg. classic, community, or cooperation) you want to deploy, as each flavour uses different Docker images and set of configs. For example if you want to run the <code>classic</code> flavour:</p>
-<ul>
-<li><code>export FLAVOUR=classic MIX_ENV=prod WITH_DOCKER=no</code></li>
-</ul>
-<p>You may also want to put this in the appropriate place in your system so your choice of flavour is remembered for next time (eg. <code>~/.bashrc</code> or <code>~/.zshrc</code>)</p>
-<ol start="4">
-<li>
-<p>Run <code>just config</code> to initialise some default config and then edit the config in the <code>./.env</code> file (see <a href="#preparing-the-config-in-env">prepare the config</a> for details about what to edit).</p>
-</li>
-<li>
-<p>Run <code>just rel-build</code> to create an elixir release. This will create an executable in your <code>_build/prod/rel/bonfire</code> directory. Note that you will need <code>just</code> to pass in the <code>.env</code> file to the executable, like so: <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Alternatively, this file can be sourced by <code>source .env</code> instead. We will be using the <code>bin/bonfire</code> executable as called from <code>just</code> from here on.</p>
-</li>
-<li>
-<p>Running the release</p>
-</li>
-</ol>
-<ul>
-<li>
-<p>Create a database, and a user, fill out the <code>.env</code> with your credentials and secrets</p>
-</li>
-<li>
-<p>You will need to use <code>just</code> in order to pass the <code>.env</code> file to the executable. This can be accomplished by running <code>just cmd _build/prod/rel/bonfire/bin/bonfire &lt;bonfire command&gt;</code>. Just works from the root directory of the <code>justfile</code>, not your current directory.</p>
-</li>
-<li>
-<p>If you’re using RDS or some other locked down DB, you may need to run <code>CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;</code> on your database with elevated privileges.</p>
-</li>
-<li>
-<p>You can check if your instance is configured correctly and get to the iex console by running <code>bin/bonfire start</code></p>
-</li>
-<li>
-<p>The migrations should automatically run on first boot, but if you run into troubles the migration command is: <code>Bonfire.Common.Repo.migrate()</code> in the iex console.</p>
-</li>
-<li>
-<p>To run the instance as a daemon, use <code>bin/bonfire start daemon</code>. <a href="#running-the-app">Yay, you're up and running!</a></p>
-</li>
-</ul>
-<ol start="7">
-<li>Adding HTTPS</li>
-</ol>
-<p>The common and convenient way for adding HTTPS is by using a reverse proxy like Nginx or Caddyserver (the latter of which is bundled as part of the docker compose setup).</p>
-<p>Caddyserver and other servers can handle generating and setting up HTTPS certificates automatically, but if you need TLS/SSL certificates for nginx, you can look get some for free with <a href="https://letsencrypt.org/">letsencrypt</a>. The simplest way to obtain and install a certificate is to use <a href="https://certbot.eff.org">Certbot.</a>. Depending on your specific setup, certbot may be able to get a certificate and configure your web server automatically.</p>
-<p>If you've built from source, you should point the nginx root directory to be <code>_build/prod/rel/bonfire/lib/bonfire-[current-version]/priv/static</code></p>
-<h3 id="nix">Nix <a class="direct-link" href="#nix">#</a></h3>
-<p>This repo contains an experimental Flake and Nix module. These are not ready for production.</p>
-<p>Here are the detailed steps to deploy it:</p>
-<ul>
-<li>run a recent version of Nix or NixOS: <a href="https://nixos.wiki">https://nixos.wiki</a></li>
-<li>enable Flakes: <a href="https://nixos.wiki/wiki/Flakes#Installing_flakes">https://nixos.wiki/wiki/Flakes#Installing_flakes</a></li>
-<li>add <code>sandbox = false</code> in your nix.conf</li>
-<li>fetch and build the app and dependencies: <code>nix run github:bonfire-networks/bonfire-app start_iex</code></li>
-<li>add it as an input to your system flake.</li>
-<li>add an overlay to just the package available</li>
-<li>add the required configuration in your system</li>
-</ul>
-<p>Your <code>flake.nix</code> file would look like the following. Remember to replace <code>myHostName</code> with your actual hostname or however your deployed system is called.</p>
-<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span>
-  inputs<span class="token punctuation">.</span>bonfire<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"github:bonfire-networks/bonfire-app/main"</span><span class="token punctuation">;</span>
-  outputs <span class="token operator">=</span> <span class="token punctuation">{</span> self<span class="token punctuation">,</span> nixpkgs<span class="token punctuation">,</span> bonfire <span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    overlay <span class="token operator">=</span> final<span class="token punctuation">:</span> prev<span class="token punctuation">:</span> <span class="token keyword">with</span> final<span class="token punctuation">;</span><span class="token punctuation">{</span>
-      <span class="token comment"># a package named bonfire already exists on nixpkgs so we put it under a different name</span>
-      elixirBonfire <span class="token operator">=</span> bonfire<span class="token punctuation">.</span>packages<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux<span class="token punctuation">.</span>default<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    nixosConfigurations<span class="token punctuation">.</span>myHostName <span class="token operator">=</span> nixpkgs<span class="token punctuation">.</span>lib<span class="token punctuation">.</span>nixosSystem <span class="token punctuation">{</span>
-      system <span class="token operator">=</span> <span class="token string">"x86_64-linux"</span><span class="token punctuation">;</span>
-      modules <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-          environment<span class="token punctuation">.</span>systemPackages <span class="token operator">=</span> <span class="token punctuation">[</span> agenix<span class="token punctuation">.</span>defaultPackage<span class="token punctuation">.</span>x86_64<span class="token operator">-</span>linux <span class="token punctuation">]</span><span class="token punctuation">;</span>
-          nixpkgs<span class="token punctuation">.</span>overlays <span class="token operator">=</span> <span class="token punctuation">[</span> self<span class="token punctuation">.</span>overlay <span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token url">./myHostName.nix</span>
-        bonfire<span class="token punctuation">.</span>nixosModules<span class="token punctuation">.</span>bonfire
-      <span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>Then your <code>myHostName.nix</code> would look like the following:</p>
-<pre class="language-nix"><code class="language-nix"><span class="token punctuation">{</span> config<span class="token punctuation">,</span> lib<span class="token punctuation">,</span> pkgs<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">:</span>
-
-<span class="token punctuation">{</span>
-  services<span class="token punctuation">.</span>bonfire <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment"># you will additionally need to expose bonfire with a reverse proxy, for example caddy</span>
-    port <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">;</span>
-    package <span class="token operator">=</span> pkgs<span class="token punctuation">.</span>elixirBonfire<span class="token punctuation">;</span>
-    dbName <span class="token operator">=</span> <span class="token string">"bonfire"</span><span class="token punctuation">;</span>
-    <span class="token comment"># the environment should contain a minimum of</span>
-    <span class="token comment">#   SECRET_KEY_BASE</span>
-    <span class="token comment">#   SIGNING_SALT</span>
-    <span class="token comment">#   ENCRYPTION_SALT</span>
-    <span class="token comment">#   RELEASE_COOKIE</span>
-    <span class="token comment"># have a look into nix/module.nix for more details</span>
-    <span class="token comment"># the way to deploy secrets is beyond this readme, but I would recommend agenix</span>
-    environmentFile <span class="token operator">=</span> <span class="token string">"/run/secrets/bonfireEnv"</span><span class="token punctuation">;</span>
-    dbSocketDir <span class="token operator">=</span> <span class="token string">"/var/run/postgresql"</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-	
-	<span class="token comment"># this is specifically for a reverse proxy, which is primarily used for SSL certs</span>
-	services<span class="token punctuation">.</span>ngnix <span class="token operator">=</span> <span class="token punctuation">{</span>
-		enable <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-		forceSSL <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-		enableACME <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-		virtualHosts<span class="token punctuation">.</span><span class="token string">"myHostName"</span><span class="token punctuation">.</span>locations<span class="token punctuation">.</span>proxyPass <span class="token operator">=</span> <span class="token string">"http://localhost:4000"</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span><span class="token punctuation">;</span>
-	
-	<span class="token comment"># You will need to accept ACME's terms and conditions if you haven't elsewhere in your configuration</span>
-	security<span class="token punctuation">.</span>acme<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>email <span class="token operator">=</span> <span class="token string">"you@myHostName.com"</span><span class="token punctuation">;</span>
-	security<span class="token punctuation">.</span>acme<span class="token punctuation">.</span>acceptTerms <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-
-  <span class="token comment"># this is uniquely for database backup purposes</span>
-  <span class="token comment"># replace myBackupUserName with the user name that will do the backups</span>
-  <span class="token comment"># if you want to do backups differently, feel free to remove this part of the config</span>
-  services<span class="token punctuation">.</span>postgresql <span class="token operator">=</span> <span class="token punctuation">{</span>
-    ensureDatabases <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"bonfire"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
-    ensureUsers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-      name <span class="token operator">=</span> <span class="token string">"myBackupUserName"</span><span class="token punctuation">;</span>
-      ensurePermissions <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"DATABASE bonfire"</span> <span class="token operator">=</span> <span class="token string">"ALL PRIVILEGES"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<!-- tabs-close -->
-<p>## Preparing the config (in .env)</p>
-<h3 id="config-keys-you-should-pay-special-attention-to%3A">Config keys you should pay special attention to: <a class="direct-link" href="#config-keys-you-should-pay-special-attention-to%3A">#</a></h3>
-<p>The app needs these environment variables to be configured in order to work.</p>
-<ul>
-<li><code>FLAVOUR</code> should reflect your chosen flavour</li>
-<li><code>HOSTNAME</code> (your domain name, eg: <code>bonfire.example.com</code>)</li>
-<li><code>PUBLIC_PORT</code> (usually 443)</li>
-<li><code>MAIL_DOMAIN</code> and <code>MAIL_KEY</code> and related keys to configure transactional email, for example set <code>MAIL_BACKEND=mailgun</code> and sign up at <a href="https://www.mailgun.com/">Mailgun</a> and then configure the domain name and key (you may also need to set <code>MAIL_BASE_URI</code> if your domain is not setup in EU, as the default <code>MAIL_BASE_URI</code> is set as <code>https://api.eu.mailgun.net/v3</code>).</li>
-<li>SMTP is supported as well, through the following env vars</li>
-</ul>
-<pre><code>MAIL_SERVER (smtp domain of the mail server)
-MAIL_DOMAIN (the bit after the @ in your email)
-MAIL_USER
-MAIL_PASSWORD
-MAIL_FROM
-MAIL_PORT (optional)
-MAIL_SSL (optional)
-</code></pre>
-<ul>
-<li><code>UPLOADS_S3_BUCKET</code> and the related API key and secret for uploads. WARNING: If you want to store uploads in an object storage rather than directly on your server (which you probably want, to not run out of space), you need to configure that up front, otherwise URLs will break if you change it later. See <code>config/runtime.exs</code> for extra variables to set if you're not using the default service and region (which is <a href="https://www.scaleway.com/en/object-storage/">Scaleway</a> Paris).</li>
-</ul>
-<h3 id="secret-keys-for-which-you-should-put-random-secrets.">Secret keys for which you should put random secrets. <a class="direct-link" href="#secret-keys-for-which-you-should-put-random-secrets.">#</a></h3>
-<p>You can run <code>just secrets</code> to generate some for you.</p>
-<ul>
-<li><code>SECRET_KEY_BASE</code></li>
-<li><code>SIGNING_SALT</code></li>
-<li><code>ENCRYPTION_SALT</code></li>
-<li><code>POSTGRES_PASSWORD</code></li>
-<li><code>MEILI_MASTER_KEY</code></li>
-</ul>
-<h3 id="further-information-on-config">Further information on config <a class="direct-link" href="#further-information-on-config">#</a></h3>
-<p>In the <code>./config/</code> (which is a symbolic link to the config of the flavour you choose to run) directory of the codebase, there are following config files:</p>
-<ul>
-<li><code>config.exs</code>: default base configuration, which itself loads many other config files, such as one for each installed Bonfire extension.</li>
-<li><code>prod.exs</code>: default extra configuration for <code>MIX_ENV=prod</code></li>
-<li><code>runtime.exs</code>: extra configuration which is loaded at runtime (vs the others which are only loaded once at compile time, i.e. when you build a release)</li>
-<li><code>bonfire_*.exs</code>: configs specific to different extensions, which are automatically imported by <code>config.exs</code></li>
-</ul>
-<p>You should <em>not</em> have to modify the files above. Instead, overload any settings from the above files using env variables or in <code>./.env</code>. If any settings in the <code>.exs</code> config files are not available in env or in the instance settings UI, please open an issue or PR.</p>
-<h2 id="running-the-app">Running the app <a class="direct-link" href="#running-the-app">#</a></h2>
-<blockquote>
-<p>NOTE: If you are running in a restricted environment such as Amazon RDS, you will need to execute some sql against the database before migrations can run: <code>CREATE EXTENSION IF NOT EXISTS citext;</code></p>
-</blockquote>
-<p>By default, the backend listens on port 4000 (TCP), so you can access it on <a href="http://localhost:4000/">http://localhost:4000/</a> (if you are on the same machine). In case of an error it will restart automatically.</p>
-<p>Once you've signed up, you will automatically be an instance admin if you were the first to register.</p>
-<blockquote>
-<p>You can sign up via CLI by entering something like this in your app's Elixir console: <code>Bonfire.Me.make_account_only(&quot;my@email.net&quot;, &quot;my pw&quot;)</code></p>
-</blockquote>
-<h2 id="handy-commands">Handy commands <a class="direct-link" href="#handy-commands">#</a></h2>
-<ul>
-<li><code>just update</code> to update to the latest release of Bonfire</li>
-<li><code>just rel-run</code>                        Run the app in Docker, in the foreground</li>
-<li><code>just rel-run-bg</code>                     Run the app in Docker, and keep running in the background</li>
-<li><code>just rel-stop</code>                       Stop the running release</li>
-<li><code>just rel-shell</code>                      Runs a simple shell inside of the container, useful to explore the image</li>
-</ul>
-<p>Once in the shell, you can run <code>bin/bonfire</code> with the following commands:<br>
-Usage: <code>bonfire COMMAND [ARGS]</code></p>
-<p>The known commands are:</p>
-<ul>
-<li><code>start</code>          Starts the system</li>
-<li><code>start_iex</code>      Starts the system with IEx attached</li>
-<li><code>daemon</code>         Starts the system as a daemon</li>
-<li><code>daemon_iex</code>     Starts the system as a daemon with IEx attached</li>
-<li><code>eval &quot;EXPR&quot;</code>    Executes the given expression on a new, non-booted system</li>
-<li><code>rpc &quot;EXPR&quot;</code>     Executes the given expression remotely on the running system</li>
-<li><code>remote</code>         Connects to the running system via a IEx remote shell</li>
-<li><code>restart</code>        Restarts the running system via a remote command</li>
-<li><code>stop</code>           Stops the running system via a remote command</li>
-<li><code>pid</code>            Prints the operating system PID of the running system via a remote command</li>
-<li><code>version</code>        Prints the release name and version to be booted</li>
-</ul>
-<p>There are some useful database-related release tasks under <code>EctoSparkles.Migrator.</code> that can be run in an <code>iex</code> console (which you get to with <code>just rel.shell</code> followed by <code>bin/bonfire remote</code>, assuming the app is already running):</p>
-<ul>
-<li><code>migrate</code> runs all up migrations</li>
-<li><code>rollback(step)</code> roll back to step X</li>
-<li><code>rollback_to(version)</code> roll back to a specific version</li>
-<li><code>rollback_all</code> rolls back all migrations back to zero (caution: this means losing all data)</li>
-</ul>
-<p>You can also directly call some functions in the code from the command line, for example:</p>
-<ul>
-<li>to migrate: <code>docker exec bonfire_web bin/bonfire rpc 'Bonfire.Common.Repo.migrate'</code></li>
-<li>to just yourself an admin: <code>docker exec bonfire_web bin/bonfire rpc 'Bonfire.Me.Users.make_admin(&quot;my_username&quot;)'</code></li>
-</ul>
-<h2 id="admin-tools">Admin tools <a class="direct-link" href="#admin-tools">#</a></h2>
-<ul>
-<li>LiveDashboard for viewing real-time metrics and logs at <code>/admin/system/</code></li>
-<li>Oban logs for viewing queued jobs (e.g. for processing federated activities) <code>/admin/system/oban_queues</code></li>
-<li>LiveAdmin for browsing data in the database at <code>/admin/system/data</code></li>
-<li>Orion for dynamic distributed performance profiling at <code>/admin/system/orion</code></li>
-<li>Web Observer as an alternative way to view metrics at <code>/admin/system/wobserver</code></li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h2>
-<p>Some common issues that may arise during deployment and our suggestions for resolving them.</p>
-<h4 id="websocket-connections-not-establishing-behind-a-reverse-proxy">WebSocket connections not establishing behind a reverse proxy <a class="direct-link" href="#websocket-connections-not-establishing-behind-a-reverse-proxy">#</a></h4>
-<p>If you are running Bonfire behind your own reverse proxy (e.g. nginx), you might experience issues with WebSocket connections not establishing. WebSocket connections require specific configuration to work, in nginx the following configuration is necessary for websockets to work:</p>
-<pre><code>location /live/websocket {
-    proxy_pass http://127.0.0.1:4000;
-    
-    # these configurations are necessary to proxy WebSocket requests
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection &quot;upgrade&quot;;
-}
-</code></pre>
-  
-</div> 
         </div>
       </main>
     </div>

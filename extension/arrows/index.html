@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonfire</title>
     <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link
     rel="stylesheet" href="/css/style_v2.css">
@@ -23,8 +28,8 @@
     >
     
 
-    <div class="max-w-screen-xl mx-auto">
-      <header class="relative z-30 lg:px-8 mx-auto navbar">
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
         <div class="navbar-start w-[30%]">
           <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -75,18 +80,8 @@
                       <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
-                      <div class="font-bold">Themes</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Personalize Bonfire with your preferred colors and styling</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
-                      <div class="font-bold">Pilots</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Some of the communities we are working with</div>
-                  </a>
-                </li>
+                
+                  
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
                       <div class="font-bold">How to participate</div>
@@ -126,12 +121,8 @@
                   </a>
                 </li>
                 
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
-                    <div class="font-semibold">Changelog</div>
-                    <div class="font-light text-sm    -mt-1.5">Latest updates and improvements</div>
-                  </a></li>
-                <li>
+                
+                <li> 
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
                     <div class="font-semibold">Get the code</div>
                     <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
@@ -220,11 +211,7 @@
           </a>
           </li>
 
-          <li>
-            <a href="/themes" class=" ">
-            <span class="text-base font-regular">Themes</span>
-          </a>
-          </li>
+          
 
 
             <li>
@@ -233,18 +220,9 @@
           </a>
           </li>
 
-          <li>
-            <a href="/courses" class=" ">
-            <span class="text-base font-regular">courses</span>
-          </a>
-          </li>
           
           
-          <li>
-            <a href="/pilots" class=" ">
-            <span class="text-base font-regular">Pilots</span>
-          </a>
-          </li>
+          
           
           <li>
             <a href="/faq" class=" ">
@@ -263,7 +241,7 @@
           </li>
 
           <li>
-            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
               <span class="text-base font-regular">Get the code</span>
             </a>
           </li>
@@ -340,37 +318,24 @@
   <span class="token punctuation">]</span>
 <span class="token keyword">end</span></code></pre>
 <h2 id="documentation">Documentation <a class="direct-link" href="#documentation">#</a></h2>
-<p>The Elixir <a href="https://hexdocs.pm/elixir/Kernel.html#%7C%3E/2">|&gt; (&quot;pipe&quot;) operator</a> is one of the things that seems to get people excited about elixir. Probably in part because you then don't have to keep coming up with function names. Unfortunately it's kind of limiting.<br>
-The moment you need to pipe a parameter into a position that isn't the first one, it breaks down and you have to drop out of the pipeline format or write a secondary function to handle it.</p>
+<p>The Elixir <code>|&gt;</code> <a href="https://hexdocs.pm/elixir/Kernel.html#%7C%3E/2">(&quot;pipe&quot;) operator</a> is one of the things that seems to get people excited about elixir. Probably in part because you then don't have to keep coming up with function names. Unfortunately it's kind of limiting. The moment you need to pipe a parameter into a position that isn't the first one, it breaks down and you have to drop out of the pipeline format or write a secondary function to handle it.</p>
 <p>Not any more! By simply inserting <code>...</code> where you would like the value to be inserted, <code>Arrows</code> will override where it is placed. This allows you to keep on piping while accommodating that function with the annoying argument order. <code>Arrows</code> was inspired by <a href="https://hexdocs.pm/magritte/Magritte.html">an existing library</a>.</p>
-<p>Here is part of the test suite in lieu of examples:</p>
-<pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">ArrowsTest</span> <span class="token keyword">do</span>
-  <span class="token keyword">use</span> <span class="token module class-name">ExUnit</span><span class="token punctuation">.</span><span class="token module class-name">Case</span>
-  <span class="token keyword">use</span> <span class="token module class-name">Arrows</span>
-
-  <span class="token keyword">def</span> <span class="token function">double</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">*</span> <span class="token number">2</span>
-  <span class="token keyword">def</span> <span class="token function">double_fst</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> _<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">*</span> <span class="token number">2</span>
-  <span class="token keyword">def</span> <span class="token function">double_snd</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">*</span> <span class="token number">2</span>
-  <span class="token keyword">def</span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token attr-name">do:</span> x <span class="token operator">+</span> y
-
-  test <span class="token string">"|>"</span> <span class="token keyword">do</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> double<span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">8</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_fst</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_fst</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">8</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_fst</span><span class="token punctuation">(</span><span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_snd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">8</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">double_snd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">3</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">4</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    assert <span class="token number">6</span> <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">|></span> <span class="token function">add_snd_thd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> x <span class="token operator">&lt;-</span> <span class="token punctuation">[</span><span class="token atom symbol">:yes</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span> <span class="token keyword">do</span>
-      assert <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> x<span class="token punctuation">}</span> <span class="token operator">==</span> <span class="token punctuation">(</span>x <span class="token operator">|></span> <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">end</span>
-  <span class="token keyword">end</span>
-<span class="token keyword">end</span></code></pre>
+<h2 id="examples">Examples <a class="direct-link" href="#examples">#</a></h2>
+<p># Standard first position pipe<br>
+iex&gt; 2 |&gt; Integer.to_string()<br>
+&quot;2&quot;</p>
+<p># Using ellipsis for explicit placement<br>
+iex&gt; 2 |&gt; Integer.to_string(...)<br>
+&quot;2&quot;</p>
+<p># Using ellipsis to place the piped value in a non-first position<br>
+iex&gt; 3 |&gt; String.pad_leading(&quot;2&quot;, ..., &quot;0&quot;)<br>
+&quot;002&quot;</p>
+<p># Using the ellipsis multiple times<br>
+iex&gt; 2 |&gt; Kernel.==(..., ...)<br>
+true</p>
+<p># Nested expressions with ellipsis<br>
+iex&gt; 2 |&gt; String.pad_leading(Integer.to_string(...), 3, &quot;0&quot;)<br>
+&quot;002&quot;</p>
 <p>A few little extra features you might notice here:</p>
 <ul>
 <li>You can move the parameter into a subexpression, as in <code>2 |&gt; double_fst(double(...), 1)</code> where<br>
@@ -429,7 +394,7 @@ double will be called before the parameter is passed to <code>double_fst</code>.
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">29 Aug 2024</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">20 Apr 2025</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold"></span></div>
             
           
@@ -469,15 +434,15 @@ double will be called before the parameter is passed to <code>double_fst</code>.
   <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
   <div>
     <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
-    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
     <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
     <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
   </div> 
   <div>
     <span class="font-semibold !capitalize !text-base-content">Learn</span> 
-    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
-    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
-    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+    
+    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
   </div> 
   <div>
     <span class="font-semibold !capitalize !text-base-content">Apps</span> 

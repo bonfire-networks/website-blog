@@ -6,7 +6,7 @@
       <h2 class="text-3xl font-extrabold text-center text-blueGray-300 sm:text-4xl">
           Frequently asked questions
       </h2>
-      <dl class="mt-6 space-y-6 divide-y divide-base-content/10">
+      <dl class="mt-16 space-y-6 divide-y divide-base-content/10">
           <div class="pt-6">
           <dt class="text-lg">
               <!-- Expand/collapse question button -->
@@ -285,6 +285,9 @@
           </dd>
           </div>
 
+        
+
+
           <div class="pt-6">
           <dt class="text-lg">
               <!-- Expand/collapse question button -->
@@ -293,7 +296,7 @@
               @click="openPanel = (openPanel === 9 ? null : 9)"
               class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
-                  Do I need to get a special device?
+                  Do you have a flagship instance ?
               </span>
               <span class="flex items-center ml-6 h-7">
                   <svg
@@ -316,38 +319,27 @@
               x-show="openPanel === 9"
               class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
-                  <ul>
-                  <li>The Bonfire team is preparing to launch a device that will put your apps and data in your hands (literally), but you’ll still be able to host apps on your own device or server or in the cloud if you prefer.</li>
-                  <li>The Bonfire device will be:
-                      <ul>
-                      <li>Plug & play: easy to set up and maintain</li>
-                      <li>Online, offline or local network: Use the apps offline or within your local network (e.g. spin up a temporary autonomous network at a festival or protest)</li>
-                      <li>Open: Based on something like Raspberry Pi and running free software</li>
-                      <li>Friendly to intermediate tech users: Preconfigured and well documented so you can easily run any Bonfire apps and extensions</li>
-                      <li>Springboard for DIY: Install additional apps on your device and take more control of your digital life</li>
-                      </ul>
-                  </li>
-                  </ul>
+                  wip
               </div>
           </dd>
           </div>
-
+          
           <div class="pt-6">
           <dt class="text-lg">
               <!-- Expand/collapse question button -->
               <button
               x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 10 ? null : 10)"
+              @click="openPanel = (openPanel === 9 ? null : 9)"
               class="flex items-start justify-between w-full text-left text-blueGray-400">
               <span class="font-medium text-blueGray-300">
-                  Can I have a nomadic identity? How do I sync with the fediverse?
+                  What are the minimum requirements to run a Bonfire server?
               </span>
               <span class="flex items-center ml-6 h-7">
                   <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 10, 'rotate-0': !(openPanel === 10) }"
+                  x-bind:class="{ '-rotate-180': openPanel === 9, 'rotate-0': !(openPanel === 9) }"
                   class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -360,24 +352,89 @@
               </button>
           </dt>
           <dd
-              x-show="openPanel === 10"
+              x-show="openPanel === 9"
               class="pr-12 mt-2">
               <div class="prose prose-light text-blueGray-300">
-                  <ul>
-                  <li>The Bonfire team is preparing to launch a hosted service that will host your fediverse identity and sync your Bonfire apps with the fediverse.
-                      <ul>
-                      <li>Always online: Hosts your fediverse identity on your own domain name (or using nickname@your-instance.bonfire.cafe).
-                      <li>Nomadic identity: You can switch/add apps, change device or host for your instance, while keeping the same user/domain name. You’ll also be able to migrate your identity to a different domain.
-                      <li>Complements your Bonfire device: Stores your incoming messages/updates when your device is offline, and syncs your apps with the fediverse.
-                      <li>Doesn’t hog your data: Once your private data has synced to your device it is deleted from the server right away.
-                      <li>Respects your privacy: End-to-end encryption for private activities (when available) means your data is never seen by the server or anyone else.
-                      <li>Open source & decentralised: Possible to self-host, or use a compatible service.
-                      </ul>
-                  </li>
-                  </ul>
+                  wip
               </div>
           </dd>
           </div>
+
+          <div class="pt-6">
+          <dt class="text-lg">
+              <!-- Expand/collapse question button -->
+              <button
+              x-description="Expand/collapse question button"
+              @click="openPanel = (openPanel === 9 ? null : 9)"
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
+              <span class="font-medium text-blueGray-300">
+                  Does Bonfire federate with X?
+              </span>
+              <span class="flex items-center ml-6 h-7">
+                  <svg
+                  x-description="Heroicon name: outline/chevron-down"
+                  x-state:on="Open"
+                  x-state:off="Closed"
+                  x-bind:class="{ '-rotate-180': openPanel === 9, 'rotate-0': !(openPanel === 9) }"
+                  class="w-6 h-6 transform -rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </span>
+              </button>
+          </dt>
+          <dd
+              x-show="openPanel === 9"
+              class="pr-12 mt-2">
+              <div class="prose prose-light text-blueGray-300">
+                  wip
+              </div>
+          </dd>
+          </div>
+
+
+          <div class="pt-6">
+          <dt class="text-lg">
+              <!-- Expand/collapse question button -->
+              <button
+              x-description="Expand/collapse question button"
+              @click="openPanel = (openPanel === 9 ? null : 9)"
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
+              <span class="font-medium text-blueGray-300">
+                  What is Mosaic?
+              </span>
+              <span class="flex items-center ml-6 h-7">
+                  <svg
+                  x-description="Heroicon name: outline/chevron-down"
+                  x-state:on="Open"
+                  x-state:off="Closed"
+                  x-bind:class="{ '-rotate-180': openPanel === 9, 'rotate-0': !(openPanel === 9) }"
+                  class="w-6 h-6 transform -rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </span>
+              </button>
+          </dt>
+          <dd
+              x-show="openPanel === 9"
+              class="pr-12 mt-2">
+              <div class="prose prose-light text-blueGray-300">
+                  wip
+              </div>
+          </dd>
+          </div>
+          
+
+          
 
           <div class="pt-6">
           <dt class="text-lg">

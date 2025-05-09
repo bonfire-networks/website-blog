@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonfire</title>
     <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link
     rel="stylesheet" href="/css/style_v2.css">
@@ -23,8 +28,8 @@
     >
     
 
-    <div class="max-w-screen-xl mx-auto">
-      <header class="relative z-30 lg:px-8 mx-auto navbar">
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
         <div class="navbar-start w-[30%]">
           <div class="flex  items-center flex-shrink-0">
             <a href="/" class="flex items-center space-x-4">
@@ -75,18 +80,8 @@
                       <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/themes">
-                      <div class="font-bold">Themes</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Personalize Bonfire with your preferred colors and styling</div>
-                  </a>
-                </li>
-                  <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/pilots">
-                      <div class="font-bold">Pilots</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Some of the communities we are working with</div>
-                  </a>
-                </li>
+                
+                  
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
                       <div class="font-bold">How to participate</div>
@@ -126,12 +121,8 @@
                   </a>
                 </li>
                 
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/docs/changelog">
-                    <div class="font-semibold">Changelog</div>
-                    <div class="font-light text-sm    -mt-1.5">Latest updates and improvements</div>
-                  </a></li>
-                <li>
+                
+                <li> 
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
                     <div class="font-semibold">Get the code</div>
                     <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
@@ -220,11 +211,7 @@
           </a>
           </li>
 
-          <li>
-            <a href="/themes" class=" ">
-            <span class="text-base font-regular">Themes</span>
-          </a>
-          </li>
+          
 
 
             <li>
@@ -233,18 +220,9 @@
           </a>
           </li>
 
-          <li>
-            <a href="/courses" class=" ">
-            <span class="text-base font-regular">courses</span>
-          </a>
-          </li>
           
           
-          <li>
-            <a href="/pilots" class=" ">
-            <span class="text-base font-regular">Pilots</span>
-          </a>
-          </li>
+          
           
           <li>
             <a href="/faq" class=" ">
@@ -263,7 +241,7 @@
           </li>
 
           <li>
-            <a href="https://github.com/bonfire-networks/bonfire-app" class=" ">
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
               <span class="text-base font-regular">Get the code</span>
             </a>
           </li>
@@ -303,18 +281,18 @@
   </ul>
 </div>
 <h1 class="text-3xl font-bold text-base-content  ">Bonfire Community</h1>
-<div class="grid mt-4 grid-cols-5  items-start gap-12">
+<div class="grid mt-4 grid-cols-5  items-start gap-4">
   <div class="col-span-5 order-last lg:order-first lg:col-span-3">
       <img src="https://i.imgur.com/GE1cDgt.png" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
       <div class="prose mt-6 max-w-full">Bonfire Community app is crafted for groups seeking expanded online interaction. It facilitates coordinated activities, topical discussions, and more nuanced governance structures. Key features include &#39;Groups&#39; for flexible discussions and &#39;Topics&#39; for organized conversation, promoting clarity and focus in community, along with the flexibility to set specific visibility and permission levels.</div>
   </div>
-  <div class="col-span-5 lg:col-span-2 gap-4 lg:gap-12 flex flex-col ">
+  <div class="col-span-5 lg:col-span-2 gap-4 flex flex-col ">
     <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
       <div class="prose">Federated digital spaces tailored for communities, enabling organizing around open and private groups, and topic-focused discussions</div>
       
       <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">Coming soon</span></div>
+        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">Alpha</span></div>
         
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Fedi Group</span> <a class="font-bold underline" href="https://a.gup.pe/u/bonfire_community_app">@bonfire_community_app@a.gup.pe</a></div>
         
@@ -324,17 +302,18 @@
         
         <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">AGPL</span></div>
         <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/community">bonfire-app/flavours/community</a></div>
+        
       </div>
     </div>
 
     <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
       <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
         <div class="pt-2 flex justify-between items-center text-sm">
-          <span class="font-light">Developed by</span>  
+          <span class="font-light">Maintaned by</span>  
           <div class="flex items-center gap-3">
             
               <a href="https://bonfirenetworks.org" target="_blank">
-                <span class="font-semibold text-lg link">
+                <span class="font-semibold link">
                   Bonfire
                 </span>
               </a>
@@ -384,7 +363,7 @@
           <div class="flex items-center gap-3">
              
               <a href="https://nlnet.nl/project/Bonfire/" target="_blank">
-                <span class="font-semibold text-lg link">
+                <span class="font-semibold link">
                 NlNet
               </span></a>
               
@@ -401,77 +380,35 @@
 
         <div class="">
           <span class="font-medium text-2xl">Extensions included</span>  
-          <div class="flex flex-wrap items-center gap-3 mt-4">
+          <div class="flex flex-wrap items-center gap-2 mt-4">
              
+              <a href="/extension/social">
+                <span class="badge badge-accent badge-sm">
+                Social
+              </span>
+              </a>
+              
               <a href="/extension/bonfire_ui_groups">
-                <span class="link-primary link-hover text-sm">
+                <span class="badge badge-accent badge-sm">
                 UI.Groups
               </span>
               </a>
               
               <a href="/extension/bonfire_tag">
-                <span class="link-primary link-hover text-sm">
+                <span class="badge badge-accent badge-sm">
                 Tag
               </span>
               </a>
               
               <a href="/extension/bonfire_classify">
-                <span class="link-primary link-hover text-sm">
+                <span class="badge badge-accent badge-sm">
                 Classify
               </span>
               </a>
               
               <a href="/extension/bonfire_geolocate">
-                <span class="link-primary link-hover text-sm">
+                <span class="badge badge-accent badge-sm">
                 Geolocate
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_common">
-                <span class="link-primary link-hover text-sm">
-                Common
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_me">
-                <span class="link-primary link-hover text-sm">
-                Me
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_social">
-                <span class="link-primary link-hover text-sm">
-                Social
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_ui_social">
-                <span class="link-primary link-hover text-sm">
-                UI.Social
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_boundaries">
-                <span class="link-primary link-hover text-sm">
-                Boundaries
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_federate_activitypub">
-                <span class="link-primary link-hover text-sm">
-                Federate:ActivityPub
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_search">
-                <span class="link-primary link-hover text-sm">
-                Search
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_files">
-                <span class="link-primary link-hover text-sm">
-                Files
               </span>
               </a>
               
@@ -486,81 +423,10 @@
 
 
 <!-- Tabs -->
-<div
-id="main"
-    x-data="{
-        selectedId: null,
-        init() {
-            // Set the first available tab on the page on page load.
-            this.$nextTick(() => this.select(this.$id('tab', 1)))
-        },
-        select(id) {
-            this.selectedId = id
-        },
-        isSelected(id) {
-            return this.selectedId === id
-        },
-        whichChild(el, parent) {
-            return Array.from(parent.children).indexOf(el) + 1
-        }
-    }"
-    x-id="['tab']"
-    class=""
->
-    <!-- Tab List -->
-    <ul
-        x-ref="tablist"
-        @keydown.right.prevent.stop="$focus.wrap().next()"
-        @keydown.home.prevent.stop="$focus.first()"
-        @keydown.page-up.prevent.stop="$focus.first()"
-        @keydown.left.prevent.stop="$focus.wrap().prev()"
-        @keydown.end.prevent.stop="$focus.last()"
-        @keydown.page-down.prevent.stop="$focus.last()"
-        role="tablist"
-        class="-mb-px  mt-6 flex items-stretch"
-    >
-        <!-- Tab -->
-        <li>
-            <button
-                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-                @click="select($el.id)"
-                @mousedown.prevent
-                @focus="select($el.id)"
-                type="button"
-                :tabindex="isSelected($el.id) ? 0 : -1"
-                :aria-selected="isSelected($el.id)"
-                :class="isSelected($el.id) ? 'border-base-content/30 bg-base-100' : 'border-transparent'"
-                class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
-                role="tab"
-            >Features</button>
-        </li>
 
-        <li>
-            <button
-                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
-                @click="select($el.id)"
-                @mousedown.prevent
-                @focus="select($el.id)"
-                type="button"
-                :tabindex="isSelected($el.id) ? 0 : -1"
-                :aria-selected="isSelected($el.id)"
-                :class="isSelected($el.id) ? 'border-base-content/30 bg-base-100' : 'border-transparent'"
-                class="inline-flex rounded-t-md border-t border-l border-r px-5 py-2.5"
-                role="tab"
-            >Readme</button>
-        </li>
-    </ul>
 
-    <!-- Panels -->
-    <div role="tabpanels" class="rounded-b-md border border-base-content/30 bg-base-100">
-        <!-- Panel -->
-        <section
-            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
-            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
-            role="tabpanel"
-            class="p-8"
-        >
-           
+
+ <section class="mt-20">
 
 <div class="flex flex-col gap-6">
 
@@ -604,37 +470,7 @@ id="main"
 
 
 </div>
-
-        </section>
-
-        <section
-            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
-            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
-            role="tabpanel"
-            class="p-8 prose prose-sm"
-        >
-           
-           <h1>Bonfire Community</h1>
-<p>This app is a flavour of <a href="https://bonfirenetworks.org/">Bonfire</a> and bundles the following extensions:</p>
-<ul>
-<li><a href="https://github.com/bonfire-networks/bonfire_common">Bonfire.Common</a> - common utils</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_me">Bonfire.Me</a> - accounts, user profiles...</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_social">Bonfire.Social</a> - feeds, activities, posts, boosting, flagging, etc...</li>
-<li><a href="https://github.com/bonfire-ecosystem/bonfire_ui_social">Bonfire.UI.Social</a> - interface for basic social activities</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_boundaries">Bonfire.Boundaries</a> - define circles and associated privacy or permissions</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_federate_activitypub">Bonfire.Federate.ActivityPub</a> - federates activities with ActivityPub to participate in the fediverse</li>
-<li><a href="https://github.com/bonfire-ecosystem/bonfire_tag">Bonfire.Tag</a> - @ mentions, hashtags, and tagging using topics/categories from Bonfire.Classify</li>
-<li><a href="https://github.com/bonfire-ecosystem/bonfire_classify">Bonfire.Classify</a> - categories &amp; classifications in taxonomies</li>
-<li><a href="https://github.com/bonfire-ecosystem/bonfire_ui_groups">Bonfire.UI.Groups</a> - groups</li>
-<li><a href="https://github.com/bonfire-ecosystem/bonfire_ui_topics">Bonfire.UI.Topics</a> - topics</li>
-</ul>
-<h2>More information</h2>
-<p>See the <a href="../../README.md">main docs</a>.</p>
-
-        </section>
-    </div>
-</div>
-
+</section>
 
 
 </div>
@@ -656,15 +492,15 @@ id="main"
   <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
   <div>
     <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
-    <a href="/docs" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
     <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
     <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
   </div> 
   <div>
     <span class="font-semibold !capitalize !text-base-content">Learn</span> 
-    <a href="/docs" class="link link-hover text-base-content/70">Documentation</a> 
-    <a href="/tutorials" class="link link-hover text-base-content/70">Tutorials</a> 
-    <a href="/docs/faq" class="link link-hover text-base-content/70">FAQs</a> 
+    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+    
+    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
   </div> 
   <div>
     <span class="font-semibold !capitalize !text-base-content">Apps</span> 
