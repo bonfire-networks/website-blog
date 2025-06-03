@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+
+
+<div class="max-w-screen-md mx-4 my-12 lg:mx-auto">
+
+<h1 class="mb-6 text-5xl text-center font-bold">Open Science Network (OSN): Building Open & Federated Social Networks for Open Science</h1>
+  
+<div role="alert" class="alert alert-info items-start alert-outline mt-6">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  </svg>
+  <span>The following is an application we submitted to the <a class="link" href="https://www.oscars-project.eu/" target="blank">Oscars grant</a> as part of the Open Science Network consortium. The proposal status is currently pending (we will know by the end of summer), but we are committed to advancing this work further and need proper funding to support the necessary efforts. We welcome interested foundations to join us in funding this work. Reach out to team@bonfire.cafe to discuss further.</span>
+</div>
+
+<div class="mt-6 prose">
+  {% set snippet %}{% include 'oscars_grant.md' %}{% endset %}
+  {{ snippet | markdown | safe }}
+</div>
+
+  <div class="flex mt-12 items-center place-content-center gap-3">
+    <a href="/docs" class="btn btn-primary">Read the docs</a> or 
+    <a href="/contact" class="link text-lg font-semibold">get in touch</a>
+  </div>
+
+</div>
