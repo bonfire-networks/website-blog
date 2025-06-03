@@ -1,0 +1,897 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire</title>
+    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- OpenGraph meta tags for social sharing -->
+    <meta property="og:title" content="Bonfire">
+    <meta property="og:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonfirenetworks.org//oscars/">
+    
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bonfire">
+    <meta name="twitter:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    
+    
+    <link
+    rel="stylesheet" href="/css/style_v2.css?v2">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky bg-base-100 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+    >
+    
+
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
+        <div class="navbar-start w-[30%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end w-[70%]">
+
+            <div class="hidden xl:flex w-full justify-end mr-3">
+          <ul class="flex-row  p-0 font-medium menu font-bold menu-horizontal">
+            <li>
+              <a href="/about" role="button" tabindex="0" class="flex font-semiboltext-[15px] items-center gap-2 ">
+                <span>About</span>
+              </a>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Hosting</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
+                  </a>
+                </li>
+                
+                  
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
+                      <div class="font-semibold">Documentation</div>
+                      <div class="font-light text-sm    -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-semibold">Design</div>
+                      <div class="font-light text-sm    -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-semibold">Community</div>
+                      <div class="font-light text-sm    -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-semibold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light   ">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                
+                <li> 
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-semibold">Get the code</div>
+                    <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/mosaic" class="font-semibold  text-[15px]  ">
+              <span class="">Mosaic</span>
+            </a>
+            </li>
+
+            <li>
+            <a href="/blog" class="font-semibold  text-[15px]  ">
+              <span class="">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+
+           
+          <a href="/start/" >
+            <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <label for="theme_controller" class="swap swap-rotate mx-3">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+            </label>
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+
+<div class="max-w-screen-md mx-4 my-12 lg:mx-auto">
+
+<h1 class="mb-6 text-5xl text-center font-bold">Open Science Network (OSN): Building Open & Federated Social Networks for Open Science</h1>
+  
+<div role="alert" class="alert alert-info items-start alert-outline mt-6">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  </svg>
+  <span>The following is an application we submitted to the <a class="link" href="https://www.oscars-project.eu/" target="blank">Oscars grant</a> as part of the Open Science Network consortium. The proposal status is currently pending (we will know by the end of summer), but we are committed to advancing this work further and need proper funding to support the necessary efforts. We welcome interested foundations to join us in funding this work. Reach out to team@bonfire.cafe to discuss further.</span>
+</div>
+
+<div class="mt-6 prose">
+  
+  <h3 id="summary">Summary <a class="direct-link" href="#summary">#</a></h3>
+<p>Open Science Network (OSN) will develop a breakthrough federated social infrastructure connecting researchers directly with FAIR data objects across open science infrastructures—including archives, publishers, data warehouses, software repositories, and research information providers. OSN enhances traditional repository experiences by embedding social interaction within scientific workflows, creating a virtuous cycle where discussions become properly attributed, machine-readable FAIR objects with persistent identifiers.</p>
+<p>Unlike isolated commercial platforms, OSN leverages Bonfire' extensible federated architecture to ensure researchers and their organizations maintain complete digital sovereignty while creating comprehensive provenance chains between discussions and referenced data. By transforming informal knowledge exchange that typically disappears in email threads or closed platforms into an identified and searchable part of the scientific record, OSN addresses critical gaps in the current research ecosystem.</p>
+<h3 id="project-consortium">Project Consortium <a class="direct-link" href="#project-consortium">#</a></h3>
+<ul>
+<li>Bonfire (Project Coordinator)</li>
+<li>Université de Lorraine</li>
+<li>eLife/sciety</li>
+<li>Physikalisch-Technische Bundesanstalt</li>
+<li>HCommons (Michigan State University)</li>
+<li>UNIF</li>
+</ul>
+<h3 id="key-challenges"><strong>Key Challenges</strong> <a class="direct-link" href="#key-challenges">#</a></h3>
+<p>Current scientific infrastructure faces critical barriers measurably impeding research impact:</p>
+<ul>
+<li><strong>Engagement Crisis</strong>:<br>
+Repository silos experience 69% fewer citations over 5 years compared to social platforms, with academic repositories failing to generate interaction metrics needed for discovery [^2];</li>
+<li><strong>Commercial Capture</strong>:<br>
+Academic networks like ResearchGate dominate with 54.3% researcher participation while truly open science platforms attract only 15%, creating walled gardens that extract value while limiting FAIR principles adoption[^3] ;</li>
+<li><strong>Lost Discourse and Knowledge Fragmentation</strong> :<br>
+Valuable scientific dialogue occurs in scattered, non-FAIR environments where domain silos create &quot;significant barriers to interdisciplinarity&quot;[^4], limiting cross-domain discovery with one study revealing 86% of medical research data is never reused after publication[^5].</li>
+</ul>
+<h3 id="proposed-solution"><strong>Proposed Solution</strong> <a class="direct-link" href="#proposed-solution">#</a></h3>
+<p>Open Science Network implements a federated social layer through established W3C standard protocols (<a href="https://www.w3.org/TR/activitypub/">ActivityPub</a>[^6] and <a href="https://www.openarchives.org/pmh/">OAI-PMH</a>[^7]). This server-to-server federation enables real-time interconnection between research actors, institutions, and outputs, all properly identified through ORCID, ROR, and DOI persistent identifiers. Authenticated interactions become citable and searchable FAIR objects with complete attribution chains and machine-readable licensing. Through ORCID/OpenAlex API integration, the platform connects researchers' social interactions with their professional profiles, creating an open alternative to platforms like ResearchGate and <a href="http://Academia.edu">Academia.edu</a> without compromising data ownership or research integrity.</p>
+<p>Our system strategically focuses on developing:</p>
+<ul>
+<li><strong>Repository Connector Framework</strong>: Specialized connectors for Dataverse and Knowledge Commons Works with modular design for future expansion to additional research infrastructures</li>
+<li><strong>Scientific Federation Protocol</strong>: Extending ActivityPub with formal JSON-LD scientific metadata representations</li>
+<li><strong>FAIR Discussion Engine</strong>: Automating transformations of scientific discussions into FAIR digital objects</li>
+<li><strong>Federated Research Groups</strong>: Domain-specific collaborative spaces with granular permission controls</li>
+<li><strong>Software Preservation Integration</strong>: Bidirectional connections with Software Heritage for scientific software preservation</li>
+<li><strong>Cross-Repository Knowledge Graph</strong>: Citation networks spanning multiple repositories to discover connections between datasets, publications, software, and discussions</li>
+</ul>
+<h3 id="scientific-impact"><strong>Scientific Impact</strong> <a class="direct-link" href="#scientific-impact">#</a></h3>
+<p>Open Science Network will transform research practices through a rigorous co-design process with our diverse pilot partners—representing key stakeholders across the scientific production, distribution, preservation, and consumption ecosystem. This consortium-driven approach ensures OSN addresses real-world needs while integrating all angles of the scientific workflow.</p>
+<p>Our consortium's strength lies in bringing together complementary expertise from consolidated scientific communities, data repositories,  universities, and open journals, creating a comprehensive solution that will deliver four measurable impacts:</p>
+<ul>
+<li>Substantial increase in cross-domain dataset discovery and reuse through social connections, measured against established baselines in partner institutions</li>
+<li>Creation of a significant corpus of new FAIR discussion objects within the first year, each with complete provenance chains linking to source materials</li>
+<li>Measurable reduction in knowledge loss by surfacing pre-publication insights that typically disappear in private channels</li>
+<li>Enhanced reproducibility through direct connections between discussions, papers, data, and code</li>
+</ul>
+<h2 id="scientific-and-innovation-objectives"><strong>Scientific and Innovation Objectives</strong> <a class="direct-link" href="#scientific-and-innovation-objectives">#</a></h2>
+<p>Open Science Network (OSN) will establish a federated, FAIR, open-source infrastructure for scientific collaboration that transforms social interactions into formal research outputs. Through three strategic pilot deployments, we will validate this approach across diverse institutional contexts.</p>
+<p>Our five measurable scientific objectives are:</p>
+<p><strong>1. Create an Interoperable Federation Layer</strong></p>
+<p>We will connect scientific open research infrastructures through standardized APIs and protocols, enabling researchers to interact with FAIR objects across institutional boundaries while maintaining digital sovereignty. Our implementation will include repository-specific connectors for:</p>
+<ul>
+<li><strong>CERN's InvenioRDM[^8]</strong>: Utilizing REST APIs and JSON-LD schemas
+<ul>
+<li><strong>Dataverse[^9]</strong>: Leveraging OAI-PMH and native REST APIs with DataCite metadata</li>
+<li><strong>Zenodo<a href="%5BZenodo%5D(https://zenodo.org/)">^10</a></strong>: Integrating with its established API ecosystem</li>
+<li><strong>DocMaps<a href="%5BDocMaps%5D(https://docmaps.knowledgefutures.org/)">^11</a></strong>: Integrating with its established API ecosystem</li>
+<li><strong>HAL.science[^12]</strong> and any others that offer standards-based interoperability or APIs can be added in the future</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.-transform-scientific-discourse-into-fair-data-objects"><strong>2. Transform Scientific Discourse into FAIR Data Objects</strong> <a class="direct-link" href="#2.-transform-scientific-discourse-into-fair-data-objects">#</a></h3>
+<p>We will develop concrete methods to encode discussions as machine-readable, citable research outputs. Our FAIR Discussion Engine will:</p>
+<ul>
+<li>Assign persistent identifiers (DOIs with DataCite integration)
+<ul>
+<li>Apply standardized machine-readable licenses (such as CC-BY 4.0)</li>
+<li>Preserve complete provenance chains linking discussions to source data (W3C PROV-O[^13])</li>
+<li>Implement review process transparency and contribution attribution using DocMaps protocol</li>
+<li>Generate structured metadata compatible with OpenAIRE Guidelines 4.0</li>
+<li>Ensure metadata remains accessible even if data becomes unavailable</li>
+<li>Support incremental FAIRness with feedback metrics for improvement</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.-extend-activitypub-federation-protocols-for-scientific-collaboration"><strong>3. Extend ActivityPub Federation Protocols for Scientific Collaboration</strong> <a class="direct-link" href="#3.-extend-activitypub-federation-protocols-for-scientific-collaboration">#</a></h3>
+<p>We will implement or write new Federation Extension Proposals (FEPs) to handle:</p>
+<ul>
+<li>Scientific metadata exchange with FAIR vocabularies (DataCite, Dublin Core)
+<ul>
+<li>Digital object persistent identifier integration (DOI, ORCID, ROR)</li>
+<li>Typed links for scientific relationships and activities (cites, reviews, reproduces, etc.)</li>
+<li>Permission models for pre-publication discussions supporting models like the <em>Interactive Public Peer Review</em> by Copernicus Publications.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4.-build-and-pilot-a-community-governed-alternative-to-commercial-platforms"><strong>4. Build and Pilot a Community-Governed Alternative to Commercial Platforms</strong> <a class="direct-link" href="#4.-build-and-pilot-a-community-governed-alternative-to-commercial-platforms">#</a></h3>
+<p>We will establish clear governance mechanisms including:</p>
+<ul>
+<li>Federation Governance Framework with explicit decision-making processes</li>
+<li>Cross-instance moderation protocols respecting institutional autonomy</li>
+<li>Transparent, documented code of conduct with reporting and appeals processes</li>
+<li>Integration with existing Bonfire extensions for moderation, article previews and document handling</li>
+<li>Co-design process with researchers from pilot partners and initiatives like Niboe collective and SciBeh</li>
+</ul>
+<p>Our project will be validated through several strategic pilots:</p>
+<ol>
+<li><strong>Michigan State University</strong>: Leveraging their vibrant Knowledge Commons**[^14]** community (50,000+ researchers) and integrating with &quot;KC Works&quot; repository (powered by InvenioRDM)</li>
+<li><strong>Physikalisch-Technische Bundesanstalt[^15]</strong>:  Germany's national metrology institute will pilot specialized scientific discussions around measurement standards and calibration datasets, demonstrating our platform's adaptability to rigorous data quality requirements and metrology research workflows</li>
+<li><strong>UNIF<a href="%5BUNIF%5D(https://unif.fr/en/)">^16</a>:</strong> The Paris Region Digital University (Université Numérique Île-de-France) will provide technical infrastructure and hosting expertise for our federation model, leveraging their experience with open and FAIR infrastructure systems. Their participation will facilitate integration with French academic networks and ensure compliance with European digital infrastructure standards.</li>
+<li><strong>Université de Lorraine[^17]</strong>: University is one of the largest universities in France, scoping most of the research disciplines. With Université de Strasbourg, it hosts a French labelled technical infrastructure. It will provide technical hosting for Bonfire instances. It will also provide its expertise in open science, the relevant infrastructures, the link with the research communities.</li>
+<li><strong>eLife/Sciety<a href="%5BSciety%5D(https://sciety.org/)">^18</a>:</strong> This collaboration will implement DocMaps protocol integration, demonstrating how peer review processes and evaluations can be captured as structured, machine-readable data across the federation, enhancing transparency in scientific assessment while preserving institutional review policies</li>
+<li><strong>Software Heritage[^19]</strong>: Connecting papers, data, and software for reproducible science, supporting their mission as a global archive of software source code</li>
+</ol>
+<p>These partners represent diverse governance models (public university, national research institution, global archive) to validate adaptability across contexts.</p>
+<h2 id="benefits-to-the-scientific-community%2C-european-society%2C-and-the-european-research-area"><strong>Benefits to the Scientific Community, European Society, and the European Research Area</strong> <a class="direct-link" href="#benefits-to-the-scientific-community%2C-european-society%2C-and-the-european-research-area">#</a></h2>
+<p>Open Science Network will deliver four concrete benefits:</p>
+<p><strong>For individual researchers:</strong></p>
+<ul>
+<li>Consistent digital identity across repositories via ORCID integration</li>
+<li>Full attribution for all contributions, including discussions</li>
+<li>Enhanced discovery of relevant datasets and software through social connections</li>
+<li>Career advancement through documented impact of contributions</li>
+<li>Access controls that balance openness with confidentiality for sensitive data</li>
+</ul>
+<p>OSN addresses platform lock-in by making scholarly social capital—profiles, discussions, and relationships—portable, persistent, and formally recognized through ORCID and DOIs attribution.</p>
+<p><strong>For institutions:</strong></p>
+<ul>
+<li>Ability to host instances that maintain institutional codes of conduct and data sovereignty</li>
+<li>Analytics on research engagement and impact</li>
+<li>Integration with existing institutional repositories</li>
+<li>Support for institutional open science policies</li>
+<li>Customizable functionality, user experience, and branding</li>
+<li>No vendor lock-in and reduced costs compared to commercial platforms</li>
+<li>Enhanced digital interaction between researchers</li>
+</ul>
+<p><strong>For the European Research Area:</strong></p>
+<ul>
+<li>Federated infrastructure aligned with Europe's digital sovereignty strategy</li>
+<li>Full compatibility with EOSC standards and services</li>
+<li>Support for multilingual scientific discussion with translation capabilities</li>
+<li>Enhanced competitiveness through accelerated knowledge exchange</li>
+<li>Implementation of European values in scientific communication platforms</li>
+</ul>
+<p>Our open-source, federated, portable, interoperable, and community-governed design ensures resilience against commercial capture, safeguarding long-term sustainability, trust, and academic freedom.</p>
+<p><strong>For the general public:</strong></p>
+<ul>
+<li>Increased transparency of scientific processes</li>
+<li>Enhanced interfaces between specialized communities and broader stakeholders</li>
+<li>Accelerated scientific response to societal challenges</li>
+<li>Support for citizen science engagement</li>
+<li>More effective knowledge transfer to policy and practice</li>
+</ul>
+<p>Whereas platforms like Bluesky may be 'federatable in theory,' OSN is federated in practice from day one, with multi-institutional pilots, open protocols, and no single controlling authority. OSN provides both the technical and social means needed to overcome the fragmentation and inertia that have undermined previous platform migrations by academics. While other platforms come with lock-in or high switching costs, OSN’s federation and open standards ensure that researchers, institutions, and communities can move, fork, or self-host their networks and data at any time—eliminating lock-in and returning control to the academic sector.</p>
+<h2 id="addressing-questions-of-high-societal-relevance"><strong>Addressing Questions of High Societal Relevance</strong> <a class="direct-link" href="#addressing-questions-of-high-societal-relevance">#</a></h2>
+<h3 id="1.-establishing-community-governed-scientific-networks"><strong>1. Establishing Community-Governed Scientific Networks</strong> <a class="direct-link" href="#1.-establishing-community-governed-scientific-networks">#</a></h3>
+<p>Recent studies show approximately 75% of researchers use commercial and closed academic platforms despite growing concerns about data ownership and privacy[^20].</p>
+<p>The Open Science Network demonstrates a viable federation model where governance is distributed across institutions while maintaining interoperability. Our pilot partners represent diverse governance models (public university, national research institution, global archive, open access publisher) to validate adaptability across contexts.</p>
+<h3 id="2.-enhancing-reproducibility-across-disciplines"><strong>2. Enhancing Reproducibility Across Disciplines</strong> <a class="direct-link" href="#2.-enhancing-reproducibility-across-disciplines">#</a></h3>
+<p>The European Commission has recognized research waste as a critical challenge, establishing Open Research Europe specifically to &quot;implement Open Science practices and to support research integrity, transparency and reproducibility as well as to prevent 'research waste'&quot; (Open-access.network, 2021). By connecting discussions directly to data objects, code, and methods, Open Science Network creates environments where reproducibility challenges can be documented and addressed collaboratively. Our Software Heritage integration specifically enables linking discussions to preserved code versions, enhancing computational reproducibility.</p>
+<h3 id="3.-accelerating-interdisciplinary-collaboration-on-complex-challenges"><strong>3. Accelerating Interdisciplinary Collaboration on Complex Challenges</strong> <a class="direct-link" href="#3.-accelerating-interdisciplinary-collaboration-on-complex-challenges">#</a></h3>
+<p>Climate change, pandemic response, and sustainable development require cross-disciplinary approaches that current siloed repositories hinder. Our cross-repository discovery mechanisms will enable researchers to find relevant data through human social connections rather than keyword searches alone.</p>
+<p>By addressing these questions, Open Science Network provides the technical foundation for researcher-governed scientific discourse that connects directly to research outputs, enabling a more integrated, transparent, and collaborative scientific process. This aligns with the 2020 Leiden Manifesto's emphasis on community governance of research evaluation and the European Open Science Cloud's mission to make research more discoverable, accessible, interoperable, and reusable.</p>
+<h1 id="scientific-impacts">Scientific impacts <a class="direct-link" href="#scientific-impacts">#</a></h1>
+<p>Open Science Network (OSN) will fundamentally transform scientific collaboration by creating the missing bridge between data repositories and scientific discourse—addressing critical gaps in the current research ecosystem while generating substantial new scientific knowledge through interconnected innovations that go beyond the state of the art.</p>
+<h2 id="extending-scientific-knowledge-beyond-current-boundaries"><strong>Extending Scientific Knowledge Beyond Current Boundaries</strong> <a class="direct-link" href="#extending-scientific-knowledge-beyond-current-boundaries">#</a></h2>
+<p>Currently, platforms like ResearchGate facilitate social interaction around publications but create closed ecosystems where valuable discussions remain inaccessible and non-FAIR. Conversely, data repositories store FAIR objects but lack the social engagement capabilities that drive scientific discovery. OSN resolves this contradiction by pioneering a federated social layer that preserves the context in which scientific insights emerge.</p>
+<p>By implementing W3C Web Annotation standards and RDA's Data Citation guidelines, OSN will transform ephemeral scientific discussions into properly attributed, machine-readable FAIR data objects with permanent identifiers. This advancement preserves valuable scientific context that is currently lost in private communications, creating a new category of scientific objects that capture the genesis of ideas and critiques.</p>
+<p>OSN pioneers federated group structures that enable multidisciplinary, cross-institutional research teams to collaborate seamlessly across traditional boundaries. Unlike existing tools that require centralized platforms or formal institutional agreements, our federation protocols allow spontaneous formation of research communities around emerging scientific questions, preserving both institutional autonomy and individual attribution while generating new FAIR data objects.</p>
+<h2 id="engaging-multiple-scientific-communities"><strong>Engaging Multiple Scientific Communities</strong> <a class="direct-link" href="#engaging-multiple-scientific-communities">#</a></h2>
+<p>OSN is uniquely positioned to engage diverse scientific ecosystems through our targeted pilot implementations:</p>
+<ol>
+<li><strong>Knowledge Commons at Michigan State University</strong> (humanities/social sciences) with its community of 50,000+ active users</li>
+<li><strong>Physikalisch-Technische Bundesanstalt</strong> (Germany's national metrology institute)</li>
+<li><strong>UNIF</strong> (French University Digital Infrastructure)</li>
+<li><strong>Université de Lorraine</strong> (Large multidisciplinary French university)</li>
+<li><strong>eLife/Sciety</strong> (implementing DocMaps protocol integration)</li>
+<li><strong>Software Heritage</strong> (global code archive) containing 12+ billion source files</li>
+</ol>
+<p>This multi-domain approach ensures OSN addresses varying needs across research disciplines, facilitating collaboration across traditionally siloed fields. By connecting repositories from different domains through a unified social layer, we enable researchers to discover and engage with data outside their immediate field—a capability critical for addressing complex societal challenges requiring interdisciplinary approaches.</p>
+<p>The federated architecture of OSN respects the diversity of scientific practice by allowing communities to maintain autonomy while participating in the broader network. Unlike centralized platforms that impose uniform policies, OSN enables communities to establish their own moderation policies and collaboration norms while ensuring interoperability—a critical consideration for cross-disciplinary engagement.</p>
+<p>OSN also specifically addresses the &quot;long tail of science&quot; by providing open-source software that can be deployed with minimal requirements (single virtual machine). This democratizes access to sophisticated collaboration tools, enabling smaller research groups, individual researchers, and resource-constrained institutions to participate in the scientific ecosystem on equal footing with larger entities.</p>
+<p>Our tiered authentication systems accommodate citizen scientists while maintaining verification standards, and our contribution taxonomies properly attribute diverse forms of participation. This inclusive approach broadens the scientific community and leverages diverse perspectives that enrich scientific discourse.</p>
+<h2 id="supporting-research-infrastructures-beyond-science-clusters"><strong>Supporting Research Infrastructures Beyond Science Clusters</strong> <a class="direct-link" href="#supporting-research-infrastructures-beyond-science-clusters">#</a></h2>
+<ul>
+<li>OSN extends beyond current Science Clusters through its extensible repository connector framework. While our initial implementation focuses on specific repositories (InvenioRDM, Dataverse, Zenodo, Software Heritage), we are developing a generalized connector framework allowing integration with any standards-compliant repository. This ensures OSN can support additional ESFRI RIs without requiring complete redevelopment.</li>
+<li>By enabling researchers to discover and engage with data across multiple RIs through a unified social interface, OSN addresses the fragmentation currently limiting cross-RI collaboration. Researchers can discuss climate datasets alongside social impact data from entirely different sources, creating interdisciplinary insights difficult to achieve through existing isolated interfaces.</li>
+<li>Emerging Research Infrastructures gain particular value from OSN by obtaining immediate connectivity to the broader scientific ecosystem without requiring massive investment in custom social tools. Our lightweight deployment options require minimal infrastructure, allowing resource-constrained RIs to participate fully.</li>
+</ul>
+<h2 id="measurable-scientific-impacts"><strong>Measurable Scientific Impacts</strong> <a class="direct-link" href="#measurable-scientific-impacts">#</a></h2>
+<p>OSN will deliver five significant scientific impacts that will be systematically measured throughout the project:</p>
+<ol>
+<li><strong>Enhanced Data Discovery and Reuse:</strong> We will establish baseline discovery rates through pre-project surveys and target substantial increases in dataset accesses and citations for connected repositories. This will be measured through access logs, DOI resolution statistics, and citation tracking via DataCite, with measurements at key project milestones.</li>
+<li><strong>Accelerated Cross-Disciplinary Collaboration:</strong> Based on initial bibliometric analysis, we aim to significantly increase cross-disciplinary dataset utilization, measured through network analysis of researcher interactions and citation patterns across disciplinary boundaries. We will track this progress regularly throughout the project lifecycle.</li>
+<li><strong>Democratized Access to Scientific Discourse:</strong> Building from current geographic and institutional diversity in repository usage, we target broad international participation with particular focus on Global South inclusion. We will conduct regular diversity tracking from launch with quarterly progress reports.</li>
+<li><strong>Improved Scientific Transparency and Reproducibility:</strong> The connection between discussions and data objects will enhance scientific transparency by making the context around datasets explicitly visible. We will measure this by tracking how often dataset reuse incorporates references to Open Science Network discussions, with a focus on improved reproducibility confirmation rates for datasets with active discussions.</li>
+<li><strong>New Research Question Generation:</strong> We will document the emergence of novel research questions spanning multiple disciplines by analyzing discussion threads and coding for question novelty and cross-disciplinarity, with validation from an independent expert panel. This qualitative and quantitative assessment will demonstrate how connected conversations around scientific objects spark new research directions.</li>
+</ol>
+<p>These impact measurements will be incorporated into our regular reporting and final deliverables, providing concrete evidence of how OSN transforms scientific collaboration and knowledge creation.</p>
+<h2 id="alignment-with-european-science-policy-objectives"><strong>Alignment with European Science Policy Objectives</strong> <a class="direct-link" href="#alignment-with-european-science-policy-objectives">#</a></h2>
+<p>OSN directly supports multiple European science policy priorities:</p>
+<p><strong>Digital Sovereignty:</strong> By providing a community-governed alternative to commercial platforms, OSN advances European digital sovereignty in scientific infrastructure, aligning with the European Strategy for Data's emphasis on developing alternatives to dominant platforms.</p>
+<p><strong>Open Science Implementation:</strong> OSN contributes directly to EOSC by providing social infrastructure that enhances the utility of existing EOSC resources, supporting the goal of making open science the new normal by embedding FAIR principles in researchers' daily collaborative practices.</p>
+<p><strong>Responsible Research Assessment:</strong> By developing attribution mechanisms that recognize diverse contributions to scientific knowledge, OSN supports the transition toward more nuanced research assessment models beyond simple bibliometric measures.</p>
+<p><strong>Research Integrity Enhancement:</strong> The transparency afforded by connecting discussions directly to data objects enhances research integrity by making methodological considerations explicitly visible, fostering environments where critical engagement with methods and results is preserved.</p>
+<p>Through this comprehensive approach to transforming scientific discourse, OSN creates lasting infrastructure for cross-disciplinary, cross-institutional collaboration that accelerates scientific discovery while ensuring equitable participation across the research ecosystem—directly supporting the European Open Science Cloud's mission to make research more discoverable, accessible, interoperable, and reusable.</p>
+<p><strong>Digital resources</strong><br>
+Describe how the project pilots the use of data and services already on-boarded to the Science Clusters Open Science platforms and/or to the EOSC platform and/or bring new research digital objects and RI services to the EOSC Exchange. Illustrate, if applicable, the technological innovation potential of the proposed project and the capacity to strengthen the multi-domain/multi- competences cross-fertilization and/or training. Describe in detail the expected needs in terms of computing resources.(Max 6000 chars)</p>
+<p>Open Science Network will integrate with established Science Clusters' repositories and contribute innovative FAIR digital objects to the EOSC ecosystem through a federated social layer that transforms scientific discourse into properly attributed data objects with complete provenance chains.</p>
+<h3 id="integration-with-research-repositories-and-eosc-platforms"><strong>Integration with Research Repositories and EOSC Platforms</strong> <a class="direct-link" href="#integration-with-research-repositories-and-eosc-platforms">#</a></h3>
+<p>Our project will pilot integration with several key repositories that are essential components of the Science Clusters' infrastructure:</p>
+<p><strong>Knowledge Commons Works Integration:</strong></p>
+<ul>
+<li>Implementation of REST API connections to InvenioRDM backend</li>
+<li>Development of metadata mappers for research object types</li>
+<li>Creation of bidirectional linking between discussions and KC Works objects</li>
+</ul>
+<p><strong>Dataverse Integration:</strong></p>
+<ul>
+<li>Implementation of OAI-PMH harvesting for metadata synchronization</li>
+<li>Development of Dataverse API client for direct object referencing</li>
+<li>Creation of dataset preview capabilities within discussion threads</li>
+</ul>
+<p><strong>Zenodo Integration:</strong></p>
+<ul>
+<li>Implementation of REST API client for FAIR object deposit</li>
+<li>Development of DOI registration and metadata mapping</li>
+<li>Creation of automated preservation workflows for discussions</li>
+<li>Building of configurable export filters for different discussion types</li>
+</ul>
+<p><strong>Sciety/eLife Integration:</strong></p>
+<ul>
+<li>Implementation of preprint and open review connectors</li>
+<li>Development of cross-platform conversation synchronization</li>
+<li>Creation of specialized citation mechanisms for preprints</li>
+<li>Implementation of DocMaps protocol integration for review process transparency</li>
+</ul>
+<p><strong>Software Heritage Integration:</strong></p>
+<ul>
+<li>Implementation of SWHID persistent identifier support</li>
+<li>Creation of provenance tracking between discussions and code versions</li>
+<li>Support for scientific software preservation across domains</li>
+</ul>
+<p>By connecting with these repositories, OSN creates seamless interoperability between diverse scientific resources, enabling researchers to engage with data across disciplinary boundaries while maintaining FAIR principles and proper attribution.</p>
+<h3 id="contribution-to-eosc-exchange"><strong>Contribution to EOSC Exchange</strong> <a class="direct-link" href="#contribution-to-eosc-exchange">#</a></h3>
+<p>Open Science Network will bring new digital objects to the EOSC Exchange platform through:</p>
+<p><strong>FAIR Discussion Objects:</strong> Our key innovation transforms scientific discussions into properly attributed, machine-readable FAIR data objects that will:</p>
+<ul>
+<li>Include structured metadata (DataCite Schema 4.6)</li>
+<li>Receive permanent DOIs (DataCite integration)</li>
+<li>Apply standardized machine-readable licenses to new metadata and discussions</li>
+<li>Be automatically deposited on Zenodo and institutional repositories federated with EOSC</li>
+<li>Be automatically indexed for discovery via specialized feeds and filters</li>
+<li>Include machine-readable access controls for restricted data</li>
+<li>Maintain metadata accessible even when underlying data is restricted or unavailable</li>
+</ul>
+<p><strong>Scientific Federation Extensions:</strong> As outlined in our WP3 (Federation Protocol Implementation), we will develop and publish ActivityPub extensions for scientific contexts, creating reusable components that can be adopted by other EOSC services:</p>
+<ul>
+<li>JSON-LD contexts for scientific metadata exchange using FAIR vocabularies</li>
+<li>Persistent identifier integration patterns</li>
+<li>Scientific contribution attribution models</li>
+<li>Provenance tracking using W3C PROV-O</li>
+<li>Support for domain-specific metadata standards</li>
+<li>Registration with community standards resources</li>
+</ul>
+<h3 id="technological-innovation-potential"><strong>Technological Innovation Potential</strong> <a class="direct-link" href="#technological-innovation-potential">#</a></h3>
+<p>Open Science Network introduces several technological innovations that strengthen cross-domain scientific collaboration:</p>
+<p><strong>Cross-Repository Discussion Protocol:</strong> As part of our WP4 (FAIR Discussion Engine), we are developing a system that:</p>
+<ul>
+<li>Builds upon individual repository connectors to implement unified workflows</li>
+<li>Implements standardized machine-readable licensing applicable to all integrations</li>
+<li>Develops provenance tracking using W3C PROV-O connecting objects across repositories</li>
+<li>Builds citation graph visualization spanning all integrated platforms</li>
+</ul>
+<p><strong>ORCID-Integrated Federation Authentication:</strong></p>
+<ul>
+<li>Support institutional identity providers while maintaining federation capabilities</li>
+<li>Create open and public researcher identity and profile through ORCID and OpenAlex integration</li>
+<li>Implement cross-instance group functionality with domain-specific permissions</li>
+<li>Document federation protocols with specification drafts (FEP)</li>
+</ul>
+<p><strong>Metadata-Aware Social Graph:</strong> Unlike general-purpose social networks, our network architecture natively understands scientific metadata through:</p>
+<ul>
+<li>Domain-specific relationship types using FAIR vocabularies</li>
+<li>Citation-aware connection traversal</li>
+<li>Specialized discovery feeds with filters for topic, language, and research area</li>
+</ul>
+<h3 id="multi-domain%2Fmulti-competence-cross-fertilization"><strong>Multi-Domain/Multi-Competence Cross-Fertilization</strong> <a class="direct-link" href="#multi-domain%2Fmulti-competence-cross-fertilization">#</a></h3>
+<p>Open Science Network strengthens cross-domain collaboration by:</p>
+<p><strong>Interdisciplinary Connection Points:</strong> Our federation architecture creates intersection points between different repositories and Science Clusters:</p>
+<ul>
+<li>Connecting Michigan State University (humanities/social sciences), PTB (metrology/physical sciences), UNIF (computer sciences), Université de Lorraine (multidisciplinary university) and Sciety/eLife</li>
+<li>Enabling repository metadata sharing across institutional boundaries</li>
+<li>Tracking citation patterns and knowledge flow across connected repositories (WP6)</li>
+<li>Creating discovery mechanisms that leverage social connections to enhance data reuse</li>
+</ul>
+<p><strong>Multi-Competence Engagement:</strong> By integrating diverse repositories, we enable researchers with different expertise to collaborate around related data, as reflected in our WP6 (User Testing &amp; Refinement):</p>
+<ul>
+<li>Supporting interdisciplinary teams working on complex societal challenges</li>
+<li>Enabling serendipitous discovery of relevant datasets through social connections</li>
+<li>Creating bridges between specialized domains through shared discussion objects</li>
+<li>Providing structured attribution for diverse forms of contribution</li>
+</ul>
+<p>This cross-fertilization directly supports the Science Clusters' mission of breaking down silos between research domains and enhancing interdisciplinary collaboration.</p>
+<h2 id="project-implementation-and-final-deliverables">Project implementation and final deliverables <a class="direct-link" href="#project-implementation-and-final-deliverables">#</a></h2>
+<p>Open Science Network will be implemented over a 18 months period using an agile methodology and co-design processes and validation with our pilots.<br>
+Our implementation strategy balances technical development with community engagement to ensure both technical excellence and meaningful adoption.</p>
+<h3 id="preparation-%26-co-design">Preparation &amp; Co-Design <a class="direct-link" href="#preparation-%26-co-design">#</a></h3>
+<ul>
+<li>Establish formal collaboration frameworks with our pilot partners:
+<ul>
+<li>Michigan State University</li>
+<li>UNIF</li>
+<li>Université de Lorraine</li>
+<li>Sciety/eLife</li>
+<li>PTB (metrology/physical sciences)</li>
+</ul>
+</li>
+<li>Document each repository's technical specifications, APIs, and metadata schemas</li>
+<li>Establish common infrastructure and containerized development environments</li>
+<li>Define integration success metrics with each partner institution</li>
+<li>Create workshops with each pilot to gather needs and establish a shared foundation</li>
+</ul>
+<h2 id="repository-connector-development">Repository connector development <a class="direct-link" href="#repository-connector-development">#</a></h2>
+<ul>
+<li><strong>Knowledge Commons Works Integration</strong>:
+<ul>
+<li>Implement REST API connections to InvenioRDM backend</li>
+<li>Develop metadata mappers for research object types</li>
+<li>Create bidirectional linking between discussions and KC Works objects</li>
+</ul>
+</li>
+<li><strong>Dataverse Integration</strong>:
+<ul>
+<li>Implement OAI-PMH harvesting for metadata synchronization</li>
+<li>Develop Dataverse API client for direct object referencing</li>
+<li>Create dataset preview capabilities within discussion threads</li>
+</ul>
+</li>
+<li><strong>Zenodo Integration</strong>:
+<ul>
+<li>Implement REST API client for FAIR object deposit</li>
+<li>Develop DOI registration and metadata mapping</li>
+<li>Create automated preservation workflows for discussions</li>
+<li>Build configurable export filters for different discussion types</li>
+</ul>
+</li>
+<li><strong>Sciety/eLife Integration</strong>:
+<ul>
+<li>Implement preprint and open review connectors</li>
+<li>Develop cross-platform conversation synchronization</li>
+<li>Create specialized citation mechanisms for preprints</li>
+</ul>
+</li>
+<li><strong>Software Heritage Integration</strong>:
+<ul>
+<li>Implement SWHID persistent identifier support</li>
+<li>Create provenance tracking between discussions and code versions</li>
+</ul>
+</li>
+</ul>
+<h2 id="federation-implementation">Federation implementation <a class="direct-link" href="#federation-implementation">#</a></h2>
+<ul>
+<li>Implement cross-instance group functionality with domain-specific permission management. This feature will enable users to create new groups with customizable visibility settings (invite-only, local, or public). Group creators can establish community guidelines and appoint moderators to enforce them. Members will have different interaction capabilities based on their assigned permission levels, including the ability to join groups, view content, and publish new activities across federated instances.</li>
+<li>Create open researcher profiles through ORCID authentication and OpenAlex API integration, enabling verified academic identities with automatically populated publication histories.</li>
+<li>Document federation protocols with specification drafts (FEP)</li>
+</ul>
+<h2 id="fair-discussion-engine">Fair discussion engine <a class="direct-link" href="#fair-discussion-engine">#</a></h2>
+<p><strong>Cross-Repository Transformation System</strong>:</p>
+<ul>
+<li>Builds upon individual repository connectors to implement unified workflows</li>
+<li>Implements standardized machine-readable licensing applicable to all integration</li>
+<li>Develops provenance tracking using W3C PROV-O connecting objects across repositories</li>
+</ul>
+<h2 id="pilot-deployment">Pilot deployment <a class="direct-link" href="#pilot-deployment">#</a></h2>
+<ul>
+<li>Deploy fully-functional federation servers at all pilot institutions</li>
+<li>Configure repository connectors for each partner's specific environment</li>
+<li>Import initial repository metadata across all connected platforms</li>
+<li>Conduct integration testing with real data across all partners</li>
+<li>Document integration patterns and cross-repository workflows</li>
+</ul>
+<h2 id="user-testing-%26-measurement">User testing &amp; Measurement <a class="direct-link" href="#user-testing-%26-measurement">#</a></h2>
+<ul>
+<li>Conduct structured user testing with diverse researcher groups at all pilot sites</li>
+<li>Measure cross-domain discovery metrics and repository engagement increases</li>
+<li>Track citation patterns and knowledge flow across connected repositories</li>
+<li>Implement platform refinements based on user feedback</li>
+<li>Produce detailed case studies documenting integration benefits at each site</li>
+</ul>
+<h2 id="dissemination-%26-community-building">Dissemination &amp; Community building <a class="direct-link" href="#dissemination-%26-community-building">#</a></h2>
+<ul>
+<li>Present project findings in at least 3 strategic conferences (Europe, North America, South America)</li>
+<li>Conduct hands-on workshops at each pilot institution with invited external participants</li>
+<li>Create comprehensive documentation for all integration patterns</li>
+<li>Release complete source code under AGPLv3 license</li>
+<li>Publish integration guides for additional repository types</li>
+</ul>
+<h2 id="sustainability-framework">Sustainability Framework <a class="direct-link" href="#sustainability-framework">#</a></h2>
+<ul>
+<li>Establish community governance structure with representation from pilot partners</li>
+<li>Create technical sustainability roadmap for ongoing development</li>
+<li>Document institutional hosting requirements and federation management</li>
+<li>Develop contributor guidelines and community processes</li>
+<li>Finalize knowledge transfer materials for new adopters</li>
+<li>Reach out to universities and institutions to setup new OSN instances</li>
+</ul>
+<h2 id="deliverables-%26-open-science-commitment">Deliverables &amp; Open Science Commitment <a class="direct-link" href="#deliverables-%26-open-science-commitment">#</a></h2>
+<p>INTEGRATION DELIVERABLES:</p>
+<p>1. <strong>Repository Connector Suite</strong>: Modular connectors for:</p>
+<ul>
+<li>Knowledge Commons Works (InvenioRDM)</li>
+<li>Dataverse</li>
+<li>Zenodo</li>
+<li>Sciety/eLife</li>
+<li>Software Heritage</li>
+</ul>
+<p>2. <strong>Federation Protocol Implementation</strong>: Extended ActivityPub protocols for scientific contexts</p>
+<p>3. <strong>FAIR Discussion Engine</strong>: System for:</p>
+<ul>
+<li>Converting discussions to FAIR objects</li>
+<li>Assigning persistent identifiers</li>
+<li>Preserving to Zenodo and institutional repositories</li>
+</ul>
+<p>4. <strong>Integration Documentation Package</strong>: Comprehensive technical guides for all supported repository types</p>
+<p>SCIENTIFIC IMPACT DELIVERABLES:</p>
+<ol>
+<li><strong>Pilot Case Studies:</strong> Reports from all 5 pilot institutions measuring:
+<ol>
+<li>Number of cross-repository discussions created</li>
+<li>Increase in dataset citations through social discovery</li>
+<li>Time reduction in finding relevant data</li>
+</ol>
+</li>
+<li><strong>Cross-Repository Knowledge Flow Analysis:</strong> Network analysis showing:
+<ol>
+<li>Citation patterns between different domains (before/after)</li>
+<li>New interdisciplinary collaborations formed</li>
+<li>Dataset reuse metrics across repositories</li>
+</ol>
+</li>
+<li><strong>Scientific Paper:</strong> Published article containing:
+<ol>
+<li>Federation protocol specifications</li>
+<li>API integration patterns</li>
+<li>Measured usage statistics and adoption rates</li>
+</ol>
+</li>
+</ol>
+<p>KNOWLEDGE PRESERVATION COMMITMENT:</p>
+<ul>
+<li>All discussions will be preserved as FAIR objects through:
+<ul>
+<li><strong>Primary storage</strong>; In each institution's OSN instance with complete metadata</li>
+<li><strong>Long-term archiving</strong>: Via Zenodo deposit with DOI assignment</li>
+<li><strong>Institutional deposit</strong>: Optional integration with local repositories</li>
+<li><strong>Code preservation</strong>: Through Software Heritage for software references</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Each institution can configure preservation workflows based on local requirements while maintaining:
+<ul>
+<li>Complete provenance chains linking discussions to source data</li>
+<li>Machine-readable licensing information</li>
+<li>Comprehensive attribution of all contributors</li>
+</ul>
+</li>
+</ul>
+<p>Open Dissemination Strategy</p>
+<p>Our project features a comprehensive open dissemination strategy:</p>
+<ol>
+<li><strong>Open Source Development</strong>: All code will be developed openly on GitHub from day one, under the AGPLv3 license, enabling community involvement throughout development.</li>
+<li><strong>Public Development Blog</strong>: We will maintain a public development blog documenting technical decisions, challenges, and solutions.</li>
+<li><strong>Regular Demo Sessions</strong>: Monthly open demo sessions will be held to showcase progress and gather feedback from potential users.</li>
+<li><strong>Integration Workshops</strong>: We will host quarterly integration workshops to help interested repositories implement Open Science Network connectors.</li>
+<li><strong>Digital Object Publication</strong>: All discussion objects generated through the platform will be publicly accessible with proper metadata and licensing.</li>
+<li><strong>FAIR Alignment Reports</strong>: Regular public reports documenting our FAIR alignment and federation logic.</li>
+<li><strong>Community Standards Registration</strong>: Formal documentation of all extensions for scientific metadata exchange and registration with community resources like FAIRsharing and ActivityPub FEPs.</li>
+</ol>
+<p>Through this structured implementation approach and comprehensive dissemination strategy, Open Science Network will deliver both technical innovation and community adoption, creating lasting infrastructure for open science collaboration.</p>
+<p>[^2]:  <a href="https://www.likeminds.community/blog/unveiling-engagement-metrics-social-media-platforms-vs-community-spaces">Unveiling Engagement Metrics: Social Media Platforms vs. Community Spaces</a></p>
+<p>[^3]:  Use of author identifier services (ORCID, ResearcherID) and academic social networks (<a href="http://Academia.edu">Academia.edu</a>, ResearchGate) by the researchers of the University of Caen Normandy (France): A case study, Christophe Boudry, Manuel Durand-Barthez, PLOS (2020), <a href="https://doi.org/10.1371/journal.pone.0238583">https://doi.org/10.1371/journal.pone.0238583</a></p>
+<p>[^4]:  <a href="https://www.researchinformation.info/feature/breaking-down-barriers-data-sharing/">Breaking down barriers to data sharing - Research Information</a> quoting Donaldson, D.R., Koepke, J.W. A focus groups study on data sharing and research data management. <em>Sci Data</em> <strong>9</strong>, 345 (2022). <a href="https://doi.org/10.1038/s41597-022-01428-w">https://doi.org/10.1038/s41597-022-01428-w</a></p>
+<p>[^5]:  <a href="https://www.teamscopeapp.com/blog/6-repositories-to-share-your-research-data">6 Repositories to Share Research Data | Teamscope Blog</a></p>
+<p>[^6]:  <a href="https://www.w3.org/TR/activitypub/">ActivityPub</a> protocol</p>
+<p>[^7]:  <a href="https://www.openarchives.org/pmh/">Open Archives Initiative Protocol for Metadata Harvesting</a></p>
+<p>[^8]:  <a href="https://inveniosoftware.org/products/rdm/">InvenioRDM — inveniosoftware.org</a></p>
+<p>[^9]:  <a href="https://dataverse.org/">The Dataverse Project</a></p>
+<p>[^12]:  <a href="https://hal.science/?lang=en">Archive ouverte HAL</a></p>
+<p>[^13]:  <a href="https://www.w3.org/TR/prov-o/">PROV-O: The PROV W3C Ontology</a></p>
+<p>[^14]:  <a href="https://hcommons.org/">Humanities Commons</a> (also known as Knowledge Commons) and their repository <a href="https://works.hcommons.org/">KC Works</a>, hosted by <a href="https://msu.edu/">Michigan State University</a></p>
+<p>[^15]:  <a href="https://www.ptb.de/cms/en.html">Physikalisch-Technische Bundesanstalt</a></p>
+<p>[^17]:  <a href="https://www.univ-lorraine.fr/">Université de Lorraine</a></p>
+<p>[^19]:  <a href="https://www.softwareheritage.org/">Software Heritage</a></p>
+<p>[^20]:  Meishar-Tal, H., &amp; Pieterse, E. (2017). Why Do Academics Use Academic Social Networking Sites?. The International Review of Research in Open and Distributed Learning, 18(1). <a href="https://doi.org/10.19173/irrodl.v18i1.2643">https://doi.org/10.19173/irrodl.v18i1.2643</a></p>
+
+</div>
+
+  <div class="flex mt-12 items-center place-content-center gap-3">
+    <a href="/docs" class="btn btn-primary">Read the docs</a> or 
+    <a href="/contact" class="link text-lg font-semibold">get in touch</a>
+  </div>
+
+</div>
+  <div class="border-base-content/10 bg-base-200 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+    
+    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a class="link link-hover text-base-content/70" href="/contact/">Contact</a>
+    <a href="/presskit" class="link link-hover text-base-content/70">Presskit</a>
+
+  </div>
+</footer>
+<div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
+  <div class="flex items-center place-items-center">
+    <div class="flex items-center gap-3">
+      <p class="text-base-content/70">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img 
+          src="/img/b-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="light-img"
+        >
+        <img 
+          src="/img/w-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+    </div>
+  </div>
+</div>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
+    <!-- Current page: /oscars/ -->
+  </body>
+</html>
