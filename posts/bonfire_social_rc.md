@@ -15,14 +15,11 @@ We invite communities to install their own instances, explore the features, and 
 
 ## What is Bonfire Social?
 
-Bonfire isn’t just another federated social app — it’s a modular framework for building digital spaces governed by communities. Bonfire *Social* is the first "flavour" of Bonfire to reach 1.0.
+While _Bonfire_ isn’t just another federated social app — it’s a modular framework for building digital spaces governed by communities – _Bonfire Social_ is the first "flavour" of Bonfire to reach 1.0, and is a starting point for communities who want a space of their own, that's locally governed and fully customizable, yet connected to the wider fediverse. It’s ideal for people who value self-determination and meaningful connection, balancing local autonomy with global conversation.
  
 > A flavour is a pre-configured bundle of Bonfire extensions that defines which features are included, how they behave, and what defaults are in place. Each flavour can have its own governance group, extensions, roadmap, and priorities. Besides Bonfire Social, [other flavours](https://bonfirenetworks.org/apps/) like Bonfire Community and Open Science are already in development, and any community can create their own. 
 
-
-**Bonfire Social** is a starting point for communities who want a space of their own — locally governed and fully customizable, yet connected to the wider fediverse. It’s ideal for people who value self-determination and meaningful connection, balancing local autonomy with global conversation.
-
-Many features will feel familiar: feeds, profiles, following users, sharing posts, flagging or blocking content. Others might be new: rich-text posts, feed customization, nested discussions, multiple profiles per user, and fine-grained access control.
+Many features in Bonfire Social will feel familiar: feeds, profiles, following users, sharing posts, flagging or blocking content. Others might be new: rich-text posts, feed customization, nested discussions, multiple profiles per user, and fine-grained access control.
 
 Let’s explore some of the key features:
 
@@ -40,9 +37,9 @@ Save presets and choose which ones to see in your sidebar and in what order. 
 
 ### Circles
 
-[Circles](https://bonfirenetworks.org/posts/introducing_boundaries/) are personal or shared lists of people. Bonfire includes defaults like “local users” or “people I follow,” but you can make your own — "friends," "mutual aid crew," or "monster movie fans."
+A [circle](https://bonfirenetworks.org/posts/introducing_boundaries/) is simply a list of people. Bonfire includes default circles like “local users” or “people I follow”, and you can define your own, e.g. "friends", "mutual aid crew" or "monster movie fans."
 
-Circles are private by default but can be shared with others, turning them into shared list feeds.
+Circles are private by default but can be shared with others. 
 
 <div style="position: relative; padding-top: 56.25%;"><iframe title="Bonfire Social: Circles" width="100%" height="100%" src="https://tube.tchncs.de/videos/embed/kTvp9pgePdZzwBawo3pSQq?title=0&amp;warningTitle=0&amp;peertubeLink=0" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="position: absolute; inset: 0px;"></iframe></div>
 
@@ -60,7 +57,7 @@ Bonfire supports threaded conversations, where replies can branch into focused s
 
 ### Themes and customization
 
-Bonfire ships with 16 colourful themes — but you can go further. Design your own colors, fonts, and layout styles. Want to recreate the GeoCities era or  a sleek minimalist space? Go for it.
+Bonfire ships with 16 colourful themes — but you can go further. Design your own colors, fonts, and layout styles. Do you prefer a sleek minimalist space or want to recreate the GeoCities era? Go for it.
 
 <div style="position: relative; padding-top: 56.25%;"><iframe title="Bonfire Social: Custom themes" width="100%" height="100%" src="https://tube.tchncs.de/videos/embed/2MYBYXN295Pk1atzQprRA7?title=0&amp;warningTitle=0&amp;peertubeLink=0" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="position: absolute; inset: 0px;"></iframe></div>
 
