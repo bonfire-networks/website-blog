@@ -6946,9 +6946,8 @@ details.collapse summary::-webkit-details-marker {
 }
 
 .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  font-weight: 400;
-  font-size: 80%; 
-  /* font-style: italic; */
+  font-weight: 500;
+  font-style: italic;
   color: var(--tw-prose-quotes);
   border-inline-start-width: 0.25rem;
   border-inline-start-color: var(--tw-prose-quote-borders);
@@ -6958,13 +6957,13 @@ details.collapse summary::-webkit-details-marker {
   padding-inline-start: 1em;
 }
 
-/* .prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
+.prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
   content: open-quote;
 }
 
 .prose :where(blockquote p:last-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
   content: close-quote;
-} */
+}
 
 .prose :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   color: var(--tw-prose-headings);

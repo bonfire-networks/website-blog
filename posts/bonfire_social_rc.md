@@ -53,7 +53,7 @@ Circles are private by default but can be shared with others.
 
 Bonfire supports threaded conversations, where replies can branch into focused sub-threads without losing context. It’s ideal for deep discussions, collaborative work, or simply following a conversation’s collective train of thought. This structure is especially useful in communities that value dialogue over noise — where replies build on one another rather than compete for attention.
 
-\[Video here]
+<div style="position: relative; padding-top: 56.25%;"><iframe title="Bonfire Social: Nested discussions" width="100%" height="100%" src="https://tube.tchncs.de/videos/embed/7YTH3Q4KjdsfxiJK85zMyk?title=0&amp;warningTitle=0" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="position: absolute; inset: 0px;"></iframe></div>
 
 ### Themes and customization
 
