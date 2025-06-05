@@ -15,7 +15,7 @@ We invite communities to install their own instances, explore the features, and 
 
 ## What is Bonfire Social?
 
-While _Bonfire_ isn’t just another federated social app — it’s a modular framework for building digital spaces governed by communities – _Bonfire Social_ is the first "flavour" of Bonfire to reach 1.0, and is a starting point for communities who want a space of their own, that's locally governed and fully customizable, yet connected to the wider fediverse. It’s ideal for people who value self-determination and meaningful connection, balancing local autonomy with global conversation.
+While _Bonfire_ isn’t just another federated social app — it’s a modular framework for building digital spaces governed by communities – [_Bonfire Social_](/app/social) is the first "flavour" of Bonfire to reach 1.0, and is a starting point for communities who want a space of their own, that's locally governed and fully customizable, yet connected to the wider fediverse. It’s ideal for people who value self-determination and meaningful connection, balancing local autonomy with global conversation.
  
 > A flavour is a pre-configured bundle of Bonfire extensions that defines which features are included, how they behave, and what defaults are in place. Each flavour can have its own governance group, extensions, roadmap, and priorities. Besides Bonfire Social, [other flavours](https://bonfirenetworks.org/apps/) like Bonfire Community and Open Science are already in development, and any community can create their own. 
 
@@ -80,6 +80,8 @@ In Bonfire, accounts and profiles are separate. One account can create multiple�
 * Full-text search across posts, discussions, and profiles (users can opt out from being indexed)
 * Federates  with **Mastodon, Peertube, Mobilizon**, and many more
 * **Extensions** can be enabled or disabled by admins *and by users* — for example, you can disable likes or boosts if they don’t suit your needs
+
+You can find more [details on Bonfire Social](/app/social) on our website or have a play on the [demo instance](http://campground.bonfire.cafe).
 
 ## What’s not included
 
