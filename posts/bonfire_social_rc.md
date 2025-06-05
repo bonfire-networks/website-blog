@@ -112,3 +112,4 @@ The release of Bonfire Social 1.0 will mark both an ending and a beginning. Afte
 
 Your feedback, ideas, and use cases will shape what comes next. Let’s build it — together.
 
+> You can comment on this post [on the fediverse](https://indieweb.social/@bonfire/114631617774926243). 
