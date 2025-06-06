@@ -52,6 +52,6 @@ All annotations and posts will be federated via the ActivityPub protocol, meanin
 
 ## Ready to build with us?
 
-If Mosaic sounds like a solution worth exploring—or if you’re unsure and want to discuss your options—we’d love to chat! **[Let’s schedule a call](https://calendly.com/bonfire-networks/call)** to discuss your specific needs and explore how we can collaborate to create the ideal federated digital space for your community or organisation.
+If Mosaic sounds like a solution worth exploring—or if you’re unsure and want to discuss your options—we’d love to chat! **[Let’s schedule a call](https://cal.com/bonfire-networks/meet)** to discuss your specific needs and explore how we can collaborate to create the ideal federated digital space for your community or organisation.
 
 Our team is balancing core development of the Bonfire framework alongside Mosaic projects, so availability is limited. Reach out soon to secure a spot, and let’s start building something amazing together!
