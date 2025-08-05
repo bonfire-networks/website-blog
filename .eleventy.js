@@ -10,6 +10,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyFetch = require("@11ty/eleventy-fetch");
 const axios = require('axios');
+const matter = require('gray-matter');
 
 module.exports = function(eleventyConfig) {
   // Add plugins
@@ -116,6 +117,7 @@ module.exports = function(eleventyConfig) {
     return [...tagSet];
   });
 
+
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
@@ -129,7 +131,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addNunjucksShortcode(
     "markdown",
-    content => `<div class="prose md-block">${markdown.render(content)}</div>`
+    content => `<div class="prose md-block">${markdownLibrary.render(content)}</div>`
   );
 
   eleventyConfig.addAsyncShortcode("remote_markdown", async function (url) {
@@ -140,6 +142,43 @@ module.exports = function(eleventyConfig) {
     }
     return `${markdownLibrary.render(res)}`;
   });
+
+  eleventyConfig.addAsyncShortcode("remote_markdown_content", async function () {
+    try {
+      // Access the page's remoteUrl from the context
+      const url = this.page?.data?.remoteUrl || this.ctx?.remoteUrl;
+      
+      if (!url) {
+        return "";
+      }
+      
+      const res = await fetchRemoteMarkdown(url);
+      
+      if (!res || !(typeof res === 'string' || res instanceof String)) {
+        return "";
+      }
+      
+      // Fix YAML issues before parsing
+      const fixedContent = res.replace(/^(title:\s*)(.+)$/m, (match, prefix, title) => {
+        if (title.includes(':') && !title.startsWith('"') && !title.startsWith("'")) {
+          return `${prefix}"${title}"`;
+        }
+        return match;
+      });
+      
+      // Parse the frontmatter
+      const parsed = matter(fixedContent);
+      
+      // Return only the content, not the frontmatter
+      const rendered = markdownLibrary.render(parsed.content);
+      
+      return rendered;
+    } catch (error) {
+      console.error("Error in remote_markdown_content:", error);
+      return "";
+    }
+  });
+
 
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({
@@ -213,3 +252,23 @@ async function fetchRemoteMarkdown(url) {
     type: "text",
   });
 }
+
+async function fetchRemotePostWithMetadata(url) {
+  const content = await fetchRemoteMarkdown(url);
+  if (!content) {
+    return null;
+  }
+  
+  // Fix YAML issues: empty values and unquoted strings with colons
+  const fixedContent = content.replace(/^(title:\s*)(.+)$/m, (match, prefix, title) => {
+    // Quote title if it contains a colon
+    if (title.includes(':') && !title.startsWith('"') && !title.startsWith("'")) {
+      return `${prefix}"${title}"`;
+    }
+    return match;
+  });
+  
+  const parsed = matter(fixedContent);
+  return parsed;
+}
+
