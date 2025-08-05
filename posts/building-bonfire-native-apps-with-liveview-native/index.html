@@ -1,0 +1,528 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Bonfire Native Apps with LiveView Native</title>
+    <meta name="description" content="Welcome to the first post of our development diary for the Bonfire native app. In this series, we&#39;ll journey together through the entire process of designing and publishing Bonfire on the Apple App Store using LiveView Native.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- OpenGraph meta tags for social sharing -->
+    <meta property="og:title" content="Building Bonfire Native Apps with LiveView Native">
+    <meta property="og:description" content="Welcome to the first post of our development diary for the Bonfire native app. In this series, we&#39;ll journey together through the entire process of designing and publishing Bonfire on the Apple App Store using LiveView Native.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonfirenetworks.org//posts/building-bonfire-native-apps-with-liveview-native/">
+    
+    <meta property="og:image" content="https://bonfirenetworks.org//img/lvn1.png">
+    
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building Bonfire Native Apps with LiveView Native">
+    <meta name="twitter:description" content="Welcome to the first post of our development diary for the Bonfire native app. In this series, we&#39;ll journey together through the entire process of designing and publishing Bonfire on the Apple App Store using LiveView Native.">
+    
+    <meta name="twitter:image" content="https://bonfirenetworks.org//img/lvn1.png">
+    
+    
+    <link
+    rel="stylesheet" href="/css/style_v2.css?v2">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky bg-base-100 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+    >
+    
+
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
+        <div class="navbar-start w-[30%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end w-[70%]">
+
+            <div class="hidden xl:flex w-full justify-end mr-3">
+          <ul class="flex-row  p-0 font-medium menu font-bold menu-horizontal">
+            <li>
+              <a href="/about" role="button" tabindex="0" class="flex font-semiboltext-[15px] items-center gap-2 ">
+                <span>About</span>
+              </a>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Hosting</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
+                  </a>
+                </li>
+                
+                  
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
+                      <div class="font-semibold">Documentation</div>
+                      <div class="font-light text-sm    -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-semibold">Design</div>
+                      <div class="font-light text-sm    -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-semibold">Community</div>
+                      <div class="font-light text-sm    -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-semibold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light   ">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                
+                <li> 
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-semibold">Get the code</div>
+                    <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/mosaic" class="font-semibold  text-[15px]  ">
+              <span class="">Mosaic</span>
+            </a>
+            </li>
+
+            <li>
+            <a href="/blog" class="font-semibold  text-[15px]  ">
+              <span class="">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+
+           
+          <a href="/start/" >
+            <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <label for="theme_controller" class="swap swap-rotate mx-3">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+            </label>
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+
+<div class="max-w-screen-md px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    <div class="">
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/development/">
+        <span class="badge capitalize badge-lg badge-outline">
+          development
+        </span>
+        </a>
+      </div>
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Building Bonfire Native Apps with LiveView Native</h1>
+     
+     
+
+      
+        <img src="/img/lvn1.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+      
+        
+    </div>
+  </div>
+
+    
+  <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
+    <h2 id="introduction">Introduction <a class="direct-link" href="#introduction">#</a></h2>
+<p>Welcome to the first post of our development diary for the Bonfire native app. In this series, we'll journey together through the entire process of designing and publishing Bonfire on the Apple App Store using <a href="https://native.live">LiveView Native (LVN)</a>, an experimental framework that enables developers to build native applications using Elixir.</p>
+<p>We're focusing on iOS first because the current LVN release targets the Apple ecosystem (iOS and macOS, but also watches, TV, and vision pro), with Android support coming next. At the time of writing, LVN is at version 0.3, so some approaches and solutions will evolve over time. We aim to provide the most accurate and up-to-date information but encourage readers to check the docs for details and contribute their knowledge along the way.</p>
+<h2 id="why-liveview-native-and-elixir">Why LiveView Native and Elixir <a class="direct-link" href="#why-liveview-native-and-elixir">#</a></h2>
+<p><a href="https://github.com/liveview-native">LiveView Native</a> is an exciting new framework developed by <a href="https://dockyard.com/">DockYard</a> that extends Phoenix LiveView to native platforms, enabling real-time, interactive native applications with a unified codebase. <a href="https://dockyard.com/blog/2024/09/09/liveview-native-is-here">As they mentions in the announcement</a>:</p>
+<blockquote>
+<p>&quot;Because we are leveraging the LiveView programming model, if you already have a LiveView application built you already have 75% of the work done to build a LiveView Native application. State management and event handling are shared between target destinations.&quot;</p>
+</blockquote>
+<p>This approach is a perfect match for an open-source project like Bonfire. By building upon existing code and staying within the Elixir ecosystem, we can invest more time in strengthening our codebase without needing a traditional client-server API or splitting efforts across different languages, while still using each platform's unique native UI framework to deliver a state-of-the-art user experience (e.g. using SwiftUI and Android Jetpack for the native UI in shared components and views, alongside the HTML/CSS already used in the web app).</p>
+<p>Through this dev diary, we aim to open up our development process and share our challenges and progress with the wider Elixir community. We'll share code, lessons learned, and materials starting from the very first mock-ups, inviting the community to jump in, provide feedback, and ask questions along the way.</p>
+<p>We also plan to experiment with existing Figma plugins to convert designs to code (SwiftUI) and later attempt to convert that code into LVN's Elixir syntax. There will be a lot of trial and error, especially since we don't have prior experience with SwiftUI, but that's part of the experiment.</p>
+<h2 id="the-journey-begins%3A-designing-initial-mock-ups-with-figma">The journey begins: designing initial mock-ups with Figma <a class="direct-link" href="#the-journey-begins%3A-designing-initial-mock-ups-with-figma">#</a></h2>
+<p>Using <a href="https://www.figma.com/">Figma</a>, we've created initial mockups that lay the groundwork for Bonfire's user interface and experience. While these mock-ups are still in the early stages, they represent our vision for the app's basic look and feel. We won't include all of Bonfire's functionalities in the first release of the native app; instead, we'll adopt an incremental approach. We'll publish a basic app that lets users perform essential social networking features, then expand its complexity and give more control to users as we become more confident using the LVN framework and as it becomes more stable.</p>
+<p><img src="/img/figma.png" alt="Figma"></p>
+<h2 id="setting-up-the-figma-environment">Setting up the Figma environment <a class="direct-link" href="#setting-up-the-figma-environment">#</a></h2>
+<p>Apple recently published the <a href="https://www.figma.com/community/file/1385659531316001292/ios-18-and-ipados-18">iOS and iPadOS 18 UI Kit</a> for Figma—a set of components and assets, including variables and Apple's color palette, to use in our Figma mockups. This is essential for properly designing iOS mockups following Apple's design guidelines.</p>
+<p>Before creating our first mockup, we also downloaded the latest <a href="https://developer.apple.com/sf-symbols/">SF fonts and symbols</a> from the Apple Developer website to use them across all views and components. We also downloaded the Figma desktop app to benefit from local fonts installed on our machines.</p>
+<p>With the standard iOS assets, icons, and fonts in place, we've created our first view using the iPhone 14 &amp; 15 Pro frame as a reference.</p>
+<p>Before building our mock-ups, we found it helpful to define layout grids. Layout grids help maintain order and structure, ensuring all elements are well-aligned and proportionate by defining both row and column configurations.</p>
+<ul>
+<li><strong>Columns:</strong> A common grid column configuration for iPhone is 6 columns with a 16px gutter and margin. Set the columns to &quot;Stretch&quot; to automatically adapt to different screen sizes.</li>
+<li><strong>Rows:</strong> We set the count to &quot;Auto,&quot; type to &quot;Top,&quot; height to 44 (the standard touch target size in iOS), and offset to 54 (to start the grid just below the status bar) with a gutter of 16 points.</li>
+</ul>
+<p>This configuration results in a view like this:</p>
+<p><img src="/img/grids.png" alt="Figma"></p>
+<h2 id="bonfire's-basic-views">Bonfire's basic views <a class="direct-link" href="#bonfire's-basic-views">#</a></h2>
+<p>In our initial design, we've defined the following basic app views:</p>
+<ul>
+<li><strong>Main timeline</strong></li>
+<li><strong>Profile</strong></li>
+<li><strong>Search</strong></li>
+<li><strong>Notifications</strong></li>
+<li><strong>Discussion</strong></li>
+<li><strong>Compose form</strong></li>
+</ul>
+<p>There's nothing too fancy; we've mostly used standard iOS assets where possible and Apple's color palette and typography for all the custom components we've created.</p>
+<p>We've added a <strong>Components</strong> page listing all the component instances, which we clone to include in our views. We detach components from the main instance when custom edits are needed.</p>
+<p>We're striving to keep things clean and maintain our Figma files in an organized and well-structured manner. We can't promise adherence to all best practices, as our experience with Figma is quite limited. However, we've loved using the auto layout feature to create more structured components, and we highly recommend building components using auto layout—it may seem daunting at first, but it's very easy to work with once you delve into it.</p>
+<p>In the next post, we'll expand on these mockups, adding more details and including interactive flows, additional screens, and animations.</p>
+<p><strong>Access the Figma document here:</strong> <a href="https://www.figma.com/design/BwQln11Fccd6alJeNe53EW/iOS?node-id=0-1&amp;t=jq5jEWSN9gFUqOkP-1">Bonfire iOS App Mockups</a></p>
+<p><em>By clicking the link, you can view the current designs, leave comments directly on the mockups, and provide suggestions to design a better Bonfire native app. Your feedback is invaluable, whether it's about aesthetics, user experience, or features you'd like to see.</em></p>
+<h2 id="what's-next%3F">What's next? <a class="direct-link" href="#what's-next%3F">#</a></h2>
+<p>In the upcoming posts, we'll dive into:</p>
+<ul>
+<li><strong>Enhancing the mock-ups:</strong> Adding user flows, interactive components and animations, and more detailed screens - eventually publishing the Bonfire design library in Figma for anyone to use and build upon.</li>
+<li><strong>Translating designs to SwiftUI:</strong> Once we're satisfied with the design, we'll start converting them into SwiftUI code, discussing challenges and learnings along the way.</li>
+<li><strong>Exploring LiveView Native:</strong> Attempting to port SwiftUI code to LVN, including the hurdles and triumphs of using an evolving pre-1.0 framework to implement a federated social network's moving parts and design patterns.</li>
+<li><strong>Putting AI to work:</strong> Experimenting with LLMs to automate parts of the translation from SwiftUI to LVN.</li>
+<li><strong>Publishing on the Apple App Store:</strong> Documenting the process and requirements to publish the app.</li>
+</ul>
+<h2 id="join-the-journey">Join the journey <a class="direct-link" href="#join-the-journey">#</a></h2>
+<p>Beyond sharing our experience, we aim for Bonfire to become a place where both beginner and experienced developers can learn, build, experiment, and collaborate using the Elixir programming language to design open and federated social networks. We invite developers to dive into the framework, provide feedback, ask questions, and help push the boundaries of federated and open-source digital spaces.</p>
+<p>Here's how you can get involved:</p>
+<ul>
+<li><strong>Feedback and suggestions:</strong> Follow us on the <a href="https://indieweb.social/@bonfire">Fediverse</a> and join our discussions on the <a href="https://elixirforum.com/t/bonfire-networks-an-open-source-framework-for-building-federated-digital-spaces/65587">Elixir Forum</a>, <a href="https://app.slack.com/client/TMQ3PKXT9/C077S4K94CV">#Bonfire room in Elixir Slack</a> or our <a href="https://matrix.to/#/%23bonfire-networks:matrix.org">Matrix space</a> to stay updated.</li>
+<li><strong>Collaborate:</strong> If you're interested in contributing code or ideas, you can have a look at our <a href="https://github.com/bonfire-networks/bonfire-app/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22">&quot;good first issues&quot;</a> or check out our <a href="https://github.com/bonfire-networks/bounties">open bounties</a>.</li>
+</ul>
+
+    
+  </article>
+
+
+    
+</div>
+
+  <div class="mx-4 mt-8 lg:mx-auto">
+    
+  
+
+  <div class="my-24 mx-auto max-w-screen-lg w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-100 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
+
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+  
+
+
+  <div class="border-base-content/10 bg-base-200 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+    
+    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a class="link link-hover text-base-content/70" href="/contact/">Contact</a>
+    <a href="/presskit" class="link link-hover text-base-content/70">Presskit</a>
+
+  </div>
+</footer>
+<div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
+  <div class="flex items-center place-items-center">
+    <div class="flex items-center gap-3">
+      <p class="text-base-content/70">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img 
+          src="/img/b-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="light-img"
+        >
+        <img 
+          src="/img/w-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+    </div>
+  </div>
+</div>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
+    <!-- Current page: /posts/building-bonfire-native-apps-with-liveview-native/ -->
+  </body>
+</html>

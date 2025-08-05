@@ -1,0 +1,516 @@
+<!doctype html>
+<html class="w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open source meets open science - announcing the Open Science Network initiative</title>
+    <meta name="description" content="We’re excited to present the Open Science Network initiative, a first step towards open and federated digital spaces designed to push the boundaries of open science and scholarly communication.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- OpenGraph meta tags for social sharing -->
+    <meta property="og:title" content="Open source meets open science - announcing the Open Science Network initiative">
+    <meta property="og:description" content="We’re excited to present the Open Science Network initiative, a first step towards open and federated digital spaces designed to push the boundaries of open science and scholarly communication.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonfirenetworks.org//posts/open-source-meets-open-science-announcing-the-open-science-network-initiative/">
+    
+    <meta property="og:image" content="https://bonfirenetworks.org//img/osbg.png">
+    
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Open source meets open science - announcing the Open Science Network initiative">
+    <meta name="twitter:description" content="We’re excited to present the Open Science Network initiative, a first step towards open and federated digital spaces designed to push the boundaries of open science and scholarly communication.">
+    
+    <meta name="twitter:image" content="https://bonfirenetworks.org//img/osbg.png">
+    
+    
+    <link
+    rel="stylesheet" href="/css/style_v2.css?v2">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
+    <div
+      class="sticky bg-base-100 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
+      x-data="{open: false, atTop: false}" 
+    >
+    
+
+    <div class="max-w-screen-lg mx-auto">
+      <header class="relative z-30 lg:px-0 mx-auto navbar">
+        <div class="navbar-start w-[30%]">
+          <div class="flex  items-center flex-shrink-0">
+            <a href="/" class="flex items-center space-x-4">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire</span> 
+              
+              </span>
+            </a>
+          </div>
+           
+        
+
+
+
+        </div>
+        
+        <div class="navbar-end w-[70%]">
+
+            <div class="hidden xl:flex w-full justify-end mr-3">
+          <ul class="flex-row  p-0 font-medium menu font-bold menu-horizontal">
+            <li>
+              <a href="/about" role="button" tabindex="0" class="flex font-semiboltext-[15px] items-center gap-2 ">
+                <span>About</span>
+              </a>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Apps built with Bonfire</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Explore available extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Hosting</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
+                  </a>
+                </li>
+                
+                  
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
+                      <div class="font-bold">How to participate</div>
+                      <div class="font-light -mt-1.5  text-sm    font-light">Contribute to Bonfire</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
+                      <div class="font-semibold">Documentation</div>
+                      <div class="font-light text-sm    -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-semibold">Design</div>
+                      <div class="font-light text-sm    -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-semibold">Community</div>
+                      <div class="font-light text-sm    -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-semibold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light   ">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                
+                <li> 
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-semibold">Get the code</div>
+                    <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/mosaic" class="font-semibold  text-[15px]  ">
+              <span class="">Mosaic</span>
+            </a>
+            </li>
+
+            <li>
+            <a href="/blog" class="font-semibold  text-[15px]  ">
+              <span class="">News</span>
+            </a>
+            </li>
+          </ul>
+        </div>
+
+           
+          <a href="/start/" >
+            <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
+          </a>
+
+          <label for="theme_controller" class="swap swap-rotate mx-3">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
+              
+              <!-- sun icon -->
+              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+              
+              <!-- moon icon -->
+              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+            </label>
+          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
+            <a href="/start/" >
+              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
+            </a>
+              <span class="sr-only">Open main menu</span>
+              <label class="btn btn-circle btn-ghost swap swap-rotate">
+  
+              <!-- this hidden checkbox controls the state -->
+              <input type="checkbox" />
+              
+              <!-- hamburger icon -->
+              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+              
+              <!-- close icon -->
+              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
+              
+            </label>
+          </div>
+
+        </div>
+      
+
+    
+      </header>
+    </div>
+    <div 
+      x-description="Mobile menu, show/hide based on menu state." 
+      class="xl:hidden" 
+      id="mobile-menu" 
+      x-show="open" 
+      style="display: none;">
+      <ul class="p-0 menu bg-base-300">
+          <li>
+            <a href="/about" class=" ">
+            <span class="text-base font-regular">About</span>
+          </a>
+          </li>
+
+            <li>
+            <a href="/apps" class=" ">
+            <span class="text-base font-regular">Apps</span>
+          </a>
+          </li>
+
+          <li>
+            <a href="/extensions" class=" ">
+            <span class="text-base font-regular">Extensions</span>
+          </a>
+          </li>
+
+          
+
+
+            <li>
+            <a href="/docs" class=" ">
+            <span class="text-base font-regular">Documentation</span>
+          </a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/faq" class=" ">
+            <span class="text-base font-regular">FAQs</span>
+          </a>
+          </li>
+          <li>
+          <a href="/blog" class=" ">
+            <span class="text-base font-regular">News</span>
+          </a>
+          </li>
+          <li>
+            <a href="/community" class=" ">
+              <span class="text-base font-regular">Community</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
+              <span class="text-base font-regular">Get the code</span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const themeController = document.querySelector('.theme-controller');
+    const bodyElement = document.body;
+
+    // Load the saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        themeController.checked = savedTheme === 'bonfire';
+        bodyElement.setAttribute('data-theme', savedTheme);
+    }
+
+    // Save the theme to localStorage whenever it changes
+    themeController.addEventListener('change', (event) => {
+        const theme = event.target.checked ? 'bonfire' : 'light';
+        localStorage.setItem('theme', theme);
+        bodyElement.setAttribute('data-theme', theme);
+    });
+});
+</script>
+    
+
+<div class="max-w-screen-md px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    <div class="">
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/community/">
+        <span class="badge capitalize badge-lg badge-outline">
+          community
+        </span>
+        </a>
+      </div>
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Open source meets open science - announcing the Open Science Network initiative</h1>
+     
+     
+
+      
+        <img src="/img/osbg.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+      
+        
+    </div>
+  </div>
+
+    
+  <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
+    <p>The scientific method must be liberated. In an era marked by misinformation, mass surveillance and political propaganda, corporate monopolies and platforms hinder scientific innovation and knowledge sharing. Scientists, researchers, academics and their affiliated organisations must have control over the tools and medium they use to publish, review, share, study and discuss their work.</p>
+<p>Today, we’re excited to present the <a href="https://openscience.network">Open Science Network</a> initiative, a first step towards open and federated digital spaces designed to push the boundaries of open science and scholarly communication. You can read more about it on the <a href="https://openscience.network">official website</a>.</p>
+<h2 id="what-is-an-open-science-%E2%80%98digital-space%E2%80%99">What is an open science ‘digital space’ <a class="direct-link" href="#what-is-an-open-science-%E2%80%98digital-space%E2%80%99">#</a></h2>
+<p>A digital space is an online place where people gather and interact with one another. Some digital spaces are home to only one community, while others are platforms that host multiple communities. The organisation or individuals who set up and maintain the digital space control the user experience and the governance of that space.</p>
+<p>An ‘open science digital space’ includes a set of bespoke features and UX paired with a community dedicated to fostering open science practices. This means the space is intentionally designed to support the sharing of scientific knowledge, collaboration, and transparency in scientific research, promoting open reviews and production of scientific knowledge.</p>
+<h2 id="our-journey-so-far">Our journey so far <a class="direct-link" href="#our-journey-so-far">#</a></h2>
+<p>The idea of building a federated tool for sharing research on the social web started with <a href="https://niboe.info">Nibö</a>, a science communication collective, wanting to build a social tool for academics and researchers. Nibö contacted the Bonfire team with innovative ideas on how a federated digital space specifically designed for scientific communities could benefit open science – promoting better practices and knowledge sharing for both scientists and users, and moving beyond the conventional use of social media as a mere content broadcasting tool. They wondered if such a federated digital space could be built atop Bonfire's modular and extensible architecture.</p>
+<p>Since this initial collaboration, we've outlined a preliminary set of features, primarily catering to Nibö’s community while also considering the broader needs of the open science community.</p>
+<p>We soon discovered that the fediverse is an incredibly fertile ground for discussions on open science, where open science advocates, activists, researchers and communities have been increasingly gathering to share knowledge, collaborate or simply discuss how to foster open science practices.</p>
+<p>Driven by aligned visions and needs, together with <a href="http://brembs.net/">Björn Brembs</a> (author of <a href="https://royalsocietypublishing.org/doi/10.1098/rsos.230206">Replacing Academic Journals</a> and <a href="https://royalsocietypublishing.org/doi/10.1098/rsos.230207">Mastodon over Mammon: towards publicly owned scholarly knowledge</a>), <a href="https://fediscience.org/@UlrikeHahn">Ulrike Hahn</a> (a coordinator of <a href="https://scibeh.org/">SciBeh</a>, an initiative that has been thinking about <a href="https://write.as/ulrikehahn/some-thoughts-on-social-media-for-science">new digital infrastructure for science</a>, including online workshops) and Nibö, we started the open science network. Its mission is to co-design, develop, study, iterate and disseminate tools to improve open science practices on federated digital spaces.</p>
+<p>The Open Science Network has been shaped by many contributions and ideas and benefited immensely from discussions over the fediverse.<br>
+With such an amount of grey matter in place, the next logical step was to validate the feasibility of these ideas and how they would play in a federated network.</p>
+<h2 id="the-open-science-extension-prototype">The open science extension prototype <a class="direct-link" href="#the-open-science-extension-prototype">#</a></h2>
+<img src="/img/ospreview.png" />
+<p>We decided to start by tackling a (technically) low-hanging fruit to demonstrate the benefits of co-designing digital spaces with communities bottom-up and the feasibility of adding tailored features in Bonfire without messing with the rest of the codebase. We introduced a custom preview feature for posts containing links to papers or publications.</p>
+<p>This widget not only displays the paper's title and abstract (like standard link previews in other social networks) but also details the publication journal, co-authors, topics, publication date, and relevant links such as the <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI</a> and the PDF when available - - with data automatically fetched from various open repositories. This feature enriches the context provided by linked papers, enhancing users' understanding of the publication. <a href="https://indieweb.social/@bonfire/111793274037434384">The prototype was shared across the fediverse, receiving a wave of feedback and encouraging reactions</a>.</p>
+<p>Based on that enthusiastic response, we ventured further to develop other features requested including:</p>
+<h3 id="orcid-single-sign-on">ORCID single sign-on <a class="direct-link" href="#orcid-single-sign-on">#</a></h3>
+<p>Researchers can sign in to their open science digital space using either their email and password or their <a href="https://orcid.org/">ORCID</a> credentials. This integration simplifies the login process and ensures that users can have a trusted provider to log into their digital space.</p>
+<iframe class="w-full rounded-xl ring-4 ring-base-content/40" title="orcid single sign on in Bonfire" width="560" height="400" src="https://tube.tchncs.de/videos/embed/0ebcbb97-6c23-43c1-801b-320ba81129de" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+<h3 id="automatic-import-of-publications-using-orcid-credentials">Automatic import of publications using ORCID credentials <a class="direct-link" href="#automatic-import-of-publications-using-orcid-credentials">#</a></h3>
+<p>Linking a user's ORCID profile also enables the automatic import of their publications, using the ORCID API, which are then showcased on a dedicated &quot;publications&quot; tab within their profiles. This feature not only highlights the researcher's work but also facilitates easy access to their scientific contributions - evolving their social profile into a professional one.</p>
+<iframe class="w-full rounded-xl ring-4 ring-base-content/40" title="Automatic Import of Publications using ORCID credentials" width="560" height="400" src="https://tube.tchncs.de/videos/embed/b2f258f9-fe4e-477f-b721-b67978e73939" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+<h3 id="publications-feed">Publications feed <a class="direct-link" href="#publications-feed">#</a></h3>
+<p>A new &quot;publications&quot; feed aggregates all papers fetched via users’ ORCID profiles or added via post links, so users can discover publications of other members of their digital space, including those from followed users on remote instances. This fosters a wide-ranging view of scientific contributions within a digital space federated network.</p>
+<iframe class="w-full rounded-xl ring-4 ring-base-content/40" title="Publications feed" width="560" height="400" src="https://tube.tchncs.de/videos/embed/b758c6c2-4975-4d21-bc50-bae6d8fa2918" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+<h3 id="conduct-a-discussion-around-a-publication">Conduct a discussion around a publication <a class="direct-link" href="#conduct-a-discussion-around-a-publication">#</a></h3>
+<p>Beyond reading publications, users can start discussing them with authors and amongst themselves. This means going beyond content distribution and fostering academic discourse and open collaboration, enriching scientific cooperation within the community and beyond.</p>
+<img src="/img/osreply.png" />
+<p>All the code is open source and available for anyone to pick up and try out or extend. We published a new <a href="https://github.com/bonfire-networks/bonfire_open_science">Open Science extension for Bonfire</a> that includes code for most of the features requested (other bits live in different extensions as they are transversal to different use cases, such as federated groups and topics).</p>
+<p>We did enough work to confidently say....</p>
+<img src="/img/itcouldwork.jpeg" />
+<p>We <strong>can</strong> develop an open science extension that academics and scientists can include in their Bonfire instances - we hope it can nurture and promote a novel paradigm of scientific practices.</p>
+<h2 id="next-steps">Next steps <a class="direct-link" href="#next-steps">#</a></h2>
+<p>We have now launched the <a href="https://openscience.network">Open Science Network website</a> to try gathering together more communities, organisations and researchers to co-design features and support the project.</p>
+<p>Moving forward, our plans include refining the current features in collaboration with scientific communities, moving from prototypes to reliable and tested features and incorporating additional ones if necessary.</p>
+<p>We will iteratively test the open science digital space with pilots to ensure that new communities can set up their own digital space with confidence.</p>
+<h2 id="how-to-contribute">How to contribute <a class="direct-link" href="#how-to-contribute">#</a></h2>
+<ul>
+<li>If you wish to propose a new feature or refine an existing one, please <a href="https://github.com/bonfire-networks/bonfire-app/milestone/56">open an issue</a>.</li>
+<li>To join the network or participate as a pilot community, contact us at team@openscience.network</li>
+<li>If you're interested in contributing through coding, design, facilitation, social media, or other tasks, please get in touch at team@openscience.network</li>
+<li>We won’t take private capital or venture funds, but we do need more resources to onboard additional collaborators to partner with pilot projects to test and iterate features. We would greatly appreciate support for our work through donations or grants. Please reach out to us at team@openscience.network or donate directly via our <a href="https://opencollective.com/bonfire-networks/projects/open-science-network">Open Collective account</a>.</li>
+<li>Please spread the word about these initiatives to broaden their impact.</li>
+</ul>
+
+    
+  </article>
+
+
+    
+</div>
+
+  <div class="mx-4 mt-8 lg:mx-auto">
+    
+  
+
+  <div class="my-24 mx-auto max-w-screen-lg w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-100 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
+
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+  
+
+
+  <div class="border-base-content/10 bg-base-200 border-t">
+ 
+
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
+    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
+    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
+    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+    
+    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
+    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
+    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
+  </div> 
+  <div>
+    <span class="font-semibold !capitalize !text-base-content">More</span> 
+    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
+    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
+    <a class="link link-hover text-base-content/70" href="/contact/">Contact</a>
+    <a href="/presskit" class="link link-hover text-base-content/70">Presskit</a>
+
+  </div>
+</footer>
+<div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
+  <div class="flex items-center place-items-center">
+    <div class="flex items-center gap-3">
+      <p class="text-base-content/70">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img 
+          src="/img/b-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="light-img"
+        >
+        <img 
+          src="/img/w-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+    </div>
+  </div>
+</div>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+    </nav>
+  </div>
+</div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
+    <!-- Current page: /posts/open-source-meets-open-science-announcing-the-open-science-network-initiative/ -->
+  </body>
+</html>

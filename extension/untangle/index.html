@@ -347,13 +347,15 @@ def fun(), do: :stuff
 </code></pre>
 <p>will output something like <code>[info] Time to run MyModule.fun/0: 1 ms</code></p>
 <h2 id="installation">Installation <a class="direct-link" href="#installation">#</a></h2>
-<p>If <a href="https://hex.pm/docs/publish">available in Hex</a>, the package can be installed<br>
-by adding <code>untangle</code> to your list of dependencies in <code>mix.exs</code>:</p>
+<p>If <a href="https://hex.pm/docs/publish">available in Hex</a>, the package can be installed by adding <code>untangle</code> to your list of dependencies in <code>mix.exs</code>:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">def</span> deps <span class="token keyword">do</span>
   <span class="token punctuation">[</span>
     <span class="token punctuation">{</span><span class="token atom symbol">:untangle</span><span class="token punctuation">,</span> <span class="token string">"~> 0.3"</span><span class="token punctuation">}</span>
   <span class="token punctuation">]</span>
 <span class="token keyword">end</span></code></pre>
+<p>and adding some config:</p>
+<pre class="language-elixir"><code class="language-elixir">config <span class="token atom symbol">:untangle</span><span class="token punctuation">,</span> 
+  <span class="token attr-name">env:</span> <span class="token function">config_env</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h1 id="configure-as-default-dbg%2F2-handler">Configure as default <code>dbg/2</code> handler <a class="direct-link" href="#configure-as-default-dbg%2F2-handler">#</a></h1>
 <h2 id="in-config%2Fconfig.exs">In config/config.exs <a class="direct-link" href="#in-config%2Fconfig.exs">#</a></h2>
 <p><code>config :elixir, :dbg_callback, {Untangle, :custom_dbg, []}</code></p>
@@ -389,7 +391,7 @@ limitations under the License.</p>
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">20 Apr 2025</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">01 Jul 2025</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">apache-2.0</span></div>
             
           
