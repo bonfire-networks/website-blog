@@ -6,6 +6,15 @@ module.exports = {
   layout: "layouts/post.njk",
   eleventyComputed: {
     // Fetch remote content if remoteUrl is specified
+
+    canonicalUrl: async (data) => {
+      if (data.remoteUrl && !data.canonicalUrl) {
+        const parsed = await fetchRemotePostWithMetadata(data.remoteUrl);
+        return (parsed?.data?.uri || data.uri || data.remoteUrl).replace('.md', '').replace('/post/markdown/', '/post/');
+      }
+      return data.canonicalUrl;
+    },
+
     title: async (data) => {
       if (data.remoteUrl && !data.title) {
         const parsed = await fetchRemotePostWithMetadata(data.remoteUrl);

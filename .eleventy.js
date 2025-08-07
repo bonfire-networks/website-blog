@@ -199,6 +199,12 @@ module.exports = function(eleventyConfig) {
   });
 
 
+  eleventyConfig.addFilter("split", function (str, separator) {
+    if (!str) return [];
+    return str.split(separator);
+  });
+
+
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid

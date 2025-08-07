@@ -19,10 +19,8 @@ templateClass: tmpl-post
       {%- endfor %}
       </div>
       <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">{{title}}</h1>
-     {# <div class="mt-4 mb-8 text-base text-center text-base-content/80">
-        <span>Published {{ date | readableDate }}</span>
-      </div> #}
-     
+
+
 
       {% if header_html %}
         {{ header_html | safe }}
@@ -33,23 +31,27 @@ templateClass: tmpl-post
     </div>
   </div>
 
-    {% if remoteUrl %}
+    {% if canonicalUrl %}
     <div role="alert" class="alert alert-info">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <span>This article was originally published 
-      <a class="link font-bold" href="{{ remoteUrl | replace('.md', '') | replace('/post/markdown/', '/post/') }}" target="_blank" rel="noopener">
-        on the fediverse at  {{ remoteUrl | replace('https://', '') | replace('http://', '') | split('/') | first }}
+      <a class="link font-bold" href="{{ canonicalUrl }}" target="_blank" rel="noopener">
+        on the fediverse at  {{ canonicalUrl | replace('https://', '') | replace('http://', '') | split('/') | first }}
       </a></span>
       </div>
     {% endif %}
+
   <article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
     {{ content | safe }}
     
   </article>
 
-
+     <div class="mt-10 mb-8 text-sm text-base text-base-content/80">
+        <span>Published {{ date | readableDate }}</span>
+      </div>
+     
     
 </div>
 
