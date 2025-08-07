@@ -17,7 +17,7 @@
     <meta property="og:title" content="Bonfire">
     <meta property="og:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://bonfirenetworks.org//extension/bonfire_files/">
+    <meta property="og:url" content="https://bonfirenetworks.org//moderation-toolkit/">
     
     <!-- Twitter card tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -286,180 +286,91 @@
 </script>
     
 
+<article class="max-w-screen-md mx-auto mt-12 prose prose-xl">
+<h1>The Federated Moderation Toolkit</h1>
+        <img src="/img/moderation.jpg" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+<h2>Abstract</h2>
+<p>The Federated Moderation Toolkit is an evidence-based, human-centric initiative designed to enhance safety and moderation practices across federated digital spaces. This research-driven project aims to create a safer, more inclusive federated digital commons by leveraging collective expertise and cutting-edge research in platform moderation.</p>
+<p>Traditional social media moderation relies on centralized control and algorithmic enforcement. Federated platforms need something fundamentally different: a toolkit that enables coordination without centralization, consistency without uniformity.</p>
+<p><strong>The Unified Dashboard Strategy</strong>: We're developing a federated moderation dashboard that allows moderators to manage safety across multiple platforms from a single interface. Whether you're moderating a Mastodon, Pixelfed or a Bonfire server, you can view reports, coordinate responses, and share safety intelligence through one unified system.</p>
+<p><strong>Two Paths to Adoption</strong>: Platforms can either implement our documented specifications directly into their codebases or integrate with our dashboard through APIs and webhooks. This flexibility ensures that both resource-rich and resource-constrained platforms can benefit from advanced moderation capabilities.</p>
+<p><strong>Evidence-Based Development</strong>: Every feature we build is grounded in systematic research and validated through continuous testing with practicing moderators. We're not guessing what federated moderation needs, but we're building solutions based on documented evidence and real-world expertise.</p>
 
-<div class="bg-base-300">
-  <div class="max-w-screen-lg py-12 px-4 lg:px-0  lg:mx-auto">
-    <div class="text-sm breadcrumbs">
-      <ul>
-        <li><a href="/extensions">Extensions</a></li> 
-        
-      </ul>
-    </div>
-    <h1 class="text-3xl font-bold text-base-content  ">bonfire_files</h1>
-    <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2">File management for bonfire apps</p>
-    <div class="relative inline-block mt-6">
-      
-    <input value="just dep-clone-local bonfire_files https://github.com/bonfire-networks/bonfire_files" class="input w-[420px] input-bordered text-sm" />
-    <span class="absolute right-[8px] top-[8px] btn btn-sm btn-square">
-        <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"/><path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1"/></g></svg>
-      </span>
-    </div>
-    
-
-  </div>
-</div>
-<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8 px-4 lg:px-0">
-
-  <div class="lg:col-span-8 order-last lg:order-first col-span-12"
-    <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
-
-    <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
-      <div class="uppercase tracking-widest mb-6">Readme</div>
-        
-        <h1 id="bonfire.files">Bonfire.Files <a class="direct-link" href="#bonfire.files">#</a></h1>
-<p>File management extension for Bonfire.</p>
-<p>This extension wraps the <code>Entrepot</code><a href="https://github.com/bonfire-networks/entrepot">1</a> file management library,<br>
-adding support for media type checking, image resizing, and the like,<br>
-along a <a href="https://github.com/bonfire-networks/needle">pointable</a> schema for storage of file data.</p>
-<h2 id="s3-object-storage-setup-in-bonfire">S3 Object Storage Setup in Bonfire <a class="direct-link" href="#s3-object-storage-setup-in-bonfire">#</a></h2>
-<p>Bonfire supports storing uploaded files (such as images, documents, and videos) using S3-compatible object storage services. This is useful for scaling, reliability, and offloading storage from your main server.</p>
-<p>This guide will help you configure S3 storage for your Bonfire instance.</p>
-<h3 id="before-you-begin">Before you begin <a class="direct-link" href="#before-you-begin">#</a></h3>
+<h3>Project approach</h3>
+<p>The project addresses critical gaps in federated platform safety through a comprehensive approach that includes:</p>
 <ol>
-<li>
-<p><strong>Choose an S3-compatible provider</strong>: You can use AWS S3, MinIO, Hetzner, Scaleway, OVH, DigitalOcean Spaces, Wasabi, or any other cloud storage provider that supports the S3 API. You can find more providers and details using <a href="https://www.s3compare.io">comparison websites</a>.</p>
-</li>
-<li>
-<p><strong>Create a bucket</strong>: Set up a bucket/container in your chosen provider's dashboard.</p>
-</li>
+<li><strong>Research and Evidence Synthesis</strong>: Identifying and documenting best practices for federated platform moderation through systematic analysis of existing research and community knowledge</li>
+<li><strong>Reference Implementation</strong>: Developing practical solutions as extensions that will power the bonfire framework and serve as implementation guides for other platforms</li>
+<li><strong>Community Co-Design</strong>: Collaborating with 200+ experienced moderators from IFTAS's international community for user research, co-design, and rapid prototyping</li>
+<li><strong>Cross-Platform Compatibility</strong>: Creating interoperable tools and documentation that work across different federated platforms</li>
+<li><strong>Participation in Standards Development</strong>: Coordinating with the ActivityPub Trust and Safety Taskforce to develop and propose enhancement protocols, reach out to Prosocial Design Network, Fires, TSF and ROOST.tools to co-design, gather feedback and develop integrations with relevant initiatives in the open.</li>
 </ol>
-<blockquote>
-<p>You can <strong>keep your bucket private</strong> and users will still be able access uploaded files, because Bonfire uses signed URLs for serving files stored in S3-compatible storage. Signed URLs allow temporary, secure access to private objects in your bucket. Only users with a valid signed URL (generated by Bonfire) can access the file, and only for a limited time (default: 6 hours, configurable via <code>UPLOADS_S3_URL_EXPIRATION_TTL</code>).</p>
-<p>If for some reason your bucket is public (such as served via a public CDN), you can set <code>UPLOADS_S3_UNSIGNED_URLS</code> to skip the signing of URLs.</p>
-</blockquote>
-<ol start="3">
-<li>
-<p><strong>Generate Access Keys</strong>: Obtain an Access Key ID and Secret Access Key with permissions to read/write to your bucket.</p>
-</li>
-<li>
-<p><strong>(Optional) Set up a CDN or Custom Domain</strong>: You may want to configure a CDN or a custom domain for your bucket.</p>
-</li>
-</ol>
-<h3 id="required-environment-variables">Required Environment Variables <a class="direct-link" href="#required-environment-variables">#</a></h3>
-<p>Set the following environment variables in your environment or <code>.env</code> file:</p>
-<ul>
-<li><code>UPLOADS_S3_BUCKET</code> — The name of your S3 bucket.</li>
-<li><code>UPLOADS_S3_HOST</code> — The S3 endpoint host (default: <code>s3.${UPLOADS_S3_REGION}.scw.cloud</code> for Scaleway).</li>
-<li><code>UPLOADS_S3_ACCESS_KEY_ID</code> — Your S3 access key ID.</li>
-<li><code>UPLOADS_S3_SECRET_ACCESS_KEY</code> — Your S3 secret access key.</li>
-</ul>
-<p>Optional variables for advanced configuration:</p>
-<ul>
-<li><code>UPLOADS_S3_REGION</code> — The region of your bucket (default: <code>fr-par</code> for Scaleway Paris region).</li>
-<li><code>UPLOADS_S3_SCHEME</code> — The URL scheme, usually <code>https://</code>.</li>
-<li><code>UPLOADS_S3_PORT</code> — The port to use (default: <code>443</code>).</li>
-<li><code>UPLOADS_S3_URL</code> — Custom asset URL or CDN domain (can be set to your CDN or custom bucket domain to customise generated user-facing URLs).</li>
-<li><code>UPLOADS_S3_DEFAULT_URL</code> - Default asset URL (defaults to <code>${UPLOADS_S3_SCHEME}#{UPLOADS_S3_BUCKET}.#{UPLOADS_S3_HOST}/</code>). This string gets replaced by <code>UPLOADS_S3_URL</code> in the final URLs, unless <code>UPLOADS_S3_URL</code> matches <code>UPLOADS_S3_BUCKET</code>, in which case the bucket name is used to generate the URL.</li>
-<li><code>USE_S3</code> — Set to <code>yes</code> if you need to force S3 usage in development/test environments (by default it's only used in prod).</li>
-</ul>
-<p>Example <code>.env</code> snippet for Scaleway:</p>
-<pre><code>UPLOADS_S3_BUCKET=my-bonfire-bucket
-UPLOADS_S3_REGION=fr-par
-UPLOADS_S3_HOST=s3.fr-par.scw.cloud
-UPLOADS_S3_ACCESS_KEY_ID=...
-UPLOADS_S3_SECRET_ACCESS_KEY=...
-</code></pre>
-<p>Example for AWS S3:</p>
-<pre><code>UPLOADS_S3_BUCKET=my-bonfire-bucket
-UPLOADS_S3_REGION=eu-west-1
-UPLOADS_S3_HOST=s3.eu-west-1.amazonaws.com
-UPLOADS_S3_ACCESS_KEY_ID=...
-UPLOADS_S3_SECRET_ACCESS_KEY=...
-</code></pre>
-<p>Example for AWS S3 with role-based web identity tokens:</p>
-<pre><code>UPLOADS_S3_BUCKET=my-bonfire-bucket
-UPLOADS_S3_REGION=eu-west-1
-UPLOADS_S3_HOST=s3.eu-west-1.amazonaws.com
-AWS_ROLE_ARN=arn:aws:iam::12345:role/bonfire--prod # the role that authorization should &quot;assume&quot;
-UPLOADS_S3_ACCESS_KEY_ID=...
-UPLOADS_S3_SECRET_ACCESS_KEY=...
-</code></pre>
-<blockquote>
-<p>The above assumes that a key_id and access_key are used, but you can set the following instead of <code>UPLOADS_S3_ACCESS_KEY_ID</code> and <code>UPLOADS_S3_SECRET_ACCESS_KEY</code>:</p>
-</blockquote>
-<pre><code>AWS_WEB_IDENTITY_TOKEN_FILE=/var/run/secrets/eks.amazonaws.com/serviceaccount/token # the location of the injected token for assuming the role
-</code></pre>
-<h3 id="how-it-works">How it works <a class="direct-link" href="#how-it-works">#</a></h3>
-<ul>
-<li>When the above variables are set, Bonfire will use S3 storage for file uploads.</li>
-<li>The configuration is handled in <code>Bonfire.Files.RuntimeConfig</code>.</li>
-<li>The S3 handling logic is implemented in <code>Entrepot.Storages.S3</code>, <code>ExAws.S3</code>, and <code>ExAws</code>.</li>
-</ul>
-<h3 id="notes">Notes <a class="direct-link" href="#notes">#</a></h3>
-<ul>
-<li>If you do not set the S3 variables, Bonfire will default to local storage.</li>
-<li>You can use any S3-compatible service by adjusting the <code>UPLOADS_S3_HOST</code> and <code>UPLOADS_S3_REGION</code>.</li>
-</ul>
-<h3 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h3>
-<ul>
-<li><strong>Uploads not working?</strong> Double-check your credentials and bucket permissions.</li>
-<li><strong>Wrong URLs?</strong> Set <code>UPLOADS_S3_URL</code> to your CDN or bucket domain.</li>
-</ul>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
-<p>Copyright (c) 2024 Bonfire Contributors</p>
-<p>This program is free software: you can redistribute it and/or modify<br>
-it under the terms of the GNU Affero General Public License as<br>
-published by the Free Software Foundation, either version 3 of the<br>
-License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but<br>
-WITHOUT ANY WARRANTY; without even the implied warranty of<br>
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU<br>
-Affero General Public License for more details.</p>
-<p>You should have received a copy of the GNU Affero General Public<br>
-License along with this program.  If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
 
-    </div>
-  </div>
-  <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col">
-      <div class="flex items-center space-x-3">
-        <a href="https://github.com/bonfire-networks/bonfire_files" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
-          Get Code
-        </a>
-        <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="btn rounded-full flex-1 w-full btn-outline border-base-content/30  btn-sm">
-            Report bugs
-        </a>
-    </div>
+<h3>What we're building</h3>
+<p>The Federated Moderation Toolkit consists of three interconnected layers that work together to transform how moderation happens in federated environments:</p>
 
+<h4>Technical Infrastructure</h4>
+<p>Community-informed moderation features developed through extensive co-design with practicing moderators and validated through iterative user research. These tools, built using Bonfire's ActivityPub Extensions Framework, represent ready-to-use solutions that any ActivityPub platform can chose to adopt directly or integrate via APIs.</p>
+
+<h4>Operational Framework</h4>
+<p>Evidence-based workflows, response templates, and shared vocabulary developed through extensive research and co-design with practicing moderators, informed by evidence, experience and standards from groups like Trust and Safety Professionals Association, Trust and Safety Foundation, and DTSP Safe Framework Specification ISO/IEC 25389. This framework enables consistent, effective moderation practices while adapting to each community's unique needs and policies.</p>
+
+<h4>Knowledge Ecosystem</h4>
+<p>Comprehensive documentation, implementation guides, and educational resources that make sophisticated moderation practices accessible to platforms regardless of their technical resources or moderation experience.</p>
+
+<p>This integrated design approach ensures that each component works synergistically. For example, a reporting feature encompasses not just technical code, but also UX patterns informed by moderator research, configuration options adaptable to different community policies, and comprehensive documentation explaining implementation and interoperability considerations.</p>
+
+<h3>Team</h3>
+<p>This collaboration combines moderation expertise, technical knowledge, and community support, positioning the project to develop crucial features benefiting the entire social web ecosystem.</p>
+<ul>
+<li><strong>IFTAS (Independent Federated Trust and Safety)</strong>: Led by Jaz-Michael King, providing access to an extensive international moderation community and established trust and safety expertise.</li>
+<li><strong>Erin Kissane</strong>: Co-author of grant-funded research on Fediverse governance and moderation, bringing critical academic and policy perspectives.</li>
+<li><strong>Bonfire Networks Team</strong>: Providing technical development expertise and a proven platform for federated social infrastructure.</li>
+</ul>
+<p>This collaboration combines moderation expertise, technical knowledge, and community support, positioning the project to develop crucial features benefiting the entire social web ecosystem.</p>
     
+</article>
 
-    <div class="bg-base-content/5 mt-4 rounded-lg p-3">
-      <div class="uppercase text-xs tracking-widest mb-6">Details</div>
-        <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-          
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">07 Aug 2025</span></div>
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
-            
-          
-        </div>
-    </div>
+
+ <div class="mx-4 mt-8 lg:mx-auto">
     
-  </div>
-</div>
+  
 
+  <div class="my-24 mx-auto max-w-screen-lg w-full shadow-lg flex rounded-lg bg-gradient-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
+      <div class="border-b rounded-lg flex-1 flex items-center text-center gap-2 flex-col h-full border-base-content/20 bg-base-100 p-4">
 
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
 
   <div class="border-base-content/10 bg-base-200 border-t">
  
@@ -563,6 +474,6 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
 });
 
 </script>
-    <!-- Current page: /extension/bonfire_files/ -->
+    <!-- Current page: /moderation-toolkit/ -->
   </body>
 </html>
