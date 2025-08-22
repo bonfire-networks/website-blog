@@ -217,20 +217,20 @@ While Bonfire is still in its early days, it's already inspiring communities and
 
 ### Open Science
 
-<img src="/img/hwd1.png" class="object-cover rounded-lg mx-auto w-full" />
+<!-- <img src="/img/hwd1.png" class="object-cover rounded-lg mx-auto w-full" /> -->
 
 One notable example is Niboe, a scientific community of researchers and activists. They approached Bonfire with a vision to create a digital space focused on scientific divulgation and collaboration.
 Leveraging Bonfire's extensible framework, they're designing a platform that facilitates streamlined academic processes and collaborative research. Key features include the integration of ORCID (professional credentials for login), a fine-grained way of sharing and classifying research papers, and an open and more transparent peer-review system. Their goals include both boosting productivity and fostering open and transparent scientific communication and collaboration. <a href="/open_science" target="blank">Read more about the case study</a>
 
 ### Learners community
 
-<img src="/img/hwd2.png" class="object-cover rounded-lg mx-auto w-full" />
+<!-- <img src="/img/hwd2.png" class="object-cover rounded-lg mx-auto w-full" /> -->
 
 Bonfire opens up exciting possibilities for learning communities. Imagine a space where learners collaboratively assemble, curate and rate study materials, and engage in discussions and collaborative exercises. Bonfire can enable the formation of thematic collections containing links, documents, and various media, all classified by themes, difficulty levels, and more. Specific groups can be created for study and practice, encouraging peer-to-peer learning and experimentation. Furthermore, the integration of <em>open badges</em> in Bonfire could help users have their learning and achievements be recognised.
 
 ### Fablabs Network
 
-<img src="/img/hwd3.png" class="object-cover rounded-lg mx-auto w-full" />
+<!-- <img src="/img/hwd3.png" class="object-cover rounded-lg mx-auto w-full" /> -->
 
 Students at the Milwaukee School of Engineering used Bonfire to experiment with collaboration within the network of Fablabs in their area.
 They envisioned a digital space tailored for inventory tracking across different Fablabs, enabling resource exchange and promoting collaboration. They prototyped a Bonfire extension where each Fablab could manage its inventory, making it easier for users to share resources. Additionally, they aimed to implement features for collaborative task management, enhancing the productivity and interconnectedness of the Fablabs network.
