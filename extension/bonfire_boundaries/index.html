@@ -442,7 +442,7 @@ Boundaries are important because they help you protect yourself, maintain your a
 <p>In simpler terms, a final permission is granted only if the combined result is <code>true</code>. Think of it as requiring an explicit &quot;yes&quot; for permission, while &quot;no&quot; always takes precedence. Notably, <code>nil</code> acts as a sort of &quot;weak no,&quot; it can be overridden by a <code>true</code> but not granting access on its own. This approach provides flexibility for implementing features like user blocking (<code>false</code> is crucial here).</p>
 <p>For efficiency, <code>nil</code> is the assumed default and not stored in the database.</p>
 <h2 id="controlled---applying-boundaries-to-an-object">Controlled - Applying boundaries to an object <a class="direct-link" href="#controlled---applying-boundaries-to-an-object">#</a></h2>
-<p>The <code>Controlled</code> <a href="./DATABASE.md#multimixins">multimixin</a> link an object to one or more ACLs. This allows for applying multiple boundaries to the same object. In case of overlapping permissions, the system combines them following the logic described above.</p>
+<p>The <code>Controlled</code> multimixin link an object to one or more ACLs. This allows for applying multiple boundaries to the same object. In case of overlapping permissions, the system combines them following the logic described above.</p>
 <h3 id="roles">Roles <a class="direct-link" href="#roles">#</a></h3>
 <p>Roles are groups of verbs associated with permissions. While not stored in the database, they are defined at the configuration level to enhance readability and user experience.</p>
 <h2 id="practical-example%3A-surprise-birthday-party">Practical example: Surprise birthday party <a class="direct-link" href="#practical-example%3A-surprise-birthday-party">#</a></h2>
@@ -511,7 +511,7 @@ iex<span class="token operator">></span> <span class="token module class-name">B
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">21 Aug 2025</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">02 Oct 2025</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">mpl-2.0</span></div>
             
           
