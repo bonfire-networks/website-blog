@@ -17,6 +17,12 @@ We encourage all instance operators to upgrade and explore these new capabilitie
 
 Here are more details on some of these...
 
+## Import your old posts when moving instances 
+
+You can now bring your posts (and optionally their replies) with you when moving to Bonfire from another instance. Imported posts keep their original dates and links, and are added to your timeline in the right order, so your history looks complete. Replies and threads are preserved, as are like/boost counts. This works by automatically "boosting" your old posts (but without flooding people's feeds or notifications with old activities).
+
+<iframe style="border:0;" width="800" height="450" src="https://www.tella.tv/video/cmg57she8000b0bju3osx89uy/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen allowtransparency></iframe>
+
 ## Consent-based quoting 
 
 Bonfire now supports consent-based quoting, introduced through the new ActivityPub extension [FEP-044f](https://codeberg.org/fediverse/fep/src/branch/main/fep/044f/fep-044f.md). With this first iteration released alongside Mastodon’s, it marks an important step toward making quoting work smoothly — and respectfully — across the fediverse.
@@ -30,23 +36,15 @@ With Bonfire, you can now:
 
 ![quote2](/img/quote2.jpg)
 
-## Import your old posts when moving instances 
-
-You can now bring your posts (and optionally their replies) with you when moving to Bonfire from another instance. Imported posts keep their original dates and links, and are added to your timeline in the right order, so your history looks complete. Replies and threads are preserved, as are like/boost counts. This works by automatically "boosting" your old posts (but without flooding people's feeds or notifications with old activities).
-
-<iframe style="border:0;" width="800" height="450" src="https://www.tella.tv/video/cmg57she8000b0bju3osx89uy/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0" allowfullscreen allowtransparency></iframe>
-
 ## Other data portability improvements
 
 Instance migration is now more robust. In addition to follows, blocks, and posts, you can now export and import circles/lists, bookmarks, likes, and boosts.
 
 ![export](/img/export.jpg)
 
-
 A dedicated dashboard helps you follow the progress of data imports and migrations, so you always know what's happening with your data.
 
 ![importstatus](/img/importstatus.jpg)
-
 
 ## Federation status dashboard 
 
