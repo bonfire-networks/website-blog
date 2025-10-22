@@ -88,7 +88,7 @@ You can find more [details on Bonfire Social](/app/social) on our website or hav
 These features are *not* part of Bonfire Social 1.0:
 
 * [Mastodon API compatibility](https://github.com/bonfire-networks/bonfire-app/issues/1260)
-* [Content labeling](https://bonfirenetworks.org/posts/content_labelling_in_bonfire/) (needs co-design and interoperability work)
+* [Content labeling](https://bonfirenetworks.org/posts/safer-social-networking-bonfire-s-recent-experiment-with-prosocial-design-patterns/) (needs co-design and interoperability work)
 * Emoji reactions (needs better federation)
 * [Groups and topics](https://bonfirenetworks.org/posts/dev_diary_groups_1/) (coming in Bonfire Community flavour)
 * [Federated coordination tools](https://bonfirenetworks.org/posts/bonfire_coordination/) (coming in Bonfire Coordination flavour)
