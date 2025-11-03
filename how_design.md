@@ -19,7 +19,7 @@ Imagine a digital landscape where your community can exchange ideas, collaborate
  <div class="mx-auto grid max-w-screen-lg mt-8 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
   <div class="card border-base-content/30 card-compact border text-left">
     <div class="card-body">
-      <div class="flex text-base-content/100 text-base font-bold items-center gap-2">
+      <div class="flex text-base-content text-base font-bold items-center gap-2">
         Communities set their own rules and co-create the features they need
       </div>
     </div> 
@@ -27,7 +27,7 @@ Imagine a digital landscape where your community can exchange ideas, collaborate
 
   <div class="card border-base-content/30 card-compact border text-left">
     <div class="card-body">
-      <div class="flex text-base-content/100 text-base font-bold items-center gap-2">
+      <div class="flex text-base-content text-base font-bold items-center gap-2">
             Data privacy and autonomy are the norm, not the exception
       </div> 
     </div> 
@@ -35,7 +35,7 @@ Imagine a digital landscape where your community can exchange ideas, collaborate
 
   <div class="card border-base-content/30 card-compact border text-left">
     <div class="card-body">
-      <div class="flex text-base-content/100 text-base font-bold items-center gap-2">
+      <div class="flex text-base-content text-base font-bold items-center gap-2">
       Diverse voices can flourish in a safe environment
       </div> 
     </div> 

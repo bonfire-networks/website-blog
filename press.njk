@@ -1,0 +1,267 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-lg lg:mx-auto">
+        <h1 class="mt-20 mb-4  text-3xl font-extrabold sm:text-4xl">Bonfire Networks PRESS KIT</h1>
+        <h2 class="text-xl max-w-(--breakpoint-md) text-base-content/70">Download our branding assets, including logos, illustrations, and app screenshots.</h2>
+        <div class="flex items-center gap-4 mt-6"><a href="/" class="btn btn-primary btn-sm">Download Complete Press Kit ZIP</a></div>
+        <div class="mt-4 text-base-content/70 text-sm">Last updated: November 5, 2025</div>
+        <div class="mt-12 border-t border-base-content/10 pt-8">
+        You can also access Bonfire's media kit <a class="link link-primary" href="https://drive.google.com/drive/u/0/folders/1QF4ehzEW1JIejp2mCO8nGp-KEh8idEGU">here</a>. <br/>
+        For media inquiries, please contact <a class="link link-primary" href="mailto:team@bonfire.cafe">team@bonfire.cafe</a></div>
+      </div>
+    </div>
+  <div
+      x-data="{ openPanel: 0 }"
+      class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-lg mx-auto">
+      <div class="mx-auto divide-y divide-base-content/10">
+        
+        <dl class="mt-16 space-y-6 divide-y divide-base-content/10">
+          <div class="pt-6">
+          <dt class="text-lg">
+              <!-- Expand/collapse question button -->
+              <button
+              x-description="Expand/collapse question button"
+              @click="openPanel = (openPanel === 0 ? null : 0)"
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
+              <span class="font-medium text-blueGray-300">
+                  Bonfire Logo
+              </span>
+              <span class="flex items-center ml-6 h-7">
+                  <svg
+                  x-description="Heroicon name: outline/chevron-down"
+                  x-state:on="Open"
+                  x-state:off="Closed"
+                  x-bind:class="{ '-rotate-180': openPanel === 0, 'rotate-0': !(openPanel === 0) }"
+                  class="w-6 h-6 transform -rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </span>
+              </button>
+          </dt>
+          <dd
+              x-show="openPanel === 0"
+              class="pr-12 mt-2">
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a href="/img/press/logo/bonfire_media_kit_logo_black_bg.svg" target="_blank" class="link link-primary">
+                  <img src="/img/press/logo/bonfire_media_kit_logo_black_bg.svg" class="w-full h-auto object-cover" />
+                </a>
+                <a href="/img/press/logo/bonfire_media_kit_logo_black_bg.png" target="_blank" class="link link-primary">
+                  <img src="/img/press/logo/bonfire_media_kit_logo_black_bg.png" class="w-full h-auto object-cover" />
+                </a>
+                <a href="/img/press/logo/bonfire_media_kit_logo_on_red.svg" target="_blank" class="link link-primary">
+                  <img src="/img/press/logo/bonfire_media_kit_logo_on_red.svg" class="w-full h-auto object-cover" />
+                </a>
+                <a href="/img/press/logo/bonfire_media_kit_logo_on_red_noisy.png" target="_blank" class="link link-primary">
+                  <img src="/img/press/logo/bonfire_media_kit_logo_on_red_noisy.png" class="w-full h-auto object-cover" />
+                </a>
+                
+
+              </div>
+          </dd>
+          </div>
+
+          <div class="pt-6">
+            <dt class="text-lg">
+              <!-- Expand/collapse question button -->
+              <button
+              x-description="Expand/collapse question button"
+              @click="openPanel = (openPanel === 1 ? null : 1)"
+              class="flex items-start justify-between w-full text-left text-blueGray-400">
+              <span class="font-medium text-blueGray-300">
+                  Bonfire Banners
+              </span>
+              <span class="flex items-center ml-6 h-7">
+                  <svg
+                  x-description="Heroicon name: outline/chevron-down"
+                  x-state:on="Open"
+                  x-state:off="Closed"
+                  x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
+                  class="w-6 h-6 transform -rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </span>
+              </button>
+            </dt>
+            <dd
+                x-show="openPanel === 1"
+                class="pr-12 mt-2">
+                <div class="prose prose-light text-blueGray-300">
+                <ul>
+                    <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). </li>
+                    <li>Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them. </li>
+                    <li>Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).</li>
+                </ul>
+                </div>
+            </dd>
+          </div>
+      </dl>
+      </div>
+  </div>
+{# <div class="pb-40 mt-16 border-t border-base-content/10">
+  <div class="">
+    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-lg lg:mx-auto lg:mt-24">
+        <h2 class="text-[36px] leading-[44px]  font-black tracking-wide">Full Logo</h2>  
+    <ul class="grid grid-cols-1 mt-12 gap-gutter max-w-(--breakpoint-md) mx-auto gap-6">
+      
+      <a href="/img/bonfire_logo_transparent.png" target="_blank">
+      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+        <div class="w-full h-auto"><img src="/img/bonfire_logo_transparent.png" class="w-full h-full object-contain" /></div>
+      </li>
+      </a>
+      <a href="/img/bonfire_brand.png" target="_blank">
+      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+        <div class="w-full h-auto"><img src="/img/bonfire_brand.png" class="w-full h-full object-contain" /></div>
+      </li>
+      </a>
+      <a href="/img/fulllogobn.svg" target="_blank">
+      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+        <div class="w-full h-auto"><img src="/img/fulllogobn.svg" class="w-full h-full object-contain" /></div>
+      </li>
+      </a>
+      <a href="/img/fulllogosimple.svg" target="_blank">
+      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+        <div class="w-full h-auto"><img src="/img/fulllogosimple.svg" class="w-full h-full object-contain" /></div>
+          </li>
+      </a>
+    
+
+    </ul>  
+</div>  #}
+<div class="pb-40 mt-16 border-base-content/10">
+  <div class="">
+    <div class="max-w-(--breakpoint-md) mx-4 mt-16 2xl:max-w-screen-lg lg:mx-auto lg:mt-24">
+
+  <h2 class="text-3xl text-center font-bold tracking-wide">Bonfire Logo</h2>
+  
+  <ul class="grid grid-cols-3 mt-12 gap-gutter md:px-8 lg:gap-12">
+    
+    <a href="/img/bonfire-icon.svg" target="_blank" title="Colour Icon in SVG">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 p-4 aspect-square">
+      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/bonfire-icon.svg" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/bonfire.png" target="_blank" title="Colour Icon in PNG">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 p-4 aspect-square">
+      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/bonfire.png" class="w-full h-full object-contain" /></div>
+        </li>
+    </a>
+    <a href="/img/logoonwhite.svg" target="_blank" title="Colour Icon in PNG">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 p-4 aspect-square">
+      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/logoonwhite.svg" class="w-full h-full object-contain" /></div>
+        </li>
+    </a>
+    <a href="/img/logobn.png" target="_blank" title="Monochrome Icon in PNG">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 p-4 aspect-square">
+      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/logobn.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+
+  </ul>  
+</div> 
+
+<div id="screenshots" class="relative z-20 border-base-content/20 border-t max-w-screen-lg px-6 mx-auto py-16 mt-8  xl:px-0">
+  <h2 class="text-[36px] leading-[44px]  font-black tracking-wide">App screenshots</h2>
+  {# <div class="text-xl mt-4 max-w-(--breakpoint-md)  text-base-content/90 font-medium tracking-wider">Bonfire Mosaic empowers your project with</div>   #}
+
+  
+  
+  <ul class="grid grid-cols-3 mt-12 gap-gutter gap-4">
+     <a href="/img/social.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/social.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+     <a href="/img/landing2.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/landing2.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+     <a href="/img/build.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/build.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/labelmodal.png" target="_blank">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/labelmodal.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/labelbg.png" target="_blank">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/labelbg.png" class="w-full h-full object-contain" /></div>
+        </li>
+    </a>
+    <a href="/img/labelled.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/labelled.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/ospreview.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/ospreview.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+   
+
+  </ul>   
+</div> 
+
+<div id="illustrations" class="relative z-20 border-base-content/20 border-t max-w-screen-lg px-6 mx-auto py-16 mt-8  xl:px-0">
+  <h2 class="text-[36px] leading-[44px] font-black tracking-wide">Illustrations</h2>
+  {# <div class="text-xl mt-4 max-w-(--breakpoint-md)   text-base-content/90 font-medium tracking-wider">Bonfire Mosaic empowers your project with</div>   #}
+
+  
+  
+  <ul class="grid grid-cols-2 mt-12 gap-gutter gap-4">
+    
+    <a href="/img/1_uncompressed.png" target="_blank">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/1_uncompressed.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/2_uncompressed.png" target="_blank">
+    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/2_uncompressed.png" class="w-full h-full object-contain" /></div>
+        </li>
+    </a>
+    <a href="/img/3_uncompressed.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/3_uncompressed.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/4_uncompressed.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/4_uncompressed.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/BonfireIlluDefLogo1.jpg" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/BonfireIlluDefLogo1.jpg" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+    <a href="/img/banner.png" target="_blank">
+    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
+      <div class=" relative w-full"><img src="/img/banner.png" class="w-full h-full object-contain" /></div>
+    </li>
+    </a>
+
+  </ul>  
+</div> 
+
+</div>
+</div>
+
+</div>
+</div>

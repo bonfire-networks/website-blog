@@ -11,17 +11,19 @@ eleventyNavigation:
 {# {% include "testimonials.njk" %} #}
 
 <div class="">
-    <div class="max-w-screen-lg px-4 lg:mx-auto my-40">
+    <div class="lg:mx-auto my-24">
       <div class="">
-        <div class="h-[1px] my-12  bg-base-content/30  mx-auto"></div>
-        <div class="text-5xl serif-bold mt-4">Latest news</div>
-        <a href="/blog" class="mb-12  btn mt-4 btn-outline !border !border-base-content/30 rounded-full normal-case">View all articles</a>
+        <div class="h-px my-6 bg-base-content/30  mx-auto"></div>
+        <div class="max-w-screen-lg mx-auto">
+          <div class="flex items-center mt-6 justify-between">
+          <div class="text-3xl font-bold">Latest news</div>
+            <a href="/blog" class="btn btn-outline border-base-content/30">View all articles</a>
+          </div>
+            {% set postslist = collections.posts  %}
+            {% set postslistCounter = collections.posts | length %}
+            {% include "postshome.njk" %}
+        </div>
       </div>
-      {% set postslist = collections.posts  %}
-      {% set postslistCounter = collections.posts | length %}
-      {% include "postshome.njk" %}
-
-   
     </div>
   </div>
 

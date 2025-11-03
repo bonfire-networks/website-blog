@@ -1,8 +1,14 @@
-@tailwind base;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@tailwind components;
+@import "daisyui/daisyui.css";
 
-@tailwind utilities;
+@theme {
+  --font-sans: Geist, sans-serif;
+  --font-mono: GeistMono, mono;
+}
+
+@source "../**/*.{njk,md,html}";
 
 .card figure {
   width: 15rem !important
