@@ -43,7 +43,9 @@ description: "Extensions are the building blocks of Bonfire apps. Each extension
 
 
   <div class="grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
+
 {% for repo in repos %}
+{# {% if repo.name.startsWith("bonfire_") %} #}
   <a href="/extension/{{repo.name}}">
     <div class="border-base-content/20 border rounded-lg h-[176px]">
       {# <div class="p-4 flex items-center place-content-center bg-base-content/10 shrink-0 rounded-box ml-4 mt-4 w-[72px]">
@@ -62,7 +64,8 @@ description: "Extensions are the building blocks of Bonfire apps. Each extension
         </div>
       </div>
     </div>
-    </a>
+    </a> 
+    {# {% endif %} #}
 {% endfor %}
 {# {% include "building_blocks.njk" %} #}
 

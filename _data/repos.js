@@ -19,9 +19,10 @@ async function getAllReposWithTopic(topic) {
   do {
     const repos = await fetchRepos(page);
     lastFetchLength = repos.length;
+    console.log(`Fetched ${lastFetchLength} repos from page ${page}`);
     allRepos = allRepos.concat(repos);
     page++;
-  } while (lastFetchLength === 100);
+  } while (lastFetchLength >= 100);
 
   // Filter repositories by topic and sort by stargazers_count
   return allRepos
@@ -29,7 +30,7 @@ async function getAllReposWithTopic(topic) {
     .sort((a, b) => b.stargazers_count - a.stargazers_count);
 }
 
-module.exports = async function() {
+module.exports = async function () { 
   try {
     const topic = 'extension'; 
     return await getAllReposWithTopic(topic);
