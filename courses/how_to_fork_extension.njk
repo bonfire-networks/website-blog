@@ -3,10 +3,10 @@ layout: layouts/base.njk
 ---
 
 
-<div class="max-w-screen-md items-center place-content-center flex flex-col mx-4 mt-12 prose prose-lg lg:mx-auto">
+<div class="max-w-(--breakpoint-md) items-center place-content-center flex flex-col mx-4 mt-12 prose prose-lg lg:mx-auto">
     {# <a href="/courses/extension/" class="btn btn-outline border-base-content/30 btn-sm no-underline	 rounded-full">Tutorial homepage</a> #}
     <h1 class="text-5xl mt-6 text-center font-bold">Make changes to a Bonfire extension</h1>
-    <div class="rounded-lg mx-auto w-full max-w-[680px] h-[240px] flex items-center place-content-center rounded bg-gradient-to-r from-[#ef709b] to-[#fa9372]">
+    <div class="rounded-lg mx-auto w-full max-w-[680px] h-[240px] flex items-center place-content-center rounded bg-linear-to-r from-[#ef709b] to-[#fa9372]">
         <span class="text-8xl">▖</span>
     </div>
 </div>
@@ -20,8 +20,8 @@ layout: layouts/base.njk
       
       
       <div class="p-4 border-info rounded bg-info/10">
-        <h2 class="text-xs !m-0  uppercase text-info font-meidum tracking-widest">Prerequisites</h2>
-        {# <p class="prose mt-2 !mb-0">Before diving into this tutorial, there are a few things you should have in place:<br/> #}
+        <h2 class="text-xs m-0!  uppercase text-info font-meidum tracking-widest">Prerequisites</h2>
+        {# <p class="prose mt-2 mb-0!">Before diving into this tutorial, there are a few things you should have in place:<br/> #}
           <ul class="prose mt-0">
             <li>Basic understanding of Git.</li>
             <li>A local Bonfire development environment already set up - <a href="">check out our step-by-step guide to run Bonfire locally</a> for a smooth start.</li>
@@ -30,11 +30,11 @@ layout: layouts/base.njk
         </p>
       </div>
       
-      <p class="mt-5 !font-light md:text-xl text-base-content">In Bonfire, in order to edit an existing extension and test the changes you need to set up the extension in your development environment. The process is quite straightforward:</p>
+      <p class="mt-5 font-light! md:text-xl text-base-content">In Bonfire, in order to edit an existing extension and test the changes you need to set up the extension in your development environment. The process is quite straightforward:</p>
 
-      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Fork the extension</h2>
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight leading-normal! mb-10 text-base-content">Fork the extension</h2>
 
-      <p class="mt-5 !font-light md:text-xl text-base-content">
+      <p class="mt-5 font-light! md:text-xl text-base-content">
        If you want to share your changes to the extension, you may want to first fork it on Github. <br />
 
         Use <code>just dep-clone *dep* *repo*</code> to clone an extension from its Git repository. Replace <i>dep</i> with the extension name and <i>repo</i> with the full URL of your fork. The cloned extension will be cloned in <code>./extensions</code>:</p>
@@ -43,8 +43,8 @@ layout: layouts/base.njk
        just dep-clone-local bonfire_social https://github.com/my_username/bonfire_social
         {% endhighlight %}
 
-      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Enable the extension</h2>
-      <p class="mt-5 !font-light md:text-xl text-base-content">
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight leading-normal! mb-10 text-base-content">Enable the extension</h2>
+      <p class="mt-5 font-light! md:text-xl text-base-content">
         After cloning, choose to use the local version by editing <code>./config/deps.path</code> (create the file if it doesn’t exist). <br/>
         The format to follow is the following: <code>dep_name = "dep_path" </code>.<br/>
         To disable a local extension, comment or delete its line in .deps.path.<br/>
@@ -59,16 +59,16 @@ bonfire_me = "./extensions/bonfire_me"
 
        {# # Add a paragraph on how to enable js hook (-> not really relevant since using Surface hooks) #}
 
-      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Make and test your changes</h2>
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight leading-normal! mb-10 text-base-content">Make and test your changes</h2>
 
       <p> You can now make your edits to the code in <code>./extensions</code>, run the app with <code>just dev</code> and run tests with <code>just test-watch</code>.
 
-      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Push changes</h2>
-      <p class="mt-5 !font-light md:text-xl text-base-content">You can push your changes remotely, use Bonfire's helpers like <code>just contrib</code> if you need to commit files that belong to multiple extensions or <code>just update-dep *dep*</code> for a specific one (e.g., <i>just update-dep bonfire_me</i>).</p>
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight leading-normal! mb-10 text-base-content">Push changes</h2>
+      <p class="mt-5 font-light! md:text-xl text-base-content">You can push your changes remotely, use Bonfire's helpers like <code>just contrib</code> if you need to commit files that belong to multiple extensions or <code>just update-dep *dep*</code> for a specific one (e.g., <i>just update-dep bonfire_me</i>).</p>
 
-      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight !leading-normal mb-10 text-base-content">Great works 🎉🎉🎉</h2>
+      <h2 class="text-2xl md:text-4xl text-center font-bold tracking-tight leading-normal! mb-10 text-base-content">Great works 🎉🎉🎉</h2>
 
-      <p class="mt-5 !font-light md:text-xl text-base-content">You're now equipped to contribute to Bonfire extensions, enhancing the framework's capabilities. You can do so by opening a PR on Github from your forked extension. Your contributions are vital to the Bonfire community, and we encourage you to keep exploring and improving the project.</p>
+      <p class="mt-5 font-light! md:text-xl text-base-content">You're now equipped to contribute to Bonfire extensions, enhancing the framework's capabilities. You can do so by opening a PR on Github from your forked extension. Your contributions are vital to the Bonfire community, and we encourage you to keep exploring and improving the project.</p>
     </div>
   </div>
 </section>

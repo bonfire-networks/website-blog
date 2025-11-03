@@ -1,2 +1,37 @@
-const tailwindConfig = require('../tailwind.config.js');
-module.exports = tailwindConfig.daisyui.themes;
+// DaisyUI 5 themes are now configured in CSS file
+// Exporting the list of available themes
+module.exports = [
+  "light",
+  "bonfire",
+  "cupcake",
+  "dark",
+  "bumblebee",
+  "emerald",
+  "corporate",
+  "synthwave",
+  "retro",
+  "cyberpunk",
+  "valentine",
+  "halloween",
+  "garden",
+  "forest",
+  "aqua",
+  "lofi",
+  "pastel",
+  "fantasy",
+  "wireframe",
+  "black",
+  "luxury",
+  "dracula",
+  "cmyk",
+  "autumn",
+  "business",
+  "acid",
+  "lemonade",
+  "night",
+  "coffee",
+  "winter",
+  "dim",
+  "nord",
+  "sunset"
+];
