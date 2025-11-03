@@ -117,11 +117,12 @@ permalink: "app/{{apps.flavour}}/"
         <div class="">
           <span class="font-medium text-2xl">Extensions included</span>  
           <div class="flex flex-wrap items-center gap-2 mt-4">
+
              {% for item in apps.extensions %}
-              <a href="/extension/{{item.repo_name}}">
+<a href="/{% if item.type == 'flavour' %}app{% else %}extension{% endif %}/{{item.repo_name}}">
                 <span class="badge badge-accent badge-sm">
                 {{item.name}}
-              </span>
+              </span> 
               </a>
               {% endfor %}
           </div>   
