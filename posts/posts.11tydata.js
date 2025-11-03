@@ -45,9 +45,30 @@ module.exports = {
     date: async (data) => {
       if (data.remoteUrl && !data.date) {
         const parsed = await fetchRemotePostWithMetadata(data.remoteUrl);
-        return parsed?.data?.date || data.date;
+        const remoteDate = parsed?.data?.date;
+
+        // If we have a remote date, convert it to a proper Date object
+        if (remoteDate) {
+          // Handle various date formats
+          if (remoteDate instanceof Date) {
+            return remoteDate;
+          } else if (typeof remoteDate === 'string') {
+            return new Date(remoteDate);
+          } 
+        }
       }
-      return data.date;
+
+      // If data.date exists, ensure it's a proper Date object
+      if (data.date) {
+        if (data.date instanceof Date) {
+          return data.date;
+        } else if (typeof data.date === 'string') {
+          return new Date(data.date);
+        }
+      }
+
+      console.log("Could not prepare date - Ultimate fallback current date");
+      return new Date();
     },
     
     author: async (data) => {
