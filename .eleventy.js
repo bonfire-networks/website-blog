@@ -51,15 +51,26 @@ module.exports = function(eleventyConfig) {
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
-  eleventyConfig.addFilter("readableDate", dateStr => {
-    const date = DateTime.fromISO(dateStr, {zone: 'utc'});
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    // Handle both Date objects and ISO strings
+    let date;
+    if (dateObj instanceof Date) {
+      date = DateTime.fromJSDate(dateObj, { zone: 'utc' });
+    } else if (typeof dateObj === 'string') {
+      date = DateTime.fromISO(dateObj, { zone: 'utc' });
+    } else {
+      console.error(`Invalid date: ${dateObj}`);
+      return dateObj;
+    }
+
     if (date.isValid) {
       return date.toFormat("dd LLL yyyy");
     } else {
-      console.error(`Invalid date: ${dateStr}`);
-      return dateStr;  // Return the original string if it can't be parsed
+      console.error(`Invalid date: ${dateObj} for ${date}`);
+      return dateObj;
     }
   });
+
 
   eleventyConfig.addFilter('remoteMarkdown', async function(url) {
     const response = await axios.get(url).catch(function (error) {
