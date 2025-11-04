@@ -1,31 +1,278 @@
 
-{% include "_includes/flavours/social_features.njk" %}
-
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="mb-16">
-  <div class="max-w-3xl px-4 py-10 mx-auto text-center sm:py-10 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-      <span class="block">It's all connected.</span>
-    </h2>
-    <div class="mt-4 text-lg leading-6 text-base-content text-opacity-90"><b>All the features and extensions are interconnected</b>, so that social functionality like discussions, boosts, and likes are available not just for posts but any type of information provided by other extensions, such as tasks or events.
-
-<p>Bonfire speaks ActivityPub — so you can follow and interact with users and content across the fediverse, including from apps Mastodon, Peertube, Mobilizon, and more.
-
-    <p><a href="/start" class="mt-6 btn rounded-full border-base-content/30 btn-outline">
-      Get started
+<div>
+  <h2 class="text-3xl font-bold mb-4">Setup a new Bonfire Social server</h2>
+  <div class="grid grid-cols-4 gap-2">
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="link bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/coopcloud1.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Co-op Cloud</div>
     </a>
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/docker.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Docker</div>
+    </a>
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/guix.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">GUIX</div>
+    </a>
+    <a href="https://apps.yunohost.org/app/bonfire" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/yunohost.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Yunohost</div>
+    </a>
+</div>
+<div class="bg-base-content/10 p-8 rounded-lg mt-4">
+<h3 class="text-2xl">Do you need help with installation?</h3>
+<h4 class="text-lg mt-1 text-base-content/80">Contact us for cooperative hosting and support services.</h4>
+  <div class="flex items-center mt-6 gap-4">
+    <a href="https://cal.com/bonfire-networks/meet" class="btn btn-primary">Book a call</a>
+    <a href="mailto:team@bonfire.cafe" class="btn btn-outline border-base-content/30 ">Write as at team@bonfire.cafe</a>
   </div>
+</div>
+<div class=" mx-auto my-12 px-4 lg:px-0">
+    {# <div class="text-3xl serif-bold  text-base-content mt-4 mx-auto">Digital spaces where you can safely feel at home</div> #}
+   
+
+<div class="flex gap-6 flex-col">
+    {# x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+    :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
+
+  {# <section 
+    role="tabpanel"
+    class="grid border border-base-content/20 rounded-2xl  h-full p-2 grid-cols-4 items-center  mt-8">
+    <div class="lg:col-span-2 col-span-4 lg:p-12 lg:pb-6 pb-2">
+      <div class="text-primary font-semibold font-mono uppercase mb-3">Configure</div>
+      <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Effortlessly configure your favourite features, settings, and theme.</div>
+      <div class="mt-3 prose prose-lg">With Bonfire, you can shape a space that truly reflects your community's needs and aesthetic.</div>
+    </div>
+    <div class="lg:col-span-2 col-span-4">
+      <div style="background-image: url(/img/custom_feeds.png)" class="bg-cover rounded-2xl lg:h-[450px] h-[200px] w-full bg-center"></div>
+    </div>
+  </section> #}
+
+
+  <h2 class="text-3xl font-bold mb-4">What is included</h2>
+  <div class="bg-base-300/30">
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full order-last lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/customfeeds.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Custom feeds</div>
+          <div class="mt-3 prose prose-lg">
+            Build ad-hoc feeds with a simple interface: filter and sort by content type, circle, date, engagement, source instance, and more. Save presets and arrange them however you like.</div>
+        </div>
+      </section>
+    </div>
+
+
+    {# x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+    :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))" #}
+    <div class="">
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/circlehome.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Circles</div>
+          <div class="mt-3 prose prose-lg">
+            Circles are lists of people (e.g., “local friends”, “team”, “mutual aid crew”). Each circle has its own feed with posts from members.</div>
+        </div>
+      </section>
+    </div>
+
+
+    <div class="">
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full order-last lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/bound.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Boundaries</div>
+          <div class="mt-3 prose prose-lg">
+            Choose who can see, reply, quote, or even edit a post. For example: make a post public but accept replies only from a specific circle. Boundaries are compatible with GoToSocial interaction controls and Mastodon quote authorisations.</div>
+        </div>
+      </section>
+    </div>
+
+    <div >
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/importstatus.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Your data, your freedom</div>
+          <div class="mt-3 prose prose-lg">
+            <p>Moving between instances shouldn't mean starting from scratch. <strong>Seamlessly migrate your entire social presence</strong> (including posts, follows, circles, and bookmarks) with Bonfire's comprehensive import tools and migration dashboard.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <div >
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full order-last lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/federate.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Connect beyond boundaries</div>
+          <div class="mt-3 prose prose-lg">
+            <p><strong>Join a network of millions</strong> across Mastodon, PeerTube, Mobilizon, and the wider fediverse using ActivityPub. Protocol bridges also connect you with Bluesky and beyond, breaking down walls between social platforms.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+   
 </div>
 
-{# 
-<div class="mt-24 border-t border-base-100 border-opacity-60">
-  <div class="mt-12 text-2xl font-black uppercase text-base-content">contribute</div>
-  <div class="my-3 text-sm uppercase text-base-content text-opacity-80">navigate uncertain times</div>
-  <div class="mt-6 prose prose-lg">
-    Croatan is a dispersed angle of the Metaverse, none owns its identity, noone knows how to grab its treasures.</div>
-  <div class="flex mt-6 space-x-4">
-    <button class="btn btn-wide btn-lg btn-primary">Support</button>
-    <button class="btn btn-wide btn-lg btn-outline">Join the discussion</button>
+  
+
+{# <div class="max-w-screen-lg my-40 px-4 lg:mx-auto">
+  <div class="text-5xl leading-[70px] text-center serif-bold mt-4">By people, for people</div>
+  <div class="items-center flex place-content-center"><a href="https://indieweb.social/@bonfire" class="btn mt-4  btn-outline border! border-base-content/30! rounded-full normal-case">Follow @bonfire</a></div>
+
+  <div class="mx-auto grid max-w-screen-lg mt-24 grid-cols-1 gap-6  md:grid-cols-2 lg:grid-cols-3">
+  <div class="card border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://social.coop/@lynnfoster" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="./img/lynn.png" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">Lynn Foster</div> 
+          <div class="text-base-content/60">lynnfoster@social.coop</div>
+        </div>
+      </div> 
+      <p class="text-base-content">The most exciting thing about Bonfire to me is that they have set the stage to add all kinds of features integrated with the social networking core.  Circles and groups to start, offers/wants... some day whole social/economic networks and ecosystems.  Looking into the campfire, I can see a bright future for the fediverse.</p>
+    </div> 
   </div>
-</div>
+
+  <div class="card lg:translate-y-16 border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://red.niboe.info/@jorge" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="./img/jorge.jpeg" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">Jorge Saturno</div> 
+          <div class="text-base-content/60">@jorge@red.niboe.info</div>
+        </div>
+      </div> 
+      <p class="text-base-content">Bonfire has the potential to bring federated social media to a new level. Its modular design will facilitate the creation of applications for all kind of purposes. We believe Bonfire will become the backbone of our future developments in the fields of open knowledge and science communication.</p>
+    </div> 
+  </div>
+
+  <div class="card border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://social.coop/@bhaugen" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="./img/bob.jpeg" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">Bob Haugen</div> 
+          <div class="text-base-content/60">@bhaugen@social.coop</div>
+        </div>
+      </div> 
+      <p class="text-base-content">While I like Bonfire already, and love their care at making everything work smoothly, I am most excited by their future plans. I am working on community economic systems where the future Bonfire could be the main coordination medium.</p>
+    </div> 
+  </div>
+
+
+  <div class="card  border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://mastodon.social/@samliebeskind" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="https://files.mastodon.social/accounts/avatars/109/835/761/886/292/674/original/f19966c1f1fdfa7d.jpeg" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">Sam Liebeskind</div> 
+          <div class="text-base-content/60">@samliebeskind@mastodon.social</div>
+        </div>
+      </div> 
+      <p class="text-base-content">Really excited about the approach the @bonfire team is taking - building a modular toolkit that'll make it easier for community leaders to create their own federated social networks. It's sort of like "wordpress for the fediverse". Still early days, but definitely onto something 👀</p>
+    </div> 
+  </div>
+
+
+  <div class="card lg:translate-y-16 border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://theweathermakers.nl/" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="https://theweathermakers.nl/wp-content/uploads/Angel-Imaz.png" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">Angel</div> 
+          <div class="text-base-content/60">The Weather Makers</div>
+        </div>
+      </div> 
+      <p class="text-base-content">We are loving Bonfire. We are actively exploring it to move our tools into Bonfire. Getting access to the Fediverse and to all the blocks looks really promising, to quickly develop community driven processes.</p>
+    </div> 
+  </div>
+
+  <div class="card border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://mastodon.tedomum.net/@lebout2canap" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="https://cdn.masto.host/indiewebsocial/cache/accounts/avatars/109/171/857/228/733/355/original/04f502f3a41a8b3e.jpg" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">lebout2canap ⏚</div> 
+          <div class="text-base-content/60">@lebout2canap@mastodon.tedomum.net</div>
+        </div>
+      </div> 
+      <p class="text-base-content">Le projet @bonfire a mis à jour la page d'accueil de son site web. L'occasion de découvrir ou redécouvrir ce à quoi on doit s'attendre pour la future version 1. Je suis convaincu que #Bonfire aura un important rôle à jouer dans l'avenir du #Fediverse.</p>
+    </div> 
+  </div>
+
+    <div class="card border-base-content/10 card-sm border text-left">
+    <div class="card-body">
+      <div class="flex items-center gap-2">
+      <div class="avatar" data-svelte-h="svelte-1cw9wf0">
+        <a href="https://mastodon.social/@LibertyBeta" target="_blank" rel="noopener, noreferrer" class="w-12">
+        <img loading="lazy" src="https://files.mastodon.social/accounts/avatars/000/223/823/original/8354999666f32c7d.jpg" alt="Dev Ed" width="48" height="48" class="pointer-events-none rounded-full"> 
+        </a>
+        </div> 
+        <div class="flex flex-col items-start text-xs">
+          <div class="text-base-content font-bold">Mecha Code</div> 
+          <div class="text-base-content/60">@LibertyBeta@mastodon.social</div>
+        </div>
+      </div> 
+      <p class="text-base-content">Why see some #bluesky when you could all gather around the @bonfire</p>
+    </div> 
+  </div>
+
 </div> #}
+</div>
+</div>
+{# </div> #}
