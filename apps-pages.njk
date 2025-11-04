@@ -8,55 +8,42 @@ permalink: "app/{{apps.flavour}}/"
 ---
 
 <div class="max-w-screen-lg my-12 px-4 lg:px-0  lg:mx-auto">
-{# <a class="flex place-content-center lg:place-content-start" href="/apps">
-  <div class="inline-flex mb-6 cursor-pointer hover:bg-blueGray-600 rounded-full bg-blueGray-700 px-3 py-1.5  items-center space-x-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blueGray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-    </svg>
-    <span class="text-sm text-blueGray-300 font-medium">Back to flavours</span>
-  </div>
-</a> #}
-
 <div class="text-sm breadcrumbs">
   <ul>
     <li><a href="/apps">Apps</a></li> 
     <li>{{apps.name}}</li>
   </ul>
 </div>
-<h1 class="text-3xl font-bold text-base-content  ">{{apps.name}}</h1>
+<h1 class="text-4xl font-bold text-base-content  ">{{apps.name}}</h1>
 <div class="grid mt-4 grid-cols-5  items-start gap-4">
   <div class="col-span-5 order-last lg:order-first lg:col-span-3">
       <img src="{{apps.screenshot}}" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
-      <div class="prose mt-6 max-w-full">{{apps.long_description}}</div>
+      <div class="prose prose-lg mt-6 max-w-full">{{apps.long_description}}</div>
   </div>
   <div class="col-span-5 lg:col-span-2 gap-4 flex flex-col ">
-    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
-      <div class="prose">{{apps.description}}</div>
-      {# <div class="flex  items-center gap-3">
-        <a href="{{apps.preview}}" class="flex-1 btn btn-outline border-base-content/30  rounded-full">Preview</a>
-        <a class="flex-1 btn btn-primary  rounded-full">Get the app</a>
-      </div> #}
-      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">{{apps.status}}</span></div>
-        {% if apps.group != "" %}
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Fedi Group</span> <a class="font-bold underline" href="{{apps.group.link}}">{{apps.group.name}}</a></div>
+    <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col ">
+
+      <div class="gap-2 flex flex-col divide divide-y divide-base-300">
+        <div style="padding-bottom: 16px" class="flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">{{apps.status}}</span></div>
+         {% if apps.website != "" %}
+          <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Website</span>  <a class="font-bold underline" href="{{apps.website}}">{{apps.website}}</a></div>
         {% endif %}
-        {% if apps.pad != "" %}
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Open Pad</span> <a class="font-bold underline" href="{{apps.pad}}">Link</a></div>
+         {% if apps.sandbox != "" %}
+          <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Demo</span>  <a class="font-bold underline" href="{{apps.sandbox}}">{{apps.sandbox}}</a></div>
         {% endif %}
-        {# <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Latest release</span> <span class="font-bold">1 day ago</span></div> #}
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">{{apps.license}}</span></div>
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="{{apps.repository}}">{{apps.repo_name}}</a></div>
+        
+        <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">{{apps.license}}</span></div>
+        <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="{{apps.repository}}">{{apps.repo_name}}</a></div>
         {% if apps.release != null %}
         <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Latest Release</span> <a class="font-bold underline" href="{{apps.release}}">{{apps.name}}</a></div>
         {% endif %}
       </div>
     </div>
 
-    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
-      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm">
+    <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+      <div class="gap-2 flex flex-col divide divide-y divide-base-200">
+        <div style="padding-bottom: 16px" class="flex justify-between items-center text-sm">
           <span class="font-light">Maintaned by</span>  
           <div class="flex items-center gap-3">
             {% for item in apps.developed_by %}
@@ -75,7 +62,7 @@ permalink: "app/{{apps.flavour}}/"
         </div>
 
         {% if apps.communities.length > 0 %}
-        <div class="pt-2 flex flex-col text-sm">
+        <div style="padding-bottom: 16px" class="pt-2 flex flex-col text-sm">
           <span class="font-light">Communities involved</span>  
           <div class="flex items-center mt-2 flex-wrap gap-2">
              {% for item in apps.communities %}
@@ -114,13 +101,13 @@ permalink: "app/{{apps.flavour}}/"
       </div>
 
 
-        <div class="">
-          <span class="font-medium text-2xl">Extensions included</span>  
-          <div class="flex flex-wrap items-center gap-2 mt-4">
+        <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+          <span class="font-semibold text-lg">Extensions included</span>  
+          <div class="flex flex-wrap items-center gap-2 ">
 
              {% for item in apps.extensions %}
 <a href="/{% if item.type == 'flavour' %}app{% else %}extension{% endif %}/{{item.repo_name}}">
-                <span class="badge badge-accent badge-sm">
+                <span class="badge">
                 {{item.name}}
               </span> 
               </a>
@@ -129,11 +116,12 @@ permalink: "app/{{apps.flavour}}/"
         </div>
 
 {% if apps.translations %}
-        <div class="">
-          <span class="font-medium text-2xl">Translations</span>  
-          <div class="flex flex-wrap items-center gap-3 mt-4">
+        <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+          <span class="font-semibold text-lg">Translations</span>  
+        
+          <div class="flex flex-wrap items-center gap-2">
              {% for item in apps.translations %}
-                <span class=" text-sm">
+                <span class=" badge">
                 {{item}}
               </span>
               {% endfor %}
