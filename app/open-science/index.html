@@ -35,8 +35,9 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
-  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
-    <div
+  <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
+      
+  <div
       class="sticky bg-base-100 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
     >
@@ -45,10 +46,10 @@
     <div class="max-w-screen-lg mx-auto">
       <header class="relative z-30 lg:px-0 mx-auto navbar">
         <div class="navbar-start w-[30%]">
-          <div class="flex  items-center flex-shrink-0">
+          <div class="flex  items-center shrink-0">
             <a href="/" class="flex items-center space-x-4">
               <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire</span> 
+              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire Networks</span> 
               
               </span>
             </a>
@@ -75,33 +76,25 @@
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
               
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 ml-0! menu mt-2 p-1 bg-base-100 rounded-lg">
                 <li>
                   <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
                       <div class="font-bold">Apps</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Apps built with Bonfire</div>
                   </a>
                 </li>
                 <li>
                   <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
                       <div class="font-bold">Extensions</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Explore available extensions</div>
                   </a>
                 </li>
                 <li>
                   <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
                       <div class="font-bold">Hosting</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
                 
                   
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
-                      <div class="font-bold">How to participate</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Contribute to Bonfire</div>
-                  </a>
-                </li>
+                
               </ul>
             </li>
             <li class="dropdown">
@@ -109,7 +102,7 @@
                   <span>Learn</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 ml-0! menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-semibold">Documentation</div>
@@ -164,17 +157,7 @@
             <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
           </a>
 
-          <label for="theme_controller" class="swap swap-rotate mx-3">
-  
-              <!-- this hidden checkbox controls the state -->
-              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
-              
-              <!-- sun icon -->
-              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
-              
-              <!-- moon icon -->
-              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
-            </label>
+          
           <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
             <a href="/start/" >
               <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
@@ -286,43 +269,40 @@
 </script>
     
 <div class="max-w-screen-lg my-12 px-4 lg:px-0  lg:mx-auto">
-
-
 <div class="text-sm breadcrumbs">
   <ul>
     <li><a href="/apps">Apps</a></li> 
     <li>Open Science</li>
   </ul>
 </div>
-<h1 class="text-3xl font-bold text-base-content  ">Open Science</h1>
+<h1 class="text-4xl font-bold text-base-content  ">Open Science</h1>
 <div class="grid mt-4 grid-cols-5  items-start gap-4">
   <div class="col-span-5 order-last lg:order-first lg:col-span-3">
       <img src="/img/osbg.png" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
-      <div class="prose mt-6 max-w-full">A widespread adoption of federated protocols within academia would enhance open-science implementations and democratize knowledge production and dissemination processes by actively involving non-academic communities as well. Through a co-designing process, scientists, researchers, and activists are uniting to craft implementations in the open. This collaborative effort ensures that the developed features meet the meticulous standards of academic tools while leveraging the user-friendly experience of social networks. The ultimate goal is to spark meaningful conversations, broaden the accessibility of scientific discussions to a wider audience, and foster a vibrant, inclusive, and interconnected global knowledge community.</div>
+      <div class="prose prose-lg mt-6 max-w-full">Federate with Mastodon and Bluesky and integrate your social graph with scholarly data. Transform any conversation into citable FAIR data with persistent identifiers. The future of scholarly communication is open, community-owned and interconnected.</div>
   </div>
   <div class="col-span-5 lg:col-span-2 gap-4 flex flex-col ">
-    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
-      <div class="prose">Fostering open and collaboration academic communities through federated protocols.</div>
-      
-      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">Beta</span></div>
+    <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col ">
+
+      <div class="gap-2 flex flex-col divide divide-y divide-base-300">
+        <div style="padding-bottom: 16px" class="flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">Beta</span></div>
+         
+          <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Website</span>  <a class="font-bold underline" href="https://openscience.network">https://openscience.network</a></div>
         
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Fedi Group</span> <a class="font-bold underline" href="https://a.gup.pe/u/open_science">@open_science@a.gup.pe</a></div>
+         
+          <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Demo</span>  <a class="font-bold underline" href="https://sandbox.openscience.network">https://sandbox.openscience.network</a></div>
         
         
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Open Pad</span> <a class="font-bold underline" href="https://notes.bonfire.cafe/niboe-use-case">Link</a></div>
-        
-        
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">AGPL</span></div>
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/open-science">open-science</a></div>
+        <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">AGPL</span></div>
+        <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="https://github.com/bonfire-networks/bonfire-app/tree/main/flavours/open-science">open-science</a></div>
         
       </div>
     </div>
 
-    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
-      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm">
+    <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+      <div class="gap-2 flex flex-col divide divide-y divide-base-200">
+        <div style="padding-bottom: 16px" class="flex justify-between items-center text-sm">
           <span class="font-light">Maintaned by</span>  
           <div class="flex items-center gap-3">
             
@@ -341,7 +321,7 @@
         </div>
 
         
-        <div class="pt-2 flex flex-col text-sm">
+        <div style="padding-bottom: 16px" class="pt-2 flex flex-col text-sm">
           <span class="font-light">Communities involved</span>  
           <div class="flex items-center mt-2 flex-wrap gap-2">
              
@@ -357,9 +337,15 @@
                 </span>
               </a>
             
-              <a href="https://biogarabatos.blogspot.com/" class="btn btn-sm btn-outline rounded-full border-base-content/30" target="_blank">
+              <a href="https://kcommons.org/" class="btn btn-sm btn-outline rounded-full border-base-content/30" target="_blank">
                 <span class="font-medium">
-                  Layla Axul, UNAM
+                  KCommons
+                </span>
+              </a>
+            
+              <a href="https://sciety.org" class="btn btn-sm btn-outline rounded-full border-base-content/30" target="_blank">
+                <span class="font-medium">
+                  Sciety
                 </span>
               </a>
             
@@ -387,26 +373,21 @@
       </div>
 
 
-        <div class="">
-          <span class="font-medium text-2xl">Extensions included</span>  
-          <div class="flex flex-wrap items-center gap-2 mt-4">
+        <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+          <span class="font-semibold text-lg">Extensions included</span>  
+          <div class="flex flex-wrap items-center gap-2 ">
+
              
-              <a href="/extension/social">
-                <span class="badge badge-accent badge-sm">
+<a href="/app/social">
+                <span class="badge">
                 Social
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_open_id">
-                <span class="badge badge-accent badge-sm">
-                Open.Id
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_open_science">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_open_science">
+                <span class="badge">
                 Bonfire.Open.Science
-              </span>
+              </span> 
               </a>
               
           </div>   
@@ -423,33 +404,126 @@
 
 
 
- <section class="mt-20"><div class="prose prose-lg">
+ <section class="mt-20"><div>
+  <h2 class="text-3xl font-bold mb-4">Setup a new Open Science Network server</h2>
+  <div class="grid grid-cols-4 gap-2">
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="link bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/coopcloud1.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Co-op Cloud</div>
+    </a>
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/docker.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Docker</div>
+    </a>
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/guix.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">GUIX</div>
+    </a>
+    <a href="https://apps.yunohost.org/app/bonfire" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/yunohost.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Yunohost</div>
+    </a>
+</div>
+<div class="bg-base-content/10 p-8 rounded-lg mt-4">
+<h3 class="text-2xl">Do you need help with installation?</h3>
+<h4 class="text-lg mt-1 text-base-content/80">Contact us for cooperative hosting and support services.</h4>
+  <div class="flex items-center mt-6 gap-4">
+    <a href="https://cal.com/bonfire-networks/meet" class="btn btn-primary">Book a call</a>
+    <a href="mailto:team@bonfire.cafe" class="btn btn-outline border-base-content/30 ">Write as at team@bonfire.cafe</a>
+  </div>
+</div>
+<div class=" mx-auto my-12 px-4 lg:px-0">
+   
 
-<h2 id="open-science-features">Open Science Features <a class="direct-link" href="#open-science-features">#</a></h2>
-<p>The following are some of the features we would like to include in the development of Open Science, a bonfire extension to empower universities, collectives and researchers with tools to build federated research networks.</p>
-<h3 id="orcid-credential-login">ORCID credential login <a class="direct-link" href="#orcid-credential-login">#</a></h3>
-<p>This milestone involves developing an authentication and authorization system that allows users to log in to the Bonfire platform using their ORCID credentials. It includes setting up secure connections with ORCID's APIs, retrieving user details, and managing user sessions. The objective is to make the login process seamless and to provide an integrated experience for scientists, as their professional information and social presence will be tied to their ORCID identifiers.</p>
-<h3 id="orcid-publication-import">ORCID publication import <a class="direct-link" href="#orcid-publication-import">#</a></h3>
-<p>This feature will enable users to import their publication history from ORCID. It involves creating scripts to extract publication details from ORCID, convert and display this data into a format compatible with the Bonfire platform. This way, scientists can showcase their research outputs in their profile pages.</p>
-<h3 id="doi-metadata-import-for-sharing-existing-research-articles">DOI metadata import for sharing existing research articles <a class="direct-link" href="#doi-metadata-import-for-sharing-existing-research-articles">#</a></h3>
-<p>For this feature, the platform will need to be able to fetch metadata from a DOI (Digital Object Identifier). This process involves using APIs to gather bibliographic details, such as the title, authors, abstract, publication date, and publisher. Once imported, this metadata can be used to create a new post or update an existing one, making it easy for researchers to share and discuss existing research articles.</p>
-<h3 id="pre-print-sharing-system-(including-pdf-viewer%2C-doi-generation-via-crossref's-rest-api%2C-versioning)">Pre-print sharing system (including PDF viewer, DOI generation via  Crossref's REST API, versioning) <a class="direct-link" href="#pre-print-sharing-system-(including-pdf-viewer%2C-doi-generation-via-crossref's-rest-api%2C-versioning)">#</a></h3>
-<p>This involves building a subsystem where users can upload their pre-print papers in PDF format. The system will use Crossref's or DataCite's REST API to generate a new DOI for each pre-print. It will also include a built-in PDF viewer to read the paper directly on the platform. Additionally, the system will allow different versions of the pre-print paper to be uploaded and managed, facilitating the process of incorporating updates and corrections.</p>
-<h3 id="topic-groups-that-could-act-as-journals.">Topic groups that could act as journals. <a class="direct-link" href="#topic-groups-that-could-act-as-journals.">#</a></h3>
-<p>This feature will enable users to create and join groups focused on specific topics, akin to individual scientific journals. Each group will have its own feed where members can post, comment, and interact. This feature will include group management options, such as invitations, membership approval processes, and content moderation.</p>
-<h3 id="editor-roles-specific-to-the-different-groups.">Editor roles specific to the different groups. <a class="direct-link" href="#editor-roles-specific-to-the-different-groups.">#</a></h3>
-<p>This involves creating a system of user permissions and roles within each group. The &quot;editor&quot; role will be introduced to manage the content within a group, approve posts, and facilitate discussions. Editors will have the power to moderate, edit, and delete posts within their group, thereby maintaining the quality and relevance of the group's content.</p>
-<h3 id="badging-system-for-posts-in-order-to-organize-a-peer-review-process.">Badging system for posts in order to organize a peer-review process. <a class="direct-link" href="#badging-system-for-posts-in-order-to-organize-a-peer-review-process.">#</a></h3>
-<p>A badging system will be implemented to tag and classify posts based on their content and status in the review process. Badges can be assigned to posts by editors or by a trusted group of scientists to signify stages of peer review, content types, or other noteworthy attributes. This feature will be crucial in organizing the peer-review process and guiding users through the flow of content.</p>
-<h2 id="stretch-goals">Stretch goals <a class="direct-link" href="#stretch-goals">#</a></h2>
-<h2 id="backlinks">Backlinks <a class="direct-link" href="#backlinks">#</a></h2>
-<p>Backlinks will allow posts to reference other posts, fostering an interrelated network of content. This will involve creating a system to easily generate links within the platform, and also to track and display where backlinks are used, creating a network of connected information and facilitating citation.</p>
-<h2 id="taxonomy">Taxonomy <a class="direct-link" href="#taxonomy">#</a></h2>
-<p>The taxonomy feature will provide a structured way to categorize and tag content on the platform. This involves creating a hierarchical system of categories and subcategories that users can assign to their posts. This will facilitate content discovery and navigation, making it easy for users to find relevant content based on their interests.</p>
-<h2 id="resources-and-collections">Resources and Collections <a class="direct-link" href="#resources-and-collections">#</a></h2>
-<p>This will involve creating a system where users can group related posts into collections and designate specific posts or documents as resources. This will facilitate the organization of content, making it easier for users to curate and manage relevant information.</p>
-<h2 id="audio-posting-for-podcasts-and-oral-documentation">Audio posting for podcasts and oral documentation <a class="direct-link" href="#audio-posting-for-podcasts-and-oral-documentation">#</a></h2>
-<p>This involves integrating an audio posting system into the platform. Users will be able to upload audio files, like podcasts or oral documentation, with an accompanying thumbnail. Other users can play these directly in the platform, expanding the types of media that can be shared and discussed within the scientific community on Bonfire.</p>
+<div class="flex gap-6 flex-col">
+
+  <h2 class="text-3xl font-bold">What is included</h2>
+<div class="mt-4 grid gap-4 grid-cols-1 lg:grid-cols-6 lg:grid-rows-2 sm:mt-4">
+
+  
+  <div class="relative lg:col-span-3">
+    <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800 lg:rounded-tl-4xl max-lg:rounded-t-4xl"></div>
+    <div class="flex flex-col h-full overflow-hidden relative rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tl-[calc(2rem+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+      <img alt="" class="h-80 object-cover object-left lazyloaded" data-src="/img/sso.png" height="391" src="/img/sso.png" width="765">
+      <div class="pt-4 p-10">
+        <svg viewBox="0 0 256 256" class="fill-primary w-7" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+          <path d="M136,32V136a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V32a8,8,0,0,1,8-8h48A8,8,0,0,1,136,32Z" opacity="0.2"></path>
+          <path d="M224,208H203.94A88.05,88.05,0,0,0,144,64.37V32a16,16,0,0,0-16-16H80A16,16,0,0,0,64,32V136a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V80.46A72,72,0,0,1,181.25,208H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16Zm-96-72H80V32h48V136ZM72,184a8,8,0,0,1,0-16h64a8,8,0,0,1,0,16Z"></path>
+        </svg>
+        <p class="mt-2 tracking-tight dark:text-white font-medium text-gray-950 text-lg">Professional identity</p>
+        <p class="dark:text-gray-400 text-gray-600 max-w-lg mt-2 text-base/6">Sign in with ORCID, Zenodo or your institutional SSO. Your publications, affiliations, and research interests are imported directly from sources like ORCID and OpenAlex, no manual entry required.</p>
+      </div>
+    </div>
+    <div class="absolute inset-0 rounded-lg dark:outline-white/15 outline outline-black/5 pointer-events-none shadow-sm lg:rounded-tl-4xl max-lg:rounded-t-4xl"></div>
+  </div>
+
+  
+  <div class="relative lg:col-span-3">
+    <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800 lg:rounded-tr-4xl"></div>
+    <div class="flex flex-col h-full overflow-hidden relative rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+      <img alt="" class="h-80 object-cover object-left lazyloaded" data-src="/img/archive.png" height="391" src="/img/archive.png" width="765">
+      <div class="pt-4 p-10">
+        <svg viewBox="0 0 256 256" class="fill-primary w-7" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+          <path d="M48,72h64V184H48ZM190.64,38.39a8,8,0,0,0-9.5-6.21l-46.81,10a8.07,8.07,0,0,0-6.15,9.57L139.79,107l62.46-13.42Z" opacity="0.2"></path>
+          <path d="M231.65,194.55,198.46,36.75a16,16,0,0,0-19-12.39L132.65,34.42a16.08,16.08,0,0,0-12.3,19l33.19,157.8A16,16,0,0,0,169.16,224a16.25,16.25,0,0,0,3.38-.36l46.81-10.06A16.09,16.09,0,0,0,231.65,194.55ZM136,50.15c0-.06,0-.09,0-.09l46.8-10,3.33,15.87L139.33,66Zm6.62,31.47,46.82-10.05,3.34,15.9L146,97.53Zm6.64,31.57,46.82-10.06,13.3,63.24-46.82,10.06ZM216,197.94l-46.8,10-3.33-15.87L212.67,182,216,197.85C216,197.91,216,197.94,216,197.94ZM104,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V48A16,16,0,0,0,104,32ZM56,48h48V64H56Zm0,32h48v96H56Zm48,128H56V192h48v16Z"></path>
+        </svg>
+        <p class="mt-2 tracking-tight dark:text-white font-medium text-gray-950 text-lg">Archive meaningful content</p>
+        <p class="dark:text-gray-400 text-gray-600 max-w-lg mt-2 text-base/6">Posts and conversations can receive DOIs and become citable FAIR objects. Through integrations with a growing list of repositories, meaningful exchanges can be preserved as part of the scholarly record, not lost in private threads.</p>
+      </div>
+    </div>
+    <div class="absolute inset-0 rounded-lg dark:outline-white/15 outline outline-black/5 pointer-events-none shadow-sm lg:rounded-tr-4xl"></div>
+  </div>
+
+  
+  <div class="relative lg:col-span-2">
+    <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800 lg:rounded-bl-4xl"></div>
+    <div class="flex flex-col h-full overflow-hidden relative rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
+      <img alt="" class="h-80 object-cover object-center lazyloaded" data-src="/img/export.png" height="582" src="/img/export.png" width="673">
+      <div class="pt-4 p-10">
+        <svg viewBox="0 0 256 256" class="fill-primary w-7" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+          <path d="M216,80c0,26.51-39.4,48-88,48S40,106.51,40,80s39.4-48,88-48S216,53.49,216,80Z" opacity="0.2"></path>
+          <path d="M128,24C74.17,24,32,48.6,32,80v96c0,31.4,42.17,56,96,56s96-24.6,96-56V80C224,48.6,181.83,24,128,24Zm80,104c0,9.62-7.88,19.43-21.61,26.92C170.93,163.35,150.19,168,128,168s-42.93-4.65-58.39-13.08C55.88,147.43,48,137.62,48,128V111.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64ZM69.61,53.08C85.07,44.65,105.81,40,128,40s42.93,4.65,58.39,13.08C200.12,60.57,208,70.38,208,80s-7.88,19.43-21.61,26.92C170.93,115.35,150.19,120,128,120s-42.93-4.65-58.39-13.08C55.88,99.43,48,89.62,48,80S55.88,60.57,69.61,53.08ZM186.39,202.92C170.93,211.35,150.19,216,128,216s-42.93-4.65-58.39-13.08C55.88,195.43,48,185.62,48,176V159.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64V176C208,185.62,200.12,195.43,186.39,202.92Z"></path>
+        </svg>
+        <p class="mt-2 tracking-tight dark:text-white font-medium text-gray-950 text-lg">Data sovereignty</p>
+        <p class="dark:text-gray-400 text-gray-600 max-w-lg mt-2 text-base/6">Each community can run their own instance. Data remains under your control. Connect globally while preserving local governance and values.</p>
+      </div>
+    </div>
+    <div class="absolute inset-0 rounded-lg dark:outline-white/15 outline outline-black/5 pointer-events-none shadow-sm lg:rounded-bl-4xl"></div>
+  </div>
+
+  
+  <div class="relative lg:col-span-2">
+    <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800"></div>
+    <div class="flex flex-col h-full overflow-hidden relative rounded-[calc(var(--radius-lg)+1px)]">
+      <img alt="" class="h-80 object-cover object-center lazyloaded" data-src="/img/network11.png" height="391" src="/img/network11.png" width="765">
+      <div class="pt-4 p-10">
+        <svg viewBox="0 0 256 256" class="mb-4 h-9 w-9 fill-primary" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+          <path d="M218.34,119.6,183.6,154.34a46.58,46.58,0,0,1-44.31,12.26c-.31.34-.62.67-.95,1L103.6,202.34A46.63,46.63,0,1,1,37.66,136.4L72.4,101.66A46.6,46.6,0,0,1,116.71,89.4c.31-.34.62-.67,1-1L152.4,53.66a46.63,46.63,0,0,1,65.94,65.94Z" opacity="0.2"></path>
+          <path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,7.78,8.22H152a8,8,0,0,0,8-7.78A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"></path>
+        </svg>
+        <p class="mt-2 tracking-tight dark:text-white font-medium text-gray-950 text-lg">Connected knowledge</p>
+        <p class="dark:text-gray-400 text-gray-600 max-w-lg mt-2 text-base/6">Share a paper and see it come alive: metadata, co-authors, datasets, and related works appear instantly. Colleagues can join the conversation no matter what platforms they use.</p>
+      </div>
+    </div>
+    <div class="absolute inset-0 rounded-lg dark:outline-white/15 outline outline-black/5 pointer-events-none shadow-sm"></div>
+  </div>
+
+  
+  <div class="relative lg:col-span-2">
+    <div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-800 lg:rounded-br-4xl max-lg:rounded-b-4xl"></div>
+    <div class="flex flex-col h-full overflow-hidden relative rounded-[calc(var(--radius-lg)+1px)] lg:rounded-br-[calc(2rem+1px)] max-lg:rounded-b-[calc(2rem+1px)]">
+      <img alt="" class="h-80 object-cover object-center lazyloaded" data-src="/img/modules.png" height="582" src="/img/modules.png" width="673">
+      <div class="pt-4 p-10">
+        <svg viewBox="0 0 256 256" class="fill-primary w-7" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+          <path d="M204,168a28,28,0,0,0,12-2.69V208a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8V165.31a28,28,0,1,1,0-50.62V72a8,8,0,0,1,8-8h46.69a28,28,0,1,1,50.61,0H208a8,8,0,0,1,8,8v42.69A28,28,0,1,0,204,168Z" opacity="0.2"></path>
+          <path d="M220.27,158.54a8,8,0,0,0-7.7-.46,20,20,0,1,1,0-36.16A8,8,0,0,0,224,114.69V72a16,16,0,0,0-16-16H171.78a35.36,35.36,0,0,0,.22-4,36.15,36.15,0,0,0-11.36-26.25,36,36,0,0,0-60.55,23.63,36.56,36.56,0,0,0,.14,6.62H64A16,16,0,0,0,48,72v32.22a35.36,35.36,0,0,0-4-.22,36.12,36.12,0,0,0-26.24,11.36,35.7,35.7,0,0,0-9.69,27,36.08,36.08,0,0,0,33.31,33.6,36.56,36.56,0,0,0,6.62-.14V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V165.31A8,8,0,0,0,220.27,158.54ZM208,208H64V165.31a8,8,0,0,0-11.43-7.23,20,20,0,1,1,0-36.16A8,8,0,0,0,64,114.69V72h46.69a8,8,0,0,0,7.23-11.43,20,20,0,1,1,36.16,0A8,8,0,0,0,161.31,72H208v32.23a35.68,35.68,0,0,0-6.62-.14A36,36,0,0,0,204,176a35.36,35.36,0,0,0,4-.22Z"></path>
+        </svg>
+        <p class="mt-2 tracking-tight dark:text-white font-medium text-gray-950 text-lg">Extensible</p>
+        <p class="dark:text-gray-400 text-gray-600 max-w-lg mt-2 text-base/6">Modular by design. Add repository connectors, peer review workflows, or research tools as your community evolves. Built on Bonfire's modular framework for total customisation.</p>
+      </div>
+    </div>
+    <div class="absolute inset-0 rounded-lg dark:outline-white/15 outline outline-black/5 pointer-events-none shadow-sm lg:rounded-br-4xl max-lg:rounded-b-4xl"></div>
+  </div>
 
 </div>
 </section>
@@ -459,9 +533,7 @@
 
 
   </div>
-  <div class="border-base-content/10 bg-base-200 border-t">
- 
-
+  <div class="bg-base-200">
   <div class="flex px-8 py-4 mx-auto justify-between items-center">
     <div class="flex items-start gap-4 flex-row lg:flex-col">
       <div class="flex items-center gap-2 flex-1 ">
@@ -471,32 +543,49 @@
     </div> 
     <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
   </div>
-  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
-  <div>
-    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
-    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
-    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
-    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
-  </div> 
-  <div>
-    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
-    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+  <footer class="footer pb-8 sm:footer-horizontal bg-base-200 border-base-content/10 bg-base-200 border-t pt-8 px-8 justify-between text-base-content p-10">
+  <nav>
+    <h6 class="footer-title">Ecosystem</h6>
+    <a href="/apps" class="link link-hover">Apps</a> 
+    <a href="/roadmap" class="link link-hover">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover">Themes</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Learn</h6>
+ <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover ">Documentation</a> 
+    <a href="/faq" class="link link-hover">FAQs</a> 
+    <a href="/conduct" class="link link-hover">Code of conduct</a> 
     
-    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
-  </div> 
+  </nav>
+  <nav>
+    <h6 class="footer-title">Apps</h6>
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/hosting" class="link link-hover">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </nav>
   <div>
-    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
-    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
-    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
-    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
-  </div> 
-  <div>
-    <span class="font-semibold !capitalize !text-base-content">More</span> 
-    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
-    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
-    <a class="link link-hover text-base-content/70" href="/contact/">Contact</a>
-    <a href="/presskit" class="link link-hover text-base-content/70">Presskit</a>
-
+    <h6 class="footer-title">More</h6>
+    <a class="link link-hover" href="/contact/">Contact</a>
+    <a href="/presskit" class="link link-hover">Presskit</a>
+    
+    <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-1" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
   </div>
 </footer>
 <div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
@@ -530,7 +619,7 @@
     <nav class="hidden md:flex items-center text-sm">
       
       
-      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2025</a>
     </nav>
   </div>
 </div>

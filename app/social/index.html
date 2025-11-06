@@ -35,8 +35,9 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
-  <body data-theme="bonfire" class="body-theme w-full bg-base-100 antialiased">
-    <div
+  <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
+      
+  <div
       class="sticky bg-base-100 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
       x-data="{open: false, atTop: false}" 
     >
@@ -45,10 +46,10 @@
     <div class="max-w-screen-lg mx-auto">
       <header class="relative z-30 lg:px-0 mx-auto navbar">
         <div class="navbar-start w-[30%]">
-          <div class="flex  items-center flex-shrink-0">
+          <div class="flex  items-center shrink-0">
             <a href="/" class="flex items-center space-x-4">
               <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire</span> 
+              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire Networks</span> 
               
               </span>
             </a>
@@ -75,33 +76,25 @@
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
               
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 !ml-0 menu mt-2 p-1 bg-base-100 rounded-lg">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 ml-0! menu mt-2 p-1 bg-base-100 rounded-lg">
                 <li>
                   <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
                       <div class="font-bold">Apps</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Apps built with Bonfire</div>
                   </a>
                 </li>
                 <li>
                   <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
                       <div class="font-bold">Extensions</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Explore available extensions</div>
                   </a>
                 </li>
                 <li>
                   <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
                       <div class="font-bold">Hosting</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">How to host Bonfire</div>
                   </a>
                 </li>
                 
                   
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/community">
-                      <div class="font-bold">How to participate</div>
-                      <div class="font-light -mt-1.5  text-sm    font-light">Contribute to Bonfire</div>
-                  </a>
-                </li>
+                
               </ul>
             </li>
             <li class="dropdown">
@@ -109,7 +102,7 @@
                   <span>Learn</span>
                   <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                 </div>
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 !ml-0 menu mt-2 p-1 bg-base-300 rounded-lg ">
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 ml-0! menu mt-2 p-1 bg-base-300 rounded-lg ">
                 <li>
                   <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
                       <div class="font-semibold">Documentation</div>
@@ -164,17 +157,7 @@
             <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
           </a>
 
-          <label for="theme_controller" class="swap swap-rotate mx-3">
-  
-              <!-- this hidden checkbox controls the state -->
-              <input id="theme_controller" type="checkbox" class="theme-controller" value="bonfire" />
-              
-              <!-- sun icon -->
-              <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
-              
-              <!-- moon icon -->
-              <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
-            </label>
+          
           <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
             <a href="/start/" >
               <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
@@ -286,45 +269,44 @@
 </script>
     
 <div class="max-w-screen-lg my-12 px-4 lg:px-0  lg:mx-auto">
-
-
 <div class="text-sm breadcrumbs">
   <ul>
     <li><a href="/apps">Apps</a></li> 
     <li>Bonfire Social</li>
   </ul>
 </div>
-<h1 class="text-3xl font-bold text-base-content  ">Bonfire Social</h1>
+<h1 class="text-4xl font-bold text-base-content  ">Bonfire Social</h1>
 <div class="grid mt-4 grid-cols-5  items-start gap-4">
   <div class="col-span-5 order-last lg:order-first lg:col-span-3">
-      <img src="/img/social1.png" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
+      <img src="/img/bonfire_gen.png" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
-      <div class="prose mt-6 max-w-full">Bonfire Social is a federated social app built for people and communities who care about autonomy, meaningful connection, and healthy online spaces.
+      <div class="prose prose-lg mt-6 max-w-full">Bonfire Social is a federated social app built for people and communities who care about autonomy, meaningful connection, and healthy online spaces.
 
 It offers familiar features like feeds and profiles — but goes further with powerful tools for customization, moderation, and control, so you can shape your digital space to fit your needs.
 
 Bonfire Social is also a gateway into the broader fediverse — a network of independent, interconnected apps — while staying fully self-hostable and community-governed. </div>
   </div>
   <div class="col-span-5 lg:col-span-2 gap-4 flex flex-col ">
-    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
-      <div class="prose">A customizable federated social network for following people, making posts, engaging in discussions, and more.</div>
-      
-      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">1.0 RC</span></div>
+    <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col ">
+
+      <div class="gap-2 flex flex-col divide divide-y divide-base-300">
+        <div style="padding-bottom: 16px" class="flex justify-between items-center text-sm"><span class="font-light">Version</span> <span class="badge badge-info">1.0</span></div>
+         
+         
+          <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Demo</span>  <a class="font-bold underline" href="https://campground.bonfire.cafe">https://campground.bonfire.cafe</a></div>
         
         
-        
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">AGPL</span></div>
-        <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="https://github.com/bonfire-networks/social">social</a></div>
+        <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">AGPL</span></div>
+        <div style="padding-bottom: 16px" class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Code Repository</span> <a class="font-bold underline" href="https://github.com/bonfire-networks/social">social</a></div>
         
         <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Latest Release</span> <a class="font-bold underline" href="https://hub.docker.com/r/bonfirenetworks/bonfire/tags?name=latest-social">Bonfire Social</a></div>
         
       </div>
     </div>
 
-    <div class="rounded-lg bg-base-content/5 p-4 gap-3 flex flex-col ">
-      <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-        <div class="pt-2 flex justify-between items-center text-sm">
+    <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+      <div class="gap-2 flex flex-col divide divide-y divide-base-200">
+        <div style="padding-bottom: 16px" class="flex justify-between items-center text-sm">
           <span class="font-light">Maintaned by</span>  
           <div class="flex items-center gap-3">
             
@@ -364,85 +346,141 @@ Bonfire Social is also a gateway into the broader fediverse — a network of ind
       </div>
 
 
-        <div class="">
-          <span class="font-medium text-2xl">Extensions included</span>  
-          <div class="flex flex-wrap items-center gap-2 mt-4">
+        <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+          <span class="font-semibold text-lg">Extensions included</span>  
+          <div class="flex flex-wrap items-center gap-2 ">
+
              
-              <a href="/extension/bonfire_common">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_common">
+                <span class="badge">
                 Common
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_me">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_me">
+                <span class="badge">
                 Me
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_social">
-                <span class="badge badge-accent badge-sm">
-                Social
-              </span>
-              </a>
-              
-              <a href="/extension/bonfire_ui_social">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_ui_social">
+                <span class="badge">
                 UI.Social
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_boundaries">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_social_graph">
+                <span class="badge">
+                Social.Graph
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_ui_social_graph">
+                <span class="badge">
+                UI.Social.Graph
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_ui_reactions">
+                <span class="badge">
+                UI.Reactions
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_boundaries">
+                <span class="badge">
                 Boundaries
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_federate_activitypub">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_geolocate">
+                <span class="badge">
+                Geolocate
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_messages">
+                <span class="badge">
+                Messages
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_ui_messages">
+                <span class="badge">
+                UI.Messages
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_ui_boundaries">
+                <span class="badge">
+                UI.Boundaries
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_open_id">
+                <span class="badge">
+                Open.ID
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_api_graphql">
+                <span class="badge">
+                API:Graphql
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_federate_activitypub">
+                <span class="badge">
                 Federate:ActivityPub
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_tag">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_tag">
+                <span class="badge">
                 Tag
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_search">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_search">
+                <span class="badge">
                 Search
-              </span>
+              </span> 
               </a>
               
-              <a href="/extension/bonfire_files">
-                <span class="badge badge-accent badge-sm">
+<a href="/extension/bonfire_files">
+                <span class="badge">
                 Files
-              </span>
+              </span> 
+              </a>
+              
+<a href="/extension/bonfire_classify">
+                <span class="badge">
+                Classify
+              </span> 
               </a>
               
           </div>   
         </div>
 
 
-        <div class="">
-          <span class="font-medium text-2xl">Translations</span>  
-          <div class="flex flex-wrap items-center gap-3 mt-4">
+        <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col">
+          <span class="font-semibold text-lg">Translations</span>  
+        
+          <div class="flex flex-wrap items-center gap-2">
              
-                <span class=" text-sm">
+                <span class=" badge">
                 English
               </span>
               
-                <span class=" text-sm">
+                <span class=" badge">
                 Italian
               </span>
               
-                <span class=" text-sm">
+                <span class=" badge">
                 French
               </span>
               
-                <span class=" text-sm">
+                <span class=" badge">
                 Catalan
               </span>
               
@@ -460,278 +498,142 @@ Bonfire Social is also a gateway into the broader fediverse — a network of ind
 
 
  <section class="mt-20">
-  
-  <div class="text-4xl serif-bold text-center">Your entrypoint into the fediverse</div>
-
-
-  
-
-
-  <div class="grid grid-cols-1 mt-8 gap-y-4 mb-12 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-x-4 xl:gap-x-4 items-start md:items-stretch">
-    
-    <div class="col-span-1 w-full flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_follow.png" class="md:h-[240px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Follow users</div>
-        <div class="text-base text-base-content/80">Expand your network by following users from any federated platform. Stay connected, at your pace.</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-span-1 lg:col-span-2 w-full  flex rounded-box bg-gradient-to-t from-base-content/10 to-base-content/20 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_network.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Discover and create all kinds of activities or content</div>
-          <div class="text-base text-base-content/80">Events, music, videos, books, and of course simple posts. Share your thoughts and moments by posting updates or long form posts. A solid way to express yourself.</div>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="-1 lg:col-span-2 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_circle.png" class="md:h-[240px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Go beyond 'followers' or 'friends' with circles</div>
-        <div class="text-base text-base-content/80">Organize your contacts for more nuanced interactions, to maintain privacy, or avoid information overload. Circles are an attempt to represent the multifaceted relationships you have with people in your life.</div>
-        </div>
-      </div>
-    </div>
-
-
-        <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_sort.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Filter and sort feeds and threads</div>
-        <div class="text-base text-base-content/80">Read timelines and conversations in a way that makes the most sense to you. </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="text-4xl serif-bold text-center">Engage in constructive discussions</div>
-
-  <div class="grid grid-cols-1 mt-8 gap-y-4 mb-12 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-x-4 xl:gap-x-4 items-start md:items-stretch">
-    <div class="-1 lg:col-span-2 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_composer.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-
-        <div class="flex w-full flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">A powerful composer</div>
-          <div class="text-base text-base-content/80">Bonfire's composer gives you room to express yourself clearly — whether with short updates or long-form posts. Add titles to start threads, mention people, format your text, and more. Share a quick thought or write a full blog post!</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_boundaries.png" class="md:h-[220px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Set your boundaries</div>
-        <div class="text-base text-base-content/80">Use circles and roles to choose who can see, interact, or reply to your posts. Your privacy, your rules.</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_media.png" class="md:h-[280px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Upload any media</div>
-        <div class="text-base text-base-content/80">Enrich your posts with photos or other media. Express yourself fully.</div>
-        </div>
-      </div>
-    </div>
-    <div class="-1 lg:col-span-2 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_thread.png" class="md:h-[280px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Keep track of different threads within one discussion </div>
-        <div class="text-base text-base-content/80">Engage in nested conversations — replies can branch into sub-threads, making it easy to follow discussions without losing context. Ideal for collaborative work or communities that value thoughtful dialogue, where responses build on each other rather than compete for attention.
-        </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_md.png" class="md:h-[240px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Markdown friendly</div>
-        <div class="text-base text-base-content/80">Enhance your posts with rich formatting, making it easier to emphasize points and structure content.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_edit.png" class="md:h-[240px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Edit your posts</div>
-        <div class="text-base text-base-content/80">Made a typo or want to add more context? Easily edit your posts after publishing.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_coll.png" class="md:h-[240px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Collaborate on posts</div>
-        <div class="text-base text-base-content/80">Communication is a team sport: collaborate with your peers, or simply have trusted friends help with spell checking.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-4xl serif-bold text-center">Finetune your experience</div>
-
-<div class="grid grid-cols-1 mt-8 gap-y-4 mb-12 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-x-4 xl:gap-x-4 items-start md:items-stretch">
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_settings.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-
-        <div class="flex w-full flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Change your app's behaviours</div>
-          <div class="text-base text-base-content/80">Control your experience by customizing how it behaves in granular detail. Override the choices made by designers or developers and even those of your instance admins. </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_profiles.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Multiple profiles</div>
-        <div class="text-base text-base-content/80">You can have several separate profiles linked to the same account, for different online personas or for your organizations or projects.</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_themes.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Change the look & feel</div>
-        <div class="text-base text-base-content/80">Make Bonfire truly yours by changing its look: pick a theme or even creating your own (no coding required).</div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-span-1 lg:col-span-3 w-full  flex rounded-box bg-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_extensions.png" class="md:h-[220px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Pick what features you need with extensions</div>
-        <div class="text-base text-base-content/80">
-        Bonfire is completely made up of pluggable extensions. They are building blocks which each add pieces of functionality or UI, and are composable with each other. Users can choose which extensions to enable or disable, and instance admins can install new extensions, customise them by forking, or even create entirely new ones. </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_export.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Export your data</div>
-        <div class="text-base text-base-content/80">Your data belongs to you. You are not locked in to using a specific app or instance; you are free to export all your data, and move your identity to a different instance.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_import.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Import your data </div>
-        <div class="text-base text-base-content/80">You can move your identity and import your data from another instance, whether that instance is running Bonfire, Mastodon, or another fediverse app.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_share.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Share a profile with other users</div>
-        <div class="text-base text-base-content/80">Create a profile for your organisation or project and share access with others on your team.</div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_moderate.png" class="md:h-[240px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Moderate your network</div>
-        <div class="text-base text-base-content/80">Stay safe with tools for users and moderators to flag and remove problematic content, and silence, ghost, or block users or instances.</div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_dark.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Avoid dark patterns</div>
-        <div class="text-base text-base-content/80">Enable or disable features like follower or reaction counts or infinite scrolling, which can feed addiction or other behaviours.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-1 w-full  flex rounded-box bg-gradient-to-t from-base-content/5 to-base-content/10 p-[0.075rem]">
-      <div class="rounded-box flex-1 flex items-center gap-2 flex-col h-full bg-base-200 p-4">
-
-        <img src="/img/f_roles.png" class="md:h-[250px] w-auto rounded-t-lg bg-center bg-cover mt-4" />
-        <div class="flex flex-col gap-3 p-4 pt-0">
-          <div class="text-base-content text-xl font-bold">Custom roles</div>
-        <div class="text-base text-base-content/80">Create and assign custom roles to grant permissions to users and circles, defining what they can view, how they can interact, and any other actions they can take.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="mb-16">
-  <div class="max-w-3xl px-4 py-10 mx-auto text-center sm:py-10 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-      <span class="block">It's all connected.</span>
-    </h2>
-    <div class="mt-4 text-lg leading-6 text-base-content text-opacity-90"><b>All the features and extensions are interconnected</b>, so that social functionality like discussions, boosts, and likes are available not just for posts but any type of information provided by other extensions, such as tasks or events.
-
-<p>Bonfire speaks ActivityPub — so you can follow and interact with users and content across the fediverse, including from apps Mastodon, Peertube, Mobilizon, and more.
-
-    <p><a href="/start" class="mt-6 btn rounded-full border-base-content/30 btn-outline">
-      Get started
+<div>
+  <h2 class="text-3xl font-bold mb-4">Setup a new Bonfire Social server</h2>
+  <div class="grid grid-cols-4 gap-2">
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="link bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/coopcloud1.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Co-op Cloud</div>
     </a>
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/docker.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Docker</div>
+    </a>
+    <a href="https://docs.bonfirenetworks.org/deploy.html" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/guix.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">GUIX</div>
+    </a>
+    <a href="https://apps.yunohost.org/app/bonfire" target="blank" class="bg-base-content p-2 rounded-lg col-span-4 md:col-span-2 lg:col-span-1">
+      <img src="/img/yunohost.png" class="w-full"/>
+      <div class="text-lg text-base-300 font-semibold mt-2 text-center">Yunohost</div>
+    </a>
+</div>
+<div class="bg-base-content/10 p-8 rounded-lg mt-4">
+<h3 class="text-2xl">Do you need help with installation?</h3>
+<h4 class="text-lg mt-1 text-base-content/80">Contact us for cooperative hosting and support services.</h4>
+  <div class="flex items-center mt-6 gap-4">
+    <a href="https://cal.com/bonfire-networks/meet" class="btn btn-primary">Book a call</a>
+    <a href="mailto:team@bonfire.cafe" class="btn btn-outline border-base-content/30 ">Write as at team@bonfire.cafe</a>
   </div>
+</div>
+<div class=" mx-auto my-12 px-4 lg:px-0">
+    
+   
+
+<div class="flex gap-6 flex-col">
+    
+
+  
+
+
+  <h2 class="text-3xl font-bold mb-4">What is included</h2>
+  <div class="bg-base-300/30">
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full order-last lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/customfeeds.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Custom feeds</div>
+          <div class="mt-3 prose prose-lg">
+            Build ad-hoc feeds with a simple interface: filter and sort by content type, circle, date, engagement, source instance, and more. Save presets and arrange them however you like.</div>
+        </div>
+      </section>
+    </div>
+
+
+    
+    <div class="">
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/circlehome.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Circles</div>
+          <div class="mt-3 prose prose-lg">
+            Circles are lists of people (e.g., “local friends”, “team”, “mutual aid crew”). Each circle has its own feed with posts from members.</div>
+        </div>
+      </section>
+    </div>
+
+
+    <div class="">
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full order-last lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/bound.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Boundaries</div>
+          <div class="mt-3 prose prose-lg">
+            Choose who can see, reply, quote, or even edit a post. For example: make a post public but accept replies only from a specific circle. Boundaries are compatible with GoToSocial interaction controls and Mastodon quote authorisations.</div>
+        </div>
+      </section>
+    </div>
+
+    <div >
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/importstatus.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Your data, your freedom</div>
+          <div class="mt-3 prose prose-lg">
+            <p>Moving between instances shouldn't mean starting from scratch. <strong>Seamlessly migrate your entire social presence</strong> (including posts, follows, circles, and bookmarks) with Bonfire's comprehensive import tools and migration dashboard.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <div >
+      <section 
+        role="tabpanel"
+        class="flex flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 mx-auto flex-row-reverse">
+        <div class="w-full order-last lg:w-1/2">
+        <div class="w-full relative mx-auto">
+          <div style="aspect-ratio:467/406; background-image: url(/img/federate.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        </div>
+        </div>
+        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
+          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl">Connect beyond boundaries</div>
+          <div class="mt-3 prose prose-lg">
+            <p><strong>Join a network of millions</strong> across Mastodon, PeerTube, Mobilizon, and the wider fediverse using ActivityPub. Protocol bridges also connect you with Bluesky and beyond, breaking down walls between social platforms.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+   
+</div>
+
+  
+
+
+</div>
 </div>
 
 </section>
@@ -741,9 +643,7 @@ Bonfire Social is also a gateway into the broader fediverse — a network of ind
 
 
   </div>
-  <div class="border-base-content/10 bg-base-200 border-t">
- 
-
+  <div class="bg-base-200">
   <div class="flex px-8 py-4 mx-auto justify-between items-center">
     <div class="flex items-start gap-4 flex-row lg:flex-col">
       <div class="flex items-center gap-2 flex-1 ">
@@ -753,32 +653,49 @@ Bonfire Social is also a gateway into the broader fediverse — a network of ind
     </div> 
     <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
   </div>
-  <footer class="px-8  justify-between border-t border-base-content/10 px-4 lg:mx-auto  py-8  footer text-base-content">
-  <div>
-    <span class="font-semibold !capitalize !text-base-content">Ecosystem</span> 
-    <a href="/apps" class="link link-hover text-base-content/70">Apps</a> 
-    <a href="/roadmap" class="link link-hover text-base-content/70">Extensions</a> 
-    <a href="/themes" target="_blank" class="link link-hover text-base-content/70">Themes</a>
-  </div> 
-  <div>
-    <span class="font-semibold !capitalize !text-base-content">Learn</span> 
-    <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover text-base-content/70">Documentation</a> 
+  <footer class="footer pb-8 sm:footer-horizontal bg-base-200 border-base-content/10 bg-base-200 border-t pt-8 px-8 justify-between text-base-content p-10">
+  <nav>
+    <h6 class="footer-title">Ecosystem</h6>
+    <a href="/apps" class="link link-hover">Apps</a> 
+    <a href="/roadmap" class="link link-hover">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover">Themes</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Learn</h6>
+ <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover ">Documentation</a> 
+    <a href="/faq" class="link link-hover">FAQs</a> 
+    <a href="/conduct" class="link link-hover">Code of conduct</a> 
     
-    <a href="/faq" class="link link-hover text-base-content/70">FAQs</a> 
-  </div> 
+  </nav>
+  <nav>
+    <h6 class="footer-title">Apps</h6>
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/hosting" class="link link-hover">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </nav>
   <div>
-    <span class="font-semibold !capitalize !text-base-content">Apps</span> 
-    <a href="/start" class="link link-hover text-base-content/70">Get started</a> 
-    <a href="/hosting" class="link link-hover text-base-content/70">Hosting</a> 
-    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover text-base-content/70">Demo instance</a> 
-  </div> 
-  <div>
-    <span class="font-semibold !capitalize !text-base-content">More</span> 
-    <a href="/community" class="link link-hover text-base-content/70">Participate</a> 
-    <a href="/conduct" class="link link-hover text-base-content/70">Code of conduct</a> 
-    <a class="link link-hover text-base-content/70" href="/contact/">Contact</a>
-    <a href="/presskit" class="link link-hover text-base-content/70">Presskit</a>
-
+    <h6 class="footer-title">More</h6>
+    <a class="link link-hover" href="/contact/">Contact</a>
+    <a href="/presskit" class="link link-hover">Presskit</a>
+    
+    <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-1" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
   </div>
 </footer>
 <div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
@@ -812,7 +729,7 @@ Bonfire Social is also a gateway into the broader fediverse — a network of ind
     <nav class="hidden md:flex items-center text-sm">
       
       
-      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2024</a>
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2025</a>
     </nav>
   </div>
 </div>

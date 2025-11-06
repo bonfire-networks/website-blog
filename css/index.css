@@ -1,8 +1,15 @@
-@tailwind base;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@tailwind components;
+@import "daisyui/daisyui.css";
 
-@tailwind utilities;
+
+@source "../**/*.{njk,md,html}";
+
+
+body {
+  --color-primary: #2474F2;
+}
 
 .card figure {
   width: 15rem !important

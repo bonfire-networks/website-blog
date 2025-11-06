@@ -4,7 +4,7 @@
   <subtitle>Tend to your digital life in community: host your own online space and control your experience at the most granular level.</subtitle>
   <link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
   <link href="https://bonfirenetworks.org/"/>
-  <updated>2025-10-22T21:04:49Z</updated>
+  <updated>2025-10-02T00:00:00Z</updated>
   <id>https://bonfirenetworks.org/</id>
   <author>
     <name>Bonfire</name>
@@ -1689,6 +1689,240 @@ slot &lt;span class=&quot;token atom symbol&quot;&gt;:header_menu&lt;/span&gt;
   </entry>
   
   <entry>
+    <title>Long-form content in Bonfire: Part 1</title>
+    <link href="https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/"/>
+    <updated>2025-06-27T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/</id>
+    <content type="html">&lt;p&gt;Inspired by &lt;a href=&quot;https://cosocial.ca/users/evan&quot;&gt;@evan@cosocial.ca&lt;/a&gt; &#39;s recent article on &lt;a href=&quot;https://socialwebfoundation.org/2025/05/01/steps-forward-in-long-form-text/&quot;&gt;advancing long-form text in the social web&lt;/a&gt;, we&#39;ve taken the leap and developed our first prototype for publishing and reading articles on Bonfire, based on the &lt;a href=&quot;https://codeberg.org/fediverse/fep/src/branch/main/fep/b2b8/fep-b2b8.md&quot;&gt;FEP-b2b8 draft specification&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;beyond-microblogging&quot;&gt;Beyond microblogging &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#beyond-microblogging&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;From &lt;a href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/&quot;&gt;day one&lt;/a&gt;, we&#39;ve designed Bonfire to break free from the constraints of microblogging-centric social networks. We&#39;ve already experimented with extensions for &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/&quot;&gt;coordinating tasks&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_valueflows&quot;&gt;exchanging resources&lt;/a&gt;, and more. As we work on &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_social_rc/&quot;&gt;Bonfire Social 1.0&lt;/a&gt;, adding article support felt like a natural evolution of this vision.&lt;/p&gt;
+&lt;p&gt;Working based on a FEP (fediverse enhancement proposal) that provided both design guidelines and technical specifications was refreshing and showed how co-design and shared standards can be our strongest ally for pushing the fediverse forward.&lt;/p&gt;
+&lt;h2 id=&quot;one-feed%2C-many-content-types&quot;&gt;One feed, many content types &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#one-feed%2C-many-content-types&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Adding articles marks a small but significant step towards realising the vision of the open social web: a digital space where you can receive, read and interact with diverse content types from a single place, rather than juggling multiple platforms, accounts, and notification streams.&lt;/p&gt;
+&lt;p&gt;With Bonfire, articles from writefreely, ghosts, wordpress and any other federated platforms that implement the FEP-b2b8, now appear seamlessly in your feed alongside other content from your network. You can:&lt;/p&gt;
+&lt;p&gt;- Preview articles in the feed&lt;/p&gt;
+&lt;p&gt;- Read the full article and nested comments without loading an external site (just like the good old days of RSS readers)&lt;/p&gt;
+&lt;p&gt;- React or reply to the article or other comments&lt;/p&gt;
+&lt;p&gt;This UX improvement offers a glimpse of what becomes possible as more platforms and software embrace the fediverse.&lt;/p&gt;
+&lt;h2 id=&quot;but-why-stop-there%3F&quot;&gt;But why stop there? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#but-why-stop-there%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Thanks to our modular feed builder, we&#39;ve added an &amp;quot;Articles&amp;quot; feed preset. This dedicated timeline displays only long-form content, with sorting options for most liked, most replied, and more.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://hackmd.io/_uploads/BkMJxQ2Neg.png&quot; alt=&quot;articlesfeed&quot; /&gt;It&#39;s like having a decentralised blogging platform and feed reader integrated in your social network.&lt;/p&gt;
+&lt;p&gt;Speaking of feed readers, we&#39;ve also added RSS and Atom feeds so you can subscribe to Bonfire feeds (including articles and/or microposts) via your favourite feed reader app as well.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://hackmd.io/_uploads/SyZZgXh4ge.png&quot; alt=&quot;rss&quot; /&gt;And yes, you can also write articles directly in Bonfire! While the authoring experience is still rough around the edges (we&#39;re actively improving the UX), we&#39;re pleased with this initial prototype (which includes a simple rich text editor using markdown, and the option to add a title and cover image). In fact, this very article was written and published through Bonfire.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://hackmd.io/_uploads/rk4Bf7hNxe.jpg&quot; alt=&quot;article_composer&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;what&#39;s-next%3F&quot;&gt;What&#39;s Next? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#what&#39;s-next%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As we refine the implementation, ideas are already flowing:&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Personal blog pages&lt;/strong&gt;: Do users want an optional dedicated blog section on their profile, maybe with tabs to easily switch between notes, articles, or other content types?&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Instance curation&lt;/strong&gt;: Could instance moderators pin and showcase their best articles on the homepage?&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Enhanced authoring&lt;/strong&gt;: Should we create specialized UIs for properly writing and managing blog posts?&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Email subscriptions&lt;/strong&gt;: Non-fediverse users could subscribe via email to federated blogs?&lt;/p&gt;
+&lt;p&gt;The possibilities are endless, but we believe long-form content features should be shaped by actual community needs and designed collaboratively in the open, building upon FEP-b2b8 through real-world usage and experimentation.&lt;/p&gt;
+&lt;h2 id=&quot;join-the-experiment&quot;&gt;Join the experiment &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#join-the-experiment&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This is just the beginning. You can experience writing and reading articles on Bonfire today at our &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;campground instance&lt;/a&gt; or by &lt;a href=&quot;https://bonfirenetworks.org/start/&quot;&gt;setting up your own Bonfire instance&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If your community is interested in test-driving or co-designing long-form content features, we’d love to collaborate.&lt;/p&gt;
+&lt;p&gt;To build a fully integrated, community-shaped publishing experience — and continue improving Bonfire in many other areas — we’re actively seeking support. You can &lt;a href=&quot;https://opencollective.com/bonfire-networks&quot;&gt;back Bonfire on OpenCollective&lt;/a&gt; or &lt;a href=&quot;https://bonfirenetworks.org/contact/&quot;&gt;get in touch&lt;/a&gt; to help shape the future of federated publishing.&lt;/p&gt;
+&lt;p&gt;---&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;What would you like to see in federated long-form content? Join the conversation and help us build the open social web together!&lt;/em&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>🔥 Bonfire Social 1.0 RC2</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/"/>
+    <updated>2025-07-08T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/</id>
+    <content type="html">&lt;p&gt;We’re pleased to announce Bonfire Social 1.0 Release Candidate 2! This update is all about refining and polishing the experience, fixing bugs, and making Bonfire more enjoyable and reliable for everyone. These improvements come directly from your feedback, bug reports, and real-world testing.&lt;/p&gt;
+&lt;p&gt;Of course, we couldn’t help ourselves and also snuck in some exciting new features—like long-form article publishing and more feeds customisations, plus plenty of interface refinements for both desktop and mobile.&lt;/p&gt;
+&lt;p&gt;A huge thank you to everyone who has set up a Bonfire instance, or joined the &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;campground&lt;/a&gt; (our local-only testing space) to try out the app. Your suggestions and bug reports have been invaluable as we approach version 1.0. Please keep testing, sharing feedback, and helping us shape the future of federated social spaces!&lt;/p&gt;
+&lt;h2 id=&quot;%E2%9C%A8-what%E2%80%99s-new-and-improved%3F&quot;&gt;✨ What’s new and improved? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%E2%9C%A8-what%E2%80%99s-new-and-improved%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Long-form publishing:&lt;/strong&gt; Going beyond beyond short posts to &lt;a href=&quot;https://bonfire.cafe/post/01JYRX7HCGME693BGCZF6AGGK1&quot;&gt;read and write in-depth articles&lt;/a&gt;, ideal for essays, announcements, or detailed content. Article feeds are now available for RSS readers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smarter feeds:&lt;/strong&gt; New feed options for &lt;strong&gt;events&lt;/strong&gt;, &lt;strong&gt;books&lt;/strong&gt;, and &lt;strong&gt;articles&lt;/strong&gt; help you discover what matters to you most. You can now also filter out your own activities from your feeds when desired.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-profiles overview&lt;/strong&gt;: A new navigation menu can display all your profiles with notification indicators, allowing quick profile switching.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Private by default:&lt;/strong&gt; New Bonfire instances start as invite-only, giving admins control over membership from day one.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interface improvements:&lt;/strong&gt; We&#39;ve refined the user experience, enhanced notifications and ensured posts display properly across mobile devices.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;More reliable:&lt;/strong&gt; Tons of fixes for authentication, media uploads, mentions, moderation, and other core features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Additional improvements include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Better translation and localization workflow&lt;/li&gt;
+&lt;li&gt;Smoother OAuth/OpenID login and SSO support&lt;/li&gt;
+&lt;li&gt;Updated documentation and guides for admins and contributors&lt;/li&gt;
+&lt;li&gt;Enhanced S3 integration for uploads&lt;/li&gt;
+&lt;li&gt;Lots of small bug fixes on comment threads, messaging, settings, and more&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a comprehensive list of changes, see the &lt;a href=&quot;https://docs.bonfirenetworks.org/changelog.html&quot;&gt;full changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;%F0%9F%8E%AA-community-contributions-and-other-initiatives&quot;&gt;🎪 Community contributions and other initiatives &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%8E%AA-community-contributions-and-other-initiatives&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We hosted our first &lt;a href=&quot;https://indieweb.social/@bonfire/114737730812193211&quot;&gt;install party&lt;/a&gt; using &lt;a href=&quot;https://coopcloud.tech/&quot;&gt;coop-cloud&lt;/a&gt;, with all participants who followed along successfully deploying their own Bonfire instances.&lt;/li&gt;
+&lt;li&gt;Seperately, ozoned from &lt;a href=&quot;https://social.firesidefedi.live/@firesidefedi&quot;&gt;Fireside Fedi&lt;/a&gt; &lt;a href=&quot;https://video.firesidefedi.live/w/sXNGDdqurg59cE3syZ3svU&quot;&gt;livestreamed their installation attempt&lt;/a&gt;, surfacing valuable setup challenges. This highlighted the need to simplify Docker deployment and improve documentation. Contributors are welcome to help make this easier!&lt;/li&gt;
+&lt;li&gt;Sciety deployed a Bonfire instance as part of their &lt;a href=&quot;https://blog.sciety.org/weeknotes/sciety-product-news-01-07-2025/&quot;&gt;pre-print review project&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spark.box464.social/pub/actors/spark464&quot;&gt;@spark464@spark.box464.social&lt;/a&gt; &lt;a href=&quot;https://spark.box464.social/post/01JZDM9H4148XRMW2XH7PQNNSC&quot;&gt;published an article&lt;/a&gt; on how to add a weather widget in Bonfire.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;%F0%9F%8C%8D-localisation%3A-bonfire-in-your-language!&quot;&gt;🌍 Localisation: Bonfire in your language! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%8C%8D-localisation%3A-bonfire-in-your-language!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Bonfire Social is built to be diverse and welcoming, which means making it accessible in as many languages as possible. Thanks to our amazing translators, Bonfire is now available in several languages.&lt;/p&gt;
+&lt;h3 id=&quot;%F0%9F%8F%85-top-translated-languages&quot;&gt;🏅 Top translated languages &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%8F%85-top-translated-languages&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;- &lt;strong&gt;Portuguese (Brazil):&lt;/strong&gt; 100% translated &amp;amp; reviewed 🎉&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;French:&lt;/strong&gt; 98.9% translated, 69.4% reviewed&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Italian:&lt;/strong&gt; 96.7% translated, 54% reviewed&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;German:&lt;/strong&gt; 98% translated&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Spanish:&lt;/strong&gt; 57% translated&lt;/p&gt;
+&lt;p&gt;- &lt;strong&gt;Vietnamese:&lt;/strong&gt; 20.9% translated, 11.1% reviewed&lt;/p&gt;
+&lt;p&gt;- ...and several more, including &lt;strong&gt;Catalan&lt;/strong&gt;, &lt;strong&gt;Cantonese&lt;/strong&gt; and &lt;strong&gt;Taiwanese&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Want to help Bonfire speak your language? Please &lt;a href=&quot;https://app.transifex.com/bonfire&quot;&gt;join us&lt;/a&gt; and make a difference for communities worldwide!&lt;/p&gt;
+&lt;h2 id=&quot;%F0%9F%A4%9D-help-needed&quot;&gt;🤝 Help needed &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%A4%9D-help-needed&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As we push toward 1.0, we&#39;re facing some specific challenges where community support and contributions would make a real difference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DevOps expertise&lt;/strong&gt;: We need help streamlining the Docker installation process to make Bonfire more accessible to new users. If you have experience with containerisation and deployment workflows, your contributions would be invaluable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Elixir developers&lt;/strong&gt;: Join us in improving Bonfire&#39;s stability and performance. We&#39;re focused on eliminating bugs and enhancing the core extensions&#39; reliability.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Financial support&lt;/strong&gt;: As a small team of two working full-time on Bonfire, we need community support to sustain development. You can contribute through our &lt;a href=&quot;https://opencollective.com/bonfire-networks&quot;&gt;Open Collective page&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Federation testing&lt;/strong&gt;: We&#39;re seeking users willing to set up Bonfire instances and try out federation and interoperability with other fediverse platforms. Your real-world testing helps ensure Bonfire works seamlessly across the fediverse.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Please &lt;a href=&quot;https://app.transifex.com/bonfire&quot;&gt;join us&lt;/a&gt; or share this with your multilingual friends!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are our most pressing needs as we approach 1.0. If you can help with any of these areas, please get in touch via the &lt;a href=&quot;https://bonfire.cafe/@Bonfire&quot;&gt;fediverse&lt;/a&gt;, &lt;a href=&quot;https://matrix.to/#/#bonfire-networks:matrix.org&quot;&gt;Matrix chat&lt;/a&gt;, or &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues&quot;&gt;GitHub&lt;/a&gt;. Every contribution, big or small, helps make Bonfire better for everyone.&lt;/p&gt;
+&lt;h2 id=&quot;%F0%9F%99%8F-thank-you!&quot;&gt;🙏 Thank you! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%99%8F-thank-you!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A heartfelt thank you to everyone who has contributed translations and reviews. You are lighting up Bonfire for people everywhere! Here are some of our awesome translators:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gilles Dutilh, Ahmad Dakhlallah, Lamparina Coletivo, alan ptm, Antonio Irre, Zulfikar A, CDN, cranio_is_thinking, Steven Bond, Diego KehrleSousa, Vrlo Vazno, Ed, Andrei Guliaikin, Hendra Wahyu T, Hippie Gschpängschtli, House of Olivier EU, Ivan Minutillo, Juan García, Lapineige, Pascal Schmid, Martin Frost, Duy, Mayel de Borniol, Sovversivo Anonimo, Peter Kvillegård, Poesty Li, Sergio Guidoux, Vaclovas lntas, Williams Melgar, and many more!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We really appreciate your work! 💜&lt;/p&gt;
+&lt;p&gt;And a massive thank you to everyone who contributed code, ideas, testing, translations, and support—including &lt;a href=&quot;https://spark.box464.social/pub/actors/spark464&quot;&gt;@spark464@spark.box464.social&lt;/a&gt; , &lt;a href=&quot;https://pan.rent/users/tommi&quot;&gt;@tommi@pan.rent&lt;/a&gt;, &lt;a href=&quot;https://sueden.social/users/lechindianer&quot;&gt;@lechindianer@sueden.social&lt;/a&gt; , &lt;a href=&quot;https://bonfire.fishinthecalculator.me/pub/actors/fishinthecalculator&quot;&gt;@fishinthecalculator@bonfire.fishinthecalculator.me&lt;/a&gt; , &lt;a href=&quot;https://gts.superseriousbusiness.org/users/dumpsterqueer&quot;&gt;@dumpsterqueer@gts.superseriousbusiness.org&lt;/a&gt; , &lt;a href=&quot;https://social.ozoned.net/users/ozoned&quot;&gt;@ozoned@social.ozoned.net&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+Thanks to those that are taking time to test drive Bonfire on our &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;demo instance&lt;/a&gt; and provide feedback, such as @LiquidParasyte, @Rincewind, @youronlyone, @coyote...&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+Thanks to &lt;a href=&quot;https://social.nlnet.nl/users/nlnet&quot;&gt;@nlnet@social.nlnet.nl&lt;/a&gt; for supporting the Bonfire development, all our Open Collective donors and our amazing community as a whole.&lt;/p&gt;
+&lt;p&gt;Bonfire is a collaborative project, and &lt;a href=&quot;https://www.youtube.com/watch?v=9wxI4KK9ZYo&amp;amp;amp;list=RD9wxI4KK9ZYo&amp;amp;amp;start_radio=1&quot;&gt;we’re grateful to build it with you&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;---&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ready to try Bonfire 1.0 RC2?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;https://bonfirenetworks.org/start/&quot;&gt;Get started&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;Try our demo instance&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues&quot;&gt;Provide feedback&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;https://bonfire.cafe/@Bonfire&quot;&gt;Chat with us on the fediverse&lt;/a&gt;: &lt;a href=&quot;https://bonfire.cafe/character/Bonfire&quot;&gt;@Bonfire@bonfire.cafe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- &lt;a href=&quot;https://matrix.to/#/#bonfire-networks:matrix.org&quot;&gt;Chat with us on Matrix&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let’s light up the fediverse together! 🚀&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Connect your existing tools to the fediverse with Mosaic</title>
+    <link href="https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/"/>
+    <updated>2025-07-15T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/</id>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Your organisation&#39;s favorite apps, now with superpowers.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We all navigate a constellation of specialized tools daily. Organisations depend on CRMs, project management platforms, and financial systems. Communities coordinate through forums, chat and event platforms, and resource-sharing databases. Individuals track their lives across fitness apps, reading lists, streaming services, knowledge management tools and more.&lt;/p&gt;
+&lt;p&gt;Each app serves its purpose, but they each create isolated silos where valuable activities, insights, and connections remain trapped behind separate logins and walled gardens.&lt;/p&gt;
+&lt;p&gt;What if you could keep using the tools built for your needs while opening them to your community or the broader fediverse according to your specific rules and boundaries?&lt;/p&gt;
+&lt;h2 id=&quot;%F0%9F%A7%B0-bridge-your-tools-to-the-open-web&quot;&gt;&lt;strong&gt;🧰 Bridge your tools to the open web&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#%F0%9F%A7%B0-bridge-your-tools-to-the-open-web&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Through our &lt;a href=&quot;https://bonfirenetworks.org/mosaic&quot;&gt;Mosaic&lt;/a&gt; initiative, leveraging the Bonfire modular framework, we offer like-minded organizations and communities the opportunity to build custom extensions that connect their homegrown or third-party applications to the fediverse. These bridges:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Import data from your existing tools&lt;/li&gt;
+&lt;li&gt;Transform it into rich ActivityPub activities for federation&lt;/li&gt;
+&lt;li&gt;Enable meaningful, two-way interactions&lt;/li&gt;
+&lt;li&gt;Respect your privacy boundaries and governance needs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The result? Your isolated tools become part of a connected, collaborative ecosystem.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;real-world-examples%3A-your-tools%2C-federated&quot;&gt;&lt;strong&gt;Real-world examples: your tools, federated&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#real-world-examples%3A-your-tools%2C-federated&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;project-management-meets-community-feedback&quot;&gt;&lt;strong&gt;Project management meets community feedback&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#project-management-meets-community-feedback&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Imagine your team uses a kanban board to manage development sprints. With a custom Bonfire extension, we could connect the service&#39;s API and monitor specific triggers like completed tasks, cards tagged with &lt;a href=&quot;https://bonfire.cafe/hashtag/feedback&quot;&gt;#feedback&lt;/a&gt;, or comments added.&lt;/p&gt;
+&lt;p&gt;When triggered, the extension would create ActivityPub objects with rich metadata: task description, relevant links, and progress context. Your fediverse followers would receive these as native posts they can react to, boost, and comment on. Their feedback would flow back through the extension as comments on the original card.&lt;/p&gt;
+&lt;p&gt;You would control the boundaries granularly, e.g. public for open source projects, followers-only for beta features, restricted to your instance for internal work, or anything in between. The two-way sync would ensure your project management tool remains the single source of truth while your community becomes an active participant in the development process.&lt;/p&gt;
+&lt;h3 id=&quot;community-resources-go-network-wide&quot;&gt;&lt;strong&gt;Community resources go network-wide&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#community-resources-go-network-wide&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Your mutual aid network could maintain a resource spreadsheet or database tracking offers, needs, and availability. Our extension would poll for new entries or status changes (by connecting to an API, listening to webhooks, or even directly reading the database or spreadsheet itself), converting them into structured ActivityPub objects with standardised properties for location and resource type taxonomy tags, and custom properties for quantity and urgency.&lt;/p&gt;
+&lt;p&gt;When someone marks &amp;quot;10 wool blankets available&amp;quot; or &amp;quot;urgent: need baby formula,&amp;quot; it would federate as a rich post that other instances can parse intelligently. Neighboring mutual aid groups would see these in dedicated feeds or maps, filtered by resource type or geographic proximity.&lt;/p&gt;
+&lt;p&gt;The extension could handle resource matching across networks, suggesting possible connections between needs and offers while respecting each network&#39;s autonomy.&lt;/p&gt;
+&lt;h3 id=&quot;events-that-travel-beyond-platform-borders&quot;&gt;&lt;strong&gt;Events that travel beyond platform borders&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#events-that-travel-beyond-platform-borders&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Your organisation&#39;s calendar contains everything from public conferences to internal meetings. The extension would connect via calendar APIs (CalDAV, Google Calendar API, etc.) and intelligently parse event metadata: detecting whether events are public, extracting registration links, and identifying capacity limits.&lt;/p&gt;
+&lt;p&gt;Public events would become rich ActivityPub Event objects that federated platforms can display natively—Mobilizon and Bonfire instances would show them in event listings, Mastodon users would see them as interactive posts. RSVPs would flow back through via ActivityPub federation, updating your attendee count in real-time.&lt;/p&gt;
+&lt;p&gt;The extension could handle timezone conversions, recurring events, and last-minute changes. When you update event details, it would send an update to ensure all federated copies stay synchronised.&lt;/p&gt;
+&lt;h3 id=&quot;the-possibilities-are-endless&quot;&gt;&lt;strong&gt;The possibilities are endless&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#the-possibilities-are-endless&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Imagine federating your collaborative playlists to spark music discovery across communities. Or sharing fitness milestones that inspire distributed workout challenges. Or creating transparent financial reporting that builds trust with your supporter network.&lt;/p&gt;
+&lt;h3 id=&quot;ready-to-give-your-tools-superpowers%3F&quot;&gt;&lt;strong&gt;Ready to give your tools superpowers?&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#ready-to-give-your-tools-superpowers%3F&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The examples above showcase just a glimpse of what&#39;s possible when we bridge isolated tools to the fediverse. While these specific integrations are just ideas, they represent the transformative potential of Bonfire, and we&#39;re ready to build them with you.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bonfirenetworks.org/mosaic&quot;&gt;Mosaic&lt;/a&gt; is a unique service where the Bonfire team works with you to co-design and build custom extensions entirely shaped around your community&#39;s needs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mosaic is perfect for you if:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You&#39;re frustrated by data trapped in isolated platforms&lt;/li&gt;
+&lt;li&gt;Your community wants to participate more but faces too many barriers&lt;/li&gt;
+&lt;li&gt;You believe in transparency and collaborative approaches&lt;/li&gt;
+&lt;li&gt;You&#39;re ready to pioneer new models of digital cooperation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;What we offer:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Custom extension development tailored to your specific tools and workflows&lt;/li&gt;
+&lt;li&gt;Full control over privacy boundaries and federation rules&lt;/li&gt;
+&lt;li&gt;Ongoing support as your needs evolve&lt;/li&gt;
+&lt;li&gt;The opportunity to be among the first to explore federated tool integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Let&#39;s start a conversation.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Whether you want to federate your project management, open up your resource database, or imagine entirely new possibilities, we&#39;re here to build it with you. Your use case could become the next example inspiring others to break down their digital silos.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://cal.com/bonfire-networks/meet?duration=25&amp;amp;amp;overlayCalendar=true&quot;&gt;Book a call with us&lt;/a&gt; or contact us at &lt;a href=&quot;mailto:[team@bonfire.cafe](mailto:hello@bonfire.cafe&quot;&gt;&lt;a href=&quot;mailto:hello@bonfire.cafe%3C/a%3E&quot;&gt;team@bonfire.cafe&lt;/a&gt;.&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Exploring a Bonfire Geosocial Extension</title>
+    <link href="https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/"/>
+    <updated>2025-07-23T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/</id>
+    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#overview&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This issue explores implementing a basic geosocial extension for Bonfire that enables location-based social interactions without the privacy concerns, gamification and corporate overhead of foursquare.&lt;/p&gt;
+&lt;h2 id=&quot;relevant-resources&quot;&gt;&lt;br /&gt;
+Relevant resources &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#relevant-resources&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use cases and proposed implementation approach: &lt;a href=&quot;https://hedgedoc.socialweb.coop/kUPvzmd4SjyN1oGxyrzskQ#&quot;&gt;hedgedoc.socialweb.coop/kUPv...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Geosocial task force &lt;a href=&quot;https://github.com/swicg/geosocial&quot;&gt;github.com/swicg/geosocial&lt;/a&gt; (Issues are particularly relevant)&lt;/li&gt;
+&lt;li&gt;Small client for checking in places &lt;a href=&quot;https://socialwebfoundation.org/2025/07/14/seeking-interop-testing-for-geosocial-activitypub-client/&quot;&gt;socialwebfoundation.org/2025...&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;mockups&quot;&gt;Mockups &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#mockups&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;create-new-activities-in-the-composer&quot;&gt;Create new activities in the composer &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#create-new-activities-in-the-composer&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Currently, our composer only supports notes and articles. To enable check-ins/check-outs, we need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activity type selector: Dropdown next to user avatar in composer&lt;/li&gt;
+&lt;li&gt;Dynamic fields: Show relevant inputs based on selected activity type&lt;/li&gt;
+&lt;li&gt;For check-ins/travel/check-outs: Autocomplete location input&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here our standard component, but with a dropdown element next the user avatar to select the activity to publish&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/user-attachments/assets/efc167f9-7bb2-48a8-942e-98f2b68148a7&quot; alt=&quot;Image&quot; /&gt;&lt;br /&gt;
+The dropdown shows the activity type available, based on the active extensions&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/cbdd2a62-ab0d-4a28-888e-a5e087835713&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Once the user chooses the activity, the composer includes the needed extra field, in this case for check-in it only adds a autocomplete input for selecting the location.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(I added a dropdown next to checkin for switching between checkin - travel - checkout, maybe it&#39;s better to show all the 3 options inline?)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/user-attachments/assets/335d27e4-9a04-4972-afda-d7deb02a3113&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-place-page&quot;&gt;The place page &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#the-place-page&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Places should be first-class AP actor.&lt;/p&gt;
+&lt;p&gt;This transforms places from simple geotags into active participants in the federated web, allowing physical spaces to build communities and curate their digital presence.&lt;/p&gt;
+&lt;p&gt;This means also that a place should be managed by one or more user.&lt;/p&gt;
+&lt;p&gt;In the following mockups we envisioned a very basic place page: on the right sidebar there is the About widget, with some extra fields that can be included in the place settings such as: name, address, phone number, email, opening hours, plus some aggregated data if needed, like the amount of check-in in last day/weel/month etc.&lt;/p&gt;
+&lt;p&gt;The page would have different tabs based on what&#39;s most relevant for the place and the extensions enabled, here the check-in feed&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/848fbbef-1ae2-413b-8a88-437659cfcc2e&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;and the events feed&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://github.com/user-attachments/assets/289e91c3-1357-4853-b35f-50f5e8ad8b7d&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We already have most of the building block ready for implementing this, at least for this basic version (eg. focusing only on &amp;quot;public&amp;quot; spaces, not including the event extension, focus on check-in/check-out functionalities).&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2 id=&quot;location-pages-for-non-actor-places&quot;&gt;Location Pages for Non-Actor Places &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#location-pages-for-non-actor-places&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For locations from &lt;a href=&quot;http://places.pub/&quot;&gt;places.pub&lt;/a&gt; (or similar services) that aren&#39;t yet ActivityPub actors, we can create aggregation pages that function like more structured location-specific hashtag pages. Users can follow these locations and explore all related activities in one place.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h3 id=&quot;see-all-the-check-in-that-belong-to-a-specific-location&quot;&gt;See all the check-in that belong to a specific location &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#see-all-the-check-in-that-belong-to-a-specific-location&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/bb5d41ef-b15f-4a87-8f7f-c2b7ef78eb63&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;see-the-map-with-all-the-other-locations-nearby&quot;&gt;See the map with all the other locations nearby &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#see-the-map-with-all-the-other-locations-nearby&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/3ba2b965-a530-4339-81be-c41236a9502f&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;see-all-the-media-published-in-that-location&quot;&gt;See all the media published in that location &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#see-all-the-media-published-in-that-location&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/9eb5119f-c17c-4d79-bc2f-73db719b981e&quot; alt=&quot;Image&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Next steps&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a Map view mockup (we do already have one in the bonfire_geolocate extension) to navigate all the places in a interactive way&lt;/li&gt;
+&lt;li&gt;Add more geosocial activity preview to see how they appear in other feeds&lt;/li&gt;
+&lt;li&gt;Feedback on proposed UX flow&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+  <entry>
     <title>Bonfire Social 1.0rc3</title>
     <link href="https://bonfirenetworks.org/posts/bonfire-social-1-0rc3/"/>
     <updated>2025-10-02T00:00:00Z</updated>
@@ -1793,240 +2027,6 @@ slot &lt;span class=&quot;token atom symbol&quot;&gt;:header_menu&lt;/span&gt;
 &lt;p&gt;Building truly autonomous digital spaces requires community and solidarity.&lt;/p&gt;
 &lt;p&gt;If Bonfire’s vision speaks to you, there are many ways to help. Financial support via &lt;a href=&quot;https://opencollective.com/bonfire-networks&quot;&gt;Open Collective&lt;/a&gt; helps us dedicate time to maintenance rather than just features. But contributions aren’t only financial — testing this release candidate, &lt;a href=&quot;https://app.transifex.com/bonfire/bonfire/dashboard/&quot;&gt;translating the interface&lt;/a&gt;, reporting bugs, or spreading the word are equally valuable. Every action strengthens the commons we’re building together.&lt;/p&gt;
 &lt;p&gt;Anti-enshittification is a collective effort to create digital commons that serves people, not platforms.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Long-form content in Bonfire: Part 1</title>
-    <link href="https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/"/>
-    <updated>2025-10-22T21:04:49Z</updated>
-    <id>https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/</id>
-    <content type="html">&lt;p&gt;Inspired by &lt;a href=&quot;https://cosocial.ca/users/evan&quot;&gt;@evan@cosocial.ca&lt;/a&gt; &#39;s recent article on &lt;a href=&quot;https://socialwebfoundation.org/2025/05/01/steps-forward-in-long-form-text/&quot;&gt;advancing long-form text in the social web&lt;/a&gt;, we&#39;ve taken the leap and developed our first prototype for publishing and reading articles on Bonfire, based on the &lt;a href=&quot;https://codeberg.org/fediverse/fep/src/branch/main/fep/b2b8/fep-b2b8.md&quot;&gt;FEP-b2b8 draft specification&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;beyond-microblogging&quot;&gt;Beyond microblogging &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#beyond-microblogging&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;From &lt;a href=&quot;https://bonfirenetworks.org/posts/not_just_yet_another_microblog/&quot;&gt;day one&lt;/a&gt;, we&#39;ve designed Bonfire to break free from the constraints of microblogging-centric social networks. We&#39;ve already experimented with extensions for &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_coordination/&quot;&gt;coordinating tasks&lt;/a&gt;, &lt;a href=&quot;https://github.com/bonfire-networks/bonfire_valueflows&quot;&gt;exchanging resources&lt;/a&gt;, and more. As we work on &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire_social_rc/&quot;&gt;Bonfire Social 1.0&lt;/a&gt;, adding article support felt like a natural evolution of this vision.&lt;/p&gt;
-&lt;p&gt;Working based on a FEP (fediverse enhancement proposal) that provided both design guidelines and technical specifications was refreshing and showed how co-design and shared standards can be our strongest ally for pushing the fediverse forward.&lt;/p&gt;
-&lt;h2 id=&quot;one-feed%2C-many-content-types&quot;&gt;One feed, many content types &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#one-feed%2C-many-content-types&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Adding articles marks a small but significant step towards realising the vision of the open social web: a digital space where you can receive, read and interact with diverse content types from a single place, rather than juggling multiple platforms, accounts, and notification streams.&lt;/p&gt;
-&lt;p&gt;With Bonfire, articles from writefreely, ghosts, wordpress and any other federated platforms that implement the FEP-b2b8, now appear seamlessly in your feed alongside other content from your network. You can:&lt;/p&gt;
-&lt;p&gt;- Preview articles in the feed&lt;/p&gt;
-&lt;p&gt;- Read the full article and nested comments without loading an external site (just like the good old days of RSS readers)&lt;/p&gt;
-&lt;p&gt;- React or reply to the article or other comments&lt;/p&gt;
-&lt;p&gt;This UX improvement offers a glimpse of what becomes possible as more platforms and software embrace the fediverse.&lt;/p&gt;
-&lt;h2 id=&quot;but-why-stop-there%3F&quot;&gt;But why stop there? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#but-why-stop-there%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Thanks to our modular feed builder, we&#39;ve added an &amp;quot;Articles&amp;quot; feed preset. This dedicated timeline displays only long-form content, with sorting options for most liked, most replied, and more.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://hackmd.io/_uploads/BkMJxQ2Neg.png&quot; alt=&quot;articlesfeed&quot; /&gt;It&#39;s like having a decentralised blogging platform and feed reader integrated in your social network.&lt;/p&gt;
-&lt;p&gt;Speaking of feed readers, we&#39;ve also added RSS and Atom feeds so you can subscribe to Bonfire feeds (including articles and/or microposts) via your favourite feed reader app as well.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://hackmd.io/_uploads/SyZZgXh4ge.png&quot; alt=&quot;rss&quot; /&gt;And yes, you can also write articles directly in Bonfire! While the authoring experience is still rough around the edges (we&#39;re actively improving the UX), we&#39;re pleased with this initial prototype (which includes a simple rich text editor using markdown, and the option to add a title and cover image). In fact, this very article was written and published through Bonfire.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://hackmd.io/_uploads/rk4Bf7hNxe.jpg&quot; alt=&quot;article_composer&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;what&#39;s-next%3F&quot;&gt;What&#39;s Next? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#what&#39;s-next%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;As we refine the implementation, ideas are already flowing:&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Personal blog pages&lt;/strong&gt;: Do users want an optional dedicated blog section on their profile, maybe with tabs to easily switch between notes, articles, or other content types?&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Instance curation&lt;/strong&gt;: Could instance moderators pin and showcase their best articles on the homepage?&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Enhanced authoring&lt;/strong&gt;: Should we create specialized UIs for properly writing and managing blog posts?&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Email subscriptions&lt;/strong&gt;: Non-fediverse users could subscribe via email to federated blogs?&lt;/p&gt;
-&lt;p&gt;The possibilities are endless, but we believe long-form content features should be shaped by actual community needs and designed collaboratively in the open, building upon FEP-b2b8 through real-world usage and experimentation.&lt;/p&gt;
-&lt;h2 id=&quot;join-the-experiment&quot;&gt;Join the experiment &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/long-form-content-in-bonfire-part-1/#join-the-experiment&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;This is just the beginning. You can experience writing and reading articles on Bonfire today at our &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;campground instance&lt;/a&gt; or by &lt;a href=&quot;https://bonfirenetworks.org/start/&quot;&gt;setting up your own Bonfire instance&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If your community is interested in test-driving or co-designing long-form content features, we’d love to collaborate.&lt;/p&gt;
-&lt;p&gt;To build a fully integrated, community-shaped publishing experience — and continue improving Bonfire in many other areas — we’re actively seeking support. You can &lt;a href=&quot;https://opencollective.com/bonfire-networks&quot;&gt;back Bonfire on OpenCollective&lt;/a&gt; or &lt;a href=&quot;https://bonfirenetworks.org/contact/&quot;&gt;get in touch&lt;/a&gt; to help shape the future of federated publishing.&lt;/p&gt;
-&lt;p&gt;---&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;What would you like to see in federated long-form content? Join the conversation and help us build the open social web together!&lt;/em&gt;&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>🔥 Bonfire Social 1.0 RC2</title>
-    <link href="https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/"/>
-    <updated>2025-10-22T21:04:49Z</updated>
-    <id>https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/</id>
-    <content type="html">&lt;p&gt;We’re pleased to announce Bonfire Social 1.0 Release Candidate 2! This update is all about refining and polishing the experience, fixing bugs, and making Bonfire more enjoyable and reliable for everyone. These improvements come directly from your feedback, bug reports, and real-world testing.&lt;/p&gt;
-&lt;p&gt;Of course, we couldn’t help ourselves and also snuck in some exciting new features—like long-form article publishing and more feeds customisations, plus plenty of interface refinements for both desktop and mobile.&lt;/p&gt;
-&lt;p&gt;A huge thank you to everyone who has set up a Bonfire instance, or joined the &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;campground&lt;/a&gt; (our local-only testing space) to try out the app. Your suggestions and bug reports have been invaluable as we approach version 1.0. Please keep testing, sharing feedback, and helping us shape the future of federated social spaces!&lt;/p&gt;
-&lt;h2 id=&quot;%E2%9C%A8-what%E2%80%99s-new-and-improved%3F&quot;&gt;✨ What’s new and improved? &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%E2%9C%A8-what%E2%80%99s-new-and-improved%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Long-form publishing:&lt;/strong&gt; Going beyond beyond short posts to &lt;a href=&quot;https://bonfire.cafe/post/01JYRX7HCGME693BGCZF6AGGK1&quot;&gt;read and write in-depth articles&lt;/a&gt;, ideal for essays, announcements, or detailed content. Article feeds are now available for RSS readers.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Smarter feeds:&lt;/strong&gt; New feed options for &lt;strong&gt;events&lt;/strong&gt;, &lt;strong&gt;books&lt;/strong&gt;, and &lt;strong&gt;articles&lt;/strong&gt; help you discover what matters to you most. You can now also filter out your own activities from your feeds when desired.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-profiles overview&lt;/strong&gt;: A new navigation menu can display all your profiles with notification indicators, allowing quick profile switching.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Private by default:&lt;/strong&gt; New Bonfire instances start as invite-only, giving admins control over membership from day one.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Interface improvements:&lt;/strong&gt; We&#39;ve refined the user experience, enhanced notifications and ensured posts display properly across mobile devices.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;More reliable:&lt;/strong&gt; Tons of fixes for authentication, media uploads, mentions, moderation, and other core features.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Additional improvements include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Better translation and localization workflow&lt;/li&gt;
-&lt;li&gt;Smoother OAuth/OpenID login and SSO support&lt;/li&gt;
-&lt;li&gt;Updated documentation and guides for admins and contributors&lt;/li&gt;
-&lt;li&gt;Enhanced S3 integration for uploads&lt;/li&gt;
-&lt;li&gt;Lots of small bug fixes on comment threads, messaging, settings, and more&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For a comprehensive list of changes, see the &lt;a href=&quot;https://docs.bonfirenetworks.org/changelog.html&quot;&gt;full changelog&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;%F0%9F%8E%AA-community-contributions-and-other-initiatives&quot;&gt;🎪 Community contributions and other initiatives &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%8E%AA-community-contributions-and-other-initiatives&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;We hosted our first &lt;a href=&quot;https://indieweb.social/@bonfire/114737730812193211&quot;&gt;install party&lt;/a&gt; using &lt;a href=&quot;https://coopcloud.tech/&quot;&gt;coop-cloud&lt;/a&gt;, with all participants who followed along successfully deploying their own Bonfire instances.&lt;/li&gt;
-&lt;li&gt;Seperately, ozoned from &lt;a href=&quot;https://social.firesidefedi.live/@firesidefedi&quot;&gt;Fireside Fedi&lt;/a&gt; &lt;a href=&quot;https://video.firesidefedi.live/w/sXNGDdqurg59cE3syZ3svU&quot;&gt;livestreamed their installation attempt&lt;/a&gt;, surfacing valuable setup challenges. This highlighted the need to simplify Docker deployment and improve documentation. Contributors are welcome to help make this easier!&lt;/li&gt;
-&lt;li&gt;Sciety deployed a Bonfire instance as part of their &lt;a href=&quot;https://blog.sciety.org/weeknotes/sciety-product-news-01-07-2025/&quot;&gt;pre-print review project&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spark.box464.social/pub/actors/spark464&quot;&gt;@spark464@spark.box464.social&lt;/a&gt; &lt;a href=&quot;https://spark.box464.social/post/01JZDM9H4148XRMW2XH7PQNNSC&quot;&gt;published an article&lt;/a&gt; on how to add a weather widget in Bonfire.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;%F0%9F%8C%8D-localisation%3A-bonfire-in-your-language!&quot;&gt;🌍 Localisation: Bonfire in your language! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%8C%8D-localisation%3A-bonfire-in-your-language!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Bonfire Social is built to be diverse and welcoming, which means making it accessible in as many languages as possible. Thanks to our amazing translators, Bonfire is now available in several languages.&lt;/p&gt;
-&lt;h3 id=&quot;%F0%9F%8F%85-top-translated-languages&quot;&gt;🏅 Top translated languages &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%8F%85-top-translated-languages&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;- &lt;strong&gt;Portuguese (Brazil):&lt;/strong&gt; 100% translated &amp;amp; reviewed 🎉&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;French:&lt;/strong&gt; 98.9% translated, 69.4% reviewed&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Italian:&lt;/strong&gt; 96.7% translated, 54% reviewed&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;German:&lt;/strong&gt; 98% translated&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Spanish:&lt;/strong&gt; 57% translated&lt;/p&gt;
-&lt;p&gt;- &lt;strong&gt;Vietnamese:&lt;/strong&gt; 20.9% translated, 11.1% reviewed&lt;/p&gt;
-&lt;p&gt;- ...and several more, including &lt;strong&gt;Catalan&lt;/strong&gt;, &lt;strong&gt;Cantonese&lt;/strong&gt; and &lt;strong&gt;Taiwanese&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Want to help Bonfire speak your language? Please &lt;a href=&quot;https://app.transifex.com/bonfire&quot;&gt;join us&lt;/a&gt; and make a difference for communities worldwide!&lt;/p&gt;
-&lt;h2 id=&quot;%F0%9F%A4%9D-help-needed&quot;&gt;🤝 Help needed &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%A4%9D-help-needed&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;As we push toward 1.0, we&#39;re facing some specific challenges where community support and contributions would make a real difference:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;DevOps expertise&lt;/strong&gt;: We need help streamlining the Docker installation process to make Bonfire more accessible to new users. If you have experience with containerisation and deployment workflows, your contributions would be invaluable.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Elixir developers&lt;/strong&gt;: Join us in improving Bonfire&#39;s stability and performance. We&#39;re focused on eliminating bugs and enhancing the core extensions&#39; reliability.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Financial support&lt;/strong&gt;: As a small team of two working full-time on Bonfire, we need community support to sustain development. You can contribute through our &lt;a href=&quot;https://opencollective.com/bonfire-networks&quot;&gt;Open Collective page&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Federation testing&lt;/strong&gt;: We&#39;re seeking users willing to set up Bonfire instances and try out federation and interoperability with other fediverse platforms. Your real-world testing helps ensure Bonfire works seamlessly across the fediverse.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Please &lt;a href=&quot;https://app.transifex.com/bonfire&quot;&gt;join us&lt;/a&gt; or share this with your multilingual friends!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These are our most pressing needs as we approach 1.0. If you can help with any of these areas, please get in touch via the &lt;a href=&quot;https://bonfire.cafe/@Bonfire&quot;&gt;fediverse&lt;/a&gt;, &lt;a href=&quot;https://matrix.to/#/#bonfire-networks:matrix.org&quot;&gt;Matrix chat&lt;/a&gt;, or &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues&quot;&gt;GitHub&lt;/a&gt;. Every contribution, big or small, helps make Bonfire better for everyone.&lt;/p&gt;
-&lt;h2 id=&quot;%F0%9F%99%8F-thank-you!&quot;&gt;🙏 Thank you! &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-rc2/#%F0%9F%99%8F-thank-you!&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;A heartfelt thank you to everyone who has contributed translations and reviews. You are lighting up Bonfire for people everywhere! Here are some of our awesome translators:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Gilles Dutilh, Ahmad Dakhlallah, Lamparina Coletivo, alan ptm, Antonio Irre, Zulfikar A, CDN, cranio_is_thinking, Steven Bond, Diego KehrleSousa, Vrlo Vazno, Ed, Andrei Guliaikin, Hendra Wahyu T, Hippie Gschpängschtli, House of Olivier EU, Ivan Minutillo, Juan García, Lapineige, Pascal Schmid, Martin Frost, Duy, Mayel de Borniol, Sovversivo Anonimo, Peter Kvillegård, Poesty Li, Sergio Guidoux, Vaclovas lntas, Williams Melgar, and many more!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We really appreciate your work! 💜&lt;/p&gt;
-&lt;p&gt;And a massive thank you to everyone who contributed code, ideas, testing, translations, and support—including &lt;a href=&quot;https://spark.box464.social/pub/actors/spark464&quot;&gt;@spark464@spark.box464.social&lt;/a&gt; , &lt;a href=&quot;https://pan.rent/users/tommi&quot;&gt;@tommi@pan.rent&lt;/a&gt;, &lt;a href=&quot;https://sueden.social/users/lechindianer&quot;&gt;@lechindianer@sueden.social&lt;/a&gt; , &lt;a href=&quot;https://bonfire.fishinthecalculator.me/pub/actors/fishinthecalculator&quot;&gt;@fishinthecalculator@bonfire.fishinthecalculator.me&lt;/a&gt; , &lt;a href=&quot;https://gts.superseriousbusiness.org/users/dumpsterqueer&quot;&gt;@dumpsterqueer@gts.superseriousbusiness.org&lt;/a&gt; , &lt;a href=&quot;https://social.ozoned.net/users/ozoned&quot;&gt;@ozoned@social.ozoned.net&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-Thanks to those that are taking time to test drive Bonfire on our &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;demo instance&lt;/a&gt; and provide feedback, such as @LiquidParasyte, @Rincewind, @youronlyone, @coyote...&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-Thanks to &lt;a href=&quot;https://social.nlnet.nl/users/nlnet&quot;&gt;@nlnet@social.nlnet.nl&lt;/a&gt; for supporting the Bonfire development, all our Open Collective donors and our amazing community as a whole.&lt;/p&gt;
-&lt;p&gt;Bonfire is a collaborative project, and &lt;a href=&quot;https://www.youtube.com/watch?v=9wxI4KK9ZYo&amp;amp;amp;list=RD9wxI4KK9ZYo&amp;amp;amp;start_radio=1&quot;&gt;we’re grateful to build it with you&lt;/a&gt; .&lt;/p&gt;
-&lt;p&gt;---&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ready to try Bonfire 1.0 RC2?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;- &lt;a href=&quot;https://bonfirenetworks.org/start/&quot;&gt;Get started&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- &lt;a href=&quot;https://campground.bonfire.cafe/&quot;&gt;Try our demo instance&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- &lt;a href=&quot;https://github.com/bonfire-networks/bonfire-app/issues&quot;&gt;Provide feedback&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- &lt;a href=&quot;https://bonfire.cafe/@Bonfire&quot;&gt;Chat with us on the fediverse&lt;/a&gt;: &lt;a href=&quot;https://bonfire.cafe/character/Bonfire&quot;&gt;@Bonfire@bonfire.cafe&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;- &lt;a href=&quot;https://matrix.to/#/#bonfire-networks:matrix.org&quot;&gt;Chat with us on Matrix&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Let’s light up the fediverse together! 🚀&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Connect your existing tools to the fediverse with Mosaic</title>
-    <link href="https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/"/>
-    <updated>2025-10-22T21:04:49Z</updated>
-    <id>https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/</id>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Your organisation&#39;s favorite apps, now with superpowers.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;We all navigate a constellation of specialized tools daily. Organisations depend on CRMs, project management platforms, and financial systems. Communities coordinate through forums, chat and event platforms, and resource-sharing databases. Individuals track their lives across fitness apps, reading lists, streaming services, knowledge management tools and more.&lt;/p&gt;
-&lt;p&gt;Each app serves its purpose, but they each create isolated silos where valuable activities, insights, and connections remain trapped behind separate logins and walled gardens.&lt;/p&gt;
-&lt;p&gt;What if you could keep using the tools built for your needs while opening them to your community or the broader fediverse according to your specific rules and boundaries?&lt;/p&gt;
-&lt;h2 id=&quot;%F0%9F%A7%B0-bridge-your-tools-to-the-open-web&quot;&gt;&lt;strong&gt;🧰 Bridge your tools to the open web&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#%F0%9F%A7%B0-bridge-your-tools-to-the-open-web&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Through our &lt;a href=&quot;https://bonfirenetworks.org/mosaic&quot;&gt;Mosaic&lt;/a&gt; initiative, leveraging the Bonfire modular framework, we offer like-minded organizations and communities the opportunity to build custom extensions that connect their homegrown or third-party applications to the fediverse. These bridges:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Import data from your existing tools&lt;/li&gt;
-&lt;li&gt;Transform it into rich ActivityPub activities for federation&lt;/li&gt;
-&lt;li&gt;Enable meaningful, two-way interactions&lt;/li&gt;
-&lt;li&gt;Respect your privacy boundaries and governance needs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;The result? Your isolated tools become part of a connected, collaborative ecosystem.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;real-world-examples%3A-your-tools%2C-federated&quot;&gt;&lt;strong&gt;Real-world examples: your tools, federated&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#real-world-examples%3A-your-tools%2C-federated&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;project-management-meets-community-feedback&quot;&gt;&lt;strong&gt;Project management meets community feedback&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#project-management-meets-community-feedback&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Imagine your team uses a kanban board to manage development sprints. With a custom Bonfire extension, we could connect the service&#39;s API and monitor specific triggers like completed tasks, cards tagged with &lt;a href=&quot;https://bonfire.cafe/hashtag/feedback&quot;&gt;#feedback&lt;/a&gt;, or comments added.&lt;/p&gt;
-&lt;p&gt;When triggered, the extension would create ActivityPub objects with rich metadata: task description, relevant links, and progress context. Your fediverse followers would receive these as native posts they can react to, boost, and comment on. Their feedback would flow back through the extension as comments on the original card.&lt;/p&gt;
-&lt;p&gt;You would control the boundaries granularly, e.g. public for open source projects, followers-only for beta features, restricted to your instance for internal work, or anything in between. The two-way sync would ensure your project management tool remains the single source of truth while your community becomes an active participant in the development process.&lt;/p&gt;
-&lt;h3 id=&quot;community-resources-go-network-wide&quot;&gt;&lt;strong&gt;Community resources go network-wide&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#community-resources-go-network-wide&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Your mutual aid network could maintain a resource spreadsheet or database tracking offers, needs, and availability. Our extension would poll for new entries or status changes (by connecting to an API, listening to webhooks, or even directly reading the database or spreadsheet itself), converting them into structured ActivityPub objects with standardised properties for location and resource type taxonomy tags, and custom properties for quantity and urgency.&lt;/p&gt;
-&lt;p&gt;When someone marks &amp;quot;10 wool blankets available&amp;quot; or &amp;quot;urgent: need baby formula,&amp;quot; it would federate as a rich post that other instances can parse intelligently. Neighboring mutual aid groups would see these in dedicated feeds or maps, filtered by resource type or geographic proximity.&lt;/p&gt;
-&lt;p&gt;The extension could handle resource matching across networks, suggesting possible connections between needs and offers while respecting each network&#39;s autonomy.&lt;/p&gt;
-&lt;h3 id=&quot;events-that-travel-beyond-platform-borders&quot;&gt;&lt;strong&gt;Events that travel beyond platform borders&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#events-that-travel-beyond-platform-borders&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Your organisation&#39;s calendar contains everything from public conferences to internal meetings. The extension would connect via calendar APIs (CalDAV, Google Calendar API, etc.) and intelligently parse event metadata: detecting whether events are public, extracting registration links, and identifying capacity limits.&lt;/p&gt;
-&lt;p&gt;Public events would become rich ActivityPub Event objects that federated platforms can display natively—Mobilizon and Bonfire instances would show them in event listings, Mastodon users would see them as interactive posts. RSVPs would flow back through via ActivityPub federation, updating your attendee count in real-time.&lt;/p&gt;
-&lt;p&gt;The extension could handle timezone conversions, recurring events, and last-minute changes. When you update event details, it would send an update to ensure all federated copies stay synchronised.&lt;/p&gt;
-&lt;h3 id=&quot;the-possibilities-are-endless&quot;&gt;&lt;strong&gt;The possibilities are endless&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#the-possibilities-are-endless&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Imagine federating your collaborative playlists to spark music discovery across communities. Or sharing fitness milestones that inspire distributed workout challenges. Or creating transparent financial reporting that builds trust with your supporter network.&lt;/p&gt;
-&lt;h3 id=&quot;ready-to-give-your-tools-superpowers%3F&quot;&gt;&lt;strong&gt;Ready to give your tools superpowers?&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/#ready-to-give-your-tools-superpowers%3F&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The examples above showcase just a glimpse of what&#39;s possible when we bridge isolated tools to the fediverse. While these specific integrations are just ideas, they represent the transformative potential of Bonfire, and we&#39;re ready to build them with you.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://bonfirenetworks.org/mosaic&quot;&gt;Mosaic&lt;/a&gt; is a unique service where the Bonfire team works with you to co-design and build custom extensions entirely shaped around your community&#39;s needs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Mosaic is perfect for you if:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;You&#39;re frustrated by data trapped in isolated platforms&lt;/li&gt;
-&lt;li&gt;Your community wants to participate more but faces too many barriers&lt;/li&gt;
-&lt;li&gt;You believe in transparency and collaborative approaches&lt;/li&gt;
-&lt;li&gt;You&#39;re ready to pioneer new models of digital cooperation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;What we offer:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Custom extension development tailored to your specific tools and workflows&lt;/li&gt;
-&lt;li&gt;Full control over privacy boundaries and federation rules&lt;/li&gt;
-&lt;li&gt;Ongoing support as your needs evolve&lt;/li&gt;
-&lt;li&gt;The opportunity to be among the first to explore federated tool integration&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Let&#39;s start a conversation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Whether you want to federate your project management, open up your resource database, or imagine entirely new possibilities, we&#39;re here to build it with you. Your use case could become the next example inspiring others to break down their digital silos.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://cal.com/bonfire-networks/meet?duration=25&amp;amp;amp;overlayCalendar=true&quot;&gt;Book a call with us&lt;/a&gt; or contact us at &lt;a href=&quot;mailto:[team@bonfire.cafe](mailto:hello@bonfire.cafe&quot;&gt;&lt;a href=&quot;mailto:hello@bonfire.cafe%3C/a%3E&quot;&gt;team@bonfire.cafe&lt;/a&gt;.&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Exploring a Bonfire Geosocial Extension</title>
-    <link href="https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/"/>
-    <updated>2025-10-22T21:04:49Z</updated>
-    <id>https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/</id>
-    <content type="html">&lt;h2 id=&quot;overview&quot;&gt;Overview &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#overview&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;This issue explores implementing a basic geosocial extension for Bonfire that enables location-based social interactions without the privacy concerns, gamification and corporate overhead of foursquare.&lt;/p&gt;
-&lt;h2 id=&quot;relevant-resources&quot;&gt;&lt;br /&gt;
-Relevant resources &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#relevant-resources&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Use cases and proposed implementation approach: &lt;a href=&quot;https://hedgedoc.socialweb.coop/kUPvzmd4SjyN1oGxyrzskQ#&quot;&gt;hedgedoc.socialweb.coop/kUPv...&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Geosocial task force &lt;a href=&quot;https://github.com/swicg/geosocial&quot;&gt;github.com/swicg/geosocial&lt;/a&gt; (Issues are particularly relevant)&lt;/li&gt;
-&lt;li&gt;Small client for checking in places &lt;a href=&quot;https://socialwebfoundation.org/2025/07/14/seeking-interop-testing-for-geosocial-activitypub-client/&quot;&gt;socialwebfoundation.org/2025...&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;mockups&quot;&gt;Mockups &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#mockups&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;create-new-activities-in-the-composer&quot;&gt;Create new activities in the composer &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#create-new-activities-in-the-composer&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Currently, our composer only supports notes and articles. To enable check-ins/check-outs, we need:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Activity type selector: Dropdown next to user avatar in composer&lt;/li&gt;
-&lt;li&gt;Dynamic fields: Show relevant inputs based on selected activity type&lt;/li&gt;
-&lt;li&gt;For check-ins/travel/check-outs: Autocomplete location input&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Here our standard component, but with a dropdown element next the user avatar to select the activity to publish&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://github.com/user-attachments/assets/efc167f9-7bb2-48a8-942e-98f2b68148a7&quot; alt=&quot;Image&quot; /&gt;&lt;br /&gt;
-The dropdown shows the activity type available, based on the active extensions&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/cbdd2a62-ab0d-4a28-888e-a5e087835713&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Once the user chooses the activity, the composer includes the needed extra field, in this case for check-in it only adds a autocomplete input for selecting the location.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(I added a dropdown next to checkin for switching between checkin - travel - checkout, maybe it&#39;s better to show all the 3 options inline?)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://github.com/user-attachments/assets/335d27e4-9a04-4972-afda-d7deb02a3113&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;the-place-page&quot;&gt;The place page &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#the-place-page&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Places should be first-class AP actor.&lt;/p&gt;
-&lt;p&gt;This transforms places from simple geotags into active participants in the federated web, allowing physical spaces to build communities and curate their digital presence.&lt;/p&gt;
-&lt;p&gt;This means also that a place should be managed by one or more user.&lt;/p&gt;
-&lt;p&gt;In the following mockups we envisioned a very basic place page: on the right sidebar there is the About widget, with some extra fields that can be included in the place settings such as: name, address, phone number, email, opening hours, plus some aggregated data if needed, like the amount of check-in in last day/weel/month etc.&lt;/p&gt;
-&lt;p&gt;The page would have different tabs based on what&#39;s most relevant for the place and the extensions enabled, here the check-in feed&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/848fbbef-1ae2-413b-8a88-437659cfcc2e&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;and the events feed&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;https://github.com/user-attachments/assets/289e91c3-1357-4853-b35f-50f5e8ad8b7d&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;We already have most of the building block ready for implementing this, at least for this basic version (eg. focusing only on &amp;quot;public&amp;quot; spaces, not including the event extension, focus on check-in/check-out functionalities).&lt;/p&gt;
-&lt;br /&gt;
-&lt;h2 id=&quot;location-pages-for-non-actor-places&quot;&gt;Location Pages for Non-Actor Places &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#location-pages-for-non-actor-places&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;For locations from &lt;a href=&quot;http://places.pub/&quot;&gt;places.pub&lt;/a&gt; (or similar services) that aren&#39;t yet ActivityPub actors, we can create aggregation pages that function like more structured location-specific hashtag pages. Users can follow these locations and explore all related activities in one place.&lt;/p&gt;
-&lt;br /&gt;
-&lt;h3 id=&quot;see-all-the-check-in-that-belong-to-a-specific-location&quot;&gt;See all the check-in that belong to a specific location &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#see-all-the-check-in-that-belong-to-a-specific-location&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/bb5d41ef-b15f-4a87-8f7f-c2b7ef78eb63&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;see-the-map-with-all-the-other-locations-nearby&quot;&gt;See the map with all the other locations nearby &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#see-the-map-with-all-the-other-locations-nearby&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/3ba2b965-a530-4339-81be-c41236a9502f&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;see-all-the-media-published-in-that-location&quot;&gt;See all the media published in that location &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/#see-all-the-media-published-in-that-location&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;br /&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/user-attachments/assets/9eb5119f-c17c-4d79-bc2f-73db719b981e&quot; alt=&quot;Image&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;
-Next steps&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Add a Map view mockup (we do already have one in the bonfire_geolocate extension) to navigate all the places in a interactive way&lt;/li&gt;
-&lt;li&gt;Add more geosocial activity preview to see how they appear in other feeds&lt;/li&gt;
-&lt;li&gt;Feedback on proposed UX flow&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
