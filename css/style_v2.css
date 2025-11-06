@@ -3,8 +3,10 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: Geist, sans-serif;
-    --font-mono: GeistMono, mono;
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
@@ -53949,6 +53951,9 @@
       border-color: color-mix(in oklab,var(--color-error-content)90%,#0000);
     }
   }
+}
+body {
+  --color-primary: #2474F2;
 }
 .card figure {
   width: 15rem !important;
