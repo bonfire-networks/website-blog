@@ -3,7 +3,7 @@ title: Introducing Mosaic - Partner with the Bonfire Team to Create Your Own Fed
 description: "We are thrilled to announce Mosaic, a venture by the Bonfire team designed to empower organizations by creating fully customized, federated digital spaces tailored to their unique needs."
 date: 2024-10-17
 tags: product
-image: /img/build.png
+image: /img/build.jpg
 layout: layouts/post.njk
 author: Bonfire Builders
 
