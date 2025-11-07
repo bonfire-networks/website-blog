@@ -12,7 +12,7 @@ templateClass: tmpl-post
       {%- for tag in tags | filterTagList -%}
       {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
         <a href="{{ tagUrl | url }}">
-        <span class="badge capitalize badge-lg badge-outline">
+        <span class="badge capitalize badge-lg badge-soft">
           {{ tag }}
         </span>
         </a>
