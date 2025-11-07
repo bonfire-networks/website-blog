@@ -10,7 +10,9 @@ author: Bonfire Builders
 
 Today we're releasing Bonfire Social 1.0: a federated community‑first social network and the modular toolkit that powers it: a framework for building apps on the open social web beyond microblogging. We're pairing the launch with a [crowdfund](https://www.indiegogo.com/projects/bonfire/community?refcode=ysD_3Grs5UGdSSFrePZkMw) so communities drive what we build next.
 
-<img src="/img/crowd.jpg" />
+<a target="blank" class="" href="https://www.indiegogo.com/projects/">
+    <img src="/img/crowd.jpg" />
+</a>
 
 If you believe the social web should be open and portable - where your profiles, relationships and data move with you, where governance lives with communities, and where you can build beyond microblogging for community organising, mutual aid, and collective decisionmaking, this is your moment to help.
 
