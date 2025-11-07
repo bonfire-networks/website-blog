@@ -1,5 +1,5 @@
 ---
-title: Bonfire Social 1.0 is here — back the community‑funded roadmap
+title: Bonfire Social 1.0 is here, back the community‑funded roadmap
 description: "We're releasing Bonfire Social 1.0 and launching a crowdfund so communities drive what we build next. Back it, share it, and help move the social web from closed platforms to open networks."
 date: 2025-11-07
 tags: announcement
