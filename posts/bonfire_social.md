@@ -10,7 +10,7 @@ author: Bonfire Builders
 
 Today we're releasing Bonfire Social 1.0: a federated community‑first social network and the modular toolkit that powers it: a framework for building apps on the open social web beyond microblogging. We're pairing the launch with a [crowdfund](https://www.indiegogo.com/projects/bonfire/community?refcode=ysD_3Grs5UGdSSFrePZkMw) so communities drive what we build next.
 
-<a target="blank" class="" href="https://www.indiegogo.com/projects/">
+<a target="blank" class="" href="https://www.indiegogo.com/projects/bonfire/community?refcode=ysD_3Grs5UGdSSFrePZkMw">
     <img src="/img/crowd.jpg" />
 </a>
 
@@ -28,5 +28,6 @@ Please back the campaign, share it, and invite others to make this "last migrati
 - [Docs](https://docs.bonfirenetworks.org)  
 - [Demo](https://campground.bonfire.cafe)  
 - [Follow updates on the fediverse](https://indieweb.social/@bonfire)
+- [Crowdfunding](https://www.indiegogo.com/projects/bonfire/community?refcode=ysD_3Grs5UGdSSFrePZkMw)  
 
 Thank you for helping build a safer and community‑centred social web, slowly, autonomously, together.
