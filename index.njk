@@ -4,15 +4,15 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
+<div>
 {% include "hero.njk" %}
 {% include "general_intro.njk" %}
 {% include "features.njk" %}
 {# {% include "testimonials.njk" %} #}
+</div>
 
-<div class="">
-    <div class="lg:mx-auto my-24">
-      <div class="">
+    <div class="lg:mx-auto px-8 lg:px-0 my-24">
+
         <div class="h-px my-6 bg-base-content/30  mx-auto"></div>
         <div class="max-w-screen-lg mx-auto">
           <div class="flex items-center mt-6 justify-between">
@@ -23,19 +23,7 @@ eleventyNavigation:
             {% set postslistCounter = collections.posts | length %}
             {% include "postshome.njk" %}
         </div>
-      </div>
+
     </div>
-  </div>
-
-{# {% include "plugins.njk" %} #}
-{# {% include "developers.njk" %}  #}
-{# {% include "testimonials.njk" %}
-{% include "cta.njk" %} #}
-
-
-
-  {# {% include "support_footer.njk" %} #}
-
-  {# {% include "joinus.njk" %} #}
 
 
