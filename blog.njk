@@ -17,7 +17,7 @@ eleventyNavigation:
 {% set firstPost = postslist | reverse | first %}
 
 <!-- Return all tags -->
-<section class="flex items-center my-16 place-content-center gap-4">
+<section class="hidden lg:flex items-center my-16 place-content-center gap-4">
   {% for tag in collections.tagList %}
     {% if tag != "posts" %}
     {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
