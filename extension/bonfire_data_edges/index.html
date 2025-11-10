@@ -36,41 +36,29 @@
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
   <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
-      <div class="bg-base-100 flex justify-center py-2">
-    <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=UScVLqSJJkKpZWg_Lnsg7w" class="alert bg-secondary flex w-full justify-center rounded-none border-none p-2 text-center text-xs shadow-none">
-      <svg class="w-6" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ecf9ff" viewBox="0 0 256 256"><path d="M184,120v61.65a8,8,0,0,1-2.34,5.65l-34.35,34.35a8,8,0,0,1-13.57-4.53L128,176ZM136,72H74.35a8,8,0,0,0-5.65,2.34L34.35,108.69a8,8,0,0,0,4.53,13.57L80,128ZM40,216c37.65,0,50.69-19.69,54.56-28.18L68.18,161.44C59.69,165.31,40,178.35,40,216Z" opacity="0.2"></path><path d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"></path></svg>
-      <div class="font-mono font-bold text-[0.6875rem]">Support our crowdfunding campaign on indiegogo</div>
-    </a>  
+  <div class="drawer">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      <div class="bg-base-100 flex justify-center">
+  <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=UScVLqSJJkKpZWg_Lnsg7w" class="alert bg-secondary flex w-full justify-center rounded-none border-none p-1 text-center text-xs shadow-none">
+    <svg class="w-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ecf9ff" viewBox="0 0 256 256"><path d="M184,120v61.65a8,8,0,0,1-2.34,5.65l-34.35,34.35a8,8,0,0,1-13.57-4.53L128,176ZM136,72H74.35a8,8,0,0,0-5.65,2.34L34.35,108.69a8,8,0,0,0,4.53,13.57L80,128ZM40,216c37.65,0,50.69-19.69,54.56-28.18L68.18,161.44C59.69,165.31,40,178.35,40,216Z" opacity="0.2"></path><path d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"></path></svg>
+    <div class="font-mono font-bold text-[0.6875rem]">Support our crowdfunding campaign on indiegogo</div>
+  </a>  
+</div>
+<div class="navbar sticky bg-base-100 top-0 z-10 w-full">
+  <div class="mx-2 flex-1 px-2">
+    <a href="/" class="flex items-center space-x-4">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+      <span class="lg:flex hidden items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire Networks</span> 
+      
+      </span>
+    </a>
   </div>
-  <div
-      class="sticky bg-base-100 top-0 z-[999999999999999999] transition duration-500 ease-in-out"
-      x-data="{open: false, atTop: false}" 
-    >
-    
-
-    <div class="max-w-screen-lg mx-auto">
-      <header class="relative z-30 lg:px-0 mx-auto navbar">
-        <div class="navbar-start w-[30%]">
-          <div class="flex  items-center shrink-0">
-            <a href="/" class="flex items-center space-x-4">
-              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class="flex items-center"><span class="text-base font-black tracking-wider text-base-content">Bonfire Networks</span> 
-              
-              </span>
-            </a>
-          </div>
-           
-        
-
-
-
-        </div>
-        
-        <div class="navbar-end w-[70%]">
-
-            <div class="hidden xl:flex w-full justify-end mr-3">
-          <ul class="flex-row  p-0 font-medium menu font-bold menu-horizontal">
-            <li>
+  <div class="hidden flex-none lg:block">
+    <ul class="menu menu-horizontal">
+      <!-- Navbar menu content here -->
+      <li>
               <a href="/about" role="button" tabindex="0" class="flex font-semiboltext-[15px] items-center gap-2 ">
                 <span>About</span>
               </a>
@@ -154,125 +142,33 @@
               <span class="">News</span>
             </a>
             </li>
-          </ul>
-        </div>
-
-           
-          <a href="/start/" >
+            <li class="p-0">
+            <a class="p-0" href="/start/" >
             <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
           </a>
-
-          
-          <div class="inset-y-0 right-0 flex gap-3 items-center xl:hidden">
-            <a href="/start/" >
-              <span class="normal-case rounded-full btn btn-sm btn-primary">Get started</span>
-            </a>
-              <span class="sr-only">Open main menu</span>
-              <label class="btn btn-circle btn-ghost swap swap-rotate">
-  
-              <!-- this hidden checkbox controls the state -->
-              <input type="checkbox" />
-              
-              <!-- hamburger icon -->
-              <svg @click="open = !open" class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
-              
-              <!-- close icon -->
-              <svg @click="open = !open" class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
-              
-            </label>
-          </div>
-
-        </div>
-      
-
-    
-      </header>
-    </div>
-    <div 
-      x-description="Mobile menu, show/hide based on menu state." 
-      class="xl:hidden" 
-      id="mobile-menu" 
-      x-show="open" 
-      style="display: none;">
-      <ul class="p-0 menu bg-base-300">
-          <li>
-            <a href="/about" class=" ">
-            <span class="text-base font-regular">About</span>
-          </a>
           </li>
-
-            <li>
-            <a href="/apps" class=" ">
-            <span class="text-base font-regular">Apps</span>
-          </a>
-          </li>
-
-          <li>
-            <a href="/extensions" class=" ">
-            <span class="text-base font-regular">Extensions</span>
-          </a>
-          </li>
-
-          
-
-
-            <li>
-            <a href="/docs" class=" ">
-            <span class="text-base font-regular">Documentation</span>
-          </a>
-          </li>
-
-          
-          
-          
-          
-          <li>
-            <a href="/faq" class=" ">
-            <span class="text-base font-regular">FAQs</span>
-          </a>
-          </li>
-          <li>
-          <a href="/blog" class=" ">
-            <span class="text-base font-regular">News</span>
-          </a>
-          </li>
-          <li>
-            <a href="/community" class=" ">
-              <span class="text-base font-regular">Community</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://github.com/bonfire-networks/bonfire-app" class="">
-              <span class="text-base font-regular">Get the code</span>
-            </a>
-          </li>
-          
-      </ul>
-    </div>
+    </ul>
   </div>
+  <div class="flex-none lg:hidden">
+    <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="inline-block h-6 w-6 stroke-current"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </label>
+  </div>
+</div>
 
- <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const themeController = document.querySelector('.theme-controller');
-    const bodyElement = document.body;
-
-    // Load the saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        themeController.checked = savedTheme === 'bonfire';
-        bodyElement.setAttribute('data-theme', savedTheme);
-    }
-
-    // Save the theme to localStorage whenever it changes
-    themeController.addEventListener('change', (event) => {
-        const theme = event.target.checked ? 'bonfire' : 'light';
-        localStorage.setItem('theme', theme);
-        bodyElement.setAttribute('data-theme', theme);
-    });
-});
-</script>
-    
+      
 
 
 <div class="bg-base-300">
@@ -349,7 +245,7 @@
 
 
 
-  <div class="bg-base-200">
+      <div class="bg-base-200">
   <div class="flex px-8 py-4 mx-auto justify-between items-center">
     <div class="flex items-start gap-4 flex-row lg:flex-col">
       <div class="flex items-center gap-2 flex-1 ">
@@ -466,6 +362,29 @@
 });
 
 </script>
-    <!-- Current page: /extension/bonfire_data_edges/ -->
+    </div>
+    <div class="drawer-side">
+      <label for="my-drawer-2" aria-label="close sidebar" class="z-[99999999999999999999999999] drawer-overlay"></label>
+      <ul class="menu  bg-base-200 min-h-full w-80 p-4 relative z-[9999999999999999999]">
+        <li class="mb-4">
+            <a href="/" class="flex items-center space-x-2">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class=""><span class="text-base font-semibold tracking-wider text-base-content">Bonfire Networks</span> 
+              
+              </span>
+            </a>
+          </li>
+        <!-- Sidebar content here -->
+        <li><a href="/about">About</a></li>
+        <li><a href="/apps">Apps</a></li>
+        <li><a href="/hosting">Hosting</a></li>
+        <li><a href="https://docs.bonfirenetworks.org">Docs</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/mosaic">Mosaic</a></li>
+        <li><a href="/blog">News</a></li>
+      </ul>
+    </div>
+  </div>
+  
   </body>
 </html>
