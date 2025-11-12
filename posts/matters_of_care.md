@@ -8,7 +8,7 @@ layout: layouts/post.njk
 author: Bonfire Builders
 ---
 
-It was not an easy choice to focus our crowdfunding campaign on care and maintenance as the condition sine qua non to consider it successful.
+It was not an easy choice to focus our [crowdfunding campaign](https://www.indiegogo.com/projects/bonfire/community?refcode=-YQJw6aoAk2lztEAWCtGSw) on care and maintenance as the condition sine qua non to consider it successful.
 
 Some may dismiss a maintenance‑focused campaign as unambitious or uninteresting, if they don't see the stretch goals beyond it. Others may just not be hooked on backing a project that cares (pun intended) so much about maintenance, as Erin Kissane beautifully put it in [her recent essay](https://www.wrecka.ge/sparks-fly-up/): 
 
@@ -54,7 +54,7 @@ We've now released the Bonfire Social flavour and are actively working on the Op
 
 Once we have care covered, we'll feel ready to commit to building exciting and critical features together with an awesome list of communities and partners, to transform how social networks can empower communities for the better: free from billionaires, VCs, and benevolent dictators. 
 
-The [crowdfunding](https://www.indiegogo.com/en/projects/bonfire/community) stretch goals include tools such as for groups, events, collective decision‑making, cross‑instance moderation tooling, mutual aid networks, living memory archives, etc., to move beyond social media (broadcasting content to an audience) and extend the social graph to community organising, blurring the lines between local communities and digital spaces. 
+The [crowdfunding](https://www.indiegogo.com/projects/bonfire/community?refcode=-YQJw6aoAk2lztEAWCtGSw) stretch goals include tools such as for groups, events, collective decision‑making, cross‑instance moderation tooling, mutual aid networks, living memory archives, etc., to move beyond social media (broadcasting content to an audience) and extend the social graph to community organising, blurring the lines between local communities and digital spaces. 
 
 ## Infrastructure for the long haul
 
@@ -64,7 +64,7 @@ With the Co‑op Hosting stretch goal (in cooperation with [Co-op Cloud](https:/
 
 Our crowdfunding campaign is radically ambitious specifically because we put care as the precondition to research and development.
 
-At the time of writing we’re 74% of the way towards the care and maintenance goal. [Please help us cross the last mile to our first goal](https://www.indiegogo.com/en/projects/bonfire/community). 
+At the time of writing we’re 74% of the way towards the care and maintenance goal. [Please help us cross the last mile to our first goal](https://www.indiegogo.com/projects/bonfire/community?refcode=-YQJw6aoAk2lztEAWCtGSw). 
 
 If you can't contribute funds, please share the campaign on different channels, introduce us to people who could help (such as journalists or pilot communities) or contribute feedback or translations, all equally part of building (and maintaining!) the commons together. 
 
