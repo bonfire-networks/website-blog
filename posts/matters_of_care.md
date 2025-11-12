@@ -38,7 +38,7 @@ But caring in open‑source software is also about maintaining relationship and 
 
 However, care isn’t just outwards facing, it's how we hold eachother up. If life intervenes (with illness, caregiving, burnout, financial stress, etc.) we don't apply pressure; we offer solidarity. As much as possible, the rest of us stretch so others don't have to vanish or push through pain. We redistribute tasks, slow a release, pool funds, and amplify their other work. People first, with tempo and budgets set by real lives. That's how the commons stays alive: not just through resilient code but through resilient relationships. 
 
-This relational care extends in collaborations with people involved in flavours such as the Open Science Network, family and friends, and allied communities or projects. **It takes a village to keep the commons alive** and healthy beyond any "core team". 
+This relational care extends in collaborations with people involved in flavours such as the [Open Science Network](https://openscience.network), family and friends, and allied communities or projects. **It takes a village to keep the commons alive** and healthy beyond any "core team". 
 
 ## How care shapes the system
 
@@ -50,7 +50,7 @@ In short, we [prioritise care over novelty and speed](https://bonfirenetworks.or
 
 ## Tools for organising and care
 
-We've now released the Bonfire Social flavour and are actively working on the Open Science Network, in cooperation with a group of scientists and researchers. 
+We've now released the Bonfire Social flavour and are actively working on the [Open Science Network](https://openscience.network), in cooperation with a group of scientists and researchers. 
 
 Once we have care covered, we'll feel ready to commit to building exciting and critical features together with an awesome list of communities and partners, to transform how social networks can empower communities for the better: free from billionaires, VCs, and benevolent dictators. 
 
