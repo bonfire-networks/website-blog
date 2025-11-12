@@ -1,5 +1,5 @@
 ---
-title: Matters of care
+title: Matters of care - why maintenance comes first
 description: "It was not an easy choice to focus our crowdfunding campaign on care and maintenance as the condition sine qua non to consider it successful."
 date: 2025-11-12
 tags: community
