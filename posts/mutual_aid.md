@@ -16,7 +16,7 @@ _In this video and in Adrian's writeup below they share their story, why this ma
 
 <iframe title="Federated Digital Spaces for Mutual Aid Networks" width="100%" height="415" src="https://tube.tchncs.de/videos/embed/sDPYuULUTgqb8sRsX4bSye" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 
-_**[Support our crowdfunding campaign](https://www.indiegogo.com/en/projects/bonfire/community)** to make community-owned gifting infrastructure a reality._
+_**[Support our crowdfunding campaign](https://www.indiegogo.com/projects/bonfire/community?refcode=7Vo-UxoRp0GKKVWKtESgIA)** to make community-owned gifting infrastructure a reality._
 
 ---
 
@@ -60,5 +60,5 @@ We are driven by a desire to see less unnecessary consumption, less trash, less 
 
 We want to connect with other gifting groups around the country and around the world about how they’re addressing similar issues. We want to collaborate with the local council and government bodies who see value in backing these community-led and community-owned initiatives. We’d love to hear from members of gifting communities about their thoughts on social media and how our groups should evolve in the future. We want to work with local, progressive tech people who are passionate about sustainable, community hosting and software. Let’s connect and build this together.  
 
-_If you are part of a mutual aid or gifting community, get in touch with us to work together on the mutual aid stretch goal. [Support our crowdfunding campaign](https://www.indiegogo.com/en/projects/bonfire/community) to make community-owned gifting infrastructure a reality._
+_If you are part of a mutual aid or gifting community, get in touch with us to work together on the mutual aid stretch goal. [Support our crowdfunding campaign](https://www.indiegogo.com/projects/bonfire/community?refcode=7Vo-UxoRp0GKKVWKtESgIA) to make community-owned gifting infrastructure a reality._
 
