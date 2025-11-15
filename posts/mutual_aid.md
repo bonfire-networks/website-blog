@@ -1,6 +1,6 @@
 ---
-title: "Federated Digital Spaces for Mutual Aid Networks"
-description: "Meet Adrian, one of the people helping shape Bonfire's future. The piece below is written by a gifting group administrator who's been on the frontlines of the Buy Nothing movement, building community, fostering generosity, and fighting against Facebook's enshittification every step of the way."
+title: "Gifting with Integrity: Federated Digital Spaces for Mutual Aid Networks"
+description: "Meet Adrian and Lee, two of the people helping shape Bonfire's future. They are gifting group administrators who've been on the frontlines of the Buy Nothing movement, building community, fostering generosity, and fighting against Facebook's enshittification every step of the way."
 date: 2025-11-15
 tags: community
 image: /img/man.jpg
@@ -8,16 +8,15 @@ layout: layouts/post.njk
 author: Bonfire Builders
 ---
 
+_Meet Adrian and Lee, two of the people helping shape Bonfire's future. They are gifting group administrators who've been on the frontlines of the Buy Nothing movement, building community, fostering generosity, and fighting against Facebook's enshittification every step of the way._
 
-Meet Adrian, one of the people helping shape Bonfire's future. The piece below is written by a gifting group administrator who's been on the frontlines of the Buy Nothing movement, building community, fostering generosity, and fighting against Facebook's enshittification every step of the way.
+_They're co-designing the **Mutual Aid Networks** stretch goal with us, bringing years of lived experience into Bonfire's development._
 
-They're co-designing the **Mutual Aid Networks** stretch goal with us, bringing years of lived experience into Bonfire's development.
-
-Their story captures why this matters and why we're building it together.
-
-**[Support our crowdfunding campaign](https://www.indiegogo.com/en/projects/bonfire/community)** to make community-owned gifting infrastructure a reality.
+_In this video and in Adrian's writeup below they share their story, why this matters, and why we're building it together._
 
 <iframe title="Federated Digital Spaces for Mutual Aid Networks" width="100%" height="415" src="https://tube.tchncs.de/videos/embed/sDPYuULUTgqb8sRsX4bSye" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+
+_**[Support our crowdfunding campaign](https://www.indiegogo.com/en/projects/bonfire/community)** to make community-owned gifting infrastructure a reality._
 
 ---
 
@@ -61,5 +60,5 @@ We are driven by a desire to see less unnecessary consumption, less trash, less 
 
 We want to connect with other gifting groups around the country and around the world about how they’re addressing similar issues. We want to collaborate with the local council and government bodies who see value in backing these community-led and community-owned initiatives. We’d love to hear from members of gifting communities about their thoughts on social media and how our groups should evolve in the future. We want to work with local, progressive tech people who are passionate about sustainable, community hosting and software. Let’s connect and build this together.  
 
-*If you are part of a mutual aid or gifting community, get in touch with us to work together on the mutual aid stretch goal. [Support our crowdfunding campaign](https://www.indiegogo.com/en/projects/bonfire/community) to make community-owned gifting infrastructure a reality.*
+_If you are part of a mutual aid or gifting community, get in touch with us to work together on the mutual aid stretch goal. [Support our crowdfunding campaign](https://www.indiegogo.com/en/projects/bonfire/community) to make community-owned gifting infrastructure a reality._
 
