@@ -100,11 +100,34 @@ module.exports = function(eleventyConfig) {
       html: true,
       breaks: true,
       linkify: true
-    }).use(markdownItAnchor, {
+    })
+    .use(markdownItAnchor, {
       permalink: true,
       permalinkClass: "direct-link",
       permalinkSymbol: "#"
     });
+
+    // Add target="_blank" and rel="noopener" to all links
+    const defaultRender = markdownLibrary.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+      return self.renderToken(tokens, idx, options);
+    };
+    markdownLibrary.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+      const aIndex = tokens[idx].attrIndex('target');
+      if (aIndex < 0) {
+        tokens[idx].attrPush(['target', '_blank']); // add new attribute
+      } else {
+        tokens[idx].attrs[aIndex][1] = '_blank';    // replace value
+      }
+      // Add rel="noopener"
+      const relIndex = tokens[idx].attrIndex('rel');
+      if (relIndex < 0) {
+        tokens[idx].attrPush(['rel', 'noopener']);
+      } else {
+        tokens[idx].attrs[relIndex][1] = 'noopener';
+      }
+      return defaultRender(tokens, idx, options, env, self);
+    };
+
     eleventyConfig.setLibrary("md", markdownLibrary);
 
     
