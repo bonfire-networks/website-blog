@@ -200,7 +200,7 @@
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="email-delivery-in-bonfire">Email Delivery in Bonfire <a class="direct-link" href="#email-delivery-in-bonfire">#</a></h1>
+        <h1 id="email-delivery-in-bonfire">Email Delivery in Bonfire <a class="direct-link" href="#email-delivery-in-bonfire" target="_blank" rel="noopener">#</a></h1>
 <p>Email delivery is a crucial component of many web applications, including your Bonfire instance. It's used for various purposes such as:</p>
 <ul>
 <li>Sending signup confirmation emails</li>
@@ -209,13 +209,13 @@
 <li>Sending alerts to administrators or moderators</li>
 </ul>
 <p>To set up email delivery for your Bonfire instance, you'll need to choose an email delivery method and configure it properly. This guide will help you through that process.</p>
-<h2 id="before-you-begin">Before You Begin <a class="direct-link" href="#before-you-begin">#</a></h2>
+<h2 id="before-you-begin">Before You Begin <a class="direct-link" href="#before-you-begin" target="_blank" rel="noopener">#</a></h2>
 <ol>
 <li>
 <p><strong>Choose Email Delivery Method and/or Provider</strong>: You may choose to sign up with one of the email service providers listed in this guide. Each provider has its own pricing, features, and delivery rates.</p>
 </li>
 <li>
-<p><strong>Domain Configuration</strong>: To ensure reliable email delivery and avoid spam filters, you should configure your <a href="https://www.cloudflare.com/en-gb/learning/email-security/dmarc-dkim-spf/">email-related DNS settings</a> for your instance's domain name. This typically involves setting up:</p>
+<p><strong>Domain Configuration</strong>: To ensure reliable email delivery and avoid spam filters, you should configure your <a href="https://www.cloudflare.com/en-gb/learning/email-security/dmarc-dkim-spf/" target="_blank" rel="noopener">email-related DNS settings</a> for your instance's domain name. This typically involves setting up:</p>
 <ul>
 <li>MX (Mail Exchanger) records</li>
 <li>SPF (Sender Policy Framework) records</li>
@@ -234,8 +234,8 @@
 <li><code>MAIL_DOMAIN</code> or <code>HOSTNAME</code>: Your domain name</li>
 <li><code>MAIL_FROM</code>: The email address from which emails will be sent (this should match the domain name you set up with SPF/DKIM/DMARC, which will usually be your instance's domain)</li>
 </ul>
-<h2 id="choosing-an-email-delivery-method">Choosing an Email Delivery Method <a class="direct-link" href="#choosing-an-email-delivery-method">#</a></h2>
-<h2 id="1.-default-behaviour%3A-direct-smtp-delivery">1. Default Behaviour: Direct SMTP Delivery <a class="direct-link" href="#1.-default-behaviour%3A-direct-smtp-delivery">#</a></h2>
+<h2 id="choosing-an-email-delivery-method">Choosing an Email Delivery Method <a class="direct-link" href="#choosing-an-email-delivery-method" target="_blank" rel="noopener">#</a></h2>
+<h2 id="1.-default-behaviour%3A-direct-smtp-delivery">1. Default Behaviour: Direct SMTP Delivery <a class="direct-link" href="#1.-default-behaviour%3A-direct-smtp-delivery" target="_blank" rel="noopener">#</a></h2>
 <p>If no specific email configuration is set, Bonfire will attempt to deliver emails directly to the recipients' SMTP servers. Here's what you need to know about this default behaviour:</p>
 <ul>
 <li>
@@ -254,26 +254,26 @@
 </ol>
 </li>
 <li>
-<p><strong>Important</strong>: While this default method can work for testing or in very small-scale scenarios, it is strongly recommended to configure a proper email delivery service for any production use of Bonfire. If you want to try this method anyway, make sure to configure <a href="https://www.cloudflare.com/en-gb/learning/email-security/dmarc-dkim-spf/">SPF, DKIM, DMARK, etc.</a> for your instance domain name and IP address.</p>
+<p><strong>Important</strong>: While this default method can work for testing or in very small-scale scenarios, it is strongly recommended to configure a proper email delivery service for any production use of Bonfire. If you want to try this method anyway, make sure to configure <a href="https://www.cloudflare.com/en-gb/learning/email-security/dmarc-dkim-spf/" target="_blank" rel="noopener">SPF, DKIM, DMARK, etc.</a> for your instance domain name and IP address.</p>
 </li>
 </ul>
-<h3 id="2.-managed-email-service-providers">2. Managed Email Service Providers <a class="direct-link" href="#2.-managed-email-service-providers">#</a></h3>
+<h3 id="2.-managed-email-service-providers">2. Managed Email Service Providers <a class="direct-link" href="#2.-managed-email-service-providers" target="_blank" rel="noopener">#</a></h3>
 <p>These providers offer comprehensive email delivery services, usually featuring analytics, bounce handling, high deliverability rates, etc.</p>
 <blockquote>
 <p>Note: the information about free tiers and pricing are only meant to serve as a rough indication of the options available and may be outdated or inaccurate (we'd welcome PRs with any updates of course). Please check with each provider's website for more details.</p>
 </blockquote>
-<h4 id="brevo-(formerly-sendinblue)">Brevo (formerly Sendinblue) <a class="direct-link" href="#brevo-(formerly-sendinblue)">#</a></h4>
+<h4 id="brevo-(formerly-sendinblue)">Brevo (formerly Sendinblue) <a class="direct-link" href="#brevo-(formerly-sendinblue)" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.brevo.com/">brevo.com</a></li>
+<li>Website: <a href="https://www.brevo.com/" target="_blank" rel="noopener">brevo.com</a></li>
 <li>Free Tier: 300 emails per day, then $15+/month or pay-as-you-go ($59 per 10,000 emails)</li>
 </ul>
 <pre><code>MAIL_BACKEND=brevo
 MAIL_KEY=your_brevo_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="mailjet">Mailjet <a class="direct-link" href="#mailjet">#</a></h4>
+<h4 id="mailjet">Mailjet <a class="direct-link" href="#mailjet" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.mailjet.com/">mailjet.com</a></li>
+<li>Website: <a href="https://www.mailjet.com/" target="_blank" rel="noopener">mailjet.com</a></li>
 <li>Free Tier: 200 emails per day, then $17+/month</li>
 </ul>
 <pre><code>MAIL_BACKEND=mailjet
@@ -281,27 +281,27 @@ MAIL_KEY=your_mailjet_api_key
 MAIL_PRIVATE_KEY=your_mailjet_secret_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="smtp2go">SMTP2GO <a class="direct-link" href="#smtp2go">#</a></h4>
+<h4 id="smtp2go">SMTP2GO <a class="direct-link" href="#smtp2go" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.smtp2go.com/">smtp2go.com</a></li>
+<li>Website: <a href="https://www.smtp2go.com/" target="_blank" rel="noopener">smtp2go.com</a></li>
 <li>Free Tier: 200 emails per day (up to 1,000 emails per month), then $10+/month</li>
 </ul>
 <pre><code>MAIL_BACKEND=SMTP2GO
 MAIL_KEY=your_smtp2go_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="mailtrap">Mailtrap <a class="direct-link" href="#mailtrap">#</a></h4>
+<h4 id="mailtrap">Mailtrap <a class="direct-link" href="#mailtrap" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://mailtrap.io/">mailtrap.io</a></li>
+<li>Website: <a href="https://mailtrap.io/" target="_blank" rel="noopener">mailtrap.io</a></li>
 <li>Free Tier: 200 emails per day (up to 1,000 emails per month), then $15+/month</li>
 </ul>
 <pre><code>MAIL_BACKEND=mailtrap
 MAIL_KEY=your_mailtrap_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="mailgun">Mailgun <a class="direct-link" href="#mailgun">#</a></h4>
+<h4 id="mailgun">Mailgun <a class="direct-link" href="#mailgun" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.mailgun.com/">www.mailgun.com</a></li>
+<li>Website: <a href="https://www.mailgun.com/" target="_blank" rel="noopener">www.mailgun.com</a></li>
 <li>Free Tier: 100 emails per day, then $15+/month</li>
 </ul>
 <pre><code>MAIL_BACKEND=mailgun
@@ -310,36 +310,36 @@ MAIL_BASE_URI=https://api.eu.mailgun.net/v3
 MAIL_FROM=email@instance.domain
 </code></pre>
 <p>Note: The <code>MAIL_BASE_URI</code> depends on your Mailgun registration region. The default is set to EU, adjust if necessary.</p>
-<h4 id="twilio-sendgrid">Twilio SendGrid <a class="direct-link" href="#twilio-sendgrid">#</a></h4>
+<h4 id="twilio-sendgrid">Twilio SendGrid <a class="direct-link" href="#twilio-sendgrid" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://sendgrid.com/">sendgrid.com</a></li>
+<li>Website: <a href="https://sendgrid.com/" target="_blank" rel="noopener">sendgrid.com</a></li>
 <li>Free Tier: 100 emails per day, then $20+/month</li>
 </ul>
 <pre><code>MAIL_BACKEND=sendgrid
 MAIL_KEY=your_sendgrid_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="postmark">Postmark <a class="direct-link" href="#postmark">#</a></h4>
+<h4 id="postmark">Postmark <a class="direct-link" href="#postmark" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://postmarkapp.com/">postmarkapp.com</a></li>
+<li>Website: <a href="https://postmarkapp.com/" target="_blank" rel="noopener">postmarkapp.com</a></li>
 <li>Free Tier: 100 emails per month, then $15+/month</li>
 </ul>
 <pre><code>MAIL_BACKEND=postmark
 MAIL_KEY=your_postmark_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="zoho-zeptomail">Zoho ZeptoMail <a class="direct-link" href="#zoho-zeptomail">#</a></h4>
+<h4 id="zoho-zeptomail">Zoho ZeptoMail <a class="direct-link" href="#zoho-zeptomail" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.zoho.com/zeptomail/">zoho.com</a></li>
+<li>Website: <a href="https://www.zoho.com/zeptomail/" target="_blank" rel="noopener">zoho.com</a></li>
 <li>First 10,000 emails are free, then €2,50 per 10,000 emails</li>
 </ul>
 <pre><code>MAIL_BACKEND=zepto
 MAIL_KEY=your_zeptomail_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="scaleway">Scaleway <a class="direct-link" href="#scaleway">#</a></h4>
+<h4 id="scaleway">Scaleway <a class="direct-link" href="#scaleway" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.scaleway.com/en/transactional-email-tem/">scaleway.com</a></li>
+<li>Website: <a href="https://www.scaleway.com/en/transactional-email-tem/" target="_blank" rel="noopener">scaleway.com</a></li>
 <li>No free tier, pay-as-you-go pricing (€2.50 per 10,000 emails)</li>
 </ul>
 <pre><code>MAIL_BACKEND=scaleway
@@ -348,9 +348,9 @@ MAIL_PROJECT_ID=your_scaleway_project_id
 MAIL_PRIVATE_KEY=your_scaleway_secret_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="gmail">Gmail <a class="direct-link" href="#gmail">#</a></h4>
+<h4 id="gmail">Gmail <a class="direct-link" href="#gmail" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://developers.google.com/gmail/api">gmail.com</a></li>
+<li>Website: <a href="https://developers.google.com/gmail/api" target="_blank" rel="noopener">gmail.com</a></li>
 <li>Free Tier: 500 emails per day</li>
 </ul>
 <pre><code>MAIL_BACKEND=gmail
@@ -359,27 +359,27 @@ MAIL_FROM=email@instance.domain
 # ^ OAuth2 access token with `gmail.compose` scope
 </code></pre>
 <p>Note: Using Gmail for sending application email is generally not recommended for production use.</p>
-<h4 id="mailpace">MailPace <a class="direct-link" href="#mailpace">#</a></h4>
+<h4 id="mailpace">MailPace <a class="direct-link" href="#mailpace" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://mailpace.com/">mailpace.com</a></li>
+<li>Website: <a href="https://mailpace.com/" target="_blank" rel="noopener">mailpace.com</a></li>
 <li>No free tier, starts at £2.50 per month for up to 1,000 emails</li>
 </ul>
 <pre><code>MAIL_BACKEND=mailpace
 MAIL_KEY=your_mailpace_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="mandrill-(mailchimp-transactional)">Mandrill (Mailchimp Transactional) <a class="direct-link" href="#mandrill-(mailchimp-transactional)">#</a></h4>
+<h4 id="mandrill-(mailchimp-transactional)">Mandrill (Mailchimp Transactional) <a class="direct-link" href="#mandrill-(mailchimp-transactional)" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://mailchimp.com/features/transactional-email/">mailchimp.com</a></li>
+<li>Website: <a href="https://mailchimp.com/features/transactional-email/" target="_blank" rel="noopener">mailchimp.com</a></li>
 <li>No free tier, pay-as-you-go pricing</li>
 </ul>
 <pre><code>MAIL_BACKEND=mandrill
 MAIL_KEY=your_mandrill_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="bird-%2F-sparkpost">Bird / SparkPost <a class="direct-link" href="#bird-%2F-sparkpost">#</a></h4>
+<h4 id="bird-%2F-sparkpost">Bird / SparkPost <a class="direct-link" href="#bird-%2F-sparkpost" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://bird.com/api/email">bird.com</a></li>
+<li>Website: <a href="https://bird.com/api/email" target="_blank" rel="noopener">bird.com</a></li>
 <li>No free tier, pay-as-you-go pricing</li>
 </ul>
 <pre><code>MAIL_BACKEND=sparkpost
@@ -388,9 +388,9 @@ MAIL_BASE_URI=https://api.eu.sparkpost.com
 MAIL_FROM=email@instance.domain
 </code></pre>
 <p>Note: The <code>MAIL_BASE_URI</code> depends on your SparkPost registration region. The default is set to EU, adjust if necessary.</p>
-<h4 id="sendcloud-(china)">Sendcloud (China) <a class="direct-link" href="#sendcloud-(china)">#</a></h4>
+<h4 id="sendcloud-(china)">Sendcloud (China) <a class="direct-link" href="#sendcloud-(china)" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.sendcloud.net/">sendcloud.net</a></li>
+<li>Website: <a href="https://www.sendcloud.net/" target="_blank" rel="noopener">sendcloud.net</a></li>
 <li>Free Tier: 10 emails per day</li>
 </ul>
 <pre><code>MAIL_BACKEND=sendcloud
@@ -398,9 +398,9 @@ MAIL_KEY=your_sendcloud_api_key
 MAIL_USER=your_sendcloud_api_user
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="socketlabs">SocketLabs <a class="direct-link" href="#socketlabs">#</a></h4>
+<h4 id="socketlabs">SocketLabs <a class="direct-link" href="#socketlabs" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.socketlabs.com/">socketlabs.com</a></li>
+<li>Website: <a href="https://www.socketlabs.com/" target="_blank" rel="noopener">socketlabs.com</a></li>
 <li>No free tier</li>
 </ul>
 <pre><code>MAIL_BACKEND=socketlabs
@@ -409,18 +409,18 @@ MAIL_SERVER=your_socketlabs_server_id
 MAIL_PRIVATE_KEY=your_socketlabs_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="campaign-monitor">Campaign Monitor <a class="direct-link" href="#campaign-monitor">#</a></h4>
+<h4 id="campaign-monitor">Campaign Monitor <a class="direct-link" href="#campaign-monitor" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://www.campaignmonitor.com/">campaignmonitor.com</a></li>
+<li>Website: <a href="https://www.campaignmonitor.com/" target="_blank" rel="noopener">campaignmonitor.com</a></li>
 <li>No free tier, pay-as-you-go pricing</li>
 </ul>
 <pre><code>MAIL_BACKEND=campaign_monitor
 MAIL_KEY=your_campaign_monitor_api_key
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h4 id="amazon-aws-ses">Amazon AWS SES <a class="direct-link" href="#amazon-aws-ses">#</a></h4>
+<h4 id="amazon-aws-ses">Amazon AWS SES <a class="direct-link" href="#amazon-aws-ses" target="_blank" rel="noopener">#</a></h4>
 <ul>
-<li>Website: <a href="https://aws.amazon.com/ses/">aws.amazon.com</a></li>
+<li>Website: <a href="https://aws.amazon.com/ses/" target="_blank" rel="noopener">aws.amazon.com</a></li>
 <li>Free Tier: 3,000 message / month (only for the first 12 months, and extra AWS charges may still apply)</li>
 </ul>
 <p>Amazon SES can be configured in two ways:</p>
@@ -444,14 +444,14 @@ MAIL_FROM=email@instance.domain
 <ul>
 <li>If not specified, <code>MAIL_REGION</code> defaults to &quot;eu-west-1&quot;.</li>
 </ul>
-<h3 id="3.-direct-email-sending-methods">3. Direct Email Sending Methods <a class="direct-link" href="#3.-direct-email-sending-methods">#</a></h3>
+<h3 id="3.-direct-email-sending-methods">3. Direct Email Sending Methods <a class="direct-link" href="#3.-direct-email-sending-methods" target="_blank" rel="noopener">#</a></h3>
 <p>These methods involve sending emails directly or through your own mail server. They require more setup and maintenance but offer more control.</p>
-<h4 id="default%3A-direct-smtp-delivery">Default: Direct SMTP Delivery <a class="direct-link" href="#default%3A-direct-smtp-delivery">#</a></h4>
+<h4 id="default%3A-direct-smtp-delivery">Default: Direct SMTP Delivery <a class="direct-link" href="#default%3A-direct-smtp-delivery" target="_blank" rel="noopener">#</a></h4>
 <ul>
 <li>When no specific email configuration is set, Bonfire will attempt to deliver emails directly to the recipients' SMTP servers.</li>
-<li>No additional configuration is needed as this is the default behaviour, but it's not recommended for production use due to deliverability issues (<a href="#module-default-behaviour-direct-smtp-delivery">see above</a>).</li>
+<li>No additional configuration is needed as this is the default behaviour, but it's not recommended for production use due to deliverability issues (<a href="#module-default-behaviour-direct-smtp-delivery" target="_blank" rel="noopener">see above</a>).</li>
 </ul>
-<h4 id="smtp">SMTP <a class="direct-link" href="#smtp">#</a></h4>
+<h4 id="smtp">SMTP <a class="direct-link" href="#smtp" target="_blank" rel="noopener">#</a></h4>
 <p>SMTP (Simple Mail Transfer Protocol) is the standard method for sending emails across the internet. It's like the postal service for digital messages, ensuring your emails reach their destination regardless of the systems involved. While many opt for using a dedicated email delivery provider (see above), if you already run your own email server or use a provider that's not listed above which provides you with SMTP credentials, you can configure Bonfire to use that:</p>
 <pre><code>MAIL_BACKEND=smtp
 MAIL_SERVER=your_smtp_server
@@ -466,7 +466,7 @@ MAIL_SSL=true
 <li><code>MAIL_PORT</code> defaults to <code>587</code> if not specified.</li>
 <li><code>MAIL_SSL</code> defaults to <code>true</code>, set to <code>false</code> if server does not support SSL.</li>
 </ul>
-<h4 id="sendmail">Sendmail <a class="direct-link" href="#sendmail">#</a></h4>
+<h4 id="sendmail">Sendmail <a class="direct-link" href="#sendmail" target="_blank" rel="noopener">#</a></h4>
 <ul>
 <li>Built into many Unix-like operating systems</li>
 </ul>
@@ -483,17 +483,17 @@ MAIL_FROM=email@instance.domain
 <li>While sendmail can send mail directly (similar to the default behaviour), it can be set up to hand off emails to a local or remote SMTP server for delivery.</li>
 <li>Using sendmail usually provides more control and logging capabilities compared to the default direct SMTP delivery.</li>
 </ul>
-<h4 id="postal">Postal <a class="direct-link" href="#postal">#</a></h4>
+<h4 id="postal">Postal <a class="direct-link" href="#postal" target="_blank" rel="noopener">#</a></h4>
 <ul>
 <li>Self-hosted email delivery platform</li>
-<li>Website: <a href="https://docs.postalserver.io">postalserver.io</a></li>
+<li>Website: <a href="https://docs.postalserver.io" target="_blank" rel="noopener">postalserver.io</a></li>
 </ul>
 <pre><code>MAIL_BACKEND=postal
 MAIL_KEY=your_postal_api_key
 MAIL_BASE_URI=https://your_postal_server_api.uri/
 MAIL_FROM=email@instance.domain
 </code></pre>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
+<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
 <p>Copyright (c) 2024 Bonfire Contributors</p>
 <p>This program is free software: you can redistribute it and/or modify<br>
 it under the terms of the GNU Affero General Public License as<br>
@@ -504,7 +504,7 @@ WITHOUT ANY WARRANTY; without even the implied warranty of<br>
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU<br>
 Affero General Public License for more details.</p>
 <p>You should have received a copy of the GNU Affero General Public<br>
-License along with this program.  If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+License along with this program.  If not, see <a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener">https://www.gnu.org/licenses/</a>.</p>
 
     </div>
   </div>

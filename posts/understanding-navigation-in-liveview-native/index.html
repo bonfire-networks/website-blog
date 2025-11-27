@@ -197,8 +197,8 @@
     
 
   <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
-    <p><strong>Read part one: <a href="/posts/dev_diary_lvn">Building Bonfire Native Apps with LiveView Native</a></strong><br>
-<strong>Read part two: <a href="/posts/dev_diary_lvn_2">Prototyping Our First Native Components with LiveView Native</a></strong></p>
+    <p><strong>Read part one: <a href="/posts/dev_diary_lvn" target="_blank" rel="noopener">Building Bonfire Native Apps with LiveView Native</a></strong><br>
+<strong>Read part two: <a href="/posts/dev_diary_lvn_2" target="_blank" rel="noopener">Prototyping Our First Native Components with LiveView Native</a></strong></p>
 <hr>
 <blockquote>
 <p><strong>Note</strong>: This entry may evolve over time as the LiveView Native team pushes improvements and releases major versions of the libraries. Please bear with us as we test and implement the main navigation patterns in our upcoming Bonfire native app! Also, this article reflects our current understanding of SwiftUI and LiveView Native; we would love to get feedback and improve any parts that are not accurate!</p>
@@ -206,7 +206,7 @@
 <p><em>Thanks to the LiveView Native team for their feedback and support! 🔥</em></p>
 <p>In our previous article, we experimented with building some simple UI components that we'll be using across the Bonfire app, and at the same time, we've developed some initial confidence in writing LiveView Native (LVN) code.</p>
 <p>Today, we'll go through the implementation of the main navigation patterns needed to traverse our app's sections and views.</p>
-<h2 id="liveview-native-navigation">LiveView Native Navigation <a class="direct-link" href="#liveview-native-navigation">#</a></h2>
+<h2 id="liveview-native-navigation">LiveView Native Navigation <a class="direct-link" href="#liveview-native-navigation" target="_blank" rel="noopener">#</a></h2>
 <p>In SwiftUI, there are three main ways to navigate an app:</p>
 <ul>
 <li><strong>Tab Bar</strong></li>
@@ -217,17 +217,17 @@
 <p>In LiveView Native, all the routing and navigation happens within the <code>NavigationStack</code> view, which is included by default in the <code>root.swiftui.leex</code> and wraps all the views defined in the <code>router.ex</code> module.</p>
 <p>The LVN documentation is a great starting point to learn more about how navigation works:</p>
 <ul>
-<li><a href="https://hexdocs.pm/live_view_native_swiftui/0.3.0/native-navigation.html">Native Navigation</a></li>
-<li><a href="https://hexdocs.pm/live_view_native_swiftui/0.3.0/navigation.html">Navigation</a></li>
+<li><a href="https://hexdocs.pm/live_view_native_swiftui/0.3.0/native-navigation.html" target="_blank" rel="noopener">Native Navigation</a></li>
+<li><a href="https://hexdocs.pm/live_view_native_swiftui/0.3.0/navigation.html" target="_blank" rel="noopener">Navigation</a></li>
 </ul>
-<h2 id="the-tabview">The TabView <a class="direct-link" href="#the-tabview">#</a></h2>
+<h2 id="the-tabview">The TabView <a class="direct-link" href="#the-tabview" target="_blank" rel="noopener">#</a></h2>
 <p>The <strong>TabView</strong> is a default SwiftUI component fixed at the bottom of a view. It consists of up to five navigation items (icons only or icons with text—although text is usually recommended if you're showing a maximum of three buttons) and is used for top-level navigation between major sections of a single view.</p>
-<p>In SwiftUI, the <a href="https://developer.apple.com/documentation/swiftui/TabView">TabView</a> is defined as:</p>
+<p>In SwiftUI, the <a href="https://developer.apple.com/documentation/swiftui/TabView" target="_blank" rel="noopener">TabView</a> is defined as:</p>
 <blockquote>
 <p><strong>TabView</strong>: A view that switches between multiple child views using interactive user interface elements.</p>
 </blockquote>
 <p>To include a <code>TabView</code> in LVN, we need to use the default <code>&lt;TabView&gt;</code> component.</p>
-<p>The <a href="https://github.com/jtormey/lax/blob/4fb54e6071abf69b65a2fdc80db271c3e8fc47c0/lib/lax_web/live/chat_live/chat_components.swiftui.ex#L26">Lax repository</a> provides a couple of custom components to implement a <code>TabView</code> in an elegant and simple way—we copy-pasted them into our app in no time 🥸️️️️️️ !</p>
+<p>The <a href="https://github.com/jtormey/lax/blob/4fb54e6071abf69b65a2fdc80db271c3e8fc47c0/lib/lax_web/live/chat_live/chat_components.swiftui.ex#L26" target="_blank" rel="noopener">Lax repository</a> provides a couple of custom components to implement a <code>TabView</code> in an elegant and simple way—we copy-pasted them into our app in no time 🥸️️️️️️ !</p>
 <pre class="language-elixir"><code class="language-elixir">attr <span class="token atom symbol">:rest</span><span class="token punctuation">,</span> <span class="token atom symbol">:global</span><span class="token punctuation">,</span> <span class="token attr-name">include:</span> <span class="token string">~w(phx-change selection)</span>
 slot <span class="token atom symbol">:inner_block</span><span class="token punctuation">,</span> <span class="token attr-name">required:</span> <span class="token boolean">true</span>
 
@@ -283,10 +283,10 @@ slot <span class="token atom symbol">:inner_block</span><span class="token punct
 <p><strong>Note</strong>: Currently, you can include only functional components as slots within each <code>&lt;.tab&gt;</code>. It is not possible to include sub-LiveViews—this may evolve with future releases of the LiveView Native Core library.</p>
 </blockquote>
 <p>The <code>TabView</code> is mostly this; it resembles the standard <code>&lt;Tabs&gt;</code> web design pattern: it lets the user navigate different content of the same page, highlighting the currently active <code>&lt;Tab&gt;</code> component.</p>
-<h3 id="the-toolbar-navigation">The Toolbar Navigation <a class="direct-link" href="#the-toolbar-navigation">#</a></h3>
+<h3 id="the-toolbar-navigation">The Toolbar Navigation <a class="direct-link" href="#the-toolbar-navigation" target="_blank" rel="noopener">#</a></h3>
 <p>We found the toolbar navigation trickier to implement, probably because of the various user experiences and customizations we required.</p>
 <blockquote>
-<p><strong>Note</strong>: We highly recommend the article <a href="https://holyswift.app/how-to-create-toolbar-in-swiftui/">How to Create Toolbar in SwiftUI</a> to learn more about the different types of actions and properties you can leverage to build the toolbar.</p>
+<p><strong>Note</strong>: We highly recommend the article <a href="https://holyswift.app/how-to-create-toolbar-in-swiftui/" target="_blank" rel="noopener">How to Create Toolbar in SwiftUI</a> to learn more about the different types of actions and properties you can leverage to build the toolbar.</p>
 </blockquote>
 <p>In our case, our main issue consisted of having to switch between three different types of toolbars based upon the current active page.</p>
 <p>As mentioned earlier, the <code>&lt;TabView&gt;</code> component only accepts functional components as slots for each <code>&lt;Tab&gt;</code>. Additionally, we can only define a single <code>&lt;Toolbar&gt;</code> for each view.</p>

@@ -200,18 +200,18 @@
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="bonfire.files">Bonfire.Files <a class="direct-link" href="#bonfire.files">#</a></h1>
+        <h1 id="bonfire.files">Bonfire.Files <a class="direct-link" href="#bonfire.files" target="_blank" rel="noopener">#</a></h1>
 <p>File management extension for Bonfire.</p>
-<p>This extension wraps the <code>Entrepot</code><a href="https://github.com/bonfire-networks/entrepot">1</a> file management library,<br>
+<p>This extension wraps the <code>Entrepot</code><a href="https://github.com/bonfire-networks/entrepot" target="_blank" rel="noopener">1</a> file management library,<br>
 adding support for media type checking, image resizing, and the like,<br>
-along a <a href="https://github.com/bonfire-networks/needle">pointable</a> schema for storage of file data.</p>
-<h2 id="s3-object-storage-setup-in-bonfire">S3 Object Storage Setup in Bonfire <a class="direct-link" href="#s3-object-storage-setup-in-bonfire">#</a></h2>
+along a <a href="https://github.com/bonfire-networks/needle" target="_blank" rel="noopener">pointable</a> schema for storage of file data.</p>
+<h2 id="s3-object-storage-setup-in-bonfire">S3 Object Storage Setup in Bonfire <a class="direct-link" href="#s3-object-storage-setup-in-bonfire" target="_blank" rel="noopener">#</a></h2>
 <p>Bonfire supports storing uploaded files (such as images, documents, and videos) using S3-compatible object storage services. This is useful for scaling, reliability, and offloading storage from your main server.</p>
 <p>This guide will help you configure S3 storage for your Bonfire instance.</p>
-<h3 id="before-you-begin">Before you begin <a class="direct-link" href="#before-you-begin">#</a></h3>
+<h3 id="before-you-begin">Before you begin <a class="direct-link" href="#before-you-begin" target="_blank" rel="noopener">#</a></h3>
 <ol>
 <li>
-<p><strong>Choose an S3-compatible provider</strong>: You can use AWS S3, MinIO, Hetzner, Scaleway, OVH, DigitalOcean Spaces, Wasabi, or any other cloud storage provider that supports the S3 API. You can find more providers and details using <a href="https://www.s3compare.io">comparison websites</a>.</p>
+<p><strong>Choose an S3-compatible provider</strong>: You can use AWS S3, MinIO, Hetzner, Scaleway, OVH, DigitalOcean Spaces, Wasabi, or any other cloud storage provider that supports the S3 API. You can find more providers and details using <a href="https://www.s3compare.io" target="_blank" rel="noopener">comparison websites</a>.</p>
 </li>
 <li>
 <p><strong>Create a bucket</strong>: Set up a bucket/container in your chosen provider's dashboard.</p>
@@ -229,7 +229,7 @@ along a <a href="https://github.com/bonfire-networks/needle">pointable</a> schem
 <p><strong>(Optional) Set up a CDN or Custom Domain</strong>: You may want to configure a CDN or a custom domain for your bucket.</p>
 </li>
 </ol>
-<h3 id="required-environment-variables">Required Environment Variables <a class="direct-link" href="#required-environment-variables">#</a></h3>
+<h3 id="required-environment-variables">Required Environment Variables <a class="direct-link" href="#required-environment-variables" target="_blank" rel="noopener">#</a></h3>
 <p>Set the following environment variables in your environment or <code>.env</code> file:</p>
 <ul>
 <li><code>UPLOADS_S3_BUCKET</code> — The name of your S3 bucket.</li>
@@ -273,23 +273,23 @@ UPLOADS_S3_SECRET_ACCESS_KEY=...
 </blockquote>
 <pre><code>AWS_WEB_IDENTITY_TOKEN_FILE=/var/run/secrets/eks.amazonaws.com/serviceaccount/token # the location of the injected token for assuming the role
 </code></pre>
-<h3 id="how-it-works">How it works <a class="direct-link" href="#how-it-works">#</a></h3>
+<h3 id="how-it-works">How it works <a class="direct-link" href="#how-it-works" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>When the above variables are set, Bonfire will use S3 storage for file uploads.</li>
 <li>The configuration is handled in <code>Bonfire.Files.RuntimeConfig</code>.</li>
 <li>The S3 handling logic is implemented in <code>Entrepot.Storages.S3</code>, <code>ExAws.S3</code>, and <code>ExAws</code>.</li>
 </ul>
-<h3 id="notes">Notes <a class="direct-link" href="#notes">#</a></h3>
+<h3 id="notes">Notes <a class="direct-link" href="#notes" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>If you do not set the S3 variables, Bonfire will default to local storage.</li>
 <li>You can use any S3-compatible service by adjusting the <code>UPLOADS_S3_HOST</code> and <code>UPLOADS_S3_REGION</code>.</li>
 </ul>
-<h3 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h3>
+<h3 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li><strong>Uploads not working?</strong> Double-check your credentials and bucket permissions.</li>
 <li><strong>Wrong URLs?</strong> Set <code>UPLOADS_S3_URL</code> to your CDN or bucket domain.</li>
 </ul>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
+<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
 <p>Copyright (c) 2024 Bonfire Contributors</p>
 <p>This program is free software: you can redistribute it and/or modify<br>
 it under the terms of the GNU Affero General Public License as<br>
@@ -300,7 +300,7 @@ WITHOUT ANY WARRANTY; without even the implied warranty of<br>
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU<br>
 Affero General Public License for more details.</p>
 <p>You should have received a copy of the GNU Affero General Public<br>
-License along with this program.  If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+License along with this program.  If not, see <a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener">https://www.gnu.org/licenses/</a>.</p>
 
     </div>
   </div>

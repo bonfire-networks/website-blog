@@ -197,31 +197,31 @@
     
 
   <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
-    <p><a href="/extension/ui_social.html">Bonfire:UI:Social</a> is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.</p>
-<p>The UI:Social extension is meant to be used by extensions like <a href="https://github.com/bonfire-networks/bonfire_social">Bonfire:Social</a> and <a href="https://github.com/bonfire-networks/bonfire_me">Bonfire:Me</a>, which both provide logic for the UI to work with, and define the routes and top-level views which in turn embed UI:Social components.</p>
-<p>UI:Social also provides components used by other extensions including: <a href="https://github.com/bonfire-networks/bonfire_common">Bonfire:Common</a>, <a href="https://github.com/bonfire-networks/bonfire_search">Bonfire:Search</a>, <a href="https://github.com/bonfire-networks/bonfire_tag">Bonfire:Tag</a>, <a href="https://github.com/bonfire-networks/bonfire_boundaries">Bonfire:Boundaries</a>.</p>
-<h3 id="stack">Stack <a class="direct-link" href="#stack">#</a></h3>
+    <p><a href="/extension/ui_social.html" target="_blank" rel="noopener">Bonfire:UI:Social</a> is an extension that includes the main User Interfaces (both assembled pages and single components) required to have a fully working federated social network app.</p>
+<p>The UI:Social extension is meant to be used by extensions like <a href="https://github.com/bonfire-networks/bonfire_social" target="_blank" rel="noopener">Bonfire:Social</a> and <a href="https://github.com/bonfire-networks/bonfire_me" target="_blank" rel="noopener">Bonfire:Me</a>, which both provide logic for the UI to work with, and define the routes and top-level views which in turn embed UI:Social components.</p>
+<p>UI:Social also provides components used by other extensions including: <a href="https://github.com/bonfire-networks/bonfire_common" target="_blank" rel="noopener">Bonfire:Common</a>, <a href="https://github.com/bonfire-networks/bonfire_search" target="_blank" rel="noopener">Bonfire:Search</a>, <a href="https://github.com/bonfire-networks/bonfire_tag" target="_blank" rel="noopener">Bonfire:Tag</a>, <a href="https://github.com/bonfire-networks/bonfire_boundaries" target="_blank" rel="noopener">Bonfire:Boundaries</a>.</p>
+<h3 id="stack">Stack <a class="direct-link" href="#stack" target="_blank" rel="noopener">#</a></h3>
 <p>So far, Bonfire UI extensions are built with the PETALS stack (note that is not a requirement), which means:</p>
 <ul>
-<li><a href="https://www.phoenixframework.org/">Phoenix</a></li>
-<li><a href="https://elixir-lang.org/">Elixir</a></li>
-<li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-<li><a href="https://alpinejs.dev/">Alpine.js</a></li>
-<li><a href="https://github.com/phoenixframework/phoenix_live_view#readme">LiveView</a></li>
-<li><a href="https://surface-ui.org/">Surface</a></li>
+<li><a href="https://www.phoenixframework.org/" target="_blank" rel="noopener">Phoenix</a></li>
+<li><a href="https://elixir-lang.org/" target="_blank" rel="noopener">Elixir</a></li>
+<li><a href="https://tailwindcss.com/" target="_blank" rel="noopener">TailwindCSS</a></li>
+<li><a href="https://alpinejs.dev/" target="_blank" rel="noopener">Alpine.js</a></li>
+<li><a href="https://github.com/phoenixframework/phoenix_live_view#readme" target="_blank" rel="noopener">LiveView</a></li>
+<li><a href="https://surface-ui.org/" target="_blank" rel="noopener">Surface</a></li>
 </ul>
 <p>We're currently in the middle of a refactor to convert all components and templates from LiveView to Surface, which is a server-side rendering component library (built on top of Phoenix and LiveView) that inherits a lot of design patterns from popular JS framework like Vue.js and React, while being almost JavaScript-free compared to common SPAs.</p>
-<h3 id="scaffolding">Scaffolding <a class="direct-link" href="#scaffolding">#</a></h3>
+<h3 id="scaffolding">Scaffolding <a class="direct-link" href="#scaffolding" target="_blank" rel="noopener">#</a></h3>
 <p>The relevant folders are:</p>
 <ul>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/components">Components</a>: Surface stateless and stateful components.</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/layout">Layout</a>: Main app templates, they include guest, logged or specific view templates (eg. the setting layout)</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/views">Views</a>: The main pages that are rendered when navigating to a specific route</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/test">Test</a>: All the unit tests for the specific module.</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/components" target="_blank" rel="noopener">Components</a>: Surface stateless and stateful components.</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/layout" target="_blank" rel="noopener">Layout</a>: Main app templates, they include guest, logged or specific view templates (eg. the setting layout)</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/lib/web/views" target="_blank" rel="noopener">Views</a>: The main pages that are rendered when navigating to a specific route</li>
+<li><a href="https://github.com/bonfire-networks/bonfire_ui_social/tree/main/test" target="_blank" rel="noopener">Test</a>: All the unit tests for the specific module.</li>
 </ul>
-<h3 id="other-resources">Other resources <a class="direct-link" href="#other-resources">#</a></h3>
+<h3 id="other-resources">Other resources <a class="direct-link" href="#other-resources" target="_blank" rel="noopener">#</a></h3>
 <ul>
-<li><a href="https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/">A blog post that introduces the concept of themeable bonfire apps</a></li>
+<li><a href="https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/" target="_blank" rel="noopener">A blog post that introduces the concept of themeable bonfire apps</a></li>
 </ul>
 
     

@@ -200,10 +200,10 @@
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="activitypub">ActivityPub <a class="direct-link" href="#activitypub">#</a></h1>
+        <h1 id="activitypub">ActivityPub <a class="direct-link" href="#activitypub" target="_blank" rel="noopener">#</a></h1>
 <p>ActivityPub Library for elixir.</p>
 <p><strong>WORK IN PROGRESS, TESTING FEDERATION WITH DIFFERENT IMPLEMENTATIONS IS UNDERWAY</strong></p>
-<h2 id="installation">Installation <a class="direct-link" href="#installation">#</a></h2>
+<h2 id="installation">Installation <a class="direct-link" href="#installation" target="_blank" rel="noopener">#</a></h2>
 <ol>
 <li>Add this library to your dependencies in <code>mix.exs</code></li>
 </ol>
@@ -242,7 +242,7 @@ the required functions</p>
 app. Defining these allows <code>ActivityPub</code> to handle ActivityPub HTTP<br>
 and database calls and operations. An example of an implemented<br>
 adaptor can be found<br>
-<a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/tree/main/lib/adapter" title="Link to file hosted on GitHub">here</a>.</p>
+<a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/tree/main/lib/adapter" title="Link to file hosted on GitHub" target="_blank" rel="noopener">here</a>.</p>
 <p>Then set it in config</p>
 <pre><code>config :activity_pub, :adapter, MyApp.Adapter
 </code></pre>
@@ -295,7 +295,7 @@ config :activity_pub, :http,
 <p>Change the hostname value in the instance config block to your instance's hostname</p>
 </li>
 <li>
-<p>If you don't already have Oban set up, follow the <a href="https://hexdocs.pm/oban/installation.html#content">Oban installation intructions</a> and add the AP queues:</p>
+<p>If you don't already have Oban set up, follow the <a href="https://hexdocs.pm/oban/installation.html#content" target="_blank" rel="noopener">Oban installation intructions</a> and add the AP queues:</p>
 </li>
 </ol>
 <pre><code>config :my_app, Oban, queues: [federator_incoming: 50, federator_outgoing: 50, remote_fetcher: 20]

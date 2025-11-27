@@ -197,31 +197,31 @@
     
 
   <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
-    <p><strong>Read part one: <a href="/posts/dev_diary_lvn">Building Bonfire Native Apps with LiveView Native</a></strong></p>
+    <p><strong>Read part one: <a href="/posts/dev_diary_lvn" target="_blank" rel="noopener">Building Bonfire Native Apps with LiveView Native</a></strong></p>
 <hr>
-<p>With our initial mockups complete, we were eager to start coding in LiveView Native (LVN). There are two primary ways to debug an iOS app: using Xcode or LVN Go. <a href="https://dockyard.com/blog/2024/09/10/introducing-lvn-go"><strong>LVN Go</strong> is an application available on macOS, iPad, and iPhone that allows you to test a LiveView Native app directly on a device by pointing it to the Phoenix server URL</a>.</p>
+<p>With our initial mockups complete, we were eager to start coding in LiveView Native (LVN). There are two primary ways to debug an iOS app: using Xcode or LVN Go. <a href="https://dockyard.com/blog/2024/09/10/introducing-lvn-go" target="_blank" rel="noopener"><strong>LVN Go</strong> is an application available on macOS, iPad, and iPhone that allows you to test a LiveView Native app directly on a device by pointing it to the Phoenix server URL</a>.</p>
 <p>We chose to use <strong>Xcode</strong> because we need to build custom SwiftUI views in the future for our specific use case.</p>
 <p>For reference, I'm using <strong>Xcode beta</strong> with the <strong>iPhone 16 simulator</strong> running <strong>iOS 18</strong> on <strong>macOS Sequoia</strong>, and <code>live_view_native_swiftui</code> version <strong>0.3.0</strong>.<br>
 iOS 17 should work fine as well; however, I experienced some SwiftUI errors with older versions.</p>
-<p>I followed the tutorial from the <a href="https://dockyard.com/blog/2023/07/07/getting-started-with-liveview-native-swiftui">DockYard blog post</a> to set up a basic LiveView Native app.</p>
+<p>I followed the tutorial from the <a href="https://dockyard.com/blog/2023/07/07/getting-started-with-liveview-native-swiftui" target="_blank" rel="noopener">DockYard blog post</a> to set up a basic LiveView Native app.</p>
 <p>Adding LVN is quite straightforward, though there are still some tweaks that need to be done manually, such as editing the <code>dev.exs</code> file. Nonetheless, the experience is already pretty smooth!</p>
 <p>To debug my app, I needed to run the project on Xcode. Fortunately, the basic code to set up the SwiftUI app and connect to the Phoenix server is automatically generated when running the <code>mix lvn.setup.gen</code> task.</p>
 <p>I just had to open the project by running:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">open</span> native/swiftui/Counter.xcodeproj</code></pre>
-<p>Xcode begins fetching dependencies and may trigger some errors. Enabling permissions for plugins used by LiveView Native, as outlined in the <a href="https://hexdocs.pm/live_view_native_swiftui/create-a-swiftui-application.html">official guide</a>, solves all of them.</p>
+<p>Xcode begins fetching dependencies and may trigger some errors. Enabling permissions for plugins used by LiveView Native, as outlined in the <a href="https://hexdocs.pm/live_view_native_swiftui/create-a-swiftui-application.html" target="_blank" rel="noopener">official guide</a>, solves all of them.</p>
 <p>At this point, I was ready to build and run the app on the iPhone simulator.</p>
 <hr>
-<h3 id="understanding-swiftui-and-lvn">Understanding SwiftUI and LVN <a class="direct-link" href="#understanding-swiftui-and-lvn">#</a></h3>
-<p>One of the challenges I encountered was wrapping my head around the SwiftUI way of building interfaces and then translating that back to LVN. I found myself frequently switching between the <a href="https://developer.apple.com/documentation/swiftui">SwiftUI documentation</a> and the <a href="https://hexdocs.pm/live_view_native_swiftui/syntax_conversion.html#content">LiveView Native SwiftUI syntax conversion guide</a>.</p>
-<p>Other resources I found useful were the <a href="https://github.com/LiveViewNative/recipes">LVN CookBook</a> (a collection of useful design patterns) and the <a href="https://github.com/LiveViewNative/lax">Lax GitHub repository</a> (a minimal Slack clone built with LVN).</p>
+<h3 id="understanding-swiftui-and-lvn">Understanding SwiftUI and LVN <a class="direct-link" href="#understanding-swiftui-and-lvn" target="_blank" rel="noopener">#</a></h3>
+<p>One of the challenges I encountered was wrapping my head around the SwiftUI way of building interfaces and then translating that back to LVN. I found myself frequently switching between the <a href="https://developer.apple.com/documentation/swiftui" target="_blank" rel="noopener">SwiftUI documentation</a> and the <a href="https://hexdocs.pm/live_view_native_swiftui/syntax_conversion.html#content" target="_blank" rel="noopener">LiveView Native SwiftUI syntax conversion guide</a>.</p>
+<p>Other resources I found useful were the <a href="https://github.com/LiveViewNative/recipes" target="_blank" rel="noopener">LVN CookBook</a> (a collection of useful design patterns) and the <a href="https://github.com/LiveViewNative/lax" target="_blank" rel="noopener">Lax GitHub repository</a> (a minimal Slack clone built with LVN).</p>
 <hr>
-<h3 id="leveraging-ai-and-community-support">Leveraging AI and Community Support <a class="direct-link" href="#leveraging-ai-and-community-support">#</a></h3>
+<h3 id="leveraging-ai-and-community-support">Leveraging AI and Community Support <a class="direct-link" href="#leveraging-ai-and-community-support" target="_blank" rel="noopener">#</a></h3>
 <p>There were some parts I still need to understand better, but using AI tools like <strong>Claude 3.5 sonnet</strong> and <strong>GPT-4o</strong> often helped in navigating component design in SwiftUI and translating SwiftUI code into LVN. When I wasn't able to do it on my own, the LiveView Native slack community was very supportive.</p>
 <hr>
-<h2 id="prototyping-components">Prototyping Components <a class="direct-link" href="#prototyping-components">#</a></h2>
+<h2 id="prototyping-components">Prototyping Components <a class="direct-link" href="#prototyping-components" target="_blank" rel="noopener">#</a></h2>
 <p>At this point, I just wanted to get a feel of how to build native components in LVN, before starting to build the main pages of the app. I ended up prototyping a few components that are trasversal to the main views of the Bonfire iOS app, such as the Dropdown Menu and the Modal.</p>
-<h3 id="dropdown-menu">Dropdown Menu <a class="direct-link" href="#dropdown-menu">#</a></h3>
-<p>LVN includes the <a href="https://developer.apple.com/documentation/swiftui/menu/">SwiftUI</a> default <code>Menu</code> component:</p>
+<h3 id="dropdown-menu">Dropdown Menu <a class="direct-link" href="#dropdown-menu" target="_blank" rel="noopener">#</a></h3>
+<p>LVN includes the <a href="https://developer.apple.com/documentation/swiftui/menu/" target="_blank" rel="noopener">SwiftUI</a> default <code>Menu</code> component:</p>
 <pre class="language-elixir"><code class="language-elixir">&lt;<span class="token module class-name">Menu</span>> 
   <span class="token operator">&lt;</span><span class="token module class-name">Text</span> template<span class="token operator">=</span><span class="token punctuation">{</span><span class="token atom symbol">:label</span><span class="token punctuation">}</span><span class="token operator">></span><span class="token module class-name">Edit</span> <span class="token module class-name">Actions</span>&lt;<span class="token operator">/</span><span class="token module class-name">Text</span>> 
   <span class="token operator">&lt;</span><span class="token module class-name">Group</span> template<span class="token operator">=</span><span class="token punctuation">{</span><span class="token atom symbol">:content</span><span class="token punctuation">}</span><span class="token operator">></span> 
@@ -231,7 +231,7 @@ iOS 17 should work fine as well; however, I experienced some SwiftUI errors with
   <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token module class-name">Group</span>> 
 <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token module class-name">Menu</span>></code></pre>
 <p>The unfamiliar bit for me here was the <code>template</code> prop on both <code>Text</code> and <code>Group</code>.</p>
-<p>In <a href="https://developer.apple.com/documentation/swiftui/menu">SwiftUI</a>, the <code>Menu</code> struct requires both a <code>label</code> and <code>content</code> parameter, which are closures returning the views to be displayed in the menu component:</p>
+<p>In <a href="https://developer.apple.com/documentation/swiftui/menu" target="_blank" rel="noopener">SwiftUI</a>, the <code>Menu</code> struct requires both a <code>label</code> and <code>content</code> parameter, which are closures returning the views to be displayed in the menu component:</p>
 <pre class="language-swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">Menu</span><span class="token operator">&lt;</span><span class="token class-name">Label</span><span class="token punctuation">,</span> <span class="token class-name">Content</span><span class="token operator">></span> <span class="token keyword">where</span> <span class="token class-name">Label</span><span class="token punctuation">:</span> <span class="token class-name">View</span><span class="token punctuation">,</span> <span class="token class-name">Content</span><span class="token punctuation">:</span> <span class="token class-name">View</span></code></pre>
 <p>In LVN, when a SwiftUI struct or modifier expects a closure or a content view (like <code>content</code>, <code>label</code>, <code>footer</code>, etc.), we use the <code>template</code> attribute to link a child view to that modifier's parameter.</p>
 <p>I further customized the menu by including icons next to each menu item and adding a divider to separate different groups of content. The final component looks like this:</p>
@@ -250,7 +250,7 @@ iOS 17 should work fine as well; however, I experienced some SwiftUI errors with
   <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token module class-name">Group</span>>
 <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token module class-name">Menu</span>></code></pre>
 <hr>
-<h3 id="modal-%2F-sheet">Modal / Sheet <a class="direct-link" href="#modal-%2F-sheet">#</a></h3>
+<h3 id="modal-%2F-sheet">Modal / Sheet <a class="direct-link" href="#modal-%2F-sheet" target="_blank" rel="noopener">#</a></h3>
 <p>LiveView Native includes a default modal among other components in the <code>core_components</code> file. It is a simple <code>VStack</code> with a <code>sheet</code> modifier. The <code>sheet</code> modifier accepts an <code>isPresented</code> value to toggle visibility, a <code>:content</code> view, and an <code>onDismiss</code> callback. The code looks like this:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">def</span> <span class="token function">modal</span><span class="token punctuation">(</span>assigns<span class="token punctuation">)</span> <span class="token keyword">do</span>
   ~<span class="token module class-name">LVN</span><span class="token string">"""
@@ -268,7 +268,7 @@ iOS 17 should work fine as well; however, I experienced some SwiftUI errors with
   """</span>
 <span class="token keyword">end</span></code></pre>
 <hr>
-<h3 id="customizing-the-modal">Customizing the Modal <a class="direct-link" href="#customizing-the-modal">#</a></h3>
+<h3 id="customizing-the-modal">Customizing the Modal <a class="direct-link" href="#customizing-the-modal" target="_blank" rel="noopener">#</a></h3>
 <p>I wanted to further refine the modal by tweaking its size, including a drag indicator, and changing the background.<br>
 Specifically, I wanted to:</p>
 <ul>
@@ -282,12 +282,12 @@ Specifically, I wanted to:</p>
 <p><em>(It's not easy to notice the translucent effect due to the flat background color behind the modal.)</em></p>
 <p>To achieve this result, I included a few custom classes in the <code>VStack</code>'s <code>:content</code> template.</p>
 <blockquote>
-<p><strong>Note:</strong> It took me some time, along with assistance from the LVN team, to realize that the classes should be applied not to the main sheet component, but to the child VStack with the :content template. This is a key detail from the <a href="https://developer.apple.com/documentation/swiftui/view/presentationdetents(_:)">SwiftUI API</a>.</p>
+<p><strong>Note:</strong> It took me some time, along with assistance from the LVN team, to realize that the classes should be applied not to the main sheet component, but to the child VStack with the :content template. This is a key detail from the <a href="https://developer.apple.com/documentation/swiftui/view/presentationdetents(_:)" target="_blank" rel="noopener">SwiftUI API</a>.</p>
 </blockquote>
 <pre class="language-elixir"><code class="language-elixir">&lt;<span class="token module class-name">VStack</span> class<span class="token operator">=</span><span class="token string">"detents:medium:large ultrathinmaterial dragindicator:visible"</span> template<span class="token operator">=</span><span class="token punctuation">{</span><span class="token atom symbol">:content</span><span class="token punctuation">}</span><span class="token operator">></span></code></pre>
 <p><strong>Classes</strong> are an alternative way to add modifiers. They can combine multiple modifiers to create easy-to-use and standard components, and they can be chained together—much like Tailwind CSS.</p>
 <hr>
-<h4 id="defining-custom-classes">Defining Custom Classes <a class="direct-link" href="#defining-custom-classes">#</a></h4>
+<h4 id="defining-custom-classes">Defining Custom Classes <a class="direct-link" href="#defining-custom-classes" target="_blank" rel="noopener">#</a></h4>
 <p>In my <code>app.swiftui.ex</code> file, I've defined the classes used above:</p>
 <pre class="language-elixir"><code class="language-elixir">
 ~<span class="token module class-name">SHEET</span><span class="token string">"""
@@ -310,7 +310,7 @@ end
 <hr>
 <p>And that's it!</p>
 <hr>
-<h3 id="what's-next%3F">What's Next? <a class="direct-link" href="#what's-next%3F">#</a></h3>
+<h3 id="what's-next%3F">What's Next? <a class="direct-link" href="#what's-next%3F" target="_blank" rel="noopener">#</a></h3>
 <p>In the next entry, we will start defining the views for the main pages outlined in our mockups, build the main components for each of them, and navigate between pages using the <code>TabView</code> component and links.</p>
 <p><strong>Stay tuned!</strong></p>
 

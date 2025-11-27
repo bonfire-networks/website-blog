@@ -200,45 +200,45 @@
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="bonfire.openid%3A-single-sign-on-(sso)-client-%26-provider">Bonfire.OpenID: Single Sign-On (SSO) Client &amp; Provider <a class="direct-link" href="#bonfire.openid%3A-single-sign-on-(sso)-client-%26-provider">#</a></h1>
+        <h1 id="bonfire.openid%3A-single-sign-on-(sso)-client-%26-provider">Bonfire.OpenID: Single Sign-On (SSO) Client &amp; Provider <a class="direct-link" href="#bonfire.openid%3A-single-sign-on-(sso)-client-%26-provider" target="_blank" rel="noopener">#</a></h1>
 <p>Bonfire.OpenID enables your Bonfire instance to act as both:</p>
 <ul>
 <li><strong>An SSO Client</strong>: Let users log in to Bonfire using external identity providers (using OpenID Connect or OAuth2).</li>
 <li><strong>An SSO Provider</strong>: Allow other apps to authenticate users using your Bonfire instance as provider (using OpenID Connect or OAuth2).</li>
 </ul>
-<h2 id="features">Features <a class="direct-link" href="#features">#</a></h2>
+<h2 id="features">Features <a class="direct-link" href="#features" target="_blank" rel="noopener">#</a></h2>
 <ul>
 <li><strong>Standards</strong>: Implements OpenID Connect 1.0 and OAuth 2.0 flows.</li>
 <li><strong>Configurable</strong>: Add multiple providers via environment variables.</li>
 <li><strong>Secure</strong>: Uses community libraries and best practices for authentication.</li>
 </ul>
 <hr>
-<h2 id="sso-client-setup-(to-sign-in-to-bonfire-with-external-sso-providers)">SSO Client Setup (to sign in to Bonfire with external SSO providers) <a class="direct-link" href="#sso-client-setup-(to-sign-in-to-bonfire-with-external-sso-providers)">#</a></h2>
-<h3 id="1.-register-your-bonfire-instance-with-the-external-provider">1. Register your Bonfire instance with the external provider <a class="direct-link" href="#1.-register-your-bonfire-instance-with-the-external-provider">#</a></h3>
+<h2 id="sso-client-setup-(to-sign-in-to-bonfire-with-external-sso-providers)">SSO Client Setup (to sign in to Bonfire with external SSO providers) <a class="direct-link" href="#sso-client-setup-(to-sign-in-to-bonfire-with-external-sso-providers)" target="_blank" rel="noopener">#</a></h2>
+<h3 id="1.-register-your-bonfire-instance-with-the-external-provider">1. Register your Bonfire instance with the external provider <a class="direct-link" href="#1.-register-your-bonfire-instance-with-the-external-provider" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>Go to the provider’s developer portal (e.g., GitHub, ORCID, your institution).</li>
 <li>Register a new OpenID or OAuth client.</li>
 <li>Set the callback/redirect URI to:
 <ul>
-<li>For <a href="http://orcid.org">orcid.org</a>: <code>https://your-bonfire-instance.tld/openid/client/orcid</code></li>
-<li>For <a href="http://github.com">github.com</a>: <code>https://your-bonfire-instance.tld/oauth/client/github</code></li>
+<li>For <a href="http://orcid.org" target="_blank" rel="noopener">orcid.org</a>: <code>https://your-bonfire-instance.tld/openid/client/orcid</code></li>
+<li>For <a href="http://github.com" target="_blank" rel="noopener">github.com</a>: <code>https://your-bonfire-instance.tld/oauth/client/github</code></li>
 <li>For another OpenID provider: <code>https://your-bonfire-instance.tld/openid/client/openid_1</code></li>
 <li>For another OAuth provider: <code>https://your-bonfire-instance.tld/openid/client/oauth_1</code></li>
 </ul>
 </li>
 <li>Copy the client ID and client secret provided.</li>
 </ul>
-<h3 id="2.-configure-bonfire-via-environment-variables">2. Configure Bonfire via environment variables <a class="direct-link" href="#2.-configure-bonfire-via-environment-variables">#</a></h3>
+<h3 id="2.-configure-bonfire-via-environment-variables">2. Configure Bonfire via environment variables <a class="direct-link" href="#2.-configure-bonfire-via-environment-variables" target="_blank" rel="noopener">#</a></h3>
 <p>Set these in your <code>.env</code> or deployment environment:</p>
-<h4 id="for-orcid.org%3A">For <a href="http://orcid.org">orcid.org</a>: <a class="direct-link" href="#for-orcid.org%3A">#</a></h4>
+<h4 id="for-orcid.org%3A">For <a href="http://orcid.org" target="_blank" rel="noopener">orcid.org</a>: <a class="direct-link" href="#for-orcid.org%3A" target="_blank" rel="noopener">#</a></h4>
 <pre><code>ORCID_CLIENT_ID=
 ORCID_CLIENT_SECRET=
 </code></pre>
-<h4 id="for-github.com%3A">For <a href="http://github.com">github.com</a>: <a class="direct-link" href="#for-github.com%3A">#</a></h4>
+<h4 id="for-github.com%3A">For <a href="http://github.com" target="_blank" rel="noopener">github.com</a>: <a class="direct-link" href="#for-github.com%3A" target="_blank" rel="noopener">#</a></h4>
 <pre><code>GITHUB_APP_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
 </code></pre>
-<h4 id="for-openid-connect-providers%3A">For OpenID Connect providers: <a class="direct-link" href="#for-openid-connect-providers%3A">#</a></h4>
+<h4 id="for-openid-connect-providers%3A">For OpenID Connect providers: <a class="direct-link" href="#for-openid-connect-providers%3A" target="_blank" rel="noopener">#</a></h4>
 <pre><code>OPENID_1_DISCOVERY=https://yourprovider.example/.well-known/openid-configuration
 OPENID_1_CLIENT_ID=your-client-id
 OPENID_1_CLIENT_SECRET=your-client-secret
@@ -246,7 +246,7 @@ OPENID_1_DISPLAY_NAME=Your Provider Name
 OPENID_1_SCOPE=openid email profile
 OPENID_1_ENABLE_SIGNUP=false
 </code></pre>
-<h4 id="for-oauth2-providers%3A">For OAuth2 providers: <a class="direct-link" href="#for-oauth2-providers%3A">#</a></h4>
+<h4 id="for-oauth2-providers%3A">For OAuth2 providers: <a class="direct-link" href="#for-oauth2-providers%3A" target="_blank" rel="noopener">#</a></h4>
 <pre><code>OAUTH_1_AUTHORIZE_URI=https://yourprovider.example/authorize_example_path
 OAUTH_1_ACCESS_TOKEN_URI=https://yourprovider.example/token_example_path
 OAUTH_1_USERINFO_URI=https://yourprovider.example/api_example_path/userinfo_example_path
@@ -265,7 +265,7 @@ If you set <code>OAUTH_1_ENABLE_SIGNUP=true</code> or <code>OPENID_1_ENABLE_SIGN
 <li>Set <code>OAUTH_1_ENABLE_SIGNUP=false</code> / <code>OPENID_1_ENABLE_SIGNUP=false</code> to require users to first create a Bonfire account and link it afterwards.</li>
 </ul>
 </blockquote>
-<h3 id="3.-user-experience">3. User Experience <a class="direct-link" href="#3.-user-experience">#</a></h3>
+<h3 id="3.-user-experience">3. User Experience <a class="direct-link" href="#3.-user-experience" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>
 <p>Users will see a &quot;Sign in with...&quot; button for each configured provider.</p>
@@ -277,7 +277,7 @@ If you set <code>OAUTH_1_ENABLE_SIGNUP=true</code> or <code>OPENID_1_ENABLE_SIGN
 <p><strong>To disable a client SSO provider</strong>, simply comment out or remove the relevant environment variables.</p>
 </li>
 </ul>
-<h3 id="client-endpoints">Client endpoints <a class="direct-link" href="#client-endpoints">#</a></h3>
+<h3 id="client-endpoints">Client endpoints <a class="direct-link" href="#client-endpoints" target="_blank" rel="noopener">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -297,14 +297,14 @@ If you set <code>OAUTH_1_ENABLE_SIGNUP=true</code> or <code>OPENID_1_ENABLE_SIGN
 </tbody>
 </table>
 <hr>
-<h2 id="sso-provider-setup-(to-sign-in-to-other-apps-using-bonfire-as-their-sso)">SSO Provider Setup (to sign in to other apps using Bonfire as their SSO) <a class="direct-link" href="#sso-provider-setup-(to-sign-in-to-other-apps-using-bonfire-as-their-sso)">#</a></h2>
-<h3 id="1.-enable-provider-mode">1. Enable provider mode <a class="direct-link" href="#1.-enable-provider-mode">#</a></h3>
+<h2 id="sso-provider-setup-(to-sign-in-to-other-apps-using-bonfire-as-their-sso)">SSO Provider Setup (to sign in to other apps using Bonfire as their SSO) <a class="direct-link" href="#sso-provider-setup-(to-sign-in-to-other-apps-using-bonfire-as-their-sso)" target="_blank" rel="noopener">#</a></h2>
+<h3 id="1.-enable-provider-mode">1. Enable provider mode <a class="direct-link" href="#1.-enable-provider-mode" target="_blank" rel="noopener">#</a></h3>
 <p>Bonfire’s SSO provider endpoints are currently disabled by default.<br>
 To enable Bonfire as an SSO provider, set the following environment variable:</p>
 <pre><code>ENABLE_SSO_PROVIDER=true
 </code></pre>
 <p>This will activate all provider endpoints (OAuth2/OpenID Connect).</p>
-<h3 id="2.-register-client-apps">2. Register client apps <a class="direct-link" href="#2.-register-client-apps">#</a></h3>
+<h3 id="2.-register-client-apps">2. Register client apps <a class="direct-link" href="#2.-register-client-apps" target="_blank" rel="noopener">#</a></h3>
 <p>Until a UI is added for this, you can register a new OAuth/OpenID client using a <code>curl</code> command, making sure that <code>redirect_uris</code> matches what your client app will use:</p>
 <pre><code>curl -X POST https://your-bonfire-instance.tld/api/v1/apps \
   -F 'client_name=Your Application Name' \
@@ -315,7 +315,7 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 <p>Or using Bonfire's IEx console:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">OpenID</span><span class="token punctuation">.</span><span class="token module class-name">Provider</span><span class="token punctuation">.</span><span class="token module class-name">ClientApps</span><span class="token punctuation">.</span><span class="token function">get_or_new</span><span class="token punctuation">(</span><span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"https://your-app.example/callback"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 <p>This will return a JSON response with the client ID and secret.</p>
-<h3 id="3.-manage-clients-and-scopes-via-iex">3. Manage clients and scopes via IEx <a class="direct-link" href="#3.-manage-clients-and-scopes-via-iex">#</a></h3>
+<h3 id="3.-manage-clients-and-scopes-via-iex">3. Manage clients and scopes via IEx <a class="direct-link" href="#3.-manage-clients-and-scopes-via-iex" target="_blank" rel="noopener">#</a></h3>
 <p>For now you can use Bonfire's IEx console:</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token comment"># List all registered clients</span>
 <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">OpenID</span><span class="token punctuation">.</span><span class="token module class-name">Provider</span><span class="token punctuation">.</span><span class="token module class-name">ClientApps</span><span class="token punctuation">.</span><span class="token function">list_clients</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -325,13 +325,13 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 
 <span class="token comment"># List all active tokens</span>
 <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">OpenID</span><span class="token punctuation">.</span><span class="token module class-name">Provider</span><span class="token punctuation">.</span><span class="token module class-name">ClientApps</span><span class="token punctuation">.</span><span class="token function">list_active_tokens</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h3 id="4.-configure-the-external-app">4. Configure the external app <a class="direct-link" href="#4.-configure-the-external-app">#</a></h3>
+<h3 id="4.-configure-the-external-app">4. Configure the external app <a class="direct-link" href="#4.-configure-the-external-app" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>In your client app, set the Bonfire instance as the OpenID Connect or OAuth2 provider.</li>
 <li>Use the client ID and secret generated in step 2.</li>
 <li>Make sure the redirect URIs matches what you registered.</li>
 </ul>
-<h3 id="provider-endpoints">Provider endpoints <a class="direct-link" href="#provider-endpoints">#</a></h3>
+<h3 id="provider-endpoints">Provider endpoints <a class="direct-link" href="#provider-endpoints" target="_blank" rel="noopener">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -379,7 +379,7 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 </tbody>
 </table>
 <hr>
-<h2 id="supported-grant-types">Supported Grant Types <a class="direct-link" href="#supported-grant-types">#</a></h2>
+<h2 id="supported-grant-types">Supported Grant Types <a class="direct-link" href="#supported-grant-types" target="_blank" rel="noopener">#</a></h2>
 <p>Bonfire should support all standard OAuth2 and OpenID Connect grant types:</p>
 <ul>
 <li>Authorization Code</li>
@@ -389,24 +389,24 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 <li>Resource Owner Password Credentials</li>
 </ul>
 <p>Redirect URIs must match what is registered for each client.</p>
-<h2 id="supported-scopes-and-claims">Supported Scopes and Claims <a class="direct-link" href="#supported-scopes-and-claims">#</a></h2>
+<h2 id="supported-scopes-and-claims">Supported Scopes and Claims <a class="direct-link" href="#supported-scopes-and-claims" target="_blank" rel="noopener">#</a></h2>
 <ul>
 <li>Standard scopes like <code>openid</code>, <code>email</code>, and <code>profile</code> are supported.</li>
 <li>No custom scopes or claims are defined by default.</li>
 <li>If you need custom claims, you can extend the <code>userinfo_fetched/2</code> function in <code>UserinfoController</code>.</li>
 </ul>
-<h2 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting">#</a></h2>
+<h2 id="troubleshooting">Troubleshooting <a class="direct-link" href="#troubleshooting" target="_blank" rel="noopener">#</a></h2>
 <ul>
 <li><strong>Login not working?</strong> Double-check client IDs, secrets, and redirect URIs.</li>
 <li><strong>Provider not listed?</strong> Make sure the relevant environment variables are set and the Bonfire instance has been restarted.</li>
 <li><strong>Callback errors?</strong> Ensure the callback URL matches exactly between Bonfire and the provider’s configuration.</li>
 </ul>
 <hr>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
+<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
 <p>Powered by these libraries:</p>
 <ul>
-<li><a href="https://hex.pm/packages/boruta">boruta</a> (MIT)</li>
-<li><a href="https://hex.pm/packages/openid_connect">openid_connect</a> (MIT)</li>
+<li><a href="https://hex.pm/packages/boruta" target="_blank" rel="noopener">boruta</a> (MIT)</li>
+<li><a href="https://hex.pm/packages/openid_connect" target="_blank" rel="noopener">openid_connect</a> (MIT)</li>
 </ul>
 <p>Extension copyright (c) 2022 Bonfire Contributors</p>
 <p>This program is free software: you can redistribute it and/or modify<br>
@@ -418,7 +418,7 @@ WITHOUT ANY WARRANTY; without even the implied warranty of<br>
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU<br>
 Affero General Public License for more details.</p>
 <p>You should have received a copy of the GNU Affero General Public<br>
-License along with this program.  If not, see <a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+License along with this program.  If not, see <a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener">https://www.gnu.org/licenses/</a>.</p>
 
     </div>
   </div>

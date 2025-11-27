@@ -200,28 +200,28 @@
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="bonfire.epics">Bonfire.Epics <a class="direct-link" href="#bonfire.epics">#</a></h1>
+        <h1 id="bonfire.epics">Bonfire.Epics <a class="direct-link" href="#bonfire.epics" target="_blank" rel="noopener">#</a></h1>
 <p>Epics are a extensible way of structuring tasks.</p>
 <p>This library is designed to provide a structured way to define and execute complex workflows in Elixir applications. It introduces the concept of &quot;Epics&quot; and &quot;Acts&quot; to organize and run sequences of operations.</p>
-<h2 id="key-components-and-concepts%3A">Key components and concepts: <a class="direct-link" href="#key-components-and-concepts%3A">#</a></h2>
+<h2 id="key-components-and-concepts%3A">Key components and concepts: <a class="direct-link" href="#key-components-and-concepts%3A" target="_blank" rel="noopener">#</a></h2>
 <ul>
 <li><code>Bonfire.Epics.Epic</code>: An Epic represents a complete workflow or process. It's a container that holds a sequence of Acts to be executed, along with state information, errors, and assigned values.</li>
 <li><code>Bonfire.Epics.Act</code>: An Act is an individual step or operation within an Epic. Each Act is typically a module that implements a specific task or functionality.</li>
 <li>Execution Flow &amp; Parallel Execution: Epics are executed by running their Acts in sequence. The library provides mechanisms to define, modify, and run these sequences. The library supports running multiple Acts in parallel for improved performance in certain scenarios.</li>
 <li>Shared State: An Epic can maintain state throughout its execution using the 'assigns' map, allowing data to be passed between Acts.</li>
 <li>Configurable: Epics can be defined in configuration, including at runtime, making it easy to set up and modify workflows without changing code.</li>
-<li>Database Transactions: See the <code>Bonfire.Ecto</code> library for helpers to queue changeset operations within Acts and then run them all together in a single transaction: <a href="https://github.com/bonfire-networks/bonfire_ecto">https://github.com/bonfire-networks/bonfire_ecto</a></li>
+<li>Database Transactions: See the <code>Bonfire.Ecto</code> library for helpers to queue changeset operations within Acts and then run them all together in a single transaction: <a href="https://github.com/bonfire-networks/bonfire_ecto" target="_blank" rel="noopener">https://github.com/bonfire-networks/bonfire_ecto</a></li>
 <li>Error Handling: The library includes built-in error handling, allowing errors to be captured and associated with specific Acts within an Epic.</li>
 </ul>
 <p>This library is particularly useful for applications that need to manage complex, multi-step tasks with error handling and state management. It provides a flexible and extensible way to define, configure, and execute these processes, making it easier to maintain and modify complex workflows.</p>
-<h2 id="how-it-works">How it works <a class="direct-link" href="#how-it-works">#</a></h2>
+<h2 id="how-it-works">How it works <a class="direct-link" href="#how-it-works" target="_blank" rel="noopener">#</a></h2>
 <ol>
 <li>Each Act is implemented as a module with a <code>run/2</code> function that performs a specific task.</li>
 <li>Users define an Epic, either in code or configuration, as sequences of Acts.</li>
 <li>When the Epic is run, it executes each Act in sequence (or with some Acts optionally running in parallel), maintaining state and handling errors along the way. Acts can update the Epic's state, adding errors, and assigning values that can be used by subsequent Acts.</li>
 <li>After all Acts are executed, the final state of the Epic is returned, including any errors or assigned values.</li>
 </ol>
-<h2 id="1.-how-to-write-an-act">1. How to write an Act <a class="direct-link" href="#1.-how-to-write-an-act">#</a></h2>
+<h2 id="1.-how-to-write-an-act">1. How to write an Act <a class="direct-link" href="#1.-how-to-write-an-act" target="_blank" rel="noopener">#</a></h2>
 <p>Write a module with a <code>run/2</code> function that takes an Epic and an Act, performs a specific task, and returns an Epic.</p>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Label</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">LabelObject</span> <span class="token keyword">do</span>
   <span class="token doc"><span class="token attribute">@moduledoc</span> <span class="token string">"""
@@ -282,8 +282,8 @@
     <span class="token keyword">end</span>
   <span class="token keyword">end</span>
 <span class="token keyword">end</span></code></pre>
-<h2 id="2.-how-to-define-an-epic">2. How to define an Epic <a class="direct-link" href="#2.-how-to-define-an-epic">#</a></h2>
-<h3 id="simple-epic-where-each-act-executes-sequentially">Simple Epic where each Act executes sequentially <a class="direct-link" href="#simple-epic-where-each-act-executes-sequentially">#</a></h3>
+<h2 id="2.-how-to-define-an-epic">2. How to define an Epic <a class="direct-link" href="#2.-how-to-define-an-epic" target="_blank" rel="noopener">#</a></h2>
+<h3 id="simple-epic-where-each-act-executes-sequentially">Simple Epic where each Act executes sequentially <a class="direct-link" href="#simple-epic-where-each-act-executes-sequentially" target="_blank" rel="noopener">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir">     <span class="token attribute variable">@page_act_opts</span> <span class="token punctuation">[</span><span class="token attr-name">on:</span> <span class="token atom symbol">:page</span><span class="token punctuation">,</span> <span class="token attr-name">attrs:</span> <span class="token atom symbol">:page_attrs</span><span class="token punctuation">]</span>
 
      config <span class="token atom symbol">:bonfire_pages</span><span class="token punctuation">,</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Pages</span><span class="token punctuation">,</span>
@@ -316,7 +316,7 @@
           <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Search</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">Queue</span><span class="token punctuation">,</span> <span class="token attribute variable">@page_act_opts</span><span class="token punctuation">}</span>
         <span class="token punctuation">]</span>
       <span class="token punctuation">]</span></code></pre>
-<h3 id="advanced-epic%2C-where-some-acts-execute-in-parallel">Advanced Epic, where some Acts execute in parallel <a class="direct-link" href="#advanced-epic%2C-where-some-acts-execute-in-parallel">#</a></h3>
+<h3 id="advanced-epic%2C-where-some-acts-execute-in-parallel">Advanced Epic, where some Acts execute in parallel <a class="direct-link" href="#advanced-epic%2C-where-some-acts-execute-in-parallel" target="_blank" rel="noopener">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir">    config <span class="token atom symbol">:bonfire_posts</span><span class="token punctuation">,</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span><span class="token punctuation">,</span>
       <span class="token attr-name">epics:</span> <span class="token punctuation">[</span>
         <span class="token attr-name">publish:</span> <span class="token punctuation">[</span>
@@ -381,14 +381,14 @@
           <span class="token punctuation">{</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Tags</span><span class="token punctuation">.</span><span class="token module class-name">Acts</span><span class="token punctuation">.</span><span class="token module class-name">AutoBoost</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">}</span>
         <span class="token punctuation">]</span>
       <span class="token punctuation">]</span></code></pre>
-<h2 id="3.-how-to-run-an-epic">3. How to run an Epic <a class="direct-link" href="#3.-how-to-run-an-epic">#</a></h2>
+<h2 id="3.-how-to-run-an-epic">3. How to run an Epic <a class="direct-link" href="#3.-how-to-run-an-epic" target="_blank" rel="noopener">#</a></h2>
 <pre class="language-elixir"><code class="language-elixir"><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Epics</span><span class="token punctuation">.</span><span class="token function">run_epic</span><span class="token punctuation">(</span><span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span><span class="token punctuation">,</span> <span class="token atom symbol">:publish</span><span class="token punctuation">,</span> <span class="token attr-name">on:</span> <span class="token atom symbol">:post</span><span class="token punctuation">)</span></code></pre>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
+<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
 <p>Copyright (c) 2022 Bonfire Contributors</p>
 <p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);<br>
 you may not use this file except in compliance with the License.<br>
 You may obtain a copy of the License at</p>
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">http://www.apache.org/licenses/LICENSE-2.0</a></p>
 <p>Unless required by applicable law or agreed to in writing, software<br>
 distributed under the License is distributed on an &quot;AS IS&quot; BASIS,<br>
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>

@@ -200,7 +200,7 @@
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="boundaries-for-access-control">Boundaries for Access Control <a class="direct-link" href="#boundaries-for-access-control">#</a></h1>
+        <h1 id="boundaries-for-access-control">Boundaries for Access Control <a class="direct-link" href="#boundaries-for-access-control" target="_blank" rel="noopener">#</a></h1>
 <p>Bonfire's boundaries framework provides a flexible way to control user access to specific actions and data. It ensures that users can only see and do what they're authorized to.</p>
 <p>You can create custom groups of contacts (circles) and grant them specific permissions to interact with you and your content. They can help you take control of your online presence and ensure that your data is shared only with the people you want.</p>
 <blockquote>
@@ -208,7 +208,7 @@
 These limits can be physical, like curtains or doors; digital, like sharing settings on social media; in writing, like codes of conduct; emotional, like feeling comfortable to take time for self-care; or mental, like choosing what you pay attention to. In Bonfire, boundaries can help limit the type of interactions that others may have with you or things you post.<br>
 Boundaries are important because they help you protect yourself, maintain your autonomy, and communicate your needs and expectations clearly.</p>
 </blockquote>
-<h2 id="glossary">Glossary <a class="direct-link" href="#glossary">#</a></h2>
+<h2 id="glossary">Glossary <a class="direct-link" href="#glossary" target="_blank" rel="noopener">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -222,11 +222,11 @@ Boundaries are important because they help you protect yourself, maintain your a
 <td>An individual who interacts with the system.</td>
 </tr>
 <tr>
-<td><strong><a href="Bonfire.Boundaries.Circles.html">Circle</a></strong></td>
+<td><strong><a href="Bonfire.Boundaries.Circles.html" target="_blank" rel="noopener">Circle</a></strong></td>
 <td>A categorization method for users, allowing users to group other users (e.g., colleagues, friends).</td>
 </tr>
 <tr>
-<td><strong><a href="Bonfire.Boundaries.Verbs.html">Verb</a></strong></td>
+<td><strong><a href="Bonfire.Boundaries.Verbs.html" target="_blank" rel="noopener">Verb</a></strong></td>
 <td>An action that a user can perform (e.g., read, reply).</td>
 </tr>
 <tr>
@@ -234,37 +234,37 @@ Boundaries are important because they help you protect yourself, maintain your a
 <td>A value indicating whether an action is allowed (<code>true</code>), denied (<code>false</code>), or <code>nil</code>.</td>
 </tr>
 <tr>
-<td><strong><a href="Bonfire.Boundaries.Grants.html">Grant</a></strong></td>
+<td><strong><a href="Bonfire.Boundaries.Grants.html" target="_blank" rel="noopener">Grant</a></strong></td>
 <td>Links a user or circle with a verb and permission.</td>
 </tr>
 <tr>
-<td><strong><a href="Bonfire.Boundaries.Acls.html">ACL</a></strong></td>
+<td><strong><a href="Bonfire.Boundaries.Acls.html" target="_blank" rel="noopener">ACL</a></strong></td>
 <td>Access Control List, a collection of grants. Also called &quot;boundary&quot; or &quot;boundary preset&quot; in the app.</td>
 </tr>
 <tr>
-<td><strong><a href="Bonfire.Boundaries.Controlleds.html">Controlled</a></strong></td>
+<td><strong><a href="Bonfire.Boundaries.Controlleds.html" target="_blank" rel="noopener">Controlled</a></strong></td>
 <td>Links an object to one or more ACLs, to determine access based on the grants.</td>
 </tr>
 <tr>
-<td><strong><a href="Bonfire.Boundaries.Roles.html">Role</a></strong></td>
+<td><strong><a href="Bonfire.Boundaries.Roles.html" target="_blank" rel="noopener">Role</a></strong></td>
 <td>A group of verbs linked to a permission.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="users-and-circles">Users and Circles <a class="direct-link" href="#users-and-circles">#</a></h2>
+<h2 id="users-and-circles">Users and Circles <a class="direct-link" href="#users-and-circles" target="_blank" rel="noopener">#</a></h2>
 <p>Circles are a way of categorizing users. Each user can have their own set of circles to categorize other users. Circles allow a user to group work colleagues differently from friends for example, and to allow different interactions for users in each circle or limit content visibility on a per-item basis.</p>
-<h2 id="verbs">Verbs <a class="direct-link" href="#verbs">#</a></h2>
+<h2 id="verbs">Verbs <a class="direct-link" href="#verbs" target="_blank" rel="noopener">#</a></h2>
 <p>Verbs represent actions users can perform, such as reading a post or replying to a message. Each verb has a unique ID and are defined in configuration.</p>
-<h2 id="permissions">Permissions <a class="direct-link" href="#permissions">#</a></h2>
+<h2 id="permissions">Permissions <a class="direct-link" href="#permissions" target="_blank" rel="noopener">#</a></h2>
 <p>A permission is a decision about whether the action may be performed or not. There are 3 possible values:</p>
 <ul>
 <li><code>true</code>: yes, the action is allowed</li>
 <li><code>false</code>: no, the action is explicitly denied (i.e. never permit)</li>
 <li><code>null</code>/<code>nil</code>: unknown, the action isn't explicitly allowed (defaults to not allowed)</li>
 </ul>
-<h3 id="grants">Grants <a class="direct-link" href="#grants">#</a></h3>
+<h3 id="grants">Grants <a class="direct-link" href="#grants" target="_blank" rel="noopener">#</a></h3>
 <p>A <code>Grant</code> links a <code>subject</code> (user or circle) with a <code>Verb</code> and a permission. It defines the access rights for a specific user or circle in relation to a particular action.</p>
-<h2 id="acls">ACLs <a class="direct-link" href="#acls">#</a></h2>
+<h2 id="acls">ACLs <a class="direct-link" href="#acls" target="_blank" rel="noopener">#</a></h2>
 <p>An <code>Acl</code> is a list of <code>Grant</code>s used to define access permissions for objects.</p>
 <p>Because a user could be in more than one circle and each circle may have a different permission, when a user attempts an action on an object, the system combines all relevant grants to determine the final permission. This combination prioritizes permissions as follows: <code>false &gt; true &gt; nil</code>, resulting in:</p>
 <table>
@@ -325,19 +325,19 @@ Boundaries are important because they help you protect yourself, maintain your a
 </table>
 <p>In simpler terms, a final permission is granted only if the combined result is <code>true</code>. Think of it as requiring an explicit &quot;yes&quot; for permission, while &quot;no&quot; always takes precedence. Notably, <code>nil</code> acts as a sort of &quot;weak no,&quot; it can be overridden by a <code>true</code> but not granting access on its own. This approach provides flexibility for implementing features like user blocking (<code>false</code> is crucial here).</p>
 <p>For efficiency, <code>nil</code> is the assumed default and not stored in the database.</p>
-<h2 id="controlled---applying-boundaries-to-an-object">Controlled - Applying boundaries to an object <a class="direct-link" href="#controlled---applying-boundaries-to-an-object">#</a></h2>
+<h2 id="controlled---applying-boundaries-to-an-object">Controlled - Applying boundaries to an object <a class="direct-link" href="#controlled---applying-boundaries-to-an-object" target="_blank" rel="noopener">#</a></h2>
 <p>The <code>Controlled</code> multimixin link an object to one or more ACLs. This allows for applying multiple boundaries to the same object. In case of overlapping permissions, the system combines them following the logic described above.</p>
-<h3 id="roles">Roles <a class="direct-link" href="#roles">#</a></h3>
+<h3 id="roles">Roles <a class="direct-link" href="#roles" target="_blank" rel="noopener">#</a></h3>
 <p>Roles are groups of verbs associated with permissions. While not stored in the database, they are defined at the configuration level to enhance readability and user experience.</p>
-<h2 id="practical-example%3A-surprise-birthday-party">Practical example: Surprise birthday party <a class="direct-link" href="#practical-example%3A-surprise-birthday-party">#</a></h2>
+<h2 id="practical-example%3A-surprise-birthday-party">Practical example: Surprise birthday party <a class="direct-link" href="#practical-example%3A-surprise-birthday-party" target="_blank" rel="noopener">#</a></h2>
 <p>Let's illustrate how boundaries work with a real-world example: planning a surprise party without the birthday girl finding out.</p>
-<h3 id="1.-setting-up-users">1. Setting up users <a class="direct-link" href="#1.-setting-up-users">#</a></h3>
+<h3 id="1.-setting-up-users">1. Setting up users <a class="direct-link" href="#1.-setting-up-users" target="_blank" rel="noopener">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token keyword">import</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Me</span><span class="token punctuation">.</span><span class="token module class-name">Fake</span>
 iex<span class="token operator">></span> organizer <span class="token operator">=</span> <span class="token function">fake_user!</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 iex<span class="token operator">></span> birthday_girl <span class="token operator">=</span> <span class="token function">fake_user!</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 iex<span class="token operator">></span> friends <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">fake_user!</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">fake_user!</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
 iex<span class="token operator">></span> family <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">fake_user!</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">fake_user!</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
-<h3 id="2.-define-your-circles">2. Define your Circles <a class="direct-link" href="#2.-define-your-circles">#</a></h3>
+<h3 id="2.-define-your-circles">2. Define your Circles <a class="direct-link" href="#2.-define-your-circles" target="_blank" rel="noopener">#</a></h3>
 <p>Organize users into relevant circles (friends and family).</p>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token keyword">alias</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token module class-name">Circles</span>
 iex<span class="token operator">></span> <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> friends_circle<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token module class-name">Circles</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>organizer<span class="token punctuation">,</span> <span class="token punctuation">%</span><span class="token punctuation">{</span><span class="token attr-name">named:</span> <span class="token punctuation">%</span><span class="token punctuation">{</span><span class="token attr-name">name:</span> <span class="token string">"friends"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -346,24 +346,24 @@ iex<span class="token operator">></span> <span class="token module class-name">C
 <span class="token boolean">true</span>
 iex<span class="token operator">></span> <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> family_circle<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token module class-name">Circles</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>organizer<span class="token punctuation">,</span> <span class="token punctuation">%</span><span class="token punctuation">{</span><span class="token attr-name">named:</span> <span class="token punctuation">%</span><span class="token punctuation">{</span><span class="token attr-name">name:</span> <span class="token string">"family"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 iex<span class="token operator">></span> <span class="token module class-name">Circles</span><span class="token punctuation">.</span><span class="token function">add_to_circles</span><span class="token punctuation">(</span>family<span class="token punctuation">,</span> family_circle<span class="token punctuation">)</span></code></pre>
-<h3 id="3.-create-the-acl-(boundary-preset)">3. Create the ACL (boundary preset) <a class="direct-link" href="#3.-create-the-acl-(boundary-preset)">#</a></h3>
+<h3 id="3.-create-the-acl-(boundary-preset)">3. Create the ACL (boundary preset) <a class="direct-link" href="#3.-create-the-acl-(boundary-preset)" target="_blank" rel="noopener">#</a></h3>
 <p>This boundary will control access to the surprise party plans.</p>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token keyword">alias</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token module class-name">Acls</span>
 iex<span class="token operator">></span> <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> boundary<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token module class-name">Acls</span><span class="token punctuation">.</span><span class="token function">simple_create</span><span class="token punctuation">(</span>organizer<span class="token punctuation">,</span> <span class="token string">"Surprise party"</span><span class="token punctuation">)</span></code></pre>
-<h3 id="4.-grant-permissions">4. Grant permissions <a class="direct-link" href="#4.-grant-permissions">#</a></h3>
+<h3 id="4.-grant-permissions">4. Grant permissions <a class="direct-link" href="#4.-grant-permissions" target="_blank" rel="noopener">#</a></h3>
 <p>Allow friends to discover, read, and respond to party plans, while family members can also edit details and send invitations.</p>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token keyword">alias</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token module class-name">Grants</span>
 iex<span class="token operator">></span> <span class="token module class-name">Grants</span><span class="token punctuation">.</span><span class="token function">grant</span><span class="token punctuation">(</span>friends_circle<span class="token punctuation">.</span>id<span class="token punctuation">,</span> boundary<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token atom symbol">:see</span><span class="token punctuation">,</span> <span class="token atom symbol">:read</span><span class="token punctuation">,</span> <span class="token atom symbol">:reply</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token attr-name">current_user:</span> organizer<span class="token punctuation">)</span>
 iex<span class="token operator">></span> <span class="token module class-name">Grants</span><span class="token punctuation">.</span><span class="token function">grant</span><span class="token punctuation">(</span>family_circle<span class="token punctuation">.</span>id<span class="token punctuation">,</span> boundary<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token atom symbol">:see</span><span class="token punctuation">,</span> <span class="token atom symbol">:read</span><span class="token punctuation">,</span> <span class="token atom symbol">:reply</span><span class="token punctuation">,</span> <span class="token atom symbol">:edit</span><span class="token punctuation">,</span> <span class="token atom symbol">:invite</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token attr-name">current_user:</span> organizer<span class="token punctuation">)</span></code></pre>
 <p>Prevent the birthday person from accessing any party information.</p>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token module class-name">Grants</span><span class="token punctuation">.</span><span class="token function">grant</span><span class="token punctuation">(</span>birthday_girl<span class="token punctuation">.</span>id<span class="token punctuation">,</span> boundary<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token atom symbol">:see</span><span class="token punctuation">,</span> <span class="token atom symbol">:read</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token attr-name">current_user:</span> organizer<span class="token punctuation">)</span></code></pre>
-<h3 id="5.-post-about-the-party">5. Post about the party <a class="direct-link" href="#5.-post-about-the-party">#</a></h3>
+<h3 id="5.-post-about-the-party">5. Post about the party <a class="direct-link" href="#5.-post-about-the-party" target="_blank" rel="noopener">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token keyword">alias</span> <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">Posts</span>
 iex<span class="token operator">></span> <span class="token punctuation">{</span><span class="token atom symbol">:ok</span><span class="token punctuation">,</span> party_plan<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token module class-name">Posts</span><span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>
         <span class="token attr-name">current_user:</span> organizer<span class="token punctuation">,</span>
         <span class="token attr-name">boundary:</span> boundary<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
         <span class="token attr-name">post_attrs:</span> <span class="token punctuation">%</span><span class="token punctuation">{</span><span class="token attr-name">post_content:</span> <span class="token punctuation">%</span><span class="token punctuation">{</span><span class="token attr-name">name:</span> <span class="token string">"Surprise party!"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<h3 id="6.-double-check-applied-boundaries">6. Double-check applied boundaries <a class="direct-link" href="#6.-double-check-applied-boundaries">#</a></h3>
+<h3 id="6.-double-check-applied-boundaries">6. Double-check applied boundaries <a class="direct-link" href="#6.-double-check-applied-boundaries" target="_blank" rel="noopener">#</a></h3>
 <pre class="language-elixir"><code class="language-elixir">iex<span class="token operator">></span> <span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token function">can?</span><span class="token punctuation">(</span><span class="token module class-name">List</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span>friends<span class="token punctuation">)</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token atom symbol">:read</span><span class="token punctuation">,</span> party_plan<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
 <span class="token boolean">true</span>
 iex<span class="token operator">></span> <span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token function">can?</span><span class="token punctuation">(</span><span class="token module class-name">List</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span>family<span class="token punctuation">)</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token atom symbol">:invite</span><span class="token punctuation">,</span> party_plan<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
@@ -373,9 +373,9 @@ iex<span class="token operator">></span> <span class="token module class-name">B
 iex<span class="token operator">></span> <span class="token module class-name">Boundaries</span><span class="token punctuation">.</span><span class="token function">load_pointer</span><span class="token punctuation">(</span>party_plan<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token attr-name">current_user:</span> birthday_girl<span class="token punctuation">)</span>
 <span class="token boolean">nil</span></code></pre>
 <p>By following these steps, the organizer can effectively manage access to ensure the birthday girl cannot see the party plans, while friends and family can.</p>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license">#</a></h2>
+<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
 <p>Copyright (c) 2020 Bonfire Contributors</p>
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p>
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/" target="_blank" rel="noopener">http://mozilla.org/MPL/2.0/</a>.</p>
 
     </div>
   </div>
