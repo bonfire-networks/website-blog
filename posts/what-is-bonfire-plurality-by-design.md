@@ -137,8 +137,8 @@ Want to join us in building the future of Bonfire? [Support and share the crowdf
 
 
 
-[^1]: https://indieweb.social/@Blort@social.tchncs.de/115336522752832749  
-[^2]: https://indieweb.social/@box464@mastodon.social/114762962111890017  
+[^1]: https://social.tchncs.de/@Blort/115336522698974359 
+[^2]: https://mastodon.social/@box464/114762962043899358
 [^3]: https://mastodon.online/@CrisColor/115530887699974411  
 [^4]: https://wedistribute.org/2024/02/bonfire-nextgen-framework/  
 [^5]: https://techcrunch.com/2025/06/05/bonfires-new-software-lets-users-build-their-own-social-communities-free-from-platform-control/  
@@ -152,7 +152,7 @@ Want to join us in building the future of Bonfire? [Support and share the crowdf
 [^13]: https://todon.nl/@yetiinabox/114774170205352633  
 [^14]: https://masto.ahlcode.fi/@nicd/114754600642984492  
 [^15]: https://fosstodon.org/@devSJR/114756522774543346  
-[^16]: https://indieweb.social/@quillmatiq@mastodon.social/114779406227848548  
+[^16]: https://mastodon.social/@quillmatiq/114779406172655395
 [^17]: https://toot.wales/@alexisbushnell  
 [^18]: https://lobste.rs/s/ggcrok/announcing_bonfire_social_1_0_release?  
 [^19]: https://mastodon.online/@mastodonmigration/115535701046246821
