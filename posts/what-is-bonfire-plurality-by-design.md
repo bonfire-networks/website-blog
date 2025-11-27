@@ -131,6 +131,10 @@ Ask not what Bonfire is, ask what it could be, in your hands.
 
 Want to join us in building the future of Bonfire? [Support and share the crowdfunding campaign](https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA) to join install parties, workshops, co-design sessions, and more!
 
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
+
 
 
 [^1]: https://indieweb.social/@Blort@social.tchncs.de/115336522752832749  
