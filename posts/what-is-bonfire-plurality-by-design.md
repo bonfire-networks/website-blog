@@ -1,5 +1,5 @@
 ---
-title: What is Bonfire? Plural by Design
+title: What is Bonfire? Plural by design
 description: "Bonfire is difficult to pin down with a single definition, and that's a feature, not a bug. The project's very structure is about enabling a tapestry of social spaces, all built with shared building blocks but diverging in flavour, practice, and purpose. In this post we embrace the project's plurality and explore the many ways people describe and understand Bonfire."
 date: 2025-11-27
 image: /img/blank-notebook.jpg
