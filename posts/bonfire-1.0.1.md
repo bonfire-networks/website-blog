@@ -1,6 +1,6 @@
 ---
-title: Bonfire 1.0.1 Building Momentum
-description: "We're back with Bonfire 1.0.1, an update focused on making your social web experience livelier, more connected, and truly yours."
+title: "Bonfire 1.0.1: Building Momentum"
+description: "We're back with an update focused on making your social web experience livelier, more connected, and truly yours. Plus updates on the crowdfunding campaign and what's next."
 date: 2026-01-16
 tags: development
 image: /img/bg_101.png
@@ -52,9 +52,7 @@ We've put work into smoothing out the interface and improving design patterns ac
 
 This release squashes bugs around federation behaviour, threading, user interface, composer states, and more. See the [full changelog](https://docs.bonfirenetworks.org/changelog.html) for the complete list.
 
----
 > **Update your instance or try Bonfire at [campground.bonfire.cafe](https://campground.bonfire.cafe)**
----
 
 ## Crowdfunding update
 As you may know, we ran a [crowdfunding campaign](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA) in December. We raised €32,467, surpassing our primary goal of €30,000 for [maintenance](https://bonfirenetworks.org/posts/matters-of-care-why-maintenance-comes-first/). 
@@ -65,13 +63,21 @@ We're now working on fulfilling rewards, so if you backed the campaign, you'll h
  
 And if you didn't get a chance to pledge in December, or want to help us level up, you're in luck: [the campaign is **now open for a limited time** for late pledges](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA) for anyone who wants to boost our progress toward the first stretch goal of €25,000 for [**federated groups**](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA#/section/what-were-building-next-4672931), which are a foundational feature to empower communities across the fediverse and make Bonfire even stronger for community organising and collaboration.
 
---> Read our blog post about [why groups matter as the next step for the fediverse](https://bonfirenetworks.org/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/) and [**contribute to building groups in Bonfire**](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA).
+> Read our blog post about [why groups matter as the next step for the fediverse](https://bonfirenetworks.org/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/) and [**contribute to building groups in Bonfire**](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA).
+
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
 
 ## What's next
 
 We’re already hard at work on the next release. We’re excited to make it even easier to organise, share, and stay safe together, with expanded API compatibility to open Bonfire to more third-party apps, along with poll creation, new widgets, and the usual bug hunting and interoperability improvements. 
 
 We've also started work on end-to-end encrypted messaging as part of the [Social Web Foundation's project to bring interoperable secure messaging to the fediverse](https://socialwebfoundation.org/2025/12/19/implementing-encrypted-messaging-over-activitypub/), a meaningful step toward private, secure communication on the open social web. We'll be testing this over the next few months and releasing it when a secure and interoperable implementation is ready.
+
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
 
 ## From the community
 
@@ -93,3 +99,7 @@ We’ll also have some exciting announcements about new collaborations and proje
 Besides the talks, we’re eager to catch up with friends old and new from across the open source and fediverse communities. If you’re attending, we hope you’ll find us and say hi! We’d love to connect, answer your questions, and share ideas, whether you’re a hacker, organiser, or just curious about the fediverse.
 
 Thank you for making Bonfire what it is. Every message, suggestion, and act of cooperation moves us closer to a more caring fediverse. Can’t wait to see what we grow together!
+
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
