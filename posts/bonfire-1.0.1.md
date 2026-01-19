@@ -39,11 +39,11 @@ Currently available widgets include:
 - **Recent articles**: Discover long-form content and blog posts from across your network.
 - **Suggested profiles**: Instance admins can curate recommendations to help newcomers find interesting people to follow.
 
-[We’d love your feedback on which widgets you’d find most useful](https://github.com/bonfire-networks/bonfire-app/issues/1758). Let us know what you’d like to see on your dashboard. What would make Bonfire feel even more like home?
+We’d love your feedback on which widgets you’d find most useful. [Let us know](https://github.com/bonfire-networks/bonfire-app/issues/1758) what you’d like to see on your dashboard. What would make Bonfire feel even more like home?
  
 ### Performance
 
-- **Prioritised federation queues**: Processing of mentions and DMs is now prioritised over regular posts, so direct conversations arrive without delay.
+- **Prioritised federation queues**: We now prioritise the processing of mentions and DMs over regular posts, so direct conversations arrive without delay.
 - **Database improvements**: Added more indexes and improved queries for snappier responses.
 - **Server-to-server federation**: Various optimisations for smoother communication between instances.
 
@@ -67,7 +67,7 @@ We’re deeply grateful to everyone who chipped in, your support genuinely moved
 
 We're now working on fulfilling rewards, so if you backed the campaign, you'll hear from us soon!
  
-And if you didn't get a chance to pledge in December, or want to help us level up, you're in luck: [the campaign is **now open for a limited time** for late pledges](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA) for anyone who wants to boost our progress toward the first stretch goal of €25,000 for [**federated groups**](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA#/section/what-were-building-next-4672931), which are a foundational feature to empower communities across the fediverse and make Bonfire even stronger for community organising and collaboration.
+And if you didn't get a chance to pledge in December, or want to help us level up, you're in luck: [the campaign is **now open for a limited time** for late pledges](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA) for anyone who wants to boost our progress toward the first stretch goal of €25,000 for [**federated groups**](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA#/section/what-were-building-next-4672931) (for a total of €55,000), which are a foundational feature to empower communities across the fediverse and make Bonfire even stronger for community organising and collaboration.  
 
 > Read our blog post about [why groups matter as the next step for the fediverse](https://bonfirenetworks.org/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/) and [**contribute to building groups in Bonfire**](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA).
 
