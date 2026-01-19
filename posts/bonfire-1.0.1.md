@@ -14,6 +14,7 @@ We're back with Bonfire 1.0.1, an update focused on making your social web exper
 > Now is a good time to update your instance or discover Bonfire firsthand at [campground.bonfire.cafe](https://campground.bonfire.cafe).
 
 We’ve moved our main presence from indieweb.social to bonfire.cafe! Be sure to follow us at [**@bonfire@bonfire.cafe**](https://bonfire.cafe/@Bonfire). Our deep thanks go to [indieweb.social](https://indieweb.social/) for being a warm and welcoming home as we found our footing in the fediverse.
+Our old account will continue boosting posts from bonfire.cafe, so you won't miss anything during the transition.
 
 ## What the new release includes
 
@@ -29,6 +30,8 @@ We’ve moved our main presence from indieweb.social to bonfire.cafe! Be sure to
 - **Widgets**: Configure your homepage to display widgets highlighting what interests you most, rather than being dropped straight into a feed of activities. Head to "configure your dashboard" in settings to choose your widgets and switch between a composable widget layout or the standard "my following" feed. Reorder them by dragging and dropping directly on the dashboard (tip: you can also do that with navigation menu items on the left or widgets on the right of most screens).
 
 ### Widgets
+
+<img src="/img/widgets.jpg" />
 
 Currently available widgets include:
 
@@ -55,6 +58,9 @@ This release squashes bugs around federation behaviour, threading, user interfac
 > **Update your instance or try Bonfire at [campground.bonfire.cafe](https://campground.bonfire.cafe)**
 
 ## Crowdfunding update
+
+<img src="/img/groupusecases.jpg" />
+
 As you may know, we ran a [crowdfunding campaign](https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA) in December. We raised €32,467, surpassing our primary goal of €30,000 for [maintenance](https://bonfirenetworks.org/posts/matters-of-care-why-maintenance-comes-first/). 
 
 We’re deeply grateful to everyone who chipped in, your support genuinely moved us. Seeing so many people rally behind Bonfire, all through grassroots word-of-mouth, was both encouraging and humbling. We're energised by seeing this vision of a more caring, community-based social web resonate so widely. Thank you for believing in what we’re building, together.
