@@ -1,0 +1,468 @@
+<!doctype html>
+<html data-theme="dark" class="bg-base-100 w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire 1.0.1: Building Momentum</title>
+    <meta name="description" content="We&#39;re back with an update focused on making your social web experience livelier, more connected, and truly yours. Plus updates on the crowdfunding campaign and what&#39;s next.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- OpenGraph meta tags for social sharing -->
+    <meta property="og:title" content="Bonfire 1.0.1: Building Momentum">
+    <meta property="og:description" content="We&#39;re back with an update focused on making your social web experience livelier, more connected, and truly yours. Plus updates on the crowdfunding campaign and what&#39;s next.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonfirenetworks.org//posts/bonfire-1-0-1-building-momentum/">
+    
+    <meta property="og:image" content="https://bonfirenetworks.org//img/bg_101.png">
+    
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bonfire 1.0.1: Building Momentum">
+    <meta name="twitter:description" content="We&#39;re back with an update focused on making your social web experience livelier, more connected, and truly yours. Plus updates on the crowdfunding campaign and what&#39;s next.">
+    
+    <meta name="twitter:image" content="https://bonfirenetworks.org//img/bg_101.png">
+    
+    
+    <link
+    rel="stylesheet" href="/css/style_v2.css?v2">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  </head>
+  <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
+  <div class="drawer">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      <div class="bg-base-100 flex justify-center">
+  <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=UScVLqSJJkKpZWg_Lnsg7w" class="alert bg-secondary flex w-full justify-center rounded-none border-none p-1 text-center text-xs shadow-none">
+    <svg class="w-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ecf9ff" viewBox="0 0 256 256"><path d="M184,120v61.65a8,8,0,0,1-2.34,5.65l-34.35,34.35a8,8,0,0,1-13.57-4.53L128,176ZM136,72H74.35a8,8,0,0,0-5.65,2.34L34.35,108.69a8,8,0,0,0,4.53,13.57L80,128ZM40,216c37.65,0,50.69-19.69,54.56-28.18L68.18,161.44C59.69,165.31,40,178.35,40,216Z" opacity="0.2"></path><path d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"></path></svg>
+    <div class="font-mono font-bold text-[0.6875rem]">Support our crowdfunding campaign on indiegogo</div>
+  </a>  
+</div>
+<div class="navbar sticky bg-base-100 top-0 z-10 w-full">
+  <div class="mx-2 flex-1 px-2">
+    <a href="/" class="flex items-center space-x-4">
+      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+      <span class="lg:flex hidden items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire Networks</span> 
+      
+      </span>
+    </a>
+  </div>
+  <div class="hidden flex-none lg:block">
+    <ul class="menu menu-horizontal">
+      <!-- Navbar menu content here -->
+      <li>
+              <a href="/about" role="button" tabindex="0" class="flex font-semiboltext-[15px] items-center gap-2 ">
+                <span>About</span>
+              </a>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Ecosystem</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 ml-0! menu mt-2 p-1 bg-base-100 rounded-lg">
+                <li>
+                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
+                      <div class="font-bold">Apps</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Extensions</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
+                      <div class="font-bold">Hosting</div>
+                  </a>
+                </li>
+                
+                  
+                
+              </ul>
+            </li>
+            <li class="dropdown">
+                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
+                  <span>Learn</span>
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </div>
+              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 ml-0! menu mt-2 p-1 bg-base-300 rounded-lg ">
+                <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
+                      <div class="font-semibold">Documentation</div>
+                      <div class="font-light text-sm    -mt-1.5">Dive into using or building on Bonfire</div>
+                  </a>
+                </li>
+                 <li>
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
+                      <div class="font-semibold">Design</div>
+                      <div class="font-light text-sm    -mt-1.5">Think with Bonfire to create better digital spaces</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
+                      <div class="font-semibold">Community</div>
+                      <div class="font-light text-sm    -mt-1.5">How to participate in the ecosystem</div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
+                    <div class="font-semibold">FAQ</div>
+                    <div class="text-sm -mt-1.5 font-light   ">Frequently asked questions</div>
+                  </a>
+                </li>
+                
+                
+                <li> 
+                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
+                    <div class="font-semibold">Get the code</div>
+                    <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li>
+            <a href="/mosaic" class="font-semibold  text-[15px]  ">
+              <span class="">Mosaic</span>
+            </a>
+            </li>
+
+            <li>
+            <a href="/blog" class="font-semibold  text-[15px]  ">
+              <span class="">News</span>
+            </a>
+            </li>
+            <li class="p-0">
+            <a class="p-0" href="/start/" >
+            <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
+          </a>
+          </li>
+    </ul>
+  </div>
+  <div class="flex-none lg:hidden">
+    <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="inline-block h-6 w-6 stroke-current"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </label>
+  </div>
+</div>
+
+      
+
+<div class="max-w-(--breakpoint-md) px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    <div class="">
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/development/">
+        <span class="badge capitalize badge-lg badge-soft">
+          development
+        </span>
+        </a>
+      </div>
+
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Bonfire 1.0.1: Building Momentum</h1>
+
+      
+        <img src="/img/bg_101.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+      
+        
+    </div>
+  </div>
+
+    
+
+  <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
+    <p>We're back with Bonfire 1.0.1, an update focused on making your social web experience livelier, more connected, and truly yours.</p>
+<blockquote>
+<p>Now is a good time to update your instance or discover Bonfire firsthand at <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener">campground.bonfire.cafe</a>.</p>
+</blockquote>
+<p>We’ve moved our main presence from indieweb.social to bonfire.cafe! Be sure to follow us at <a href="https://bonfire.cafe/@Bonfire" target="_blank" rel="noopener"><strong>@bonfire@bonfire.cafe</strong></a>. Our deep thanks go to <a href="https://indieweb.social/" target="_blank" rel="noopener">indieweb.social</a> for being a warm and welcoming home as we found our footing in the fediverse.<br>
+Our old account will continue boosting posts from bonfire.cafe, so you won't miss anything during the transition.</p>
+<h2 id="what-the-new-release-includes">What the new release includes <a class="direct-link" href="#what-the-new-release-includes" target="_blank" rel="noopener">#</a></h2>
+<h3 id="new-features">New features <a class="direct-link" href="#new-features" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li><strong>Follow hashtags</strong>: Discover and join conversations that matter to you, bringing relevant posts into your feed without needing to follow specific people. <em>(Note: You'll see tagged posts known to your instance, for example, if someone on your server follows the author or boosted the post.)</em></li>
+<li><strong>Scheduled posts</strong>: Plan ahead and have your posts published at just the right moment for your community.</li>
+<li><strong>Language &amp; translation</strong>: Choose your preferred language(s), set a language for your posts, and translate content from other languages. <em>(Translation currently works in some Chromium-based browsers, using a local translation engine. Support for other browsers, using LibreTranslate or DeepL, is coming soon.)</em></li>
+<li><strong>Replies in feeds</strong>: Choose what to display above a reply in your feeds: the direct parent post being replied to, the original post that started the thread, or just a label indicating that it is a reply. Set your preference in settings.</li>
+<li><strong>Polls</strong> <em>(work in progress)</em>: Ask questions and gather input from your community. You can now view and vote on remote polls, creating them locally is coming soon.</li>
+<li><strong>Mastodon-compatible API</strong> <em>(work in progress)</em>: This will make it possible to interact with Bonfire through dozens of fediverse clients available on mobile and desktop. We're gradually adding support for more parts of the API and will be testing it with different third-party clients (please report any issues if you test it with your favourite app!).</li>
+<li><strong>ActivityPub client-to-server (C2S) API</strong> <em>(work in progress)</em>: Opening new possibilities for how you can interact with fediverse through third-party apps.</li>
+<li><strong>Widgets</strong>: Configure your homepage to display widgets highlighting what interests you most, rather than being dropped straight into a feed of activities. Head to &quot;configure your dashboard&quot; in settings to choose your widgets and switch between a composable widget layout or the standard &quot;my following&quot; feed. Reorder them by dragging and dropping directly on the dashboard (tip: you can also do that with navigation menu items on the left or widgets on the right of most screens).</li>
+</ul>
+<h3 id="widgets">Widgets <a class="direct-link" href="#widgets" target="_blank" rel="noopener">#</a></h3>
+<img src="/img/widgets.jpg" />
+<p>Currently available widgets include:</p>
+<ul>
+<li><strong>Trending links</strong>: Discover the latest news and what's generating conversation across your instance.</li>
+<li><strong>Recent articles</strong>: Discover long-form content and blog posts from across your network.</li>
+<li><strong>Suggested profiles</strong>: Instance admins can curate recommendations to help newcomers find interesting people to follow.</li>
+</ul>
+<p><a href="https://github.com/bonfire-networks/bonfire-app/issues/1758" target="_blank" rel="noopener">We’d love your feedback on which widgets you’d find most useful</a>. Let us know what you’d like to see on your dashboard. What would make Bonfire feel even more like home?</p>
+<h3 id="performance">Performance <a class="direct-link" href="#performance" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li><strong>Prioritised federation queues</strong>: Processing of mentions and DMs is now prioritised over regular posts, so direct conversations arrive without delay.</li>
+<li><strong>Database improvements</strong>: Added more indexes and improved queries for snappier responses.</li>
+<li><strong>Server-to-server federation</strong>: Various optimisations for smoother communication between instances.</li>
+</ul>
+<h3 id="ui-and-ux-enhancements">UI and UX enhancements <a class="direct-link" href="#ui-and-ux-enhancements" target="_blank" rel="noopener">#</a></h3>
+<p>We've put work into smoothing out the interface and improving design patterns across the app: small touches that add up to a better experience.</p>
+<h3 id="bug-fixes">Bug fixes <a class="direct-link" href="#bug-fixes" target="_blank" rel="noopener">#</a></h3>
+<p>This release squashes bugs around federation behaviour, threading, user interface, composer states, and more. See the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">full changelog</a> for the complete list.</p>
+<blockquote>
+<p><strong>Update your instance or try Bonfire at <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener">campground.bonfire.cafe</a></strong></p>
+</blockquote>
+<h2 id="crowdfunding-update">Crowdfunding update <a class="direct-link" href="#crowdfunding-update" target="_blank" rel="noopener">#</a></h2>
+<img src="/img/groupusecases.jpg" />
+<p>As you may know, we ran a <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA" target="_blank" rel="noopener">crowdfunding campaign</a> in December. We raised €32,467, surpassing our primary goal of €30,000 for <a href="https://bonfirenetworks.org/posts/matters-of-care-why-maintenance-comes-first/" target="_blank" rel="noopener">maintenance</a>.</p>
+<p>We’re deeply grateful to everyone who chipped in, your support genuinely moved us. Seeing so many people rally behind Bonfire, all through grassroots word-of-mouth, was both encouraging and humbling. We're energised by seeing this vision of a more caring, community-based social web resonate so widely. Thank you for believing in what we’re building, together.</p>
+<p>We're now working on fulfilling rewards, so if you backed the campaign, you'll hear from us soon!</p>
+<p>And if you didn't get a chance to pledge in December, or want to help us level up, you're in luck: <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA" target="_blank" rel="noopener">the campaign is <strong>now open for a limited time</strong> for late pledges</a> for anyone who wants to boost our progress toward the first stretch goal of €25,000 for <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA#/section/what-were-building-next-4672931" target="_blank" rel="noopener"><strong>federated groups</strong></a>, which are a foundational feature to empower communities across the fediverse and make Bonfire even stronger for community organising and collaboration.</p>
+<blockquote>
+<p>Read our blog post about <a href="https://bonfirenetworks.org/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/" target="_blank" rel="noopener">why groups matter as the next step for the fediverse</a> and <a href="https://www.indiegogo.com/projects/bonfire/community?refcode=c5aSQvu800edVSDdNwzumA" target="_blank" rel="noopener"><strong>contribute to building groups in Bonfire</strong></a>.</p>
+</blockquote>
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
+<h2 id="what's-next">What's next <a class="direct-link" href="#what's-next" target="_blank" rel="noopener">#</a></h2>
+<p>We’re already hard at work on the next release. We’re excited to make it even easier to organise, share, and stay safe together, with expanded API compatibility to open Bonfire to more third-party apps, along with poll creation, new widgets, and the usual bug hunting and interoperability improvements.</p>
+<p>We've also started work on end-to-end encrypted messaging as part of the <a href="https://socialwebfoundation.org/2025/12/19/implementing-encrypted-messaging-over-activitypub/" target="_blank" rel="noopener">Social Web Foundation's project to bring interoperable secure messaging to the fediverse</a>, a meaningful step toward private, secure communication on the open social web. We'll be testing this over the next few months and releasing it when a secure and interoperable implementation is ready.</p>
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
+<h2 id="from-the-community">From the community <a class="direct-link" href="#from-the-community" target="_blank" rel="noopener">#</a></h2>
+<p><a href="https://btfree.social/@ozoned" target="_blank" rel="noopener">Ozoned</a> recorded a <a href="https://tubefree.org/w/3pATRDsqiBu99aVUwBTvUf" target="_blank" rel="noopener">video walk-through</a> of setting up a Bonfire instance from scratch, a great resource if you're thinking about self-hosting. Thanks for your contribution, Ozoned!</p>
+<p>Meanwhile, The Fulcrum wrote a <a href="https://www.thefulcrum.dev/grab-a-seat-at-our-bonfire-the-revolutionary-community-platform/" target="_blank" rel="noopener">thoughtful article exploring Bonfire</a> and its potential. We're eager to see how they'll experiment with the framework and what emerges from their work.</p>
+<p>We're working with <a href="newsmastfoundation.org" target="_blank" rel="noopener">Newsmast Foundation</a> to setup a Bonfire server for one of their existing communities, stay tuned!</p>
+<p>Have you made something with Bonfire or written about it? We'd love to hear from you and feature community projects in future updates.</p>
+<h2 id="see-you-at-fosdem%3F">See you at FOSDEM? <a class="direct-link" href="#see-you-at-fosdem%3F" target="_blank" rel="noopener">#</a></h2>
+<p>On January 30th and February 1st, the Bonfire team will be at <a href="https://fosdem.org/2026/" target="_blank" rel="noopener">FOSDEM</a>, a free software event in Brussels that brings together more than 8000 people every year. We're running two sessions: one in the Social Web track titled <a href="https://fosdem.org/2026/schedule/event/3QHALR-bonfire_building_modular_consentful_and_federated_social_networks/" target="_blank" rel="noopener">Building Modular, Consentful, and Federated Social Networks</a> and another in the Decentralised Communication track: <a href="https://fosdem.org/2026/schedule/event/LSUYXG-bonfire_modular_communication_tools_on_the_open_social_web/" target="_blank" rel="noopener">Modular Communication Tools on the Open Social Web</a>.</p>
+<p>We’ll also have some exciting announcements about new collaborations and projects, stay tuned!</p>
+<p>Besides the talks, we’re eager to catch up with friends old and new from across the open source and fediverse communities. If you’re attending, we hope you’ll find us and say hi! We’d love to connect, answer your questions, and share ideas, whether you’re a hacker, organiser, or just curious about the fediverse.</p>
+<p>Thank you for making Bonfire what it is. Every message, suggestion, and act of cooperation moves us closer to a more caring fediverse. Can’t wait to see what we grow together!</p>
+<div class="flex items-center place-content-center my-6">
+<a href="https://www.indiegogo.com/projects/bonfire/community?refcode=U5xT-y8I5EC1WnTtoMO1bA" class="btn-xl btn  btn-primary">Support the crowdfunding</a>
+</div>
+
+    
+  </article>
+
+     <div class="mt-10 mb-8 text-sm text-base text-base-content/80">
+        <span>Published 16 Jan 2026</span>
+      </div>
+     
+     
+    
+</div>
+
+  <div class="mx-4 mt-8 lg:mx-auto">
+    
+  
+
+  <div class="my-24 mx-auto max-w-screen-lg w-full flex ">
+      <div class="rounded-xl flex-1 flex items-center text-center gap-2 flex-col h-full bg-base-200 p-4">
+
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
+
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+  
+
+
+      <div class="bg-base-200">
+  <div class="flex px-8 py-4 mx-auto justify-between items-center">
+    <div class="flex items-start gap-4 flex-row lg:flex-col">
+      <div class="flex items-center gap-2 flex-1 ">
+        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
+        <p class="font-bold">Bonfire Networks</p>
+      </div> 
+    </div> 
+    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+  </div>
+  <footer class="footer pb-8 sm:footer-horizontal bg-base-200 border-base-content/10 bg-base-200 border-t pt-8 px-8 justify-between text-base-content p-10">
+  <nav>
+    <h6 class="footer-title">Ecosystem</h6>
+    <a href="/apps" class="link link-hover">Apps</a> 
+    <a href="/roadmap" class="link link-hover">Extensions</a> 
+    <a href="/themes" target="_blank" class="link link-hover">Themes</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Learn</h6>
+ <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover ">Documentation</a> 
+    <a href="/faq" class="link link-hover">FAQs</a> 
+    <a href="/conduct" class="link link-hover">Code of conduct</a> 
+    
+  </nav>
+  <nav>
+    <h6 class="footer-title">Apps</h6>
+    <a href="/start" class="link link-hover">Get started</a> 
+    <a href="/hosting" class="link link-hover">Hosting</a> 
+    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
+  </nav>
+  <div>
+    <h6 class="footer-title">More</h6>
+    <a class="link link-hover" href="/contact/">Contact</a>
+    <a href="/presskit" class="link link-hover">Presskit</a>
+    
+    <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-1" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+  </div>
+</footer>
+<div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
+  <div class="flex items-center place-items-center">
+    <div class="flex items-center gap-3">
+      <p class="text-base-content/70">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img 
+          src="/img/b-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="light-img"
+        >
+        <img 
+          src="/img/w-nlnet.png" 
+          alt="NLNet" 
+          width="140" 
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+    </div>
+  </div>
+</div>
+<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
+  <div class="flex items-center">
+    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
+    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
+  </div>
+    <nav class="hidden md:flex items-center text-sm">
+      
+      
+      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2025</a>
+    </nav>
+  </div>
+</div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
+    </div>
+    <div class="drawer-side">
+      <label for="my-drawer-2" aria-label="close sidebar" class="z-[99999999999999999999999999] drawer-overlay"></label>
+      <ul class="menu  bg-base-200 min-h-full w-80 p-4 relative z-[9999999999999999999]">
+        <li class="mb-4">
+            <a href="/" class="flex items-center space-x-2">
+              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
+              <span class=""><span class="text-base font-semibold tracking-wider text-base-content">Bonfire Networks</span> 
+              
+              </span>
+            </a>
+          </li>
+        <!-- Sidebar content here -->
+        <li><a href="/about">About</a></li>
+        <li><a href="/apps">Apps</a></li>
+        <li><a href="/hosting">Hosting</a></li>
+        <li><a href="https://docs.bonfirenetworks.org">Docs</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/mosaic">Mosaic</a></li>
+        <li><a href="/blog">News</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  </body>
+</html>

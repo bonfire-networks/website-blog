@@ -202,10 +202,17 @@
         
         <h1 id="bonfire.encrypt">Bonfire.Encrypt <a class="direct-link" href="#bonfire.encrypt" target="_blank" rel="noopener">#</a></h1>
 <p>Experimenting with encryption for <a href="https://bonfire.cafe/" target="_blank" rel="noopener">Bonfire</a>. Not ready for use.</p>
-<p>Based on the code of <a href="https://github.com/JesseStimpson/livesecret" target="_blank" rel="noopener">Live Secret</a> (by Jesse Stimpson, Apache License 2.0)</p>
 <h2 id="how-to-use-it">How to use it <a class="direct-link" href="#how-to-use-it" target="_blank" rel="noopener">#</a></h2>
+<p>This requires <a href="https://openmls.tech" target="_blank" rel="noopener">https://openmls.tech</a> wasm bindings, for now clone <a href="https://github.com/bonfire-networks/openmls/tree/wasm-bindings" target="_blank" rel="noopener">https://github.com/bonfire-networks/openmls/tree/wasm-bindings</a> to <code>/assets/static/assets/openmls</code> and run:</p>
+<pre><code>cargo install wasm-pack
+
+cargo build --release --verbose --target wasm32-unknown-unknown -p openmls -F js
+
+cd openmls-wasm &amp;&amp; ./build.sh
+</code></pre>
 <h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
-<p>Copyright (c) 2022 Bonfire &amp; Live Secret Contributors</p>
+<p>Copyright (c) 2022 Bonfire Contributors, GNU Affero General Public License</p>
+<p>Some of the code is originally based on <a href="https://github.com/JesseStimpson/livesecret" target="_blank" rel="noopener">Live Secret</a>: Copyright (c) 2022 Jesse Stimpson, Apache License 2.0</p>
 <p>This program is free software: you can redistribute it and/or modify<br>
 it under the terms of the GNU Affero General Public License as<br>
 published by the Free Software Foundation, either version 3 of the<br>
@@ -235,7 +242,7 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">26 Dec 2025</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">09 Jan 2026</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
             
           

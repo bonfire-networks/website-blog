@@ -345,14 +345,92 @@ SPDX-License-Identifier: AGPL-3.0-only
 SPDX-License-Identifier: CC0-1.0
 -->
 <h1 id="changelog%3A-releases">Changelog: releases <a class="direct-link" href="#changelog%3A-releases" target="_blank" rel="noopener">#</a></h1>
-<h2 id="bonfire-social-%5B1.0-(2025-11-7)%5D">Bonfire Social [1.0 (2025-11-7)] <a class="direct-link" href="#bonfire-social-%5B1.0-(2025-11-7)%5D" target="_blank" rel="noopener">#</a></h2>
+<h2 id="bonfire-social-%5B1.0.1-(2026-01-17)%5D">Bonfire Social [1.0.1 (2026-01-17)] <a class="direct-link" href="#bonfire-social-%5B1.0.1-(2026-01-17)%5D" target="_blank" rel="noopener">#</a></h2>
 <h3 id="added">Added <a class="direct-link" href="#added" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li>✨ schedule a post <a href="https://github.com/bonfire-networks/bonfire-app/issues/1669" target="_blank" rel="noopener">#1669</a> (thanks @mayel)</li>
+<li>✨ Curate a list of suggested profiles for an instance <a href="https://github.com/bonfire-networks/bonfire-app/issues/1668" target="_blank" rel="noopener">#1668</a> (thanks @mayel)</li>
+<li>✨ Follow Hashtags <a href="https://github.com/bonfire-networks/bonfire-app/issues/1640" target="_blank" rel="noopener">#1640</a> (thanks @dogrileycom, @mayel, and @ivanminutillo)</li>
+<li>✨ trending links widget <a href="https://github.com/bonfire-networks/bonfire-app/issues/1726" target="_blank" rel="noopener">#1726</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🚧 Polls: Ask questions with possible choices, gather votes <a href="https://github.com/bonfire-networks/bonfire-app/issues/914" target="_blank" rel="noopener">#914</a> (thanks @ivanminutillo and @mayel)</li>
+<li>✨ configure my preferred language + set post language <a href="https://github.com/bonfire-networks/bonfire-app/issues/270" target="_blank" rel="noopener">#270</a></li>
+<li>✨ translation options for content not in a language I speak <a href="https://github.com/bonfire-networks/bonfire-app/issues/1033" target="_blank" rel="noopener">#1033</a> (thanks @mayel)</li>
+<li>✨ Choose which feed to display on homepage for guests <a href="https://github.com/bonfire-networks/bonfire-app/issues/1647" target="_blank" rel="noopener">#1647</a> (thanks @dogrileycom, @ivanminutillo, and @mayel)</li>
+<li>🚧 ActivityPub Client-to-Server (C2S) API (work in progress) <a href="https://github.com/bonfire-networks/bonfire-app/issues/917" target="_blank" rel="noopener">#917</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🚧 Mastodon-compatible API (work in progress) <a href="https://github.com/bonfire-networks/bonfire-app/issues/916" target="_blank" rel="noopener">#916</a> (thanks @ivanminutillo and @mayel)</li>
+</ul>
+<h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li>⚡ prioritise the processing (in seperate federation queue) of incoming @ mentions and DMs <a href="https://github.com/bonfire-networks/bonfire-app/issues/1658" target="_blank" rel="noopener">#1658</a> (thanks @mayel)</li>
+<li>✨ add likes toggle to feed filters <a href="https://github.com/bonfire-networks/bonfire-app/issues/1722" target="_blank" rel="noopener">#1722</a> (thanks @mayel)</li>
+<li>📝 improve list of circles/people to pick when creating a boundary preset <a href="https://github.com/bonfire-networks/bonfire-app/issues/1297" target="_blank" rel="noopener">#1297</a> (thanks @ivanminutillo and @mayel)</li>
+<li>📝 easier way to see which instances I've blocked (as an admin or a user) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1630" target="_blank" rel="noopener">#1630</a> (thanks @jonpincus, @mayel, and @ivanminutillo)</li>
+<li>📝 Show loading indicator during search operations <a href="https://github.com/bonfire-networks/bonfire-app/issues/1212" target="_blank" rel="noopener">#1212</a> (thanks @ivanminutillo and @mayel)</li>
+<li>📝 Replying to a comment within a thread should not include all the thread participants by default, instead of just the ones included in the post i'm replying to <a href="https://github.com/bonfire-networks/bonfire-app/issues/1615" target="_blank" rel="noopener">#1615</a> (thanks @ivanminutillo and @mayel)</li>
+<li>💅 instance permissions should show all verbs <a href="https://github.com/bonfire-networks/bonfire-app/issues/1611" target="_blank" rel="noopener">#1611</a> (thanks @mayel)</li>
+<li>📝 when adding a moderator via instance settings, it should autocomplete only with local users <a href="https://github.com/bonfire-networks/bonfire-app/issues/1610" target="_blank" rel="noopener">#1610</a> (thanks @mayel)</li>
+<li>🚀 add missing ecto indexes <a href="https://github.com/bonfire-networks/bonfire-app/issues/1588" target="_blank" rel="noopener">#1588</a> (thanks @ivanminutillo and @mayel)</li>
+<li>💅 Article preview in feed shows all the links included in the article with previews, leading to a confusing UX <a href="https://github.com/bonfire-networks/bonfire-app/issues/1578" target="_blank" rel="noopener">#1578</a> (thanks @ivanminutillo and @mayel)</li>
+<li>📝 Upgrade Hammer integration <a href="https://github.com/bonfire-networks/bonfire-app/issues/1522" target="_blank" rel="noopener">#1522</a> (thanks @mayel)</li>
+<li>🚀 remove phx-update=&quot;append&quot; which is not longer supported in LV <a href="https://github.com/bonfire-networks/bonfire-app/issues/1492" target="_blank" rel="noopener">#1492</a> (thanks @mayel and @ivanminutillo)</li>
+<li>⚡ optimise / short circuit incoming Delete activities for unknown remote objects/actors <a href="https://github.com/bonfire-networks/bonfire-app/issues/850" target="_blank" rel="noopener">#850</a> (thanks @mayel)</li>
+<li>🚧 MacOS Dev Setup Incompatibility <a href="https://github.com/bonfire-networks/bonfire-app/issues/1670" target="_blank" rel="noopener">#1670</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/24b77c67bafaeeb51329bb96a973de324335f077" target="_blank" rel="noopener"><code>24b77c6</code></a> (thanks @mayel and @harveypitt)</li>
+<li>🐛 Flags should not be automatically sent to remote instances as reports <a href="https://github.com/bonfire-networks/bonfire-app/issues/1626" target="_blank" rel="noopener">#1626</a> (thanks @jonpincus and @mayel)</li>
+<li>🚀 updated <a href="https://docs.bonfirenetworks.org/readme.html" target="_blank" rel="noopener">docs</a></li>
+<li>🔧 Settings: order of widgets on dashboard <a href="https://github.com/bonfire-networks/bonfire-app/issues/935" target="_blank" rel="noopener">#935</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🚧 replace milisecond numbers or calculations with <code>to_timeout</code> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1729" target="_blank" rel="noopener">#1729</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/991c7a0a0fc7e0e6531fa26beb64ecba257ab2ed" target="_blank" rel="noopener"><code>991c7a0</code></a> (thanks @vishakha1411 and @mayel)</li>
+</ul>
+<h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li>📝 when i reply to a remote post, the boundary default to local <a href="https://github.com/bonfire-networks/bonfire-app/issues/1687" target="_blank" rel="noopener">#1687</a> (thanks @ivanminutillo)</li>
+<li>📝 when i minimize the composer that contains a reply, the reply_to disappear <a href="https://github.com/bonfire-networks/bonfire-app/issues/1686" target="_blank" rel="noopener">#1686</a> (thanks @ivanminutillo)</li>
+<li>📝 fix(app pages): useless closing div tag breaking layout <a href="https://github.com/bonfire-networks/website-blog/pull/7" target="_blank" rel="noopener">PR #7</a> (thanks @Spratch)</li>
+<li>📝 Boost icon does not darken after boost. <a href="https://github.com/bonfire-networks/bonfire-app/issues/1642" target="_blank" rel="noopener">#1642</a> (thanks @mayel and @ivanminutillo)</li>
+<li>📝 Accept Follow activities should not have cc: Public <a href="https://github.com/bonfire-networks/bonfire-app/issues/1712" target="_blank" rel="noopener">#1712</a> (thanks @ivanminutillo)</li>
+<li>🚧 MacOS Dev Setup Incompatibility <a href="https://github.com/bonfire-networks/bonfire-app/issues/1670" target="_blank" rel="noopener">#1670</a> <a href="https://github.com/bonfire-networks/bonfire-app/pull/1672" target="_blank" rel="noopener">PR #1672</a> (thanks @mayel and @harveypitt)</li>
+<li>📝 quote button doesn't open compose modal <a href="https://github.com/bonfire-networks/bonfire-app/issues/1609" target="_blank" rel="noopener">#1609</a> (thanks @mayel and @ivanminutillo)</li>
+<li>📝 Remote follow remains stucked in requested even for auto-followable users <a href="https://github.com/bonfire-networks/bonfire-app/issues/1695" target="_blank" rel="noopener">#1695</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 Creating a circle from Peertube followers has multiple issues. <a href="https://github.com/bonfire-networks/bonfire-app/issues/1716" target="_blank" rel="noopener">#1716</a> (thanks @ozonedGH)</li>
+<li>🐛 When creating a client with openid, bonfire_open_id appears to be concatenating the instance name with the app name. The redirect_uri being passed seems malformed <a href="https://github.com/bonfire-networks/bonfire-app/issues/1692" target="_blank" rel="noopener">#1692</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 typo: cdlr.ex =&gt; cldr.ex <a href="https://github.com/bonfire-networks/bonfire-app/issues/1676" target="_blank" rel="noopener">#1676</a> - <a href="https://github.com/bonfire-networks/bonfire-app/pull/1812" target="_blank" rel="noopener">PR #1812</a> (thanks @ju1m)</li>
+<li>🐛 RuntimeError occurs during user signup when the undiscoverable flag is set to true <a href="https://github.com/bonfire-networks/bonfire-app/issues/1671" target="_blank" rel="noopener">#1671</a> (thanks @harveypitt and @mayel)</li>
+<li>🐛 pinned ranch is too old to support Unix socket permissions <a href="https://github.com/bonfire-networks/bonfire-app/issues/1667" target="_blank" rel="noopener">#1667</a> - <a href="https://github.com/bonfire-networks/bonfire-app/pull/1871" target="_blank" rel="noopener">PR #1871</a>, <a href="https://github.com/bonfire-networks/bonfire-app/pull/1812" target="_blank" rel="noopener">PR #1812</a> (thanks @ju1m and @mayel)</li>
+<li>🐛 Feed Image Display of Photos <a href="https://github.com/bonfire-networks/bonfire-app/issues/1654" target="_blank" rel="noopener">#1654</a> (thanks @dogrileycom and @ivanminutillo)</li>
+<li>🐛 module Bonfire.RuntimeConfig is not available <a href="https://github.com/bonfire-networks/bonfire-app/issues/1651" target="_blank" rel="noopener">#1651</a> - <a href="https://github.com/bonfire-networks/bonfire-app/pull/1652" target="_blank" rel="noopener">PR #1652</a>, <a href="https://github.com/bonfire-networks/bonfire-app/pull/1812" target="_blank" rel="noopener">PR #1812</a> (thanks @ju1m and @mayel)</li>
+<li>🐛 After posting sensitive the next post input has sensitive and title still turned on <a href="https://github.com/bonfire-networks/bonfire-app/issues/1646" target="_blank" rel="noopener">#1646</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 UX/UX issues <a href="https://github.com/bonfire-networks/bonfire-app/issues/1641" target="_blank" rel="noopener">#1641</a> (thanks @dogrileycom and @mayel)</li>
+<li>🐛 bonfire-app always loads appsignal's closed-source agent <a href="https://github.com/bonfire-networks/bonfire-app/issues/1637" target="_blank" rel="noopener">#1637</a> - <a href="https://github.com/bonfire-networks/bonfire-app/pull/1812" target="_blank" rel="noopener">PR #1812</a> (thanks @ju1m and @mayel)</li>
+<li>🐛 Editing a post shows encoded HTML <a href="https://github.com/bonfire-networks/bonfire-app/issues/1635" target="_blank" rel="noopener">#1635</a> (thanks @jonpincus and @mayel)</li>
+<li>🐛 Updated avatar image doesn't show up in the compose box until I hit refresh <a href="https://github.com/bonfire-networks/bonfire-app/issues/1634" target="_blank" rel="noopener">#1634</a> (thanks @jonpincus, @mayel, and @ivanminutillo)</li>
+<li>🐛 Error when setting up first user <a href="https://github.com/bonfire-networks/bonfire-app/issues/1620" target="_blank" rel="noopener">#1620</a> (thanks @timorl and @mayel)</li>
+<li>🐛 A mention-only reply in mastodon has boost verb enabled on a bonfire instance <a href="https://github.com/bonfire-networks/bonfire-app/issues/1616" target="_blank" rel="noopener">#1616</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 In some cases links in posts are not linkified <a href="https://github.com/bonfire-networks/bonfire-app/issues/1614" target="_blank" rel="noopener">#1614</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 load more wont show new items if there are also new activities incoming <a href="https://github.com/bonfire-networks/bonfire-app/issues/1603" target="_blank" rel="noopener">#1603</a> (thanks @ivanminutillo)</li>
+<li>🐛 clicking 'refresh' when looking at <em>user</em> federation status as an admin shows instance federation status <a href="https://github.com/bonfire-networks/bonfire-app/issues/1601" target="_blank" rel="noopener">#1601</a> (thanks @mayel)</li>
+<li>🐛 Slow response after liking an activity <a href="https://github.com/bonfire-networks/bonfire-app/issues/1589" target="_blank" rel="noopener">#1589</a> (thanks @ivanminutillo)</li>
+<li>🐛 Wrong subject shown in composer when replying to a boosted post <a href="https://github.com/bonfire-networks/bonfire-app/issues/1572" target="_blank" rel="noopener">#1572</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 minor: compose window emoji obstructed <a href="https://github.com/bonfire-networks/bonfire-app/issues/1570" target="_blank" rel="noopener">#1570</a> (thanks @gillesdutilh and @ivanminutillo)</li>
+<li>🐛 Inconsistent behaviours when applying more than 1 filter in feed. <a href="https://github.com/bonfire-networks/bonfire-app/issues/1514" target="_blank" rel="noopener">#1514</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 when adding someone to a shared user profile, usernames should be recognise with or without including @ <a href="https://github.com/bonfire-networks/bonfire-app/issues/1296" target="_blank" rel="noopener">#1296</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 Pagination resets feed instead of loading older activities when removing time limit <a href="https://github.com/bonfire-networks/bonfire-app/issues/1285" target="_blank" rel="noopener">#1285</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 locking a thread still allows replying to replies wihin it <a href="https://github.com/bonfire-networks/bonfire-app/issues/1084" target="_blank" rel="noopener">#1084</a> (thanks @mayel)</li>
+<li>🐛 module Bonfire.RuntimeConfig is not available <a href="https://github.com/bonfire-networks/bonfire-app/pull/1652" target="_blank" rel="noopener">PR #1652</a> (thanks @ju1m)</li>
+<li>🐛 Heroicons v1 deprecated - v2 support needed <a href="https://github.com/bonfire-networks/iconify_ex/issues/22" target="_blank" rel="noopener">#22</a> - <a href="https://github.com/bonfire-networks/iconify_ex/pull/21" target="_blank" rel="noopener">PR #21</a> (thanks @neilberkman and @mayel)</li>
+<li>🐛 when i minimize the composer that includes a reply_to, the replied activities disappears <a href="https://github.com/bonfire-networks/bonfire-app/issues/1576" target="_blank" rel="noopener">#1576</a> (thanks @ivanminutillo)</li>
+<li>💅 Tooltips close unexpectedly during LiveView updates <a href="https://github.com/bonfire-networks/bonfire-app/issues/1756" target="_blank" rel="noopener">#1756</a> (thanks @ivanminutillo)</li>
+<li>💅 UX: Tooltip outside-click triggers unintended actions <a href="https://github.com/bonfire-networks/bonfire-app/issues/1755" target="_blank" rel="noopener">#1755</a> (thanks @ivanminutillo)</li>
+<li>📝 mention a local user in the composer is not translated in an actual mention once the post is published <a href="https://github.com/bonfire-networks/bonfire-app/issues/1753" target="_blank" rel="noopener">#1753</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 Preview Themes goes off Screen <a href="https://github.com/bonfire-networks/bonfire-app/issues/1746" target="_blank" rel="noopener">#1746</a> (thanks @btfreeorg and @ivanminutillo)</li>
+<li>🐛 Remove erroneous error message when a flash message auto-closes <a href="https://github.com/bonfire-networks/bonfire-app/issues/1708" target="_blank" rel="noopener">#1708</a> (thanks @mayel and @ivanminutillo)</li>
+</ul>
+<h2 id="bonfire-social-%5B1.0-(2025-11-7)%5D">Bonfire Social [1.0 (2025-11-7)] <a class="direct-link" href="#bonfire-social-%5B1.0-(2025-11-7)%5D" target="_blank" rel="noopener">#</a></h2>
+<h3 id="added-1">Added <a class="direct-link" href="#added-1" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ docs/DEPLOY.md: Add Guix hosting guide. <a href="https://github.com/bonfire-networks/bonfire-app/pull/1585" target="_blank" rel="noopener">PR #1585</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/4f8d8919492c1eccdd4c62e8fe32732c199e5a3d" target="_blank" rel="noopener"><code>4f8d891</code></a> (thanks @fishinthecalculator)</li>
 <li>✨ add postgres autotune <a href="https://github.com/bonfire-networks/bonfire-app/commit/137ef37b1900f719cfc5cdf15f5f1a2595b9f4e4" target="_blank" rel="noopener"><code>137ef37</code></a> (thanks @mayel)</li>
 <li>💅 Consent-based quoting of posts (showing a preview in feeds/threads) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1535" target="_blank" rel="noopener">#1535</a> <a href="https://github.com/bonfire-networks/open_science/commit/aada2ae4c81a5fb9e1ae56ec081f3852f63f82a8" target="_blank" rel="noopener"><code>aada2ae</code></a> (thanks @mayel)</li>
 </ul>
-<h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-1">Changed <a class="direct-link" href="#changed-1" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>📝 reply activity in composer overflowed wrongly <a href="https://github.com/bonfire-networks/bonfire-app/issues/1580" target="_blank" rel="noopener">#1580</a> (thanks @ivanminutillo)</li>
 <li>📝 on closing compose window: confusing button name &quot;cancel&quot; <a href="https://github.com/bonfire-networks/bonfire-app/issues/1571" target="_blank" rel="noopener">#1571</a> (thanks @gillesdutilh and @ivanminutillo)</li>
@@ -371,7 +449,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>📝 workflow <a href="https://github.com/bonfire-networks/openscience.network/commit/9612b7f642b7e44e938ab043b42022df4c036696" target="_blank" rel="noopener"><code>9612b7f</code></a>, <a href="https://github.com/bonfire-networks/openscience.network/commit/43093e60edcf67438ca99484ee49a4cc357b7f0d" target="_blank" rel="noopener"><code>43093e6</code></a> (thanks @ivanminutillo)</li>
 <li>✅ test deletion flows manually with mastodon <a href="https://github.com/bonfire-networks/bonfire-app/issues/780" target="_blank" rel="noopener">#780</a> (thanks @mayel)</li>
 </ul>
-<h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-1">Fixed <a class="direct-link" href="#fixed-1" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🐛 Duplicate ID &quot;Bonfire-UI-Social-Graph-FollowButtonLive_Bonfire-UI-Me-WidgetUsersLive_for_01K947MF9W3JAVW5NQ0P13C7QE&quot; for component Bonfire.UI.Social.Graph.FollowButtonLive when rendering template <a href="https://github.com/bonfire-networks/bonfire-app/issues/1618" target="_blank" rel="noopener">#1618</a> (thanks @rzylber and @mayel)</li>
 <li>🐛 Cannot register first user <a href="https://github.com/bonfire-networks/bonfire-app/issues/1617" target="_blank" rel="noopener">#1617</a> (thanks @timorl and @mayel)</li>
@@ -446,7 +524,7 @@ SPDX-License-Identifier: CC0-1.0
 </li>
 </ul>
 <p>For a full list of changes, see the changelog below.</p>
-<h3 id="added-1">Added <a class="direct-link" href="#added-1" target="_blank" rel="noopener">#</a></h3>
+<h3 id="added-2">Added <a class="direct-link" href="#added-2" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ Consent-based quoting of posts (showing a preview in feeds/threads) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1535" target="_blank" rel="noopener">#1535</a> (thanks @mayel and @ivanminutillo)</li>
 <li>🌏 Federate info about interaction policies based on the boundaries of an object <a href="https://github.com/bonfire-networks/bonfire-app/issues/979" target="_blank" rel="noopener">#979</a> (thanks @mayel)</li>
@@ -468,7 +546,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>✨ It would be nice if the media gallery had swipe-between on photos and right-left keypad on desktop <a href="https://github.com/bonfire-networks/bonfire-app/issues/1424" target="_blank" rel="noopener">#1424</a> (thanks @ivanminutillo and @mayel)</li>
 <li>✨ add a setting to change units (eg for wheather) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1518" target="_blank" rel="noopener">#1518</a> (thanks @mayel)</li>
 </ul>
-<h3 id="changed-1">Changed <a class="direct-link" href="#changed-1" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-2">Changed <a class="direct-link" href="#changed-2" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🚀 improve UX for customising permissions when posting, editing, or defining a boundary (toggling verbs rather than roles) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1553" target="_blank" rel="noopener">#1553</a> (thanks @mayel)</li>
 <li>💅 UX enhancement: Show the full handle w/ domain plus a “Copy” button in profile <a href="https://github.com/bonfire-networks/bonfire-app/issues/1537" target="_blank" rel="noopener">#1537</a> (thanks @ivanminutillo)</li>
@@ -491,7 +569,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>🚧 publish more exhausive docs for install with coopcloud <a href="https://github.com/bonfire-networks/bonfire-app/issues/1512" target="_blank" rel="noopener">#1512</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/1bbc44d498bf463da8f7e77c2be314250b04a06e" target="_blank" rel="noopener"><code>1bbc44d</code></a> (thanks @mayel)</li>
 <li>📝 upgrade phoenix and liveview <a href="https://github.com/bonfire-networks/bonfire-app/commit/a8355b52b6bc6ef77dd6e61f6c8e0e1e954cfc62" target="_blank" rel="noopener"><code>a8355b5</code></a> (thanks @mayel)</li>
 </ul>
-<h3 id="fixed-1">Fixed <a class="direct-link" href="#fixed-1" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-2">Fixed <a class="direct-link" href="#fixed-2" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🐛 fix instance icon/banner uploaded to s3 <a href="https://github.com/bonfire-networks/bonfire-app/issues/1536" target="_blank" rel="noopener">#1536</a> (thanks @mayel)</li>
 <li>🐛 Hashtag search is not working with Meilisearch backend <a href="https://github.com/bonfire-networks/bonfire-app/issues/1497" target="_blank" rel="noopener">#1497</a> (thanks @GreenMan-Network and @mayel)</li>
@@ -533,7 +611,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>Lots of small bug fixes on comment threads, messaging, settings, and more</li>
 </ul>
 <p>For a comprehensive list of changes, here's the full changelog:</p>
-<h3 id="added-2">Added <a class="direct-link" href="#added-2" target="_blank" rel="noopener">#</a></h3>
+<h3 id="added-3">Added <a class="direct-link" href="#added-3" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ Sanitize text included in the summary <a href="https://github.com/bonfire-networks/bonfire-app/issues/1421" target="_blank" rel="noopener">#1421</a> (thanks @ivanminutillo and @mayel)</li>
 <li>✨ Add first 200 (configurable) chars in the summary rather than full article <a href="https://github.com/bonfire-networks/bonfire-app/issues/1420" target="_blank" rel="noopener">#1420</a> (thanks @ivanminutillo and @mayel)</li>
@@ -561,7 +639,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>✨ add phoenix_gon dep <a href="https://github.com/bonfire-networks/bonfire-app/commit/aa1d50cf6480b519a530f5c1369d104ef83bbe14" target="_blank" rel="noopener"><code>aa1d50c</code></a> (thanks @mayel)</li>
 <li>✨ Create HOWTO_add_feed_preset.md <a href="https://github.com/bonfire-networks/bonfire-app/commit/b3c89696286c465c5639de4a742446d95b98e709" target="_blank" rel="noopener"><code>b3c8969</code></a> (thanks @ivanminutillo)</li>
 </ul>
-<h3 id="changed-2">Changed <a class="direct-link" href="#changed-2" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-3">Changed <a class="direct-link" href="#changed-3" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>💅 If an article does not have an image, remove the current preview <a href="https://github.com/bonfire-networks/bonfire-app/issues/1371" target="_blank" rel="noopener">#1371</a> (thanks @ivanminutillo)</li>
 <li>💅 disable @ mention autocomplete in DMs <a href="https://github.com/bonfire-networks/bonfire-app/issues/1351" target="_blank" rel="noopener">#1351</a> (thanks @ivanminutillo and @mayel)</li>
@@ -585,7 +663,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>📝 attempt fix s3 uploads <a href="https://github.com/bonfire-networks/bonfire-app/commit/5280ec22ae1e677f95f4728a0f0feb08c1c37434" target="_blank" rel="noopener"><code>5280ec2</code></a> (thanks @mayel)</li>
 <li>🚧 avatar images not showing up in search <a href="https://github.com/bonfire-networks/bonfire-app/issues/1362" target="_blank" rel="noopener">#1362</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/55c5d720a19b7b11731bbbbffcd7d6481aaf0da7" target="_blank" rel="noopener"><code>55c5d72</code></a> (thanks @mayel and @ivanminutillo)</li>
 </ul>
-<h3 id="fixed-2">Fixed <a class="direct-link" href="#fixed-2" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-3">Fixed <a class="direct-link" href="#fixed-3" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🐛 incoming CW on remote posts not being recognised <a href="https://github.com/bonfire-networks/bonfire-app/issues/1411" target="_blank" rel="noopener">#1411</a> (thanks @mayel)</li>
 <li>🐛 some image attachments of remote posts not being shown <a href="https://github.com/bonfire-networks/bonfire-app/issues/1410" target="_blank" rel="noopener">#1410</a> (thanks @mayel)</li>
