@@ -91,7 +91,7 @@ We've also started work on end-to-end encrypted messaging as part of the [Social
 
 Meanwhile, The Fulcrum wrote a [thoughtful article exploring Bonfire](https://www.thefulcrum.dev/grab-a-seat-at-our-bonfire-the-revolutionary-community-platform/) and its potential. We're eager to see how they'll experiment with the framework and what emerges from their work.
 
-We're working with [Newsmast Foundation](newsmastfoundation.org) to setup a Bonfire server for one of their existing communities, stay tuned!
+We're also working with [Newsmast Foundation](newsmastfoundation.org) to setup a Bonfire server for an existing community, stay tuned!
 
 Have you made something with Bonfire or written about it? We'd love to hear from you and feature community projects in future updates.
 
