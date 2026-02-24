@@ -60,4 +60,4 @@ Our general FAQ section can be found on the [Bonfire website](https://bonfirenet
 
 ## Subscribe to updates
 
-If you would like to keep informed about what's happening in and around the Bonfire ecosystem, please [follow us on the fediverse](https://indieweb.social/@bonfire) and/or enter your email below to subscribe to occasional updates.
+If you would like to keep informed about what's happening in and around the Bonfire ecosystem, please [follow us on the fediverse](https://bonfire.cafe/@Bonfire) and/or enter your email below to subscribe to occasional updates.

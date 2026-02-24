@@ -315,7 +315,7 @@ Effectively sharing your insights and discoveries with the Bonfire community is 
 ### Identify the appropriate channel
 - <a href="https://campground.bonfire.cafe" target="blank">Campground instance</a>: For broad discussions or feedback, our test instance of Bonfire is ideal. It allows for open dialogues with a wide range of users and the Bonfire designers/developers.
 - <a href="https://github.com/bonfire-networks/bonfire-app/issues" target="blank">Issue Tracker</a>: If your finding is related to a bug or a specific technical issue, using the project's issue tracker is the most direct way to report it.
-- Mention or message <a href="https://indieweb.social/@bonfire" target="blank">@bonfire@indieweb.social</a> on the fediverse or email us at *team@bonfire.cafe* to chat and exchange ideas with the team 
+- Mention or message <a href="https://bonfire.cafe/@Bonfire" target="blank">@bonfire@bonfire.cafe</a> on the fediverse or email us at *team@bonfire.cafe* to chat and exchange ideas with the team 
 
 ### Share your findings or proposals
 - **Be concise:** Please describe them clearly and concisely, and avoid jargon to ensure comprehensibility by all community members.

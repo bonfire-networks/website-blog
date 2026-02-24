@@ -27,7 +27,7 @@ Please back the campaign, share it, and invite others to make this "last migrati
 - [Website](https://bonfirenetworks.org)  
 - [Docs](https://docs.bonfirenetworks.org)  
 - [Demo](https://campground.bonfire.cafe)  
-- [Follow updates on the fediverse](https://indieweb.social/@bonfire)
+- [Follow updates on the fediverse](https://bonfire.cafe/@Bonfire)
 - [Crowdfunding](https://www.indiegogo.com/projects/bonfire/community?refcode=ysD_3Grs5UGdSSFrePZkMw)  
 
 Thank you for helping build a safer and community‑centred social web, slowly, autonomously, together.

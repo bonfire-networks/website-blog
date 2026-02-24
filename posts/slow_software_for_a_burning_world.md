@@ -12,7 +12,7 @@ author: Bonfire maintainers circle
 
 As we approach the release of Bonfire 1.0, this isn’t your typical launch announcement. Instead, it’s a moment to reflect on **how** we’ve built Bonfire, a roadmap of values, methods, and intentions – and an invitation to define what comes next.
 
-> _You can [follow Bonfire on the fediverse](https://indieweb.social/@bonfire) for updates on the release, including highlights of unique features we’ll share over the next few days._
+> _You can [follow Bonfire on the fediverse](https://bonfire.cafe/@Bonfire) for updates on the release, including highlights of unique features we’ll share over the next few days._
 
 In a world of “move fast and break things,” we’ve chosen a different tempo — one rooted in care, deep listening, and collective stewardship. Slow software means building for long-term resilience and meaningful participation, rather than chasing novelty, speed, or scale. 
 
@@ -110,6 +110,6 @@ We hope these principles can ignite new approaches to digital community-building
 
 ---
 
-_This post was written by the Bonfire maintainers' circle and shaped by feedback from the advisory circle. Join the conversation on [Matrix](https://matrix.to/#/#bonfire:matrix.org), comment on [this post on the fediverse](https://indieweb.social/@bonfire/114477426502965851) or on [the campground](https://campground.bonfire.cafe), or email us at [team@bonfire.cafe](mailto:team@bonfire.cafe)._
+_This post was written by the Bonfire maintainers' circle and shaped by feedback from the advisory circle. Join the conversation on [Matrix](https://matrix.to/#/#bonfire:matrix.org), comment on [this post on the fediverse](https://bonfire.cafe/@Bonfire/114477426502965851) or on [the campground](https://campground.bonfire.cafe), or email us at [team@bonfire.cafe](mailto:team@bonfire.cafe)._
 
 _Credit for the art goes to Tomás, a Zapatista artist in a community near San Cristobal._

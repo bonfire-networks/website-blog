@@ -9,7 +9,7 @@ author: Ivan Minutillo
 
 ---
 
-On May 10th [we published a toot](https://indieweb.social/@bonfire/108278057442956190) asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions. It was such a great opportunity to see how a diverse range of people interacted and used our platform, what they found easy and familiar and what instead felt weird, clunky or buggy. 
+On May 10th [we published a toot](https://bonfire.cafe/@Bonfire/108278057442956190) asking for volunteers to dive into our upcoming beta of Bonfire Social, by participating in some usability testing sessions. It was such a great opportunity to see how a diverse range of people interacted and used our platform, what they found easy and familiar and what instead felt weird, clunky or buggy. 
 
 We ended up with a valuable list of suggestions, feature proposals, bugs and some appreciations for the work done so far :-) 
 

@@ -25,7 +25,7 @@ Interestingly, we found a surprising uniformity in user behaviour, with all part
 As a team, we've taken this feedback on board and have been discussing the best ways to iterate based on the insights and sugestions shared by participants.  
 
 ## Next steps
-We're now in the process of implementing changes based on the feedback received. In a couple of months, we plan to conduct further user research to assess the impact of these changes and gather more user insights. We encourage members of the Bonfire community to get involved in this process by providing feedback and participating in future user research. You can do this by discussing this post on the Fediverse and mentioning [@bonfire@indieweb.social ](https://indieweb.social/@bonfire)
+We're now in the process of implementing changes based on the feedback received. In a couple of months, we plan to conduct further user research to assess the impact of these changes and gather more user insights. We encourage members of the Bonfire community to get involved in this process by providing feedback and participating in future user research. You can do this by discussing this post on the Fediverse and mentioning [@bonfire@bonfire.cafe](https://bonfire.cafe/@Bonfire)
 
 Users who want to provide further feedbacks to the bonfire team can go through the composer on our campground instance, and report any suggestion using the #bonfire_feedback hashtags.
 

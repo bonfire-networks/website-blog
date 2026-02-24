@@ -89,5 +89,5 @@ Beyond sharing our experience, we aim for Bonfire to become a place where both b
 
 Here's how you can get involved:
 
-- **Feedback and suggestions:** Follow us on the [Fediverse](https://indieweb.social/@bonfire) and join our discussions on the [Elixir Forum](https://elixirforum.com/t/bonfire-networks-an-open-source-framework-for-building-federated-digital-spaces/65587), [#Bonfire room in Elixir Slack](https://app.slack.com/client/TMQ3PKXT9/C077S4K94CV) or our [Matrix space](https://matrix.to/#/%23bonfire-networks:matrix.org) to stay updated.
+- **Feedback and suggestions:** Follow us on the [Fediverse](https://bonfire.cafe/@Bonfire) and join our discussions on the [Elixir Forum](https://elixirforum.com/t/bonfire-networks-an-open-source-framework-for-building-federated-digital-spaces/65587), [#Bonfire room in Elixir Slack](https://app.slack.com/client/TMQ3PKXT9/C077S4K94CV) or our [Matrix space](https://matrix.to/#/%23bonfire-networks:matrix.org) to stay updated.
 - **Collaborate:** If you're interested in contributing code or ideas, you can have a look at our ["good first issues"](https://github.com/bonfire-networks/bonfire-app/issues?q=sort%3Aupdated-desc+is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) or check out our [open bounties](https://github.com/bonfire-networks/bounties).
