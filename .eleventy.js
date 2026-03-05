@@ -156,6 +156,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
+  eleventyConfig.addPassthroughCopy("archives");
 
   // Ignore CSS output file to prevent watch loop
   eleventyConfig.watchIgnores.add("css/style_v2.css");
