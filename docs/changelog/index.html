@@ -349,17 +349,26 @@ SPDX-License-Identifier: CC0-1.0
 <h3 id="what's-new">What's new <a class="direct-link" href="#what's-new" target="_blank" rel="noopener">#</a></h3>
 <p><strong>Keyword filtering</strong>: You can now filter out posts containing specific words, phrases, or hashtags. Useful for tuning out topics you'd rather not see. Instance admins can set filters that apply across the whole instance, and per-user filtering is coming in a future release.</p>
 <p><strong>Translate posts</strong> with one click: A translate button now appears under posts, making it easy to read content written in other languages. Translation works locally in Chrome out of the box; instance admins or individual users can also set up LibreTranslate or DeepL APIs for broader support (in translation extension settings).</p>
+<p><strong>Feed markers</strong>: Your place in the feed is now saved when you navigate away, so you can pick up where you left off</p>
+<p><strong>New Dashboard widgets</strong>: Weather, instance stats, and user summary now available for your customizable dashboard.</p>
 <h3 id="added">Added <a class="direct-link" href="#added" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ New setting to control what appears above a reply in your feed: choose between showing the post being replied to, the original post that started the thread, or none <a href="https://github.com/bonfire-networks/bonfire-app/issues/1714" target="_blank" rel="noopener">#1714</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1359" target="_blank" rel="noopener">#1359</a> (thanks @mayel and @ivanminutillo)</li>
 <li>📝 Your place in the feed is now saved when you navigate away, so you can pick up where you left off <a href="https://github.com/bonfire-networks/bonfire-app/issues/1835" target="_blank" rel="noopener">#1835</a> (thanks @ivanminutillo)</li>
 <li>✨ Press Cmd+Enter (or Ctrl+Enter on Windows/Linux) to publish a post without reaching for the button <a href="https://github.com/bonfire-networks/bonfire-app/issues/397" target="_blank" rel="noopener">#397</a> (thanks @ivanminutillo and @sefsh)</li>
+<li>✨ keyboard shortcuts (n for opening the composer, - for minimizing, cmd/ctrl + enter for publishing a post) (thanks @ivanminutillo)</li>
+<li>✨ New Dashboard Weather widget</li>
+<li>🚀 New Safety settings section<br>
+You can now toggle widgets directly in dashboard page</li>
 <li>🚀 Location data and other hidden metadata are now automatically removed from photos you upload <a href="https://github.com/bonfire-networks/bonfire-app/issues/1794" target="_blank" rel="noopener">#1794</a> (thanks @mayel)</li>
 <li>🚧 Filter out posts containing specific keywords, configurable by instance admins and soon by individual users <a href="https://github.com/bonfire-networks/bonfire-app/issues/1001" target="_blank" rel="noopener">#1001</a> (thanks @mayel and @ivanminutillo)</li>
 <li>✨ Translate button on posts, so you can read content in other languages with one click (configure API keys for LibreTranslate or DeepL) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1809" target="_blank" rel="noopener">#1809</a> (thanks @ivanminutillo)</li>
 <li>✨ Polls now show a preview before you vote, so you can see the options clearly <a href="https://github.com/bonfire-networks/bonfire-app/issues/1363" target="_blank" rel="noopener">#1363</a> (thanks @ivanminutillo)</li>
 <li>✨ ActivityPub: support for a newer, more robust standard for verifying messages between instances (RFC 9421 HTTP Message Signatures) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1823" target="_blank" rel="noopener">#1823</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1826" target="_blank" rel="noopener">#1826</a> <a href="https://github.com/bonfire-networks/activity_pub/pull/9" target="_blank" rel="noopener">PR #9</a> (thanks @dahlia and @mayel)</li>
 <li>✨ Federated events are now accessible via REST API, making them visible in supported mobile apps <a href="https://github.com/bonfire-networks/bonfire-app/issues/1772" target="_blank" rel="noopener">#1772</a> (thanks @mayel and @ivanminutillo)</li>
+<li>✨ Account Data &amp; Defaults: surfaces relevant account info and highlights your safety defaults at a glance, including discoverability and search indexing settings (thanks @ivanminutillo and @mayel)</li>
+<li>✨ Instance Widget: overview of your instance's key defaults: federation behaviour, open vs invite-only registration, and known servers (thanks @ivanminutillo and @mayel)</li>
+<li>✨ Beyond preferred language, users can now specify other languages they understand, these appear in the Composer language dropdown (thanks @mayel and @ivanminutillo)</li>
 <li>🚧 Push notifications are now supported in the browser and in mobile apps <a href="https://github.com/bonfire-networks/bonfire-app/issues/1800" target="_blank" rel="noopener">#1800</a> (thanks @mayel)</li>
 </ul>
 <h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
@@ -376,7 +385,13 @@ SPDX-License-Identifier: CC0-1.0
 </ul>
 <h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
 <ul>
+<li>✨ Improved Direct Messages UX/UI</li>
+<li>✨ Improved Extension settings UX/UI</li>
+<li>✨ Improved Composer UI on mobile</li>
+<li>✨ Improved ghosted/blocked/silenced UX/UI</li>
 <li>✨ Loading all posts from a remote user's profile was broken <a href="https://github.com/bonfire-networks/bonfire-app/issues/1785" target="_blank" rel="noopener">#1785</a> (thanks @ivanminutillo and @mayel)</li>
+<li>✨ fix toggling between linear and nested thread (thanks @ivanminutillo and @mayel)</li>
+<li>✨ fix deeply nested thread UI (thanks @ivanminutillo and @mayel)</li>
 <li>✨ Following someone incorrectly showed a notification saying you followed yourself <a href="https://github.com/bonfire-networks/bonfire-app/issues/1814" target="_blank" rel="noopener">#1814</a> (thanks @ivanminutillo)</li>
 <li>✨ Grouped notifications dont allow to see all the users grouped <a href="https://github.com/bonfire-networks/bonfire-app/issues/1682" target="_blank" rel="noopener">#1682</a> (thanks @ivanminutillo and @mayel)</li>
 <li>🚧 Quote posts accepted on Bonfire should now correctly appear as accepted in Mastodon <a href="https://github.com/bonfire-networks/bonfire-app/issues/1803" target="_blank" rel="noopener">#1803</a> (thanks @mayel and @btfreeorg)</li>
