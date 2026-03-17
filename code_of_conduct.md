@@ -10,7 +10,7 @@ When participating we commit to act and interact in ways that contribute to an o
 
 This code of conduct is *long*. We **appreciate that it may take a good few minutes** over a cup of your favourite beverage to read through these guidelines. It is also a living document, it cannot account for all the ways that people might feel excluded, unsafe or uncomfortable, so it is never truly finished and should change whenever needed to reflect the priorities and sensitivities of the community as it evolves.
 
-## Scope 
+## Scope 
 
 Unless otherwise noted, this **code of conduct applies to all Bonfire spaces***, including interactions, discussions and other content, both online or offline. Some spaces may have additional rules in place, which will be made clearly available to participants. Participants are responsible for knowing and abiding by these rules. 
 
