@@ -31,7 +31,7 @@ Your place in the feed is now saved when you navigate away, so you can pick up e
 
 ### New dashboard widgets
 
-Weather, instance stats, and user summary are now available for your customisable dashboard. Bonfire's homepage is moving toward a widget-based layout that goes well beyond the classic microblogging feed — a space you can genuinely shape around what matters to you.
+Weather, instance stats, and user summary are now available for your customisable dashboard. Bonfire's homepage is moving toward a widget-based layout that goes well beyond the classic microblogging feed, to become a space you can genuinely shape around what matters to you. 
 
 Currently available widgets include:
 
@@ -42,7 +42,7 @@ Currently available widgets include:
 - **Recent articles**: Discover long-form content and blog posts from across your network.
 - **Suggested profiles**: Instance admins can curate recommendations to help newcomers find interesting people to follow.
 
-[We'd love your feedback on which widgets you'd find most useful](https://github.com/bonfire-networks/bonfire-app/issues/1758). What would make Bonfire feel even more like home?
+[We'd love your feedback on what kind of widgets you'd find most useful](https://github.com/bonfire-networks/bonfire-app/issues/1758). What would make Bonfire feel even more like home?
 
 ### Better mobile experience and keyboard shortcuts
 
