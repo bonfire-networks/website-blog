@@ -1,6 +1,6 @@
 ---
-title: "Bonfire 1.0.2:Shaping Your Space"
-description: "We just released Bonfire 1.0.2, an update focused on giving you a more stable and reliable experience."
+title: "Bonfire 1.0.2: Shaping Your Space"
+description: "We just released Bonfire 1.0.2, an update focused on giving you a more stable and reliable experience. We're also heads-down working with several communities who are setting up their own Bonfire servers in the coming months. Plus end to end encryption and federated groups development updates."
 date: 2026-03-17
 tags: development
 image: /img/bonfire1.0.2.png
@@ -13,7 +13,7 @@ We just released Bonfire 1.0.2, an update focused on giving you a more stable an
 
 > Now is a good time to update your instance or discover Bonfire firsthand at [campground.bonfire.cafe](https://campground.bonfire.cafe).
 
-We're also heads-down working with several communities who will be setting up their own Bonfire servers in the coming months. Plus end to end encryption and federated groups development updates. More below.
+We're also heads-down working with several communities who are setting up their own Bonfire servers. Plus updates on end to end encryption and federated groups. More below.
 
 ## What's new in Bonfire 1.0.2
 
@@ -42,7 +42,6 @@ Currently available widgets include:
 - **Recent articles**: Discover long-form content and blog posts from across your network.
 - **Suggested profiles**: Instance admins can curate recommendations to help newcomers find interesting people to follow.
 
-
 [We'd love your feedback on which widgets you'd find most useful](https://github.com/bonfire-networks/bonfire-app/issues/1758). What would make Bonfire feel even more like home?
 
 ### Better mobile experience and keyboard shortcuts
@@ -58,9 +57,7 @@ We added support for RFC 9421 HTTP Message Signatures, a newer and more robust s
 This release squashes a long list of bugs around federation behaviour, threading, user interface, polls, content warnings, and more. See the [full changelog](https://docs.bonfirenetworks.org/changelog.html) for the complete list.
 
 ---
-
 > **Update your instance or try Bonfire at [campground.bonfire.cafe](https://campground.bonfire.cafe)**
-
 ---
 
 ## Ongoing projects
@@ -77,9 +74,9 @@ Several communities are actively working toward launching their own Bonfire inst
 
 ## Crowdfunding update
 
-The crowdfunding campaign is closed. Thanks again to everyone who backed us, your contributions will go a long way in making Bonfire more usable and stable for everyone! 
+Thanks again to everyone who backed us, your contributions will go a long way in making Bonfire more usable and stable for everyone! 
 
-We're now fulfilling rewards. If you selected a physical reward (printed or screenprinted artwork), please [check your shipping address](https://www.indiegogo.com/en/users/pledgesandorders) on Indiegogo so we can get it to you. You'll hear from us soon either way.
+We're now preparing to fulfil rewards. If you selected a physical reward (printed or screenprinted artwork), please [make sure to check your shipping address](https://www.indiegogo.com/en/users/pledgesandorders) on Indiegogo so we can get it to you. You'll hear from us soon either way.
 
 ## Thank you
 
