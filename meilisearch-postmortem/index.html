@@ -1,0 +1,93 @@
+<h1 id="post-mortem%3A-meilisearch-overload-on-fi1.bonfire.cafe">Post-Mortem: MeiliSearch Overload on fi1.bonfire.cafe <a class="direct-link" href="#post-mortem%3A-meilisearch-overload-on-fi1.bonfire.cafe" target="_blank" rel="noopener">#</a></h1>
+<p><strong>Date:</strong> 2026-03-28 (updated 2026-04-04)</p>
+<h2 id="symptoms">Symptoms <a class="direct-link" href="#symptoms" target="_blank" rel="noopener">#</a></h2>
+<ul>
+<li>MeiliSearch process (PID 5721, <code>bonfire_cafe_search</code>) at 101% CPU, ~15.6GB RAM</li>
+<li>167+ hours accumulated CPU time since Mar 28</li>
+<li><code>prod_closed</code> index perpetually indexing, never reaching idle state</li>
+</ul>
+<h2 id="root-causes">Root Causes <a class="direct-link" href="#root-causes" target="_blank" rel="noopener">#</a></h2>
+<h3 id="1.-redundant-index-init-on-every-document-operation">1. Redundant index init on every document operation <a class="direct-link" href="#1.-redundant-index-init-on-every-document-operation" target="_blank" rel="noopener">#</a></h3>
+<p>Bug in <code>extensions/bonfire_search/lib/indexer.ex:100-103</code> — every document indexing call passed <code>init_index_first=true</code>, triggering <code>create_index</code> + <code>set_facets</code> + <code>set_searchable_fields</code> before each document. The <code>create_index</code> failed every time with &quot;Index already exists&quot;, but the settings updates still got queued and processed.</p>
+<p><strong>Partial fix deployed</strong> (<a href="https://github.com/bonfire-networks/bonfire_search/commit/3d38db4a9eab01b5a0ecc30d51303e72f9a703f2" target="_blank" rel="noopener">bonfire_search@3d38db4</a>): moved index initialization to app startup with health-check retry, removed <code>init_index_first</code> from per-document calls. This eliminates the 3 redundant HTTP calls per document.</p>
+<h3 id="2.-unbounded-index-size-%2B-one-at-a-time-indexing-(still-active)">2. Unbounded index size + one-at-a-time indexing (still active) <a class="direct-link" href="#2.-unbounded-index-size-%2B-one-at-a-time-indexing-(still-active)" target="_blank" rel="noopener">#</a></h3>
+<p>As of 2026-04-04, <code>prod_closed</code> contains <strong>2,142,167 documents</strong> (12.6 GB index size) and is perpetually indexing. The Bonfire app sends individual document PUTs every few seconds via federation activity, and each single-document update takes 4-6 seconds to process against the 2.1M document index.</p>
+<p>The indexing is synchronous in the Epic pipeline (no Oban), so every post/update action pays the cost of:</p>
+<ul>
+<li>DB preloads (activity tags, creator, replied, creator settings)</li>
+<li>Synchronous HTTP PUT to MeiliSearch</li>
+<li>MeiliSearch re-indexing 2.1M documents for each single-document addition</li>
+</ul>
+<p><code>prod_closed</code> contents:</p>
+<ul>
+<li>~2.09M posts (<code>post_content</code>, <code>created</code>, <code>replied</code>)</li>
+<li>~50K profiles (<code>character</code>, <code>profile</code>)</li>
+<li>~173 other items</li>
+</ul>
+<p>For comparison, <code>prod_public</code> has 193K documents (164 MB), indexes in 1-2 seconds, and reaches idle state normally.</p>
+<h3 id="3.-five-meilisearch-instances-with-no-resource-limits">3. Five MeiliSearch instances with no resource limits <a class="direct-link" href="#3.-five-meilisearch-instances-with-no-resource-limits" target="_blank" rel="noopener">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>RAM</th>
+<th>CPU%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bonfire_cafe_search</code></td>
+<td>~15.6 GB</td>
+<td>101%</td>
+</tr>
+<tr>
+<td><code>demo_bonfire_cafe_search</code></td>
+<td>~4.5 GB</td>
+<td>0.4%</td>
+</tr>
+<tr>
+<td><code>playground_bonfire_cafe_search</code></td>
+<td>~3.3 GB</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>openscience_network_search</code></td>
+<td>~1.3 GB</td>
+<td>0%</td>
+</tr>
+<tr>
+<td><code>campground_bonfire_cafe_search</code></td>
+<td>~1.2 GB</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p>Total MeiliSearch footprint: <strong>~26 GB RAM</strong> with no memory or CPU limits configured.</p>
+<h2 id="actions-taken">Actions Taken <a class="direct-link" href="#actions-taken" target="_blank" rel="noopener">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fix redundant index init per document (<a href="https://github.com/bonfire-networks/bonfire_search/commit/3d38db4a9eab01b5a0ecc30d51303e72f9a703f2" target="_blank" rel="noopener">3d38db4</a>)</td>
+<td>Done</td>
+</tr>
+</tbody>
+</table>
+<h2 id="todo">TODO <a class="direct-link" href="#todo" target="_blank" rel="noopener">#</a></h2>
+<h3 id="critical">Critical <a class="direct-link" href="#critical" target="_blank" rel="noopener">#</a></h3>
+<ol>
+<li><strong>Reduce <code>prod_closed</code> index size</strong> — 2.1M documents is excessive. Options:
+<ul>
+<li>Only index local posts; skip federated content unless a local user interacts with it (likely 90%+ reduction)</li>
+<li>Add a TTL to remove old posts from the search index (keep in Postgres, just not searchable)</li>
+</ul>
+</li>
+<li><strong>Batch indexing</strong> — buffer document updates and send to MeiliSearch in batches (e.g. every 10-30 seconds) instead of one at a time</li>
+<li><strong>Cap MeiliSearch resources</strong> — add <code>--max-indexing-memory 4GiB --max-indexing-threads 1</code> to prevent runaway memory/CPU usage</li>
+<li><strong>Add Docker resource limits</strong> for MeiliSearch containers (<code>--memory</code>, <code>--cpus</code>)</li>
+</ol>
