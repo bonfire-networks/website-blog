@@ -1,0 +1,855 @@
+---
+title: "Bonfire Telling — Federated Comments for the Open Web"
+description: "Embed federated comment threads on any static site. Readers reply from Bonfire, Mastodon, or any ActivityPub account. No walled gardens, no surveillance."
+layout: layouts/base.njk
+---
+
+<style>
+  /* Code syntax highlighting */
+  .telling-code .tag { color: #F0784A; }
+  .telling-code .attr { color: #7DD3FC; }
+  .telling-code .val { color: #86EFAC; }
+  .telling-code .comment { color: rgba(255,255,255,0.25); font-style: italic; }
+  .telling-code .kw { color: #C4B5FD; }
+  .telling-code .fn { color: #7DD3FC; }
+  .telling-code .str { color: #86EFAC; }
+  .telling-code .cmt { color: rgba(255,255,255,0.25); font-style: italic; }
+  .telling-code .file-label {
+    display: block; font-size: 0.7rem;
+    color: rgba(255,255,255,0.3); margin-bottom: 0.4rem;
+    font-style: normal;
+  }
+  /* Code window dots */
+  .telling-code-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .telling-code-dot:nth-child(1) { background: #FF6058; }
+  .telling-code-dot:nth-child(2) { background: #FFBD2E; }
+  .telling-code-dot:nth-child(3) { background: #27CA40; }
+  /* Copy button states */
+  .telling-copy-btn.copied { background: rgba(74, 222, 128, 0.2); color: #4ADE80; border-color: rgba(74, 222, 128, 0.3); }
+  /* Guide panel animation */
+  .telling-guide-detail { display: none; }
+  .telling-guide-detail.visible { display: block; animation: telling-guideIn 0.3s ease; }
+  @keyframes telling-guideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Guide detail typography */
+  .telling-guide-detail h3 { font-family: "Noto Serif", serif; font-weight: 600; font-size: 1.1rem; }
+  .telling-guide-detail h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .telling-guide-detail p { font-size: 0.82rem; line-height: 1.6; opacity: 0.6; }
+  /* Guide card active state */
+  .telling-guide-card.active { border-color: var(--color-primary) !important; background: color-mix(in srgb, var(--color-primary) 10%, transparent) !important; }
+  /* Federation badge pulse */
+  @keyframes telling-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .telling-pulse { animation: telling-pulse 2s ease-in-out infinite; }
+</style>
+
+<div class="telling-page">
+
+<!-- ── HERO ── -->
+<section class="pt-16 pb-12 lg:pt-24 lg:pb-20 px-4 lg:px-0" aria-labelledby="telling-hero-heading">
+  <div class="max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div>
+      <h1 id="telling-hero-heading" class="text-4xl lg:text-6xl lg:leading-[72px] font-bold tracking-tight text-base-content serif-bold">Every site<br/>deserves a <em class="text-primary italic">voice</em></h1>
+      <p class="text-lg lg:text-xl mt-6 text-base-content/80 max-w-lg">
+        Bonfire Telling brings federated conversations to the open web.
+        Embed a comment thread on any static site — readers reply from
+        their Bonfire, Mastodon, or any ActivityPub account.
+        No walled gardens. No surveillance. Just people talking.
+      </p>
+      <div class="flex gap-4 mt-8 flex-wrap">
+        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the Embed</a>
+        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See How It Works</a>
+      </div>
+      <div class="mt-10 pl-5 border-l-2 border-primary/40">
+        <p class="serif-regular italic text-base text-base-content/60">"To learn a belief without belief is to sing a song without the tune."</p>
+        <cite class="block mt-2 text-xs tracking-wider uppercase text-base-content/40 not-italic">Ursula K. Le Guin — The Telling (2000)</cite>
+      </div>
+    </div>
+
+    <div class="relative order-first lg:order-last">
+      <div class="absolute -top-3 right-5 z-10 bg-base-content text-base-100 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide shadow-lg flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 telling-pulse"></span>
+        Federated via ActivityPub
+      </div>
+      <div class="bg-base-200 rounded-2xl shadow-xl overflow-hidden border border-base-content/10">
+        <div class="px-5 py-4 border-b border-base-content/10 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary" viewBox="0 0 18 18" fill="none"><path d="M9 3 C7.5 5.5, 6 8, 6 10 C6 12.2 7.3 13.5 9 13.5 C10.7 13.5 12 12.2 12 10 C12 8 10.5 5.5 9 3Z" fill="currentColor"/></svg>
+            <span class="serif-bold text-base text-base-content">Bonfire Telling</span>
+          </div>
+          <span class="text-sm text-base-content/50">3 voices</span>
+        </div>
+        <div class="px-5 py-3">
+          <div class="py-3 border-b border-base-content/5">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#5B7FE8;">A</div>
+              <span class="text-sm font-medium text-base-content">ada</span>
+              <span class="text-xs text-base-content/50">@bonfire.cafe</span>
+            </div>
+            <p class="text-sm text-base-content/70 pl-9">This is exactly the kind of tooling the fediverse needs. Finally, blogs can be part of the conversation again.</p>
+          </div>
+          <div class="py-3 border-b border-base-content/5">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#E85B8A;">M</div>
+              <span class="text-sm font-medium text-base-content">mika</span>
+              <span class="text-xs text-base-content/50">@mastodon.social</span>
+            </div>
+            <p class="text-sm text-base-content/70 pl-9">Replied from Mastodon and it just showed up here. Beautiful.</p>
+          </div>
+          <div class="py-3">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#4ADE80;">R</div>
+              <span class="text-sm font-medium text-base-content">river</span>
+              <span class="text-xs text-base-content/50">@community.garden</span>
+            </div>
+            <p class="text-sm text-base-content/70 pl-9">No tracking, no ads, no login wall. This is how the web should work.</p>
+          </div>
+        </div>
+        <div class="px-5 py-3 border-t border-base-content/10 flex gap-3 items-start">
+          <div class="flex-1 px-3 py-2 border border-base-content/10 rounded-lg text-sm text-base-content/40 bg-base-300">Join Bonfire Telling...</div>
+          <button class="btn btn-primary btn-sm" type="button" aria-hidden="true">Reply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="py-12 lg:py-20 px-4 bg-base-300/30" id="telling-how" aria-labelledby="telling-how-heading">
+  <div class="max-w-screen-lg mx-auto">
+    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">How It Works</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-how-heading">Three lines of code.<br/>A universe of voices.</h2>
+    <p class="text-lg text-base-content/70 max-w-xl mb-12">
+      Add Bonfire Telling to any blog, documentation site, or static page.
+      Comments flow through the fediverse and appear as threads on your site.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">1</div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Embed the iframe</h3>
+        <p class="text-base text-base-content/70">Paste a single HTML snippet into your page template. Bonfire Telling widget loads in an iframe, fully styled and self-contained — no JavaScript bundles, no build steps.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">2</div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Readers join from anywhere</h3>
+        <p class="text-base text-base-content/70">Visitors reply using their Bonfire, Mastodon, Pleroma, or any ActivityPub-compatible account. No new signups. No platform lock-in. Their identity travels with them.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">3</div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Conversations federate</h3>
+        <p class="text-base text-base-content/70">Every comment is an ActivityPub post. Replies flow back to the commenter's timeline, their followers can engage, and the whole thread stays visible on your site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EMBED CODE ── -->
+<section class="py-12 lg:py-20 px-4" id="telling-embed" aria-labelledby="telling-embed-heading">
+  <div class="max-w-screen-lg mx-auto">
+    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Get Started</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-embed-heading">Copy. Paste. Federate.</h2>
+    <p class="text-lg text-base-content/70 max-w-xl mb-12">
+      That's it. No API keys, no tracking scripts, no account required.
+    </p>
+    <div class="bg-base-300 rounded-2xl overflow-hidden max-w-2xl shadow-xl relative">
+      <button class="telling-copy-btn absolute top-3 right-4 bg-base-content/10 border border-base-content/10 text-base-content/60 rounded-lg px-3 py-2 text-xs font-medium cursor-pointer hover:bg-base-content/20 hover:text-base-content transition-all inline-flex items-center gap-1.5" type="button" onclick="tellingCopyEmbed(this)" aria-label="Copy embed code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy
+      </button>
+      <div class="px-4 py-3 flex items-center gap-2 bg-base-content/5">
+        <span class="telling-code-dot"></span>
+        <span class="telling-code-dot"></span>
+        <span class="telling-code-dot"></span>
+        <span class="ml-auto text-xs text-base-content/30">your-blog.html</span>
+      </div>
+      <div class="telling-code p-6 font-mono text-sm leading-7 text-base-content/70 overflow-x-auto">
+        <span class="comment">&lt;!-- Add Bonfire Telling to any page --&gt;</span><br/>
+        <span class="tag">&lt;iframe</span><br/>
+        &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed"</span><br/>
+        &nbsp;&nbsp;<span class="attr">data-page</span>=<span class="val">"{% raw %}{{ page.url }}{% endraw %}"</span><br/>
+        &nbsp;&nbsp;<span class="attr">title</span>=<span class="val">"Bonfire Telling Comments"</span><br/>
+        &nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%; border:none; min-height:400px;"</span><br/>
+        <span class="tag">&gt;&lt;/iframe&gt;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FRAMEWORK GUIDES ── -->
+<section class="py-12 lg:py-20 px-4" id="telling-guides" aria-labelledby="telling-guides-heading">
+  <div class="max-w-screen-lg mx-auto">
+    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Install Guides</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Set up The Telling on your stack</h2>
+    <p class="text-lg text-base-content/70 max-w-xl mb-12">
+      Choose your framework or CMS. Each guide walks you through adding
+      federated comments in under five minutes.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-10">
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="jekyll" role="button" tabindex="0" onclick="tellingShowGuide('jekyll')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('jekyll')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#CC0000" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="serif" font-size="20" font-weight="700" fill="#CC0000">J</text></svg>
+        </div>
+        <span>Jekyll</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="eleventy" role="button" tabindex="0" onclick="tellingShowGuide('eleventy')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('eleventy')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#1A1714" opacity="0.08"/><text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#C4BFB8">11ty</text></svg>
+        </div>
+        <span>Eleventy</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="hugo" role="button" tabindex="0" onclick="tellingShowGuide('hugo')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('hugo')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#FF4088" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#FF4088">H</text></svg>
+        </div>
+        <span>Hugo</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="ghost" role="button" tabindex="0" onclick="tellingShowGuide('ghost')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('ghost')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff" opacity="0.08"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#C4BFB8">G</text></svg>
+        </div>
+        <span>Ghost</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="wordpress" role="button" tabindex="0" onclick="tellingShowGuide('wordpress')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('wordpress')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#21759B" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#21759B">W</text></svg>
+        </div>
+        <span>WordPress</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="astro" role="button" tabindex="0" onclick="tellingShowGuide('astro')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('astro')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#BC52EE" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#BC52EE">A</text></svg>
+        </div>
+        <span>Astro</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="nextjs" role="button" tabindex="0" onclick="tellingShowGuide('nextjs')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('nextjs')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff" opacity="0.08"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#C4BFB8">N</text></svg>
+        </div>
+        <span>Next.js</span>
+      </div>
+      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="html" role="button" tabindex="0" onclick="tellingShowGuide('html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('html')}">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#E8652B" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="14" font-weight="700" fill="#E8652B">&lt;/&gt;</text></svg>
+        </div>
+        <span>HTML</span>
+      </div>
+    </div>
+
+    <!-- Guide detail panels -->
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-jekyll">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="serif" font-size="18" font-weight="700" fill="#CC0000">J</text></svg>
+          <h3>Jekyll</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Create the include</h4>
+            <p>Add a new file in your <code>_includes</code> directory.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">_includes/telling.html</span>
+              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={% raw %}{{ page.url | absolute_url }}{% endraw %}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={% raw %}{{ page.title | url_encode }}{% endraw %}"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              <span class="tag">&lt;/section&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Add to your post layout</h4>
+            <p>Include the partial in your post layout, right after the content.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">_layouts/post.html</span>
+              <span class="cmt">&lt;!-- after your post content --&gt;</span><br/>
+              {% raw %}{{ content }}{% endraw %}<br/><br/>
+              {% raw %}{% include telling.html %}{% endraw %}
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Deploy</h4>
+            <p>Build and deploy as usual. Works with GitHub Pages out of the box.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="fn">$</span> bundle exec jekyll build<br/>
+              <span class="fn">$</span> jekyll serve <span class="cmt"># preview locally</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-eleventy">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fff">11ty</text></svg>
+          <h3>Eleventy (11ty)</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Create a shortcode or partial</h4>
+            <p>Add a Nunjucks/Liquid include file in your <code>_includes</code> folder.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">_includes/telling.njk</span>
+              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={% raw %}{{ page.url }}{% endraw %}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={% raw %}{{ title | urlencode }}{% endraw %}"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              <span class="tag">&lt;/section&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Include in your post layout</h4>
+            <p>Add the include to your base post template.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">_includes/layouts/post.njk</span>
+              {% raw %}{{ content | safe }}{% endraw %}<br/><br/>
+              {% raw %}{% include "telling.njk" %}{% endraw %}
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Build &amp; preview</h4>
+            <p>That's it. Run your 11ty build and comments are live on every post.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="fn">$</span> npx @11ty/eleventy --serve
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-hugo">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#FF4088">H</text></svg>
+          <h3>Hugo</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Create a partial</h4>
+            <p>Add a comments partial in your theme's <code>layouts/partials</code> directory.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">layouts/partials/telling.html</span>
+              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={% raw %}{{ .Permalink }}{% endraw %}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={% raw %}{{ .Title | urlquery }}{% endraw %}"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              <span class="tag">&lt;/section&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Include in single.html</h4>
+            <p>Add the partial to your single post layout after the content block.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">layouts/_default/single.html</span>
+              {% raw %}{{ .Content }}{% endraw %}<br/><br/>
+              {% raw %}{{ partial "telling.html" . }}{% endraw %}
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Build</h4>
+            <p>Run Hugo. Comments appear on every post page automatically.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="fn">$</span> hugo server <span class="cmt"># dev preview</span><br/>
+              <span class="fn">$</span> hugo <span class="cmt"># production build</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-ghost">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">G</text></svg>
+          <h3>Ghost</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Edit your theme's post template</h4>
+            <p>Open <code>post.hbs</code> in your Ghost theme and add The Telling embed after the post content.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">post.hbs</span>
+{% raw %}              <span class="cmt">&lt;!-- after {{content}} --&gt;</span><br/><br/>
+              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={{url absolute="true"}}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={{encode title}}"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              <span class="tag">&lt;/section&gt;</span>{% endraw %}
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Upload your theme</h4>
+            <p>Zip and upload the modified theme via Ghost Admin &rarr; Settings &rarr; Design &rarr; Change theme.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="fn">$</span> cd my-ghost-theme<br/>
+              <span class="fn">$</span> npx gscan . <span class="cmt"># validate</span><br/>
+              <span class="fn">$</span> zip -r theme.zip . <span class="cmt"># package</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Alternative: Code injection</h4>
+            <p>If you can't modify the theme, use Ghost's Code Injection for a site-wide embed.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">Ghost Admin &rarr; Code injection</span>
+{% raw %}              <span class="tag">&lt;script&gt;</span><br/>
+              &nbsp;&nbsp;<span class="kw">const</span> post = document.querySelector(<span class="str">'.post-content'</span>);<br/>
+              &nbsp;&nbsp;<span class="kw">if</span> (post) {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> f = document.createElement(<span class="str">'iframe'</span>);<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;f.src = <span class="str">`https://telling.bonfire.cafe/embed?url=${location.href}`</span>;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;f.style.cssText = <span class="str">'width:100%;border:none;min-height:400px'</span>;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;post.after(f);<br/>
+              &nbsp;&nbsp;}<br/>
+              <span class="tag">&lt;/script&gt;</span>{% endraw %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-wordpress">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#21759B">W</text></svg>
+          <h3>WordPress</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Add to your theme's single.php</h4>
+            <p>Open your theme's <code>single.php</code> and add the embed after the content loop.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">single.php</span>
+              <span class="cmt">&lt;?php // after the_content() ?&gt;</span><br/><br/>
+              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=&lt;?php the_permalink(); ?&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title=&lt;?php echo urlencode(get_the_title()); ?&gt;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              <span class="tag">&lt;/section&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Disable default comments (optional)</h4>
+            <p>Add this to <code>functions.php</code> to replace WordPress comments.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">functions.php</span>
+              <span class="cmt">// Disable default WP comments</span><br/>
+              <span class="kw">add_filter</span>(<span class="str">'comments_open'</span>,<br/>
+              &nbsp;&nbsp;<span class="str">'__return_false'</span>);<br/>
+              <span class="kw">add_filter</span>(<span class="str">'comments_array'</span>,<br/>
+              &nbsp;&nbsp;<span class="str">'__return_empty_array'</span>);
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Alternative: use a shortcode</h4>
+            <p>Register a shortcode and drop <code>[telling]</code> into any post.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">functions.php</span>
+{% raw %}              <span class="kw">add_shortcode</span>(<span class="str">'telling'</span>, <span class="kw">function</span>() {<br/>
+              &nbsp;&nbsp;<span class="kw">return</span> <span class="str">'&lt;iframe src="https://telling.bonfire.cafe<br/>&nbsp;&nbsp;&nbsp;&nbsp;/embed?url='</span> . <span class="fn">get_permalink</span>() . <span class="str">'"<br/>&nbsp;&nbsp;&nbsp;&nbsp;style="width:100%;border:none;min-height:400px;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;loading="lazy"&gt;&lt;/iframe&gt;'</span>;<br/>
+              });{% endraw %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-astro">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#BC52EE">A</text></svg>
+          <h3>Astro</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Create a Telling component</h4>
+            <p>Add a reusable <code>.astro</code> component for the embed.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">src/components/Telling.astro</span>
+              <span class="kw">---</span><br/>
+              <span class="kw">const</span> { url, title } = <span class="fn">Astro</span>.props;<br/>
+              <span class="kw">---</span><br/><br/>
+{% raw %}              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">{`https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=${url}&amp;title=${encodeURIComponent(title)}`}</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;<span class="tag">/&gt;</span><br/>
+              <span class="tag">&lt;/section&gt;</span>{% endraw %}
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Use in your blog layout</h4>
+            <p>Import and place the component in your blog post layout.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">src/layouts/BlogPost.astro</span>
+              <span class="kw">import</span> Telling <span class="kw">from</span> <span class="str">'../components/Telling.astro'</span>;<br/><br/>
+              <span class="tag">&lt;article&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;slot /&gt;</span><br/>
+              <span class="tag">&lt;/article&gt;</span><br/><br/>
+              <span class="tag">&lt;Telling</span><br/>
+              &nbsp;&nbsp;<span class="attr">url</span>={<span class="fn">Astro</span>.url.href}<br/>
+              &nbsp;&nbsp;<span class="attr">title</span>={frontmatter.title}<br/>
+              <span class="tag">/&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Build</h4>
+            <p>Works with Astro's static and SSR modes. Zero client-side JS added.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="fn">$</span> npx astro dev <span class="cmt"># preview</span><br/>
+              <span class="fn">$</span> npx astro build <span class="cmt"># production</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-nextjs">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">N</text></svg>
+          <h3>Next.js</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Create a Telling component</h4>
+            <p>Add a React component that renders the iframe. Works as a server component.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+{% raw %}              <span class="file-label">components/Telling.tsx</span>
+              <span class="kw">export default function</span> <span class="fn">Telling</span>({<br/>
+              &nbsp;&nbsp;url, title<br/>
+              }: { url: string; title: string }) {<br/>
+              &nbsp;&nbsp;<span class="kw">return</span> (<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>={<span class="str">`https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=${url}&amp;title=${encodeURIComponent(title)}`</span>}<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>={{ width:'100%',border:'none',minHeight:400 }}<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">/&gt;</span><br/>
+              &nbsp;&nbsp;);<br/>
+              }{% endraw %}
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Use in your blog page</h4>
+            <p>Import and place after your post content in any page or layout.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+{% raw %}              <span class="file-label">app/blog/[slug]/page.tsx</span>
+              <span class="kw">import</span> Telling <span class="kw">from</span> <span class="str">'@/components/Telling'</span>;<br/><br/>
+              <span class="tag">&lt;article&gt;</span>{content}<span class="tag">&lt;/article&gt;</span><br/>
+              <span class="tag">&lt;Telling</span><br/>
+              &nbsp;&nbsp;<span class="attr">url</span>={<span class="str">`https://mysite.com/blog/${slug}`</span>}<br/>
+              &nbsp;&nbsp;<span class="attr">title</span>={post.title}<br/>
+              <span class="tag">/&gt;</span>{% endraw %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-html">
+      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#E8652B">&lt;/&gt;</text></svg>
+          <h3>Plain HTML</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      </div>
+      <div class="divide-y divide-base-content/5">
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Paste the iframe</h4>
+            <p>Add this snippet anywhere in your HTML file. No build tools, no dependencies.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+              <span class="file-label">index.html</span>
+              <span class="tag">&lt;iframe</span><br/>
+              &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;?url=https://mysite.com/my-post<br/>&nbsp;&nbsp;&nbsp;&nbsp;&amp;title=My%20Blog%20Post"</span><br/>
+              &nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
+              &nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              <span class="tag">&gt;&lt;/iframe&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
+          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
+          <div class="py-4 px-4 md:pr-4 md:pl-0">
+            <h4>Auto-detect URL (optional)</h4>
+            <p>Use a tiny script to automatically pass the current page URL.</p>
+          </div>
+          <div class="py-4 px-4 md:pr-5 md:pl-0">
+            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
+{% raw %}              <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"telling"</span><span class="tag">&gt;&lt;/div&gt;</span><br/>
+              <span class="tag">&lt;script&gt;</span><br/>
+              &nbsp;&nbsp;<span class="kw">const</span> f = document.createElement(<span class="str">'iframe'</span>);<br/>
+              &nbsp;&nbsp;f.src = <span class="str">`https://telling.bonfire.cafe/embed?url=${location.href}`</span>;<br/>
+              &nbsp;&nbsp;f.style.cssText = <span class="str">'width:100%;border:none;min-height:400px'</span>;<br/>
+              &nbsp;&nbsp;document.getElementById(<span class="str">'telling'</span>).appendChild(f);<br/>
+              <span class="tag">&lt;/script&gt;</span>{% endraw %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="py-12 lg:py-20 px-4 bg-base-300/30" id="telling-features" aria-labelledby="telling-features-heading">
+  <div class="max-w-screen-lg mx-auto">
+    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Features</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-features-heading">Built for people,<br/>not for platforms</h2>
+    <p class="text-lg text-base-content/70 max-w-xl mb-12">
+      Everything you need for meaningful conversations — nothing you don't.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="md:col-span-2 bg-base-content/10 rounded-2xl p-8 flex items-center gap-6 hover:bg-base-content/5 transition-all border border-primary/10">
+        <div class="w-14 h-14 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-base-content mb-1">Truly Federated</h3>
+          <p class="text-base text-base-content/70">Comments are ActivityPub posts. Reply from Bonfire, Mastodon, Misskey, or any compatible platform. Your words, your identity, your server.</p>
+        </div>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Privacy by Design</h3>
+        <p class="text-base text-base-content/70">No tracking pixels. No ad networks. No data harvesting. Bonfire Telling collects nothing about your readers — because it doesn't need to.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Moderation You Control</h3>
+        <p class="text-base text-base-content/70">Set your own rules. Block, mute, or defederate. You decide what conversations look like on your site — no corporate content policy imposed from above.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Works Everywhere</h3>
+        <p class="text-base text-base-content/70">Jekyll, Hugo, Astro, 11ty, plain HTML — if it renders a page, Bonfire Telling works. One iframe. No JavaScript dependency. No build tooling.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Bonfire Threads</h3>
+        <p class="text-base text-base-content/70">Every comment thread is also a Bonfire discussion. Communities can continue the conversation in their own space, with full context preserved.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Open Source</h3>
+        <p class="text-base text-base-content/70">Bonfire Telling is part of the Bonfire ecosystem. MIT-licensed, community-governed, and designed to be forked, extended, and made your own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILOSOPHY ── -->
+<section class="py-12 lg:py-20 px-4" id="telling-philosophy" aria-labelledby="telling-philosophy-heading">
+  <div class="max-w-screen-lg mx-auto">
+    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Philosophy</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-10" id="telling-philosophy-heading">Named for a practice,<br/>not a product</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <blockquote class="serif-regular italic text-2xl lg:text-3xl leading-relaxed text-base-content/80 mb-4">
+          <span class="text-5xl leading-none text-primary block mb-2">&ldquo;</span>
+          Bonfire Telling is what people do, what people always did... They tell: they share what they know, their experiences, their feelings, their ideas, in words, in signs, in stories, in songs.
+        </blockquote>
+        <cite class="text-sm not-italic text-base-content/40">— Ursula K. Le Guin, The Telling (2000)</cite>
+      </div>
+      <div class="flex flex-col gap-6">
+        <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
+          <h4 class="text-lg font-bold text-primary mb-1">Against enshittification</h4>
+          <p class="text-base text-base-content/60">Comment platforms decayed into ad-delivery systems. Bonfire Telling has no investors to satisfy, no engagement metrics to optimize, no data to sell. It exists to serve conversation.</p>
+        </div>
+        <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
+          <h4 class="text-lg font-bold text-primary mb-1">Gather around the fire</h4>
+          <p class="text-base text-base-content/60">Part of the Bonfire ecosystem — tools for communities that want to own their digital spaces. Bonfire Telling extends that warmth to the open web.</p>
+        </div>
+        <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
+          <h4 class="text-lg font-bold text-primary mb-1">Voices, not users</h4>
+          <p class="text-base text-base-content/60">People aren't "users" to be monetized. They're voices in a conversation — each carrying their own identity, their own home server, their own autonomy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="py-12 lg:py-20 px-4 bg-base-300/30">
+  <div class="max-w-screen-lg mx-auto text-center">
+    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Join Bonfire Telling</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4">Your blog has something to say.<br/>Let your readers say something back.</h2>
+    <p class="text-lg text-base-content/70 max-w-xl mx-auto mb-8">
+      Free, open source, and ready to embed. Bring federated conversations to your corner of the web.
+    </p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="#telling-embed" class="btn btn-lg btn-primary">Get Started</a>
+      <a href="https://github.com/bonfire-networks" class="btn btn-lg btn-outline border-base-content/30">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script>
+  // Framework guide tabs
+  function tellingShowGuide(name) {
+    document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
+    document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
+    const detail = document.getElementById('telling-guide-' + name);
+    if (detail) {
+      detail.classList.add('visible');
+      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    const card = document.querySelector('[data-guide="' + name + '"]');
+    if (card) card.classList.add('active');
+  }
+
+  function tellingHideGuide() {
+    document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
+    document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
+  }
+
+  // Copy embed code
+  function tellingCopyEmbed(btn) {
+    const code = `<!-- Add Bonfire Telling to any page -->\n<iframe\n  src="https://telling.bonfire.cafe/embed"\n  data-page="{{ page.url }}"\n  title="Bonfire Telling Comments"\n  style="width:100%; border:none; min-height:400px;"\n></iframe>`;
+    navigator.clipboard.writeText(code).then(() => {
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+      }, 2000);
+    });
+  }
+</script>
