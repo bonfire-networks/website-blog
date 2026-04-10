@@ -1,4 +1,4 @@
-# Code of Conduct - v0.5
+# Code of Conduct - v0.5.1
 
 ## Introduction
 
@@ -40,7 +40,7 @@ Our tools and spaces exist to support that resistance, not enable the forces tha
 
 Our struggles are intersectional. We resist single-issue framing that isolates concerns into silos, and instead recognise that health and disability, gender violence, migration, indigenous struggles, racial justice, labour exploitation, digital rights, ecological crisis, and access to water, food and housing, are all expressions of the same underlying systems. 
 
-Bonfire is a commons: not a product, not a platform, not a startup. We reject venture capital, advertising, and profit-driven models that inevitably subordinate people to shareholders. Our work is funded transparently and sustained collectively, because the tools we depend on should answer to the communities that use them, not to investors or advertisers.
+Bonfire is a commons: not a product, not a platform, not a startup. We reject venture capital, advertising, and profit-driven models that inevitably subordinate people to shareholders. Our work is funded transparently and sustained collectively, because tools and infrastructure should answer to the communities that depend on them, not to investors or advertisers.
 
 We are alert to co-optation: the ways our work can be absorbed, rebranded, or diluted by institutions seeking legitimacy without structural change. We resist being framed as complements to systems we oppose, and when our ideas are adopted by those in power, we ask whether root causes are being addressed or merely managed.
 
@@ -92,7 +92,7 @@ We operate with integrity in word and action, upholding our shared values and ho
 > 
 > Techniques like turn-taking (as used in sociocratic meetings, where each person speaks in turn before open discussion) can help ensure everyone has a chance to be heard, especially in larger or more heated conversations.
 
-- We commit to ensuring that **women and other marginalised groups can participate, lead, and feel safe**, not as a concession, but as a condition of the world we claim to be building. This means actively dismantling male-centeredness in our spaces: examining who speaks most, whose concerns are treated as urgent, whose expertise is assumed, and whose contributions go unrecognised. We reorganise when we find the patterns we expected to find.
+- We commit to ensuring that **women and other marginalised groups can participate, lead, and feel safe**, not as a concession, but as a condition of the world we claim to be building. This means actively dismantling male-centeredness in our spaces: examining who speaks most, whose concerns are treated as urgent, whose expertise is assumed, and whose contributions go unrecognised. 
 > Communities striving to make social progress, including our own, are not exempt from reproducing the very harms they set out to challenge. The history of liberation movements shows that this must be named and organised against explicitly, not assumed away by good intentions. 
 
 * We respect that others have differing opinions, viewpoints, and experiences.
