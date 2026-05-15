@@ -35,7 +35,7 @@ For boundaries, this means the screen now leads with the presets (Public, Local,
 
 Feed filtering is next on the list, as something we can simplify while retaining all its power. More broadly, calm empowerment is becoming a guiding pattern across Bonfire extensions. We're experimenting with it for two upcoming beta features: group creation, where simple defaults get you started but the full range of visibility and membership controls is there when you need it; and poll creation, where the surface is as simple as single or multiple choice, but opens up into proposal phases, consensus building, ranked choice voting, and more.
 
-The goal is simple by default, endlessly configurable for those who want it, without making anyone feel like they have to decipher or fight the interface. We're working on applying this pattern consistently across Bonfire, and plan to write more about the thinking behind it: both as a design reference and as a broader conversation about what it means to feel genuinely empowered by a social network rather than managed by one.
+The goal is simplicity by default, while being endlessly configurable for those who want it, without making anyone feel like they have to decipher or fight the interface. We're working on applying this pattern consistently across Bonfire, and plan to write more about the thinking behind it: both as a design reference and as a broader conversation about what it means to feel genuinely empowered by a social network rather than managed by one.
 
 ## New dashboard widgets
 
