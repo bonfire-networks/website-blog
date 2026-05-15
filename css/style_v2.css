@@ -621,7 +621,9 @@
       margin-bottom: 3em;
     }
     :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      /* font-weight: 500;
+      color: var(--tw-prose-body);
+      /* 
+      font-weight: 500;
       font-style: italic;
       color: var(--tw-prose-quotes);
       border-inline-start-width: 0.25rem;
@@ -47711,7 +47713,11 @@
   :root .prose {
     --tw-prose-body: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-body: color-mix(in oklab,var(--color-base-content)80%,#0000);
+      --tw-prose-body: color-mix(in oklab,var(--color-base-content)90%,#0000);
+    }
+    --tw-prose-quotes: var(--color-base-content);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-prose-quotes: color-mix(in oklab,var(--color-base-content)75%,#0000);
     }
     --tw-prose-headings: var(--color-base-content);
     --tw-prose-lead: var(--color-base-content);
@@ -47726,7 +47732,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-prose-hr: color-mix(in oklab,var(--color-base-content)20%,#0000);
     }
-    --tw-prose-quotes: var(--color-base-content);
     --tw-prose-quote-borders: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-prose-quote-borders: color-mix(in oklab,var(--color-base-content)20%,#0000);
