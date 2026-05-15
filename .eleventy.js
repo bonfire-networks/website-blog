@@ -157,6 +157,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("archives");
+  eleventyConfig.addPassthroughCopy("fediforum");
 
   // Ignore CSS output file to prevent watch loop
   eleventyConfig.watchIgnores.add("css/style_v2.css");
