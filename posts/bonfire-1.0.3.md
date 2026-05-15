@@ -13,7 +13,7 @@ Since the 1.0 release of Bonfire Social, we've been heads-down listening to our 
 
 ## Stability first
 
-This release addresses dozens of issues reported by communities actively using Bonfire day to day. The progressive web app experience is smoother on mobile. Federation is more reliable. Dozens of reported bugs have been fixed and UX improvements made based on community feedback: tooltips, focus states, icon labels, layout glitches, and accessibility issues across the board.
+This release addresses dozens of issues reported by communities actively using Bonfire day to day. The progressive web app experience is smoother on mobile. Federation is more reliable. Many reported bugs have been fixed and UX improvements have made based on community feedback: tooltips, focus states, icon labels, layout glitches, and accessibility issues across the board.
 
 ## Making power feel approachable
 
