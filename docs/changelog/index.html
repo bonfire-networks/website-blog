@@ -340,13 +340,97 @@ SPDX-License-Identifier: AGPL-3.0-only
 SPDX-License-Identifier: CC0-1.0
 -->
 <h1 id="changelog%3A-releases">Changelog: releases <a class="direct-link" href="#changelog%3A-releases" target="_blank" rel="noopener">#</a></h1>
+<h2 id="bonfire-social-%5B1.0.3-(2026-05-14)%5D">Bonfire Social [1.0.3 (2026-05-14)] <a class="direct-link" href="#bonfire-social-%5B1.0.3-(2026-05-14)%5D" target="_blank" rel="noopener">#</a></h2>
+<h3 id="added">Added <a class="direct-link" href="#added" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li>✨ View Bonfire comments under any web page (via embed) (thanks @mayel,@ivanminutillo)</li>
+<li>✨ Text-based polls (thanks @ivanminutillo, @mayel)</li>
+<li>📝 A way to sort comments by most popular (upvotes + likes + comments); with popularity of nested comment aggregated when viewing nested threads (thanks @mayel)</li>
+<li>📝 Dashboard Widgets <a href="https://github.com/bonfire-networks/bonfire-app/issues/1734" target="_blank" rel="noopener">#1734</a> (thanks @ivanminutillo and @mayel)
+<ul>
+<li>Getting started dashboard widget (thanks @ivanminutillo</li>
+<li>Closing soon polls widget on dashboard (thanks @ivanminutillo)</li>
+<li>Spotlight / pinned posts widget on dashboard (thanks @ivanminutillo)</li>
+<li>✨ 3 most-replied local posts widget on dashboard (thanks @ivanminutillo)</li>
+</ul>
+</li>
+<li>📝 community rules, thanks to research and co-design with Princeton HCI students and researchers <a href="https://github.com/bonfire-networks/bonfire-app/commit/d2bad7038250758080fa037ddb52f7fcc38990a8" target="_blank" rel="noopener"><code>d2bad70</code></a>, <a href="https://github.com/bonfire-networks/bonfire-app/commit/9beb3e0059f860625d41076be31da429a6a5e7f1" target="_blank" rel="noopener"><code>9beb3e0</code></a> (thanks @mayel)</li>
+<li>✨ Marker display configurable per feed (enable/disable/disable on nav click), disabled by default in flavour (thanks @ivanminutillo)</li>
+<li>✨ Link to user settings in language dropdown in composer (thanks @ivanminutillo)</li>
+<li>🚀 detect when a remote user's avatar or banner image 404s and trigger an actor refetch/update <a href="https://github.com/bonfire-networks/bonfire-app/issues/1982" target="_blank" rel="noopener">#1982</a> (thanks @mayel)</li>
+<li>✨ Specify the layout (both the FeedLive and the ActivityLive one) in config for each feed to further customize how they're rendered in the page <a href="https://github.com/bonfire-networks/bonfire-app/issues/1376" target="_blank" rel="noopener">#1376</a> (thanks @ivanminutillo)</li>
+<li>✨ per-user and per-instance keyword filtering <a href="https://github.com/bonfire-networks/bonfire-app/issues/1001" target="_blank" rel="noopener">#1001</a> (thanks @ivanminutillo and @mayel)</li>
+<li>✨ Ghost integration: article import via API, creating as Note/article in Bonfire (thanks @mayel,@ivanminutillo)</li>
+<li>✨ Ghost integration: Setting to restrict sign-up to a certain membership tier (thanks @mayel)</li>
+<li>✨ Ghost integration: Per-instance circles created for each membership tier, with instance-level preset boundary matching tier visibility (public / members / paid) (thanks @ivanminutillo, @mayel)</li>
+<li>📝 Ghost integration: Article image, description/credits, and summary shown when imported into Bonfire (thanks @mayel)</li>
+<li>📝 Ghost integration: imported articles appear under a Bonfire profile linked to the ghost author (thanks @mayel)</li>
+<li>✨ Gated login: Sign-up button optionally pointing to external registration (thanks @ivanminutillo)</li>
+<li>✨ Gated login: Registration link sent by email when email not found in Ghost (thanks @ivanminutillo)</li>
+</ul>
+<h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li>📝 Post scheduling disabled when commenting (vs new post) (thanks @ivanminutillo)</li>
+<li>💅 &quot;Copy link&quot; on comments widget now includes domain name (thanks @ivanminutillo)</li>
+<li>📝 Direct Messages UX <a href="https://github.com/bonfire-networks/bonfire-app/issues/1850" target="_blank" rel="noopener">#1850</a> (thanks @ivanminutillo)</li>
+<li>🚧 the first mention or hashtag in a post created on bonfire generates a preview on mastodon <a href="https://github.com/bonfire-networks/bonfire-app/issues/1754" target="_blank" rel="noopener">#1754</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/dd2cd076829196508d2a353be46be1779d4a4084" target="_blank" rel="noopener"><code>dd2cd07</code></a> (thanks @mayel and @ivanminutillo)</li>
+<li>✨ enable marker only on certain feeds <a href="https://github.com/bonfire-networks/bonfire-app/commit/cbca6c53a8b209643363089129676a784e7a0c12" target="_blank" rel="noopener"><code>cbca6c5</code></a> (thanks @mayel)</li>
+</ul>
+<h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li>🚧 1 of my users is no longer Federating <a href="https://github.com/bonfire-networks/bonfire-app/issues/1914" target="_blank" rel="noopener">#1914</a> (thanks @mayel and @btfreeorg)</li>
+<li>🐛 Pin not working on comments (thanks @ivanminutillo)</li>
+<li>🐛 Posts truncated correctly in spotlight (thanks @ivanminutillo)</li>
+<li>🐛 Dashboard: own posts not appearing in main feed (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: clicking reply icon did not show previous comments (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: clicking &quot;x&quot; on composer did not return to timeline (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: quote function not working (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: quoted post not shown inline, only as a link (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: non-existent user shown as thread member (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: standard view always showing old post instead of newest; &quot;jump to newest&quot; required manually (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Feed: translations not shown on posts (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Notifications: unread count not clearing after viewing (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Notifications: quote notification not dismissing after accepting (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Notifications: message notification not dismissing after reading (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Notifications: page reloading/flickering every ~3 seconds (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Notifications: filter section labelled &quot;Feed Filters&quot; instead of something contextual (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Notifications: same notification shown twice (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Messages: own account appearing in message list (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Messages: emoji picker not working when composing (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Messages: &quot;insert emoji&quot; label partially hidden (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Messages: search function not working (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Messages: scheduling, title, and summary options shown inappropriately in DMs (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Profile: &quot;Follow&quot; button showing &quot;Follows you&quot; after following someone (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Profile: not possible to change @handle (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Profile: not possible to delete profile picture or banner without replacing it (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Preferences: dark theme requiring two-step activation vs light theme activating immediately (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Preferences: changing discussion layout (flat/threads) had no visible effect (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Replies: &quot;Erweitert&quot; button not functional (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Replies: not possible to delete own posts (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Replies: error when marking someone else's reply as answer (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Replies: focus not auto-placed in reply box after clicking reply (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 New profile: @handle auto-filled from pseudonym when deleting, making full deletion impossible (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 New profile: two error messages on invalid handle, transient one disappearing immediately (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Tutorial: &quot;follow 5 people&quot; step not auto-resolving after completion (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Flags: filter in &quot;My Flags&quot; section not functional (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Dashboard Widgets: &quot;Haupt&quot; and &quot;Seite&quot; displayed as two separate words due to i18n layout issue (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Boost icon missing tooltip on hover (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Local feed shown even when federation is disabled (thanks @jacobinsocial and @ivanminutillo)</li>
+<li>🐛 Bug <a href="https://github.com/bonfire-networks/bonfire-app/issues/1965" target="_blank" rel="noopener">#1965</a> (thanks @ivanminutillo)</li>
+<li>🐛 theme preview/enable buttons overflow <a href="https://github.com/bonfire-networks/bonfire-app/issues/1956" target="_blank" rel="noopener">#1956</a> (thanks @ruzko and @ivanminutillo)</li>
+<li>🐛 Clicking on &quot;copy post link&quot; just reloads the page and does not copy the link <a href="https://github.com/bonfire-networks/bonfire-app/issues/1951" target="_blank" rel="noopener">#1951</a> (thanks @xplosionmind and @ivanminutillo)</li>
+<li>🐛 Applying content warnings on mobile web is broken <a href="https://github.com/bonfire-networks/bonfire-app/issues/1936" target="_blank" rel="noopener">#1936</a> (thanks @LiquidParasyte and @ivanminutillo)</li>
+<li>🐛 confim button in delete user modal doesn't work <a href="https://github.com/bonfire-networks/bonfire-app/issues/1931" target="_blank" rel="noopener">#1931</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 Having a feed open shouldn't trigger browser notifications when new activities are sent over the websocket <a href="https://github.com/bonfire-networks/bonfire-app/issues/1709" target="_blank" rel="noopener">#1709</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 [Bug]: after a keyword search, additional filters return an error <a href="https://github.com/bonfire-networks/federated_archives/issues/36" target="_blank" rel="noopener">#36</a> (thanks @ivanminutillo)</li>
+</ul>
 <h2 id="bonfire-social-%5B1.0.2-(2026-03-17)%5D">Bonfire Social [1.0.2 (2026-03-17)] <a class="direct-link" href="#bonfire-social-%5B1.0.2-(2026-03-17)%5D" target="_blank" rel="noopener">#</a></h2>
 <h3 id="what's-new">What's new <a class="direct-link" href="#what's-new" target="_blank" rel="noopener">#</a></h3>
 <p><strong>Keyword filtering</strong>: You can now filter out posts containing specific words, phrases, or hashtags. Useful for tuning out topics you'd rather not see. Instance admins can set filters that apply across the whole instance, and per-user filtering is coming in a future release.</p>
 <p><strong>Translate posts</strong> with one click: A translate button now appears under posts, making it easy to read content written in other languages. Translation works locally in Chrome out of the box; instance admins or individual users can also set up LibreTranslate or DeepL APIs for broader support (in translation extension settings).</p>
 <p><strong>Feed markers</strong>: Your place in the feed is now saved when you navigate away, so you can pick up where you left off</p>
 <p><strong>New Dashboard widgets</strong>: Weather, instance stats, and user summary now available for your customizable dashboard.</p>
-<h3 id="added">Added <a class="direct-link" href="#added" target="_blank" rel="noopener">#</a></h3>
+<h3 id="added-1">Added <a class="direct-link" href="#added-1" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ New setting to control what appears above a reply in your feed: choose between showing the post being replied to, the original post that started the thread, or none <a href="https://github.com/bonfire-networks/bonfire-app/issues/1714" target="_blank" rel="noopener">#1714</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1359" target="_blank" rel="noopener">#1359</a> (thanks @mayel and @ivanminutillo)</li>
 <li>📝 Your place in the feed is now saved when you navigate away, so you can pick up where you left off <a href="https://github.com/bonfire-networks/bonfire-app/issues/1835" target="_blank" rel="noopener">#1835</a> (thanks @ivanminutillo)</li>
@@ -366,7 +450,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>✨ Beyond preferred language, users can now specify other languages they understand, these appear in the Composer language dropdown (thanks @mayel and @ivanminutillo)</li>
 <li>🚧 Push notifications are now supported in the browser and in mobile apps <a href="https://github.com/bonfire-networks/bonfire-app/issues/1800" target="_blank" rel="noopener">#1800</a> (thanks @mayel)</li>
 </ul>
-<h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-1">Changed <a class="direct-link" href="#changed-1" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🚧 Improvements to ActivityPub Client to Server API (work in progress) <a href="https://github.com/bonfire-networks/bonfire-app/issues/917" target="_blank" rel="noopener">#917</a> (thanks @mayel)</li>
 <li>🚧 Improvements to Mastodon-compatible API (work in progress) <a href="https://github.com/bonfire-networks/bonfire-app/issues/916" target="_blank" rel="noopener">#916</a> (thanks @ivanminutillo and @mayel)</li>
@@ -378,7 +462,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>✨ Add tests for when uploading blocklists <a href="https://github.com/bonfire-networks/bonfire-app/issues/1832" target="_blank" rel="noopener">#1832</a> (thanks @ivanminutillo)</li>
 <li>✨ Add new CORS paths for openid and oauth token <a href="https://github.com/bonfire-networks/bonfire_ui_common/pull/9" target="_blank" rel="noopener">PR #9</a> (thanks @mediaformat)</li>
 </ul>
-<h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-1">Fixed <a class="direct-link" href="#fixed-1" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ Improved Direct Messages UX/UI</li>
 <li>✨ Improved Extension settings UX/UI</li>
@@ -446,7 +530,7 @@ You can now toggle widgets directly in dashboard page</li>
 <p>We've put work into smoothing out the interface and improving design patterns across the app: small touches that add up to a better experience.</p>
 <h3 id="and-more...">And more... <a class="direct-link" href="#and-more..." target="_blank" rel="noopener">#</a></h3>
 <p>This release squashes bugs around federation behaviour, threading, user interface, composer states, and more. See the below for the complete list.</p>
-<h4 id="added-1">Added <a class="direct-link" href="#added-1" target="_blank" rel="noopener">#</a></h4>
+<h4 id="added-2">Added <a class="direct-link" href="#added-2" target="_blank" rel="noopener">#</a></h4>
 <ul>
 <li>✨ schedule a post <a href="https://github.com/bonfire-networks/bonfire-app/issues/1669" target="_blank" rel="noopener">#1669</a> (thanks @mayel)</li>
 <li>✨ Curate a list of suggested profiles for an instance <a href="https://github.com/bonfire-networks/bonfire-app/issues/1668" target="_blank" rel="noopener">#1668</a> (thanks @mayel)</li>
@@ -459,7 +543,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>🚧 ActivityPub Client-to-Server (C2S) API (work in progress) <a href="https://github.com/bonfire-networks/bonfire-app/issues/917" target="_blank" rel="noopener">#917</a> (thanks @ivanminutillo and @mayel)</li>
 <li>🚧 Mastodon-compatible API (work in progress) <a href="https://github.com/bonfire-networks/bonfire-app/issues/916" target="_blank" rel="noopener">#916</a> (thanks @ivanminutillo and @mayel)</li>
 </ul>
-<h4 id="changed-1">Changed <a class="direct-link" href="#changed-1" target="_blank" rel="noopener">#</a></h4>
+<h4 id="changed-2">Changed <a class="direct-link" href="#changed-2" target="_blank" rel="noopener">#</a></h4>
 <ul>
 <li>⚡ prioritise the processing (in seperate federation queue) of incoming @ mentions and DMs <a href="https://github.com/bonfire-networks/bonfire-app/issues/1658" target="_blank" rel="noopener">#1658</a> (thanks @mayel)</li>
 <li>✨ add likes toggle to feed filters <a href="https://github.com/bonfire-networks/bonfire-app/issues/1722" target="_blank" rel="noopener">#1722</a> (thanks @mayel)</li>
@@ -480,7 +564,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>🔧 Settings: order of widgets on dashboard <a href="https://github.com/bonfire-networks/bonfire-app/issues/935" target="_blank" rel="noopener">#935</a> (thanks @mayel and @ivanminutillo)</li>
 <li>🚧 replace milisecond numbers or calculations with <code>to_timeout</code> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1729" target="_blank" rel="noopener">#1729</a> (thanks @vishakha1411 and @mayel)</li>
 </ul>
-<h4 id="fixed-1">Fixed <a class="direct-link" href="#fixed-1" target="_blank" rel="noopener">#</a></h4>
+<h4 id="fixed-2">Fixed <a class="direct-link" href="#fixed-2" target="_blank" rel="noopener">#</a></h4>
 <ul>
 <li>📝 when i reply to a remote post, the boundary default to local <a href="https://github.com/bonfire-networks/bonfire-app/issues/1687" target="_blank" rel="noopener">#1687</a> (thanks @ivanminutillo)</li>
 <li>📝 when i minimize the composer that contains a reply, the reply_to disappear <a href="https://github.com/bonfire-networks/bonfire-app/issues/1686" target="_blank" rel="noopener">#1686</a> (thanks @ivanminutillo)</li>
@@ -524,13 +608,13 @@ You can now toggle widgets directly in dashboard page</li>
 <li>🐛 Remove erroneous error message when a flash message auto-closes <a href="https://github.com/bonfire-networks/bonfire-app/issues/1708" target="_blank" rel="noopener">#1708</a> (thanks @mayel and @ivanminutillo)</li>
 </ul>
 <h2 id="bonfire-social-%5B1.0-(2025-11-7)%5D">Bonfire Social [1.0 (2025-11-7)] <a class="direct-link" href="#bonfire-social-%5B1.0-(2025-11-7)%5D" target="_blank" rel="noopener">#</a></h2>
-<h3 id="added-2">Added <a class="direct-link" href="#added-2" target="_blank" rel="noopener">#</a></h3>
+<h3 id="added-3">Added <a class="direct-link" href="#added-3" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ docs/DEPLOY.md: Add Guix hosting guide. <a href="https://github.com/bonfire-networks/bonfire-app/pull/1585" target="_blank" rel="noopener">PR #1585</a> (thanks @fishinthecalculator)</li>
 <li>✨ add postgres autotune <a href="https://github.com/bonfire-networks/bonfire-app/commit/137ef37b1900f719cfc5cdf15f5f1a2595b9f4e4" target="_blank" rel="noopener"><code>137ef37</code></a> (thanks @mayel)</li>
 <li>💅 Consent-based quoting of posts (showing a preview in feeds/threads) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1535" target="_blank" rel="noopener">#1535</a> (thanks @mayel)</li>
 </ul>
-<h3 id="changed-2">Changed <a class="direct-link" href="#changed-2" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-3">Changed <a class="direct-link" href="#changed-3" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>📝 reply activity in composer overflowed wrongly <a href="https://github.com/bonfire-networks/bonfire-app/issues/1580" target="_blank" rel="noopener">#1580</a> (thanks @ivanminutillo)</li>
 <li>📝 on closing compose window: confusing button name &quot;cancel&quot; <a href="https://github.com/bonfire-networks/bonfire-app/issues/1571" target="_blank" rel="noopener">#1571</a> (thanks @gillesdutilh and @ivanminutillo)</li>
@@ -545,7 +629,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>📝 moved auto conf file outside postgres data folder <a href="https://github.com/bonfire-networks/bonfire-app/commit/40aafd918d05d703822aeb52dd8df316d0099366" target="_blank" rel="noopener"><code>40aafd9</code></a> (thanks @MarekBenjamin)</li>
 <li>✅ test deletion flows manually with mastodon <a href="https://github.com/bonfire-networks/bonfire-app/issues/780" target="_blank" rel="noopener">#780</a> (thanks @mayel)</li>
 </ul>
-<h3 id="fixed-2">Fixed <a class="direct-link" href="#fixed-2" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-3">Fixed <a class="direct-link" href="#fixed-3" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🐛 Duplicate ID &quot;Bonfire-UI-Social-Graph-FollowButtonLive_Bonfire-UI-Me-WidgetUsersLive_for_01K947MF9W3JAVW5NQ0P13C7QE&quot; for component Bonfire.UI.Social.Graph.FollowButtonLive when rendering template <a href="https://github.com/bonfire-networks/bonfire-app/issues/1618" target="_blank" rel="noopener">#1618</a> (thanks @rzylber and @mayel)</li>
 <li>🐛 Cannot register first user <a href="https://github.com/bonfire-networks/bonfire-app/issues/1617" target="_blank" rel="noopener">#1617</a> (thanks @timorl and @mayel)</li>
@@ -620,7 +704,7 @@ You can now toggle widgets directly in dashboard page</li>
 </li>
 </ul>
 <p>For a full list of changes, see the changelog below.</p>
-<h3 id="added-3">Added <a class="direct-link" href="#added-3" target="_blank" rel="noopener">#</a></h3>
+<h3 id="added-4">Added <a class="direct-link" href="#added-4" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ Consent-based quoting of posts (showing a preview in feeds/threads) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1535" target="_blank" rel="noopener">#1535</a> (thanks @mayel and @ivanminutillo)</li>
 <li>🌏 Federate info about interaction policies based on the boundaries of an object <a href="https://github.com/bonfire-networks/bonfire-app/issues/979" target="_blank" rel="noopener">#979</a> (thanks @mayel)</li>
@@ -642,7 +726,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>✨ It would be nice if the media gallery had swipe-between on photos and right-left keypad on desktop <a href="https://github.com/bonfire-networks/bonfire-app/issues/1424" target="_blank" rel="noopener">#1424</a> (thanks @ivanminutillo and @mayel)</li>
 <li>✨ add a setting to change units (eg for wheather) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1518" target="_blank" rel="noopener">#1518</a> (thanks @mayel)</li>
 </ul>
-<h3 id="changed-3">Changed <a class="direct-link" href="#changed-3" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-4">Changed <a class="direct-link" href="#changed-4" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🚀 improve UX for customising permissions when posting, editing, or defining a boundary (toggling verbs rather than roles) <a href="https://github.com/bonfire-networks/bonfire-app/issues/1553" target="_blank" rel="noopener">#1553</a> (thanks @mayel)</li>
 <li>💅 UX enhancement: Show the full handle w/ domain plus a “Copy” button in profile <a href="https://github.com/bonfire-networks/bonfire-app/issues/1537" target="_blank" rel="noopener">#1537</a> (thanks @ivanminutillo)</li>
@@ -665,7 +749,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>🚧 publish more exhausive docs for install with coopcloud <a href="https://github.com/bonfire-networks/bonfire-app/issues/1512" target="_blank" rel="noopener">#1512</a> (thanks @mayel)</li>
 <li>📝 upgrade phoenix and liveview <a href="https://github.com/bonfire-networks/bonfire-app/commit/a8355b52b6bc6ef77dd6e61f6c8e0e1e954cfc62" target="_blank" rel="noopener"><code>a8355b5</code></a> (thanks @mayel)</li>
 </ul>
-<h3 id="fixed-3">Fixed <a class="direct-link" href="#fixed-3" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-4">Fixed <a class="direct-link" href="#fixed-4" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🐛 fix instance icon/banner uploaded to s3 <a href="https://github.com/bonfire-networks/bonfire-app/issues/1536" target="_blank" rel="noopener">#1536</a> (thanks @mayel)</li>
 <li>🐛 Hashtag search is not working with Meilisearch backend <a href="https://github.com/bonfire-networks/bonfire-app/issues/1497" target="_blank" rel="noopener">#1497</a> (thanks @GreenMan-Network and @mayel)</li>
@@ -707,7 +791,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>Lots of small bug fixes on comment threads, messaging, settings, and more</li>
 </ul>
 <p>For a comprehensive list of changes, here's the full changelog:</p>
-<h3 id="added-4">Added <a class="direct-link" href="#added-4" target="_blank" rel="noopener">#</a></h3>
+<h3 id="added-5">Added <a class="direct-link" href="#added-5" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>✨ Sanitize text included in the summary <a href="https://github.com/bonfire-networks/bonfire-app/issues/1421" target="_blank" rel="noopener">#1421</a> (thanks @ivanminutillo and @mayel)</li>
 <li>✨ Add first 200 (configurable) chars in the summary rather than full article <a href="https://github.com/bonfire-networks/bonfire-app/issues/1420" target="_blank" rel="noopener">#1420</a> (thanks @ivanminutillo and @mayel)</li>
@@ -735,7 +819,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>✨ add phoenix_gon dep <a href="https://github.com/bonfire-networks/bonfire-app/commit/aa1d50cf6480b519a530f5c1369d104ef83bbe14" target="_blank" rel="noopener"><code>aa1d50c</code></a> (thanks @mayel)</li>
 <li>✨ Create HOWTO_add_feed_preset.md <a href="https://github.com/bonfire-networks/bonfire-app/commit/b3c89696286c465c5639de4a742446d95b98e709" target="_blank" rel="noopener"><code>b3c8969</code></a> (thanks @ivanminutillo)</li>
 </ul>
-<h3 id="changed-4">Changed <a class="direct-link" href="#changed-4" target="_blank" rel="noopener">#</a></h3>
+<h3 id="changed-5">Changed <a class="direct-link" href="#changed-5" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>💅 If an article does not have an image, remove the current preview <a href="https://github.com/bonfire-networks/bonfire-app/issues/1371" target="_blank" rel="noopener">#1371</a> (thanks @ivanminutillo)</li>
 <li>💅 disable @ mention autocomplete in DMs <a href="https://github.com/bonfire-networks/bonfire-app/issues/1351" target="_blank" rel="noopener">#1351</a> (thanks @ivanminutillo and @mayel)</li>
@@ -759,7 +843,7 @@ You can now toggle widgets directly in dashboard page</li>
 <li>📝 attempt fix s3 uploads <a href="https://github.com/bonfire-networks/bonfire-app/commit/5280ec22ae1e677f95f4728a0f0feb08c1c37434" target="_blank" rel="noopener"><code>5280ec2</code></a> (thanks @mayel)</li>
 <li>🚧 avatar images not showing up in search <a href="https://github.com/bonfire-networks/bonfire-app/issues/1362" target="_blank" rel="noopener">#1362</a> (thanks @mayel and @ivanminutillo)</li>
 </ul>
-<h3 id="fixed-4">Fixed <a class="direct-link" href="#fixed-4" target="_blank" rel="noopener">#</a></h3>
+<h3 id="fixed-5">Fixed <a class="direct-link" href="#fixed-5" target="_blank" rel="noopener">#</a></h3>
 <ul>
 <li>🐛 incoming CW on remote posts not being recognised <a href="https://github.com/bonfire-networks/bonfire-app/issues/1411" target="_blank" rel="noopener">#1411</a> (thanks @mayel)</li>
 <li>🐛 some image attachments of remote posts not being shown <a href="https://github.com/bonfire-networks/bonfire-app/issues/1410" target="_blank" rel="noopener">#1410</a> (thanks @mayel)</li>
