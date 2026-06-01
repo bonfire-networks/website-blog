@@ -45,7 +45,6 @@
     --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
-    --container-4xl: 56rem;
     --container-6xl: 72rem;
     --container-7xl: 80rem;
     --text-xs: 0.75rem;
@@ -83,8 +82,6 @@
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
     --tracking-widest: 0.1em;
-    --leading-tight: 1.25;
-    --leading-snug: 1.375;
     --leading-normal: 1.5;
     --leading-relaxed: 1.625;
     --radius-sm: 0.25rem;
@@ -612,24 +609,22 @@
       margin-bottom: 3em;
     }
     :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      color: var(--tw-prose-body);
-      /* 
       font-weight: 500;
       font-style: italic;
       color: var(--tw-prose-quotes);
       border-inline-start-width: 0.25rem;
       border-inline-start-color: var(--tw-prose-quote-borders);
-      quotes: "\201C""\201D""\2018""\2019"; */
+      quotes: "\201C""\201D""\2018""\2019";
       margin-top: 1.6em;
       margin-bottom: 1.6em;
       padding-inline-start: 1em;
     }
-    /* :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
+    :where(blockquote p:first-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
       content: open-quote;
     }
     :where(blockquote p:last-of-type):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
       content: close-quote;
-    } */
+    }
     :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
       color: var(--tw-prose-headings);
       font-weight: 800;
@@ -47661,11 +47656,7 @@
   :root .prose {
     --tw-prose-body: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-body: color-mix(in oklab,var(--color-base-content)90%,#0000);
-    }
-    --tw-prose-quotes: var(--color-base-content);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-prose-quotes: color-mix(in oklab,var(--color-base-content)75%,#0000);
+      --tw-prose-body: color-mix(in oklab,var(--color-base-content)80%,#0000);
     }
     --tw-prose-headings: var(--color-base-content);
     --tw-prose-lead: var(--color-base-content);
@@ -47680,6 +47671,7 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-prose-hr: color-mix(in oklab,var(--color-base-content)20%,#0000);
     }
+    --tw-prose-quotes: var(--color-base-content);
     --tw-prose-quote-borders: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-prose-quote-borders: color-mix(in oklab,var(--color-base-content)20%,#0000);
