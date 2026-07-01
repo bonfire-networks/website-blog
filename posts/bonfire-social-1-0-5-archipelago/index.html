@@ -192,13 +192,13 @@
     
 
   <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
-    <p>We've shipped two releases since our last post, so here's a quick roundup of what's new across 1.0.4 and 1.0.5. As always, the full, detailed list lives in the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a>.</p>
+    <p><em>We've shipped two releases since our last post, so here's a quick roundup of what's new across 1.0.4 and 1.0.5. As always, the full, detailed list lives in the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a>.</em></p>
 <h2 id="1.0.5%3A-archipelago-mode">1.0.5: Archipelago mode <a class="direct-link" href="#1.0.5%3A-archipelago-mode" target="_blank" rel="noopener">#</a></h2>
 <p>The headline feature is <strong>Archipelago mode</strong>. The usual way to federate is &quot;open&quot;: you connect with the entire fediverse by default and block bad actors as they show up, a never-ending game of whack-a-mole since anyone can spin up a new account or server. Archipelago mode flips this around: you can choose to <strong>federate <em>only</em> with a hand-picked allow-list</strong> of trusted people, groups and servers, and keep everything else out by default.</p>
 <p>Trusted communities can in turn agree to federate with each other, forming an &quot;archipelago&quot; of like-minded &quot;islands&quot; with common rules and safety expectations. It's a great fit for tight-knit communities who only want to connect with their friends and allies, and for groups who federate together by choice (neighbourhoods, towns, assemblies, cooperatives, movements, or not-for-profit organisations) and want to stay connected to one another without necessarily being open to the wider internet. (Credit for the concept goes to <a href="https://writer.oliphant.social/oliphant/islands-an-opt-in-federated-network" target="_blank" rel="noopener">Oliphant</a> and <a href="https://nora.codes/post/the-fediverse-is-already-dead/" target="_blank" rel="noopener">Nora Tindall</a>.)</p>
 <p><img src="/img/archi.png" alt="Screenshot of Bonfire's instance federation settings, showing the choice of federation mode"></p>
 <h3 id="calm-empowerment%2C-applied-to-your-server">Calm empowerment, applied to your server <a class="direct-link" href="#calm-empowerment%2C-applied-to-your-server" target="_blank" rel="noopener">#</a></h3>
-<p>In the <a href="https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-clarity-and-federated-publishing/" target="_blank" rel="noopener">1.0.3 post</a> we described a design pattern we're calling <em>calm empowerment</em>: simple defaults, a middle layer of curated controls, and a full advanced view behind an explicit gesture. In 1.0.5 we applied it to <strong>background-processing throughput</strong>, so admins can keep a busy instance responsive by experimenting with different settings without touching config files or restarting the app:</p>
+<p>In the <a href="https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-clarity-and-federated-publishing/" target="_blank" rel="noopener">1.0.3 post</a> we described a design pattern we're calling <em>calm empowerment</em>: simple defaults, a middle layer of useful overrides, and a full advanced view behind an explicit gesture. In 1.0.5 we applied it to <strong>background-processing throughput</strong>, so admins can keep a busy instance responsive by experimenting with different settings without touching config files or restarting the app:</p>
 <ul>
 <li>Layer 1, simple defaults: pick an overall speed preset, such as Eco / Default / Turbo (thank you to the <a href="https://activitypub.blog/2026/06/12/9-0-0-growing-up/" target="_blank" rel="noopener">ActivityPub for WordPress plugin</a> for the inspiration)</li>
 <li>Layer 2, useful overrides: prioritise particular kinds of activity</li>
@@ -211,7 +211,7 @@
 <li><strong>Broadcast announcements</strong>: admins and moderators can push a message (or boost an activity) to everyone on the instance, delivered as a notification</li>
 <li><strong>Embeddable widgets</strong>: drop your instance's pinned posts into any external website</li>
 <li><strong>PGP-encrypted system emails</strong> for recipients who support it</li>
-<li><strong>Clearer federation UI</strong>: when federation is off or set to manual, the app now tells you when something can't be done rather than failing silently</li>
+<li><strong>Clearer federation UI</strong>: when federation is not fully enabled (eg. archipelago, manual, or disabled) the app now tells you when something can't be done rather than failing silently</li>
 <li>A long list of improvements and fixes across federation, polls, UI, media viewing, accessibility, and mobile UX</li>
 </ul>
 <h2 id="1.0.4%3A-security-patches-%26-hardening">1.0.4: Security patches &amp; hardening <a class="direct-link" href="#1.0.4%3A-security-patches-%26-hardening" target="_blank" rel="noopener">#</a></h2>
@@ -223,7 +223,7 @@
 <li>Plus a round of bug fixes</li>
 </ul>
 <h2 id="read-more">Read more <a class="direct-link" href="#read-more" target="_blank" rel="noopener">#</a></h2>
-<p>📖 Full details for both releases are in the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a>.</p>
+<p>Full details for both releases are in the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a>.</p>
 <h2 id="get-involved">Get involved <a class="direct-link" href="#get-involved" target="_blank" rel="noopener">#</a></h2>
 <p>If you're running a Bonfire instance, now is a good time to upgrade. If you've been curious about Bonfire for your community or organisation, please <a href="mailto:team@bonfire.cafe" target="_blank" rel="noopener">get in touch</a>.</p>
 
