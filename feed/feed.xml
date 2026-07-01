@@ -4,7 +4,7 @@
   <subtitle>Tend to your digital life in community: host your own online space and control your experience at the most granular level.</subtitle>
   <link href="https://bonfirenetworks.org/feed/feed.xml" rel="self"/>
   <link href="https://bonfirenetworks.org/"/>
-  <updated>2026-05-15T00:00:00Z</updated>
+  <updated>2026-06-30T00:00:00Z</updated>
   <id>https://bonfirenetworks.org/</id>
   <author>
     <name>Bonfire</name>
@@ -2532,6 +2532,48 @@ Our old account will continue boosting posts from bonfire.cafe, so you won&#39;t
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;Get involved.&lt;/strong&gt; If you&#39;re running a Bonfire instance, now is a good time to upgrade. If you&#39;ve been curious about Bonfire for your community or organisation, &lt;a href=&quot;mailto:team@bonfire.cafe&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;get in touch&lt;/a&gt;, we&#39;d love to hear what you&#39;re building.&lt;/p&gt;
 &lt;p&gt;— Ivan &amp;amp; Mayel&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Bonfire Social 1.0.5: Archipelago!</title>
+    <link href="https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/"/>
+    <updated>2026-06-30T00:00:00Z</updated>
+    <id>https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/</id>
+    <content type="html">&lt;p&gt;We&#39;ve shipped two releases since our last post, so here&#39;s a quick roundup of what&#39;s new across 1.0.4 and 1.0.5. As always, the full, detailed list lives in the &lt;a href=&quot;https://docs.bonfirenetworks.org/changelog.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;1.0.5%3A-archipelago-mode&quot;&gt;1.0.5: Archipelago mode &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/#1.0.5%3A-archipelago-mode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The headline feature is &lt;strong&gt;Archipelago mode&lt;/strong&gt;. The usual way to federate is &amp;quot;open&amp;quot;: you connect with the entire fediverse by default and block bad actors as they show up, a never-ending game of whack-a-mole since anyone can spin up a new account or server. Archipelago mode flips this around: you can choose to &lt;strong&gt;federate &lt;em&gt;only&lt;/em&gt; with a hand-picked allow-list&lt;/strong&gt; of trusted people, groups and servers, and keep everything else out by default.&lt;/p&gt;
+&lt;p&gt;Trusted communities can in turn agree to federate with each other, forming an &amp;quot;archipelago&amp;quot; of like-minded &amp;quot;islands&amp;quot; with common rules and safety expectations. It&#39;s a great fit for tight-knit communities who only want to connect with their friends and allies, and for groups who federate together by choice (neighbourhoods, towns, assemblies, cooperatives, movements, or not-for-profit organisations) and want to stay connected to one another without necessarily being open to the wider internet. (Credit for the concept goes to &lt;a href=&quot;https://writer.oliphant.social/oliphant/islands-an-opt-in-federated-network&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oliphant&lt;/a&gt; and &lt;a href=&quot;https://nora.codes/post/the-fediverse-is-already-dead/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nora Tindall&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/archi.png&quot; alt=&quot;Screenshot of Bonfire&#39;s instance federation settings, showing the choice of federation mode&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;calm-empowerment%2C-applied-to-your-server&quot;&gt;Calm empowerment, applied to your server &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/#calm-empowerment%2C-applied-to-your-server&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-clarity-and-federated-publishing/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.0.3 post&lt;/a&gt; we described a design pattern we&#39;re calling &lt;em&gt;calm empowerment&lt;/em&gt;: simple defaults, a middle layer of curated controls, and a full advanced view behind an explicit gesture. In 1.0.5 we applied it to &lt;strong&gt;background-processing throughput&lt;/strong&gt;, so admins can keep a busy instance responsive by experimenting with different settings without touching config files or restarting the app:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer 1, simple defaults: pick an overall speed preset, such as Eco / Default / Turbo (thank you to the &lt;a href=&quot;https://activitypub.blog/2026/06/12/9-0-0-growing-up/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ActivityPub for WordPress plugin&lt;/a&gt; for the inspiration)&lt;/li&gt;
+&lt;li&gt;Layer 2, useful overrides: prioritise particular kinds of activity&lt;/li&gt;
+&lt;li&gt;Layer 3, advanced mode: fine-tune each individual task queue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://bonfirenetworks.org/img/finetune.png&quot; alt=&quot;Screenshot of Bonfire&#39;s background task throughput settings, showing preset, prioritise, and advanced layers&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;also-new-in-1.0.5&quot;&gt;Also new in 1.0.5 &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/#also-new-in-1.0.5&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Faster search&lt;/strong&gt;, now powered by &lt;a href=&quot;https://github.com/valeriansaliou/sonic#sonic&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sonic&lt;/a&gt; (existing instances are encouraged to migrate; see the &lt;a href=&quot;https://docs.bonfirenetworks.org/changelog.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;changelog&lt;/a&gt; for details)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Broadcast announcements&lt;/strong&gt;: admins and moderators can push a message (or boost an activity) to everyone on the instance, delivered as a notification&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embeddable widgets&lt;/strong&gt;: drop your instance&#39;s pinned posts into any external website&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PGP-encrypted system emails&lt;/strong&gt; for recipients who support it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clearer federation UI&lt;/strong&gt;: when federation is off or set to manual, the app now tells you when something can&#39;t be done rather than failing silently&lt;/li&gt;
+&lt;li&gt;A long list of improvements and fixes across federation, polls, UI, media viewing, accessibility, and mobile UX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;1.0.4%3A-security-patches-%26-hardening&quot;&gt;1.0.4: Security patches &amp;amp; hardening &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/#1.0.4%3A-security-patches-%26-hardening&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A more under-the-hood release that set the stage for 1.0.5:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Security:&lt;/strong&gt; patched a &lt;a href=&quot;https://w.on-t.work/activitypub/may-2026-vulnerability&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Linked Data Signatures vulnerability&lt;/a&gt; and hardened MFM parsing (thanks to ozone and to Oneric of Akkoma)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CIMD support&lt;/strong&gt; for OAuth authentication&lt;/li&gt;
+&lt;li&gt;Added &lt;strong&gt;rate limits&lt;/strong&gt; on more API surfaces&lt;/li&gt;
+&lt;li&gt;Plus a round of bug fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;read-more&quot;&gt;Read more &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/#read-more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;📖 Full details for both releases are in the &lt;a href=&quot;https://docs.bonfirenetworks.org/changelog.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;get-involved&quot;&gt;Get involved &lt;a class=&quot;direct-link&quot; href=&quot;https://bonfirenetworks.org/posts/bonfire-social-1-0-5-archipelago/#get-involved&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you&#39;re running a Bonfire instance, now is a good time to upgrade. If you&#39;ve been curious about Bonfire for your community or organisation, please &lt;a href=&quot;mailto:team@bonfire.cafe&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
 </content>
   </entry>
 </feed>

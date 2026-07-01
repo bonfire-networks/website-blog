@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonfire</title>
-    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <title>Bonfire Social 1.0.5: Archipelago!</title>
+    <meta name="description" content="1.0.5 introduces Archipelago mode: opt-in, allow-list federation for communities who want to choose exactly who they connect with, plus broadcast announcements, embeddable widgets, encrypted emails, faster search, and a lot of polish.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,19 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <!-- OpenGraph meta tags for social sharing -->
-    <meta property="og:title" content="Bonfire">
-    <meta property="og:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <meta property="og:title" content="Bonfire Social 1.0.5: Archipelago!">
+    <meta property="og:description" content="1.0.5 introduces Archipelago mode: opt-in, allow-list federation for communities who want to choose exactly who they connect with, plus broadcast announcements, embeddable widgets, encrypted emails, faster search, and a lot of polish.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://bonfirenetworks.org//extension/bonfire_ui_reactions/">
+    <meta property="og:url" content="https://bonfirenetworks.org//posts/bonfire-social-1-0-5-archipelago/">
+    
+    <meta property="og:image" content="https://bonfirenetworks.org//img/105.png">
     
     <!-- Twitter card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bonfire">
-    <meta name="twitter:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <meta name="twitter:title" content="Bonfire Social 1.0.5: Archipelago!">
+    <meta name="twitter:description" content="1.0.5 introduces Archipelago mode: opt-in, allow-list federation for communities who want to choose exactly who they connect with, plus broadcast announcements, embeddable widgets, encrypted emails, faster search, and a lot of polish.">
+    
+    <meta name="twitter:image" content="https://bonfirenetworks.org//img/105.png">
     
     
     <link
@@ -165,116 +169,122 @@
 
       
 
+<div class="max-w-(--breakpoint-md) px-6 mx-auto mt-0 mb-12 lg:px-0">
+  <div class="py-8 pb-8 mx-auto">
+    <div class="">
+       
+     <div class="items-center justify-center mb-6 place-content-center flex gap-4"><a href="/tags/development/">
+        <span class="badge capitalize badge-lg badge-soft">
+          development
+        </span>
+        </a>
+      </div>
 
-<div class="bg-base-300">
-  <div class="max-w-screen-lg py-12 px-4 lg:px-0  lg:mx-auto">
-    <div class="text-sm breadcrumbs">
-      <ul>
-        <li><a href="/extensions">Extensions</a></li> 
-        
-      </ul>
-    </div>
-    <h1 class="text-3xl font-bold text-base-content  ">bonfire_ui_reactions</h1>
-    <p class="text-blueGray-300 w-full prose prose-md max-w-prose mt-2"></p>
-    <div class="relative inline-block mt-6">
+      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">Bonfire Social 1.0.5: Archipelago!</h1>
+
       
-    <input value="just dep-clone-local bonfire_ui_reactions https://github.com/bonfire-networks/bonfire_ui_reactions" class="input w-[420px] input-bordered text-sm" />
-    <span class="absolute right-[8px] top-[8px] btn btn-sm btn-square">
-        <svg class="w-5 h-5 text-base-content/70" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"/><path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1"/></g></svg>
-      </span>
-    </div>
-    
-
-  </div>
-</div>
-<div class="my-12 max-w-screen-lg mx-auto grid grid-cols-12 gap-8 px-4 lg:px-0">
-
-  <div class="lg:col-span-8 order-last lg:order-first col-span-12"
-    <h2 class="font-semibold text-xl h-8 flex items-center">Overview</h2>
-
-    <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
-      <div class="uppercase tracking-widest mb-6">Readme</div>
+        <img src="/img/105.png" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+      
         
-        <h1 id="bonfire.ui.reactions">Bonfire.UI.Reactions <a class="direct-link" href="#bonfire.ui.reactions" target="_blank" rel="noopener">#</a></h1>
-<p><img src="https://i.imgur.com/XoQvDCW.png" alt=""></p>
-<p><code>Bonfire.UI.Reactions</code> is an extension that includes some User Interfaces (routes, pages and components) for liking, boosting, pinning, bookmarking, etc, in Bonfire.</p>
-<p>You can customise it by forking, but we recommend creating an extension which uses this one as a dependency, and defines your custom components, views, and/or routes (you can then comment <code>Bonfire.UI.Reactions.Routes</code> from your top-level Router to use your custom routes and views instead).</p>
-<h3 id="stack">Stack <a class="direct-link" href="#stack" target="_blank" rel="noopener">#</a></h3>
-<p>So far, Bonfire UI extensions are built with the PETALS stack (note that is not a requirement), which means:</p>
-<ul>
-<li><a href="https://www.phoenixframework.org/" target="_blank" rel="noopener">Phoenix</a></li>
-<li><a href="https://elixir-lang.org/" target="_blank" rel="noopener">Elixir</a></li>
-<li><a href="https://tailwindcss.com/" target="_blank" rel="noopener">TailwindCSS</a></li>
-<li><a href="https://alpinejs.dev/" target="_blank" rel="noopener">Alpine.js</a></li>
-<li><a href="https://github.com/phoenixframework/phoenix_live_view#readme" target="_blank" rel="noopener">LiveView</a></li>
-<li><a href="https://surface-ui.org/" target="_blank" rel="noopener">Surface</a></li>
-</ul>
-<p>Surface is a server-side rendering component library (built on top of Phoenix and LiveView) that inherits a lot of design patterns from popular JS framework like Vue.js and React, while being almost JavaScript-free compared to common SPAs.</p>
-<h3 id="scaffolding">Scaffolding <a class="direct-link" href="#scaffolding" target="_blank" rel="noopener">#</a></h3>
-<p>The relevant folders are:</p>
-<ul>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_reactions/tree/main/lib/components" target="_blank" rel="noopener">Components</a>: Surface stateless and stateful components.</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_reactions/tree/main/lib/views" target="_blank" rel="noopener">Views</a>: The main pages that are rendered when navigating to a specific route</li>
-<li><a href="https://github.com/bonfire-networks/bonfire_ui_reactions/tree/main/test" target="_blank" rel="noopener">Test</a>: All the unit tests for the specific module.</li>
-</ul>
-<h3 id="other-resources">Other resources <a class="direct-link" href="#other-resources" target="_blank" rel="noopener">#</a></h3>
-<ul>
-<li><a href="https://bonfirenetworks.org/posts/let_thousand_bonfires_bloom/" target="_blank" rel="noopener">A blog post that introduces the concept of themeable bonfire apps</a></li>
-</ul>
-<h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
-<p>Copyright (c) 2020 Bonfire, and CommonsPub Contributors</p>
-<p>This program is free software: you can redistribute it and/or modify<br>
-it under the terms of the GNU Affero General Public License as<br>
-published by the Free Software Foundation, either version 3 of the<br>
-License, or (at your option) any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but<br>
-WITHOUT ANY WARRANTY; without even the implied warranty of<br>
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU<br>
-Affero General Public License for more details.</p>
-<p>You should have received a copy of the GNU Affero General Public<br>
-License along with this program.  If not, see <a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener">https://www.gnu.org/licenses/</a>.</p>
-
     </div>
   </div>
-  <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col">
-      <div class="flex items-center space-x-3">
-        <a href="https://github.com/bonfire-networks/bonfire_ui_reactions" target="_blank" class="flex-1 w-full btn btn-sm  btn-primary rounded-full">
-          Get Code
-        </a>
-        <a target="_blank" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="btn rounded-full flex-1 w-full btn-outline border-base-content/30  btn-sm">
-            Report bugs
-        </a>
-    </div>
 
     
 
-    <div class="bg-base-content/5 mt-4 rounded-lg p-3">
-      <div class="uppercase text-xs tracking-widest mb-6">Details</div>
-        <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
-          
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">24 Jun 2026</span></div>
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
-            
-          
-        </div>
-    </div>
+  <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
+    <p>We've shipped two releases since our last post, so here's a quick roundup of what's new across 1.0.4 and 1.0.5. As always, the full, detailed list lives in the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a>.</p>
+<h2 id="1.0.5%3A-archipelago-mode">1.0.5: Archipelago mode <a class="direct-link" href="#1.0.5%3A-archipelago-mode" target="_blank" rel="noopener">#</a></h2>
+<p>The headline feature is <strong>Archipelago mode</strong>. The usual way to federate is &quot;open&quot;: you connect with the entire fediverse by default and block bad actors as they show up, a never-ending game of whack-a-mole since anyone can spin up a new account or server. Archipelago mode flips this around: you can choose to <strong>federate <em>only</em> with a hand-picked allow-list</strong> of trusted people, groups and servers, and keep everything else out by default.</p>
+<p>Trusted communities can in turn agree to federate with each other, forming an &quot;archipelago&quot; of like-minded &quot;islands&quot; with common rules and safety expectations. It's a great fit for tight-knit communities who only want to connect with their friends and allies, and for groups who federate together by choice (neighbourhoods, towns, assemblies, cooperatives, movements, or not-for-profit organisations) and want to stay connected to one another without necessarily being open to the wider internet. (Credit for the concept goes to <a href="https://writer.oliphant.social/oliphant/islands-an-opt-in-federated-network" target="_blank" rel="noopener">Oliphant</a> and <a href="https://nora.codes/post/the-fediverse-is-already-dead/" target="_blank" rel="noopener">Nora Tindall</a>.)</p>
+<p><img src="/img/archi.png" alt="Screenshot of Bonfire's instance federation settings, showing the choice of federation mode"></p>
+<h3 id="calm-empowerment%2C-applied-to-your-server">Calm empowerment, applied to your server <a class="direct-link" href="#calm-empowerment%2C-applied-to-your-server" target="_blank" rel="noopener">#</a></h3>
+<p>In the <a href="https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-clarity-and-federated-publishing/" target="_blank" rel="noopener">1.0.3 post</a> we described a design pattern we're calling <em>calm empowerment</em>: simple defaults, a middle layer of curated controls, and a full advanced view behind an explicit gesture. In 1.0.5 we applied it to <strong>background-processing throughput</strong>, so admins can keep a busy instance responsive by experimenting with different settings without touching config files or restarting the app:</p>
+<ul>
+<li>Layer 1, simple defaults: pick an overall speed preset, such as Eco / Default / Turbo (thank you to the <a href="https://activitypub.blog/2026/06/12/9-0-0-growing-up/" target="_blank" rel="noopener">ActivityPub for WordPress plugin</a> for the inspiration)</li>
+<li>Layer 2, useful overrides: prioritise particular kinds of activity</li>
+<li>Layer 3, advanced mode: fine-tune each individual task queue</li>
+</ul>
+<p><img src="/img/finetune.png" alt="Screenshot of Bonfire's background task throughput settings, showing preset, prioritise, and advanced layers"></p>
+<h3 id="also-new-in-1.0.5">Also new in 1.0.5 <a class="direct-link" href="#also-new-in-1.0.5" target="_blank" rel="noopener">#</a></h3>
+<ul>
+<li><strong>Faster search</strong>, now powered by <a href="https://github.com/valeriansaliou/sonic#sonic" target="_blank" rel="noopener">Sonic</a> (existing instances are encouraged to migrate; see the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a> for details)</li>
+<li><strong>Broadcast announcements</strong>: admins and moderators can push a message (or boost an activity) to everyone on the instance, delivered as a notification</li>
+<li><strong>Embeddable widgets</strong>: drop your instance's pinned posts into any external website</li>
+<li><strong>PGP-encrypted system emails</strong> for recipients who support it</li>
+<li><strong>Clearer federation UI</strong>: when federation is off or set to manual, the app now tells you when something can't be done rather than failing silently</li>
+<li>A long list of improvements and fixes across federation, polls, UI, media viewing, accessibility, and mobile UX</li>
+</ul>
+<h2 id="1.0.4%3A-security-patches-%26-hardening">1.0.4: Security patches &amp; hardening <a class="direct-link" href="#1.0.4%3A-security-patches-%26-hardening" target="_blank" rel="noopener">#</a></h2>
+<p>A more under-the-hood release that set the stage for 1.0.5:</p>
+<ul>
+<li><strong>Security:</strong> patched a <a href="https://w.on-t.work/activitypub/may-2026-vulnerability" target="_blank" rel="noopener">Linked Data Signatures vulnerability</a> and hardened MFM parsing (thanks to ozone and to Oneric of Akkoma)</li>
+<li><strong>CIMD support</strong> for OAuth authentication</li>
+<li>Added <strong>rate limits</strong> on more API surfaces</li>
+<li>Plus a round of bug fixes</li>
+</ul>
+<h2 id="read-more">Read more <a class="direct-link" href="#read-more" target="_blank" rel="noopener">#</a></h2>
+<p>📖 Full details for both releases are in the <a href="https://docs.bonfirenetworks.org/changelog.html" target="_blank" rel="noopener">changelog</a>.</p>
+<h2 id="get-involved">Get involved <a class="direct-link" href="#get-involved" target="_blank" rel="noopener">#</a></h2>
+<p>If you're running a Bonfire instance, now is a good time to upgrade. If you've been curious about Bonfire for your community or organisation, please <a href="mailto:team@bonfire.cafe" target="_blank" rel="noopener">get in touch</a>.</p>
+
     
-  </div>
+  </article>
+
+     <div class="mt-10 mb-8 text-sm text-base text-base-content/80">
+        <span>Published the 30 Jun 2026</span>
+      </div>
+     
+     
+<!--
+    <script 
+      async src="https://bonfire.cafe/js/comments_embed.js?v1.2"
+      data-theme="dark" data-boundary="public"
+      data-creator="01JSHXHVD56ZFCS6K7VP952TP5"  
+    ></script>
+ -->   
 </div>
 
+  <div class="mx-4 mt-8 lg:mx-auto">
+    
+  
 
+  <div class="my-24 mx-auto max-w-screen-lg w-full flex ">
+      <div class="rounded-xl flex-1 flex items-center text-center gap-2 flex-col h-full bg-base-200 p-4">
 
+        <div class="flex flex-col items-center gap-8 p-6  rounded-xl place-content-center">
+          <div class="flex flex-col gap-6 mx-4 lg:mx-auto">
+            <p class="text-lg font-bold tracking-tight text-base-content sm:block sm:text-4xl">Sign up to our newsletter for more stories</p>
+            <div class="text-base text-base-content/80">Your data is private and we will use it only for the purposes of contacting you about Bonfire.
+              <br/>You may unsubscribe at any time.
+            </div>
+          </div>
 
+            <div class="flex-1 w-full" id="mc_embed_signup mt-6">
+              <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="flex items-center gap-3 place-content-center" id="mc_embed_signup_scroll">
+                <div class="col-span-2 mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full md:w-[360px] required email input input-bordered" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="mt-3 clear foot">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>   
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
+                  <div class="optionalParent">
+                      <div class="clear foot">
+                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
+                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
+  
 
 
       <div class="bg-base-200">
