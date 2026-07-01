@@ -9,7 +9,7 @@ author: Bonfire Builders
 
 ---
 
-We've shipped two releases since our last post, so here's a quick roundup of what's new across 1.0.4 and 1.0.5. As always, the full, detailed list lives in the [changelog](https://docs.bonfirenetworks.org/changelog.html).
+*We've shipped two releases since our last post, so here's a quick roundup of what's new across 1.0.4 and 1.0.5. As always, the full, detailed list lives in the [changelog](https://docs.bonfirenetworks.org/changelog.html).*
 
 ## 1.0.5: Archipelago mode
 
@@ -21,7 +21,7 @@ Trusted communities can in turn agree to federate with each other, forming an "a
 
 ### Calm empowerment, applied to your server
 
-In the [1.0.3 post](https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-clarity-and-federated-publishing/) we described a design pattern we're calling *calm empowerment*: simple defaults, a middle layer of curated controls, and a full advanced view behind an explicit gesture. In 1.0.5 we applied it to **background-processing throughput**, so admins can keep a busy instance responsive by experimenting with different settings without touching config files or restarting the app:
+In the [1.0.3 post](https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-clarity-and-federated-publishing/) we described a design pattern we're calling *calm empowerment*: simple defaults, a middle layer of useful overrides, and a full advanced view behind an explicit gesture. In 1.0.5 we applied it to **background-processing throughput**, so admins can keep a busy instance responsive by experimenting with different settings without touching config files or restarting the app:
 
 - Layer 1, simple defaults: pick an overall speed preset, such as Eco / Default / Turbo (thank you to the [ActivityPub for WordPress plugin](https://activitypub.blog/2026/06/12/9-0-0-growing-up/) for the inspiration)
 - Layer 2, useful overrides: prioritise particular kinds of activity
@@ -35,7 +35,7 @@ In the [1.0.3 post](https://bonfirenetworks.org/posts/bonfire-1-0-3-stability-cl
 - **Broadcast announcements**: admins and moderators can push a message (or boost an activity) to everyone on the instance, delivered as a notification
 - **Embeddable widgets**: drop your instance's pinned posts into any external website
 - **PGP-encrypted system emails** for recipients who support it
-- **Clearer federation UI**: when federation is off or set to manual, the app now tells you when something can't be done rather than failing silently
+- **Clearer federation UI**: when federation is not fully enabled (eg. archipelago, manual, or disabled) the app now tells you when something can't be done rather than failing silently
 - A long list of improvements and fixes across federation, polls, UI, media viewing, accessibility, and mobile UX
 
 ## 1.0.4: Security patches & hardening
@@ -49,7 +49,7 @@ A more under-the-hood release that set the stage for 1.0.5:
 
 ## Read more
 
-📖 Full details for both releases are in the [changelog](https://docs.bonfirenetworks.org/changelog.html).
+Full details for both releases are in the [changelog](https://docs.bonfirenetworks.org/changelog.html).
 
 ## Get involved
 
