@@ -18,13 +18,18 @@ templateClass: tmpl-case-study
   .csj .prose-body p + p { margin-top:1.1rem; }
   .csj .rule { border-top:1px solid var(--line); }
   .csj .imgph { background:repeating-linear-gradient(45deg,#efece6,#efece6 12px,#e9e5dd 12px,#e9e5dd 24px); }
+  .csj .big-img { width:100%; aspect-ratio:16/9; }
+  .csj .shotgrid { display:grid; gap: 3.5rem 1rem; }
+  @media (min-width:768px){
+    .csj .shotgrid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .csj .shotgrid .wide { grid-column:1 / -1; }
+  }
+  .csj .shot { display:block; width:100%; height:100%; object-fit:cover; }
   .csj .hscroll { display:flex; gap:1.5rem; overflow-x:auto; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; padding:0 0 1.25rem; cursor:grab; scrollbar-width:none; }
   .csj .hscroll::-webkit-scrollbar { display:none; }
   .csj .hscroll.dragging { cursor:grabbing; scroll-snap-type:none; user-select:none; }
   .csj .hcard { flex:0 0 auto; width:clamp(300px,84vw,520px); scroll-snap-align:start; }
   .csj .hcard-sq { width:clamp(240px,70vw,380px); }
-  .csj .hcard-big { flex:0 0 auto; width:clamp(320px,90vw,1040px); scroll-snap-align:start; }
-  .csj .big-img { width:100%; aspect-ratio:16/9; }
   .csj .hscroll .imgph, .csj .hscroll img { pointer-events:none; }
   .csj .drag-hint { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#a5a29b; }
   .csj .btn-line { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.5rem; border-radius:999px; border:1px solid rgba(20,20,20,.28); font-weight:500; transition:background .2s,color .2s,border-color .2s; }
@@ -45,6 +50,8 @@ templateClass: tmpl-case-study
   .csj .slot-on-red { border:1px dashed rgba(255,255,255,.55); color:rgba(255,255,255,.85); border-radius:14px; display:flex; align-items:center; justify-content:center; text-align:center; padding:1.25rem; font-size:.85rem; }
   .csj .btn-solid { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.6rem; border-radius:999px; background:#fff; color:var(--brand); font-weight:600; transition:opacity .2s; }
   .csj .btn-solid:hover { opacity:.88; }
+  .csj .why-art { display:block; width:100%; max-width:280px; margin:0 auto; }
+  @media (min-width:768px){ .csj .why-art { max-width:none; margin:0; } }
 
   /* ---- self-contained utility fallbacks ----
      Guarantees the layout holds even if the site's compiled Tailwind is stale
@@ -83,8 +90,10 @@ templateClass: tmpl-case-study
     .csj .md\:grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .csj .md\:grid-cols-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .csj .md\:grid-cols-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .csj .md\:col-span-4 { grid-column:span 4 / span 4; }
     .csj .md\:col-span-5 { grid-column:span 5 / span 5; }
     .csj .md\:col-span-7 { grid-column:span 7 / span 7; }
+    .csj .md\:col-span-8 { grid-column:span 8 / span 8; }
     .csj .md\:sticky { position:sticky; }
     .csj .md\:top-16 { top:4rem; }
   }
@@ -100,7 +109,7 @@ templateClass: tmpl-case-study
       <div class="md:col-span-7">
         <p class="wordmark mb-6">Jacobin × Bonfire — Case study</p>
         <h1 class="hero-title mb-8">From audience<br>to community</h1>
-        <p class="hero-lede max-w-xl">The socialist magazine wanted more than a comment section. We connected
+        <p class="hero-lede max-w-xl">The independent media wanted more than a comment section. We connected
           Ghost to Bonfire and gave their readers a federated community space they own.</p>
       </div>
       <div class="md:col-span-5">
@@ -204,7 +213,7 @@ templateClass: tmpl-case-study
   </div>
 
   <figure class="mt-14 md:mt-24 reveal">
-    <div class="imgph aspect-[21/9] w-full rounded-xl flex items-center justify-center text-sm text-neutral-500">ILLUSTRATION · Jacobin artwork introducing the community space</div>
+      <img class="w-full rounded-xl" src="/img/jacobin/j00-intro-artwork.png" alt="Jacobin artwork introducing the community space" loading="lazy" />
   </figure>
 </section>
 
@@ -220,32 +229,25 @@ templateClass: tmpl-case-study
         team already works — so publishing and community feel like one product.</span></p>
     </div>
   </div>
-
-  <div class="flex items-center gap-4 mb-4"><span class="drag-hint">Drag / scroll →</span></div>
-  <div class="hscroll reveal">
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · imported article in Bonfire with discussion</div>
+  <div class="shotgrid reveal">
+    <figure class="wide">
+<img class="shot big-img rounded-xl mb-4" src="/img/jacobin/article.png" alt="An imported Jacobin article in the Bonfire feed" loading="lazy" />
       <figcaption class="prose-body"><span class="prose-body"><strong>One product.</strong> A Jacobin article,
         imported into Bonfire and open for discussion.</span></figcaption>
     </figure>
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · SSO sign-in</div>
+    <figure>
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/j02-sso.png" alt="Jacobin-branded single sign-on screen" loading="lazy" />
       <figcaption class="prose-body"><span class="prose-body"><strong>Single sign-on.</strong> One email
         across Ghost and Bonfire — readers move between the two without friction.</span></figcaption>
     </figure>
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · membership tiers → circles mapping</div>
-      <figcaption class="prose-body"><span class="prose-body"><strong>Membership sync.</strong> Ghost tiers
-        map to Bonfire circles and groups; members land in the right spaces automatically, no list-keeping.</span></figcaption>
-    </figure>
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · imported article in feed</div>
+    <figure>
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/ghost.png" alt="An imported Jacobin article in the Bonfire feed" loading="lazy" />
       <figcaption class="prose-body"><span class="prose-body"><strong>Article import.</strong> Articles flow
         in with visibility set from the Ghost tier — each piece an invitation to discuss, not a dead end.</span></figcaption>
     </figure>
   </div>
 
-  <blockquote class="max-w-3xl mt-16 border-l-2 pl-6 py-2" style="border-color:var(--accent)">
+  <blockquote class="max-w-3xl mt-32 border-l-2 pl-6 py-2" style="border-color:var(--accent)">
     <p class="display text-xl md:text-2xl leading-snug">Doesn't Ghost already federate?</p>
     <p class="prose-body mt-3"><span class="prose-body">It does — Ghost broadcasts articles into the fediverse
       and pulls replies back. That's a great start. But Jacobin's needs pushed further: a structured community
@@ -268,25 +270,19 @@ templateClass: tmpl-case-study
       </div>
     </div>
 
-    <div class="flex items-center gap-4 mb-4"><span class="drag-hint">Drag / scroll →</span></div>
-    <div class="hscroll reveal">
-      <figure class="hcard-big">
+    <div class="shotgrid reveal">
+      <figure class="wide">
         <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · comments widget under a Jacobin article</div>
         <figcaption class="prose-body"><span class="prose-body"><strong>On the page.</strong> The federated
           comment thread, living right under a Jacobin article.</span></figcaption>
       </figure>
-      <figure class="hcard-big">
-        <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · widget embedded on the web page</div>
-        <figcaption class="prose-body"><span class="prose-body"><strong>Embed anywhere.</strong> One snippet
-          turns any article, portfolio, or recipe into a federated object with its own thread.</span></figcaption>
-      </figure>
-      <figure class="hcard-big">
-        <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · nested, boostable thread</div>
+      <figure>
+        <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/discussion.png" alt="Jacobin-branded single sign-on screen" loading="lazy" />
         <figcaption class="prose-body"><span class="prose-body"><strong>Real discussion.</strong> Nested,
           boostable, upvotable threads — not a flat comment box bolted onto the page.</span></figcaption>
       </figure>
-      <figure class="hcard-big">
-        <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · reply arriving from Mastodon / Bluesky</div>
+      <figure>
+        <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/interop.png" alt="Jacobin-branded single sign-on screen" loading="lazy" />
         <figcaption class="prose-body"><span class="prose-body"><strong>Cross-network.</strong> Readers join
           from Mastodon, other Bonfire instances, or Bluesky via bridging — replies appear back on the page.</span></figcaption>
       </figure>
@@ -306,26 +302,26 @@ templateClass: tmpl-case-study
         topics, with governance the community itself can define.</span></p>
     </div>
   </div>
-
-  <div class="flex items-center gap-4 mb-4"><span class="drag-hint">Drag / scroll →</span></div>
-  <div class="hscroll reveal">
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · a Jacobin group with topics</div>
+  <div style="gap: 5.5rem 1rem;" class="shotgrid reveal">
+    <figure>
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/j09-group-topics.png" alt="A Jacobin group organised around topics" loading="lazy" />
       <figcaption class="prose-body"><span class="prose-body"><strong>A space of their own.</strong> A Jacobin
         group, organised around topics rather than a single noisy feed.</span></figcaption>
     </figure>
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · group types / boundary presets</div>
+    <figure>
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/j10-boundary-presets.png" alt="Group boundary presets — public, announcement-only, private, circle-restricted" loading="lazy" />
       <figcaption class="prose-body"><span class="prose-body"><strong>Flexible boundaries.</strong> Public
         groups, announcement-only spaces, private invite-only rooms, or circle-restricted groups.</span></figcaption>
     </figure>
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · topics within a group</div>
+    <figure>
+      {# <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · topics within a group</div> #}
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/creategroup.png" alt="Group boundary presets — public, announcement-only, private, circle-restricted" loading="lazy" />
       <figcaption class="prose-body"><span class="prose-body"><strong>Topics &amp; following.</strong> Organise
         discussion by topic; follow a group or topic to get updates without visiting each page.</span></figcaption>
     </figure>
-    <figure class="hcard-big">
-      <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · community rules extension</div>
+    <figure>
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/widgets.png" alt="Group boundary presets — public, announcement-only, private, circle-restricted" loading="lazy" />
+      {# <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · community rules extension</div> #}
       <figcaption class="prose-body"><span class="prose-body"><strong>Community rules.</strong> Each group
         defines its own rules — grounded in governance research with Princeton HCI and CrowCards.</span></figcaption>
     </figure>
@@ -343,16 +339,24 @@ templateClass: tmpl-case-study
   </div>
 
   <figure class="relative aspect-[21/9] w-full rounded-xl overflow-hidden mb-10 reveal">
-    <div class="imgph parallax absolute inset-x-0 -top-[9%] h-[118%] flex items-center justify-center text-sm text-neutral-500">IMG · wide: the Jacobin-branded instance</div>
+   <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/banners-04.jpg" alt="A Jacobin group organised around topics" loading="lazy" />
+    {# <div class="imgph parallax absolute inset-x-0 -top-[9%] h-[118%] flex items-center justify-center text-sm text-neutral-500">IMG · wide: the Jacobin-branded instance</div> #}
   </figure>
-
   <div class="flex items-center gap-4 mb-4"><span class="drag-hint">Drag / scroll →</span></div>
   <div class="hscroll mb-12">
-    <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · custom colours &amp; type</figure>
-    <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · branded logo / masthead</figure>
+    <figure class="hcard hcard-sq aspect-square rounded-lg overflow-hidden">
+      <img class="shot" src="/img/jacobin/j14-sq-colours.png" alt="Jacobin-branded avatar set — illustrated portraits in the red identity" loading="lazy" />
+    </figure>
+    <figure class="hcard hcard-sq aspect-square rounded-lg overflow-hidden">
+      <img class="shot" src="/img/jacobin/logo.png" alt="Jacobin-branded avatar set — illustrated portraits in the red identity" loading="lazy" />
+    </figure>
+    <figure class="hcard hcard-sq aspect-square rounded-lg overflow-hidden">
+      <img class="shot" src="/img/jacobin/about.png" alt="Jacobin-branded avatar set — illustrated portraits in the red identity" loading="lazy" />
+    </figure>
+    {# <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · branded logo / masthead</figure>
     <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · tailored onboarding</figure>
     <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · German-language UI</figure>
-    <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · feed / dashboard</figure>
+    <figure class="hcard hcard-sq imgph aspect-square rounded-lg flex items-center justify-center text-xs text-neutral-500">IMG · German-language UI</figure> #}
   </div>
 
   <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -376,20 +380,27 @@ templateClass: tmpl-case-study
 
 <!-- ============ WHY IT MATTERS ============ -->
 <section class="py-16 md:py-24" style="background:var(--brand); color:#fff">
-  <div class="max-w-4xl mx-auto px-6">
-    <p class="eyebrow mb-4" style="color:rgba(255,255,255,.85)">Why this matters for publishers</p>
-    <h2 class="display text-3xl md:text-4xl mb-8 max-w-3xl">Own the relationship with your readers</h2>
-    <div class="space-y-5 text-lg leading-relaxed" style="color:rgba(255,255,255,.9)">
-      <p>None of this is a one-off build. It's a reusable foundation for any publisher or membership
-        organisation that wants a federated social space — a newsletter, a magazine, a media co-op — and the
-        approach extends to WordPress or Drupal.</p>
-      <p>Publishers like The Verge, 404 Media, and the New York Times are all exploring deeper social
-        integration into their articles. The reason is familiar to anyone whose reach depends on a platform
-        they don't control: rented audiences can be throttled, de-ranked, or lost overnight.</p>
-      <p>Bonfire offers a different premise. AGPL-licensed, no VC, no ads — no incentive to enshittify the
-        space over time. Every instance federates over ActivityPub, so the community stays connected to the
-        open social web on its own terms. And because it runs on infrastructure the publisher controls, the
-        relationship with readers isn't mediated by a third party that can revoke it.</p>
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+      <figure class="md:col-span-4">
+        <img class="why-art" src="/img/jacobin/Layer.png" alt="Line-art figure in a plumed hat holding the world, sun in hand" loading="lazy" />
+      </figure>
+      <div class="md:col-span-8">
+        <p class="eyebrow mb-4" style="color:rgba(255,255,255,.85)">Why this matters for publishers</p>
+        <h2 class="display text-3xl md:text-4xl mb-8 max-w-3xl">Own the relationship with your readers</h2>
+        <div class="space-y-5 text-lg leading-relaxed" style="color:rgba(255,255,255,.9)">
+          <p>None of this is a one-off build. It's a reusable foundation for any publisher or membership
+            organisation that wants a federated social space — a newsletter, a magazine, a media co-op — and the
+            approach extends to WordPress or Drupal.</p>
+          <p>Publishers like The Verge, 404 Media, and the New York Times are all exploring deeper social
+            integration into their articles. The reason is familiar to anyone whose reach depends on a platform
+            they don't control: rented audiences can be throttled, de-ranked, or lost overnight.</p>
+          <p>Bonfire offers a different premise. AGPL-licensed, no VC, no ads — no incentive to enshittify the
+            space over time. Every instance federates over ActivityPub, so the community stays connected to the
+            open social web on its own terms. And because it runs on infrastructure the publisher controls, the
+            relationship with readers isn't mediated by a third party that can revoke it.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

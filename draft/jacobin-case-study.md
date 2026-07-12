@@ -14,7 +14,7 @@ date: 2026-07-09
 
 ## At a glance
 
-- **Client:** Jacobin — the German-language edition of the socialist magazine
+- **Client:** Jacobin — the German-language edition of The independent media
 - **Sector:** Independent media / publishing
 - **Engagement:** Bonfire Mosaic co-design
 - **Timeline:** 6 months of co-design & development; jacobin.social live July 2026

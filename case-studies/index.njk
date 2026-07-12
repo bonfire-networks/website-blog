@@ -13,7 +13,7 @@ description: The goal each community was chasing, the space they ended up with, 
 {% set bodyp = "mt-3.5 text-[1.02rem] text-ink-2 max-w-[46rem]" %}
 {% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-[1.4rem] py-[.85rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
 {% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-[1.4rem] py-[.85rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
-{% set phin = "flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 p-[18px] leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] [&_.tag]:text-flame" %}
+{% set phin = "flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] [&_.tag]:text-flame" %}
 {% set origin = "badge h-auto rounded-full bg-transparent border-ink/15 px-[9px] py-1 font-smono text-[.6rem] tracking-[.1em] uppercase text-ink-3 whitespace-nowrap" %}
 {% set goal = "border-l-2 border-flame pl-[18px]" %}
 {% set goallab = "font-smono text-[.62rem] tracking-[.12em] uppercase text-ink-3 mb-[5px]" %}
@@ -71,14 +71,16 @@ description: The goal each community was chasing, the space they ended up with, 
       <p class="{{ eyebrow }} text-flame">The full story</p>
 
       <article class="rounded-xl overflow-hidden border border-ink/15 bg-night-2 mt-[26px]">
-        <div class="{{ phin }} aspect-[16/10] min-h-[320px] border-b border-ink/15"><span class="max-w-[32ch]"><span class="tag">[ HERO IMG — Jacobin ]</span><br>jacobin.social — their community space, in their brand</span></div>
+        <div class="{{ phin }} aspect-[16/10] min-h-[320px] border-b border-ink/15">
+          <img class="w-full h-full object-cover object-center" src="/img/jacobin/jacobin-social.png" alt="Jacobin Social, a federated comment section for the German edition of Jacobin magazine" />
+        </div>
         <div class="grid grid-cols-1 min-[901px]:grid-cols-[1.4fr_.6fr]">
           <div class="px-[30px] py-8">
             <div class="flex items-center gap-2.5 flex-wrap mb-3">
               <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A magazine · Independent media</span>
               <span class="{{ origin }}">◼ Co-designed with us</span>
             </div>
-            <h2 class="font-disp font-[560] text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.06] mb-4">Jacobin</h2>
+            <h2 class="font-disp font-[560] text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.06] mb-4">Jacobin: From audience to community</h2>
 
             <div class="{{ goal }} mb-[18px]">
               <div class="{{ goallab }}">What they were after</div>
