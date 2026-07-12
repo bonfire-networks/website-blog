@@ -120,83 +120,62 @@ description: The goal each community was chasing, the space they ended up with, 
       <h2 class="{{ display }} max-w-[26ch]">Different goals. <span class="font-light">Same foundation.</span></h2>
       <p class="{{ bodyp }}">Some of these we co-designed with. Others took Bonfire and built it themselves — which is rather the point.</p>
 
-      {% set ccard = "card rounded-xl border border-ink/15 bg-night-2 px-6 py-[26px] gap-3" %}
+      {% set ccard = "card overflow-hidden rounded-xl border border-ink/15 bg-night-2" %}
+      {% set cshot = "w-full aspect-video border-b border-dashed border-ink/15 flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 p-[18px] leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] [&_.tag]:text-flame" %}
+      {% set cbody = "flex flex-col gap-2.5 flex-1 px-6 py-[26px]" %}
+      {% set cmeta = "font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3" %}
+      {% set cgoal = "m-0 font-disp font-normal text-[1.12rem] leading-[1.35] text-ink" %}
+      {% set chow = "text-ink-2 text-[.92rem] m-0" %}
+      {% set cfoot = "mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap font-smono text-[.68rem] text-ink-3" %}
       <div class="grid grid-cols-1 min-[861px]:grid-cols-2 gap-4 mt-[26px]">
 
         <div class="{{ ccard }}">
-          <div class="flex items-center gap-[9px] flex-wrap">
-            <span class="{{ sector }}">Mental health</span>
-            <span class="{{ origin }} ml-auto">◼ Co-designed with us</span>
+          <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Mentaal — a private, invite-only group with careful boundaries</span></div>
+          <div class="{{ cbody }}">
+            <span class="{{ cmeta }}">Mental health · co-designed with us</span>
+            <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Mentaal</h3>
+            <p class="{{ cgoal }}">“A place people can be honest about their mental health — without it being public, permanent, or profitable to anyone.”</p>
+            <p class="{{ chow }}">Private by default and governed by the people it serves, with safety designed in rather than switched on afterwards. Co-designed with Ypsilon.</p>
+            <div class="{{ cfoot }}"><span>◼ In co-design</span><span class="ml-auto">Story when it's live</span></div>
           </div>
-          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Mentaal</h3>
-          <div class="{{ goal }}">
-            <div class="{{ goallab }}">What they're after</div>
-            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">A place people can be honest about their mental health — without it being public, permanent, or profitable to anyone.</p>
-          </div>
-          <p class="text-ink-2 text-[.95rem] m-0">Private by default and governed by the people it serves, with safety designed in rather than switched on afterwards. Co-designed with Ypsilon.</p>
-          <div class="mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap"><span class="font-smono text-[.68rem] text-ink-3">◼ In co-design</span><span class="ml-auto font-smono text-[.7rem] text-ink-3">Story when it's live</span></div>
         </div>
 
         <div class="{{ ccard }}">
-          <div class="flex items-center gap-[9px] flex-wrap">
-            <span class="{{ sector }}">Neighbourhood network</span>
-            <span class="{{ origin }} ml-auto">◼ Co-designed with us</span>
+          <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Totnes Pulse — the town noticeboard &amp; local feeds</span></div>
+          <div class="{{ cbody }}">
+            <span class="{{ cmeta }}">Neighbourhood network · co-designed with us</span>
+            <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Totnes Pulse</h3>
+            <p class="{{ cgoal }}">“A town that can organise itself — locally, without routing its neighbourhood through a global platform.”</p>
+            <p class="{{ chow }}">Small, local, and specific: the kind of community the big platforms are worst at serving, and the kind Bonfire was built for.</p>
+            <div class="{{ cfoot }}"><span>◼ Planned</span><span class="ml-auto">Story when it's live</span></div>
           </div>
-          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Totnes Pulse</h3>
-          <div class="{{ goal }}">
-            <div class="{{ goallab }}">What they're after</div>
-            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">A town that can organise itself — locally, without routing its neighbourhood through a global platform.</p>
-          </div>
-          <p class="text-ink-2 text-[.95rem] m-0">Small, local, and specific: the kind of community the big platforms are worst at serving, and the kind Bonfire was built for.</p>
-          <div class="mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap"><span class="font-smono text-[.68rem] text-ink-3">◼ Planned</span><span class="ml-auto font-smono text-[.7rem] text-ink-3">Story when it's live</span></div>
         </div>
 
         <div class="{{ ccard }}">
-          <div class="flex items-center gap-[9px] flex-wrap">
-            <span class="{{ sector }}">Research</span>
-            <span class="{{ origin }} ml-auto !text-spark !border-spark/40">◼ Built independently</span>
+          <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Open Science Network — a researcher profile with publications &amp; DOIs</span></div>
+          <div class="{{ cbody }}">
+            <span class="{{ cmeta }}">Research · <span class="text-spark">built independently</span></span>
+            <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Open Science Network</h3>
+            <p class="{{ cgoal }}">“Scholarly conversation that doesn't evaporate — findings, arguments and data that stay open, citable and out of the journals' hands.”</p>
+            <p class="{{ chow }}">Researchers shaped Bonfire around how science actually works: sign in with ORCID, publications on your profile, papers that unfold with their DOI.</p>
+            <div class="{{ cfoot }}"><span>◼ In development</span><a class="ml-auto text-spark hover:underline" href="https://openscience.network" target="_blank" rel="noopener noreferrer">openscience.network ↗</a></div>
           </div>
-          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Open Science Network</h3>
-          <div class="{{ goal }}">
-            <div class="{{ goallab }}">What they're after</div>
-            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">Scholarly conversation that doesn't evaporate — findings, arguments and data that stay open, citable and out of the journals' hands.</p>
-          </div>
-          <p class="text-ink-2 text-[.95rem] m-0">Researchers shaped Bonfire around how science actually works: sign in with ORCID, publications on your profile, papers that unfold with their DOI, discussions you can archive and cite.</p>
-          <div class="mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap"><span class="font-smono text-[.68rem] text-ink-3">◼ In development</span><a class="ml-auto font-smono text-[.7rem] text-spark hover:underline" href="https://openscience.network" target="_blank" rel="noopener noreferrer">openscience.network ↗</a></div>
         </div>
 
         {# placeholder — needs real copy #}
-        <div class="{{ ccard }} border-dashed bg-[repeating-linear-gradient(135deg,transparent_0_20px,rgba(242,236,219,.015)_20px_40px)]">
-          <div class="flex items-center gap-[9px] flex-wrap">
-            <span class="{{ sector }}">[ sector — to fill ]</span>
-            <span class="{{ origin }} ml-auto !text-spark !border-spark/40">◼ Built independently</span>
+        <div class="{{ ccard }} border-dashed">
+          <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Fondazione Cineteca dell'Etna — to fill</span></div>
+          <div class="{{ cbody }}">
+            <span class="{{ cmeta }}">[ sector — to fill ] · <span class="text-spark">built independently</span></span>
+            <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Fondazione Cineteca dell'Etna</h3>
+            <p class="{{ cgoal }}">“[ One line: the goal they're chasing — to fill ]”</p>
+            <p class="{{ chow }}">[ One or two lines: how they're using Bonfire to get there — to fill ]</p>
+            <div class="{{ cfoot }}"><span class="text-flame">◼ Placeholder — needs your copy</span></div>
           </div>
-          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Fondazione Cineteca dell'Etna</h3>
-          <div class="{{ goal }}">
-            <div class="{{ goallab }}">What they're after</div>
-            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">[ One line: the goal they're chasing — to fill ]</p>
-          </div>
-          <p class="text-ink-2 text-[.95rem] m-0">[ One or two lines: how they're using Bonfire to get there — to fill ]</p>
-          <div class="mt-auto pt-3 border-t border-ink/[0.07]"><span class="font-smono text-[.68rem] text-flame">◼ Placeholder — needs your copy</span></div>
         </div>
 
       </div>
-    </div></section>
 
-    {# ===== the ones we've never met ===== #}
-    <section class="py-[60px] border-t border-ink/[0.07]">
-    <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-spark">And the rest</p>
-      <div class="grid grid-cols-1 min-[761px]:grid-cols-[1fr_auto] gap-7 items-center mt-[26px] rounded-xl border border-ink/15 bg-night-2 px-7 py-[30px]">
-        <div>
-          <h3 class="font-disp font-[620] text-[1.4rem] mb-2">Twenty-odd communities we've never spoken to.</h3>
-          <p class="text-ink-2 text-[.99rem] m-0 max-w-[44rem]">Most of the people running Bonfire never asked us for anything. They found it, installed it, and made it theirs — a book club, a co-op, a research group, someone's friends. We only know they exist because FediDB counts them. That's not a gap in our sales funnel; it's the whole idea working.</p>
-          <div class="flex flex-wrap gap-[7px] mt-4">
-            {% for i in ["[ instance ]", "[ instance ]", "[ instance ]", "[ instance ]", "[ instance ]", "[ instance ]", "+ more"] %}<span class="font-smono text-[.7rem] text-ink-3 border border-ink/15 rounded-[7px] px-[9px] py-[5px]">{{ i }}</span>{% endfor %}
-          </div>
-        </div>
-        <a class="{{ btnline }}" href="https://fedidb.org/software/bonfire" target="_blank" rel="noopener noreferrer">See them on FediDB ↗</a>
-      </div>
     </div></section>
 
     {# ===== invitation ===== #}
