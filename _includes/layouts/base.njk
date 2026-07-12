@@ -38,36 +38,16 @@
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
   </head>
   <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
   <div class="drawer">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
-      {% include "header.njk" %}
+      {% include "v2/header.njk" %}
       {{ content | safe }}
       {% include "footer.njk" %}
-    </div>
-    <div class="drawer-side">
-      <label for="my-drawer-2" aria-label="close sidebar" class="z-[99999999999999999999999999] drawer-overlay"></label>
-      <ul class="menu  bg-base-200 min-h-full w-80 p-4 relative z-[9999999999999999999]">
-        <li class="mb-4">
-            <a href="/" class="flex items-center space-x-2">
-              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class=""><span class="text-base font-semibold tracking-wider text-base-content">Bonfire Networks</span> 
-              {# <div class="mt-1 ml-2 text-xs tracking-wider capitalize text-info">{{ latest_version | safe }}</div> #}
-              </span>
-            </a>
-          </li>
-        <!-- Sidebar content here -->
-        <li><a href="/about">About</a></li>
-        <li><a href="/apps">Apps</a></li>
-        <li><a href="/hosting">Hosting</a></li>
-        <li><a href="https://docs.bonfirenetworks.org">Docs</a></li>
-        <li><a href="/faq">FAQs</a></li>
-        <li><a href="/mosaic">Mosaic</a></li>
-        <li><a href="/blog">News</a></li>
-      </ul>
     </div>
   </div>
   

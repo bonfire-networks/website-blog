@@ -1,0 +1,68 @@
+{# ============================================================
+   V2 · HEADER — sticky nav + mobile menu (Tailwind + daisyUI)
+   Requires: v2 tokens in css/index.css (night/ink/flame colors, font-smono)
+   ============================================================ #}
+{% set navlink = "px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5" %}
+{% set droplink = "block px-3 py-2 rounded-[5px] text-[.9rem] text-ink-2 hover:text-ink hover:bg-ink/5" %}
+{% set moblink = "block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem]" %}
+{% set mobsub = "block pl-11 pr-7 py-2.5 text-ink-2 text-[.92rem]" %}
+
+<nav class="sticky top-0 z-[70] bg-night/80 backdrop-blur-md border-b border-ink/[0.07] font-body" aria-label="Main">
+<div class="max-w-[1140px] mx-auto px-7 flex items-center h-16 gap-1.5">
+  <a class="flex items-center gap-2.5 flex-none text-ink" href="/" aria-label="Bonfire Networks — home">
+    <div class="bg-center bg-no-repeat bg-cover w-[30px] h-10" style="background-image:url(/img/bonfire.png)"></div>
+    {# <div>Bonfire Networks</div> #}
+  </a>
+  {# self-stretch: the menu row must fill the 64px bar so the active link's
+     self-stretch (and its bottom-0 underline) can reach the header's edge #}
+  <div class="hidden lg:flex items-center gap-0.5 ml-auto self-stretch">
+    {# active link: self-stretch makes it span the full 64px bar so the
+       underline lands on the header's bottom edge instead of under the text #}
+    <a class="{{ navlink }} relative self-stretch inline-flex items-center text-ink font-semibold after:content-[''] after:absolute after:left-[13px] after:right-[13px] after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-spark after:to-ember" href="/">About</a>
+    <a class="{{ navlink }}" href="/features">Features</a>
+    <div class="dropdown dropdown-hover">
+      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer">Resources <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      {# pt-2 spacer (not mt-2) keeps the pointer inside .dropdown while
+         crossing from the button to the menu, so the hover persists #}
+      <div class="dropdown-content z-[80] pt-2">
+        <ul tabindex="0" class="min-w-[180px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
+          <li><a class="{{ droplink }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a></li>
+          <li><a class="{{ droplink }}" href="/case-studies">Case studies</a></li>
+          <li><a class="{{ droplink }}" href="/hosting">Hosting</a></li>
+          <li><a class="{{ droplink }}" href="/blog">Blog</a></li>
+          <li><a class="{{ droplink }}" href="/faq">FAQs</a></li>
+          <li><a class="{{ droplink }}" href="https://docs.bonfirenetworks.org">Documentation</a></li>
+          <li><a class="{{ droplink }}" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <a class="{{ navlink }}" href="/mosaic">Mosaic</a>
+    <a class="{{ navlink }}" href="/community">Community</a>
+    <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold uppercase tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="#join">Get started</a>
+  </div>
+  <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+</div></nav>
+
+<div class="hidden sticky top-16 z-[69] bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
+  <a class="{{ moblink }} !text-spark font-semibold" href="/">About</a>
+  <a class="{{ moblink }}" href="/features">Features</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] uppercase text-ink-3">Resources</span>
+  <a class="{{ mobsub }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a>
+  <a class="{{ mobsub }}" href="/case-studies">Case studies</a>
+  <a class="{{ mobsub }}" href="/hosting">Hosting</a>
+  <a class="{{ mobsub }}" href="/blog">Blog</a>
+  <a class="{{ mobsub }}" href="/faq">FAQs</a>
+  <a class="{{ mobsub }}" href="https://docs.bonfirenetworks.org">Documentation</a>
+  <a class="{{ mobsub }}" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  <a class="{{ moblink }}" href="/mosaic">Mosaic</a>
+  <a class="{{ moblink }}" href="/community">Community</a>
+  <a class="{{ moblink }} font-smono text-[.78rem] uppercase tracking-[.06em] !text-spark" href="#join">Get started</a>
+</div>
+
+<script>
+(function(){
+"use strict";
+var b=document.getElementById('burger'),d=document.getElementById('v2drawer');
+if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hidden');b.setAttribute('aria-expanded',!hidden);});
+})();
+</script>

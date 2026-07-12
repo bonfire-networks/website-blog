@@ -1,0 +1,88 @@
+{% set rk = "font-smono text-[13px] tracking-[.13em] uppercase text-[var(--acc)]" %}
+{% set tilebase = "w-[60px] h-[60px] rounded-2xl flex items-center justify-center text-3xl -mx-2.5 text-[var(--acc)] border border-[color-mix(in_srgb,var(--acc)_38%,transparent)] bg-[linear-gradient(160deg,color-mix(in_srgb,var(--acc)_20%,var(--color-night-3)),color-mix(in_srgb,var(--acc)_6%,var(--color-night)))] shadow-[0_14px_28px_-14px_rgba(0,0,0,.85),inset_0_1px_0_color-mix(in_srgb,var(--acc)_25%,transparent)] transition-all duration-[350ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:rotate-0 group-hover:translate-y-0 group-hover:mx-1.5 group-hover:shadow-[0_18px_34px_-14px_color-mix(in_srgb,var(--acc)_45%,transparent)]" %}
+{% set tilepos = ["-rotate-[14deg] translate-y-3 delay-0", "-rotate-[5deg] translate-y-[1px] delay-[30ms]", "rotate-[5deg] translate-y-[1px] delay-[60ms]", "rotate-[14deg] translate-y-3 delay-[90ms]"] %}
+{% set ri = "flex items-center gap-2.5 text-[.87rem] text-ink-2 before:content-['+'] before:font-smono before:font-bold before:text-[var(--acc)]" %}
+{% set ribase = "flex items-center gap-2.5 text-[.87rem] text-ink-3 before:content-['◆'] before:text-[.58rem]" %}
+{% set actlabel = "font-smono text-[.68rem] tracking-[.14em] uppercase text-ink-3" %}
+
+{% set recipes = [
+  { acc: "var(--color-flame)", kind: "A community", name: "your-community.social",
+    icons: ["ph-users-three", "ph-rss", "ph-calendar-check", "ph-shield-check"],
+    items: ["Groups", "Custom feeds", "Events", "Moderation"],
+    becomes: "a shared home that works the way your people already gather — under your name, your rules." },
+  { acc: "var(--color-corn)", kind: "A research network", name: "research-commons.net",
+    icons: ["ph-flask", "ph-article", "ph-kanban", "ph-database"],
+    items: ["Scholarly data", "Topics & long-form", "Tasks & events", "Groups"],
+    becomes: "everyday conversation that turns into citable, open research data." },
+  { acc: "var(--color-leaf)", kind: "A neighbourhood", name: "our-neighbourhood.city",
+    icons: ["ph-house-line", "ph-confetti", "ph-hand-heart", "ph-megaphone"],
+    items: ["Events", "Mutual aid", "Topics & noticeboard", "Moderation & boundaries"],
+    becomes: "a civic square where neighbours share, organise and decide together." },
+  { acc: "var(--color-ember)", kind: "A festival", name: "our-festival.live", 
+    icons: ["ph-ticket", "ph-music-notes", "ph-map-pin", "ph-camera"],
+    items: ["Events", "Groups", "Custom feeds", "Living archive"],
+    becomes: "one place for the crowd before, during and long after the last night — then it becomes the archive." },
+  { acc: "#e6dab6", kind: "A magazine", name: "the-magazine.press",
+    icons: ["ph-newspaper", "ph-quotes", "ph-chats-circle", "ph-paper-plane-tilt"],
+    items: ["Topics & long-form", "Custom feeds", "Moderation", "CMS integration"],
+    becomes: "readers who debate and belong, under the magazine's own brand — a community, not an audience." }
+] %}
+
+<section id="story" class="py-[clamp(72px,9vw,130px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+<div class="max-w-[1140px] mx-auto px-7">
+  <div class="grid grid-cols-1 min-[681px]:grid-cols-[auto_1fr] gap-3.5 min-[681px]:gap-[30px] items-start">
+    <div>
+      <h2 class="mt-[22px] max-w-[24ch] font-disp font-[560] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">The same blocks, <span class="fire-text">many different worlds.</span></h2>
+      <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">There's no single "Bonfire app". Every community assembles its own space from the same core and the blocks it needs and no two end up alike.</p>
+
+      {# recipe cards #}
+      <div class="grid grid-cols-1 min-[841px]:grid-cols-3 gap-3.5 mt-9">
+        {% for r in recipes %}
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px] gap-4" style="--acc:{{ r.acc }}">
+          <div><span class="{{ rk }}">{{ r.kind }}</span><div class="font-smono text-[.82rem] text-ink mt-[5px]">{{ r.name }}</div></div>
+          <div class="flex justify-center items-end pt-5 pb-2.5" aria-hidden="true">
+            {%- for icon in r.icons %}<span class="{{ tilebase }} {{ tilepos[loop.index0] }}"><i class="ph-duotone {{ icon }}"></i></span>{% endfor -%}
+          </div>
+          {# <span class="badge h-auto self-center rounded-full bg-transparent px-[11px] py-[3px] -mt-0.5 font-smono text-[.6rem] tracking-[.1em] uppercase text-[var(--acc)] border-[color-mix(in_srgb,var(--acc)_50%,transparent)]">{{ r.chip }}</span> #}
+          <div class="flex flex-col mt-3 gap-[7px]">
+            <span class="font-smono text-[.62rem] tracking-[.13em] uppercase text-ink-3 mb-0.5">It includes</span>
+            <span class="{{ ribase }}">Bonfire Core</span>
+            {%- for item in r.items %}<span class="{{ ri }}">{{ item }}</span>{% endfor -%}
+          </div>
+          <p class="mt-auto pt-[13px] border-t border-ink/[0.07] text-[.85rem] text-ink-3 leading-[1.55]"><b class="text-ink-2 font-medium">Becomes:</b> {{ r.becomes }}</p>
+        </div>
+        {% endfor %}
+        {# ghost card #}
+        <div class="card rounded-xl border border-dashed border-ink/15 items-center justify-center text-center gap-2.5 px-6 py-[34px]">
+          <span class="w-[46px] h-[46px] rounded-xl border border-dashed border-ink/15 flex items-center justify-center font-disp font-light text-[1.7rem] text-ink-3">+</span>
+          <h3 class="font-disp font-[620] text-[1.25rem] max-w-[16ch]">…and every community after these</h3>
+          <p class="text-ink-3 text-[.9rem] max-w-[26ch]">A union, a co-op, a fan club, a school — each writes its own recipe from the same blocks.</p>
+          <a class="mt-1 pb-0.5 font-smono text-[.7rem] tracking-[.06em] uppercase text-spark border-b border-spark/35 hover:border-spark" href="/features">Browse all the blocks →</a>
+        </div>
+      </div>
+
+      {# three-acts bridge #}
+      <p class="mt-11 text-[1.05rem] text-ink-2 max-w-[40rem]">How does a space become yours? The story has three acts:</p>
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-3 gap-3.5 mt-[18px]">
+        <a class="card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 pt-[26px] pb-6 hover:border-flame/40" href="#own">
+          <span class="absolute right-[18px] top-3.5 font-disp font-light text-[2.2rem] leading-none text-flame/20" aria-hidden="true">i</span>
+          <div class="{{ actlabel }}">Act one</div>
+          <h3 class="font-disp font-[620] text-[1.35rem] mt-3 mb-[7px]">Own it</h3>
+          <p class="text-ink-2 text-[.93rem] leading-normal">Claim a space that's truly yours to govern.</p>
+        </a>
+        <a class="card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 pt-[26px] pb-6 hover:border-flame/40" href="#shape">
+          <span class="absolute right-[18px] top-3.5 font-disp font-light text-[2.2rem] leading-none text-flame/20" aria-hidden="true">ii</span>
+          <div class="{{ actlabel }}">Act two</div>
+          <h3 class="font-disp font-[620] text-[1.35rem] mt-3 mb-[7px]">Shape it</h3>
+          <p class="text-ink-2 text-[.93rem] leading-normal">Make it fit how your community actually works.</p>
+        </a>
+        <a class="card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 pt-[26px] pb-6 hover:border-flame/40" href="#connect">
+          <span class="absolute right-[18px] top-3.5 font-disp font-light text-[2.2rem] leading-none text-flame/20" aria-hidden="true">iii</span>
+          <div class="{{ actlabel }}">Act three</div>
+          <h3 class="font-disp font-[620] text-[1.35rem] mt-3 mb-[7px]">Connect it</h3>
+          <p class="text-ink-2 text-[.93rem] leading-normal">Open the doors to the whole social web — your call.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div></section>

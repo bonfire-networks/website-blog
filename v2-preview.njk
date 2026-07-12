@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: Bonfire — give your community a world of its own
+description: A space a community owns together — shaped to how you already gather, and connected to the whole open social web on your own terms.
+permalink: /v2-preview/index.html
+eleventyExcludeFromCollections: true
+---
+{# v2 scope: night bg + Inter body + warm ink selection. overflow-x-clip (not
+   hidden) so the sticky nav inside keeps working. #}
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.62] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+    {# {% include "v2/header.njk" %} #}
+    {% include "v2/hero.njk" %}
+    {% include "v2/recipes.njk" %}
+    {% include "v2/own.njk" %}
+    {% include "v2/shape.njk" %}
+    {% include "v2/connect.njk" %}
+    {% include "v2/cases.njk" %}
+    {% include "v2/how.njk" %}
+    {% include "v2/invite.njk" %}
+  </div>
+
+  {# Still available in bonfire-v2-home-redesign.html if ever needed:
+     v2/peek.njk — 05 · Look inside (app screenshots grid)
+  #}
+</div>
