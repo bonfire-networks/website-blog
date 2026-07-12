@@ -1,35 +1,100 @@
 ---
-layout: layouts/home.njk
-eleventyNavigation:
-  key: Home
-  order: 1
+layout: layouts/base.njk
+title: Bonfire — Blog
+description: Development updates, essays, and what we learned building Bonfire.
 ---
-{% set maxPosts = collections.posts.length  %}
-<div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-lg lg:mx-auto">
+{# ============================================================
+   V2 · BLOG — posts index (Tailwind + daisyUI)
+   ============================================================ #}
+{% set tagchip = "badge h-auto rounded-full bg-transparent border-ink/15 px-3.5 py-[7px] font-smono text-[.68rem] tracking-[.1em] uppercase text-ink-2 hover:border-flame hover:text-spark" %}
+{% set cardtag = "font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3 border border-ink/15 rounded-full px-2.5 py-1 hover:border-flame hover:text-spark" %}
 
-{# <span class="block mt-16 bg-center bg-no-repeat bg-contain mb-4" style="width: 70px; height: 80px; background-image: url(/img/bonfire.png);"></span> #}
-<h1 class="mt-20 mb-8 text-center text-3xl font-extrabold sm:text-4xl">
-  Blog
-</h1>
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
 
-{% set postslist = collections.posts  %}
-{% set postslistCounter = collections.posts | length %}
-{% set firstPost = postslist | reverse | first %}
+    <header class="pt-10 pb-2.5">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] uppercase text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>Blog</p>
+      <h1 class="font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] max-w-[17ch] [font-variation-settings:'opsz'_96]">News from <span class="fire-text">the fire.</span></h1>
+      <p class="mt-[18px] text-[1.05rem] text-ink-2 max-w-[52ch]">Development updates, essays, and what we learned along the way.</p>
 
-<!-- Return all tags -->
-<section class="hidden lg:flex items-center my-16 place-content-center gap-4">
-  {% for tag in collections.tagList %}
-    {% if tag != "posts" %}
-    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-    <a href="{{ tagUrl | url }}">
-    <span class="badge hover:bg-info/20 badge-info badge-outline badge-lg h-12 border-info !border-opacity-40 text-info">
-    {{ tag }}
-    </span>
-    </a>
+      {# tags #}
+      <div class="hidden lg:flex flex-wrap gap-2.5 mt-8">
+        {% for tag in collections.tagList %}
+          {% if tag != "posts" %}
+          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+          <a class="{{ tagchip }}" href="{{ tagUrl | url }}">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div></header>
+
+    {# featured: most recent post, full width #}
+    {% set latest = collections.posts | reverse | first %}
+    {% if latest %}
+    <section class="pt-12">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="flex items-center gap-3 mb-5 font-smono text-[1rem] font-bold tracking-[.18em] uppercase text-flame">Latest</p>
+      <article class="card group rounded-xl overflow-hidden border border-ink/15 bg-night-2 hover:border-ink/25 min-[821px]:grid min-[821px]:grid-cols-[1.2fr_1fr]">
+        <a href="{{ latest.url | url }}" aria-hidden="true" tabindex="-1">
+          <div class="w-full h-full min-h-[240px] aspect-video min-[821px]:aspect-auto bg-night-3 bg-cover bg-center bg-no-repeat border-b min-[821px]:border-b-0 min-[821px]:border-r border-ink/[0.07]" style="background-image:url({{ latest.data.image }})"></div>
+        </a>
+        <div class="flex flex-col gap-3 px-7 py-8">
+          {% if latest.data.tags %}
+          <div class="flex flex-wrap gap-1.5">
+            {%- for tag in latest.data.tags -%}
+              {% if tag != "posts" %}
+              {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+              <a class="{{ cardtag }}" href="{{ tagUrl | url }}">{{ tag }}</a>
+              {% endif %}
+            {%- endfor %}
+          </div>
+          {% endif %}
+          <h2 class="font-disp font-[620] text-[clamp(1.5rem,2.6vw,2rem)] leading-[1.12]">
+            <a class="group-hover:text-spark" href="{{ latest.url | url }}">{{ latest.data.title or "Untitled" }}</a>
+          </h2>
+          {% if latest.data.description %}
+          <p class="text-ink-2 text-[1rem] m-0 line-clamp-5">{{ latest.data.description }}</p>
+          {% endif %}
+          <a class="mt-auto pt-4 font-smono text-[.74rem] tracking-[.05em] uppercase text-spark hover:underline" href="{{ latest.url | url }}">Read the article →</a>
+        </div>
+      </article>
+    </div></section>
     {% endif %}
-  {% endfor %}
-</section>
 
-{% include "postslist.njk" %}
+    <section class="py-12">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-[1024px]:grid-cols-3 gap-6">
+        {% for post in collections.posts | reverse %}
+        {% if not loop.first %}
+        <article class="card group rounded-xl overflow-hidden border border-ink/15 bg-night-2 hover:border-ink/25">
+          <a href="{{ post.url | url }}" aria-hidden="true" tabindex="-1">
+            <div class="w-full aspect-video bg-night-3 bg-cover bg-center bg-no-repeat border-b border-ink/[0.07]" style="background-image:url({{ post.data.image }})"></div>
+          </a>
+          <div class="flex flex-col gap-2.5 flex-1 px-5 py-5">
+            {% if post.data.tags %}
+            <div class="flex flex-wrap gap-1.5">
+              {%- for tag in post.data.tags -%}
+                {% if tag != "posts" %}
+                {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+                <a class="{{ cardtag }}" href="{{ tagUrl | url }}">{{ tag }}</a>
+                {% endif %}
+              {%- endfor %}
+            </div>
+            {% endif %}
+            <h2 class="font-disp font-[620] text-[1.2rem] leading-[1.2]">
+              <a class="group-hover:text-spark" href="{{ post.url | url }}">{{ post.data.title or "Untitled" }}</a>
+            </h2>
+            {% if post.data.description %}
+            <p class="text-ink-2 text-[.9rem] m-0 line-clamp-4">{{ post.data.description }}</p>
+            {% endif %}
+          </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div></section>
 
+  </div>
 </div>

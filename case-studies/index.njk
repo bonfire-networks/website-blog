@@ -1,0 +1,245 @@
+---
+layout: layouts/base.njk
+title: Bonfire — Case studies
+description: The goal each community was chasing, the space they ended up with, and what they switched on to get there. Some we co-designed with; most we've never met.
+---
+{# ============================================================
+   V2 · CASE STUDIES — goal-first index (Tailwind + daisyUI)
+   Ported from bonfire-v2-case-studies-redesign.html.
+   The hero rotator cycles the quotes via the script at the bottom.
+   ============================================================ #}
+{% set eyebrow = "flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em] uppercase" %}
+{% set display = "mt-4 font-disp font-[560] text-[clamp(1.6rem,3vw,2.3rem)] leading-[1.06] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set bodyp = "mt-3.5 text-[1.02rem] text-ink-2 max-w-[46rem]" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-[1.4rem] py-[.85rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-[1.4rem] py-[.85rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+{% set phin = "flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 p-[18px] leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] [&_.tag]:text-flame" %}
+{% set origin = "badge h-auto rounded-full bg-transparent border-ink/15 px-[9px] py-1 font-smono text-[.6rem] tracking-[.1em] uppercase text-ink-3 whitespace-nowrap" %}
+{% set goal = "border-l-2 border-flame pl-[18px]" %}
+{% set goallab = "font-smono text-[.62rem] tracking-[.12em] uppercase text-ink-3 mb-[5px]" %}
+{% set sector = "font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3" %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ===== hero ===== #}
+    <header class="relative overflow-hidden pt-10 pb-[46px]">
+      <div class="absolute -right-[10%] -top-[40%] w-[60%] h-[180%] bg-[radial-gradient(circle_at_center,rgba(245,195,68,.09),transparent_62%)] pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-[1180px] mx-auto px-7 relative z-[1]">
+        <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] uppercase text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>Case studies</p>
+        <h1 class="font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] max-w-[17ch] [font-variation-settings:'opsz'_96]">How communities are <span class="fire-text">using Bonfire.</span></h1>
+        <p class="mt-[18px] text-[1.05rem] text-ink-2 max-w-[56ch]">The goal each one was chasing, the space they ended up with, and what they switched on to get there. Some we co-designed with; most we've never met.</p>
+
+        {# rotating goal — the communities speak first #}
+        <div class="mt-[34px] border-l-2 border-flame pl-[22px] min-h-[118px]">
+          <p class="mb-3 font-smono text-[.64rem] tracking-[.14em] uppercase text-ink-3">What they were after</p>
+          <div class="relative min-h-[82px]" id="goals">
+            <div class="g relative inset-0 transition-all duration-[600ms] ease-out">
+              <p class="font-disp font-normal text-[clamp(1.15rem,2.2vw,1.6rem)] leading-[1.28] m-0 max-w-[36ch] text-ink">“Readers who debate, organise and build solidarity — not an audience that reacts to articles and leaves.”</p>
+              <div class="mt-3 font-smono text-[.7rem] tracking-[.06em] uppercase text-ink-3"><b class="text-flame font-normal">Jacobin</b> · a magazine</div>
+            </div>
+            <div class="g absolute opacity-0 translate-y-2 pointer-events-none inset-0 transition-all duration-[600ms] ease-out">
+              <p class="font-disp font-normal text-[clamp(1.15rem,2.2vw,1.6rem)] leading-[1.28] m-0 max-w-[36ch] text-ink">“Somewhere people can be honest about their mental health — without it being public, permanent, or profitable to anyone.”</p>
+              <div class="mt-3 font-smono text-[.7rem] tracking-[.06em] uppercase text-ink-3"><b class="text-flame font-normal">Mentaal</b> · a mental-health network</div>
+            </div>
+            <div class="g absolute opacity-0 translate-y-2 pointer-events-none inset-0 transition-all duration-[600ms] ease-out">
+              <p class="font-disp font-normal text-[clamp(1.15rem,2.2vw,1.6rem)] leading-[1.28] m-0 max-w-[36ch] text-ink">“A town that can organise itself — without routing its neighbourhood through a global platform.”</p>
+              <div class="mt-3 font-smono text-[.7rem] tracking-[.06em] uppercase text-ink-3"><b class="text-flame font-normal">Totnes Pulse</b> · a neighbourhood</div>
+            </div>
+            <div class="g absolute opacity-0 translate-y-2 pointer-events-none inset-0 transition-all duration-[600ms] ease-out">
+              <p class="font-disp font-normal text-[clamp(1.15rem,2.2vw,1.6rem)] leading-[1.28] m-0 max-w-[36ch] text-ink">“Science that stays open — findings, arguments and data that don't evaporate into a journal's archive.”</p>
+              <div class="mt-3 font-smono text-[.7rem] tracking-[.06em] uppercase text-ink-3"><b class="text-flame font-normal">Open Science Network</b> · researchers</div>
+            </div>
+          </div>
+        </div>
+
+        {# live proof #}
+        {# <div class="flex flex-wrap items-end gap-x-[34px] gap-y-5 mt-10 pt-[26px] border-t border-ink/[0.07]">
+          <div><b class="block font-disp font-bold text-[1.8rem] leading-none tracking-[-.02em] text-flame">25</b><span class="block mt-[7px] font-smono text-[.68rem] tracking-[.09em] uppercase text-ink-3">communities running Bonfire</span></div>
+          <div><b class="block font-disp font-bold text-[1.8rem] leading-none tracking-[-.02em] text-ink">2,028</b><span class="block mt-[7px] font-smono text-[.68rem] tracking-[.09em] uppercase text-ink-3">people in them</span></div>
+          <div><b class="block font-disp font-bold text-[1.8rem] leading-none tracking-[-.02em] text-ink">most</b><span class="block mt-[7px] font-smono text-[.68rem] tracking-[.09em] uppercase text-ink-3">we've never met</span></div>
+          <div><b class="block font-disp font-bold text-[1.8rem] leading-none tracking-[-.02em] text-ink">100%</b><span class="block mt-[7px] font-smono text-[.68rem] tracking-[.09em] uppercase text-ink-3">theirs to keep</span></div>
+          <span class="ml-auto self-end font-smono text-[.66rem] text-ink-3 max-[640px]:ml-0 max-[640px]:w-full">◼ live from <a class="text-corn hover:underline" href="https://fedidb.org/software/bonfire">FediDB</a></span>
+        </div> #}
+      </div>
+    </header>
+
+    {# ===== featured — Jacobin, told as their story ===== #}
+    <section class="py-[60px] border-t border-ink/[0.07]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">The full story</p>
+
+      <article class="rounded-xl overflow-hidden border border-ink/15 bg-night-2 mt-[26px]">
+        <div class="{{ phin }} aspect-[16/10] min-h-[320px] border-b border-ink/15"><span class="max-w-[32ch]"><span class="tag">[ HERO IMG — Jacobin ]</span><br>jacobin.social — their community space, in their brand</span></div>
+        <div class="grid grid-cols-1 min-[901px]:grid-cols-[1.4fr_.6fr]">
+          <div class="px-[30px] py-8">
+            <div class="flex items-center gap-2.5 flex-wrap mb-3">
+              <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A magazine · Independent media</span>
+              <span class="{{ origin }}">◼ Co-designed with us</span>
+            </div>
+            <h2 class="font-disp font-[560] text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.06] mb-4">Jacobin</h2>
+
+            <div class="{{ goal }} mb-[18px]">
+              <div class="{{ goallab }}">What they were after</div>
+              <p class="m-0 font-disp font-medium text-[1.18rem] leading-[1.3]">Readers who debate, organise and build solidarity together — not an audience that reacts to articles and leaves.</p>
+            </div>
+
+            <p class="text-ink-2 text-base m-0">A comment section was never going to do that, and neither was sending readers to a platform someone else owns. So they kept publishing on Ghost and gave the <b class="text-ink font-semibold">conversation a home they control</b> — federated, in their own brand, with the groups and boundaries their community actually needed. Six months later, 3,000+ readers have a space that answers to them.</p>
+
+            <div class="flex flex-wrap gap-3 mt-6">
+              <a class="{{ btnfire }}" href="/case-studies/jacobin/">Read the full story</a>
+              <a class="{{ btnline }}" href="https://jacobin.social" target="_blank" rel="noopener noreferrer">Visit jacobin.social ↗</a>
+            </div>
+          </div>
+          <aside class="px-7 py-8 bg-night-3 border-t border-ink/15 min-[901px]:border-t-0 min-[901px]:border-l">
+            <div class="grid gap-[13px]">
+              <div class="border-b border-ink/[0.07] pb-[11px]"><div class="{{ goallab }} mb-0">Community</div><div class="text-[.96rem] mt-1"><b class="font-disp font-semibold">Jacobin</b> — German edition</div></div>
+              <div class="border-b border-ink/[0.07] pb-[11px]"><div class="{{ goallab }} mb-0">People</div><div class="text-[.96rem] mt-1"><b class="font-disp font-semibold">3,000+</b> readers</div></div>
+              <div class="border-b border-ink/[0.07] pb-[11px]"><div class="{{ goallab }} mb-0">Live since</div><div class="text-[.96rem] mt-1">July 2026</div></div>
+              <div>
+                <div class="{{ goallab }} mb-0">How they use Bonfire</div>
+                <div class="flex flex-wrap gap-1.5 mt-[9px]">
+                  <span class="font-smono text-[.66rem] text-corn-2 border border-corn-2/40 rounded-[7px] px-2 py-[5px]">federated comments</span>
+                  <span class="font-smono text-[.66rem] text-corn-2 border border-corn-2/40 rounded-[7px] px-2 py-[5px]">Ghost integration</span>
+                  <span class="font-smono text-[.66rem] text-corn-2 border border-corn-2/40 rounded-[7px] px-2 py-[5px]">membership sync</span>
+                  <span class="font-smono text-[.66rem] text-ink-2 border border-ink/15 rounded-[7px] px-2 py-[5px]">groups &amp; topics</span>
+                  <span class="font-smono text-[.66rem] text-ink-2 border border-ink/15 rounded-[7px] px-2 py-[5px]">their own branding</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div></section>
+
+    {# ===== more communities — goal-first ===== #}
+    <section id="more" class="py-[60px] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-corn">More communities</p>
+      <h2 class="{{ display }} max-w-[26ch]">Different goals. <span class="font-light">Same foundation.</span></h2>
+      <p class="{{ bodyp }}">Some of these we co-designed with. Others took Bonfire and built it themselves — which is rather the point.</p>
+
+      {% set ccard = "card rounded-xl border border-ink/15 bg-night-2 px-6 py-[26px] gap-3" %}
+      <div class="grid grid-cols-1 min-[861px]:grid-cols-2 gap-4 mt-[26px]">
+
+        <div class="{{ ccard }}">
+          <div class="flex items-center gap-[9px] flex-wrap">
+            <span class="{{ sector }}">Mental health</span>
+            <span class="{{ origin }} ml-auto">◼ Co-designed with us</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Mentaal</h3>
+          <div class="{{ goal }}">
+            <div class="{{ goallab }}">What they're after</div>
+            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">A place people can be honest about their mental health — without it being public, permanent, or profitable to anyone.</p>
+          </div>
+          <p class="text-ink-2 text-[.95rem] m-0">Private by default and governed by the people it serves, with safety designed in rather than switched on afterwards. Co-designed with Ypsilon.</p>
+          <div class="mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap"><span class="font-smono text-[.68rem] text-ink-3">◼ In co-design</span><span class="ml-auto font-smono text-[.7rem] text-ink-3">Story when it's live</span></div>
+        </div>
+
+        <div class="{{ ccard }}">
+          <div class="flex items-center gap-[9px] flex-wrap">
+            <span class="{{ sector }}">Neighbourhood network</span>
+            <span class="{{ origin }} ml-auto">◼ Co-designed with us</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Totnes Pulse</h3>
+          <div class="{{ goal }}">
+            <div class="{{ goallab }}">What they're after</div>
+            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">A town that can organise itself — locally, without routing its neighbourhood through a global platform.</p>
+          </div>
+          <p class="text-ink-2 text-[.95rem] m-0">Small, local, and specific: the kind of community the big platforms are worst at serving, and the kind Bonfire was built for.</p>
+          <div class="mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap"><span class="font-smono text-[.68rem] text-ink-3">◼ Planned</span><span class="ml-auto font-smono text-[.7rem] text-ink-3">Story when it's live</span></div>
+        </div>
+
+        <div class="{{ ccard }}">
+          <div class="flex items-center gap-[9px] flex-wrap">
+            <span class="{{ sector }}">Research</span>
+            <span class="{{ origin }} ml-auto !text-spark !border-spark/40">◼ Built independently</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Open Science Network</h3>
+          <div class="{{ goal }}">
+            <div class="{{ goallab }}">What they're after</div>
+            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">Scholarly conversation that doesn't evaporate — findings, arguments and data that stay open, citable and out of the journals' hands.</p>
+          </div>
+          <p class="text-ink-2 text-[.95rem] m-0">Researchers shaped Bonfire around how science actually works: sign in with ORCID, publications on your profile, papers that unfold with their DOI, discussions you can archive and cite.</p>
+          <div class="mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap"><span class="font-smono text-[.68rem] text-ink-3">◼ In development</span><a class="ml-auto font-smono text-[.7rem] text-spark hover:underline" href="https://openscience.network" target="_blank" rel="noopener noreferrer">openscience.network ↗</a></div>
+        </div>
+
+        {# placeholder — needs real copy #}
+        <div class="{{ ccard }} border-dashed bg-[repeating-linear-gradient(135deg,transparent_0_20px,rgba(242,236,219,.015)_20px_40px)]">
+          <div class="flex items-center gap-[9px] flex-wrap">
+            <span class="{{ sector }}">[ sector — to fill ]</span>
+            <span class="{{ origin }} ml-auto !text-spark !border-spark/40">◼ Built independently</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Fondazione Cineteca dell'Etna</h3>
+          <div class="{{ goal }}">
+            <div class="{{ goallab }}">What they're after</div>
+            <p class="m-0 font-disp font-medium text-[1.05rem] leading-[1.3]">[ One line: the goal they're chasing — to fill ]</p>
+          </div>
+          <p class="text-ink-2 text-[.95rem] m-0">[ One or two lines: how they're using Bonfire to get there — to fill ]</p>
+          <div class="mt-auto pt-3 border-t border-ink/[0.07]"><span class="font-smono text-[.68rem] text-flame">◼ Placeholder — needs your copy</span></div>
+        </div>
+
+      </div>
+    </div></section>
+
+    {# ===== the ones we've never met ===== #}
+    <section class="py-[60px] border-t border-ink/[0.07]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-spark">And the rest</p>
+      <div class="grid grid-cols-1 min-[761px]:grid-cols-[1fr_auto] gap-7 items-center mt-[26px] rounded-xl border border-ink/15 bg-night-2 px-7 py-[30px]">
+        <div>
+          <h3 class="font-disp font-[620] text-[1.4rem] mb-2">Twenty-odd communities we've never spoken to.</h3>
+          <p class="text-ink-2 text-[.99rem] m-0 max-w-[44rem]">Most of the people running Bonfire never asked us for anything. They found it, installed it, and made it theirs — a book club, a co-op, a research group, someone's friends. We only know they exist because FediDB counts them. That's not a gap in our sales funnel; it's the whole idea working.</p>
+          <div class="flex flex-wrap gap-[7px] mt-4">
+            {% for i in ["[ instance ]", "[ instance ]", "[ instance ]", "[ instance ]", "[ instance ]", "[ instance ]", "+ more"] %}<span class="font-smono text-[.7rem] text-ink-3 border border-ink/15 rounded-[7px] px-[9px] py-[5px]">{{ i }}</span>{% endfor %}
+          </div>
+        </div>
+        <a class="{{ btnline }}" href="https://fedidb.org/software/bonfire" target="_blank" rel="noopener noreferrer">See them on FediDB ↗</a>
+      </div>
+    </div></section>
+
+    {# ===== invitation ===== #}
+    <section id="next" class="py-[60px] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">What's next</p>
+      <h2 class="{{ display }} max-w-[22ch]">The next story here <span class="font-light">could be yours.</span></h2>
+
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-2 gap-4 mt-[26px]">
+        <div class="card rounded-xl border border-flame/40 bg-flame/[0.04] px-[26px] py-7 gap-2.5">
+          <h3 class="font-disp font-[620] text-[1.3rem]">Already running Bonfire?</h3>
+          <p class="text-ink-2 text-[.97rem] m-0">Then you have a story worth telling — however small. A book club, a union local, a fan community. The ones that matter most aren't the big ones; they're the ones that look like the reader.</p>
+          <a class="mt-auto pt-3.5 font-smono text-[.74rem] tracking-[.05em] uppercase text-spark hover:underline" href="mailto:team@bonfire.cafe">Tell us your story →</a>
+        </div>
+        <div class="card rounded-xl border border-ink/15 px-[26px] py-7 gap-2.5">
+          <h3 class="font-disp font-[620] text-[1.3rem]">Want a hand building it?</h3>
+          <p class="text-ink-2 text-[.97rem] m-0">If your community needs something that doesn't exist yet, we can research and design it with you — and whatever we build together goes back into the commons.</p>
+          <a class="mt-auto pt-3.5 font-smono text-[.74rem] tracking-[.05em] uppercase text-spark hover:underline" href="/mosaic">How Mosaic works →</a>
+        </div>
+      </div>
+
+      <p class="{{ bodyp }} mt-8">Curious what each of them actually switched on? <a class="text-spark hover:underline" href="/features">See the feature matrix →</a></p>
+    </div></section>
+
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* hero: cycle through what each community was actually after */
+var wrap=document.getElementById('goals');
+if(!wrap)return;
+var goals=[].slice.call(wrap.querySelectorAll('.g'));
+if(goals.length<2)return;
+if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return; /* leave the first one up */
+function show(el){el.classList.remove('absolute','opacity-0','translate-y-2','pointer-events-none');el.classList.add('relative');}
+function hide(el){el.classList.remove('relative');el.classList.add('absolute','opacity-0','translate-y-2','pointer-events-none');}
+var i=0;
+setInterval(function(){
+  hide(goals[i]);
+  i=(i+1)%goals.length;
+  show(goals[i]);
+},4200);
+})();
+</script>

@@ -3,85 +3,85 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 
+{% set cardtag = "font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3 border border-ink/15 rounded-full px-2.5 py-1 hover:border-flame hover:text-spark" %}
 
-<div class="max-w-(--breakpoint-md) px-6 mx-auto mt-0 mb-12 lg:px-0">
-  <div class="py-8 pb-8 mx-auto">
-    <div class="">
-       
-     <div class="items-center justify-center mb-6 place-content-center flex gap-4">
-      {%- for tag in tags | filterTagList -%}
-      {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-        <a href="{{ tagUrl | url }}">
-        <span class="badge capitalize badge-lg badge-soft">
-          {{ tag }}
-        </span>
-        </a>
-      {%- endfor %}
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.62] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ===== header ===== #}
+    <header class="pt-10 pb-4">
+      <div class="max-w-[820px] mx-auto px-7">
+        {% if tags %}
+        <div class="flex flex-wrap items-center gap-1.5 mb-4">
+          {%- for tag in tags | filterTagList -%}
+          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+          <a class="{{ cardtag }}" href="{{ tagUrl | url }}">{{ tag }}</a>
+          {%- endfor %}
+        </div>
+        {% endif %}
+        <h1 class="font-disp font-semibold text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]">{{ title }}</h1>
+        <p class="mt-4 font-smono text-[.72rem] tracking-[.06em] uppercase text-ink-3">Published {{ date | readableDate }}</p>
       </div>
+      <div class="max-w-[980px] mx-auto px-7 mt-8">
+        {% if header_html %}
+          {{ header_html | safe }}
+        {% else %}
+          <img src="{{ image }}" alt="" class="w-full max-h-[520px] rounded-xl border border-ink/15 object-cover" />
+        {% endif %}
+      </div>
+    </header>
 
-      <h1 style="line-height: 50px;" class="z-10 col-span-2 text-4xl font-bold text-center">{{title}}</h1>
+    <div class="max-w-[820px] mx-auto px-7 pb-16">
 
-      {% if header_html %}
-        {{ header_html | safe }}
-      {% else %}
-        <img src="{{image}}" alt="post image" class="w-full max-h-[520px] mt-6 rounded-box object-fit object-cover" />
+      {% if canonicalUrl %}
+      <div class="mt-4 mb-8 rounded-xl border border-dashed border-corn/40 bg-corn/5 px-5 py-4 text-[.92rem] text-ink-2">
+        ◼ This article was originally published <a class="text-corn-2 font-semibold hover:underline" href="{{ canonicalUrl }}" target="_blank" rel="noopener">on the fediverse at {{ canonicalUrl | replace('https://', '') | replace('http://', '') | split('/') | first }}</a>
+      </div>
       {% endif %}
-        
+
+      {# article body — typography plugin, tuned to the v2 palette #}
+      <article class="mt-6 prose prose-invert prose-lg max-w-none
+        prose-headings:font-disp prose-headings:font-[620] prose-headings:text-ink prose-headings:tracking-[-.015em]
+        prose-p:text-ink-2 prose-li:text-ink-2 prose-strong:text-ink prose-em:text-ink
+        prose-a:text-spark prose-a:no-underline hover:prose-a:underline
+        prose-blockquote:border-l-flame prose-blockquote:text-ink prose-blockquote:font-disp prose-blockquote:not-italic
+        prose-code:text-corn-2 prose-pre:bg-night-2 prose-pre:border prose-pre:border-ink/15 prose-pre:rounded-xl
+        prose-img:rounded-xl prose-img:border prose-img:border-ink/15
+        prose-hr:border-ink/[0.07] prose-figcaption:text-ink-3
+        prose-th:text-ink-3 prose-td:text-ink-2">
+        {{ content | safe }}
+      </article>
+
+      {% if canonicalUrl %}
+      <div class="mt-10 rounded-xl border border-dashed border-ink/15 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
+        <p class="m-0 text-[.95rem] text-ink-2">Comments and boosts live on the fediverse.</p>
+        <a class="font-smono text-[.72rem] tracking-[.05em] uppercase text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="{{ canonicalUrl }}" target="_blank" rel="noopener">Join the discussion →</a>
+      </div>
+      {% endif %}
+
+      {# prev / next #}
+      {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {%- if nextPost or previousPost %}
+      <div class="grid grid-cols-1 min-[601px]:grid-cols-2 gap-3.5 mt-12">
+        {%- if previousPost %}
+        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 hover:border-ink/25" href="{{ previousPost.url | url }}">
+          <span class="font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3">← Previous</span>
+          <span class="font-disp font-[620] text-[1.02rem] leading-snug">{{ previousPost.data.title }}</span>
+        </a>
+        {%- else %}<span class="hidden min-[601px]:block"></span>{% endif %}
+        {%- if nextPost %}
+        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 items-end text-right hover:border-ink/25" href="{{ nextPost.url | url }}">
+          <span class="font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3">Next →</span>
+          <span class="font-disp font-[620] text-[1.02rem] leading-snug">{{ nextPost.data.title }}</span>
+        </a>
+        {%- endif %}
+      </div>
+      {%- endif %}
+
+      {% include "newsletter.njk" %}
     </div>
+
   </div>
-
-    {% if canonicalUrl %}
-    <div role="alert" class="alert alert-info">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <span>This article was originally published 
-      <a class="link font-bold" href="{{ canonicalUrl }}" target="_blank" rel="noopener">
-        on the fediverse at  {{ canonicalUrl | replace('https://', '') | replace('http://', '') | split('/') | first }}
-      </a></span>
-      </div>
-    {% endif %}
-
-  <article class="max-w-(--breakpoint-md) mx-auto mt-12 prose prose-xl">
-    {{ content | safe }}
-    
-  </article>
-
-     <div class="mt-10 mb-8 text-sm text-base text-base-content/80">
-        <span>Published the {{ date | readableDate }}</span>
-      </div>
-     
-     {% if canonicalUrl %}
-    <div role="alert" class="alert alert-info">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <span>You can comment and discuss this article 
-        <a class="link font-bold" href="{{ canonicalUrl }}" target="_blank" rel="noopener">
-          on the fediverse
-        </a></span>
-      </div>
-    {% endif %}
-<!--
-    <script 
-      async src="https://bonfire.cafe/js/comments_embed.js?v1.2"
-      data-theme="dark" data-boundary="public"
-      data-creator="01JSHXHVD56ZFCS6K7VP952TP5"  
-    ></script>
- -->   
 </div>
-
-  <div class="mx-4 mt-8 lg:mx-auto">
-    {% include "newsletter.njk" %}
-    </div>
-
-  
-{# {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-{%- if nextPost or previousPost %}
-<hr>
-<ul>
-  {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %} #}

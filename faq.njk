@@ -1,5 +1,185 @@
 ---
 layout: layouts/base.njk
+title: Bonfire — FAQs
+description: Frequently asked questions about Bonfire — licensing, federation, privacy, governance, and how it compares to other apps.
 ---
+{# ============================================================
+   V2 · FAQ — daisyUI collapse accordion (radio = one open at a time)
+   Content ported from the old faqs.njk include (Alpine version).
+   ============================================================ #}
+{% set qa = "collapse collapse-arrow rounded-xl border border-ink/15 bg-night-2" %}
+{% set q = "collapse-title font-disp font-[620] text-[1.05rem] text-ink" %}
+{% set a = "collapse-content text-ink-2 text-[.95rem] leading-relaxed [&_a]:text-spark [&_a:hover]:underline [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-2 [&_ul_ul]:my-1 [&_li]:mb-1.5 [&_b]:text-ink [&_b]:font-semibold [&_strong]:text-ink" %}
 
-  {% include "faqs.njk" %} 
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    <header class="pt-10 pb-2.5">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <h1 class="font-disp mx-auto text-center font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] max-w-[17ch] [font-variation-settings:'opsz'_96]">Frequently asked <span class="fire-text">questions.</span></h1>
+    </div></header>
+
+    <section class="py-12 pb-20">
+    <div class="max-w-[820px] mx-auto px-7 flex flex-col gap-3">
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" checked="checked" />
+        <div class="{{ q }}">Is Bonfire open source?</div>
+        <div class="{{ a }}">
+          Yes, it is free/libre open source software, licensed primarily under the <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer">AGPL</a>, meaning the source code is available and can be modified, and that all such changes, improvements, or additions should be contributed back to the community. Some Bonfire extensions or dependencies have other <a href="https://github.com/bonfire-networks/bonfire-app/blob/main/docs/DEPENDENCIES/classic.md#readme" target="_blank" rel="noopener noreferrer">open source licenses</a>.
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Is it free to use?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have).</li>
+            <li>Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them.</li>
+            <li>Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Will there be any ads, tracking, or sponsored content?</div>
+        <div class="{{ a }}">
+          No, the software or services provided by the Bonfire team will never include any type of advertisement or spy on users. If third party developers try to include any ads, Bonfire users will always have the freedom to use an alternative extension or fork it. Similarly, if a user or instance were used to post sponsored content, you could simply block them (we may also implement shared blocklists in future to help with this).
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Who can see my data?</div>
+        <div class="{{ a }}">
+          One of our main goals is for users to be in control so that they always know and decide who can see (or interact with) something before they post. We are working on tools such as boundaries and circles to help with this.
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Does an algorithm control what I see?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li>No, there are no algorithms or biased recommendation engines to keep you online for hours on end. Content is simply shown in reverse chronological order, or any other order chosen by you.</li>
+            <li>We are thinking about what algorithms created and controlled by users might look like, to tune the signal/noise ratio of feeds or simply help surface whatever is most relevant to you right now. Get in touch if you have any thoughts or want to experiment…</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Federated? What does that mean?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li>A federated social network is a system that is decentralised, developed and operated by distinct providers (something like email but for social networks). It consists of multiple social apps and websites, where users of each site can communicate with users of any of the other compatible sites.</li>
+            <li>An application or website participating in a federated social network is interoperable with the other sites (known as instances) and federates (fetching and especially pushing data) with them based on their users interactions. Communication among the social websites is conducted through social networking protocols, like ActivityPub.</li>
+            <li>Advantages of a federated network:
+              <ul>
+                <li>Robust and resilient</li>
+                <li>Scales horizontally</li>
+                <li>Private data stays on each user's home instance</li>
+                <li>Each instance is responsible for its content (moderation of discussions, etc)</li>
+                <li>Standards-based but also extensible</li>
+                <li>Open</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Modular ecosystem? What does that mean?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li>Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.</li>
+            <li>Every line of Bonfire's code is available to be used or forked, in a collection of libraries that can be assembled and re-assembled to create all kinds of full-featured apps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Do you have a flagship instance?</div>
+        <div class="{{ a }}">
+          No, only a <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">demo instance</a>.
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">What features are available?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li>The Bonfire ecosystem is made up of people and projects cooperating to build interoperable and extensible apps, that can easily plug and play with each other.</li>
+            <li>Bonfire apps are open source and modular, meaning they're made of building blocks you can use to create your own custom apps or extensions. Customise the design, the code, or any aspect, and contribute your improvements to the community.</li>
+            <li>There will be diverse apps &amp; extensions to choose from. Do you need a basic social app? A collaborative federated blog? A decentralised forum for group discussion? A space for sharing and curating links and files? An offers and needs map and bulletin board for mutual aid? The community is developing unique approaches for these and more.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Who runs Bonfire?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li><b>Source Code</b>: While there's a core team building Bonfire, we only control this website and what code is included in the official repositories. Any developer can fork parts of the code they want to customise, or go all-in and create their own extensions.</li>
+            <li><b>Infrastructure</b>: Bonfire instances are independently set up by technical users (though we are working to simplify that more and more), for themselves and their friends to use. They can be hosted on a connected device (like a server or even a Raspberry Pi) or on a cloud service. The Bonfire team (and possibly others) may also offer hosted services in the future (most likely tools like a fediverse nomadic identity and syncing service, or encrypted backup storage, rather than full-service hosting of Bonfire apps).</li>
+            <li><b>Functionality</b>: Instance admins can choose which extensions and flavours to include, and users can also tailor their experience according to their needs. Anyone can suggest or request features or changes, though of course getting something done depends on one or more team members or contributors to voluntarily take it on.</li>
+            <li><b>Governance</b>: Bonfire instances form one part of a huge network, collectively called the Fediverse. It is made up of many instances — servers with different orientations, purposes and policies, each one running a specific federated application. Each instance's admin (or better yet, multiple admins selected democratically by its members) chooses what app(s), extensions, and configuration to set up, as well as their instance's rules (usually in the form of a code of conduct), who can join or remain a user, what instances/groups/users they don't wish to federate with, what device or cloud service they use, etc. Because instance admins are so powerful, our goal with Bonfire is to give regular users the same choices as much as technically possible, and to enable them to set up their own instances as easily as possible.</li>
+            <li><b>Moderation</b>: Each instance is moderated by different people (typically the admins, or instance moderators), resulting in diverse rules, themes and ambiance. Thus one given instance can suit you better than another, depending on your values, needs and interests.</li>
+            <li><b>Economic</b>: Bonfire and the wider fediverse are backed by volunteers, and not investors, which makes them more resilient. Even if one instance happens to go down, the rest of the network will continue to work uninterrupted. If an app or extension stops being maintained, someone else can pick it up. While there's no need to "get a return on investment", we think the fediverse can still improve in resilience, for example by having shared and/or nomadic user identities to avoid being tied to instances that may shut down, and by exploring different models for sustainability of the network and its contributors and participants.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">Who is building Bonfire?</div>
+        <div class="{{ a }}">
+          <ul>
+            <li>The core team is a small collective of designers and developers who has been cooperating in various forms (and various names, the project was previously known as CommonsPub, itself a fork of what was to be MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.</li>
+            <li><strong>You?</strong> Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own. That doesn't mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">How does Bonfire compare to other apps I may be using?</div>
+        <div class="{{ a }}">
+          <div class="overflow-x-auto mt-2">
+            <table class="w-full text-[.88rem] border-collapse [&_th]:font-smono [&_th]:text-[.64rem] [&_th]:tracking-[.1em] [&_th]:uppercase [&_th]:text-ink-3 [&_th]:text-left [&_th]:p-2 [&_th]:border-b [&_th]:border-ink/15 [&_td]:p-2 [&_td]:align-top [&_td]:border-b [&_td]:border-ink/[0.07] [&_td:first-child]:text-ink [&_td:first-child]:font-semibold">
+              <thead>
+                <tr><th>App</th><th>Surveillance &amp; ads</th><th>Transparency</th><th>Control</th><th>Customisability</th><th>Features</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Twitter</td><td>Yes</td><td>Proprietary code and algorithms</td><td>Central control by company</td><td>API limited to uses authorised by company</td><td>Follow people ; Post notes, links, images ; Discussions</td></tr>
+                <tr><td>Facebook</td><td>Yes</td><td>Proprietary code and algorithms</td><td>Central control by company</td><td>API limited to uses authorised by company</td><td>Follow people ; Post notes, links, images ; Discussions</td></tr>
+                <tr><td>Mastodon</td><td>No</td><td>Open source</td><td>Federated, by admins of each instance</td><td>API available. Changes/contributions need to be accepted by main developer(s), or the entire app can be <a href="https://en.wikipedia.org/wiki/Fork_(software_development)" target="_blank" rel="noopener noreferrer">forked</a></td><td>Follow people; Post notes, images</td></tr>
+                <tr><td>Instagram</td><td>Yes</td><td>Proprietary code and algorithms</td><td>Central control by company</td><td>API limited to uses authorised by company</td><td>Follow people ; Post and comment on photos</td></tr>
+                <tr><td>Pixelfed</td><td>No</td><td>Open source</td><td>Federated, by admins of each instance</td><td>API available. Changes/contributions need to be accepted by main developer(s), or the entire app can be <a href="https://en.wikipedia.org/wiki/Fork_(software_development)" target="_blank" rel="noopener noreferrer">forked</a></td><td>Follow people; Post and comment on photos, images</td></tr>
+                <tr><td>Google Apps</td><td>Yes</td><td>Proprietary code and algorithms</td><td>Central control by company</td><td>API limited to uses authorised by company</td><td>A set number of apps and features</td></tr>
+                <tr><td>Nextcloud</td><td>No</td><td>Open source</td><td>Self-hosted</td><td>APIs and extension ecosystem available. Extension changes/contributions need to be accepted by their developer(s), or they can be <a href="https://en.wikipedia.org/wiki/Fork_(software_development)" target="_blank" rel="noopener noreferrer">forked</a></td><td>A theoretically unlimited number of features</td></tr>
+                <tr><td>Whatsapp</td><td>Yes</td><td>Proprietary</td><td>Central servers run by Facebook</td><td>No</td><td>Chat ; Audio/video calls</td></tr>
+                <tr><td>Signal</td><td>No</td><td>Open source</td><td>Central servers run by non-profit</td><td>No</td><td>Chat ; Audio/video calls</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {# still stuck? #}
+      <div class="flex flex-wrap items-center justify-between gap-4 mt-6 rounded-xl border border-dashed border-ink/15 px-6 py-5">
+        <p class="m-0 text-[.95rem] text-ink-2">Something else in mind? There are humans at the other end.</p>
+        <a class="font-smono text-[.74rem] tracking-[.05em] uppercase text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="mailto:team@bonfire.cafe">team@bonfire.cafe →</a>
+      </div>
+
+    </div></section>
+
+  </div>
+</div>

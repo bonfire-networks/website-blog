@@ -1,47 +1,116 @@
 ---
-layout: /layouts/base.njk
-title: "Get Started"
-description: "How do you want to use or build with Bonfire?"
+layout: layouts/base.njk
+title: Bonfire — Get started
+description: Everything you need to set up and configure a new Bonfire instance — self-hosted, managed, or co-designed with us.
 ---
+{# ============================================================
+   V2 · GET STARTED — three doors, no noise (Tailwind + daisyUI)
+   Each route card sets --acc (flame / corn / leaf); the who-label,
+   diamond and hover tint read it.
+   ============================================================ #}
+{% set route = "card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[30px] gap-3 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
+{% set who = "flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] uppercase text-[var(--acc)]" %}
+{% set fit = "font-smono text-[.7rem] text-ink-3 tracking-[.03em] border-t border-ink/[0.07] pt-3.5 mt-1.5" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
 
-  <div class="relative isolate overflow-hidden sm:mx-auto sm:max-w-2xl sm:rounded-2xl lg:mx-0 lg:max-w-none">
-    <div class="mx-auto max-w-2xl my-32 sm:mx-0 sm:max-w-none">
-        <div class="text-5xl font-black leading-[60px] text-base-content text-center mt-4  mx-auto">Get Bonfire</div>
-        <div class="text-2xl mt-4 text-center">Everything you need to set up and configure a new bonfire instance.</div>
-    </div>
-  </div>
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
 
-<div class=" mb-32 px-4 max-w-(--breakpoint-xl) lg:mx-auto">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+    {# page header #}
+    <header class="pt-11 pb-10">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <h1 class="font-disp font-semibold text-[clamp(2rem,4.4vw,3.2rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Get Bonfire: <span class="fire-text">three ways in.</span></h1>
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[52ch]">Everything you need to set up and configure a new Bonfire instance. Pick the route that matches how much you want to run yourself.</p>
+    </div></header>
 
-    <div class=" border border-base-content/20 rounded-2xl  h-full  p-12 grid-cols-4 items-center">
-      <div class="text-3xl font-bold">Install Bonfire on your own</div>
-      <div class="text-lg text-base-content/90 mt-4">Suitable for those who wants to self-host their own bonfire instance. You will need to be familiar with command line.</div>
-      <div class="flex flex-col lg:flex-row lg:items-center mt-6 gap-4">
-        <a href="https://github.com/bonfire-networks/bonfire-app" target="blank" class="btn btn-primary ">Get the code</a>
-        <a href="https://docs.bonfirenetworks.org/deploy.html" target="_blank" class="btn  btn-outline border-base-content/30 ">Installation guide</a>
+    {# three routes #}
+    <main><div class="max-w-[1180px] mx-auto px-7">
+      <div class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-4 pt-2 pb-[26px]">
+
+        <article class="{{ route }}" style="--acc:var(--color-flame)">
+          <span class="{{ who }}"><i class="w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>You run it</span>
+          <h2 class="font-disp font-[560] text-2xl leading-[1.12] mt-0.5">Install Bonfire on your own</h2>
+          <p class="text-ink-2 text-[.97rem]">For those who want to self-host their own Bonfire instance. You'll need to be comfortable with the command line.</p>
+          <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+            <li>Full control, on your own infrastructure</li>
+            <li>AGPL, free forever</li>
+            <li>Docker-based deployment</li>
+          </ul>
+          <span class="{{ fit }}">◼ good if: you have a server &amp; some sysadmin comfort</span>
+          <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+            <a class="{{ btnfire }}" href="https://github.com/bonfire-networks/bonfire-app">Code</a>
+            <a class="{{ btnline }}" href="https://docs.bonfirenetworks.org/deploy.html">Installation guide</a>
+          </div>
+        </article>
+
+        <article class="{{ route }}" style="--acc:var(--color-corn)">
+          <span class="{{ who }}"><i class="w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>We run it together</span>
+          <h2 class="font-disp font-[560] text-2xl leading-[1.12] mt-0.5">Managed hosting</h2>
+          <p class="text-ink-2 text-[.97rem]">Join a nascent co-operative ecosystem to operate a sustainable, resilient infrastructure for Bonfire development, hosting, and support.</p>
+          <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+            <li>No servers to look after</li>
+            <li>Updates &amp; backups handled</li>
+            <li>Co-op infrastructure, not a corporate cloud</li>
+          </ul>
+          <span class="{{ fit }}">◼ good if: you want your space, not a sysadmin job</span>
+          <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+            <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Get in touch</a>
+            <a class="{{ btnline }}" href="/hosting">Learn more</a>
+          </div>
+        </article>
+
+        <article class="{{ route }}" style="--acc:var(--color-leaf)">
+          <span class="{{ who }}"><i class="w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>We build it with you</span>
+          <h2 class="font-disp font-[560] text-2xl leading-[1.12] mt-0.5">Go further with Mosaic</h2>
+          <p class="text-ink-2 text-[.97rem]">Rely on the Bonfire team to build a tailored digital space for your community and support you through the whole process.</p>
+          <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+            <li>Co-design workshops with your people</li>
+            <li>Your identity, governance &amp; integrations</li>
+            <li>Training, hosting &amp; ongoing care</li>
+          </ul>
+          <span class="{{ fit }}">◼ good if: your community needs a space shaped around it</span>
+          <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+            <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
+            <a class="{{ btnline }}" href="/mosaic">Learn more</a>
+          </div>
+        </article>
+
       </div>
-      
-    </div>
 
-<div class=" border border-base-content/20 rounded-2xl  h-full  p-12 grid-cols-4 items-center">
-      <div class="text-3xl font-bold">Managed hosting <br/></div>
-      <br/>
-        <div class="text-lg  mt-4">Join a nascent co-operative ecosystem to operate a sustainable, resilient infrastructure for Bonfire development, hosting, and support.</div>
-         <div class="flex items-center mt-6 gap-4">
-          <a href="https://cal.com/bonfire-networks/meet" class="btn btn-primary">Get in touch</a>
-          <a href="/hosting" class="btn btn-outline border-base-content/30 ">Learn more
-</a>
+      {# try first strip #}
+      <div class="flex flex-wrap items-center justify-between gap-[22px] mt-2 rounded-xl border border-dashed border-ink/15 px-7 py-[26px]">
+        <p class="m-0 text-[.98rem] text-ink-2 max-w-[52rem]"><b class="text-ink font-semibold">Not sure yet? Try it first.</b> The campground is our open test instance — make an account, poke around, break things. Data gets reset now and then, so don't move in.</p>
+        <a class="font-smono text-[.74rem] tracking-[.05em] uppercase text-spark border-b border-spark/35 pb-0.5 whitespace-nowrap hover:border-spark" href="https://campground.bonfire.cafe/">Wander the campground →</a>
+      </div>
+    </div></main>
+
+    {# if you get stuck #}
+    <section class="pt-14 pb-[76px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>If you get stuck</p>
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 rounded-xl border border-ink/15 overflow-hidden">
+        <div class="p-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Read</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Documentation</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Installation, configuration, and everything on building with Bonfire.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://docs.bonfirenetworks.org">docs.bonfirenetworks.org →</a>
         </div>
-    </div>
-    <div class=" border border-base-content/20 rounded-2xl  h-full  p-12 grid-cols-4 items-center">
-      <div class="text-3xl font-bold">Go further with Mosaic</div>
-        <div class="text-lg  mt-4">Rely on the Bonfire team to build a tailored digital space for your community and support you through the whole process.</div>
-         <div class="flex items-center mt-6 gap-4">
-          <a href="https://cal.com/bonfire-networks/meet" class="btn btn-primary">Book a call</a>
-          <a href="/mosaic" class="btn btn-outline border-base-content/30">Read about mosaic</a>
+        <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
+          <div class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Ask</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">The chat</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Day-to-day talk with the team and other hosts. The easiest door: just say hello.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://matrix.to/#/%23bonfire-networks:matrix.org">Join us on Matrix →</a>
         </div>
-    </div>
+        <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
+          <div class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Email</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Talk to a human</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Something else in mind? There are humans at the other end.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="mailto:team@bonfire.cafe">team@bonfire.cafe →</a>
+        </div>
+      </div>
+    </div></section>
+
   </div>
 </div>
-

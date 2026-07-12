@@ -1,200 +1,316 @@
 ---
-layout: /layouts/base.njk
-title: "Participate in the ecosystem"
+layout: layouts/base.njk
+title: Bonfire — Community
+description: Bonfire isn't a product with users — it's a commons with participants. However much you've got, there's a way in.
 ---
 
-      <div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-lg lg:mx-auto">
-        <h1 class="mt-20 mb-4 text-center text-3xl font-extrabold sm:text-4xl">Participate in the ecosystem</h1>
-        <h2 class="text-2xl max-w-(--breakpoint-md) mx-auto text-center text-base-content/50">Bonfire is an open source software built by a small team. Any contribution is valuable to push the development further. If you don't see how you can help or have something else in mind, don't hesitate to get in touch with us.</h2>
-        <div class="flex items-center place-content-center gap-3 mt-8">
-          <a href="https://bonfire.cafe/@Bonfire" target="_blank" class="normal-case rounded-full border! border-base-content/30! btn btn-outline ">Follow</a>
-          <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="normal-case rounded-full btn-ghost btn ">Join our Matrix chat</a>
+{% set eyebrow = "flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em] uppercase" %}
+{% set display = "mt-4 font-disp font-[620] text-[clamp(1.6rem,3vw,2.3rem)] leading-[1.06] tracking-[-.02em] text-balance" %}
+{% set bodyp = "mt-3.5 text-[1.02rem] text-ink-2 max-w-[42rem]" %}
+{% set golink = "mt-auto pt-3 font-smono text-[.72rem] tracking-[.05em] uppercase text-spark hover:underline" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# page header #}
+    <header class="pt-[34px] pb-[26px] border-b border-ink/[0.07]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <h1 class="font-disp font-[620] text-[clamp(1.8rem,3.4vw,2.6rem)] leading-[1.05] tracking-[-.02em]">Bonfire is a commons</h1>
+      <p class="mt-3 text-[1.05rem] text-ink-2 max-w-[52ch]">Bonfire isn't a product with users — it's a <b class="text-ink font-semibold">commons with participants</b>. It's governed by the people who show up, and there's more than one way to be one of them.</p>
+      {# metric slots — fill with real numbers when confirmed #}
+      <div class="grid grid-cols-2 min-[761px]:grid-cols-[repeat(4,minmax(0,180px))] gap-3.5 mt-[26px]">
+        {% for m in ["metric 01", "metric 02", "metric 03", "metric 04"] %}
+        <div class="rounded border border-dashed border-ink/15 px-4 py-4 font-smono text-[.74rem] text-ink-3 bg-[repeating-linear-gradient(135deg,transparent_0_18px,rgba(242,236,219,.02)_18px_36px)]"><b class="block font-disp font-bold text-[1.7rem] text-ink-3 mb-1">—</b>[ {{ m }} ]</div>
+        {% endfor %}
+      </div>
+    </div></header>
+
+    {# intent router #}
+    <section class="pt-11 pb-16">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">Find your way in</p>
+      <h2 class="{{ display }} max-w-[22ch]">However much you've got — <span class="italic font-medium">an hour or a year.</span></h2>
+      <div class="grid grid-cols-1 min-[601px]:grid-cols-2 min-[901px]:grid-cols-4 gap-px mt-[26px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
+        <a class="flex flex-col gap-2 bg-night p-[26px_22px] px-[22px] py-[26px] hover:bg-night-2" href="#gather">
+          <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">No commitment</span>
+          <h3 class="font-disp font-[620] text-[1.18rem] text-flame">Hang out</h3>
+          <p class="text-ink-2 text-[.94rem] m-0">Come see what it's like. Lurk in the chat, poke at the campground, follow along.</p>
+          <span class="{{ golink }}">Where we gather →</span>
+        </a>
+        <a class="flex flex-col gap-2 bg-night px-[22px] py-[26px] hover:bg-night-2" href="#help">
+          <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">An hour or an afternoon</span>
+          <h3 class="font-disp font-[620] text-[1.18rem] text-leaf">Help out</h3>
+          <p class="text-ink-2 text-[.94rem] m-0">Translate a screen, file a bug, fix a good first issue, improve the docs.</p>
+          <span class="{{ golink }}">Ways to help →</span>
+        </a>
+        <a class="flex flex-col gap-2 bg-night px-[22px] py-[26px] hover:bg-night-2" href="#organize">
+          <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Ongoing</span>
+          <h3 class="font-disp font-[620] text-[1.18rem] text-spark">Shape it</h3>
+          <p class="text-ink-2 text-[.94rem] m-0">Bring a real need from a real community, and co-design what's missing with us.</p>
+          <span class="{{ golink }}">Bring your community →</span>
+        </a>
+        <a class="flex flex-col gap-2 bg-night px-[22px] py-[26px] hover:bg-night-2" href="#support">
+          <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Whatever you can</span>
+          <h3 class="font-disp font-[620] text-[1.18rem] text-corn">Sustain it</h3>
+          <p class="text-ink-2 text-[.94rem] m-0">Fund the unglamorous work — maintenance, care, and the people who do it.</p>
+          <span class="{{ golink }}">Support the care →</span>
+        </a>
+      </div>
+    </div></section>
+
+    {# where we gather #}
+    <section id="gather" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-corn">Where we gather</p>
+      <h2 class="{{ display }} max-w-[20ch]">Three rooms, all of them <span class="italic font-medium">open.</span></h2>
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-4 mt-[26px]">
+        <div class="card rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6 gap-2">
+          <span class="font-smono text-[.66rem] tracking-[.1em] uppercase text-corn">The workshop</span>
+          <h3 class="font-disp font-[620] text-[1.1rem]">Matrix chat</h3>
+          <p class="text-ink-2 text-[.93rem] m-0">Day-to-day talk — questions, half-formed ideas, what people are working on. The easiest door: just say hello.</p>
+          <a class="{{ golink }}" href="https://matrix.to/#/%23bonfire-networks:matrix.org">Join the chat →</a>
+        </div>
+        <div class="card rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6 gap-2">
+          <span class="font-smono text-[.66rem] tracking-[.1em] uppercase text-corn">The playground</span>
+          <h3 class="font-disp font-[620] text-[1.1rem]">The campground</h3>
+          <p class="text-ink-2 text-[.93rem] m-0">Our open test instance. Make an account, break things, tell us what felt wrong. Data gets reset now and then — don't move in.</p>
+          <a class="{{ golink }}" href="https://campground.bonfire.cafe/">Sign up on the campground →</a>
+        </div>
+        <div class="card rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6 gap-2">
+          <span class="font-smono text-[.66rem] tracking-[.1em] uppercase text-corn">The square</span>
+          <h3 class="font-disp font-[620] text-[1.1rem]">The fediverse</h3>
+          <p class="text-ink-2 text-[.93rem] m-0">Where we post news, share what we're building, and argue in public. Follow, reply, boost.</p>
+          <a class="{{ golink }}" href="https://bonfire.cafe/@Bonfire">Follow @Bonfire →</a>
         </div>
       </div>
-<div class="pb-40 mt-16 border-t section--bg border-base-content/10">
-  <div class="skew-y-2">
-    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-lg lg:mx-auto lg:mt-24">
+    </div></section>
+
+    {# ways to help #}
+    <section id="help" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">Ways to help</p>
+      <h2 class="{{ display }} max-w-[24ch]">Small things count. <span class="italic font-medium">Most of Bonfire is small things.</span></h2>
+      {% set ct = "card rounded-xl border border-ink/15 px-[19px] py-5 gap-[7px] hover:border-ink/25" %}
+      {% set cttime = "badge h-auto self-start rounded-full bg-transparent border-ink/15 px-2 py-[3px] font-smono text-[.63rem] tracking-[.1em] uppercase text-ink-3" %}
+      {% set cth = "font-disp font-[620] text-[1.05rem] mt-1" %}
+      {% set ctp = "text-ink-2 text-[.91rem] m-0" %}
+      <div class="grid grid-cols-1 min-[621px]:grid-cols-2 min-[901px]:grid-cols-3 gap-3.5 mt-[26px]">
+        <div class="{{ ct }} border-leaf/40 bg-leaf/[0.04]">
+          <span class="{{ cttime }} text-leaf border-leaf/40">★ Start here · an afternoon</span>
+          <h3 class="{{ cth }}">Fix a good first issue</h3>
+          <p class="{{ ctp }}">We keep a list of small, well-described tasks specifically for newcomers to the codebase.</p>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22">Browse good first issues →</a>
+        </div>
+        <div class="{{ ct }}">
+          <span class="{{ cttime }}">30 minutes</span>
+          <h3 class="{{ cth }}">Translate a screen</h3>
+          <p class="{{ ctp }}">Bonfire speaks English, Italian, French and Catalan. Yours is missing — you can fix that.</p>
+          <a class="{{ golink }}" href="https://explore.transifex.com/bonfire/bonfire/">Translate on Transifex →</a>
+        </div>
+        <div class="{{ ct }}">
+          <span class="{{ cttime }}">10 minutes</span>
+          <h3 class="{{ cth }}">Report what broke</h3>
+          <p class="{{ ctp }}">Something felt wrong, confusing, or inaccessible? That's a bug. Tell us — especially the small annoyances.</p>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Open an issue →</a>
+        </div>
+        <div class="{{ ct }}">
+          <span class="{{ cttime }}">An evening</span>
+          <h3 class="{{ cth }}">Write code</h3>
+          <p class="{{ ctp }}">Elixir, Phoenix, LiveView. Set up a local environment from the docs and dig into an extension.</p>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app">Read the dev docs →</a>
+        </div>
+        <div class="{{ ct }}">
+          <span class="{{ cttime }}">An hour</span>
+          <h3 class="{{ cth }}">Improve the docs</h3>
+          <p class="{{ ctp }}">If something confused you, it'll confuse the next person. Writing it down is a real contribution.</p>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Suggest a doc fix →</a>
+        </div>
+        <div class="{{ ct }}">
+          <span class="{{ cttime }}">Ongoing</span>
+          <h3 class="{{ cth }}">Propose an idea</h3>
+          <p class="{{ ctp }}">A feature, a better flow, a challenge to an assumption we've made. We'd rather be argued with early.</p>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Open a proposal →</a>
+        </div>
+      </div>
+    </div></section>
+
+    {# bring your community #}
+    <section id="organize" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">Bring your community</p>
+      <div class="grid grid-cols-1 min-[881px]:grid-cols-[1.15fr_.85fr] gap-6 min-[881px]:gap-10 items-center mt-[26px] rounded-xl border border-ink/15 px-8 py-[34px]">
         <div>
-            <div class="flex items-center place-content-center gap-8 pb-6 lg:place-content-start">
-                <div class="w-[42px] h-[42px] bg-linear-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">          
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><rect x="0" y="0" width="32" height="32" fill="none" stroke="none" /><path fill="currentColor" d="M26 14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v4.1a5 5 0 0 0-3.9 3.9H14v-2a2 2 0 0 0-2-2h-2v-4.1a5 5 0 1 0-2 0V18H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2h4.1a5 5 0 1 0 5.9-5.9V14ZM6 9a3 3 0 1 1 3 3a3 3 0 0 1-3-3Zm6 17H6v-6h6Zm14-3a3 3 0 1 1-3-3a3 3 0 0 1 3 3ZM20 6h6v6h-6Z"/></svg>
-                </div>
-                <div class="text-[32px] font-bold tracking-wider">Participate</div>
-            </div>
-            <ul class="lg:ml-[74px] mt-2 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-              <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-                <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Play</b>
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Create a account on our test instance and report any feedback and bugs you encounter. We may reset the data from time to time, so do not rely on it for main account.</span>
-                    </div>
-                     <a href="https://campground.bonfire.cafe/" target="blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Sign up on the campground</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-              </li>
-              <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-                <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="font-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Code</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">There are different ways to start contributing to the codebase; Check out the docs to setup a local environment, or look at a good first issue.</span>
-                    </div>
-                    <a href="https://github.com/bonfire-networks/bonfire-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22" target="blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Good first issues</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                  </div>
-                </li>
-                 
-                 <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-                  <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Discuss</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Have an idea about a new feature or a better user experience for an existing one? We're all ears, we're currently using GitHub to collect all the suggestions</span>
-                    </div>
-                     <a target="blank" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Open an issue</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Translate</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">We are looking for people to help translate the project into different languages on Transifex.</span>
-                    </div>
-                     <a href="https://explore.transifex.com/bonfire/bonfire/" target="blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Go to transifex</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Share</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Promote the project on social media, mention @bonfire@bonfire.cafe or link to the website - trusted word of mouths is invaluable.</span>
-                    </div>
-                     <a href="https://bonfire.cafe/@Bonfire" target="blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Find us on the fediverse</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                {# <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Star</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Even simply starring bonfire on github makes a difference for us</span>
-                    </div>
-                     <a class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Star Bonfire</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li> #}
-                 
-                 <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Organize</b>
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">We're always happy to engage with communities, coops, collectives and groups to discuss how bonfire can fit as their digital space.</span>
-                    </div>
-                     <a href="mailto:team@bonfire.cafe" target="blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Let's chat</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-            </ul>
+          <h3 class="font-disp font-[620] text-2xl mb-2.5">Got a community that needs a home?</h3>
+          <p class="text-ink-2 text-base mb-[18px] max-w-[38rem]">This is the contribution we value most. Co-ops, collectives, unions, newsrooms, research groups, care networks — come tell us how you actually work, and we'll shape a space around it together. Everything we build with you goes back into the commons, for whoever needs it next.</p>
+          <div class="flex flex-wrap gap-[11px]">
+            <a class="{{ btnfire }}" href="mailto:team@bonfire.cafe">Let's talk</a>
+            <a class="{{ btnline }}" href="/case-studies">See how others did it →</a>
+          </div>
         </div>
+        <div class="w-full aspect-video rounded-xl border border-dashed border-ink/15 flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)]"><span class="max-w-[30ch]"><span class="text-flame">[ SHOT ]</span><br>a co-design workshop / community session</span></div>
+      </div>
+    </div></section>
 
-        <div class="mt-24">
-            <div class="flex items-center place-content-center gap-8 pb-6 lg:place-content-start">
-                <div class="w-[42px] h-[42px] bg-linear-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">          
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M17.212 2.237a.75.75 0 0 0-1.423-.474l-.75 2.249a.75.75 0 0 0 1.423.474l.75-2.249Zm4.568-.017a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 1 1-1.06-1.06l2.5-2.5a.75.75 0 0 1 1.06 0ZM9.076 4.318a2.325 2.325 0 0 1 3.795-.577l7.006 7.506a2.325 2.325 0 0 1-.758 3.712l-3.42 1.516a4 4 0 0 1-7.314 3.24l-1.417.628a1.8 1.8 0 0 1-1.964-.336L3.565 18.65a1.8 1.8 0 0 1-.387-2.091l5.898-12.24Zm.682 14.789a2.5 2.5 0 0 0 4.569-2.024l-4.57 2.024Zm2.016-14.342a.825.825 0 0 0-1.346.204L4.53 17.21a.3.3 0 0 0 .064.349l1.439 1.356a.3.3 0 0 0 .327.056l12.151-5.383a.825.825 0 0 0 .27-1.317l-7.007-7.506ZM19 8.249a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75Z"/></svg>
-                </div>
-                <div class="text-[32px] font-bold tracking-wider">Stay up to date</div>
-            </div>
-            <ul class="lg:ml-[74px] mt-2 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="font-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Follow</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Follow us on the fediverse, where we try to communicate any news and updates and engage in discussions (when we can)</span>
-                    </div>
-                    <a href="https://bonfire.cafe/@Bonfire" target="blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Follow on the fediverse</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Read</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">From time to time, we publish blogposts that span from development updates to events participation.</span>
-                    </div>
-                     <a href="/blog" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Read the blog</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Subscribe</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Every 2 week (maximum) we try to send a short newsletter that summarizes the latest Bonfire news.</span>
-                    </div>
-                     <a href="/subscribe" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Subscribe to the newsletter</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="ont-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Talk</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Want to engage more directly with the team and the community? Join our chat for more day to day discussions and updates.</span>
-                    </div>
-                     <a href="https://matrix.to/#/%23bonfire-networks:matrix.org" target="_blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Join matrix chat</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                 
-            </ul>
+    {# support the care work #}
+    <section id="support" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">Support the care work</p>
+      <h2 class="{{ display }} max-w-[24ch]">Fund the unglamorous part. <span class="italic font-medium">It's the part that keeps it alive.</span></h2>
+      <p class="{{ bodyp }}">Most funders want to pay for the new and shiny. Almost no one wants to pay for maintenance — fixing bugs, answering questions, keeping things usable on old phones and slow connections, moderating, translating. That work is what makes software trustworthy. It's what your money buys here.</p>
+
+      {# stats — update from Open Collective (or wire to _data at build time) #}
+      <div class="grid grid-cols-1 min-[521px]:grid-cols-2 min-[901px]:grid-cols-4 gap-px mt-[26px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
+        {% set oc = [
+          { n: "33", l: "Backers", s: "People and orgs chipping in." },
+          { n: "€888", l: "Income, past year", s: "That's the whole community chest." },
+          { n: "€439", l: "In the collective now", s: "Every euro in and out is public." },
+          { n: "3", l: "Monthly supporters", s: "Recurring gifts we can actually plan around." }
+        ] %}
+        {% for o in oc %}
+        <div class="bg-night-2 px-[22px] py-6">
+          <div class="font-disp font-bold text-[1.9rem] leading-none tracking-[-.02em] text-flame">{{ o.n }}</div>
+          <div class="mt-2 font-smono text-[.66rem] tracking-[.1em] uppercase text-ink-3">{{ o.l }}</div>
+          <div class="mt-1.5 text-[.84rem] text-ink-2">{{ o.s }}</div>
         </div>
+        {% endfor %}
+      </div>
 
-        <div class="mt-24">
-            <div class="flex place-content-center lg:place-content-start items-center gap-8 pb-6">
-                <div class="w-[42px] h-[42px] bg-linear-to-tr from-[#7B4397] to-[#DC2430] flex place-content-center items-center rounded-xl shadow-xl">          
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"><path d="M16 6.28a2.28 2.28 0 0 1-.662 1.606c-.976.984-1.923 2.01-2.936 2.958a.597.597 0 0 1-.822-.017l-2.918-2.94a2.281 2.281 0 0 1 0-3.214a2.277 2.277 0 0 1 3.232 0L12 4.78l.106-.107A2.276 2.276 0 0 1 16 6.28Z"/><path stroke-linecap="round" d="m18 20l3.824-3.824a.6.6 0 0 0 .176-.424V10.5A1.5 1.5 0 0 0 20.5 9v0a1.5 1.5 0 0 0-1.5 1.5V15"/><path stroke-linecap="round" d="m18 16l.858-.858a.484.484 0 0 0 .142-.343v0a.485.485 0 0 0-.268-.433l-.443-.221a2 2 0 0 0-2.308.374l-.895.895a2 2 0 0 0-.586 1.414V20M6 20l-3.824-3.824A.6.6 0 0 1 2 15.752V10.5A1.5 1.5 0 0 1 3.5 9v0A1.5 1.5 0 0 1 5 10.5V15"/><path stroke-linecap="round" d="m6 16l-.858-.858A.485.485 0 0 1 5 14.799v0c0-.183.104-.35.268-.433l.443-.221a2 2 0 0 1 2.308.374l.895.895a2 2 0 0 1 .586 1.414V20"/></g></svg>
-                </div>
-                <div class="text-[32px] font-bold tracking-wider">Support</div>
-            </div>
-            <ul class="lg:ml-[74px] mt-2 grid grid-cols-1">
-                <li class="flex-1 rounded-box bg-linear-to-t from-base-content/5 to-base-content/40 p-[0.075rem]">
-        <div class="border-b rounded-box flex-1 h-full border-base-content/20 bg-base-100 p-8">
-                    <b class="font-bold underline mr-1.5 underline-offset-4 decoration-2 decoration-primary tracking-wider uppercase">Donate</b> 
-                    <div class="flex items-center mt-3 gap-3">
-                        <span class="text-base-content/70 text-base">Bonfire is supported by folks like you who want to invest in safe, reusable and long lasting federated tools to rely on.</span>
-                    </div>
-                    <a href="https://opencollective.com/bonfire-networks" target="_blank" class="flex items-center gap-3 link link-hover mt-3 text-sm text-primary normal-case">
-                        <span>Contribute on Open Collective</span>
-                        <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
-                    </a>
-                </div>
-                </li>
-                 
-            </ul>
+      <div class="mt-[26px] border-l-2 border-flame pl-[22px]">
+        <p class="font-disp font-medium italic text-[clamp(1.1rem,2.1vw,1.45rem)] leading-[1.3] m-0">“Thirty-three people fund the maintenance of software used by thousands. That's the honest picture — and it's why one more backer genuinely changes it.”</p>
+      </div>
+
+      {% set tier = "card rounded-xl border border-ink/15 px-5 py-[22px] gap-[7px]" %}
+      <div class="grid grid-cols-1 min-[561px]:grid-cols-2 min-[901px]:grid-cols-4 gap-3.5 mt-[26px]">
+        <div class="{{ tier }}">
+          <div class="font-disp font-bold text-[1.45rem]">€3</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">a month</div>
+          <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">Keeps a translation up to date, so someone reads Bonfire in their own language.</p>
+          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks">Back it →</a>
         </div>
+        <div class="{{ tier }} border-flame/60 bg-flame/5">
+          <div class="font-disp font-bold text-[1.45rem] text-flame">€6</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">a month · most chosen</div>
+          <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">An hour of the unglamorous work — a bug fixed, a question answered, docs unstuck.</p>
+          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks">Back it →</a>
+        </div>
+        <div class="{{ tier }}">
+          <div class="font-disp font-bold text-[1.45rem]">€12</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">a month</div>
+          <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">Helps us slow a release when someone's ill or burnt out, instead of pushing through.</p>
+          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks">Back it →</a>
+        </div>
+        <div class="{{ tier }}">
+          <div class="font-disp font-bold text-[1.45rem]">Any</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">one-off</div>
+          <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">Or fund a specific feature, a circle, or a co-design sprint with your community.</p>
+          <a class="{{ golink }}" href="mailto:team@bonfire.cafe">Talk to us →</a>
+        </div>
+      </div>
 
-    </div> 
+      <div class="grid gap-3.5 mt-[34px]">
+        <div class="grid grid-cols-[auto_1fr] gap-3.5">
+          <span class="w-2 h-2 mt-[7px] bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
+          <div><b class="font-disp font-semibold block mb-0.5">Maintenance first</b><span class="text-ink-2 text-[.95rem]">We made care and maintenance the condition of our crowdfunder's success — before any exciting stretch goal.</span></div>
+        </div>
+        <div class="grid grid-cols-[auto_1fr] gap-3.5">
+          <span class="w-2 h-2 mt-[7px] bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
+          <div><b class="font-disp font-semibold block mb-0.5">Radically transparent</b><span class="text-ink-2 text-[.95rem]">Every expense is public on Open Collective, fiscally hosted by Open Source Europe. You can see exactly where it goes.</span></div>
+        </div>
+        <div class="grid grid-cols-[auto_1fr] gap-3.5">
+          <span class="w-2 h-2 mt-[7px] bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
+          <div><b class="font-disp font-semibold block mb-0.5">No VC, no ads, nothing to sell</b><span class="text-ink-2 text-[.95rem]">Community-funded means no one can buy us and turn Bonfire against you later.</span></div>
+        </div>
+      </div>
+
+      <p class="{{ eyebrow }} text-flame mt-10">The 33 who already do</p>
+      <p class="mt-3 text-[.96rem] text-ink-2 max-w-[42rem]">Listed alphabetically. No tiers, no top donors, no gold badges — a commons doesn't rank the people who keep it alive.</p>
+      {# every backer identical — no ranking, no featuring, no "+more" #}
+      {% set backers = [
+        { href: "https://opencollective.com/adrian-garne", ini: "AG", name: "Adrian Garner" },
+        { href: "https://opencollective.com/alain-reul", ini: "AR", name: "Alain Reul" },
+        { href: "https://opencollective.com/anhnguyennguyen", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/88966c7b-75a2-49ac-b930-c9a5f8ea90df/Profilfoto%202022.jpg", name: "Anh Nguyen Nguyen" },
+        { href: "https://opencollective.com/virtual-assembly", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/86944010-a278-11eb-9926-edef06b407fd.png", name: "Assemblée Virtuelle" },
+        { href: "https://opencollective.com/user-5119344d", ini: "BG", name: "Benjamin Goering" },
+        { href: "https://opencollective.com/boringcactus", img: "https://www.gravatar.com/avatar/c9a31233bfce1190ef3c6b0cee24db67?default=404", name: "boringcactus" },
+        { href: "https://opencollective.com/box464", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/2e20c665-d1f1-4930-8c9f-1482504c5797/KoFiProfilePicBox464WithDog04.png", name: "box464" },
+        { href: "https://opencollective.com/dougbelshaw", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/b01496b5-9105-49ef-8102-e669fe5cd6ab/doug-2024.png", name: "Doug Belshaw" },
+        { href: "https://opencollective.com/dragan-espenschied", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/3a3c1830-e5aa-11eb-9c9a-639d2919f18e.png", name: "Dragan Espenschied" },
+        { href: "https://opencollective.com/wwahammy", ini: "ES", name: "Eric Schultz" },
+        { href: "https://opencollective.com/user-2dabddbe", ini: "GL", name: "Giacomo Leidi" },
+        { href: "https://opencollective.com/guest-fcd12b36", ini: "G", name: "Guest" },
+        { href: "https://opencollective.com/incognito-b5d93a52", ini: "IN", name: "Incognito" },
+        { href: "https://opencollective.com/incognito-d0c5298a", ini: "IN", name: "Incognito" },
+        { href: "https://opencollective.com/jeffrey-yasskin", ini: "JY", name: "Jeffrey Yasskin" },
+        { href: "https://opencollective.com/guest-408021b8", ini: "JK", name: "John Kilcoyne" },
+        { href: "https://opencollective.com/jorgesat", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/5baa4909-7d13-447a-89da-95586f9f2fe0/IMG-20210321-WA0015-01-02.jpg", name: "Jorge Saturno" },
+        { href: "https://opencollective.com/khwenamo", ini: "KH", name: "Khwenamo" },
+        { href: "https://opencollective.com/manuel-dorso", img: "https://www.gravatar.com/avatar/78443abf0deaeda5163b8f16908f2611?default=404", name: "Manuel D'Orso" },
+        { href: "https://opencollective.com/marek-lach", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/f9913760-2634-11ea-ba46-0dfda079c668.jpeg", name: "Marek Ľach" },
+        { href: "https://opencollective.com/mayel", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/5716d980-f113-11eb-ab99-7d33d249fcd6.jpg", name: "Mayel" },
+        { href: "https://opencollective.com/michcio", ini: "MI", name: "michcia" },
+        { href: "https://opencollective.com/mindaugasd", ini: "MD", name: "mindaugasd" },
+        { href: "https://opencollective.com/ntnsndr", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/fe359650-2099-11e8-92fb-3b4d2207fe6d.jpg", name: "Nathan Schneider" },
+        { href: "https://opencollective.com/oce-foundation-eur", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/708f5a4f-fe45-4df4-9b0b-99a87f7968b7/Ajouter%20un%20sous-titre%20(4).png", name: "Open Collective Europe" },
+        { href: "https://opencollective.com/pinage404", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/2f1f0770-0ffc-11eb-885f-c561305120e6.png", name: "pinage404" },
+        { href: "https://opencollective.com/ruben33", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/7b34daac-c9e8-4ba9-8c31-f40ddadfde02/avatar.thumb.jpeg.a6e512ab795166b602d0f089abc023fa.jpg", name: "Ruben" },
+        { href: "https://opencollective.com/guest-3eb59fd3", ini: "SR", name: "Sean Riley" },
+        { href: "https://opencollective.com/steven-fierens1", ini: "SF", name: "Steven Fierens" },
+        { href: "https://opencollective.com/tanguy-fardet1", ini: "TF", name: "Tanguy Fardet" },
+        { href: "https://opencollective.com/the-programmers-fulcrum", img: "https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/cb9c713f-013b-4359-9e1a-9fa9f8b805cb/Reuben-Headshot-Mohawk-square-2.jpg", name: "The Programmer's Fulcrum" },
+        { href: "https://opencollective.com/guest-db3e2864", ini: "TH", name: "Theadora" },
+        { href: "https://opencollective.com/zabbeer", ini: "ZA", name: "zabbeer" }
+      ] %}
+      <div class="flex flex-wrap items-center gap-2.5 mt-[22px]">
+        {% for b in backers %}
+        <a class="flex items-center gap-[9px] rounded-full border border-ink/15 bg-night-2 py-[5px] pl-[5px] pr-3.5 hover:border-flame" href="{{ b.href }}">
+          {% if b.img %}<img class="w-[26px] h-[26px] rounded-full object-cover flex-none" src="{{ b.img }}" alt="" loading="lazy">{% else %}<span class="w-[26px] h-[26px] rounded-full bg-night-3 text-ink-3 font-smono text-[.6rem] flex items-center justify-center flex-none">{{ b.ini }}</span>{% endif %}
+          <span class="text-[.86rem] text-ink-2 whitespace-nowrap">{{ b.name }}</span>
+        </a>
+        {% endfor %}
+      </div>
+
+      <div class="flex flex-wrap gap-[11px] mt-[30px]">
+        <a class="{{ btnfire }}" href="https://opencollective.com/bonfire-networks">Back Bonfire on Open Collective</a>
+        <a class="{{ btnline }}" href="mailto:team@bonfire.cafe">Fund a feature or a circle</a>
+      </div>
+      <p class="mt-4 font-smono text-[.68rem] text-ink-3">Fiscal host: Open Source Europe · every expense is public on Open Collective</p>
+    </div></section>
+
+    {# stay in touch #}
+    <section id="touch" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-ink-3">Stay in touch</p>
+      <div class="grid grid-cols-1 min-[561px]:grid-cols-2 min-[901px]:grid-cols-4 gap-px mt-6 rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
+        <div class="bg-night px-5 py-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Daily</div>
+          <h3 class="font-disp font-[620] text-base mt-2 mb-1.5">The fediverse</h3>
+          <p class="text-ink-2 text-[.88rem] mb-2.5">News, updates, and public thinking-out-loud.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://bonfire.cafe/@Bonfire">Follow @Bonfire →</a>
+        </div>
+        <div class="bg-night px-5 py-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Now and then</div>
+          <h3 class="font-disp font-[620] text-base mt-2 mb-1.5">The blog</h3>
+          <p class="text-ink-2 text-[.88rem] mb-2.5">Development updates, essays, and what we learned.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="/blog">Read the blog →</a>
+        </div>
+        <div class="bg-night px-5 py-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Every 2 weeks, max</div>
+          <h3 class="font-disp font-[620] text-base mt-2 mb-1.5">Newsletter</h3>
+          <p class="text-ink-2 text-[.88rem] mb-2.5">A short digest. We won't clog your inbox.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="/subscribe">Subscribe →</a>
+        </div>
+        <div class="bg-night px-5 py-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Any time</div>
+          <h3 class="font-disp font-[620] text-base mt-2 mb-1.5">Just email us</h3>
+          <p class="text-ink-2 text-[.88rem] mb-2.5">Something else in mind? There are humans at the other end.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="mailto:team@bonfire.cafe">team@bonfire.cafe →</a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-5 mt-[30px] rounded-xl border border-dashed border-ink/15 px-[26px] py-6">
+        <p class="m-0 text-[.96rem] text-ink-2 max-w-[52rem]"><b class="text-ink font-semibold">Everyone here agrees to the code of conduct.</b> It's long, specific, and rooted in care rather than punishment — because a commons only works if people are safe in it.</p>
+        <a class="{{ btnline }}" href="/conduct">Read the code of conduct</a>
+      </div>
+    </div></section>
+
   </div>
 </div>
