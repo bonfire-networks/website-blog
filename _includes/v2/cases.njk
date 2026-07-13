@@ -5,18 +5,18 @@
    ============================================================ #}
 {% set case = "card group rounded-xl overflow-hidden border border-ink/15 bg-gradient-to-b from-night-2 to-night hover:border-ink/25" %}
 {% set caseph = "w-full aspect-video rounded-none border-b border-dashed border-ink/15 flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 leading-[1.7] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.025)_22px_44px)]" %}
-{% set sector = "font-smono text-[.66rem] tracking-[.13em] uppercase text-[var(--acc)]" %}
+{% set sector = "font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]" %}
 {% set caseh = "font-disp font-[620] text-[1.3rem] leading-[1.15]" %}
 {% set casep = "text-ink-2 text-[.93rem] m-0" %}
 {% set metric = "mt-auto pt-3.5 border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between items-center gap-2.5" %}
 {% set chip = "badge h-auto gap-[9px] rounded-full bg-transparent border-ink/15 px-[15px] py-2 font-smono text-[.76rem] text-ink-2" %}
-{% set more = "inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] uppercase text-spark border-b border-spark/35 hover:border-spark" %}
+{% set more = "inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
 
 <section id="cases" class="py-[clamp(72px,9vw,130px)] border-t border-ink/[0.07] scroll-mt-[70px]">
 <div class="max-w-[1140px] mx-auto px-7">
-  <p class="flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em] uppercase text-flame">In practice</p>
+  <p class="flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em] text-flame">In practice</p>
   <h2 class="mt-[22px] font-disp font-[560] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">The same Bonfire, in very <span class="fire-text">different hands.</span></h2>
-  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">A magazine and a municipality share almost nothing — except wanting a space that's theirs. There's no separate product for each; they took the same Bonfire and made it their own. Here's how:</p>
+  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">A magazine and a town don't have much in common, except wanting a space that's truly theirs. But they both took Bonfire and made it their own. Here's how:</p>
 
   <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-5 mt-[34px]">
     <a class="{{ case }}" style="--acc:var(--color-flame)" href="/case-studies/jacobin/">
@@ -24,7 +24,7 @@
       <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
         <span class="{{ sector }}">A magazine</span>
         <h3 class="{{ caseh }}">From audience to community</h3>
-        <p class="{{ casep }}">Jacobin turned its readers into a community that debates and belongs — publishing stays on their Ghost site, the conversation lives on Bonfire, wearing their brand.</p>
+        <p class="{{ casep }}">Jacobin turned its readers into a community that debates and belongs. Publishing stays on their Ghost site, the conversation lives on their own Bonfire.</p>
         <div class="{{ metric }}"><b class="text-ink font-normal">3,000+ readers</b> <span class="text-spark">Read →</span></div>
       </div>
     </a>
@@ -33,16 +33,16 @@
       <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
         <span class="{{ sector }}">A university research network</span>
         <h3 class="{{ caseh }}">A commons for scholars</h3>
-        <p class="{{ casep }}">Researchers shaped it into a space where everyday conversation becomes citable, open data — co-designed with academics, for how research actually happens.</p>
+        <p class="{{ casep }}">Researchers shaped it into a space where everyday conversation becomes citable, open data. Co-designed with academics, for how research actually happens.</p>
         <div class="{{ metric }}"><b class="text-ink font-normal">Co-designed with researchers</b> <span class="text-spark">Read →</span></div>
       </div>
     </a>
     <a class="{{ case }}" style="--acc:var(--color-leaf)" href="#">
       <div class="{{ caseph }}"><span><span class="text-flame">[ CASE ]</span><br>Totnes</span></div>
       <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
-        <span class="{{ sector }}">A municipality</span>
-        <h3 class="{{ caseh }}">A town square of their own</h3>
-        <p class="{{ casep }}">The town of Totnes made it a civic square — noticeboards, events and mutual aid, where neighbours share, organise and decide together.</p>
+        <span class="{{ sector }}">A town</span>
+        <h3 class="{{ caseh }}">A digital town square of their own</h3>
+        <p class="{{ casep }}">Totnes (in Devon, UK) made it a civic square: noticeboards, events and mutual aid, where neighbours share, organise and decide together.</p>
         <div class="{{ metric }}"><b class="text-ink font-normal">A whole town, online</b> <span class="text-spark">Read →</span></div>
       </div>
     </a>
@@ -51,7 +51,7 @@
   <p class="mt-10 text-[1.05rem] text-ink-2 max-w-[40rem]">Same foundation, adapted by all kinds of communities:</p>
   <div class="flex flex-wrap gap-2.5 mt-4">
     {% for r in ["newsrooms", "universities", "municipalities", "unions", "festivals", "fan communities", "co-ops", "mutual-aid crews", "schools"] %}
-    <span class="{{ chip }}"><i class="w-1.5 h-1.5 flex-none bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>{{ r }}</span>
+    <span class="{{ chip }}">{{ r }}</span>
     {% endfor %}
   </div>
   <a class="{{ more }}" href="/case-studies">Read all the community stories →</a>

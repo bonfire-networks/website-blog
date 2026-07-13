@@ -10,7 +10,9 @@
    sits on the header's bottom edge #}
 {% set navon = "relative self-stretch inline-flex items-center !text-ink font-semibold after:content-[''] after:absolute after:left-[13px] after:right-[13px] after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-spark after:to-ember" %}
 {% set mobon = "!text-spark font-semibold" %}
-{% set resActive = ('/case-studies' in page.url) or ('/hosting' in page.url) or ('/blog' in page.url) or ('/faq' in page.url) %}
+{% set exploreActive = ('/features' in page.url) or ('/case-studies' in page.url) or ('/about' in page.url) %}
+{% set forCommActive = ('/hosting' in page.url) or ('/mosaic' in page.url) %}
+{% set ecoActive = ('/community' in page.url) or ('/faq' in page.url) %}
 
 <nav class="sticky top-0 z-[70] bg-night/80 backdrop-blur-md border-b border-ink/[0.07] font-body" aria-label="Main">
 <div class="max-w-[1140px] mx-auto px-7 flex items-center h-16 gap-1.5">
@@ -21,45 +23,61 @@
   {# self-stretch: the menu row must fill the 64px bar so the active link's
      self-stretch (and its bottom-0 underline) can reach the header's edge #}
   <div class="hidden lg:flex items-center gap-0.5 ml-auto self-stretch">
-    <a class="{{ navlink }} {{ navon if '/about' in page.url }}" href="/about">About</a>
-    <a class="{{ navlink }} {{ navon if '/features' in page.url }}" href="/features">Features</a>
-    <div class="dropdown place-content-center dropdown-hover {{ 'self-stretch' if resActive }}">
-      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer">Resources <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
-      {# pt-2 spacer (not mt-2) keeps the pointer inside .dropdown while
-         crossing from the button to the menu, so the hover persists #}
+    {# pt-2 spacer (not mt-2) keeps the pointer inside .dropdown while
+       crossing from the button to the menu, so the hover persists #}
+    <div class="dropdown place-content-center dropdown-hover {{ 'self-stretch' if exploreActive }}">
+      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer {{ navon if exploreActive }}">Explore <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
       <div class="dropdown-content z-[80] pt-2">
         <ul tabindex="0" class="min-w-[180px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/features' in page.url }}" href="/features">Features</a></li>
           <li><a class="{{ droplink }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a></li>
           <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/case-studies' in page.url }}" href="/case-studies">Case studies</a></li>
-          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/hosting' in page.url }}" href="/hosting">Hosting</a></li>
-          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/blog' in page.url }}" href="/blog">Blog</a></li>
-          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/faq' in page.url }}" href="/faq">FAQs</a></li>
-          <li><a class="{{ droplink }}" href="https://docs.bonfirenetworks.org">Documentation</a></li>
-          <li><a class="{{ droplink }}" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/about' in page.url }}" href="/about">About</a></li>
         </ul>
       </div>
     </div>
-    <a class="{{ navlink }} {{ navon if '/mosaic' in page.url }}" href="/mosaic">Mosaic</a>
-    <a class="{{ navlink }} {{ navon if '/community' in page.url }}" href="/community">Community</a>
-    <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold uppercase tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
+    <div class="dropdown place-content-center dropdown-hover {{ 'self-stretch' if forCommActive }}">
+      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer {{ navon if forCommActive }}">For your community <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <ul tabindex="0" class="min-w-[180px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/mosaic' in page.url }}" href="/mosaic">Let's build together</a></li>
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/hosting' in page.url }}" href="/hosting">Hosting</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dropdown place-content-center dropdown-hover {{ 'self-stretch' if ecoActive }}">
+      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer {{ navon if ecoActive }}">Ecosystem <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <ul tabindex="0" class="min-w-[180px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/community' in page.url }}" href="/community">Participate</a></li>
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/faq' in page.url }}" href="/faq">FAQs</a></li>
+          <li><a class="{{ droplink }}" href="https://docs.bonfirenetworks.org" target="_blank">Documentation ↗</a></li>
+          <li><a class="{{ droplink }}" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Code ↗</a></li>
+        </ul>
+      </div>
+    </div>
+     <a class="{{ navlink }} {{ '!text-spark font-semibold' if '/blog' in page.url }}" href="/blog">Blog</a>
+    <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
   </div>
   <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
 </div></nav>
 
 <div class="hidden sticky top-16 z-[69] bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
-  <a class="{{ moblink }} {{ mobon if '/about' in page.url }}" href="/about">About</a>
-  <a class="{{ moblink }} {{ mobon if '/features' in page.url }}" href="/features">Features</a>
-  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] uppercase text-ink-3">Resources</span>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Explore</span>
+  <a class="{{ mobsub }} {{ mobon if '/features' in page.url }}" href="/features">Features</a>
   <a class="{{ mobsub }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a>
   <a class="{{ mobsub }} {{ mobon if '/case-studies' in page.url }}" href="/case-studies">Case studies</a>
+  <a class="{{ mobsub }} {{ mobon if '/about' in page.url }}" href="/about">About</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">For your community</span>
   <a class="{{ mobsub }} {{ mobon if '/hosting' in page.url }}" href="/hosting">Hosting</a>
-  <a class="{{ mobsub }} {{ mobon if '/blog' in page.url }}" href="/blog">Blog</a>
+  <a class="{{ mobsub }} {{ mobon if '/mosaic' in page.url }}" href="/mosaic">Let's build together</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Ecosystem</span>
+  <a class="{{ mobsub }} {{ mobon if '/community' in page.url }}" href="/community">Participate</a>
   <a class="{{ mobsub }} {{ mobon if '/faq' in page.url }}" href="/faq">FAQs</a>
-  <a class="{{ mobsub }}" href="https://docs.bonfirenetworks.org">Documentation</a>
-  <a class="{{ mobsub }}" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-  <a class="{{ moblink }} {{ mobon if '/mosaic' in page.url }}" href="/mosaic">Mosaic</a>
-  <a class="{{ moblink }} {{ mobon if '/community' in page.url }}" href="/community">Community</a>
-  <a class="{{ moblink }} font-smono text-[.78rem] uppercase tracking-[.06em] !text-spark" href="/start">Get started</a>
+  <a class="{{ mobsub }}" href="https://docs.bonfirenetworks.org">Documentation ↗</a>
+  <a class="{{ mobsub }}" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Code ↗</a>
+  <a class="{{ moblink }} {{ mobon if '/blog' in page.url }}" href="/blog">Blog</a>
+  <a class="{{ moblink }} font-smono text-[.78rem] tracking-[.06em] !text-spark" href="/start">Get started</a>
 </div>
 
 <script>

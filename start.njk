@@ -9,10 +9,10 @@ description: Everything you need to set up and configure a new Bonfire instance 
    diamond and hover tint read it.
    ============================================================ #}
 {% set route = "card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[30px] gap-3 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
-{% set who = "flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] uppercase text-[var(--acc)]" %}
+{% set who = "flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]" %}
 {% set fit = "font-smono text-[.7rem] text-ink-3 tracking-[.03em] border-t border-ink/[0.07] pt-3.5 mt-1.5" %}
-{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
-{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold uppercase tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
 
 <div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
   <div class="v2-ambient" aria-hidden="true"></div>
@@ -82,29 +82,29 @@ description: Everything you need to set up and configure a new Bonfire instance 
       {# try first strip #}
       <div class="flex flex-wrap items-center justify-between gap-[22px] mt-2 rounded-xl border border-dashed border-ink/15 px-7 py-[26px]">
         <p class="m-0 text-[.98rem] text-ink-2 max-w-[52rem]"><b class="text-ink font-semibold">Not sure yet? Try it first.</b> The campground is our open test instance — make an account, poke around, break things. Data gets reset now and then, so don't move in.</p>
-        <a class="font-smono text-[.74rem] tracking-[.05em] uppercase text-spark border-b border-spark/35 pb-0.5 whitespace-nowrap hover:border-spark" href="https://campground.bonfire.cafe/">Wander the campground →</a>
+        <a class="font-smono text-[.74rem] tracking-[.05em] text-spark border-b border-spark/35 pb-0.5 whitespace-nowrap hover:border-spark" href="https://campground.bonfire.cafe/">Wander the campground →</a>
       </div>
     </div></main>
 
     {# if you get stuck #}
     <section class="pt-14 pb-[76px]">
     <div class="max-w-[1180px] mx-auto px-7">
-      <p class="flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>If you get stuck</p>
+      <p class="flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>If you get stuck</p>
       <div class="grid grid-cols-1 min-[821px]:grid-cols-3 rounded-xl border border-ink/15 overflow-hidden">
         <div class="p-[22px]">
-          <div class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Read</div>
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Read</div>
           <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Documentation</h3>
           <p class="text-ink-2 text-[.9rem] mb-2.5">Installation, configuration, and everything on building with Bonfire.</p>
           <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://docs.bonfirenetworks.org">docs.bonfirenetworks.org →</a>
         </div>
         <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
-          <div class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Ask</div>
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Ask</div>
           <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">The chat</h3>
           <p class="text-ink-2 text-[.9rem] mb-2.5">Day-to-day talk with the team and other hosts. The easiest door: just say hello.</p>
           <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://matrix.to/#/%23bonfire-networks:matrix.org">Join us on Matrix →</a>
         </div>
         <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
-          <div class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Email</div>
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Email</div>
           <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Talk to a human</h3>
           <p class="text-ink-2 text-[.9rem] mb-2.5">Something else in mind? There are humans at the other end.</p>
           <a class="font-smono text-[.7rem] text-spark hover:underline" href="mailto:team@bonfire.cafe">team@bonfire.cafe →</a>

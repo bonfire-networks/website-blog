@@ -3,7 +3,7 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 
-{% set cardtag = "font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3 border border-ink/15 rounded-full px-2.5 py-1 hover:border-flame hover:text-spark" %}
+{% set cardtag = "font-smono text-[.62rem] tracking-[.1em] text-ink-3 border border-ink/15 rounded-full px-2.5 py-1 hover:border-flame hover:text-spark" %}
 
 <div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.62] antialiased selection:bg-ember selection:text-[#160c02]">
   <div class="v2-ambient" aria-hidden="true"></div>
@@ -21,7 +21,7 @@ templateClass: tmpl-post
         </div>
         {% endif %}
         <h1 class="font-disp font-semibold text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]">{{ title }}</h1>
-        <p class="mt-4 font-smono text-[.72rem] tracking-[.06em] uppercase text-ink-3">Published {{ date | readableDate }}</p>
+        <p class="mt-4 font-smono text-[.72rem] tracking-[.06em] text-ink-3">Published {{ date | readableDate }}</p>
       </div>
       <div class="max-w-[980px] mx-auto px-7 mt-8">
         {% if header_html %}
@@ -56,7 +56,7 @@ templateClass: tmpl-post
       {% if canonicalUrl %}
       <div class="mt-10 rounded-xl border border-dashed border-ink/15 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
         <p class="m-0 text-[.95rem] text-ink-2">Comments and boosts live on the fediverse.</p>
-        <a class="font-smono text-[.72rem] tracking-[.05em] uppercase text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="{{ canonicalUrl }}" target="_blank" rel="noopener">Join the discussion →</a>
+        <a class="font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="{{ canonicalUrl }}" target="_blank" rel="noopener">Join the discussion →</a>
       </div>
       {% endif %}
 
@@ -67,13 +67,13 @@ templateClass: tmpl-post
       <div class="grid grid-cols-1 min-[601px]:grid-cols-2 gap-3.5 mt-12">
         {%- if previousPost %}
         <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 hover:border-ink/25" href="{{ previousPost.url | url }}">
-          <span class="font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3">← Previous</span>
+          <span class="font-smono text-[.62rem] tracking-[.1em] text-ink-3">← Previous</span>
           <span class="font-disp font-[620] text-[1.02rem] leading-snug">{{ previousPost.data.title }}</span>
         </a>
         {%- else %}<span class="hidden min-[601px]:block"></span>{% endif %}
         {%- if nextPost %}
         <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 items-end text-right hover:border-ink/25" href="{{ nextPost.url | url }}">
-          <span class="font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3">Next →</span>
+          <span class="font-smono text-[.62rem] tracking-[.1em] text-ink-3">Next →</span>
           <span class="font-disp font-[620] text-[1.02rem] leading-snug">{{ nextPost.data.title }}</span>
         </a>
         {%- endif %}
