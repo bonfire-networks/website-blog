@@ -1,14 +1,18 @@
-const axios = require('axios');
+const Fetch = require('@11ty/eleventy-fetch');
 require('dotenv').config();
 
 async function fetchRepos(page = 1) {
-  const response = await axios.get(`https://api.github.com/orgs/bonfire-networks/repos?per_page=100&page=${page}`, {
-    headers: {
-      'Authorization': `token ${process.env.API_TOKEN}`,
-      'Accept': 'application/vnd.github.mercy-preview+json'
+  return Fetch(`https://api.github.com/orgs/bonfire-networks/repos?per_page=100&page=${page}`, {
+    duration: '1d',
+    type: 'json',
+    fetchOptions: {
+      headers: {
+        'Authorization': `token ${process.env.API_TOKEN}`,
+        'Accept': 'application/vnd.github.mercy-preview+json'
+      },
+      signal: AbortSignal.timeout(8000)
     }
   });
-  return response.data;
 }
 
 async function getAllReposWithTopic(topic) {

@@ -26,21 +26,25 @@ module.exports = function(eleventyConfig) {
   const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
   eleventyConfig.addNunjucksAsyncFilter('fetchRepoData', async (repo, callback) => {
-    const slug = typeof repo === 'string' ? repo : repo.name;
       try {
-        const response = await axios.get(`https://api.github.com/repos/bonfire-networks/${repo.name}`, {
-          headers: {
-            'Authorization': `token ${process.env.API_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
+        const data = await EleventyFetch(`https://api.github.com/repos/bonfire-networks/${repo.name}`, {
+          duration: '1d',
+          type: 'json',
+          fetchOptions: {
+            headers: {
+              'Authorization': `token ${API_TOKEN}`,
+              'Accept': 'application/vnd.github.v3+json'
+            },
+            signal: AbortSignal.timeout(8000)
           }
         });
-        callback(null, response.data);
+        callback(null, data);
       } catch (error) {
-        console.error('GitHub API error:', error);
-        callback(error);
+        console.error(`GitHub API error for ${repo.name}:`, error.message);
+        // Fall back to the data we already have so a slow/unreachable API
+        // doesn't fail (or hang) the whole build.
+        callback(null, repo);
       }
-    
-    
   });
 
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -73,12 +77,12 @@ module.exports = function(eleventyConfig) {
 
 
   eleventyConfig.addFilter('remoteMarkdown', async function(url) {
-    const response = await axios.get(url).catch(function (error) {
-      console.log(url)
-      console.log(error.toJSON());
-    }) || {};
+    const content = await fetchRemoteMarkdown(url).catch(function (error) {
+      console.error(`remoteMarkdown fetch failed for ${url}:`, error.message);
+      return "";
+    });
 
-    return md.render(response.data || "");
+    return md.render(content || "");
 });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
@@ -296,6 +300,9 @@ async function fetchRemoteMarkdown(url) {
   return EleventyFetch(url, {
     duration: "1d",
     type: "text",
+    fetchOptions: {
+      signal: AbortSignal.timeout(8000)
+    }
   });
 }
 

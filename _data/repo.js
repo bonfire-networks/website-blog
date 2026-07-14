@@ -1,4 +1,4 @@
-const axios = require('axios');
+const Fetch = require('@11ty/eleventy-fetch');
 require('dotenv').config();
 
 module.exports = async function() {
@@ -12,13 +12,17 @@ module.exports = async function() {
   }
 
   try {
-    const response = await axios.get(`https://api.github.com/repos/bonfire-networks/${repoName}`, {
-      headers: {
-        'Authorization': `token ${process.env.API_TOKEN}`,
-        'Accept': 'application/vnd.github.v3+json'
+    return await Fetch(`https://api.github.com/repos/bonfire-networks/${repoName}`, {
+      duration: '1d',
+      type: 'json',
+      fetchOptions: {
+        headers: {
+          'Authorization': `token ${process.env.API_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json'
+        },
+        signal: AbortSignal.timeout(8000)
       }
     });
-    return response.data;
   } catch (error) {
     console.error('GitHub API error: ' + (error.response?.data?.message || error.message));
     return {}; // Return an empty object in case of error
