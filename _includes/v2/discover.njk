@@ -1,0 +1,49 @@
+{# ============================================================
+   V3 · DISCOVER THE FEATURES — horizontal, scroll-snap carousel.
+   One card per feature area; "Learn more" deep-links to the matching
+   section on /features. Cards read --acc (icon, hover border, link).
+   Edit the `feats` array below; the markup loops over it.
+   ============================================================ #}
+
+{% set feats = [
+  { id: "post",       acc: "var(--color-flame)", icon: "ph-pen-nib",           name: "Post & converse",
+    text: "Short updates or long-form, with a composer that adapts and threads that branch instead of collapsing into a shouting match." },
+  { id: "feeds",      acc: "var(--color-corn)",  icon: "ph-funnel",            name: "Feeds & discovery",
+    text: "Build the feeds you want from the filters that matter to you. No mysterious algorithm deciding what you get to see." },
+  { id: "boundaries", acc: "var(--color-flame)", icon: "ph-lock-key",          name: "Circles & boundaries",
+    text: "Every post carries its own rules — who can see, reply or quote. The relationships you actually have, not one blunt switch." },
+  { id: "safety",     acc: "var(--color-leaf)",  icon: "ph-shield-check",      name: "Safety & moderation",
+    text: "Spread the load across many hands, share blocklists, and switch off the dark patterns that make a place hostile by default." },
+  { id: "shape",      acc: "var(--color-ember)", icon: "ph-puzzle-piece",      name: "Make it yours",
+    text: "Pluggable extensions all the way down — even the core. Add what you need, fork what almost fits, drop the rest." },
+  { id: "connect",    acc: "var(--color-corn)",  icon: "ph-broadcast",         name: "Federation & reach",
+    text: "From quiet and invite-only to the whole fediverse and beyond — you decide how far the doors swing open." },
+  { id: "data",       acc: "var(--color-leaf)",  icon: "ph-arrows-left-right", name: "Your data",
+    text: "Import and export everything, migrate instances without starting from scratch. Nothing here holds you hostage." },
+  { id: "beyond",     acc: "var(--color-flame)", icon: "ph-squares-four",      name: "Beyond the microblog",
+    text: "Events, polls, tasks, mutual aid, open science — blocks for what your community actually gathers to do." }
+] %}
+
+<section id="discover" class="py-[clamp(72px,9vw,130px)] border-t border-ink/[0.07] scroll-mt-[70px] [--gut:max(28px,calc((100vw-1140px)/2+28px))]">
+  <div class="max-w-[1140px] mx-auto px-7">
+    <p class="flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em] text-flame">Discover the features</p>
+    <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+      <h2 class="mt-[22px] max-w-[20ch] font-disp font-[560] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Everything your community needs, <span class="fire-text">nothing it doesn't.</span></h2>
+      <a class="shrink-0 inline-flex items-center gap-[9px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/features">See all features <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[44rem]">A kit of composable blocks — switch on what you need, leave out the rest. Swipe through the toolkit.</p>
+  </div>
+
+  {# full-bleed scroller: left padding aligns the first card to the container edge, cards scroll off to the right #}
+  <div class="mt-9 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pl-[var(--gut)] pr-[var(--gut)] scroll-pl-[var(--gut)] pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    {%- for f in feats %}
+    <a href="/features#{{ f.id }}" class="group snap-start shrink-0 flex w-[82vw] max-w-[320px] card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night p-6 hover:border-[color-mix(in_srgb,var(--acc)_45%,transparent)] transition-colors duration-300" style="--acc:{{ f.acc }}">
+      <span class="w-[46px] h-[46px] rounded-xl flex items-center justify-center text-[24px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_8%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_14%,transparent)]" aria-hidden="true"><i class="ph-duotone {{ f.icon }}"></i></span>
+      <h3 class="font-disp font-[620] text-[1.28rem] mt-[18px] mb-2 leading-[1.15]">{{ f.name }}</h3>
+      <p class="text-ink-2 text-[.93rem] leading-normal">{{ f.text }}</p>
+      <span class="mt-auto pt-6 inline-flex items-center gap-1.5 font-smono text-[.75rem] tracking-[.05em] text-[var(--acc)]">Learn more <span class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span></span>
+    </a>
+    {%- endfor %}
+    <span class="shrink-0 w-px" aria-hidden="true"></span>
+  </div>
+</section>
