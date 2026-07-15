@@ -1,237 +1,114 @@
 ---
 layout: layouts/base.njk
 title: Bonfire — Mosaic
-description: Not an agency, but a co-design partnership. Mosaic pairs your knowledge of your community with our federated software, and everything we build goes back into the commons.
+description: A community space that's yours to keep. We co-design it around how your community actually works, and you own it outright — forkable, exportable, impossible to take away.
 ---
 {% set eyebrow = "flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em]" %}
 {% set display = "mt-4 font-disp font-[560] text-[clamp(1.6rem,3vw,2.35rem)] leading-[1.06] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]" %}
 {% set bodyp = "mt-3.5 text-[1.02rem] text-ink-2 max-w-[42rem]" %}
 {% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-[1.4rem] py-[.85rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
 {% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-[1.4rem] py-[.85rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
-{% set ph = "border border-dashed border-ink/15 rounded-xl flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 p-[18px] leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] pointer-events-none [&_.tag]:text-flame" %}
-{% set phin = "flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 p-[18px] leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] pointer-events-none [&_.tag]:text-flame" %}
-{% set arrow = "w-9 h-9 flex-none grid place-items-center rounded-[7px] border border-ink/15 bg-night-2 text-ink font-smono text-base leading-none cursor-pointer disabled:opacity-25 disabled:cursor-default enabled:hover:border-flame enabled:hover:text-flame" %}
-{% set hint = "inline-flex items-center gap-2.5 font-smono text-[.68rem] font-bold tracking-[.16em] text-ink-3" %}
-{% set hscroll = "flex gap-5 overflow-x-auto pb-[18px] snap-x snap-proximity cursor-grab select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [-webkit-overflow-scrolling:touch] [overscroll-behavior-x:contain] [touch-action:pan-y]" %}
-{% set hcap = "mt-[13px] text-[.94rem] text-ink-2 [&_b]:font-disp [&_b]:text-ink [&_b]:font-semibold" %}
-{% set tile = "relative flex flex-col overflow-hidden rounded-xl border border-ink/15 bg-night-2" %}
-{% set tcap = "px-4 py-3.5 border-t border-ink/[0.07] text-[.9rem] text-ink-2 [&_b]:font-disp [&_b]:text-ink [&_b]:block [&_b]:mb-0.5" %}
-{% set ttype = "absolute top-2.5 left-2.5 z-[3] font-smono text-[.58rem] tracking-[.1em] text-ink-3 bg-night/75 border border-ink/15 rounded-[7px] px-[7px] py-[3px]" %}
+{% set phin = "flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 p-[18px] leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] [&_.tag]:text-flame [&_.tag]:block [&_.tag]:mb-1" %}
 
 <div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
   <div class="v2-ambient" aria-hidden="true"></div>
   <div class="relative z-[1]">
 
-    {# ===== hero ===== #}
-    <header class="pt-[34px] pb-2.5">
+    {# ===== hero — the ownership promise ===== #}
+    <header class="pt-[34px] pb-14">
     <div class="max-w-[1180px] mx-auto px-7">
       <p class="{{ eyebrow }} text-flame">Bonfire Mosaic</p>
-      <h1 class="mt-[18px] font-disp font-semibold text-[clamp(2rem,4.6vw,3.5rem)] leading-[1.05] text-balance max-w-[16ch] [font-variation-settings:'opsz'_96]">Not an agency. <span class="fire-text">A co-design partnership.</span></h1>
-      <p class="mt-5 text-[1.12rem] text-ink-2 max-w-[52ch]">You know how your community works: the roles, the rituals, the arguments, the things that go wrong at 11pm. We know how to build federated software. <b class="text-ink font-semibold">Mosaic is those two things in a room together</b>. Everything we make goes back into the commons.</p>
+      <h1 class="mt-[18px] font-disp font-semibold text-[clamp(2rem,4.8vw,3.6rem)] leading-[1.04] text-balance max-w-[15ch] [font-variation-settings:'opsz'_96]">A community space that's <span class="fire-text">yours to keep.</span></h1>
+      <p class="mt-5 text-[1.12rem] text-ink-2 max-w-[54ch]">Most communities online live on borrowed land — a platform that owns your members, sets the rules, raises the price, and can lock the doors whenever it likes. <b class="text-ink font-semibold">Mosaic is the opposite.</b> We co-design a space around how your community actually works, and you own it outright: forkable, exportable, impossible to take away.</p>
       <div class="flex flex-wrap gap-3 mt-[26px]">
         <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
         <a class="{{ btnline }}" href="#built">See what we've built</a>
       </div>
-      <p class="mt-5 font-smono text-[.72rem] text-ink-3">◼ For communities without a technical team, or who already have too many pots on the fire.</p>
+      <p class="mt-6 font-smono text-[.72rem] text-ink-3 max-w-[62ch] leading-[1.7]">◼ We work closely with a handful of communities a year. This isn't a template you configure — it's a space we build with you, and hand over as yours.</p>
 
-      {# hero gallery: the work #}
-      <div class="mt-[26px]" data-gal>
-        <div class="flex items-center gap-2.5 mb-3">
-          <button type="button" class="js-prev {{ arrow }}" aria-label="Previous">←</button>
-          <button type="button" class="js-next {{ arrow }}" aria-label="Next">→</button>
-          <span class="{{ hint }}">Spaces we've built </span>
-        </div>
-        <div class="{{ hscroll }}" data-hscroll>
-          <figure class="flex-none w-[clamp(320px,92vw,900px)] snap-start m-0"> 
-            <div class="{{ ph }} aspect-[16/10] w-full"><span class="max-w-[32ch]"><span class="tag">[ IMG — Jacobin ]</span><br>their community space, in their brand: a discussion under an article</span></div>
-            <figcaption class="{{ hcap }}"><b>Jacobin.</b> A magazine's readers, debating in a space they own.</figcaption>
-          </figure>
-          <figure class="flex-none w-[clamp(320px,92vw,900px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[16/10] w-full"><span class="max-w-[32ch]"><span class="tag">[ IMG — Open Science Network ]</span><br>a researcher profile with imported publications &amp; a paper unfolding with its DOI</span></div>
-            <figcaption class="{{ hcap }}"><b>Open Science Network.</b> Built with working scholars, around how research really happens.</figcaption>
-          </figure>
-          <figure class="flex-none w-[clamp(320px,92vw,900px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[16/10] w-full"><span class="max-w-[32ch]"><span class="tag">[ IMG — Mentaal.nl ]</span><br>a private, invite-only group with careful boundaries</span></div>
-            <figcaption class="{{ hcap }}"><b>Mentaal.nl.</b> A care coalition's private, self-governed home.</figcaption>
-          </figure>
-        </div>
-      </div>
+      {# hero visual — the finished, owned space #}
+      <figure class="mt-9 m-0">
+        <div class="{{ phin }} rounded-xl border border-dashed border-ink/15 aspect-[16/8] w-full"><span class="max-w-[36ch]"><span class="tag">[ IMG — a finished Mosaic space ]</span>a community's own space, in their own brand and language — recognisably theirs</span></div>
+      </figure>
     </div></header>
 
-    {# ===== how we work ===== #}
+    {# ===== rented vs owned — the core contrast ===== #}
     <section class="py-16 border-t border-ink/[0.07]">
     <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-flame">How we work</p>
-      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-px mt-[26px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
-        <div class="bg-night px-6 py-[26px]">
-          <span class="font-smono text-[.68rem] tracking-[.1em] uppercase text-ink-3">01 — before we build</span>
-          <h3 class="font-disp font-[620] text-[1.12rem] mt-[11px] mb-2">We listen first</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Research and workshops with your people, then we shape the space around what we learn. You decide how your community should run; we translate that into software.</p>
+      <p class="{{ eyebrow }} text-flame">Rented vs. owned</p>
+      <h2 class="{{ display }} max-w-[24ch]">Most communities online <span class="font-light">don't belong to the community.</span></h2>
+      <p class="{{ bodyp }}">There are really only two ways to run a community space. The difference isn't the feature list — it's who holds the keys.</p>
+
+      {% set liw = "grid grid-cols-[auto_1fr] gap-3.5" %}
+      {% set libh = "font-disp font-semibold block mb-[3px] text-[.98rem]" %}
+      {% set libt = "text-ink-2 text-[.92rem] leading-[1.55]" %}
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-2 gap-4 mt-[30px]">
+
+        {# rented — muted, cautionary #}
+        <div class="rounded-xl border border-ink/15 bg-night-2 px-[26px] py-7">
+          <span class="font-smono text-[.68rem] tracking-[.1em] uppercase text-ink-3">Renting space on a platform</span>
+          <div class="flex flex-col gap-[18px] mt-[18px]">
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-ink-3/70 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }} text-ink-2">You look like everyone else</b><span class="{{ libt }}">Same templates, same layout, same defaults. A client once told us every community on these tools ends up looking identical.</span></div></div>
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-ink-3/70 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }} text-ink-2">You live on their terms</b><span class="{{ libt }}">Prices, rules and features change without asking you. You adapt, or you leave and lose everything.</span></div></div>
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-ink-3/70 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }} text-ink-2">It can disappear</b><span class="{{ libt }}">Get cancelled, acquired or shut down, and your community goes with it. You were only ever a tenant.</span></div></div>
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-ink-3/70 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }} text-ink-2">You're the product</b><span class="{{ libt }}">Your members and their data are what's actually being sold. The space works for the platform, not for you.</span></div></div>
+          </div>
         </div>
-        <div class="bg-night px-6 py-[26px]">
-          <span class="font-smono text-[.68rem] tracking-[.1em] uppercase text-ink-3">02 — what you keep</span>
-          <h3 class="font-disp font-[620] text-[1.12rem] mt-[11px] mb-2">You own all of it</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">AGPL, forkable, yours. Run it yourself, or take it to another team, whenever you like. Nothing here is a hostage situation.</p>
+
+        {# owned — flame, the promise #}
+        <div class="rounded-xl border border-flame/30 bg-[linear-gradient(160deg,rgba(245,195,68,.08),rgba(255,223,130,.03))] px-[26px] py-7">
+          <span class="font-smono text-[.68rem] tracking-[.1em] uppercase text-flame">A space you own</span>
+          <div class="flex flex-col gap-[18px] mt-[18px]">
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }}">It looks like you</b><span class="{{ libt }}">Your identity, your structure, your language throughout. Recognisable as yours, and nowhere else's.</span></div></div>
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }}">You set the terms</b><span class="{{ libt }}">Governance, boundaries and moderation are yours to decide — and yours to change whenever your community changes.</span></div></div>
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }}">No one can take it away</b><span class="{{ libt }}">Open source, forkable, exportable. Move it to another team or run it yourself — walk out with everything, any time.</span></div></div>
+            <div class="{{ liw }}"><span class="w-2 h-2 mt-[7px] flex-none bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span><div><b class="{{ libh }}">It belongs to your community</b><span class="{{ libt }}">No one's harvesting your members. The space works for the people in it — full stop.</span></div></div>
+          </div>
         </div>
-        <div class="bg-night px-6 py-[26px]">
-          <span class="font-smono text-[.68rem] tracking-[.1em] uppercase text-ink-3">03 — after launch</span>
-          <h3 class="font-disp font-[620] text-[1.12rem] mt-[11px] mb-2">We stay</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Maintenance <em class="italic text-flame">is</em> the job. Hosting, updates, and a human to call when it breaks. The unglamorous part is the part that matters.</p>
-        </div>
+
       </div>
     </div></section>
 
-    {# ===== one system — bento ===== #}
-    <section id="system" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    {# ===== what "yours" actually means — value cards ===== #}
+    <section class="py-16 border-t border-ink/[0.07]">
     <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-flame">What you're actually getting</p>
-      <h2 class="{{ display }} max-w-[26ch]">Your website and your community, <span class="font-light">finally the same thing.</span></h2>
-      <p class="{{ bodyp }}">Most organisations run a website in one place, a community somewhere else, and a pile of tools in between, none of them talking. Mosaic is one system: the public face, the conversation, and the tools you rely on. All federated, all yours.</p>
+      <p class="{{ eyebrow }} text-flame">What "yours" actually means</p>
+      <h2 class="{{ display }} max-w-[24ch]">Not a place you rent. <span class="font-light">A place that's built to be yours.</span></h2>
 
-      <div class="grid grid-cols-1 min-[601px]:grid-cols-6 min-[901px]:grid-cols-12 gap-4 mt-[34px]">
-
-        {# the website, with the community physically overlapping it #}
-        <div class="{{ tile }} min-[601px]:col-span-6 min-[901px]:col-span-8">
-          <span class="{{ ttype }}">Browser screenshot</span>
-          <div class="flex items-center gap-[7px] px-3 py-[9px] bg-night-3 border-b border-ink/15">
-            <i class="w-[9px] h-[9px] rounded-full bg-[#33343d]"></i><i class="w-[9px] h-[9px] rounded-full bg-[#33343d]"></i><i class="w-[9px] h-[9px] rounded-full bg-[#33343d]"></i>
-            <span class="ml-2 font-smono text-[.62rem] text-ink-3 bg-black/30 px-2.5 py-[3px] rounded-full">yourcommunity.org</span>
-          </div>
-          <div class="flex-1 relative min-h-[300px]">
-            <div class="{{ phin }} absolute inset-0"><span class="max-w-[32ch]"><span class="tag">[ IMG — the website ]</span><br>public pages &amp; posts, in your own identity</span></div>
-            <div class="absolute right-4 bottom-4 w-[52%] min-w-[220px] z-[2] rounded-xl border border-ink/15 overflow-hidden bg-night-3 shadow-[0_24px_60px_-18px_rgba(0,0,0,.9)] max-[600px]:static max-[600px]:w-auto max-[600px]:min-w-0 max-[600px]:shadow-none max-[600px]:m-2.5">
-              <div class="font-smono text-[.58rem] tracking-[.1em] uppercase text-spark px-2.5 py-1.5 border-b border-ink/15">◼ the same system</div>
-              <div class="{{ phin }} aspect-[16/10]"><span class="max-w-[32ch]"><span class="tag">[ IMG — the community ]</span><br>a federated discussion under the article</span></div>
-            </div>
-          </div>
-          <div class="{{ tcap }}"><b>One system, not two.</b> The public face and the conversation, running on the same thing, not just a website with a forum bolted on the side.</div>
+      {% set vcard = "card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 flex flex-col gap-3 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
+      {% set vico = "text-[1.7rem] leading-none text-[var(--acc)]" %}
+      {% set vh = "font-disp font-[620] text-[1.18rem] leading-[1.14]" %}
+      {% set vt = "text-ink-2 text-[.95rem] m-0" %}
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 gap-4 mt-[30px]">
+        <div class="{{ vcard }}" style="--acc:var(--color-flame)">
+          <i class="ph-duotone ph-fingerprint {{ vico }}" aria-hidden="true"></i>
+          <h3 class="{{ vh }}">Shaped around your community</h3>
+          <p class="{{ vt }}">We start from how you already gather — your roles, rituals and rules — and build the space to match. It looks and works like nowhere else, because it's made for one community: yours.</p>
         </div>
-
-        {# mobile crop #}
-        <div class="{{ tile }} min-[601px]:col-span-3 min-[901px]:col-span-4">
-          <span class="{{ ttype }}">Mobile crop</span>
-          <div class="{{ phin }} flex-1 aspect-[3/4]"><span class="max-w-[32ch]"><span class="tag">[ IMG — on a phone ]</span><br>a member reading &amp; replying, on a slow connection</span></div>
-          <div class="{{ tcap }}"><b>Wherever they are.</b> Works on old phones and bad signal. because that's where most of your community actually is.</div>
+        <div class="{{ vcard }}" style="--acc:var(--color-flame)">
+          <i class="ph-duotone ph-key {{ vico }}" aria-hidden="true"></i>
+          <h3 class="{{ vh }}">Owned outright, not rented</h3>
+          <p class="{{ vt }}">Open source and yours to keep — forkable, exportable, no per-seat trap and no subscription you're locked into. Take it to another team or run it yourself whenever you decide.</p>
         </div>
-
-        {# logo strip #}
-        <div class="{{ tile }} min-[601px]:col-span-6 min-[901px]:col-span-5 justify-center">
-          <span class="{{ ttype }}">Logo strip</span>
-          <div class="flex flex-wrap gap-2.5 px-[22px] py-[26px]">
-            {% for l in ["Ghost", "WordPress", "Drupal", "ORCID", "Mastodon", "Bluesky", "Matrix", "your CRM"] %}<span class="font-smono text-[.76rem] text-ink-2 border border-ink/15 rounded-[7px] px-3 py-2">{{ l }}</span>{% endfor %}
-          </div>
-          <div class="{{ tcap }}"><b>Bring what you already use.</b> Keep the tools that work; we wire them in. Anything missing becomes a new block.</div>
+        <div class="{{ vcard }}" style="--acc:var(--color-corn)">
+          <i class="ph-duotone ph-browsers {{ vico }}" aria-hidden="true"></i>
+          <h3 class="{{ vh }}">Your site and your community, one thing</h3>
+          <p class="{{ vt }}">The public face and the conversation on the same system, in the same identity — not a website with a forum bolted on the side. Members move between them without noticing a seam.</p>
         </div>
-
-        {# detail crop #}
-        <div class="{{ tile }} min-[601px]:col-span-3 min-[901px]:col-span-3">
-          <span class="{{ ttype }}">Detail crop</span>
-          <div class="{{ phin }} flex-1 aspect-square"><span class="max-w-[32ch]"><span class="tag">[ IMG — zoomed ]</span><br>a reply arriving from a Mastodon account</span></div>
-          <div class="{{ tcap }}"><b>No new account.</b> They reply from wherever they already are.</div>
-        </div>
-
-        {# typographic tile — text as the image #}
-        <div class="{{ tile }} min-[601px]:col-span-6 min-[901px]:col-span-4 justify-center px-6 py-[26px] border-flame/30 bg-[linear-gradient(150deg,rgba(245,195,68,.1),rgba(255,223,130,.05))]">
-          <span class="{{ ttype }}">Typographic tile</span>
-          <div>
-            <div class="font-disp font-[640] text-[clamp(2.4rem,4vw,3.4rem)] leading-none tracking-[-.03em] text-flame">0</div>
-            <div class="text-ink-2 text-[.95rem] mt-2">extra sign-ups for anyone already on the fediverse.</div>
-            <div class="h-px bg-ink/15 my-[18px]"></div>
-            <div class="font-disp font-[640] text-[clamp(2.4rem,4vw,3.4rem)] leading-none tracking-[-.03em] text-flame">0</div>
-            <div class="text-ink-2 text-[.95rem] mt-2">cookie banners. Privacy-friendly analytics, nothing sold to anyone.</div>
-          </div>
-        </div>
-
-        {# diagram #}
-        <div class="{{ tile }} min-[601px]:col-span-6 min-[901px]:col-span-7">
-          <span class="{{ ttype }}">Diagram</span>
-          <div class="{{ phin }} flex-1 aspect-[16/7]"><span class="max-w-[32ch]"><span class="tag">[ DIAGRAM — one way in ]</span><br>a member moving site → community → back, signed in once · the seam that isn't there</span></div>
-          <div class="{{ tcap }}"><b>One way in.</b> Members move between your site and your community without noticing a seam.</div>
-        </div>
-
-        {# woodcut art — breathing room #}
-        <div class="{{ tile }} min-[601px]:col-span-6 min-[901px]:col-span-5">
-          <span class="{{ ttype }}">Illustration</span>
-          <div class="{{ phin }} flex-1 aspect-video"><span class="max-w-[32ch]"><span class="tag">[ ART — woodcut ]</span><br>the gathering at the fire · texture, not a UI</span></div>
-          <div class="{{ tcap }}"><b>And it's built by a network of Bonfire developers</b>, not an agency with a sales team. Which is also why it costs what it costs.</div>
-        </div>
-
-      </div>
-    </div></section>
-
-    {# ===== proof ===== #}
-    <section id="built" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
-    <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-flame">Who we've built with</p>
-      <h2 class="{{ display }} max-w-[24ch]">Three communities. <span class="font-light">Three completely different spaces.</span></h2>
-      <p class="{{ bodyp }}">Same foundation, shaped three ways, because a magazine, a research network and a care coalition need almost nothing in common.</p>
-
-      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-[18px] mt-[26px]">
-        <a class="card rounded-xl overflow-hidden border border-ink/15 hover:border-ink/25" href="/case-studies/jacobin/">
-          <div class="{{ phin }} aspect-video border-b border-dashed border-ink/15"><span><span class="tag">[ CASE ]</span><br>Jacobin</span></div>
-          <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
-            <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A magazine</span>
-            <h3 class="font-disp font-[620] text-[1.18rem] leading-[1.12]">From audience to community</h3>
-            <p class="text-ink-2 text-[.93rem] m-0">Readers who debate and belong, not a comment box. Publishing stayed on their Ghost site; the community lives on Bonfire, wearing their brand.</p>
-            <div class="mt-auto pt-[13px] border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between gap-2"><b class="text-ink font-normal">3,000+ readers</b><span class="text-spark">Read →</span></div>
-          </div>
-        </a>
-        <div class="card rounded-xl overflow-hidden border border-ink/15">
-          <div class="{{ phin }} aspect-video border-b border-dashed border-ink/15"><span><span class="tag">[ CASE ]</span><br>Open Science Network</span></div>
-          <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
-            <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A research network</span>
-            <h3 class="font-disp font-[620] text-[1.18rem] leading-[1.12]">A commons for scholars</h3>
-            <p class="text-ink-2 text-[.93rem] m-0">Co-designed with working researchers: ORCID sign-in, publications on your profile, papers that unfold with their DOI.</p>
-            <div class="mt-auto pt-[13px] border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between gap-2"><b class="text-ink font-normal">Built with academics</b><span class="text-spark">Read →</span></div>
-          </div>
-        </div>
-        <div class="card rounded-xl overflow-hidden border border-ink/15">
-          <div class="{{ phin }} aspect-video border-b border-dashed border-ink/15"><span><span class="tag">[ CASE ]</span><br>Mentaal.nl</span></div>
-          <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
-            <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A mental-health network</span>
-            <h3 class="font-disp font-[620] text-[1.18rem] leading-[1.12]">A safe space that's theirs</h3>
-            <p class="text-ink-2 text-[.93rem] m-0">Private, invite-only, carefully moderated. Safety and governance designed in from the first workshop, not bolted on.</p>
-            <div class="mt-auto pt-[13px] border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between gap-2"><b class="text-ink font-normal">500+ members</b><span class="text-spark">Read →</span></div>
-          </div>
+        <div class="{{ vcard }}" style="--acc:var(--color-corn)">
+          <i class="ph-duotone ph-share-network {{ vico }}" aria-hidden="true"></i>
+          <h3 class="{{ vh }}">Connected on your own terms</h3>
+          <p class="{{ vt }}">Federated with the wider open social web, so your members can reach the world — but only as much as you choose. Open the doors wide, or keep it private and invite-only.</p>
         </div>
       </div>
     </div></section>
 
-    {# ===== process ===== #}
+    {# ===== how we build it with you ===== #}
     <section id="how" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-corn">How it goes</p>
-      <h2 class="{{ display }} max-w-[22ch]">What actually happens <span class="font-light">if you call us.</span></h2>
-
-      <div class="mt-[26px]" data-gal>
-        <div class="flex items-center gap-2.5 mb-3">
-          <button type="button" class="js-prev {{ arrow }}" aria-label="Previous">←</button>
-          <button type="button" class="js-next {{ arrow }}" aria-label="Next">→</button>
-          <span class="{{ hint }}">Co-design, in the room — drag ⟶</span>
-        </div>
-        <div class="{{ hscroll }}" data-hscroll>
-          <figure class="flex-none w-[clamp(240px,70vw,360px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[4/5] w-full"><span class="max-w-[32ch]"><span class="tag">[ PHOTO ]</span><br>a workshop with the community</span></div>
-            <figcaption class="{{ hcap }}"><b>Listening.</b> Interviews and workshops with the people who'll actually use it.</figcaption>
-          </figure>
-          <figure class="flex-none w-[clamp(240px,70vw,360px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[4/5] w-full"><span class="max-w-[32ch]"><span class="tag">[ PHOTO ]</span><br>sticky notes / mapping how a community decides</span></div>
-            <figcaption class="{{ hcap }}"><b>Mapping.</b> Who decides what and how, before a line of code is written.</figcaption>
-          </figure>
-          <figure class="flex-none w-[clamp(240px,70vw,360px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[4/5] w-full"><span class="max-w-[32ch]"><span class="tag">[ IMG ]</span><br>sketches &amp; wireframes of the space</span></div>
-            <figcaption class="{{ hcap }}"><b>Sketching.</b> Flows and screens, argued over together.</figcaption>
-          </figure>
-          <figure class="flex-none w-[clamp(240px,70vw,360px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[4/5] w-full"><span class="max-w-[32ch]"><span class="tag">[ IMG ]</span><br>the built space, side by side with the sketch</span></div>
-            <figcaption class="{{ hcap }}"><b>Building.</b> Mostly assembling blocks that already exist.</figcaption>
-          </figure>
-          <figure class="flex-none w-[clamp(240px,70vw,360px)] snap-start m-0">
-            <div class="{{ ph }} aspect-[4/5] w-full"><span class="max-w-[32ch]"><span class="tag">[ PHOTO ]</span><br>training session with facilitators &amp; mods</span></div>
-            <figcaption class="{{ hcap }}"><b>Handing over.</b> Training the people who'll run it day to day.</figcaption>
-          </figure>
-        </div>
-      </div>
+      <p class="{{ eyebrow }} text-corn">How we build it with you</p>
+      <h2 class="{{ display }} max-w-[24ch]">You know your community. <span class="font-light">We know the software.</span></h2>
+      <p class="{{ bodyp }}">Mosaic is those two things in a room together. You make the calls about how your community should run; we work out what that means in software — and everything we build goes back into the commons.</p>
 
       {% set stepn = "font-smono text-[.75rem] text-flame tracking-[.08em]" %}
       {% set steph = "font-disp font-[620] text-[1.25rem]" %}
@@ -257,42 +134,51 @@ description: Not an agency, but a co-design partnership. Mosaic pairs your knowl
         <div class="{{ steprow }}">
           <span class="{{ stepn }}">04</span>
           <div><h3 class="{{ steph }}">We hand it over</h3><div class="{{ stepw }}">Launch</div></div>
-          <p class="{{ stepp }}">Your brand, your language, your governance, and training for the people who'll actually run it day to day: your facilitators and your moderators.</p>
+          <p class="{{ stepp }}">Your brand, your language, your governance, and training for the people who'll actually run it day to day: your facilitators and your moderators. It's yours from here.</p>
         </div>
         <div class="{{ steprow }}">
           <span class="{{ stepn }}">05</span>
           <div><h3 class="{{ steph }}">We keep it alive</h3><div class="{{ stepw }}">Ongoing</div></div>
-          <p class="{{ stepp }}">Hosting, updates, backups, and a human to call. Or we teach your team to run it themselves and step back. Both are fine, what's not fine is leaving you stranded.</p>
+          <p class="{{ stepp }}">Hosting, updates, backups, and a human to call. Or we teach your team to run it themselves and step back. Both are fine — what's not fine is leaving you stranded.</p>
         </div>
       </div>
     </div></section>
 
-    {# ===== what you get ===== #}
-    <section class="py-16 border-t border-ink/[0.07]">
+    {# ===== proof ===== #}
+    <section id="built" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-flame">What you end up with</p>
-      <h2 class="{{ display }} max-w-[20ch]">A space that's <span class="font-light">actually yours.</span></h2>
+      <p class="{{ eyebrow }} text-flame">Who we've built with</p>
+      <h2 class="{{ display }} max-w-[24ch]">Three communities. <span class="font-light">Three completely different spaces.</span></h2>
+      <p class="{{ bodyp }}">Same foundation, shaped three ways — because a magazine, a research network and a care coalition need almost nothing in common. Each one owns what we built together.</p>
 
-      <p class="{{ bodyp }} mb-1">A mosaic of small decisions: colours, words, roles, the shape of the front page, that add up to somewhere your members recognise as theirs.</p>
-      {% set mtile = "rounded-xl border border-ink/15 overflow-hidden relative flex items-center justify-center text-center p-3.5 text-ink-3 font-smono text-[.7rem] leading-[1.5] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)] [&_.tag]:text-flame [&_.tag]:block [&_.tag]:mb-1" %}
-      <div class="grid grid-cols-2 min-[761px]:grid-cols-6 auto-rows-[120px] min-[761px]:auto-rows-[140px] gap-3 mt-[26px]">
-        <div class="{{ mtile }} col-span-2 row-span-2 min-[761px]:col-span-3"><span><span class="tag">[ IMG — big ]</span>the finished space in their own colours &amp; type</span></div>
-        <div class="{{ mtile }} col-span-2 min-[761px]:col-span-3"><span><span class="tag">[ IMG — wide ]</span>branded masthead &amp; logo</span></div>
-        <div class="{{ mtile }} col-span-1"><span><span class="tag">[ IMG ]</span>icon</span></div>
-        <div class="{{ mtile }} col-span-1 min-[761px]:col-span-2"><span><span class="tag">[ IMG ]</span>tailored onboarding</span></div>
-        <div class="{{ mtile }} col-span-2 min-[761px]:col-span-4"><span><span class="tag">[ IMG — wide ]</span>the space in their own language</span></div>
-        <div class="{{ mtile }} col-span-1 min-[761px]:col-span-2"><span><span class="tag">[ IMG ]</span>roles &amp; moderation, set up for them</span></div>
-      </div>
-
-      {% set get = "grid grid-cols-[auto_1fr] gap-3.5 rounded-xl border border-ink/15 p-[18px]" %}
-      {% set getb = "w-2 h-2 mt-[7px] bg-spark [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" %}
-      <div class="grid grid-cols-1 min-[761px]:grid-cols-2 gap-3.5 mt-6">
-        <div class="{{ get }}"><span class="{{ getb }}" aria-hidden="true"></span><div><b class="font-disp font-semibold block mb-[3px] text-base">A space that looks like you</b><span class="text-ink-2 text-[.92rem]">Your name, colours, typography and language throughout. Members feel at home, not on a platform.</span></div></div>
-        <div class="{{ get }}"><span class="{{ getb }}" aria-hidden="true"></span><div><b class="font-disp font-semibold block mb-[3px] text-base">Governance set up around how you decide</b><span class="text-ink-2 text-[.92rem]">Roles, circles, boundaries and moderation configured for your community, not a generic default.</span></div></div>
-        <div class="{{ get }}"><span class="{{ getb }}" aria-hidden="true"></span><div><b class="font-disp font-semibold block mb-[3px] text-base">Integrations with what you already use</b><span class="text-ink-2 text-[.92rem]">Your CMS, your membership list, your identity provider. Keep the tools that work.</span></div></div>
-        <div class="{{ get }}"><span class="{{ getb }}" aria-hidden="true"></span><div><b class="font-disp font-semibold block mb-[3px] text-base">Hosting, or the freedom not to</b><span class="text-ink-2 text-[.92rem]">We'll host it (with Co-op Cloud), or hand you everything to run it yourself. Your call, always.</span></div></div>
-        <div class="{{ get }}"><span class="{{ getb }}" aria-hidden="true"></span><div><b class="font-disp font-semibold block mb-[3px] text-base">Trained facilitators &amp; moderators</b><span class="text-ink-2 text-[.92rem]">The people who hold your community together, taught the tools before launch day.</span></div></div>
-        <div class="{{ get }}"><span class="{{ getb }}" aria-hidden="true"></span><div><b class="font-disp font-semibold block mb-[3px] text-base">Something you own, not rent</b><span class="text-ink-2 text-[.92rem]">No per-seat pricing, no subscription you're trapped in, no bill that quietly triples once you depend on it. AGPL, forkable, exportable.</span></div></div>
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-[18px] mt-[26px]">
+        <a class="card rounded-xl overflow-hidden border border-ink/15 hover:border-ink/25" href="/case-studies/jacobin/">
+          <div class="{{ phin }} aspect-video border-b border-dashed border-ink/15"><span><span class="tag">[ CASE ]</span>Jacobin</span></div>
+          <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
+            <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A magazine</span>
+            <h3 class="font-disp font-[620] text-[1.18rem] leading-[1.12]">From audience to community</h3>
+            <p class="text-ink-2 text-[.93rem] m-0">Readers who debate and belong, not a comment box. Publishing stayed on their Ghost site; the community lives on Bonfire, wearing their brand.</p>
+            <div class="mt-auto pt-[13px] border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between gap-2"><b class="text-ink font-normal">3,000+ readers</b><span class="text-spark">Read →</span></div>
+          </div>
+        </a>
+        <div class="card rounded-xl overflow-hidden border border-ink/15">
+          <div class="{{ phin }} aspect-video border-b border-dashed border-ink/15"><span><span class="tag">[ CASE ]</span>Open Science Network</span></div>
+          <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
+            <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A research network</span>
+            <h3 class="font-disp font-[620] text-[1.18rem] leading-[1.12]">A commons for scholars</h3>
+            <p class="text-ink-2 text-[.93rem] m-0">Co-designed with working researchers: ORCID sign-in, publications on your profile, papers that unfold with their DOI.</p>
+            <div class="mt-auto pt-[13px] border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between gap-2"><b class="text-ink font-normal">Built with academics</b><span class="text-spark">Read →</span></div>
+          </div>
+        </div>
+        <div class="card rounded-xl overflow-hidden border border-ink/15">
+          <div class="{{ phin }} aspect-video border-b border-dashed border-ink/15"><span><span class="tag">[ CASE ]</span>Mentaal.nl</span></div>
+          <div class="flex flex-col gap-[9px] flex-1 px-5 py-[22px]">
+            <span class="font-smono text-[.66rem] tracking-[.12em] uppercase text-flame">A mental-health network</span>
+            <h3 class="font-disp font-[620] text-[1.18rem] leading-[1.12]">A safe space that's theirs</h3>
+            <p class="text-ink-2 text-[.93rem] m-0">Private, invite-only, carefully moderated. Safety and governance designed in from the first workshop, not bolted on.</p>
+            <div class="mt-auto pt-[13px] border-t border-ink/[0.07] font-smono text-[.72rem] text-ink-3 flex justify-between gap-2"><b class="text-ink font-normal">500+ members</b><span class="text-spark">Read →</span></div>
+          </div>
+        </div>
       </div>
     </div></section>
 
@@ -302,7 +188,7 @@ description: Not an agency, but a co-design partnership. Mosaic pairs your knowl
       <p class="{{ eyebrow }} text-spark">The part no agency can offer</p>
       <div class="rounded-xl border border-spark/35 bg-spark/[0.04] px-8 py-[34px] mt-[26px]">
         <h3 class="font-disp font-[620] text-2xl mb-3">What you fund, everyone inherits. What others funded, you get for free.</h3>
-        <p class="text-ink-2 text-[1.02rem] max-w-[46rem] m-0">Everything built in Mosaic is open source and goes back into the commons. That changes the economics completely. You're not buying a product that only you own.</p>
+        <p class="text-ink-2 text-[1.02rem] max-w-[46rem] m-0">Everything built in Mosaic is open source and goes back into the commons. That changes the economics completely — you're not buying a product that only you own, you're funding shared ground and getting a space of your own out of it.</p>
         <div class="grid grid-cols-1 min-[761px]:grid-cols-2 gap-[18px] min-[761px]:gap-7 mt-6">
           <div class="border-l-2 border-spark pl-[18px]">
             <b class="font-disp font-semibold block mb-[5px]">You inherit what others already paid for</b>
@@ -310,47 +196,49 @@ description: Not an agency, but a co-design partnership. Mosaic pairs your knowl
           </div>
           <div class="border-l-2 border-spark pl-[18px]">
             <b class="font-disp font-semibold block mb-[5px]">What you fund outlives you</b>
-            <span class="text-ink-2 text-[.95rem]">The block we build for your need becomes available to every community after you. Your budget doesn't just buy your space, it grows the commons everyone builds on.</span>
+            <span class="text-ink-2 text-[.95rem]">The block we build for your need becomes available to every community after you. Your budget doesn't just buy your space — it grows the commons everyone builds on.</span>
           </div>
         </div>
-        <p class="font-disp font-normal text-[1.25rem] mt-[26px] text-ink">“You're not buying software. You're funding a commons, and getting a space of your own out of it.”</p>
+        <p class="font-disp font-normal text-[1.25rem] mt-[26px] text-ink">"You're not buying software. You're funding a commons, and getting a space of your own out of it."</p>
       </div>
     </div></section>
 
-    {# ===== packages ===== #}
+    {# ===== ways to work together ===== #}
     <section id="packages" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
       <p class="{{ eyebrow }} text-corn-2">Ways to work together</p>
-      <h2 class="{{ display }} max-w-[22ch]">Three routes, depending on <span class="font-light">what you need.</span></h2>
+      <h2 class="{{ display }} max-w-[22ch]">However far you want to go, <span class="font-light">you end up owning it.</span></h2>
+      <p class="{{ bodyp }}">Every route is bespoke — we don't do per-seat plans or off-the-shelf tiers. Where you land depends on how much your community needs shaped, not on a pricing table.</p>
 
-      {% set pkg = "card rounded-xl border border-ink/15 px-6 py-[26px] gap-[9px]" %}
+      {% set pkg = "card rounded-xl border border-ink/15 px-6 py-[26px] gap-[9px] flex flex-col" %}
       {% set pkgwho = "font-smono text-[.66rem] tracking-[.1em] uppercase text-corn" %}
+      {% set pkgfit = "mt-auto pt-3.5 font-smono text-[.7rem] text-ink-3 border-t border-ink/[0.07]" %}
       <div class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-4 mt-[26px]">
-        <div class="{{ pkg }}">
-          <span class="{{ pkgwho }}">You want Bonfire, as it is</span>
-          <h3 class="font-disp font-[620] text-[1.25rem] mt-1">Hosted</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">You've seen it, you like it, you just don't want to run a server.</p>
-          <ul class="list-disc mt-2 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-1"><li>Managed hosting, updates &amp; backups</li><li>Your logo, colours &amp; domain</li><li>Someone to email when it breaks</li></ul>
-          <div class="mt-auto pt-3.5 font-smono text-[.7rem] text-ink-3">◼ Live in days · from €— /month</div>
-        </div>
         <div class="{{ pkg }}">
           <span class="{{ pkgwho }}">You need it to fit</span>
           <h3 class="font-disp font-[620] text-[1.25rem] mt-1">Tailored space</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Bonfire wearing your identity, with your governance and the integrations you rely on.</p>
+          <p class="text-ink-2 text-[.94rem] m-0">Bonfire wearing your identity, with your governance and the integrations you already rely on.</p>
           <ul class="list-disc mt-2 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-1"><li>Workshops with your team</li><li>Custom identity, roles &amp; boundaries</li><li>Integrations (CMS, membership, SSO)</li><li>Training + hosting</li></ul>
-          <div class="mt-auto pt-3.5 font-smono text-[.7rem] text-ink-3">◼ Weeks · fixed quote</div>
+          <div class="{{ pkgfit }}">◼ Weeks · scoped to a fixed quote</div>
         </div>
         <div class="{{ pkg }}">
-          <span class="{{ pkgwho }}">You need something that doesn't exist</span>
+          <span class="{{ pkgwho }}">You need something new</span>
           <h3 class="font-disp font-[620] text-[1.25rem] mt-1">Co-design partnership</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Your community needs capabilities nobody's built yet, the way researchers needed DOIs.</p>
-          <ul class="list-disc mt-2 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-1"><li>Community research &amp; co-design</li><li>New blocks, built with you</li><li>Contributed back to the commons</li><li>Often grant-funded, we'll help you apply</li></ul>
-          <div class="mt-auto pt-3.5 font-smono text-[.7rem] text-ink-3">◼ Months · scoped together</div>
+          <p class="text-ink-2 text-[.94rem] m-0">Your community needs capabilities nobody's built yet — the way researchers needed DOIs on their profiles.</p>
+          <ul class="list-disc mt-2 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-1"><li>Community research &amp; co-design</li><li>New blocks, built with you</li><li>Contributed back to the commons</li><li>Often grant-funded — we'll help you apply</li></ul>
+          <div class="{{ pkgfit }}">◼ Months · scoped together</div>
+        </div>
+        <div class="{{ pkg }}">
+          <span class="{{ pkgwho }}">You want us to stay</span>
+          <h3 class="font-disp font-[620] text-[1.25rem] mt-1">Ongoing partnership</h3>
+          <p class="text-ink-2 text-[.94rem] m-0">The unglamorous part that keeps a space alive — kept up by the people who built it with you.</p>
+          <ul class="list-disc mt-2 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-1"><li>Hosting, updates &amp; backups</li><li>A human to call when it breaks</li><li>New features as your community grows</li><li>Or a clean handover, whenever you want</li></ul>
+          <div class="{{ pkgfit }}">◼ Ongoing · a retainer, not a lock-in</div>
         </div>
       </div>
 
       <div class="rounded-xl border border-dashed border-ink/15 px-[26px] py-6 mt-[22px]">
-        <p class="m-0 text-ink-2 text-base"><b class="text-ink font-semibold">Tell us your budget and we'll tell you honestly what's possible</b>, including when the answer is “you don't need us, here's how to do it yourself.” We'd rather send you away with a working plan than take money for a project that shouldn't happen.</p>
+        <p class="m-0 text-ink-2 text-base"><b class="text-ink font-semibold">Tell us your budget and we'll tell you honestly what's possible</b> — including when the answer is "you don't need us, here's how to do it yourself." We'd rather send you away with a working plan than take money for a project that shouldn't happen.</p>
       </div>
     </div></section>
 
@@ -359,6 +247,7 @@ description: Not an agency, but a co-design partnership. Mosaic pairs your knowl
     <div class="max-w-[1180px] mx-auto px-7">
       <p class="{{ eyebrow }} text-flame justify-center">Let's talk</p>
       <h2 class="{{ display }} mx-auto max-w-[20ch]">Tell us how your community actually works.</h2>
+      <p class="mx-auto mt-3.5 text-[1.02rem] text-ink-2 max-w-[46ch]">We take on only a handful of communities a year, and we start by listening. If it's a fit, you walk away owning something no one can take from you.</p>
       <div class="flex flex-wrap justify-center gap-3 mt-[26px]">
         <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
         <a class="{{ btnline }}" href="#built">See what we've built</a>
@@ -368,48 +257,3 @@ description: Not an agency, but a co-design partnership. Mosaic pairs your knowl
 
   </div>
 </div>
-
-<script>
-(function(){
-"use strict";
-/* galleries: arrows + drag-to-scroll; snap pauses while dragging */
-document.querySelectorAll('[data-gal]').forEach(function(g){
-  var s=g.querySelector('[data-hscroll]');if(!s)return;
-  var prev=g.querySelector('.js-prev'),next=g.querySelector('.js-next');
-  function step(){var c=s.querySelector('figure');return c?c.getBoundingClientRect().width+20:s.clientWidth*0.8;}
-  function sync(){if(!prev)return;prev.disabled=s.scrollLeft<=2;next.disabled=s.scrollLeft>=(s.scrollWidth-s.clientWidth-2);}
-  if(prev&&next){
-    prev.addEventListener('click',function(){s.scrollBy({left:-step(),behavior:'smooth'});});
-    next.addEventListener('click',function(){s.scrollBy({left:step(),behavior:'smooth'});});
-  }
-  s.addEventListener('scroll',sync,{passive:true});
-  window.addEventListener('resize',sync);
-  sync();
-
-  var down=false,x0=0,l0=0,moved=0;
-  s.addEventListener('pointerdown',function(e){
-    if(e.button!==0)return;
-    down=true;moved=0;x0=e.clientX;l0=s.scrollLeft;
-    s.classList.add('cursor-grabbing','snap-none');
-    try{s.setPointerCapture(e.pointerId);}catch(_){}
-    e.preventDefault();
-  });
-  s.addEventListener('pointermove',function(e){
-    if(!down)return;
-    var dx=e.clientX-x0;moved=Math.abs(dx);
-    s.scrollLeft=l0-dx;
-    e.preventDefault();
-  });
-  function end(e){
-    if(!down)return;
-    down=false;s.classList.remove('cursor-grabbing','snap-none');
-    try{s.releasePointerCapture(e.pointerId);}catch(_){}
-    sync();
-  }
-  s.addEventListener('pointerup',end);
-  s.addEventListener('pointercancel',end);
-  s.addEventListener('click',function(e){if(moved>6)e.preventDefault();},true);
-  s.addEventListener('dragstart',function(e){e.preventDefault();});
-});
-})();
-</script>
