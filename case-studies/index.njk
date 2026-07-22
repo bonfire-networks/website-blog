@@ -131,7 +131,7 @@ description: The goal each one wanted, the space they shaped, and the iteration 
       {% set cfoot = "mt-auto pt-3 border-t border-ink/[0.07] flex items-center gap-2.5 flex-wrap font-smono text-[.68rem] text-ink-3" %}
       <div class="grid grid-cols-1 min-[861px]:grid-cols-2 gap-4 mt-[26px]">
 
-        <div class="{{ ccard }}">
+        {# <div class="{{ ccard }}">
           <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Mentaal — a private, invite-only group with careful boundaries</span></div>
           <div class="{{ cbody }}">
             <span class="{{ cmeta }}">Mental health · co-designed with us</span>
@@ -139,6 +139,17 @@ description: The goal each one wanted, the space they shaped, and the iteration 
             <p class="{{ cgoal }}">“An archipelago of places where people can be honest about their mental health, without it being public, permanent, or profitable to anyone.”</p>
             <p class="{{ chow }}">Private by default and governed by the people it serves, with safety designed in rather than switched on afterwards. Co-designed with Ypsilon.</p>
             <div class="{{ cfoot }}"><span>◼ In co-design</span></div>
+          </div>
+        </div> #}
+
+        <div class="{{ ccard }}">
+          <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Open Science Network — a researcher profile with publications &amp; DOIs</span></div>
+          <div class="{{ cbody }}">
+            <span class="{{ cmeta }}">Research · <span class="text-spark">co-designed together</span></span>
+            <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Open Science Network</h3>
+            <p class="{{ cgoal }}">“Scholarly conversations that don't evaporate. Findings, arguments and data that stay open, citable and out of the journals' hands.”</p>
+            <p class="{{ chow }}">Researchers shaped Bonfire around how science actually works: sign in with ORCID, publications on your profile, papers that unfold with their DOI.</p>
+            <div class="{{ cfoot }}"><span>◼ In development</span><a class="ml-auto text-spark hover:underline" href="https://openscience.network" target="_blank" rel="noopener noreferrer">openscience.network ↗</a></div>
           </div>
         </div>
 
@@ -153,16 +164,7 @@ description: The goal each one wanted, the space they shaped, and the iteration 
           </div>
         </div>
 
-        <div class="{{ ccard }}">
-          <div class="{{ cshot }}"><span><span class="tag">[ SHOT ]</span><br>Open Science Network — a researcher profile with publications &amp; DOIs</span></div>
-          <div class="{{ cbody }}">
-            <span class="{{ cmeta }}">Research · <span class="text-spark">co-designed together</span></span>
-            <h3 class="font-disp font-[620] text-[1.3rem] leading-[1.1]">Open Science Network</h3>
-            <p class="{{ cgoal }}">“Scholarly conversations that don't evaporate. Findings, arguments and data that stay open, citable and out of the journals' hands.”</p>
-            <p class="{{ chow }}">Researchers shaped Bonfire around how science actually works: sign in with ORCID, publications on your profile, papers that unfold with their DOI.</p>
-            <div class="{{ cfoot }}"><span>◼ In development</span><a class="ml-auto text-spark hover:underline" href="https://openscience.network" target="_blank" rel="noopener noreferrer">openscience.network ↗</a></div>
-          </div>
-        </div>
+        
 
         {# placeholder — needs real copy #}
         <div class="{{ ccard }} border-dashed">

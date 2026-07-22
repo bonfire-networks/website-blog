@@ -14,21 +14,21 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
 
 {% set sections = [
   {
-    id: "post", acc: "var(--color-flame)", eyebrow: "Post & converse", link: false,
+    id: "faeturecomposer.png", acc: "var(--color-flame)", eyebrow: "Post & converse", link: false,
     head: "Room to say it", headhl: "properly.",
     intro: "A composer that doesn't force every thought into the same shape, and threads that let a conversation actually branch instead of collapsing into a shouting match.",
     shot: "The composer: formatting, mentions, and boundary controls in one place",
     cards: [
       { icon: "ph-pen-nib", name: "A powerful composer", text: "Short updates or long-form posts. Add a title to start a thread, mention people, format your text, and share a quick thought or a full blog post." },
       { icon: "ph-text-aa", name: "Markdown friendly", text: "Rich formatting, so you can emphasise a point and give your writing a structure." },
-      { icon: "ph-image-square", name: "Any media", text: "Enrich posts with photos, video, audio, and other files.", status: "Alpha" },
+      { icon: "ph-image-square", name: "Any media", text: "Enrich posts with photos, video, audio, and other files." },
       { icon: "ph-tree-structure", name: "Branching threads", text: "Replies can branch into sub-threads, so you follow a discussion without losing the context it grew from." },
       { icon: "ph-note-pencil", name: "Edit your posts", text: "Made a typo, or want to add context? Edit after publishing instead of deleting and reposting." },
       { icon: "ph-handshake", name: "Collaborate on posts", text: "Communication is a team sport. Write with your peers, or just let a trusted friend fix your spelling." }
     ]
   },
   {
-    id: "feeds", acc: "var(--color-corn)", eyebrow: "Feeds & discovery", link: false,
+    id: "featurefilters.png", acc: "var(--color-corn)", eyebrow: "Feeds & discovery", link: false,
     head: "The feed is yours", headhl: "to build.",
     intro: "No mysterious algorithm ranking your people. You assemble the feeds you want, out of the filters that matter to you, and keep the ones that work.",
     shot: "The custom feed builder: filtering by content type, circle and source instance",
@@ -93,7 +93,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
     cards: [
       { icon: "ph-door", name: "Local & invite-only", text: "Quiet and warm, a space just for your people. Nobody joins your bonfire unless you say so." },
       { icon: "ph-graph", name: "Archipelago mode", text: "Federate only with allies and communities you trust, and form a private interconnected network together." },
-      { icon: "ph-broadcast", name: "The fediverse", text: "ActivityPub, so you can follow and be followed across Mastodon, PeerTube, Mobilizon, and every other Bonfire.", status: "Alpha" },
+      { icon: "ph-broadcast", name: "Fully Federated", text: "ActivityPub, so you can follow and be followed across Mastodon, PeerTube, Mobilizon, and every other Bonfire."},
       { icon: "ph-bridge", name: "Bridges beyond", text: "Protocol bridges reach Bluesky and ATproto, so nobody is stranded on the far shore." }
     ]
   },
@@ -122,9 +122,10 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
       { icon: "ph-kanban", name: "Tasks & Kanban", text: "To-do lists and boards that work across instances, so coordinating doesn't mean leaving.", status: "In development" },
       { icon: "ph-hand-heart", name: "Mutual aid", text: "Needs and offers, on a calendar and a map, for communities who look after each other.", status: "In development" },
       { icon: "ph-flask", name: "Open science", text: "Scholarly identity, citable objects with DOIs, and repository connectors for research networks.", status: "In development" },
-      { icon: "ph-arrows-clockwise", name: "Economic flows", text: "Inventories, offers and needs, marketplaces — built on the ValueFlows open economic vocabulary.", status: "Coming soon" },
+      { icon: "ph-arrows-clockwise", name: "Economic flows", text: "Inventories, offers and needs, marketplaces — built on the ValueFlows open economic vocabulary.", status: "In development" },
       { icon: "ph-map-pin", name: "Places", text: "Put activities on a map, for neighbourhoods and anything else that happens somewhere.", status: "In development" },
-      { icon: "ph-brackets-curly", name: "GraphQL API", text: "Build your own clients and integrations on top of your instance.", status: "In development" }
+      { icon: "ph-brackets-curly", name: "GraphQL API", text: "Build your own clients and integrations on top of your instance."},
+      { icon: "ph-code", name: "Mastodon API", text: "Interact with your instance using the familiar Mastodon API." }
     ]
   }
 ] %}
@@ -199,10 +200,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
          `image:` + `alt:` in the section data above, and this block with an <img>. #}
       {% if s.shot %}
       <figure class="m-0 mt-4">
-        <div class="{{ shotph }}" role="img" aria-label="{{ s.shot }}">
-          <span class="font-smono text-[.62rem] tracking-[.14em] uppercase text-[var(--acc)]/70">Screenshot</span>
-          <span class="max-w-[38ch] text-center">{{ s.shot }}</span>
-        </div>
+        <img class="{{ shotph }}" src="/img/{{ s.id }}" alt="{{ s.shot }}">
       </figure>
       {% endif %}
 
