@@ -10,13 +10,13 @@ author: Bonfire Builders
 
 ---
 
-Bonfire was never meant to be one more app you scroll. Today it becomes what it was always heading toward: **Bonfire for communities** — for groups that need to organise together, not just post at each other. Shipping now: groups and topics, events, shared organisation profiles, embeddable federated comments, custom themes, and a first set of governance tools. It comes as a ready-to-use space with all of this switched on — and it can be shaped, block by block, into a flavour of your community's own. (In the code, "flavours" are what we call these assemblies: jacobin.social runs the Jacobin flavour; researchers run the [Open Science Network](https://openscience.network).)
+Bonfire was never meant to be one more app you scroll. Today it becomes what it was always heading toward: **Bonfire for communities** — for groups that need to organise together, not just post at each other. Shipping now: groups and topics, events, shared organisation profiles, embeddable federated comments, custom themes, and a first set of governance tools. It comes as a ready-to-use space with all of this switched on — and it can be shaped, block by block, into exactly what your community needs.
 
 It's also a shift in focus: from now on, community features come before social ones.
 
 ## Why community, not social
 
-[Bonfire Social](/posts/bonfire_social/) reached 1.0 and it does what it set out to do: a well-made, locally-governed, federated social app where people control their feeds, their boundaries, and who can reach them. Some spaces will stay exactly that — individuals who follow each other and share a server — and we'll keep maintaining it for them. But communities need more than a shared server. Bonfire for communities starts from a richer recipe: everything in Social, plus groups, events, decisions, and the rest of this post — usable as it comes, or customised into a flavour for and by each community.
+[Bonfire Social](/posts/bonfire_social/) reached 1.0 and it does what it set out to do: a well-made, locally-governed, federated social app where people control their feeds, their boundaries, and who can reach them. Some spaces will stay exactly that — individuals who follow each other and share a server — and we'll keep maintaining it for them. But communities need more than a shared server. Bonfire for communities starts from a richer recipe: all the social features, plus groups, events, decisions, and more — usable as it comes, or customised into a flavour for and by each community.
 
 The last year of working with real communities taught us something we should probably have seen earlier. Nobody came to us asking for a better microblog.
 
