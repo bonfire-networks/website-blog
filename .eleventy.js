@@ -19,6 +19,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+  // Build-time logo fetch via logo.dev → cached, inlined as a data URI so nothing
+  // loads from a third party at runtime.  Usage: {{ "circle.so" | logo }}
+  //   optional 2nd arg = size (px), 3rd arg = greyscale (default true)
+  eleventyConfig.addNunjucksAsyncFilter("logo", async function (domain, callback) {
+    if (!domain) return callback(null, "");
+    const token = process.env.LOGODEV_TOKEN || "pk_Q9vswM0BS5ivkJAiin1dHQ";
+    const url = `https://img.logo.dev/${encodeURIComponent(domain)}?token=${token}&greyscale=true&format=png&size=128&retina=true`;
+    try {
+      const buffer = await EleventyFetch(url, { duration: "30d", type: "buffer" });
+      callback(null, `data:image/png;base64,${buffer.toString("base64")}`);
+    } catch (e) {
+      callback(null, "");
+    }
+  });
+
   eleventyConfig.addNunjucksFilter("keys", function(obj) {
     return Object.keys(obj);
   });

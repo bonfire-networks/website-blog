@@ -1,0 +1,248 @@
+---
+layout: layouts/base.njk
+title: "Bonfire vs Circle, Skool, Mighty Networks, Discord & more — the open, federated community platform"
+description: "How Bonfire compares to community SaaS (Circle, Mighty Networks, Skool, Bettermode…), creator platforms, team chat (Slack, Discord), messaging (Signal, WhatsApp), open source (Discourse, BuddyPress) and ATproto (Acorn, Roundabout): open source, self-hostable, federated, and yours."
+---
+{# ============================================================
+   V2 · COMPARE — Bonfire vs the community-platform landscape.
+   Transposed: axes are rows, products are narrow columns. Icons are
+   Iconify (compile-time via @iconify/tailwind4 — literal icon classes
+   classes so only referenced icons are inlined). Category-level,
+   structural claims only, "as of 2026". Not a hit piece — mission-aligned
+   projects are treated fairly in the notes below. Cell detail is on hover.
+   ============================================================ #}
+{% set eyebrow = "flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]" %}
+{% set display = "mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set cell = "card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7" %}
+{% set cellh = "font-disp font-[620] text-[1.14rem] mt-1 mb-[7px]" %}
+{% set cellp = "text-ink-2 text-[.94rem]" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+{% set rowlabel = "sticky left-0 z-[2] bg-night w-[150px] min-w-[150px] px-4 py-2.5 text-left font-smono text-[.64rem] font-medium text-ink-2 border-r border-ink/[0.07]" %}
+{% set stickyBonfire = "sticky left-[150px] z-[3] bg-[color-mix(in_srgb,var(--color-flame)_12%,var(--color-night))]" %}
+{% set stickyBonfireCell = "sticky left-[150px] z-[1] bg-[color-mix(in_srgb,var(--color-flame)_9%,var(--color-night))]" %}
+
+{# status mark — plain check/minus/x/clock by default. A cell can pass its own icon
+   to encode a *different kind* of yes/partial (e.g. the three flavours of mobile app),
+   coloured by status. Literal Iconify classes so Tailwind inlines only what's used. #}
+{% macro mark(s, icon) %}
+  {%- if s == 'yes' -%}<span class="{{ icon if icon else 'icon-[ph--check-bold]' }} text-leaf align-middle text-[1.1rem]" aria-hidden="true"></span>
+  {%- elif s == 'partial' -%}<span class="{{ icon if icon else 'icon-[ph--minus-bold]' }} text-corn-2 align-middle text-[1.1rem]" aria-hidden="true"></span>
+  {%- elif s == 'soon' -%}<span class="icon-[ph--clock-bold] text-flame align-middle text-[1.1rem]" aria-hidden="true"></span>
+  {%- else -%}<span class="icon-[ph--x-bold] text-ink-3/50 align-middle text-[1.1rem]" aria-hidden="true"></span>
+  {%- endif -%}
+{% endmacro %}
+
+{# axes (12), rendered in two labelled bands. Each product's `cells` matches this order.
+   Cell = [status, "short hover note"?, "icon override"?]. The icon override is for rows
+   where "yes" has distinct flavours worth showing — e.g. mobile app:
+     device-mobile = your own branded app · app-window = one shared platform app · stack = an ecosystem of clients #}
+{% set axes = ["Open source","Self-host & own data","Federated","End-to-end encryption","Your brand & domain","Groups & spaces","Events & calendar","Polls & decisions","Courses / learning","Mobile app","Import & export","Governance & moderation"] %}
+
+{# pricing-model icons for the Model row (literal classes so Tailwind inlines them) #}
+{% set paymap = {
+  "free": "icon-[roentgen--free]",
+  "paid": "icon-[material-symbols--paid-outline]",
+  "freemium": "icon-[ph--coins]",
+  "ads": "icon-[mdi--advertisements]",
+  "nonprofit": "icon-[ph--hand-heart]"
+} %}
+
+{% set groups = [
+  { cat: "Bonfire", rows: [
+    { name: "Bonfire for communities", bonfire: true, logoImg: "/img/bonfire.png", price: "AGPL · free", model: "Nonprofit · AGPL · free · no ads or VC",
+      cells: [["yes"],["yes"],["yes","AP · groups soon"],["soon","MLS · 2026"],["yes"],["yes"],["yes"],["yes"],["partial","integrations with other FOSS tools"],["yes","ecosystem of fedi clients · Masto features for now","icon-[ph--stack-bold]"],["yes"],["yes","+ decisions"]] }
+  ] },
+  { cat: "Big Social", rows: [
+    { name: "Facebook Groups", logo: "icon-[simple-icons--facebook]", price: "Ad-funded", model: "Free · ad-funded",
+      cells: [["no"],["no"],["no"],["no"],["no"],["yes","groups"],["yes"],["partial","poll"],["no"],["yes","platform app","icon-[ph--app-window-bold]"],["partial"],["no","algorithmic"]] }
+  ] },
+  { cat: "Team chat", rows: [
+    { name: "Slack", logo: "icon-[simple-icons--slack]", price: "Per-seat", model: "Freemium · per-seat",
+      cells: [["no"],["no"],["no"],["no"],["no"],["yes","channels"],["partial","integr."],["partial","app"],["no"],["yes","platform app","icon-[ph--app-window-bold]"],["partial","export"],["partial"]] },
+    { name: "Discord", logo: "icon-[simple-icons--discord]", price: "Freemium", model: "Freemium",
+      cells: [["no"],["no"],["no"],["no"],["no"],["yes","servers"],["partial","events"],["partial","poll"],["no"],["yes","platform app","icon-[ph--app-window-bold]"],["no"],["partial"]] }
+  ] },
+  { cat: "Messaging", rows: [
+    { name: "Signal", logo: "icon-[simple-icons--signal]", price: "Free", model: "Nonprofit · free",
+      cells: [["yes"],["no","centralised"],["no"],["yes","default"],["no"],["yes","groups"],["no"],["partial","poll"],["no"],["yes","platform app","icon-[ph--app-window-bold]"],["no"],["no"]] },
+    { name: "WhatsApp", logo: "icon-[simple-icons--whatsapp]", price: "Free · Meta", model: "Free · Meta",
+      cells: [["no"],["no"],["no"],["yes","default"],["no"],["yes","groups"],["partial","events"],["partial","poll"],["no"],["yes","platform app","icon-[ph--app-window-bold]"],["partial"],["no"]] }
+  ] },
+  { cat: "Community platforms (SaaS)", rows: [
+    { name: "Circle", dom: "circle.so", price: "Sub + 2% fee", model: "Subscription + 2% transaction fee",
+      cells: [["no"],["no"],["no"],["no"],["partial","tier"],["yes"],["yes"],["partial"],["yes"],["yes","branded (tier)","icon-[ph--device-mobile-bold]"],["partial","export"],["yes"]] },
+    { name: "Mighty Networks", dom: "mightynetworks.com", price: "Sub + fee", model: "Subscription + transaction fee",
+      cells: [["no"],["no"],["no"],["no"],["partial","Pro"],["yes"],["yes"],["partial"],["yes"],["yes","branded app","icon-[ph--device-mobile-bold]"],["partial"],["yes"]] },
+    { name: "Skool", logo: "icon-[arcticons--skool]", price: "$99/mo", model: "$99/mo + transaction fee",
+      cells: [["no"],["no"],["no"],["no"],["no","uniform UI"],["yes"],["partial","calendar"],["no"],["yes","classroom"],["yes","platform app","icon-[ph--app-window-bold]"],["partial"],["partial"]] },
+    { name: "Bettermode", dom: "bettermode.com", price: "SaaS", model: "Tiered SaaS",
+      cells: [["no"],["no"],["no"],["no"],["partial","tier"],["yes","spaces"],["partial"],["partial"],["no"],["yes","platform app","icon-[ph--app-window-bold]"],["partial"],["partial"]] },
+    { name: "Disciple", dom: "disciplemedia.com", price: "$300+/mo", model: "$300+/mo",
+      cells: [["no"],["no"],["no"],["no"],["yes","own app"],["yes"],["yes"],["partial"],["partial"],["yes","your own app","icon-[ph--device-mobile-bold]"],["partial"],["yes"]] },
+    { name: "Hivebrite", dom: "hivebrite.io", price: "Enterprise", model: "Enterprise · scales per member",
+      cells: [["no"],["no"],["no"],["no"],["yes"],["yes"],["yes"],["partial"],["partial"],["yes","branded app","icon-[ph--device-mobile-bold]"],["partial"],["yes","enterprise"]] },
+    { name: "GroupApp", logoChip: "/img/logos/groupapp.png", price: "$49+/mo", model: "$49+/mo · 0% transaction fee",
+      cells: [["no"],["no"],["no"],["no"],["partial","tier"],["yes"],["yes"],["partial"],["yes"],["yes","platform app","icon-[ph--app-window-bold]"],["partial"],["partial"]] },
+    { name: "Higher Logic Vanilla", dom: "higherlogic.com", price: "Enterprise", model: "Enterprise (OSS core discontinued)",
+      cells: [["partial","legacy"],["partial","abandoned OSS"],["no"],["no"],["yes"],["yes"],["partial"],["partial","ideation"],["no"],["partial"],["partial"],["yes"]] },
+    { name: "Co:app", dom: "coapp.io", price: "Freemium", model: "Freemium €0–399/mo + platform fees (EU)",
+      cells: [["no"],["no"],["partial","coapp-only"],["no"],["yes","white-label"],["yes"],["yes"],["yes","polls"],["no"],["yes","branded app","icon-[ph--device-mobile-bold]"],["partial","API"],["partial","rules"]] }
+  ] },
+  { cat: "Open source, self-hosted", rows: [
+    { name: "Discourse", logo: "icon-[simple-icons--discourse]", price: "Free / SaaS", model: "Free (GPL) or hosted SaaS",
+      cells: [["yes"],["yes"],["partial","AP plugin"],["no"],["yes"],["partial","categories"],["partial","plugin"],["yes"],["no"],["yes","hub app / PWA","icon-[ph--app-window-bold]"],["yes"],["yes","forum"]] },
+    { name: "BuddyPress / WordPress", logo: "icon-[simple-icons--wordpress]", price: "Free (GPL)", model: "Free (GPL) + your hosting",
+      cells: [["yes"],["yes"],["partial","blog only"],["no"],["yes"],["yes"],["partial","plugin"],["partial","plugin"],["partial","LMS plugin"],["partial"],["yes"],["partial"]] }
+  ] },
+  { cat: "ATproto", rows: [
+    { name: "Acorn (Blacksky)", dom: "acorn.blacksky.community", price: "$299+/mo", model: "$299–$1,199/mo · by community size",
+      cells: [["partial","open stack"],["partial","managed"],["partial","ATproto"],["no"],["yes","own domain"],["partial","feeds"],["no"],["no"],["no"],["yes","AT / Bluesky clients","icon-[ph--stack-bold]"],["partial"],["yes","rich"]] },
+    { name: "Roundabout (New_ Public)", dom: "joinroundabout.com", price: "Nonprofit · beta", model: "Nonprofit-run · US closed beta",
+      cells: [["partial","planned"],["no"],["no","no group federation yet"],["no"],["no"],["partial","channels"],["yes"],["no"],["no"],["partial"],["no"],["yes","steward-led"]] }
+  ] },
+  { cat: "Creator & course (community = walled add-on)", rows: [
+    { name: "Kajabi", dom: "kajabi.com", price: "Course SaaS", model: "Creator/course SaaS",
+      cells: [["no"],["no"],["no"],["no"],["partial","domain"],["partial","1–3"],["partial"],["no"],["yes"],["yes","branded (add-on)","icon-[ph--device-mobile-bold]"],["partial"],["partial"]] },
+    { name: "Teachable", dom: "teachable.com", price: "Course SaaS", model: "Course SaaS",
+      cells: [["no"],["no"],["no"],["no"],["partial"],["partial"],["no"],["no"],["yes"],["partial"],["partial"],["partial"]] },
+    { name: "Thinkific", dom: "thinkific.com", price: "Course SaaS", model: "Course SaaS",
+      cells: [["no"],["no"],["no"],["no"],["partial"],["partial"],["no"],["no"],["yes"],["partial"],["partial"],["partial"]] },
+    { name: "Podia", dom: "podia.com", price: "Creator SaaS", model: "Creator SaaS",
+      cells: [["no"],["no"],["no"],["no"],["partial"],["partial","spaces"],["no"],["no"],["yes"],["partial"],["partial"],["partial"]] },
+    { name: "Fourthwall", dom: "fourthwall.com", price: "Creator · %", model: "Creator commerce · % fee",
+      cells: [["no"],["no"],["no"],["no"],["partial","subdomain"],["no","→ Discord"],["partial"],["partial"],["no"],["partial"],["partial"],["no"]] },
+    { name: "HighLevel", dom: "gohighlevel.com", price: "Agency SaaS", model: "Agency reseller SaaS",
+      cells: [["no"],["no"],["no"],["no"],["yes","white-label"],["yes"],["yes"],["no"],["yes"],["partial","add-on"],["partial"],["partial"]] },
+    { name: "AccessAlly", dom: "accessally.com", price: "WP licence", model: "Paid WordPress plugin licence",
+      cells: [["partial","on WP"],["yes","your WP"],["no"],["no"],["yes"],["partial","BuddyPress"],["partial"],["no"],["yes"],["partial"],["partial"],["partial"]] }
+  ] }
+] %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ---------- hero ---------- #}
+    <header class="pt-10 pb-[clamp(40px,5vw,60px)]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>Compare</p>
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>How Bonfire compares</p>
+      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[20ch] [font-variation-settings:'opsz'_96]">Give your community <span class="fire-text">a world of its own.</span></h1>
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[58ch] [&_b]:text-ink [&_b]:font-semibold">Most community tools are a room you rent inside someone else's building — you pay per member, live on their domain, and leave with only what they let you export. Bonfire is <b>open source, self-hostable and federated</b>: a space that's genuinely yours, connected to the whole open social web. Here's the honest landscape.</p>
+    </div>
+    </header>
+
+    <main>
+
+    {# ---------- the table ---------- #}
+    <section class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-5 font-smono text-[.68rem] text-ink-3">
+        <span class="inline-flex items-center gap-1.5"><span class="icon-[ph--check-bold] text-leaf" aria-hidden="true"></span> yes</span>
+        <span class="inline-flex items-center gap-1.5"><span class="icon-[ph--minus-bold] text-corn-2" aria-hidden="true"></span> partial / limited</span>
+        <span class="inline-flex items-center gap-1.5"><span class="icon-[ph--x-bold] text-ink-3/50" aria-hidden="true"></span> no</span>
+        <span class="inline-flex items-center gap-1.5"><span class="icon-[ph--clock-bold] text-flame" aria-hidden="true"></span> coming</span>
+        <span class="ml-auto max-[640px]:ml-0">scroll right · hover for detail →</span>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-ink/15 [scrollbar-width:thin]">
+        <table class="border-collapse text-left">
+          <thead>
+            <tr>
+              <th class="sticky left-0 z-[4] bg-night-2 w-[150px] min-w-[150px]"></th>
+              {%- for g in groups %}
+              <th colspan="{{ g.rows | length }}" class="px-2 py-2 text-center font-smono text-[.54rem] font-bold tracking-[.1em] uppercase border-b border-b-ink/[0.07] border-l border-l-ink/20 {{ stickyBonfire if g.rows[0].bonfire else 'bg-night-2 text-ink-3' }} {{ 'text-flame' if g.rows[0].bonfire }}">{{ g.cat }}</th>
+              {%- endfor %}
+            </tr>
+            <tr>
+              <th class="sticky left-0 z-[4] bg-night-2 w-[150px] min-w-[150px] px-4 py-2 border-b border-ink/15 align-bottom font-smono text-[.6rem] font-bold tracking-[.1em] uppercase text-ink-3">Platform</th>
+              {%- for g in groups %}{%- for r in g.rows %}
+              <th title="{{ r.name }}" class="px-2 py-3 align-bottom text-center border-b border-b-ink/[0.07] min-w-[80px] {{ 'border-l border-l-ink/20' if loop.first }} {{ stickyBonfire if r.bonfire else 'bg-night-2' }}">
+                {%- if r.logoImg %}<img src="{{ r.logoImg }}" alt="{{ r.name }}" class="h-6 mx-auto object-contain" loading="lazy">
+                {%- elif r.logo %}<span class="{{ r.logo }} text-[20px] {{ 'text-flame' if r.bonfire else 'text-ink-2' }}" aria-hidden="true"></span><span class="sr-only">{{ r.name }}</span>
+                {%- elif r.logoChip %}<span class="inline-flex items-center justify-center bg-[#e9e4d6] rounded-[4px] p-[3px] mx-auto"><img src="{{ r.logoChip }}" alt="{{ r.name }}" class="h-[22px] w-[22px] object-contain grayscale" loading="lazy"></span><span class="sr-only">{{ r.name }}</span>
+                {%- elif r.dom %}<span class="inline-flex items-center justify-center bg-[#e9e4d6] rounded-[4px] p-[3px] mx-auto"><img src="{{ r.dom | logo }}" alt="{{ r.name }}" class="h-[22px] w-[22px] object-contain" loading="lazy"></span><span class="sr-only">{{ r.name }}</span>
+                {%- else %}<span class="font-disp font-[620] text-[.76rem] leading-[1.12] block {{ 'text-flame' if r.bonfire else 'text-ink' }}">{{ r.name }}</span>{% endif -%}
+              </th>
+              {%- endfor %}{%- endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {# model / pricing — right under the platform names; detail on hover #}
+            <tr class="hover:bg-ink/[0.02] border-b border-ink/[0.07]">
+              <th class="{{ rowlabel }}">Model</th>
+              {%- for g in groups %}{%- for r in g.rows %}
+              <td title="{{ r.name }} · {{ r.model }}" class="px-1.5 py-2.5 text-center align-middle {{ 'border-l border-l-ink/20' if loop.first }} {{ stickyBonfireCell if r.bonfire }}">
+                {%- if 'Nonprofit' in r.model and ('free' in r.model or 'AGPL' in r.model) -%}
+                <span class="icon-[roentgen--free] text-flame text-[1.05rem] align-middle"></span> <span class="icon-[ph--hand-heart] text-flame text-[1.05rem] align-middle"></span>
+                {%- else -%}
+                {%- set paykey = 'nonprofit' if 'Nonprofit' in r.model else ('ads' if 'ad-funded' in r.model else ('freemium' if 'Freemium' in r.model else ('free' if ('AGPL' in r.model or 'GPL' in r.model or 'Free' in r.model) else 'paid'))) -%}
+                <span class="{{ paymap[paykey] }} text-ink-3 text-[1.1rem] align-middle"></span>
+                {%- endif -%}
+                <span class="sr-only">{{ r.model }}</span>
+              </td>
+              {%- endfor %}{%- endfor %}
+            </tr>
+            {%- set bands = [{lab: "Ownership & openness", idx: [0,1,2,3,4,9]}, {lab: "Community features", idx: [5,6,7,8,10,11]}] %}
+            {%- for band in bands %}
+            <tr>
+              <th class="sticky left-0 z-[2] bg-night-3 w-[150px] min-w-[150px] px-4 py-1.5 text-left font-smono text-[.56rem] font-bold tracking-[.14em] uppercase text-ink-3 border-y border-ink/[0.07]">{{ band.lab }}</th>
+              <td colspan="99" class="bg-night-3/40 border-y border-ink/[0.07]"></td>
+            </tr>
+            {%- for i in band.idx %}
+            <tr class="border-b border-ink/[0.07] hover:bg-ink/[0.02]">
+              <th class="{{ rowlabel }}">{{ axes[i] }}</th>
+              {%- for g in groups %}{%- for r in g.rows %}
+              <td title="{{ r.name }} · {{ axes[i] }}: {{ {'yes':'Yes','no':'No','partial':'Partial','soon':'Coming'}[r.cells[i][0]] }}{% if r.cells[i][1] %} ({{ r.cells[i][1] }}){% endif %}" class="px-2 py-2.5 text-center {{ 'border-l border-l-ink/20' if loop.first }} {{ stickyBonfireCell if r.bonfire }}">{{ mark(r.cells[i][0], r.cells[i][2]) }}</td>
+              {%- endfor %}{%- endfor %}
+            </tr>
+            {%- endfor %}
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-4 font-smono text-[.66rem] text-ink-3 leading-[1.7] max-w-[70ch]">Scroll right for more platforms; hover any icon or platform for the detail behind it. Category-level and structural, as of 2026 — products within a category vary, and some span several. This isn't a scorecard of who's "best": Signal, the open-source forums, and mission-aligned projects like Roundabout and Acorn share many of our values with different tradeoffs. Spotted something wrong or out of date? <a class="text-spark hover:underline" href="/contact">Tell us and we'll fix it.</a><br><span class="inline-flex flex-wrap items-center gap-x-4 gap-y-1 mt-2">Mobile app: <span class="inline-flex items-center gap-1"><span class="icon-[ph--device-mobile-bold] text-leaf align-middle" aria-hidden="true"></span> your own branded app</span> <span class="inline-flex items-center gap-1"><span class="icon-[ph--app-window-bold] text-leaf align-middle" aria-hidden="true"></span> one shared platform app</span> <span class="inline-flex items-center gap-1"><span class="icon-[ph--stack-bold] text-leaf align-middle" aria-hidden="true"></span> an ecosystem of clients</span></span><br><span class="mt-2 inline-block">Icons via <a class="text-spark hover:underline" href="https://iconify.design" target="_blank" rel="noopener noreferrer">Iconify</a>; logos via <a class="text-spark hover:underline" href="https://logo.dev" target="_blank" rel="noopener noreferrer">Logo.dev</a>.</span></p>
+
+    </div>
+    </section>
+
+    {# ---------- the honest version ---------- #}
+    <section class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What the table can't show</p>
+      <h2 class="{{ display }}">The honest version.</h2>
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-4 mt-9">
+        <div class="{{ cell }}">
+          <h3 class="{{ cellh }}">Open-source forums come closest</h3>
+          <p class="{{ cellp }}">Discourse (with an ActivityPub plugin) and NodeBB (natively) even federate, and they're self-hostable and truly yours. A forum is a wonderful thing — but it's built around threads and categories. Bonfire brings that same ownership to a fuller shape: <b class="text-ink font-semibold">groups, circles, events, and decisions your community makes together</b>.</p>
+        </div>
+        <div class="{{ cell }}">
+          <h3 class="{{ cellh }}">Federation is a journey — ours included</h3>
+          <p class="{{ cellp }}">Bonfire's social layer federates across the fediverse today; <b class="text-ink font-semibold">group federation is still being built</b>, in the open with the <a href="https://swicg.github.io/" target="_blank" rel="noopener noreferrer">W3C task force</a>. ATproto tools like Acorn and Roundabout hit the same wall — ATproto has no cross-server group primitive yet. We're building it on ActivityPub, the network that's already there.</p>
+        </div>
+        <div class="{{ cell }}">
+          <h3 class="{{ cellh }}">The SaaS trade is convenience for control</h3>
+          <p class="{{ cellp }}">Circle, Skool and Mighty are polished and quick to start — but your community lives on their platform, under their pricing, exportable only as far as they allow. Bonfire trades a little setup for a space that stays <a href="/mosaic">yours</a> for good.</p>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    {# ---------- cta ---------- #}
+    <section class="text-center py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <h2 class="mx-auto max-w-[20ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">A community that's <span class="fire-text">actually yours.</span></h2>
+      <div class="flex flex-wrap justify-center gap-3.5 mt-9">
+        <a class="{{ btnfire }}" href="/start">Get started</a>
+        <a class="{{ btnline }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Wander the demo</a>
+        <a class="{{ btnline }}" href="/mosaic">Co-design it with us</a>
+      </div>
+    </div>
+    </section>
+
+    </main>
+  </div>
+</div>

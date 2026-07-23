@@ -90,7 +90,7 @@ We call it **[the Telling](/telling/)**, after Ursula K. Le Guin's *The Telling*
 
 ### It looks like your community, not an off-the-shelf product or someone else's platform 
 
-Bonfire ships with [16 themes](/themes), and you can build your own colours, fonts, and layout without writing code. And it goes further than a theme: your domain, your name, your masthead, your typography — the whole space reads as yours, with nothing of ours wedged between you and your people. Even paid community platforms like [Mighty Networks](https://www.mightynetworks.com/) rarely go that far: your community still lives in their app, with their name on it, on their terms.
+Bonfire ships with [16 themes](/themes), and you can build your own colours, fonts, and layout without writing code. And it goes further than a theme: your domain, your name, your masthead, your typography — the whole space reads as yours, with nothing of ours wedged between you and your people. Even paid community platforms like [Mighty Networks](https://www.mightynetworks.com/) rarely go that far: your community still lives in their app, with their name on it, on their terms. (We laid out the alternatives honestly — [see how Bonfire compares](/compare).)
 
 ![Screenshot of jacobin.social and the Jacobin Ghost site side by side: Bonfire carrying Jacobin's branding end to end](/img/jacobin/ghostbonfire.png)
 
