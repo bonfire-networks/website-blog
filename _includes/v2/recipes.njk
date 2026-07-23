@@ -6,11 +6,11 @@
 {% set actlabel = "font-smono text-[.68rem] tracking-[.14em] text-ink-3" %}
 
 {% set recipes = [
-  { acc: "var(--color-flame)", kind: "Fablab", img: "fablab.jpg",
+  { acc: "var(--color-flame)", kind: "Fablab", img: "makerspace.jpg",
     icons: ["ph-toolbox", "ph-cube", "ph-calendar-check", "ph-users-three"],
     items: ["Groups", "Tasks & projects", "Events & workshops", "Equipment bookings"],
     becomes: "One space where members reserve machines, run workshops and document their builds — instead of scattered chats and booking sheets. Yours to govern, open to the makers you choose." },
-  { acc: "var(--color-corn)", kind: "A research network", img: "research.jpg",
+  { acc: "var(--color-corn)", kind: "A research network", img: "university.jpg",
     icons: ["ph-flask", "ph-article", "ph-kanban", "ph-database"],
     items: ["Scholarly data", "Topics & long-form", "Tasks & events", "Groups"],
     becomes: "Discussion, datasets and preprints in one place — where everyday exchange becomes open, citable research. Connect your lab to the wider commons without handing your work to a publisher." },
@@ -40,7 +40,7 @@
         {% for r in recipes %}
         <div class="group card overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night p-0 gap-0" style="--acc:{{ r.acc }}">
           {# image header #}
-          <div class="relative h-[190px] overflow-hidden bg-[color-mix(in_srgb,var(--acc)_16%,var(--color-night-3))]" aria-hidden="true">
+          <div class="relative h-[250px] overflow-hidden bg-[color-mix(in_srgb,var(--acc)_16%,var(--color-night-3))]" aria-hidden="true">
             <img src="/img/v2/recipes/{{ r.img }}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale-[.4] contrast-[1.05] brightness-[.82] transition-all duration-[600ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:scale-[1.045] group-hover:grayscale-[.1] group-hover:brightness-90">
             <span class="absolute inset-0 bg-[var(--acc)] mix-blend-overlay opacity-[.35]"></span>
             <span class="absolute inset-0 bg-gradient-to-t from-night-2 via-night-2/45 via-40% to-transparent"></span>

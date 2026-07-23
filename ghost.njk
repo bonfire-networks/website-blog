@@ -1,0 +1,626 @@
+---
+layout: layouts/base.njk
+title: Bonfire — Ghost integration
+description: Your readers can already reach you. Now they can reach each other. Bonfire's Ghost integration turns a publication into a community, without changing how you publish.
+---
+{# ============================================================
+   V3 · GHOST INTEGRATION
+   Frame: partnership, not comparison. Ghost publishes; Bonfire is where
+   the publication becomes a place. Nothing on this page contrasts the two
+   or implies something is missing from Ghost — every claim is additive.
+
+   Structure: archive + where it lands · the community itself · tiers &
+   access · sign-in · case study · feature table · two ways to get started.
+
+   TODO before launch:
+     - confirm the extension repo URL (assumed bonfire_ghost)
+     - groups are local-only for now (see features.njk), so the copy places
+       the group as the local heart and federation as the outer ring
+   ============================================================ #}
+
+{% set repo = "https://github.com/bonfire-networks/bonfire_ghost" %}
+
+{# shared class strings #}
+{% set eyebrow = "flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]" %}
+{% set display = "mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set subhead = "font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em]" %}
+{% set bodyp = "mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&_b]:text-ink [&_b]:font-semibold" %}
+{% set cell = "group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
+{% set ic = "w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" %}
+{% set cellh = "font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]" %}
+{% set cellp = "text-ink-2 text-[.94rem]" %}
+{% set kicker = "font-smono text-[.64rem] font-bold tracking-[.12em] uppercase text-ink-3" %}
+{% set jump = "font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" %}
+{% set more = "inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+
+{# Ghost → Bonfire mapping rows. Each row sets its own --tone. #}
+{% set mapgrid = "grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" %}
+{% set maphead = "hidden min-[861px]:grid px-[18px] pb-2.5 font-smono text-[.6rem] font-bold tracking-[.14em] uppercase text-ink-3" %}
+{% set maprow = "group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)]" %}
+{% set mapicon = "w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" %}
+{% set mapchip = "inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]" %}
+{% set maparrow = "font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" %}
+
+{# feature table: a responsive two-column row that stacks on small screens #}
+{% set trow = "grid grid-cols-1 min-[721px]:grid-cols-[minmax(0,15rem)_1fr] gap-x-8 gap-y-1 px-1 py-3.5 border-b border-ink/[0.07] last:border-b-0" %}
+
+{% set sectionnav = [
+  { id: "articles", label: "Archive & topics" },
+  { id: "community", label: "The community" },
+  { id: "tiers", label: "Tiers & access" },
+  { id: "signin", label: "Sign-in" },
+  { id: "wild", label: "In the wild" },
+  { id: "everything", label: "Everything included" },
+  { id: "start", label: "Getting started" }
+] %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ---------- hero ---------- #}
+    <header class="pt-10 pb-[clamp(44px,5vw,64px)]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span><a class="hover:text-spark" href="/integrations">Integrations</a><span class="mx-2">/</span>Ghost</p>
+
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Ghost + Bonfire</p>
+
+      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[19ch] [font-variation-settings:'opsz'_96]">Your readers can already reach you. Now they can <span class="fire-text">reach each other.</span></h1>
+
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[56ch] [&_b]:text-ink [&_b]:font-semibold">Keep publishing exactly as you do. This connects your Ghost publication to a community space where your archive, your writers and your members all land together — and where <b>the people who read you can finally find each other</b>.</p>
+
+      {# division of labour — additive, never a comparison #}
+      {# <div class="grid grid-cols-1 min-[721px]:grid-cols-2 gap-px mt-9 rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
+        <div class="bg-night px-6 py-[22px]">
+          <div class="{{ kicker }}">Ghost goes on doing</div>
+          <p class="mt-2.5 text-[.96rem] text-ink-2 m-0">Writing, editing, publishing, newsletters, tiers and billing. Your editorial workflow doesn't change by a single step.</p>
+        </div>
+        <div class="bg-night px-6 py-[22px]">
+          <div class="{{ kicker }} !text-flame">Bonfire picks up</div>
+          <p class="mt-2.5 text-[.96rem] text-ink-2 m-0">Everything after publishing: where the piece is discussed, who gathers around it, and what your members can do together between issues.</p>
+        </div>
+      </div> #}
+
+      <div class="flex flex-wrap gap-3.5 mt-9">
+        <a class="{{ btnfire }}" href="#start">Two ways to start</a>
+        <a class="{{ btnline }}" href="{{ repo }}">Read the extension docs</a>
+      </div>
+
+      {# <nav class="flex flex-wrap gap-2 mt-8" aria-label="Jump to a section">
+        {%- for s in sectionnav %}
+        <a class="{{ jump }}" href="#{{ s.id }}">{{ s.label }}</a>
+        {%- endfor %}
+      </nav> #}
+    </div>
+    </header>
+
+    <main>
+
+    {# ============================================================
+       1 · ARCHIVE & WHERE IT LANDS
+       ============================================================ #}
+    <section id="articles" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Archive &amp; topics</p>
+      <h2 class="{{ display }}">Everything you've published, <span class="fire-text">in one move.</span></h2>
+      <p class="{{ bodyp }}">Not just what you write next — <b>your whole back catalogue</b>, imported in the background and sorted into the places where people will talk about it. Ten years of archive arrives already filed.</p>
+
+      {% set art = [
+        { icon: "ph-download-simple", name: "The whole archive", text: "A background backfill pages through every article you've ever published, keeping titles, images, excerpts, original dates and the link home to your site." },
+        { icon: "ph-lightning", name: "And everything after", text: "New posts arrive as you publish them. Edit a piece, change who can read it, unpublish it, bring it back — the Bonfire copy follows along." },
+        { icon: "ph-copy-simple", name: "Run it as often as you like", text: "Imports match on canonical URL, so a second pass updates what's there instead of leaving you with two of everything." }
+      ] %}
+      <div class="grid grid-cols-1 min-[721px]:grid-cols-3 gap-3.5 mt-[34px]">
+        {%- for c in art %}
+        <div class="{{ cell }}">
+          <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone {{ c.icon }}"></i></span>
+          <h3 class="{{ cellh }}">{{ c.name }}</h3>
+          <p class="{{ cellp }}">{{ c.text }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+
+      {# the pivotal bit: routing into groups and topics #}
+      <div class="mt-4 rounded-xl border border-ink/15 px-[26px] py-7 min-[901px]:px-9 min-[901px]:py-9">
+        <div class="grid grid-cols-1 min-[981px]:grid-cols-[1fr_minmax(0,26rem)] gap-8 min-[981px]:gap-12 items-center">
+          <div>
+            <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-folders"></i></span>
+            <h3 class="{{ subhead }} mt-[15px] mb-3">Your publication gets a room</h3>
+            <p class="text-ink-2 text-[.98rem] max-w-[40rem]">Choose one group or topic, and every imported article lands there. That room becomes the home of the discussion: people join it, follow it, browse everything you've published in one place, and <b class="text-ink font-semibold">carry a thread on between articles</b> instead of starting over under each one.</p>
+            <p class="text-ink-2 text-[.98rem] max-w-[40rem] mt-3.5">You also decide what comes over at all — everything you publish, or only the articles carrying the Ghost tags you pick.</p>
+          </div>
+
+          {# routing illustration #}
+          <div class="rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6">
+            <p class="{{ kicker }} mb-4">Where an article ends up</p>
+            {% set route = [
+              { k: "Ghost article", v: "“The heat dome, explained”", i: "ph-article", t: "var(--color-ink-3)" },
+              { k: "lands in", v: "Your publication's room", i: "ph-users-three", t: "var(--color-corn)" },
+              { k: "becomes", v: "A discussion the whole room can join", i: "ph-chats-circle", t: "var(--color-flame)" }
+            ] %}
+            {%- for r in route %}
+            <div class="flex items-start gap-3.5 {{ 'mt-3.5' if not loop.first }}" style="--tone:{{ r.t }}">
+              <span class="w-8 h-8 mt-[2px] flex-none rounded-[9px] flex items-center justify-center text-[17px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_9%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)]" aria-hidden="true"><i class="ph-duotone {{ r.i }}"></i></span>
+              <div>
+                <div class="font-smono text-[.6rem] font-bold tracking-[.12em] uppercase text-ink-3">{{ r.k }}</div>
+                <div class="text-[.96rem] text-ink mt-0.5">{{ r.v }}</div>
+              </div>
+            </div>
+            {%- endfor %}
+          </div>
+        </div>
+      </div>
+
+      {# lifecycle: reassurance that nothing gets stranded #}
+      <h3 class="{{ subhead }} mt-12 mb-1">And it keeps up with you</h3>
+      <p class="text-ink-2 text-[.98rem] max-w-[46rem] mb-6">Every change you make in Ghost has a defined counterpart here — including the ones that take something down, which hide rather than destroy.</p>
+
+      {% set lifecycle = [
+        { tone: "var(--color-leaf)",  icon: "ph-paper-plane-tilt",        event: "Article published",        chip: "Create or update",  text: "Create the article, or update the one that's already here" },
+        { tone: "var(--color-corn)",  icon: "ph-pencil-simple-line",      event: "Published article edited", chip: "Update",            text: "Update its content, its room and who's allowed to read it" },
+        { tone: "var(--color-ember)", icon: "ph-eye-slash",               event: "Article unpublished",      chip: "Hide",              text: "Take it out of feeds and close off reading, without deleting anything" },
+        { tone: "var(--color-ink-3)", icon: "ph-trash",                   event: "Article deleted",          chip: "Hide, keep record", text: "Hide it while the discussion around it stays intact" },
+        { tone: "var(--color-flame)", icon: "ph-arrow-counter-clockwise", event: "Article republished",      chip: "Restore",           text: "Bring back the article and the conversation exactly as they were" }
+      ] %}
+      <div class="{{ maphead }} {{ mapgrid }}" aria-hidden="true">
+        <span>In Ghost</span><span class="opacity-0 font-smono text-[.95rem]">→</span><span>In Bonfire</span>
+      </div>
+      <div class="grid gap-2.5">
+        {%- for r in lifecycle %}
+        <div class="{{ maprow }} {{ mapgrid }}" style="--tone:{{ r.tone }}">
+          <div class="flex items-center gap-3.5">
+            <span class="{{ mapicon }}" aria-hidden="true"><i class="ph-duotone {{ r.icon }}"></i></span>
+            <span class="font-disp font-[620] text-[1rem] text-ink">{{ r.event }}</span>
+          </div>
+          <span class="{{ maparrow }}" aria-hidden="true">→</span>
+          <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
+            <span class="{{ mapchip }}">{{ r.chip }}</span>
+            <span class="text-ink-2 text-[.94rem]">{{ r.text }}</span>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div></section>
+
+    {# ============================================================
+       2 · THE COMMUNITY — proof, not assertion
+       ============================================================ #}
+    <section id="community" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The community</p>
+      <h2 class="{{ display }}">Readers meet each other — and <span class="corn-text">the people who write.</span></h2>
+      <p class="{{ bodyp }}">A byline stops being a name at the top of a page. Your writers get profiles people can follow and answer; your readers get profiles, feeds and rooms of their own. <b>Everyone who turns up for one article leaves with people, not just a thread.</b></p>
+
+      {# the ladder — involvement at increasing depth #}
+      <p class="{{ kicker }} mt-11 mb-4">How far someone can come in</p>
+      {% set ladder = [
+        { icon: "ph-book-open-text", t: "Read", d: "Public pieces stay public. Gated pieces keep their gate, exactly as you set it in Ghost.", tone: "var(--color-ink-3)" },
+        { icon: "ph-chat-teardrop-text", t: "Reply", d: "Under the article on your own site — with an account here, or from another fediverse server they already use.", tone: "var(--color-corn)" },
+        { icon: "ph-user-plus", t: "Follow", d: "Follow the writer whose beat they care about, get the next piece, and answer them directly.", tone: "var(--color-corn-2)" },
+        { icon: "ph-users-three", t: "Gather", d: "Join the topic where that beat lives and keep talking between articles, with everyone else who reads it.", tone: "var(--color-flame)" },
+        { icon: "ph-hand-heart", t: "Contribute", d: "Start a discussion of their own, run a poll, raise something worth covering. Readers become participants.", tone: "var(--color-spark)" }
+      ] %}
+      <div class="grid grid-cols-1 min-[601px]:grid-cols-2 min-[1051px]:grid-cols-5 gap-3.5">
+        {%- for l in ladder %}
+        <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:{{ l.tone }}">
+          <span class="absolute top-0 left-5 right-5 h-[2px] bg-[var(--tone)] opacity-70" aria-hidden="true"></span>
+          <i class="ph-duotone {{ l.icon }} text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
+          <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">{{ l.t }}</h3>
+          <p class="text-ink-2 text-[.9rem] m-0">{{ l.d }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <div class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-3.5 mt-4">
+        <div class="{{ cell }}">
+          <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-identification-badge"></i></span>
+          <h3 class="{{ cellh }}">Bylines become people</h3>
+          <p class="{{ cellp }}">Importing an article creates its author's profile and keeps the attribution attached to it — so a reader can follow that writer, see everything else they've filed, and reply to them rather than into a void.</p>
+        </div>
+        <div class="{{ cell }}">
+          <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-broadcast"></i></span>
+          <h3 class="{{ cellh }}">Beyond your own visitors</h3>
+          <p class="{{ cellp }}">With remote interaction switched on, people can take part from whatever fediverse server they're already on — no new account on your domain to put them off.</p>
+        </div>
+        <div class="{{ cell }}">
+          <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-infinity"></i></span>
+          <h3 class="{{ cellh }}">Conversations that stay put</h3>
+          <p class="{{ cellp }}">A discussion belongs to the community, not to one page. It survives an article being unpublished or removed, and it's still there when the next piece on the subject lands.</p>
+        </div>
+      </div>
+
+      {# the embed — one paste, on their side #}
+      {# <div class="grid grid-cols-1 min-[901px]:grid-cols-[1fr_1fr] gap-4 mt-4">
+        <div class="rounded-xl border border-ink/15 bg-night-2 px-[26px] py-6">
+          <p class="{{ kicker }} mb-3">All you add to your theme</p>
+            {% raw %}<pre class="overflow-x-auto font-smono text-[.8rem] leading-[1.7] text-ink-2 m-0"><code>&lt;script
+              src="https://community.example/js/comments_embed.js?v1.4"
+              data-canonical-slug="{{slug}}"
+            &gt;&lt;/script&gt;</code></pre>{% endraw %}
+        </div>
+        <div class="rounded-xl border border-[color-mix(in_srgb,var(--acc)_38%,transparent)] bg-[color-mix(in_srgb,var(--acc)_5%,transparent)] px-[26px] py-6">
+          <h3 class="{{ subhead }} mb-2">And it can't be turned against you</h3>
+          <p class="{{ cellp }} m-0">The embedding page can't choose an article's author, its room or its audience — those come from your own instance settings and from Ghost's visibility data. Editing the URL can't reassign a byline or open a paid piece.</p>
+        </div>
+      </div> #}
+    </div></section>
+
+    {# ============================================================
+       3 · TIERS & ACCESS
+       ============================================================ #}
+    <section id="tiers" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Tiers &amp; access</p>
+      <h2 class="{{ display }}">What your paid tier <span class="fire-text">can be worth.</span></h2>
+      <p class="{{ bodyp }}">Everything you've set in Ghost carries over untouched: what's public stays public, what's paid stays paid. And the tiers you already sell can start <b>opening doors as well as articles</b>.</p>
+
+      {% set visibility = [
+        { tone: "var(--color-leaf)",  icon: "ph-globe-hemisphere-west", vis: "Public",                                gate: "Open",           text: "Readable by everyone" },
+        { tone: "var(--color-corn)",  icon: "ph-user-circle",           vis: "Members",                               gate: "Logged in",      text: "Readable by logged-in local users" },
+        { tone: "var(--color-corn)",  icon: "ph-users-three",           vis: "Specific tiers, including a free tier", gate: "Logged in",      text: "Readable by logged-in local users" },
+        { tone: "var(--color-flame)", icon: "ph-lock-key",              vis: "Paid-only specific tiers",              gate: "Preview + tier", text: "A preview is visible; full reading goes to the matching tier circles" },
+        { tone: "var(--color-flame)", icon: "ph-lock-key",              vis: "Paid",                                  gate: "Preview + tier", text: "A preview is visible; full reading goes to every paid tier circle" }
+      ] %}
+      <div class="mt-[34px]">
+        <div class="{{ maphead }} {{ mapgrid }}" aria-hidden="true">
+          <span>Ghost visibility</span><span class="opacity-0 font-smono text-[.95rem]">→</span><span>Bonfire access</span>
+        </div>
+        <div class="grid gap-2.5">
+          {%- for r in visibility %}
+          <div class="{{ maprow }} {{ mapgrid }}" style="--tone:{{ r.tone }}">
+            <div class="flex items-center gap-3.5">
+              <span class="{{ mapicon }}" aria-hidden="true"><i class="ph-duotone {{ r.icon }}"></i></span>
+              <span class="font-disp font-[620] text-[1rem] text-ink">{{ r.vis }}</span>
+            </div>
+            <span class="{{ maparrow }}" aria-hidden="true">→</span>
+            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
+              <span class="{{ mapchip }}">{{ r.gate }}</span>
+              <span class="text-ink-2 text-[.94rem]">{{ r.text }}</span>
+            </div>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+
+      <div class="mt-4 rounded-xl border border-ink/15 px-[26px] py-7">
+        <div class="grid grid-cols-1 min-[901px]:grid-cols-[1fr_1fr] gap-6 min-[901px]:gap-10">
+          <div>
+            <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-circles-three"></i></span>
+            <h3 class="{{ subhead }} mt-[15px] mb-2.5">Each tier becomes a circle that looks after itself</h3>
+            <p class="{{ cellp }} m-0">Every tier is mirrored as a Bonfire circle, and boundaries do the rest. Subscribers join their tier's circle, lapsed members drop out of it, and you never touch a list. Retire a tier and its circle is archived rather than deleted, so nobody's history disappears. What that circle is <em>allowed to reach</em> stays entirely your decision — this never assumes a policy on your behalf.</p>
+          </div>
+          <div>
+            <p class="{{ kicker }} mb-3.5">Things you could hand to a tier</p>
+            {% set perks = [
+              { icon: "ph-book-open-text", t: "Read paid articles" },
+              { icon: "ph-chats-circle", t: "Comment and reply" },
+              { icon: "ph-chart-bar", t: "Vote in polls" },
+              { icon: "ph-users-three", t: "Start a group" },
+              { icon: "ph-lock-simple-open", t: "Reach a private space" }
+            ] %}
+            <div class="flex flex-wrap gap-2.5">
+              {%- for p in perks %}
+              <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 text-[.9rem] text-ink-2">
+                <i class="ph-duotone {{ p.icon }} text-[18px] text-[var(--acc)]" aria-hidden="true"></i>{{ p.t }}
+              </span>
+              {%- endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+    {# ============================================================
+       4 · SIGN-IN
+       ============================================================ #}
+    <section id="signin" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Sign-in</p>
+      <h2 class="{{ display }}">One member list, <span class="fire-text">not two.</span></h2>
+      <p class="{{ bodyp }}">Your Ghost members are the guest list. Nobody has to sign up a second time, and <b>you never maintain a parallel list of who's who</b>.</p>
+
+      {% set signinsteps = [
+        { icon: "ph-envelope-simple", t: "They give their email", d: "The same address they subscribed with. No second form, no new password to invent." },
+        { icon: "ph-magnifying-glass", t: "Ghost is asked about it", d: "On your member list? A one-time sign-in link goes out. Not on it? They're sent to your Portal to subscribe." },
+        { icon: "ph-hand-waving", t: "They're in", d: "Their account is set up for them, with whatever their tier unlocks already attached to it." }
+      ] %}
+      <div class="grid grid-cols-1 min-[721px]:grid-cols-3 gap-3.5 mt-[34px]">
+        {%- for s in signinsteps %}
+        <div class="{{ cell }}">
+          <div class="flex items-center justify-between gap-3">
+            <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone {{ s.icon }}"></i></span>
+            <span class="font-disp font-bold text-[1.6rem] leading-none text-[color-mix(in_srgb,var(--acc)_28%,transparent)]">{{ loop.index }}</span>
+          </div>
+          <h3 class="{{ cellh }}">{{ s.t }}</h3>
+          <p class="{{ cellp }}">{{ s.d }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <div class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-3.5 mt-4">
+        <div class="rounded-xl border border-ink/15 px-[26px] py-6">
+          <h3 class="{{ subhead }} mb-2">You decide who gets in</h3>
+          <p class="{{ cellp }} m-0">Everyone on your member list, or only the tiers you pick. Your writers and editors always get in, tier or not — and the login page carries your own words and a button to wherever you sell memberships.</p>
+        </div>
+        <div class="rounded-xl border border-[color-mix(in_srgb,var(--acc)_38%,transparent)] bg-[color-mix(in_srgb,var(--acc)_5%,transparent)] px-[26px] py-6">
+          <h3 class="{{ subhead }} mb-2">Your member list stays yours</h3>
+          <p class="{{ cellp }} m-0">Every address gets the same neutral answer — subscriber, stranger or lapsed alike. The login form can't be used to work out who does and doesn't pay you.</p>
+        </div>
+        <div class="rounded-xl border border-ink/15 px-[26px] py-6">
+          <h3 class="{{ subhead }} mb-2">Lapsing isn't erasing</h3>
+          <p class="{{ cellp }} m-0">Someone who stops paying keeps their account, their posts, their follows and every conversation they've been part of. They lose only what the tier unlocked, and it comes back if they resubscribe.</p>
+        </div>
+      </div>
+    </div></section>
+
+    {# ============================================================
+       5 · IN THE WILD — Jacobin. Facts sourced from case-studies/index.njk;
+       keep them in step if that page changes.
+       ============================================================ #}
+    <section id="wild" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>In the wild</p>
+      <h2 class="{{ display }}">A magazine already <span class="corn-text">did this.</span></h2>
+      <p class="{{ bodyp }}">Jacobin's German edition wanted readers who debate, organise and build solidarity together — not an audience that reads a piece and leaves. They kept publishing on Ghost and gave that community a home they own.</p>
+
+      <div class="grid grid-cols-1 min-[901px]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] gap-px mt-[34px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
+        <div class="bg-night">
+          <img class="w-full aspect-[16/9] object-cover object-center" src="/img/jacobin/jacobin-social.png" alt="Jacobin Social, a federated community space for the German edition of Jacobin magazine" loading="lazy">
+          <div class="px-[26px] py-7">
+            <h3 class="{{ subhead }} mb-3">From audience to community</h3>
+            <p class="{{ cellp }}">A comment section wasn't going to be enough, and neither was sending readers to a platform someone else owns. Articles keep coming from Ghost; the conversation happens somewhere their community actually controls — federated, in their own hands, with their own branding on it.</p>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <a class="{{ btnfire }}" href="/case-studies/jacobin/">Read the full story</a>
+              <a class="{{ btnline }}" href="https://jacobin.social" target="_blank" rel="noopener noreferrer">Visit jacobin.social ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="bg-night-3 px-[26px] py-7">
+          {% set jstats = [
+            { k: "Publication", v: "Jacobin — German edition" },
+            { k: "People", v: "3,000+ readers" },
+            { k: "Live since", v: "July 2026" }
+          ] %}
+          {%- for s in jstats %}
+          <div class="pb-3 mb-3 border-b border-ink/[0.07]">
+            <div class="{{ kicker }}">{{ s.k }}</div>
+            <div class="text-[.98rem] text-ink mt-1.5">{{ s.v }}</div>
+          </div>
+          {%- endfor %}
+          <div class="{{ kicker }}">What they switched on</div>
+          <div class="flex flex-wrap gap-1.5 mt-3">
+            {%- for t in ["federated comments", "Ghost integration", "membership sync", "groups &amp; topics", "their own branding"] %}
+            <span class="font-smono text-[.66rem] text-corn-2 border border-corn-2/40 rounded-[7px] px-2 py-[5px]">{{ t | safe }}</span>
+            {%- endfor %}
+          </div>
+        </aside>
+      </div>
+
+      <a class="{{ more }}" href="/case-studies">See how other communities set theirs up →</a>
+    </div></section>
+
+    {# ============================================================
+       6 · THE FEATURE TABLE — the depth signal
+       ============================================================ #}
+    <section id="everything" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      {# data first: the intro counts these, and nunjucks renders top-down #}
+      {% set groups = [
+        {
+          icon: "ph-archive", title: "Articles",
+          rows: [
+            { k: "Full archive backfill", v: "A background job pages through every published article in your Ghost site." },
+            { k: "Continuous import", v: "New articles arrive automatically as they're published." },
+            { k: "Live updates", v: "Edits, visibility changes, unpublishing, deletion and republishing all follow through." },
+            { k: "Faithful rendering", v: "Title, excerpt, HTML body, feature image, image metadata, original date and canonical URL." },
+            { k: "Native article objects", v: "Real Bonfire Articles when the Articles extension is on, not posts pretending to be articles." },
+            { k: "Duplicate-safe re-runs", v: "Canonical URLs match existing articles, so repeat imports update rather than multiply." },
+            { k: "Tag filtering", v: "Import everything, or only articles carrying chosen primary or secondary Ghost tags." },
+            { k: "Article browser", v: "Recent Ghost articles at /ghost, with images, excerpts, tags, dates and reading times." }
+          ]
+        },
+        {
+          icon: "ph-chats-circle", title: "Where discussion happens",
+          rows: [
+            { k: "A chosen destination", v: "Pick one group or topic, and every imported article lands there." },
+            { k: "Destination checks", v: "The importing identity is verified as able to contribute to the destination you chose." },
+            { k: "On-site comments embed", v: "One script tag in your Ghost theme renders the discussion under the article." },
+            { k: "Fediverse participation", v: "With remote interaction enabled, people take part from another compatible server." },
+            { k: "Durable discussions", v: "Conversations survive the source article being unpublished or deleted." },
+            { k: "Author profiles", v: "Bylines become real profiles, with attribution that stays attached to them." },
+            { k: "Embed can't be forged", v: "Author, destination and audience come from trusted settings, never from the embedding page." }
+          ]
+        },
+        {
+          icon: "ph-lock-key", title: "Access &amp; tiers",
+          rows: [
+            { k: "Visibility translation", v: "Public, members, specific tiers and paid each map onto Bonfire boundaries." },
+            { k: "Tier circles", v: "Every Ghost tier mirrored as an instance-level circle named ghost_tier:&lt;slug&gt;." },
+            { k: "Automatic protection", v: "Imported paid articles are gated by the matching tier with no extra setup." },
+            { k: "Stale-grant removal", v: "Changing visibility or allowed tiers replaces old grants and clears dead permissions." },
+            { k: "Archive, don't delete", v: "Retired Ghost tiers keep their circle and its history, marked archived." },
+            { k: "Reusable anywhere", v: "Tier circles work throughout Bonfire's boundaries system, like any circle you'd make by hand." }
+          ]
+        },
+        {
+          icon: "ph-user-circle", title: "Accounts &amp; identity",
+          rows: [
+            { k: "Email-only sign-in", v: "A one-time link replaces password and local signup forms." },
+            { k: "Ghost-gated eligibility", v: "An unknown address is checked against Ghost before any link is sent." },
+            { k: "Tier gating", v: "Allow every member, or restrict new accounts to selected tiers — any one match is enough." },
+            { k: "Staff admission", v: "Active owners, admins, editors, authors and contributors get in without a tier." },
+            { k: "Enumeration-proof", v: "Valid, unknown and ineligible addresses all receive the same neutral response." },
+            { k: "Identity linking", v: "Member and staff records converge on one account, matched by Ghost ID first, email second." },
+            { k: "Email-change tracking", v: "Ghost email changes are followed, unless the address was deliberately changed here." },
+            { k: "No silent merges", v: "Conflicting identity or email records stay an administrator's decision, never an automatic one." }
+          ]
+        },
+        {
+          icon: "ph-gear-six", title: "Operations &amp; security",
+          rows: [
+            { k: "Admin dashboard", v: "Connection status, article counts, import rules, tier, member and staff lists in one screen." },
+            { k: "Live sync reporting", v: "Progress counters, current stage, recent per-item errors, timestamps and stalled-job detection." },
+            { k: "Resumable backfills", v: "Completed pages are checkpointed, so a retry picks up from durable progress." },
+            { k: "Gated content support", v: "The Admin API supplies complete HTML for paid articles; the Content API covers public ones." },
+            { k: "Idempotent syncs", v: "Re-running article, tier or member synchronisation is safe by design." },
+            { k: "Signed webhooks", v: "HMAC-SHA256 over the original body and timestamp, with a five-minute replay window." },
+            { k: "Fail closed", v: "No shared secret configured means no webhook is accepted, and invalid ones die before queueing." },
+            { k: "Permission-gated data", v: "Member information and sync actions require instance-administration permissions." }
+          ]
+        }
+      ] %}
+
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Everything included</p>
+      <h2 class="{{ display }}">Built already, <span class="corn-text">not on a roadmap.</span></h2>
+      <p class="{{ bodyp }}">{{ groups | length }} areas, and <b>every capability in them ships today</b> — in the extension you can install this afternoon. Open a group to read through it.</p>
+
+      {# each group collapses; all closed on load. Pure CSS, no JS. #}
+      <div class="grid gap-3 mt-[34px]">
+        {%- for g in groups %}
+        <details class="group/d rounded-xl border border-ink/15 open:border-ink/25 open:bg-night-2/40 transition-colors duration-200">
+          <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center gap-3.5 px-[22px] min-[601px]:px-[26px] py-[18px] rounded-xl hover:bg-ink/[0.025]">
+            <i class="ph-duotone {{ g.icon }} text-[22px] text-[var(--acc)]" aria-hidden="true"></i>
+            <h3 class="font-disp font-[620] text-[1.1rem] min-[601px]:text-[1.15rem]">{{ g.title | safe }}</h3>
+            {# counted from the data, so it can't drift — the depth signal while collapsed #}
+            <span class="ml-auto hidden min-[521px]:inline font-smono text-[.62rem] tracking-[.1em] uppercase text-ink-3 whitespace-nowrap">{{ g.rows | length }} capabilities</span>
+            <span class="flex-none ml-auto min-[521px]:ml-0 w-6 h-6 rounded-full border border-ink/20 flex items-center justify-center text-[.9rem] leading-none text-ink-3 transition-transform duration-200 group-open/d:rotate-45 group-hover/d:border-[color-mix(in_srgb,var(--acc)_45%,transparent)]" aria-hidden="true">+</span>
+          </summary>
+          <div class="border-t border-ink/15 px-[22px] min-[601px]:px-[26px] pt-2 pb-5">
+            {%- for r in g.rows %}
+            <div class="{{ trow }}">
+              <div class="font-disp font-[620] text-[.99rem] text-ink">{{ r.k | safe }}</div>
+              <div class="text-ink-2 text-[.94rem]">{{ r.v | safe }}</div>
+            </div>
+            {%- endfor %}
+          </div>
+        </details>
+        {%- endfor %}
+      </div>
+    </div></section>
+
+    {# ============================================================
+       7 · GETTING STARTED — two paths, same software. The Mosaic column
+       is the primary CTA; the self-hosted column must never read as the
+       lesser option, since it's the same AGPL code either way.
+       ============================================================ #}
+    <section id="start" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Getting started</p>
+      <h2 class="{{ display }}">Two ways in, and <span class="fire-text">no lock-in either way.</span></h2>
+      <p class="{{ bodyp }}">Build it with us, or build it yourself. It's the <b>same AGPL-licensed software</b> in both cases — the difference is only how much of the work you'd like to do, and how much you want it shaped around your publication.</p>
+
+      <div class="grid grid-cols-1 min-[941px]:grid-cols-2 gap-4 mt-[34px] items-start">
+
+        {# --- with us: Mosaic --- #}
+        <div class="rounded-xl border border-flame/30 bg-[linear-gradient(160deg,rgba(245,195,68,.08),rgba(255,223,130,.03))] px-[26px] py-7">
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="font-smono text-[.66rem] font-bold tracking-[.12em] uppercase text-flame">Bonfire Mosaic</span>
+            <span class="font-smono text-[.6rem] tracking-[.1em] uppercase text-ink-3 border border-ink/15 rounded-full px-2.5 py-[3px]">Most publishers start here</span>
+          </div>
+          <h3 class="{{ subhead }} mt-3.5 mb-2.5">Build it with us</h3>
+          <p class="{{ cellp }}">We sit down with you, work out how your publication and its readers actually operate, and shape the space around that — your branding, your structure, your rules. We wire up the Ghost side, get your archive in, and hand it over as yours.</p>
+
+          {% set mos = [
+            "Co-design sessions with your editorial and community people.",
+            "Your identity and language throughout, not a template you fill in.",
+            "The Ghost connection, tier sync and archive import set up for you.",
+            "Yours outright when it's done — forkable, exportable, impossible to take back."
+          ] %}
+          <div class="grid gap-2.5 mt-5">
+            {%- for m in mos %}
+            <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
+              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>{{ m }}</span>
+            </div>
+            {%- endfor %}
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
+            <a class="{{ btnline }}" href="/mosaic">How Mosaic works</a>
+          </div>
+          <p class="mt-5 font-smono text-[.7rem] text-ink-3 leading-[1.7]">◼ We work closely with a handful of communities a year, so there's a queue. Worth starting the conversation early.</p>
+        </div>
+
+        {# --- on your own --- #}
+        <div class="rounded-xl border border-ink/15 px-[26px] py-7">
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="font-smono text-[.66rem] font-bold tracking-[.12em] uppercase text-ink-2">Self-hosted</span>
+            <span class="font-smono text-[.6rem] tracking-[.1em] uppercase text-leaf border border-leaf/40 rounded-full px-2.5 py-[3px]">AGPL · free forever</span>
+          </div>
+          <h3 class="{{ subhead }} mt-3.5 mb-2.5">Or do it yourself</h3>
+          <p class="{{ cellp }}">Nothing here is held back for paying customers. The extension is open source, the docs are public, and a technically comfortable team can have it running against their Ghost site in an afternoon. If you'd rather not touch a server, a managed host works too.</p>
+
+          {% set own = [
+            "No licence fee, no seat pricing, no feature locked behind a plan.",
+            "Install it yourself, or point a managed host at it.",
+            "Read the code, change it, fork it — it's AGPL.",
+            "Ask questions in the open: we answer in the chat and on the tracker."
+          ] %}
+          <div class="grid gap-2.5 mt-5">
+            {%- for o in own %}
+            <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
+              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>{{ o }}</span>
+            </div>
+            {%- endfor %}
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a class="{{ btnline }}" href="/start">Install Bonfire</a>
+            <a class="{{ btnline }}" href="{{ repo }}">The extension on GitHub</a>
+            <a class="{{ btnline }}" href="/hosting">Managed hosting</a>
+          </div>
+
+          {# the old setup steps, kept but folded — reference, not a pitch #}
+          {# <details class="group/d mt-6 rounded-xl border border-ink/15 bg-night-2/40 open:bg-night-2/70">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-4 px-[18px] py-3.5 font-smono text-[.68rem] font-bold tracking-[.1em] uppercase text-ink-3 hover:text-ink">
+              <span>What setting it up involves</span>
+              <span class="flex-none w-5 h-5 rounded-full border border-ink/20 flex items-center justify-center text-[.8rem] leading-none transition-transform duration-200 group-open/d:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            {% set steps = [
+              "Add your Ghost site URL and Content API key.",
+              "Add an Admin API key, for tiers, members, staff and gated content.",
+              "Set a shared webhook secret.",
+              "Pick a default import author, and a destination group or topic.",
+              "Sync your tiers, members and staff.",
+              "Choose which tiers may create accounts.",
+              "Turn on auto-import and register the article webhooks in Ghost.",
+              "Run the backfill over your existing articles.",
+              "Paste the comments embed into your Ghost theme."
+            ] %}
+            <ol class="px-[18px] pb-5 pt-1 grid gap-2.5 list-none m-0">
+              {%- for step in steps %}
+              <li class="grid grid-cols-[auto_1fr] items-start gap-3">
+                <span class="flex-none w-[22px] h-[22px] rounded-full flex items-center justify-center font-smono text-[.62rem] font-bold text-ink-3 border border-ink/15">{{ loop.index }}</span>
+                <span class="text-[.92rem] text-ink-2 pt-[1px]">{{ step }}</span>
+              </li>
+              {%- endfor %}
+            </ol>
+            <p class="px-[18px] pb-5 m-0"><a class="font-smono text-[.75rem] text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="{{ repo }}">Configuration variables, webhook URLs and API examples →</a></p>
+          </details> #}
+        </div>
+
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-5 mt-4 rounded-xl border border-dashed border-ink/15 px-[26px] py-6">
+        <p class="m-0 text-[.96rem] text-ink-2 max-w-[54rem]"><b class="text-ink font-semibold">Starting with us doesn't tie you to us.</b> A space we build together runs the same open code as one you install yourself — so you can take it in-house, hand it to another team, or carry on alone whenever you like.</p>
+      </div>
+    </div></section>
+
+    {# ---------- closing ---------- #}
+    <section class="text-center pt-[clamp(56px,7vw,96px)] pb-[clamp(76px,9vw,130px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <h2 class="mx-auto max-w-[22ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Your readers are already here. <span class="fire-text">Give them a room.</span></h2>
+      <p class="mx-auto mt-5 max-w-[46ch] text-[1.02rem] text-ink-2">Tell us about your publication — how you work, who reads you, what you'd want them doing together — and we'll tell you honestly whether this fits.</p>
+      <div class="flex flex-wrap justify-center gap-3.5 mt-8">
+        <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
+        <a class="{{ btnline }}" href="/contact">Send us a note</a>
+      </div>
+    </div></section>
+
+    </main>
+
+  </div>
+</div>
