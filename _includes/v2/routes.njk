@@ -1,0 +1,91 @@
+{# ============================================================
+   V2 · GET STARTED ROUTES — shared three-doors component.
+   Usage:
+     {% from "v2/routes.njk" import routes %}
+     {{ routes() }}                              full, nothing marked current
+     {{ routes(current='managed', compact=true) }}  compact, "you're here" on hosting
+   current: '' | 'selfhost' | 'managed' | 'mosaic'
+   ============================================================ #}
+{% macro routes(current='', compact=false) %}
+{% set route = "card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[26px] gap-2.5 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
+{% set cur = "!border-[color-mix(in_srgb,var(--acc)_55%,transparent)] bg-[color-mix(in_srgb,var(--acc)_5%,transparent)]" %}
+{% set who = "flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]" %}
+{% set dot = "w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" %}
+{% set head = "font-disp font-[560] text-[1.4rem] leading-[1.12] mt-0.5" %}
+{% set lead = "text-ink-2 text-[.97rem]" %}
+{% set fit = "font-smono text-[.7rem] text-ink-3 tracking-[.03em] border-t border-ink/[0.07] pt-3.5 mt-1.5" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+{% set morelink = "mt-auto pt-3.5 font-smono text-[.72rem] tracking-[.05em] text-spark hover:underline" %}
+
+<style>
+  #routes:has(> article:target) > article:not(:target){opacity:.4;filter:saturate(.55);transition:opacity .35s,filter .35s}
+  #routes > article:target{box-shadow:0 0 0 2px color-mix(in srgb, var(--acc) 60%, transparent);transition:box-shadow .35s}
+</style>
+<div id="routes" class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-4">
+
+  {# ---- you run it ---- #}
+  <article id="diy" class="{{ route }} scroll-mt-[80px] {{ cur if current == 'selfhost' }}" style="--acc:var(--color-flame)">
+    <span class="{{ who }}"><i class="{{ dot }}" aria-hidden="true"></i>You run it{{ " · you're here" if current == 'selfhost' }}</span>
+    <h2 class="{{ head }}">Install Bonfire on your own</h2>
+    <p class="{{ lead }}">For those who want to self-host their own Bonfire instance. You'll need to be comfortable with the command line.</p>
+    {% if compact %}
+    <a class="{{ morelink }}" href="https://docs.bonfirenetworks.org/deploy.html">Installation guide →</a>
+    {% else %}
+    <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+      <li>Full control, on your own infrastructure</li>
+      <li>AGPL, free forever</li>
+      <li>Docker-based deployment</li>
+    </ul>
+    <span class="{{ fit }}">◼ good if: you have a server &amp; some sysadmin comfort</span>
+    <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+      <a class="{{ btnfire }}" href="https://github.com/bonfire-networks/bonfire-app">Code</a>
+      <a class="{{ btnline }}" href="https://docs.bonfirenetworks.org/deploy.html">Installation guide</a>
+    </div>
+    {% endif %}
+  </article>
+
+  {# ---- we run it together ---- #}
+  <article id="managed" class="{{ route }} scroll-mt-[80px] {{ cur if current == 'managed' }}" style="--acc:var(--color-corn)">
+    <span class="{{ who }}"><i class="{{ dot }}" aria-hidden="true"></i>We run it together{{ " · you're here" if current == 'managed' }}</span>
+    <h2 class="{{ head }}">Cooperative hosting</h2>
+    <p class="{{ lead }}">Join a nascent co-operative ecosystem to operate a sustainable, resilient infrastructure for Bonfire development, hosting, and support.</p>
+    {% if compact %}
+    <a class="{{ morelink }}" href="https://cal.com/bonfire-networks/meet" target="_blank" rel="noopener noreferrer">Get in touch →</a>
+    {% else %}
+    <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+      <li>No servers to look after</li>
+      <li>Updates &amp; backups handled</li>
+      <li>Co-op infrastructure, not a corporate cloud</li>
+    </ul>
+    <span class="{{ fit }}">◼ good if: you want your space, not a sysadmin job</span>
+    <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+      <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Get in touch</a>
+      {% if current != 'managed' %}<a class="{{ btnline }}" href="/hosting">Learn more</a>{% endif %}
+    </div>
+    {% endif %}
+  </article>
+
+  {# ---- we build it with you ---- #}
+  <article id="custom" class="{{ route }} scroll-mt-[80px] {{ cur if current == 'mosaic' }}" style="--acc:var(--color-leaf)">
+    <span class="{{ who }}"><i class="{{ dot }}" aria-hidden="true"></i>We build it with you{{ " · you're here" if current == 'mosaic' }}</span>
+    <h2 class="{{ head }}">Go further with Mosaic</h2>
+    <p class="{{ lead }}">Rely on the Bonfire team to build a tailored digital space for your community and support you through the whole process.</p>
+    {% if compact %}
+    <a class="{{ morelink }}" href="/mosaic">How Mosaic works →</a>
+    {% else %}
+    <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+      <li>Co-design workshops with your people</li>
+      <li>Your identity, governance &amp; integrations</li>
+      <li>Training, hosting &amp; ongoing care</li>
+    </ul>
+    <span class="{{ fit }}">◼ good if: your community needs a space shaped around it</span>
+    <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+      <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
+      {% if current != 'mosaic' %}<a class="{{ btnline }}" href="/mosaic">Learn more</a>{% endif %}
+    </div>
+    {% endif %}
+  </article>
+
+</div>
+{% endmacro %}

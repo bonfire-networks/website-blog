@@ -3,7 +3,7 @@
    Requires: v2 tokens in css/index.css (night/ink/flame colors, font-smono)
    ============================================================ #}
 {% set navlink = "px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5" %}
-{% set droplink = "block px-3 py-2 rounded-[5px] text-[.9rem] text-ink-2 hover:text-ink hover:bg-ink/5" %}
+{% set droplink = "block px-3 py-2 rounded-[5px] text-[.9rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5" %}
 {% set moblink = "block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem]" %}
 {% set mobsub = "block pl-11 pr-7 py-2.5 text-ink-2 text-[.92rem]" %}
 {# active state, driven by page.url: full-bar height so the gradient underline
@@ -11,7 +11,7 @@
 {% set navon = "relative self-stretch inline-flex items-center !text-ink font-semibold after:content-[''] after:absolute after:left-[13px] after:right-[13px] after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-spark after:to-ember" %}
 {% set mobon = "!text-spark font-semibold" %}
 {% set exploreActive = ('/features' in page.url) or ('/case-studies' in page.url) or ('/about' in page.url) %}
-{% set forCommActive = ('/hosting' in page.url) or ('/mosaic' in page.url) %}
+{% set forCommActive = ('/start' in page.url) or ('/hosting' in page.url) or ('/mosaic' in page.url) %}
 {% set ecoActive = ('/community' in page.url) or ('/faq' in page.url) %}
 
 <nav class="sticky top-0 z-[70] bg-night/80 backdrop-blur-md border-b border-ink/[0.07] font-body" aria-label="Main">
@@ -30,18 +30,19 @@
       <div class="dropdown-content z-[80] pt-2">
         <ul tabindex="0" class="min-w-[180px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
           <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/features' in page.url }}" href="/features">Features</a></li>
-          <li><a class="{{ droplink }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a></li>
           <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/case-studies' in page.url }}" href="/case-studies">Case studies</a></li>
           <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/about' in page.url }}" href="/about">About</a></li>
+          <li><a class="{{ droplink }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a></li>
         </ul>
       </div>
     </div>
     <div class="dropdown place-content-center dropdown-hover {{ 'self-stretch' if forCommActive }}">
-      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer {{ navon if forCommActive }}">For your community <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div tabindex="0" role="button" class="{{ navlink }} flex items-center gap-1.5 cursor-pointer {{ navon if forCommActive }}">Set up your Bonfire <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
       <div class="dropdown-content z-[80] pt-2">
-        <ul tabindex="0" class="min-w-[180px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
-          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/mosaic' in page.url }}" href="/mosaic">Let's build together</a></li>
-          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/hosting' in page.url }}" href="/hosting">Hosting</a></li>
+        <ul tabindex="0" class="min-w-[210px] p-[7px] rounded-[7px] border border-ink/15 bg-night-2/95 backdrop-blur-md shadow-[0_18px_44px_-18px_rgba(0,0,0,.8)]">
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/start' in page.url }}" href="/start#diy">DIY: self-host</a></li>
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/hosting' in page.url }}" href="/hosting">Managed: co-operative hosting</a></li>
+          <li><a class="{{ droplink }} {{ '!text-spark font-semibold' if '/mosaic' in page.url }}" href="/mosaic">Custom: co-design with us</a></li>
         </ul>
       </div>
     </div>
@@ -65,12 +66,13 @@
 <div class="hidden sticky top-16 z-[69] bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
   <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Explore</span>
   <a class="{{ mobsub }} {{ mobon if '/features' in page.url }}" href="/features">Features</a>
-  <a class="{{ mobsub }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a>
   <a class="{{ mobsub }} {{ mobon if '/case-studies' in page.url }}" href="/case-studies">Case studies</a>
   <a class="{{ mobsub }} {{ mobon if '/about' in page.url }}" href="/about">About</a>
-  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">For your community</span>
-  <a class="{{ mobsub }} {{ mobon if '/hosting' in page.url }}" href="/hosting">Hosting</a>
-  <a class="{{ mobsub }} {{ mobon if '/mosaic' in page.url }}" href="/mosaic">Let's build together</a>
+  <a class="{{ mobsub }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try the demo ↗</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Set up your Bonfire</span>
+  <a class="{{ mobsub }} {{ mobon if '/start' in page.url }}" href="/start#diy">DIY: self-host</a>
+  <a class="{{ mobsub }} {{ mobon if '/hosting' in page.url }}" href="/hosting">Managed: co-operative hosting</a>
+  <a class="{{ mobsub }} {{ mobon if '/mosaic' in page.url }}" href="/mosaic">Custom: co-design with us</a>
   <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Ecosystem</span>
   <a class="{{ mobsub }} {{ mobon if '/community' in page.url }}" href="/community">Participate</a>
   <a class="{{ mobsub }} {{ mobon if '/faq' in page.url }}" href="/faq">FAQs</a>

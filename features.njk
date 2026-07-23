@@ -14,7 +14,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
 
 {% set sections = [
   {
-    id: "faeturecomposer.png", acc: "var(--color-flame)", eyebrow: "Post & converse", link: false,
+    id: "post", img: "faeturecomposer.png", acc: "var(--color-flame)", eyebrow: "Post & converse", link: false,
     head: "Room to say it", headhl: "properly.",
     intro: "A composer that doesn't force every thought into the same shape, and threads that let a conversation actually branch instead of collapsing into a shouting match.",
     shot: "The composer: formatting, mentions, and boundary controls in one place",
@@ -28,7 +28,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
     ]
   },
   {
-    id: "featurefilters.png", acc: "var(--color-corn)", eyebrow: "Feeds & discovery", link: false,
+    id: "feeds", img: "featurefilters.png", acc: "var(--color-corn)", eyebrow: "Feeds & discovery", link: false,
     head: "The feed is yours", headhl: "to build.",
     intro: "No mysterious algorithm ranking your people. You assemble the feeds you want, out of the filters that matter to you, and keep the ones that work.",
     shot: "The custom feed builder: filtering by content type, circle and source instance",
@@ -42,7 +42,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
     ]
   },
   {
-    id: "boundaries", acc: "var(--color-flame)", link: "/docs/boundaries/", linktext: "How boundaries work, in the docs →",
+    id: "boundaries", img: "boundaries_post.png", acc: "var(--color-flame)", link: "/docs/boundaries/", linktext: "How boundaries work, in the docs →",
     eyebrow: "Circles & boundaries",
     head: "Who sees what is", headhl: "your call.",
     intro: "Most networks give you one blunt switch: public, or not. Bonfire gives you the relationships you actually have, and lets every post carry its own rules.",
@@ -80,7 +80,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
       { icon: "ph-palette", name: "Themes", text: "Change the look and feel: pick a theme, or make your own. No coding required." },
       { icon: "ph-faders", name: "Granular settings", text: "Tune how the app behaves in detail, overriding the choices made by designers, developers, and even your instance admins." },
       { icon: "ph-stack", name: "Flavours", text: "Start from a preset that's already close to what you need — social, community, coordination, open science — then adjust block by block." },
-      { icon: "ph-chats-circle", name: "Federated comments", text: "Embed Bonfire Telling on any static site: readers reply from Bonfire, Mastodon, or any ActivityPub account." },
+      { icon: "ph-chats-circle", name: "Federated comments", text: "Embed the Telling on any static site: readers reply from Bonfire, Mastodon, or any ActivityPub account." },
       { icon: "ph-code", name: "Build your own", text: "Documented libraries for accounts, boundaries, social, ActivityPub and economic flows. If it doesn't exist yet, you can write it." }
     ]
   },
@@ -119,7 +119,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
       { icon: "ph-chart-bar", name: "Polls", text: "Ask your community rather than guessing what it wants." },
       { icon: "ph-kanban", name: "Tasks & Kanban", text: "To-do lists and boards that work across instances, so coordinating doesn't mean leaving.", status: "In development" },
       { icon: "ph-hand-heart", name: "Mutual aid", text: "Needs and offers, on a calendar and a map, for communities who look after each other.", status: "In development" },
-      { icon: "ph-flask", name: "Open science", text: "Scholarly identity, citable objects with DOIs, and repository connectors for research networks.", status: "In development" },
+      { icon: "ph-flask", name: "Open science", text: "Scholarly identity, citable objects with DOIs, and repository connectors for research networks.", status: "In development", link: "https://openscience.network", linktext: "openscience.network" },
       { icon: "ph-arrows-clockwise", name: "Economic flows", text: "Inventories, offers and needs, marketplaces — built on the ValueFlows open economic vocabulary.", status: "In development" },
       { icon: "ph-map-pin", name: "Places", text: "Put activities on a map, for neighbourhoods and anything else that happens somewhere.", status: "In development" },
       { icon: "ph-brackets-curly", name: "GraphQL API", text: "Build your own clients and integrations on top of your instance."},
@@ -160,7 +160,7 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>Features</p>
       <h1 class="font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[18ch] [font-variation-settings:'opsz'_96]">Every block, <span class="fire-text">at a glance.</span></h1>
-      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[54ch] [&_b]:text-ink [&_b]:font-semibold">There's no single "Bonfire app" with a fixed feature list. It's a kit of composable blocks: <b>switch on what your community needs, leave out the rest</b>. Here's everything in the kit, including what we haven't finished yet.</p>
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[54ch] [&_b]:text-ink [&_b]:font-semibold">There's no single Bonfire app with a fixed feature list. It's a kit of composable blocks: <b>switch on what your community needs, leave out the rest</b>. Here's everything in the kit, including what we haven't finished yet.</p>
 
       <nav class="flex flex-wrap gap-2 mt-9" aria-label="Jump to a section">
         {%- for s in sections %}
@@ -190,15 +190,16 @@ description: Every building block, at a glance. Bonfire isn't one fixed app — 
           </div>
           <h3 class="{{ cellh }}">{{ c.name }}</h3>
           <p class="{{ cellp }}">{{ c.text }}</p>
+          {% if c.link %}<a class="mt-3 inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="{{ c.link }}"{% if '//' in c.link %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ c.linktext or 'Learn more' }} <span aria-hidden="true">→</span></a>{% endif %}
         </div>
         {%- endfor %}
       </div>
 
       {# TODO: swap each placeholder for the real screenshot — replace `shot:` with
          `image:` + `alt:` in the section data above, and this block with an <img>. #}
-      {% if s.shot %}
+      {% if s.shot and s.img %}
       <figure class="m-0 mt-4">
-        <img class="{{ shotph }}" src="/img/{{ s.id }}" alt="{{ s.shot }}">
+        <img class="{{ shotph }}" src="/img/{{ s.img }}" alt="{{ s.shot }}">
       </figure>
       {% endif %}
 

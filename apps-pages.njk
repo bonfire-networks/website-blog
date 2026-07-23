@@ -20,6 +20,13 @@ permalink: "app/{{apps.flavour}}/"
       <img src="{{apps.screenshot}}" class="object-contain rounded-box border border-base-content/10 max-h-[470px] w-full">
 
       <div class="prose prose-lg mt-6 max-w-full">{{apps.long_description}}</div>
+
+      {% if apps.website != "" %}
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="{{apps.website}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary normal-case">Visit {{ apps.website | replace("https://", "") | replace("http://", "") | replace("/", "") }} →</a>
+        {% if apps.sandbox != "" %}<a href="{{apps.sandbox}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline normal-case">Try the demo</a>{% endif %}
+      </div>
+      {% endif %}
   </div>
   <div class="col-span-5 lg:col-span-2 gap-4 flex flex-col ">
     <div class="rounded-lg bg-base-content/10 p-4 gap-3 flex flex-col ">

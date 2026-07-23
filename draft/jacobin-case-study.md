@@ -2,7 +2,7 @@
 layout: /layouts/post.njk
 title: "From audience to community: how Jacobin built a home its readers own"
 description: "Jacobin's German edition asked for more than a better website — a community space where readers debate, organise, and build solidarity. Over six months of co-design, we connected Ghost to Bonfire and built a reusable foundation any publisher can adopt."
-image: /img/community.png
+image: /img/jacobin/j09-group-topics.png
 tags: case-study
 date: 2026-07-09
 
@@ -10,7 +10,7 @@ date: 2026-07-09
 
 > **A reader-funded magazine wanted more than a comment section. We connected Ghost to Bonfire and gave 3,000+ readers a federated community space they own.**
 
-![Jacobin's community space on Bonfire](/img/community.png)
+![Jacobin's community space on Bonfire](/img/jacobin/ghostbonfire.png)
 
 ## At a glance
 
