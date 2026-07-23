@@ -1,5 +1,5 @@
 ---
-title: "Announcing Bonfire for communities: with groups and tools to organise together"
+title: "Announcing Bonfire for communities: groups and tools to organise together"
 description: "Groups and topics, community rules and decision-making, events, organisation profiles, federated comments, custom themes: built with the communities who needed them, ready to use as-is — or to shape into a flavour of your community's own."
 date: 2026-07-25
 permalink: /posts/bonfire-for-communities/
@@ -60,7 +60,7 @@ The design draws on sociocratic practice and on tools like [Ukuvota](https://uku
 
 Communities run on gatherings. Bonfire for communities includes events with calendar and list views for browsing what's coming up.
 
-![Screenshot of Bonfire's events page, showing federated events from other instances, filterable by category](/img/events.png)
+![Screenshot of Bonfire's events page, showing federated events from other instances, filterable by category](/img/event.png)
 
 Rather than create yet-another events management app, we've been working with [Lauti](https://lauti.org/blog/lauti-updates-2026/#cooperation-with-bonfire), an open source community calendar built and maintained by friends and allies. Bonfire is modular by design, and that modularity doesn't stop at our own extensions: rather than succumb to "not invented here" syndrome, we interconnect with dedicated tools across the ecosystem, so events can be published and discovered across apps instead of locked inside one.
 
@@ -84,17 +84,25 @@ The discussion doesn't live in a box under the page, either: it lives in the com
 
 Comments were the first embeddable widget; a second drops your instance's pinned posts into any site, so visitors to your regular website get a preview of what's happening in the fediverse.
 
-For [Ghost](https://ghost.org) specifically we went further, with single sign-on, membership tier sync, and automatic article import — so a publisher's articles arrive in their community as an invitation to discuss rather than a dead end.
+For [Ghost](https://ghost.org) specifically we went further. Ghost has no single sign-on of its own, so we built an API-level integration — webhooks and magic-link login — to sync a publisher's members and membership tiers into their Bonfire space, alongside automatic article import, so a publisher's articles arrive in their community as an invitation to discuss rather than a dead end. The same approach could be extended to WordPress or any other CMS or Patreon-style membership tool. [See how the Ghost integration works →](/ghost)
 
 We call it **[the Telling](/telling/)**, after Ursula K. Le Guin's *The Telling* — because telling is what people do, what people always did: sharing what they know, in words, in signs, in stories, in songs.
 
 ### It looks like your community, not an off-the-shelf product or someone else's platform 
 
-Bonfire ships with 16 themes, and you can build your own colours, fonts, and layout without writing code. And it goes further than a theme: your domain, your name, your masthead, your typography — the whole space reads as yours, with nothing of ours wedged between you and your people. Even paid community platforms like [Mighty Networks](https://www.mightynetworks.com/) rarely go that far: your community still lives in their app, with their name on it, on their terms.
+Bonfire ships with [16 themes](/themes), and you can build your own colours, fonts, and layout without writing code. And it goes further than a theme: your domain, your name, your masthead, your typography — the whole space reads as yours, with nothing of ours wedged between you and your people. Even paid community platforms like [Mighty Networks](https://www.mightynetworks.com/) rarely go that far: your community still lives in their app, with their name on it, on their terms.
 
 ![Screenshot of jacobin.social and the Jacobin Ghost site side by side: Bonfire carrying Jacobin's branding end to end](/img/jacobin/ghostbonfire.png)
 
 When Jacobin's readers arrive at [jacobin.social](https://jacobin.social) they see Jacobin, end to end — not a platform that happens to host them. That mattered enough to be one of the reasons they chose Bonfire in the first place: a community space should feel like *their* space, not like "the community tab" on somebody else's product.
+
+### Single sign-on, both directions
+
+Bonfire speaks OIDC and OAuth2 as both a client *and* a provider: members can sign in with an account they already have, and Bonfire can itself act as the identity provider that signs them into other apps. One less barrier to showing up, and one less password to manage.
+
+### Fast and reliable
+
+After over a year of real communities putting real load on Bonfire, we've invested heavily in load testing and performance improvements, so a space stays fast and reliable as it grows from a handful of people to thousands.
 
 ## Built with communities, not for them
 
