@@ -51,18 +51,15 @@ layout: layouts/base.njk
 
 <!-- ── HERO ── -->
 <section class="pt-16 pb-12 lg:pt-24 lg:pb-20 px-4 lg:px-0" aria-labelledby="telling-hero-heading">
-  <div class="max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-center">
     <div>
       <h1 id="telling-hero-heading" class="text-4xl lg:text-6xl lg:leading-[72px] font-bold tracking-tight text-base-content serif-bold">Every site<br/>deserves a <em class="text-primary italic">voice</em></h1>
       <p class="text-lg lg:text-xl mt-6 text-base-content/80 max-w-lg">
-        The Telling brings federated conversations to the open web.
-        Embed a comment thread on any static site, readers reply from
-        their Bonfire, Mastodon, or any ActivityPub account.
-        No walled gardens. No surveillance. Just people talking.
+        The Telling adds a comment thread to anything you publish: a blog, a newsroom, a CMS or static site. Readers reply with an account they already have, on Bonfire, Mastodon, or anywhere else on the fediverse or the ATmosphere. The discussion lives on your own server, not a third party's, and you can take it with you.
       </p>
       <div class="flex gap-4 mt-8 flex-wrap">
-        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the Embed</a>
-        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See How It Works</a>
+        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
+        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
       </div>
       <div class="mt-10 pl-5 border-l-2 border-primary/40">
         <p class="serif-regular italic text-base text-base-content/60">"To learn a belief without belief is to sing a song without the tune."</p>
@@ -75,45 +72,8 @@ layout: layouts/base.njk
         <span class="w-1.5 h-1.5 rounded-full bg-green-400 telling-pulse"></span>
         Federated via ActivityPub
       </div>
-      <div class="bg-base-200 rounded-2xl shadow-xl overflow-hidden border border-base-content/10">
-        <div class="px-5 py-4 border-b border-base-content/10 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-primary" viewBox="0 0 18 18" fill="none"><path d="M9 3 C7.5 5.5, 6 8, 6 10 C6 12.2 7.3 13.5 9 13.5 C10.7 13.5 12 12.2 12 10 C12 8 10.5 5.5 9 3Z" fill="currentColor"/></svg>
-            <span class="serif-bold text-base text-base-content">The Telling</span>
-          </div>
-          <span class="text-sm text-base-content/50">3 voices</span>
-        </div>
-        <div class="px-5 py-3">
-          <div class="py-3 border-b border-base-content/5">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#5B7FE8;">A</div>
-              <span class="text-sm font-medium text-base-content">ada</span>
-              <span class="text-xs text-base-content/50">@bonfire.cafe</span>
-            </div>
-            <p class="text-sm text-base-content/70 pl-9">This is exactly the kind of tooling the fediverse needs. Finally, blogs can be part of the conversation again.</p>
-          </div>
-          <div class="py-3 border-b border-base-content/5">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#E85B8A;">M</div>
-              <span class="text-sm font-medium text-base-content">mika</span>
-              <span class="text-xs text-base-content/50">@mastodon.social</span>
-            </div>
-            <p class="text-sm text-base-content/70 pl-9">Replied from Mastodon and it just showed up here. Beautiful.</p>
-          </div>
-          <div class="py-3">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#4ADE80;">R</div>
-              <span class="text-sm font-medium text-base-content">river</span>
-              <span class="text-xs text-base-content/50">@community.garden</span>
-            </div>
-            <p class="text-sm text-base-content/70 pl-9">No tracking, no ads, no login wall. This is how the web should work.</p>
-          </div>
-        </div>
-        <div class="px-5 py-3 border-t border-base-content/10 flex gap-3 items-start">
-          <div class="flex-1 px-3 py-2 border border-base-content/10 rounded-lg text-sm text-base-content/40 bg-base-300">Join the Telling...</div>
-          <button class="btn btn-primary btn-sm" type="button" aria-hidden="true">Reply</button>
-        </div>
-      </div>
+      <img src="/img/comments.png" alt="The Telling: a federated comment thread embedded under an article, with replies flowing in from Bonfire and Mastodon accounts" class="rounded-2xl shadow-xl border border-base-content/10 w-full" loading="lazy">
+
     </div>
   </div>
 </section>
@@ -121,22 +81,21 @@ layout: layouts/base.njk
 <!-- ── HOW IT WORKS ── -->
 <section class="py-12 lg:py-20 px-4 bg-base-300/30" id="telling-how" aria-labelledby="telling-how-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest text-primary mb-3">How It Works</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-how-heading">Three lines of code.<br/>A universe of voices.</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">How it works</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-how-heading">One script tag,<br/>comments on every page.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      Add the Telling to any blog, documentation site, or static page.
-      Comments flow through the fediverse and appear as threads on your site.
+      Add the Telling to any blog, documentation site, or static page. Comments flow through the fediverse and appear as a thread under your post.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">1</div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Embed the iframe</h3>
-        <p class="text-base text-base-content/70">Paste a single HTML snippet into your page template. The Telling widget loads in an iframe, fully styled and self-contained.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Embed the script</h3>
+        <p class="text-base text-base-content/70">Paste a single script tag into your page template. The Telling widget loads and renders itself, fully styled and self-contained.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">2</div>
         <h3 class="text-xl font-bold text-base-content mb-2">Readers join from anywhere</h3>
-        <p class="text-base text-base-content/70">Visitors reply using their Bonfire, Mastodon, Pleroma, or any ActivityPub-compatible account. No new signups. No platform lock-in. Their identity travels with them.</p>
+        <p class="text-base text-base-content/70">Visitors reply using their Bonfire, Mastodon, Pleroma, or any ActivityPub-compatible account. Readers keep the identity they already have, with no new sign-up and no lock-in.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">3</div>
@@ -150,10 +109,10 @@ layout: layouts/base.njk
 <!-- ── EMBED CODE ── -->
 <section class="py-12 lg:py-20 px-4" id="telling-embed" aria-labelledby="telling-embed-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Get Started</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-embed-heading">Copy. Paste. Federate.</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Get started</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-embed-heading">One tag, and you're live.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      That's it. No API keys, no tracking scripts, no account required.
+      No API keys, no tracking scripts, no account to create.
     </p>
     <div class="bg-base-300 rounded-2xl overflow-hidden max-w-2xl shadow-xl relative">
       <button class="telling-copy-btn absolute top-3 right-4 bg-base-content/10 border border-base-content/10 text-base-content/60 rounded-lg px-3 py-2 text-xs font-medium cursor-pointer hover:bg-base-content/20 hover:text-base-content transition-all inline-flex items-center gap-1.5" type="button" onclick="tellingCopyEmbed(this)" aria-label="Copy embed code">
@@ -168,13 +127,56 @@ layout: layouts/base.njk
       </div>
       <div class="telling-code p-6 font-mono text-sm leading-7 text-base-content/70 overflow-x-auto">
         <span class="comment">&lt;!-- Add the Telling to any page --&gt;</span><br/>
-        <span class="tag">&lt;iframe</span><br/>
-        &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed"</span><br/>
-        &nbsp;&nbsp;<span class="attr">data-page</span>=<span class="val">"{% raw %}{{ page.url }}{% endraw %}"</span><br/>
-        &nbsp;&nbsp;<span class="attr">title</span>=<span class="val">"The Telling Comments"</span><br/>
-        &nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%; border:none; min-height:400px;"</span><br/>
-        <span class="tag">&gt;&lt;/iframe&gt;</span>
+        <span class="tag">&lt;script</span><br/>
+        &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+        &nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span><br/>
+        &nbsp;&nbsp;<span class="attr">data-mode</span>=<span class="val">"nested"</span><br/>
+        &nbsp;&nbsp;<span class="attr">async</span><br/>
+        <span class="tag">&gt;&lt;/script&gt;</span>
       </div>
+    </div>
+
+    <div class="mt-10 max-w-2xl">
+      <h3 class="text-lg font-bold text-base-content mb-1">Options</h3>
+      <p class="text-base text-base-content/60 mb-5">Only <code>src</code> is required. The thread defaults to the current page URL, so on most sites the tag above is all you need. Add any of these <code>data-</code> attributes to tune it:</p>
+      <dl class="divide-y divide-base-content/10 border-y border-base-content/10 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-theme</dt>
+          <dd class="text-base-content/70">DaisyUI theme to apply inside the widget, e.g. <code>"dark"</code> or <code>"light"</code>.</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-mode</dt>
+          <dd class="text-base-content/70">Initial thread display: <code>"flat"</code> or <code>"nested"</code> (default: the instance/user setting).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-sort-by</dt>
+          <dd class="text-base-content/70">Initial sort: <code>"latest_reply"</code>, <code>"reply_count"</code>, <code>"boost_count"</code>, <code>"like_count"</code>, <code>"popularity_score"</code>, or <code>"newest"</code> (default: thread order).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-sort-order</dt>
+          <dd class="text-base-content/70">Sort direction for the chosen sort: <code>"asc"</code> or <code>"desc"</code> (default: per sort type).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-media-uri</dt>
+          <dd class="text-base-content/70">Find or create the thread for this URL (default: the current page URL).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-canonical-slug</dt>
+          <dd class="text-base-content/70">Match the thread by the post's slug on your own site (e.g. a Ghost post slug) instead of the URL.</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-canonical-id</dt>
+          <dd class="text-base-content/70">Match the thread by the post's ID on your own site (e.g. a Ghost post ID).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-post-id</dt>
+          <dd class="text-base-content/70">Target a specific Bonfire post/thread ID directly (otherwise the media URI is used).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-token-max-age</dt>
+          <dd class="text-base-content/70">Hours before the stored sign-in token is treated as stale and the reader is asked to re-authenticate (default: <code>720</code>, i.e. 30 days). The server enforces a hard maximum regardless.</dd>
+        </div>
+      </dl>
     </div>
   </div>
 </section>
@@ -182,14 +184,13 @@ layout: layouts/base.njk
 <!-- ── FRAMEWORK GUIDES ── -->
 <section class="py-12 lg:py-20 px-4" id="telling-guides" aria-labelledby="telling-guides-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Install Guides</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Set up The Telling on your stack</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Install guides</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Set it up on your platform</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      Choose your framework or CMS. Each guide walks you through adding
-      federated comments in under five minutes.
+      The same script tag works on any site. These guides just show where it goes in a few common setups.
     </p>
 
-    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-10">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-10">
       <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="jekyll" role="button" tabindex="0" onclick="tellingShowGuide('jekyll')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('jekyll')}">
         <div class="w-10 h-10 flex items-center justify-center">
           <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#CC0000" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="serif" font-size="20" font-weight="700" fill="#CC0000">J</text></svg>
@@ -232,12 +233,6 @@ layout: layouts/base.njk
         </div>
         <span>Next.js</span>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="html" role="button" tabindex="0" onclick="tellingShowGuide('html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('html')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#E8652B" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="14" font-weight="700" fill="#E8652B">&lt;/&gt;</text></svg>
-        </div>
-        <span>HTML</span>
-      </div>
     </div>
 
     <!-- Guide detail panels -->
@@ -260,11 +255,10 @@ layout: layouts/base.njk
             <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
               <span class="file-label">_includes/telling.html</span>
               <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={% raw %}{{ page.url | absolute_url }}{% endraw %}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={% raw %}{{ page.title | url_encode }}{% endraw %}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span> <span class="attr">async</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/script&gt;</span><br/>
               <span class="tag">&lt;/section&gt;</span>
             </div>
           </div>
@@ -319,11 +313,10 @@ layout: layouts/base.njk
             <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
               <span class="file-label">_includes/telling.njk</span>
               <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={% raw %}{{ page.url }}{% endraw %}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={% raw %}{{ title | urlencode }}{% endraw %}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span> <span class="attr">async</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/script&gt;</span><br/>
               <span class="tag">&lt;/section&gt;</span>
             </div>
           </div>
@@ -376,11 +369,10 @@ layout: layouts/base.njk
             <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
               <span class="file-label">layouts/partials/telling.html</span>
               <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={% raw %}{{ .Permalink }}{% endraw %}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={% raw %}{{ .Title | urlquery }}{% endraw %}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span> <span class="attr">async</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/script&gt;</span><br/>
               <span class="tag">&lt;/section&gt;</span>
             </div>
           </div>
@@ -435,11 +427,11 @@ layout: layouts/base.njk
               <span class="file-label">post.hbs</span>
 {% raw %}              <span class="cmt">&lt;!-- after {{content}} --&gt;</span><br/><br/>
               <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={{url absolute="true"}}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={{encode title}}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-canonical-slug</span>=<span class="val">"{{slug}}"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span> <span class="attr">async</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/script&gt;</span><br/>
               <span class="tag">&lt;/section&gt;</span>{% endraw %}
             </div>
           </div>
@@ -470,10 +462,10 @@ layout: layouts/base.njk
 {% raw %}              <span class="tag">&lt;script&gt;</span><br/>
               &nbsp;&nbsp;<span class="kw">const</span> post = document.querySelector(<span class="str">'.post-content'</span>);<br/>
               &nbsp;&nbsp;<span class="kw">if</span> (post) {<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> f = document.createElement(<span class="str">'iframe'</span>);<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;f.src = <span class="str">`https://telling.bonfire.cafe/embed?url=${location.href}`</span>;<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;f.style.cssText = <span class="str">'width:100%;border:none;min-height:400px'</span>;<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;post.after(f);<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> s = document.createElement(<span class="str">'script'</span>);<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;s.src = <span class="str">'https://your-instance.social/js/comments_embed.js'</span>;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;s.dataset.theme = <span class="str">'dark'</span>; s.async = <span class="kw">true</span>;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;post.after(s);<br/>
               &nbsp;&nbsp;}<br/>
               <span class="tag">&lt;/script&gt;</span>{% endraw %}
             </div>
@@ -502,11 +494,11 @@ layout: layouts/base.njk
               <span class="file-label">single.php</span>
               <span class="cmt">&lt;?php // after the_content() ?&gt;</span><br/><br/>
               <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=&lt;?php the_permalink(); ?&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title=&lt;?php echo urlencode(get_the_title()); ?&gt;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-canonical-slug</span>=<span class="val">"&lt;?php echo esc_attr(get_post_field('post_name')); ?&gt;"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span> <span class="attr">async</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/script&gt;</span><br/>
               <span class="tag">&lt;/section&gt;</span>
             </div>
           </div>
@@ -538,7 +530,7 @@ layout: layouts/base.njk
             <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
               <span class="file-label">functions.php</span>
 {% raw %}              <span class="kw">add_shortcode</span>(<span class="str">'telling'</span>, <span class="kw">function</span>() {<br/>
-              &nbsp;&nbsp;<span class="kw">return</span> <span class="str">'&lt;iframe src="https://telling.bonfire.cafe<br/>&nbsp;&nbsp;&nbsp;&nbsp;/embed?url='</span> . <span class="fn">get_permalink</span>() . <span class="str">'"<br/>&nbsp;&nbsp;&nbsp;&nbsp;style="width:100%;border:none;min-height:400px;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;loading="lazy"&gt;&lt;/iframe&gt;'</span>;<br/>
+              &nbsp;&nbsp;<span class="kw">return</span> <span class="str">'&lt;script src="https://your-instance.social<br/>&nbsp;&nbsp;&nbsp;&nbsp;/js/comments_embed.js" data-theme="dark"<br/>&nbsp;&nbsp;&nbsp;&nbsp;data-mode="nested" async&gt;&lt;/script&gt;'</span>;<br/>
               });{% endraw %}
             </div>
           </div>
@@ -565,14 +557,12 @@ layout: layouts/base.njk
             <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
               <span class="file-label">src/components/Telling.astro</span>
               <span class="kw">---</span><br/>
-              <span class="kw">const</span> { url, title } = <span class="fn">Astro</span>.props;<br/>
               <span class="kw">---</span><br/><br/>
 {% raw %}              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">{`https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=${url}&amp;title=${encodeURIComponent(title)}`}</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">/&gt;</span><br/>
+              &nbsp;&nbsp;<span class="tag">&lt;script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span> <span class="attr">async</span><br/>
+              &nbsp;&nbsp;<span class="tag">&gt;&lt;/script&gt;</span><br/>
               <span class="tag">&lt;/section&gt;</span>{% endraw %}
             </div>
           </div>
@@ -590,10 +580,7 @@ layout: layouts/base.njk
               <span class="tag">&lt;article&gt;</span><br/>
               &nbsp;&nbsp;<span class="tag">&lt;slot /&gt;</span><br/>
               <span class="tag">&lt;/article&gt;</span><br/><br/>
-              <span class="tag">&lt;Telling</span><br/>
-              &nbsp;&nbsp;<span class="attr">url</span>={<span class="fn">Astro</span>.url.href}<br/>
-              &nbsp;&nbsp;<span class="attr">title</span>={frontmatter.title}<br/>
-              <span class="tag">/&gt;</span>
+              <span class="tag">&lt;Telling /&gt;</span>
             </div>
           </div>
         </div>
@@ -626,19 +613,18 @@ layout: layouts/base.njk
           <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
           <div class="py-4 px-4 md:pr-4 md:pl-0">
             <h4>Create a Telling component</h4>
-            <p>Add a React component that renders the iframe. Works as a server component.</p>
+            <p>Add a component that loads the embed script. Works with the app or pages router.</p>
           </div>
           <div class="py-4 px-4 md:pr-5 md:pl-0">
             <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
 {% raw %}              <span class="file-label">components/Telling.tsx</span>
-              <span class="kw">export default function</span> <span class="fn">Telling</span>({<br/>
-              &nbsp;&nbsp;url, title<br/>
-              }: { url: string; title: string }) {<br/>
+              <span class="kw">import</span> Script <span class="kw">from</span> <span class="str">'next/script'</span>;<br/><br/>
+              <span class="kw">export default function</span> <span class="fn">Telling</span>() {<br/>
               &nbsp;&nbsp;<span class="kw">return</span> (<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>={<span class="str">`https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=${url}&amp;title=${encodeURIComponent(title)}`</span>}<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>={{ width:'100%',border:'none',minHeight:400 }}<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;Script</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span> <span class="attr">data-mode</span>=<span class="val">"nested"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">strategy</span>=<span class="val">"lazyOnload"</span><br/>
               &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">/&gt;</span><br/>
               &nbsp;&nbsp;);<br/>
               }{% endraw %}
@@ -656,62 +642,13 @@ layout: layouts/base.njk
 {% raw %}              <span class="file-label">app/blog/[slug]/page.tsx</span>
               <span class="kw">import</span> Telling <span class="kw">from</span> <span class="str">'@/components/Telling'</span>;<br/><br/>
               <span class="tag">&lt;article&gt;</span>{content}<span class="tag">&lt;/article&gt;</span><br/>
-              <span class="tag">&lt;Telling</span><br/>
-              &nbsp;&nbsp;<span class="attr">url</span>={<span class="str">`https://mysite.com/blog/${slug}`</span>}<br/>
-              &nbsp;&nbsp;<span class="attr">title</span>={post.title}<br/>
-              <span class="tag">/&gt;</span>{% endraw %}
+              <span class="tag">&lt;Telling /&gt;</span>{% endraw %}
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-html">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#E8652B">&lt;/&gt;</text></svg>
-          <h3>Plain HTML</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Paste the iframe</h4>
-            <p>Add this snippet anywhere in your HTML file. No build tools, no dependencies.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">index.html</span>
-              <span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;?url=https://mysite.com/my-post<br/>&nbsp;&nbsp;&nbsp;&nbsp;&amp;title=My%20Blog%20Post"</span><br/>
-              &nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              <span class="tag">&gt;&lt;/iframe&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Auto-detect URL (optional)</h4>
-            <p>Use a tiny script to automatically pass the current page URL.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-{% raw %}              <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"telling"</span><span class="tag">&gt;&lt;/div&gt;</span><br/>
-              <span class="tag">&lt;script&gt;</span><br/>
-              &nbsp;&nbsp;<span class="kw">const</span> f = document.createElement(<span class="str">'iframe'</span>);<br/>
-              &nbsp;&nbsp;f.src = <span class="str">`https://telling.bonfire.cafe/embed?url=${location.href}`</span>;<br/>
-              &nbsp;&nbsp;f.style.cssText = <span class="str">'width:100%;border:none;min-height:400px'</span>;<br/>
-              &nbsp;&nbsp;document.getElementById(<span class="str">'telling'</span>).appendChild(f);<br/>
-              <span class="tag">&lt;/script&gt;</span>{% endraw %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </section>
@@ -720,9 +657,9 @@ layout: layouts/base.njk
 <section class="py-12 lg:py-20 px-4 bg-base-300/30" id="telling-features" aria-labelledby="telling-features-heading">
   <div class="max-w-screen-lg mx-auto">
     <p class="text-xs font-semibold tracking-widest text-primary mb-3">Features</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-features-heading">Built for people,<br/>not for platforms</h2>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-features-heading">Made for publishers.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      Everything you need for meaningful conversations, nothing you don't.
+      The essentials for a comment section you run yourself.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="md:col-span-2 bg-base-content/10 rounded-2xl p-8 flex items-center gap-6 hover:bg-base-content/5 transition-all border border-primary/10">
@@ -730,43 +667,43 @@ layout: layouts/base.njk
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <div>
-          <h3 class="text-xl font-bold text-base-content mb-1">Truly Federated</h3>
-          <p class="text-base text-base-content/70">Comments are ActivityPub posts. Reply from Bonfire, Mastodon, Misskey, or any compatible platform. Your words, your identity, your server.</p>
+          <h3 class="text-xl font-bold text-base-content mb-1">Federated</h3>
+          <p class="text-base text-base-content/70">Replies federate as ActivityPub comments. Readers reply from Bonfire, Mastodon, Misskey, or any compatible service, and keep their own identity and home server.</p>
         </div>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Privacy by Design</h3>
-        <p class="text-base text-base-content/70">No tracking pixels. No ad networks. No data harvesting. The Telling collects nothing about your readers, because it doesn't need to.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Private by design</h3>
+        <p class="text-base text-base-content/70">No tracking pixels, no ad networks, no data harvesting. The Telling collects nothing about your readers.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Moderation You Control</h3>
-        <p class="text-base text-base-content/70">Set your own rules. Block, mute, or defederate. You decide what conversations look like on your site, no corporate content policy imposed from above.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Moderation you control</h3>
+        <p class="text-base text-base-content/70">Set your own rules, and block, mute, or defederate as you see fit. No corporate content policy imposed from above.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Works Everywhere</h3>
-        <p class="text-base text-base-content/70">Jekyll, Hugo, Astro, 11ty, plain HTML: if it renders a page, the Telling works. One iframe. No JavaScript dependency. No build tooling.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Works on any site</h3>
+        <p class="text-base text-base-content/70">If it renders a web page, the Telling works: Jekyll, Hugo, Astro, 11ty, WordPress, Ghost, plain HTML, anything. One script tag, no build tooling required.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Bonfire Threads</h3>
+        <h3 class="text-xl font-bold text-base-content mb-2">Also a Bonfire thread</h3>
         <p class="text-base text-base-content/70">Every comment thread is also a Bonfire discussion. Communities can continue the conversation in their own space, with full context preserved.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Open Source</h3>
+        <h3 class="text-xl font-bold text-base-content mb-2">Open source</h3>
         <p class="text-base text-base-content/70">The Telling is part of the Bonfire ecosystem. AGPL-licensed, community-governed, and designed to be forked, extended, and made your own.</p>
       </div>
     </div>
@@ -789,7 +726,7 @@ layout: layouts/base.njk
       <div class="flex flex-col gap-6">
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Against enshittification</h4>
-          <p class="text-base text-base-content/60">Comment platforms decayed into ad-delivery systems. The Telling has no investors to satisfy, no engagement metrics to optimize, no data to sell. It exists to serve conversation.</p>
+          <p class="text-base text-base-content/60">Comment platforms decayed into ad-delivery systems. The Telling has no investors to satisfy, no engagement metrics to optimise, no data to sell. It exists to serve conversation.</p>
         </div>
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Gather around the fire</h4>
@@ -797,7 +734,7 @@ layout: layouts/base.njk
         </div>
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Voices, not users</h4>
-          <p class="text-base text-base-content/60">People aren't "users" to be monetized. They're voices in a conversation, each carrying their own identity, their own home server, their own autonomy.</p>
+          <p class="text-base text-base-content/60">People aren't "users" to be monetised. They're voices in a conversation, each carrying their own identity, their own home server, their own autonomy.</p>
         </div>
       </div>
     </div>
@@ -808,12 +745,12 @@ layout: layouts/base.njk
 <section class="py-12 lg:py-20 px-4 bg-base-300/30">
   <div class="max-w-screen-lg mx-auto text-center">
     <p class="text-xs font-semibold tracking-widest text-primary mb-3">Join the Telling</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4">Your blog has something to say.<br/>Let your readers say something back.</h2>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4">Your words, and your readers',<br/>in one conversation.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mx-auto mb-8">
-      Free, open source, and ready to embed. Bring federated conversations to your corner of the web.
+      Free, open source, and ready to embed on any site you publish.
     </p>
     <div class="flex gap-4 justify-center flex-wrap">
-      <a href="#telling-embed" class="btn btn-lg btn-primary">Get Started</a>
+      <a href="#telling-embed" class="btn btn-lg btn-primary">Get started</a>
       <a href="https://github.com/bonfire-networks" class="btn btn-lg btn-outline border-base-content/30">View on GitHub</a>
     </div>
   </div>
@@ -842,7 +779,7 @@ layout: layouts/base.njk
 
   // Copy embed code
   function tellingCopyEmbed(btn) {
-    const code = `<!-- Add the Telling to any page -->\n<iframe\n  src="https://telling.bonfire.cafe/embed"\n  data-page="{{ page.url }}"\n  title="The Telling Comments"\n  style="width:100%; border:none; min-height:400px;"\n></iframe>`;
+    const code = `<!-- Add the Telling to any page -->\n<script\n  src="https://your-instance.social/js/comments_embed.js"\n  data-theme="dark"\n  data-mode="nested"\n  async\n></script>`;
     navigator.clipboard.writeText(code).then(() => {
       btn.classList.add('copied');
       btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
