@@ -1,0 +1,178 @@
+---
+layout: layouts/base.njk
+title: "Self-host Bonfire: run your own federated community server"
+description: "Host Bonfire yourself: what it takes, the shape of the install (server, domain, mail & DNS, then Co-op Cloud, Docker, bare-metal or Guix), and where to get help. Open source, AGPL, free forever."
+---
+{# ============================================================
+   V2 · SELF-HOSTING — the honest bridge between "should I?" and the
+   docs install guide. High-level only; the real steps live in the
+   Hosting guide (docs.bonfirenetworks.org/deploy.html) — we link out.
+   ============================================================ #}
+{% from "v2/setup-routes.njk" import routes %}
+{% set eyebrow = "flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]" %}
+{% set diamond = "w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" %}
+{% set cardbase = "card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+{% set eyebrowrow = "flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] text-ink-3" %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ---------- hero ---------- #}
+    <header class="pt-10 pb-[clamp(36px,5vw,56px)]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span><a class="hover:text-spark" href="/start">Set up</a><span class="mx-2">/</span>Self-hosting</p>
+      <p class="{{ eyebrow }}"><i class="{{ diamond }}" aria-hidden="true"></i>You run it</p>
+      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[18ch] [font-variation-settings:'opsz'_96]">Host Bonfire <span class="fire-text">yourself.</span></h1>
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[60ch] [&_b]:text-ink [&_b]:font-semibold">Bonfire is <b>open source and AGPL, free forever</b>. You can run it on your own infrastructure. Your data, your policies, no fees. It's a first-class route, and it's the right one for communities with the technical capacity (or the appetite to build it). Here's what that involves, and where to turn if you'd rather not.</p>
+    </div>
+    </header>
+
+    <main>
+
+    {# ---------- own vs takes ---------- #}
+    <section class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-2 gap-4">
+        <div class="{{ cardbase }}" style="--acc:var(--color-flame)">
+          <span class="{{ eyebrow }}"><i class="{{ diamond }}" aria-hidden="true"></i>What you get</span>
+          <ul class="mt-4 space-y-2.5 text-ink-2 text-[.97rem]">
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Full control, on infrastructure you choose</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Your data, your moderation, your code of conduct</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>No fees, no ads. Open source, free forever</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Full federation with the open social web</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Pick a flavour, or build your own from the extensions you need</li>
+          </ul>
+        </div>
+        <div class="{{ cardbase }}" style="--acc:var(--color-corn)">
+          <span class="{{ eyebrow }}"><i class="{{ diamond }}" aria-hidden="true"></i>What it takes</span>
+          <ul class="mt-4 space-y-2.5 text-ink-2 text-[.97rem]">
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>A server (or virtual machine) you look after (≈8&nbsp;GB+ RAM depending on how many active users) and SSH access</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>Comfort at the command line</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>Updates, backups and security are your responsability</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>When a member needs help, you're tech support</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>Put aside a few hours for initial set up, and ongoing care after</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-[.9rem] text-ink-3">Not very technical? You needn't do it alone, <a class="text-spark hover:underline" href="#guided">we can help you set it up</a>. Or skip the ops entirely: <a class="text-spark hover:underline" href="#other-routes">two other routes</a> hand the running over to a hosting co-op.</p>
+    </div>
+    </section>
+
+    {# ---------- the shape of it ---------- #}
+    <section class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrowrow }}"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The shape of it</p>
+      <h2 class="font-disp font-[560] text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.08] text-balance max-w-[22ch]">Five steps, start to <span class="corn-text">signed in.</span></h2>
+      <p class="mt-3.5 text-ink-2 max-w-[62ch]">A bird's-eye view so you can gauge the effort. Every step is covered in detail in the <a class="text-spark hover:underline" href="https://docs.bonfirenetworks.org/setup.html" target="_blank" rel="noopener noreferrer">setup guide</a>, but here's an overview.</p>
+
+      <ol class="mt-8 space-y-3.5 counter-reset-none">
+        {# 1 #}
+        <li class="{{ cardbase }} flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">1</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Get a server you control</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">A machine you can SSH into, with about 8&nbsp;GB+ of RAM. Best of all is your own hardware, or a virtual machine on infrastructure run by friends, allies, or a co-op you trust, keeping it close to home. A rented VPS or dedicated server (Hetzner is a common choice) works as well. Wherever it runs, you hold the keys.</p>
+          </div>
+        </li>
+        {# 2 #}
+        <li class="{{ cardbase }} flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">2</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Set up a domain, email &amp; DNS</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Pick a domain or subdomain, it becomes part of every username, like <code class="font-smono text-[.85em] text-ink bg-ink/[0.06] rounded px-1.5 py-0.5">@you@yourdomain.net</code>. Add an email service (Mailgun, SMTP, or <a href="https://docs.bonfirenetworks.org/Bonfire.Mailer.html" target="_blank">similar</a>) for sign-ups and notifications, and set up DNS records.</p>
+          </div>
+        </li>
+        {# 3 #}
+        <li class="{{ cardbase }} flex gap-5 items-start !py-6" style="--acc:var(--color-corn)">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">3</span>
+          <div class="w-full">
+            <h3 class="font-disp font-[620] text-[1.12rem]">Choose how to run it</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Bonfire can be deployed a few ways, from most hands-off to most hands-on. Pick the one that fits your setup:</p>
+            <div class="mt-3.5 grid grid-cols-1 min-[721px]:grid-cols-2 gap-2.5">
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-leaf mb-1"><a href="https://coopcloud.tech/">Co-op Cloud</a> · recommended</p>
+                <p class="text-ink-2 text-[.9rem]">Tooling built by tech co-ops, with a ready-made Bonfire recipe. Easiest path, and handy if you'll host other open source apps too.</p>
+              </div>
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-ink-3 mb-1">Docker</p>
+                <p class="text-ink-2 text-[.9rem]">Pull our pre-built images (easy mode), or build your own if you want to assemble your own flavour from available extensions.</p>
+              </div>
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-ink-3 mb-1">Bare-metal</p>
+                <p class="text-ink-2 text-[.9rem]">No containers: you run Postgres, Elixir and a process supervisor yourself. Most control, most manual work.</p>
+              </div>
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-ink-3 mb-1">Guix</p>
+                <p class="text-ink-2 text-[.9rem]">Declarative and reproducible, via the <code class="font-smono text-[.82em]">bonfire-guix</code> channel, for the infrastructure-as-code crowd.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {# 4 #}
+        <li class="{{ cardbase }} flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">4</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Pick a flavour &amp; configure</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Choose the flavour that fits: <b class="text-ink font-semibold">community</b>, social, and others each ship a different set of features. Then fill in a <code class="font-smono text-[.85em] text-ink bg-ink/[0.06] rounded px-1.5 py-0.5">.env</code> with your domain, mail keys, etc.</p>
+          </div>
+        </li>
+        {# 5 #}
+        <li class="{{ cardbase }} flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">5</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Launch &amp; sign up</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Bring it up behind HTTPS and open your domain. Instances are invite-only by default, the <b class="text-ink font-semibold">first account to sign up skips that and becomes the admin</b>, so you're in control from the first minute.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="flex flex-wrap gap-2.5 mt-8">
+        <a class="{{ btnfire }}" href="https://docs.bonfirenetworks.org/setup.html" target="_blank" rel="noopener noreferrer">Full setup guide</a>
+        <a class="{{ btnline }}" href="https://github.com/bonfire-networks/bonfire-app" target="_blank" rel="noopener noreferrer">Browse the code</a>
+      </div>
+    </div>
+    </section>
+
+    {# ---------- you're not on your own ---------- #}
+    <section id="guided" class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07] scroll-mt-[80px]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrowrow }}"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>You're not on your own</p>
+      <h2 class="font-disp font-[560] text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.08] text-balance max-w-[24ch]">Self-hosting doesn't mean <span class="fire-text">going it alone.</span></h2>
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 rounded-xl border border-ink/15 overflow-hidden mt-7">
+        <div class="p-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Free</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Community support</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Ask for advice in the chat, the easiest door when you hit a snag.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://matrix.to/#/%23bonfire-tech:matrix.org" target="_blank" rel="noopener noreferrer">Join us on Matrix →</a>
+        </div>
+        <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Guided</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Set it up together</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">New to servers? We ocassionally run <span class="text-ink">community install parties</span> as well as 1-on-1 sessions for clients: to walk you through setup, screen to screen, then handing you the keys.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="/contact">Get in touch →</a>
+        </div>
+        <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Hand it off</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Cooperative hosting</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Decide the ops aren't for you after all? A co-op can run the whole thing, so you can have your own space without the sysadmin job.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="/hosting">Cooperative hosting →</a>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    {# ---------- other routes ---------- #}
+    <section id="other-routes" class="py-[clamp(40px,5vw,72px)] border-t border-ink/[0.07] scroll-mt-[80px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrowrow }}"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Self-hosting not for you?</p>
+      <h2 class="font-disp font-[560] text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.08] text-balance max-w-[22ch] mb-8">Three ways in, <span class="corn-text">pick another.</span></h2>
+      {{ routes(current='selfhost') }}
+    </div>
+    </section>
+
+    </main>
+  </div>
+</div>

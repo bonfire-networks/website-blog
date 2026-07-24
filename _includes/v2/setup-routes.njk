@@ -1,7 +1,7 @@
 {# ============================================================
    V2 · GET STARTED ROUTES — shared three-doors component.
    Usage:
-     {% from "v2/routes.njk" import routes %}
+     {% from "v2/setup-routes.njk" import routes %}
      {{ routes() }}                              full, nothing marked current
      {{ routes(current='managed', compact=true) }}  compact, "you're here" on hosting
    current: '' | 'selfhost' | 'managed' | 'mosaic'
@@ -9,6 +9,8 @@
 {% macro routes(current='', compact=false) %}
 {% set route = "card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[26px] gap-2.5 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
 {% set cur = "!border-[color-mix(in_srgb,var(--acc)_55%,transparent)] bg-[color-mix(in_srgb,var(--acc)_5%,transparent)]" %}
+{# in full mode the current route is the page you're on — de-emphasise it (this section reads "pick another"); compact keeps the "you're here" highlight #}
+{% set faded = "opacity-45 saturate-[.55] hover:!border-ink/15" %}
 {% set who = "flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]" %}
 {% set dot = "w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" %}
 {% set head = "font-disp font-[560] text-[1.4rem] leading-[1.12] mt-0.5" %}
@@ -25,12 +27,12 @@
 <div id="routes" class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-4">
 
   {# ---- you run it ---- #}
-  <article id="diy" class="{{ route }} scroll-mt-[80px] {{ cur if current == 'selfhost' }}" style="--acc:var(--color-flame)">
+  <article id="diy" class="{{ route }} scroll-mt-[80px] {% if current == 'selfhost' %}{{ cur if compact else faded }}{% endif %}" style="--acc:var(--color-flame)">
     <span class="{{ who }}"><i class="{{ dot }}" aria-hidden="true"></i>You run it{{ " · you're here" if current == 'selfhost' }}</span>
     <h2 class="{{ head }}">Install Bonfire on your own</h2>
     <p class="{{ lead }}">For those who want to self-host their own Bonfire instance. You'll need to be comfortable with the command line.</p>
     {% if compact %}
-    <a class="{{ morelink }}" href="https://docs.bonfirenetworks.org/deploy.html">Installation guide →</a>
+    <a class="{{ morelink }}" href="/self-hosting">How self-hosting works →</a>
     {% else %}
     <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
       <li>Full control, on your own infrastructure</li>
@@ -38,15 +40,21 @@
       <li>Docker-based deployment</li>
     </ul>
     <span class="{{ fit }}">◼ good if: you have a server &amp; some sysadmin comfort</span>
+    <p class="mt-2 font-smono text-[.68rem] text-ink-3 leading-[1.5]">New to servers? We run guided <a class="text-spark hover:underline" href="/self-hosting#guided">install parties &amp; 1-on-1 setup</a>.</p>
     <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
-      <a class="{{ btnfire }}" href="https://github.com/bonfire-networks/bonfire-app">Code</a>
-      <a class="{{ btnline }}" href="https://docs.bonfirenetworks.org/deploy.html">Installation guide</a>
+      {% if current == 'selfhost' %}
+      <a class="{{ btnfire }}" href="https://docs.bonfirenetworks.org/setup.html">Hosting guide</a>
+      <a class="{{ btnline }}" href="https://github.com/bonfire-networks/bonfire-app">Code</a>
+      {% else %}
+      <a class="{{ btnfire }}" href="/self-hosting">How to self-host</a>
+      <a class="{{ btnline }}" href="https://docs.bonfirenetworks.org/setup.html">Setup guide</a>
+      {% endif %}
     </div>
     {% endif %}
   </article>
 
   {# ---- we run it together ---- #}
-  <article id="managed" class="{{ route }} scroll-mt-[80px] {{ cur if current == 'managed' }}" style="--acc:var(--color-corn)">
+  <article id="managed" class="{{ route }} scroll-mt-[80px] {% if current == 'managed' %}{{ cur if compact else faded }}{% endif %}" style="--acc:var(--color-corn)">
     <span class="{{ who }}"><i class="{{ dot }}" aria-hidden="true"></i>We run it together{{ " · you're here" if current == 'managed' }}</span>
     <h2 class="{{ head }}">Cooperative hosting</h2>
     <p class="{{ lead }}">Join a nascent co-operative ecosystem to operate a sustainable, resilient infrastructure for Bonfire development, hosting, and support.</p>
@@ -60,14 +68,14 @@
     </ul>
     <span class="{{ fit }}">◼ good if: you want your space, not a sysadmin job</span>
     <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
-      <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Get in touch</a>
-      {% if current != 'managed' %}<a class="{{ btnline }}" href="/hosting">Learn more</a>{% endif %}
+      {% if current != 'managed' %}<a class="{{ btnfire }}" href="/hosting">Learn more</a>{% endif %}
+      <a class="{{ btnline }}" href="https://cal.com/bonfire-networks/meet">Get in touch</a>
     </div>
     {% endif %}
   </article>
 
   {# ---- we build it with you ---- #}
-  <article id="custom" class="{{ route }} scroll-mt-[80px] {{ cur if current == 'mosaic' }}" style="--acc:var(--color-leaf)">
+  <article id="custom" class="{{ route }} scroll-mt-[80px] {% if current == 'mosaic' %}{{ cur if compact else faded }}{% endif %}" style="--acc:var(--color-leaf)">
     <span class="{{ who }}"><i class="{{ dot }}" aria-hidden="true"></i>We build it with you{{ " · you're here" if current == 'mosaic' }}</span>
     <h2 class="{{ head }}">Go further with Mosaic</h2>
     <p class="{{ lead }}">Rely on the Bonfire team to build a tailored digital space for your community and support you through the whole process.</p>
@@ -81,8 +89,8 @@
     </ul>
     <span class="{{ fit }}">◼ good if: your community needs a space shaped around it</span>
     <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
-      <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
-      {% if current != 'mosaic' %}<a class="{{ btnline }}" href="/mosaic">Learn more</a>{% endif %}
+      {% if current != 'mosaic' %}<a class="{{ btnfire }}" href="/mosaic">Learn more</a>{% endif %}
+      <a class="{{ btnline }}" href="https://cal.com/bonfire-networks/meet">Book a call</a>
     </div>
     {% endif %}
   </article>
