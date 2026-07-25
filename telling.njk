@@ -262,7 +262,7 @@ layout: layouts/base.njk
     border-bottom: 1px solid var(--telling-border);
   }
 
-  #telling-features .grid > div:nth-child(even):not(:last-child) {
+  #telling-features .grid > div:nth-child(odd) {
     border-right: 1px solid var(--telling-border);
   }
 
@@ -1128,15 +1128,6 @@ layout: layouts/base.njk
       The essentials for a comment section you run yourself.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="md:col-span-2 bg-base-content/10 rounded-2xl p-8 flex items-center gap-6 hover:bg-base-content/5 transition-all border border-primary/10">
-        <div class="w-14 h-14 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-base-content mb-1">Federated</h3>
-          <p class="text-base text-base-content/70">Replies federate as ActivityPub comments. Readers reply from Bonfire, Mastodon, Misskey, or any compatible service, and keep their own identity and home server.</p>
-        </div>
-      </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1171,6 +1162,13 @@ layout: layouts/base.njk
         </div>
         <h3 class="text-xl font-bold text-base-content mb-2">Open source</h3>
         <p class="text-base text-base-content/70">The Telling is part of the Bonfire ecosystem. AGPL-licensed, community-governed, and designed to be forked, extended, and made your own.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Federated</h3>
+        <p class="text-base text-base-content/70">Replies federate as ActivityPub comments. Readers reply from Bonfire, Mastodon, Misskey, or any compatible service, and keep their own identity and home server.</p>
       </div>
     </div>
   </div>
