@@ -205,7 +205,7 @@ description: Your readers can already reach you. Now they can reach each other. 
       <div class="grid grid-cols-1 min-[601px]:grid-cols-2 min-[1051px]:grid-cols-5 gap-3.5">
         {%- for l in ladder %}
         <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:{{ l.tone }}">
-          <span class="absolute top-0 left-5 right-5 h-[2px] bg-[var(--tone)] opacity-70" aria-hidden="true"></span>
+          {# <span class="absolute top-0 left-5 right-5 h-[2px] bg-[var(--tone)] opacity-70" aria-hidden="true"></span> #}
           <i class="ph-duotone {{ l.icon }} text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
           <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">{{ l.t }}</h3>
           <p class="text-ink-2 text-[.9rem] m-0">{{ l.d }}</p>

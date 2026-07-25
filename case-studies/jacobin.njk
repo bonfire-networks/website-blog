@@ -20,9 +20,16 @@ templateClass: tmpl-case-study
   .csj .imgph { background:repeating-linear-gradient(45deg,#efece6,#efece6 12px,#e9e5dd 12px,#e9e5dd 24px); }
   .csj .big-img { width:100%; aspect-ratio:16/9; }
   .csj .shotgrid { display:grid; gap: 3.5rem 1rem; }
+  .csj .integration-points { display:grid; border-top:1px solid var(--line); }
+  .csj .integration-point { padding:1.5rem 0; border-bottom:1px solid var(--line); }
+  .csj .integration-point p { margin-top:.35rem; color:var(--muted); line-height:1.65; }
   @media (min-width:768px){
     .csj .shotgrid { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .csj .shotgrid .wide { grid-column:1 / -1; }
+    .csj .integration-points { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .csj .integration-point { padding:1.75rem 2rem 1.75rem 0; }
+    .csj .integration-point:nth-child(odd) { border-right:1px solid var(--line); }
+    .csj .integration-point:nth-child(even) { padding-left:2rem; padding-right:0; }
   }
   .csj .shot { display:block; width:100%; height:100%; object-fit:cover; }
   .csj .hscroll { display:flex; gap:1.5rem; overflow-x:auto; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; padding:0 0 1.25rem; cursor:grab; scrollbar-width:none; }
@@ -130,7 +137,7 @@ templateClass: tmpl-case-study
         <dl class="space-y-4 mb-8">
           <div><dt class="eyebrow" style="color:#9a9791">Client</dt><dd class="font-medium">Jacobin (German-language edition)</dd></div>
           <div><dt class="eyebrow" style="color:#9a9791">Sector</dt><dd class="font-medium">Independent media / publishing</dd></div>
-          <div><dt class="eyebrow" style="color:#9a9791">Timeline</dt><dd class="font-medium">6 months · live July 2026</dd></div>
+          {# <div><dt class="eyebrow" style="color:#9a9791">Timeline</dt><dd class="font-medium">6 months · live July 2026</dd></div> #}
         </dl>
         <div class="mb-8 pt-6" style="border-top:1px solid var(--line)">
           <p class="eyebrow mb-5" style="color:#9a9791">Our work</p>
@@ -138,7 +145,7 @@ templateClass: tmpl-case-study
             <div>
               <p class="font-semibold mb-1">Co-design</p>
               <ul class="text-sm leading-6 text-[color:var(--muted)]">
-                <li>Community research</li><li>Requirements &amp; workshops</li><li>Governance design</li>
+                <li>Community research</li><li>Requirements &amp; workshops</li><li>Training &amp; support</li>
               </ul>
             </div>
             <div>
@@ -153,12 +160,12 @@ templateClass: tmpl-case-study
                 <li>Ghost integration</li><li>Comments widget</li><li>Membership sync</li>
               </ul>
             </div>
-            <div>
+            {# <div>
               <p class="font-semibold mb-1">Federation</p>
               <ul class="text-sm leading-6 text-[color:var(--muted)]">
                 <li>ActivityPub</li><li>Bluesky bridging</li><li>Groups &amp; topics</li>
               </ul>
-            </div>
+            </div> #}
           </div>
         </div>
         <a href="https://jacobin.social" class="btn-line">View live site ↗</a>
@@ -173,7 +180,7 @@ templateClass: tmpl-case-study
       </div>
       <div class="prose-body mt-12 pt-12 rule">
         <p class="eyebrow mb-4">Our approach</p>
-        <p>This is part of an initiative we call <a class="strong" href="/mosaic">Bonfire Mosaic</a>: we work with a community
+        <p>This is part of an initiative we call <a class="strong text-primary link" href="/mosaic">Bonfire Mosaic</a>: we work with a community
           to design a space around how they actually work, and everything we build is free software that
         contributes to the commons. Jacobin wanted to use Ghost's publishing tools but tightly integrated with a community space. The goal was not to replace the CMS, but to integrate a federated social layer to
           where the team already works.</p>
@@ -193,7 +200,7 @@ templateClass: tmpl-case-study
   <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
     <h2 class="statement">Three pieces,<br>one integrated<br>experience</h2>
     <div class="prose-body md:pt-2">
-      <p><span class="prose-body"><span class="marker">●</span>Over six months of co-design we built the
+      <p><span class="prose-body"><span class="marker">●</span>Through several rounds of co-design we built the
         publishing bridge, the conversation layer, and the community spaces. Each usable on its own, but
         designed to work as a single seamless whole. Together they turn an audience 
         into a community that debates, organises, and belongs.</span></p>
@@ -217,22 +224,44 @@ templateClass: tmpl-case-study
     <div>
       <p class="eyebrow mb-2 mt-2">Publishing</p>
       <h3 class="display text-2xl md:text-4xl mb-5 max-w-2xl">A deep Ghost ↔ Bonfire integration</h3>
-      <p class="prose-body max-w-2xl"><span class="prose-body">Jacobin liked publishing on Ghost, so rather than replace the CMS, we brought a federated social layer to where the team already works, so publishing and community feel like one integrated experience.</span></p>
+      <p class="prose-body max-w-2xl"><span class="prose-body">Jacobin kept the Ghost workflow its editorial team already knew. We developed an open-source Bonfire extension around it, connecting publishing, membership, access and conversation without asking the team to maintain the same information twice.</span></p>
     </div>
   </div>
+
+  <div class="max-w-6xl mx-auto mb-14">
+    <div class="integration-points">
+      <div class="integration-point">
+        <h4 class="font-semibold">Articles stay in sync</h4>
+        <p>Jacobin's archive can be imported in the background, while new articles and later edits arrive automatically. Titles, images, excerpts, dates and canonical links come across; unpublishing and republishing are reflected too.</p>
+      </div>
+      <div class="integration-point">
+        <h4 class="font-semibold">Membership becomes the sign-in</h4>
+        <p>Readers use the email address they already have with Jacobin. Ghost confirms their membership and Bonfire sends a one-time sign-in link, so there is no second password or parallel member list to manage.</p>
+      </div>
+      <div class="integration-point">
+        <h4 class="font-semibold">Tiers carry their access with them</h4>
+        <p>Ghost's public, member and paid visibility settings map to Bonfire boundaries. Membership tiers become circles that can unlock articles, discussions and private community spaces.</p>
+      </div>
+      <div class="integration-point">
+        <h4 class="font-semibold">Every article opens into the community</h4>
+        <p>Imported articles land in the group or topic Jacobin chooses. The embeddable comments widget connects the original Ghost page to that durable, federated discussion in Bonfire.</p>
+      </div>
+    </div>
+    <a href="/ghost/" class="btn-line mt-8 mb-8">Explore the full Ghost integration →</a>
+  </div>
+
   <div class="shotgrid reveal">
     <figure class="wide">
-      <img class="object-contain shot big-img rounded-xl mb-4" src="/img/jacobin/ghostbonfire.png" alt="An imported Jacobin article in the Bonfire feed" loading="lazy" />
-      <figcaption class="prose-body"><span class="prose-body"><strong>Integrated experience</strong>: A Jacobin article,
-        which automatically appears in Bonfire, with rich tools for discussion and sharing.</span></figcaption>
+      <img class="object-contain shot big-img rounded-xl mb-4" src="/img/jacobin/ghostbonfire.png" alt="A Jacobin article shown on the publication and in its Bonfire community" loading="lazy" />
+      <figcaption class="prose-body"><span class="prose-body"><strong>One publishing flow.</strong> A Jacobin article automatically appears in Bonfire with its authorship and access rules intact, ready for discussion and sharing.</span></figcaption>
     </figure>
     <figure>
       <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/j02-sso.png" alt="Jacobin-branded single sign-on screen" loading="lazy" />
-      <figcaption class="prose-body"><span class="prose-body"><strong>Single sign-on</strong> across Ghost and Bonfire: readers move between the two without friction.</span></figcaption>
+      <figcaption class="prose-body"><span class="prose-body"><strong>One member identity.</strong> Readers sign in with the email address Jacobin already knows, using a secure one-time link.</span></figcaption>
     </figure>
     <figure>
-      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/ghost.png" alt="An imported Jacobin article in the Bonfire feed" loading="lazy" />
-      <figcaption class="prose-body"><span class="prose-body"><strong>Article import</strong> that respects visibility settings based on the Ghost tiers.</span></figcaption>
+      <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/ghost.png" alt="Ghost articles imported into Bonfire with publication details and access settings" loading="lazy" />
+      <figcaption class="prose-body"><span class="prose-body"><strong>Access follows the article.</strong> Public, member-only and paid content keeps the right visibility when it reaches the community.</span></figcaption>
     </figure>
   </div>
 
@@ -310,8 +339,7 @@ That changes what a comment is. A thread stays discoverable long after the artic
     <figure>
       <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/widgets.png" alt="Group boundary presets — public, announcement-only, private, circle-restricted" loading="lazy" />
       {# <div class="imgph big-img rounded-xl flex items-center justify-center text-sm text-neutral-500 mb-4">IMG · community rules extension</div> #}
-      <figcaption class="prose-body"><span class="prose-body"><strong>Community rules.</strong> Each group
-        defines its own rules, grounded in governance research with Princeton HCI and CrowCards.</span></figcaption>
+      <figcaption class="prose-body"><span class="prose-body"><strong>Ad-hoc widgets.</strong> Tailor the experience with custom widgets that fit the community's needs and highlight the most relevant data.</span></figcaption>
     </figure>
   </div>
 </section>
@@ -328,7 +356,9 @@ That changes what a comment is. A thread stays discoverable long after the artic
    <img class="shot big-img rounded-xl mb-4" src="/img/jacobin/banners-04.png" alt="A Jacobin group organised around topics" loading="lazy" />
     {# <div class="imgph parallax absolute inset-x-0 -top-[9%] h-[118%] flex items-center justify-center text-sm text-neutral-500">IMG · wide: the Jacobin-branded instance</div> #}
   </figure>
-  <div class="flex items-center gap-4 mb-4"><span class="drag-hint">Drag / scroll →</span></div>
+  {# <div class="flex items-center gap-4 mb-4">
+    <span class="drag-hint">Drag / scroll →</span>
+  </div> #}
   <div class="hscroll mb-12">
     <figure class="hcard hcard-sq aspect-square rounded-lg overflow-hidden">
       <img class="shot" src="/img/jacobin/j14-sq-colours.png" alt="Jacobin-branded avatar set — illustrated portraits in the red identity" loading="lazy" />
@@ -377,7 +407,7 @@ That changes what a comment is. A thread stays discoverable long after the artic
           <p>All of this forms a reusable foundation for other publishers and membership
             organisations that want a federated social space. The way we integrated Ghost can also be
             extended to WordPress, Drupal, or any other CMS.</p>
-          <p>Publishers like The Verge, 404 Media, and the New York Times are already exploring deeper social
+          <p>Publishers are starting to explore deeper social
             integration into their articles. The reason is familiar to anyone whose reach depends on a platform
             they don't control: rented audiences can be throttled, de-ranked, or lost overnight.</p>
           <p>Bonfire offers a different premise. AGPL-licensed, no VC, no ads, no incentive to enshittify the
@@ -394,12 +424,13 @@ That changes what a comment is. A thread stays discoverable long after the artic
 <section class="max-w-5xl mx-auto px-6 py-20 md:py-28 rule">
   <p class="eyebrow mb-8">The launch</p>
   <p class="display text-3xl md:text-5xl leading-tight">
-    jacobin.social is live, and 3,000+ readers now have a community space of their
+    jacobin.social is live, and their readers now have a community space of their
     <span style="color:var(--brand)">own</span>, not one they rent.
   </p>
   <p class="prose-body mt-10 max-w-2xl"><span class="prose-body">What began as a reader-funded demand for
     something better than a comments section is now a working foundation other publishers can adopt, adapt,
     and fork. As the community grows, we'll share what we learn and keep this page updated.</span></p>
+    <a href="https://jacobin.de/social" class="btn-line mt-8">Read what they said ↗</a>
 </section>
 
 <!-- ============ TESTIMONIAL - NOTE: this should be at the top! ============ -->
@@ -413,7 +444,7 @@ That changes what a comment is. A thread stays discoverable long after the artic
 <!-- ============ CREDITS — by discipline ============ -->
 <section class="max-w-6xl mx-auto px-6 py-14 md:py-20 rule">
   <p class="eyebrow mb-10">Our role</p>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
     <div>
       <p class="font-semibold mb-3">Co-design</p>
       <ul class="space-y-1 text-[color:var(--muted)]">
@@ -432,12 +463,12 @@ That changes what a comment is. A thread stays discoverable long after the artic
         <li>Ghost integration</li><li>Comments widget</li><li>Membership sync</li>
       </ul>
     </div>
-    <div>
+    {# <div>
       <p class="font-semibold mb-3">Federation</p>
       <ul class="space-y-1 text-[color:var(--muted)]">
         <li>ActivityPub</li><li>Bluesky bridging</li><li>Groups &amp; topics</li>
       </ul>
-    </div>
+    </div> #}
   </div>
 </section>
 
@@ -451,7 +482,7 @@ That changes what a comment is. A thread stays discoverable long after the artic
       <a href="https://cal.com/bonfire-networks/meet" class="btn-solid">Let's chat</a>
       <a href="https://bonfirenetworks.org" class="px-7 py-3 rounded-full font-medium border border-white/40 hover:bg-white/10">bonfirenetworks.org</a>
     </div>
-    <p class="mt-10 text-sm" style="color:rgba(255,255,255,.7)">Next case study → <a href="/open_science" class="underline underline-offset-4">Open Science Network</a></p>
+    {# <p class="mt-10 text-sm" style="color:rgba(255,255,255,.7)">Next case study → <a href="/open_science" class="underline underline-offset-4">Open Science Network</a></p> #}
   </div>
 </section>
 

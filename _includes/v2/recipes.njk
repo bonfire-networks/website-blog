@@ -1,106 +1,362 @@
-{% set rk = "font-smono text-[13px] tracking-[.13em] text-[var(--acc)]" %}
-{% set tilebase = "w-[60px] h-[60px] rounded-2xl flex items-center justify-center text-3xl -mx-2.5 text-[var(--acc)] border border-[color-mix(in_srgb,var(--acc)_38%,transparent)] bg-[linear-gradient(160deg,color-mix(in_srgb,var(--acc)_20%,var(--color-night-3)),color-mix(in_srgb,var(--acc)_6%,var(--color-night)))] shadow-[0_14px_28px_-14px_rgba(0,0,0,.85),inset_0_1px_0_color-mix(in_srgb,var(--acc)_25%,transparent)] transition-all duration-[350ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:rotate-0 group-hover:translate-y-0 group-hover:mx-1.5 group-hover:shadow-[0_18px_34px_-14px_color-mix(in_srgb,var(--acc)_45%,transparent)]" %}
-{% set tilepos = ["-rotate-[14deg] translate-y-3 delay-0", "-rotate-[5deg] translate-y-[1px] delay-[30ms]", "rotate-[5deg] translate-y-[1px] delay-[60ms]", "rotate-[14deg] translate-y-3 delay-[90ms]"] %}
-{% set ri = "inline-flex items-center rounded-full border border-ink/15 bg-ink/[0.03] px-2.5 py-[4px] text-[.76rem] leading-none text-ink-2 before:content-['+'] before:mr-1 before:font-smono before:font-bold before:text-[var(--acc)]" %}
-{% set risoon = "inline-flex items-center rounded-full border border-dashed border-ink/20 bg-transparent px-2.5 py-[4px] text-[.76rem] leading-none text-ink-3" %}
-{% set ribase = "inline-flex items-center rounded-full px-2.5 py-[4px] text-[.76rem] leading-none text-ink-3 border border-ink/10 bg-transparent" %}
-{% set actlabel = "font-smono text-[.68rem] tracking-[.14em] text-ink-3" %}
-
+{# ============================================================
+   V2 · COMMUNITY FIT EXPLORER
+   A role-first, master-detail alternative to the recipe grid.
+   The equation makes Bonfire's mechanism explicit:
+   community context + chosen blocks = a world of its own.
+   ============================================================ #}
 {% set recipes = [
-  { acc: "var(--color-corn)", kind: "A research network", img: "university.jpg", link: "/app/open-science/", linklabel: "See how the Open Science Network is doing it",
-    icons: ["ph-flask", "ph-article", "ph-kanban", "ph-database"],
-    items: [{t:"Topics & long-form"}, {t:"Events"}, {t:"Groups"}, {t:"Scholarly data", soon:true}, {t:"Tasks", soon:true}],
-    becomes: "Discussion, datasets and preprints in one place: where everyday exchange becomes open, citable research. Connect your lab to the wider commons without handing your work to a publisher." },
-  { acc: "#e6dab6", kind: "A magazine", img: "magazine.jpg", link: "/case-studies/jacobin/", linklabel: "See how Jacobin did it",
+  {
+    id: "magazine",
+    acc: "#e6dab6",
+    kind: "Publication",
+    tabline: "Turn readers into members",
+    title: "A magazine becomes a community under its own masthead.",
+    img: "magazine-card.webp",
+    imagepos: "center 42%",
+    example: "Jacobin",
+    exampletype: "Case study",
+    link: "/case-studies/jacobin/",
+    linklabel: "See how Jacobin did it",
+    starts: "A publication with readers, subscribers and an existing CMS.",
     icons: ["ph-newspaper", "ph-quotes", "ph-chats-circle", "ph-paper-plane-tilt"],
-    items: [{t:"Topics & long-form"}, {t:"Embedded commenting"}, {t:"Polls"}, {t:"CMS integration"}],
-    becomes: "Turn readers into members who debate, subscribe and belong, under your own masthead. A community you own, instead of an audience you rent from an algorithm." },
-  { acc: "var(--color-flame)", kind: "A fablab", img: "makerspace.jpg",
-    icons: ["ph-toolbox", "ph-cube", "ph-calendar-check", "ph-users-three"],
-    items: [{t:"Groups"}, {t:"Events & workshops"}, {t:"Tasks & projects", soon:true}, {t:"Equipment bookings", soon:true}],
-    becomes: "One space where members reserve machines, run workshops and document their builds, instead of scattered chats and booking sheets. Yours to govern, open to the makers you choose." },
-  { acc: "var(--color-leaf)", kind: "A neighbourhood", img: "municipality.jpg", link: "/case-studies", linklabel: "See how a town is doing it",
+    items: [{t:"Social basics"}, {t:"Topics & long-form"}, {t:"Embedded commenting"}, {t:"Polls"}, {t:"CMS integration"}],
+    becomes: "Readers debate, subscribe and belong in a space the publication controls, while publishing stays on the site they already use."
+  },
+  {
+    id: "research",
+    acc: "var(--color-corn)",
+    kind: "Research network",
+    tabline: "Make exchange open and citable",
+    title: "Everyday research exchange becomes an open scholarly commons.",
+    img: "university-card.webp",
+    imagepos: "center 52%",
+    example: "Open Science Network",
+    exampletype: "Live network",
+    link: "https://openscience.network",
+    linklabel: "Visit the Open Science Network",
+    starts: "Researchers sharing discussion, datasets and preprints across institutions.",
+    icons: ["ph-flask", "ph-article", "ph-kanban", "ph-database"],
+    items: [{t:"Social basics"}, {t:"Topics & long-form"}, {t:"Events"}, {t:"Groups"}, {t:"Scholarly data", soon:true}, {t:"Tasks", soon:true}],
+    becomes: "Conversation and research objects live together, so labs can connect to a wider commons without handing their work to a publisher."
+  },
+  {
+    id: "neighbourhood",
+    acc: "var(--color-leaf)",
+    kind: "Neighbourhood",
+    tabline: "Organise local life together",
+    title: "A neighbourhood becomes a digital town square residents control.",
+    img: "municipality-card.webp",
+    imagepos: "center 48%",
+    example: "Totnes",
+    exampletype: "Community example",
+    link: "/case-studies",
+    linklabel: "Explore community stories",
+    starts: "Neighbours coordinating notices, gatherings and mutual support.",
     icons: ["ph-house-line", "ph-confetti", "ph-hand-heart", "ph-megaphone"],
-    items: [{t:"Events"}, {t:"Topics & noticeboard"}, {t:"Mutual aid", soon:true}, {t:"Places & reviews", soon:true}],
-    becomes: "A local square residents control: post notices, organise events, coordinate mutual aid and decide together: no council gatekeeper, no data broker, just your neighbourhood online." },
-  { acc: "var(--color-ember)", kind: "A festival", img: "festival.jpg",
+    items: [{t:"Social basics"}, {t:"Events"}, {t:"Topics & noticeboard"}, {t:"Mutual aid", soon:true}, {t:"Places & reviews", soon:true}],
+    becomes: "Residents post notices, organise events and decide together with no data broker or platform gatekeeper between them."
+  },
+  {
+    id: "makerspace",
+    acc: "var(--color-flame)",
+    kind: "Makerspace",
+    tabline: "Coordinate people, projects and tools",
+    title: "A fablab becomes one shared workshop, online and off.",
+    img: "makerspace-card.webp",
+    imagepos: "center 45%",
+    example: "Fablab",
+    exampletype: "Example configuration",
+    starts: "Members running workshops, sharing knowledge and documenting builds.",
+    icons: ["ph-toolbox", "ph-cube", "ph-calendar-check", "ph-users-three"],
+    items: [{t:"Social basics"}, {t:"Groups"}, {t:"Events & workshops"}, {t:"Tasks & projects", soon:true}, {t:"Equipment bookings", soon:true}],
+    becomes: "People, projects and practical knowledge come together in a space the makers govern, instead of scattered chats and booking sheets."
+  },
+  {
+    id: "festival",
+    acc: "var(--color-ember)",
+    kind: "Festival",
+    tabline: "Keep the crowd beyond the event",
+    title: "A festival becomes a community that outlasts the weekend.",
+    img: "festival-card.webp",
+    imagepos: "center 58%",
+    example: "Festival",
+    exampletype: "Example configuration",
+    starts: "Artists, organisers and audiences gathering around a temporary event.",
     icons: ["ph-ticket", "ph-music-notes", "ph-map-pin", "ph-camera"],
-    items: [{t:"Events"}, {t:"Groups"}, {t:"Live stream integration", soon:true}, {t:"Living archive", soon:true}],
-    becomes: "Rally the crowd before the gates open, keep them together through every set, then let it all settle into a living archive, one home for your audience that outlasts the weekend." }
+    items: [{t:"Social basics"}, {t:"Events"}, {t:"Groups"}, {t:"Live stream integration", soon:true}, {t:"Living archive", soon:true}],
+    becomes: "The crowd gathers before the gates open, stays together through every set, then settles into a living archive with a home of its own."
+  }
 ] %}
 
-<section id="story" class="py-[clamp(72px,9vw,130px)] border-t border-ink/[0.07] scroll-mt-[70px]">
-<div class="max-w-[1140px] mx-auto px-7">
-  <div class="grid grid-cols-1 min-[681px]:grid-cols-[auto_1fr] gap-3.5 min-[681px]:gap-[30px] items-start">
-    <div>
-      <h2 class="mt-[22px] max-w-[24ch] font-disp font-[560] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Shared building blocks to create <span class="fire-text">many different worlds.</span></h2>
-      <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">There's no single Bonfire app. Every community designs its own space, assembling the building blocks it needs. No two spaces end up alike.</p>
-      <p class="mt-3 flex items-center gap-1.5 font-smono text-[.72rem] text-ink-3"><i class="ph-duotone ph-lightbulb text-[.85rem] text-flame" aria-hidden="true"></i> Blocks marked with a lightbulb are on the roadmap, not yet shipped.</p>
+{% set offsets = ["mt-0", "mt-9", "mt-3", "mt-12", "mt-5"] %}
+{% set tones = ["#51372f", "#303b68", "#38482d", "#68451d", "#5d3028"] %}
+{% set floatDurations = ["22s", "29s", "19s", "32s", "25s"] %}
+{% set floatDelays = ["-4s", "-17s", "-9s", "-23s", "-13s"] %}
+{% set floatRanges = ["7px", "11px", "8px", "12px", "9px"] %}
 
-      {# recipe cards #}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-9">
-        {% for r in recipes %}
-        <div class="group card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night p-0 gap-0 {{ 'hover:border-[color-mix(in_srgb,var(--acc)_45%,transparent)] transition-colors' if r.link }}" style="--acc:{{ r.acc }}">
-          {% if r.link %}<a href="{{ r.link }}" class="absolute inset-0 z-[3]" aria-label="{{ r.linklabel }}"{% if '//' in r.link %} target="_blank" rel="noopener noreferrer"{% endif %}></a>{% endif %}
-          {# image header #}
-          <div class="relative h-[250px] overflow-hidden bg-[color-mix(in_srgb,var(--acc)_16%,var(--color-night-3))]" aria-hidden="true">
-            <img src="/img/v2/recipes/{{ r.img }}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale-[.4] contrast-[1.05] brightness-[.82] transition-all duration-[600ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:scale-[1.045] group-hover:grayscale-[.1] group-hover:brightness-90">
-            <span class="absolute inset-0 bg-[var(--acc)] mix-blend-overlay opacity-[.35]"></span>
-            <span class="absolute inset-0 bg-gradient-to-t from-night-2 via-night-2/45 via-40% to-transparent"></span>
-            <div class="absolute left-5 right-5 bottom-3.5">
-              <span class="{{ rk }} drop-shadow-[0_1px_6px_rgba(0,0,0,.9)]">{{ r.kind }}</span>
-            </div>
-          </div>
-          {# body #}
-          <div class="flex flex-1 flex-col px-5 pt-[18px] pb-[22px] gap-4">
-            <div class="flex justify-center items-end pt-1 pb-1" aria-hidden="true">
-              {%- for icon in r.icons %}<span class="{{ tilebase }} {{ tilepos[loop.index0] }}"><i class="ph-duotone {{ icon }}"></i></span>{% endfor -%}
-            </div>
-            <div class="flex flex-col gap-2.5">
-              <span class="font-smono text-[.62rem] tracking-[.13em] text-ink-3">It includes</span>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="{{ ribase }}">Social basics</span>
-                {%- for item in r.items %}<span class="{{ risoon if item.soon else ri }}"{% if item.soon %} title="An idea on the roadmap"{% endif %}>{% if item.soon %}<i class="ph-duotone ph-lightbulb text-[.7rem] mr-1 text-[var(--acc)]" aria-hidden="true"></i>{% endif %}{{ item.t }}</span>{% endfor -%}
-              </div>
-            </div>
-            <p class="mt-auto pt-[15px] text-balance">
-              <span class="text-[1.06rem] text-ink leading-[1.42]">{{ r.becomes }}</span>
-            </p>
-            {% if r.link %}<span class="inline-flex items-center gap-1.5 font-smono text-[.72rem] tracking-[.05em] text-[var(--acc)]">{{ r.linklabel }} <span class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span></span>{% endif %}
-          </div>
-        </div>
-        {% endfor %}
-        {# ghost card #}
-        <div class="card rounded-xl border border-dashed border-ink/15 items-center justify-center text-center gap-2.5 px-6 py-[34px]">
-          <span class="w-[46px] h-[46px] rounded-xl border border-dashed border-ink/15 flex items-center justify-center font-disp font-light text-[1.7rem] text-ink-3">+</span>
-          <h3 class="font-disp font-[620] text-[1.25rem] max-w-[16ch]">…and every community after these</h3>
-          <p class="text-ink-3 text-[.9rem] max-w-[26ch]">A union, a co-op, a fan club, a school: each writes its own recipe from the same blocks.</p>
-          <a class="mt-1 pb-0.5 font-smono text-[.7rem] tracking-[.06em] text-spark border-b border-spark/35 hover:border-spark" href="/features">Browse all the blocks →</a>
-        </div>
+<style>
+  @keyframes community-card-drift {
+    from { transform: translate3d(0, calc(var(--float-range) * -1), 0); }
+    to { transform: translate3d(0, var(--float-range), 0); }
+  }
+
+  #story .community-case-card {
+    animation: community-card-drift var(--float-duration) ease-in-out var(--float-delay) infinite alternate;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  #story .community-case-image {
+    transform: translate3d(0, 0, 0) scale(1.001);
+    transform-origin: 50% 45%;
+    backface-visibility: hidden;
+    transition: transform 1400ms cubic-bezier(.37, 0, .63, 1);
+    will-change: transform;
+  }
+
+  #story .community-case-card:hover,
+  #story .community-case-card:focus-visible {
+    animation-play-state: paused;
+  }
+
+  #story .community-case-card:hover .community-case-image,
+  #story .community-case-card:focus-visible .community-case-image {
+    transform: translate3d(0, 0, 0) scale(1.065);
+  }
+
+  #story.is-motion-paused .community-case-card,
+  #story.is-offscreen .community-case-card {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #story .community-case-card {
+      animation: none;
+    }
+
+    #story .community-case-image {
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<section
+  id="story"
+  class="border-t border-ink/[0.07] py-[clamp(72px,9vw,130px)] scroll-mt-[70px]"
+>
+  <div class="mx-auto max-w-[1140px] px-7">
+    <div class="grid items-end gap-8 min-[821px]:grid-cols-[minmax(0,1fr)_19rem]">
+      <div>
+        <p class="font-disp text-[1rem] font-bold tracking-[.08em] text-flame">Find a community like yours</p>
+        <h2 class="mt-[18px] max-w-[20ch] text-balance font-disp text-[clamp(2.25rem,5vw,4.2rem)] font-[560] leading-[1.01] [font-variation-settings:'opsz'_96]">
+          The same Bonfire, in <span class="fire-text">many different hands.</span>
+        </h2>
       </div>
+      {# <div class="flex items-center gap-2 min-[821px]:justify-end" aria-label="Community examples carousel controls">
+        <button
+          class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-lg text-ink-2 transition-colors hover:border-ink/30 hover:bg-ink/[0.05] hover:text-ink"
+          type="button"
+          aria-label="Previous community examples"
+          data-community-scroll="-390"
+        >
+          <i class="ph ph-caret-left" aria-hidden="true"></i>
+        </button>
+        <button
+          class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-lg text-ink-2 transition-colors hover:border-ink/30 hover:bg-ink/[0.05] hover:text-ink"
+          type="button"
+          aria-label="Pause card motion"
+          aria-pressed="false"
+          data-community-toggle
+        >
+          <i class="ph ph-pause" data-community-pause-icon aria-hidden="true"></i>
+          <i class="ph ph-play hidden" data-community-play-icon aria-hidden="true"></i>
+        </button>
+        <button
+          class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-lg text-ink-2 transition-colors hover:border-ink/30 hover:bg-ink/[0.05] hover:text-ink"
+          type="button"
+          aria-label="Next community examples"
+          data-community-scroll="390"
+        >
+          <i class="ph ph-caret-right" aria-hidden="true"></i>
+        </button>
+      </div> #}
+      {# <div class="flex items-end justify-between gap-5 min-[821px]:block">
+        <p class="m-0 max-w-[36ch] text-[1rem] leading-[1.6] text-ink-2">
+          From publications to neighbourhoods, each community combines the building blocks it needs and makes the space its own.
+        </p>
+        <div class="mt-6 flex shrink-0 gap-2 min-[821px]:justify-end" aria-label="Community examples carousel controls">
+          <button
+            class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-lg text-ink-2 transition-colors hover:border-ink/30 hover:bg-ink/[0.05] hover:text-ink"
+            type="button"
+            aria-label="Previous community examples"
+            data-community-scroll="-390"
+          >
+            <i class="ph ph-caret-left" aria-hidden="true"></i>
+          </button>
+          <button
+            class="grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-lg text-ink-2 transition-colors hover:border-ink/30 hover:bg-ink/[0.05] hover:text-ink"
+            type="button"
+            aria-label="Next community examples"
+            data-community-scroll="390"
+          >
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div> #}
+    </div>
+  </div>
 
-      {# three-acts bridge #}
-      <p class="mt-11 text-[1.05rem] text-ink-2 max-w-[40rem]">How does a space become yours? The story has three acts:</p>
-      <div class="grid grid-cols-1 min-[681px]:grid-cols-3 gap-3.5 mt-[18px]">
-        <a class="card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 pt-[26px] pb-6 hover:border-flame/40" href="#gather">
-          <span class="absolute right-[18px] top-3.5 font-disp font-light text-[2.2rem] leading-none text-flame/20" aria-hidden="true">i</span>
-          <div class="{{ actlabel }}">Act one</div>
-          <h3 class="font-disp font-[620] text-[1.35rem] mt-3 mb-[7px]">Gather</h3>
-          <p class="text-ink-2 text-[.93rem] leading-normal">Claim a space that's truly yours to govern.</p>
-        </a>
-        <a class="card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 pt-[26px] pb-6 hover:border-flame/40" href="#shape">
-          <span class="absolute right-[18px] top-3.5 font-disp font-light text-[2.2rem] leading-none text-flame/20" aria-hidden="true">ii</span>
-          <div class="{{ actlabel }}">Act two</div>
-          <h3 class="font-disp font-[620] text-[1.35rem] mt-3 mb-[7px]">Shape it</h3>
-          <p class="text-ink-2 text-[.93rem] leading-normal">Make it fit how your community actually works.</p>
-        </a>
-        <a class="card relative overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 pt-[26px] pb-6 hover:border-flame/40" href="#connect">
-          <span class="absolute right-[18px] top-3.5 font-disp font-light text-[2.2rem] leading-none text-flame/20" aria-hidden="true">iii</span>
-          <div class="{{ actlabel }}">Act three</div>
-          <h3 class="font-disp font-[620] text-[1.35rem] mt-3 mb-[7px]">Connect</h3>
-          <p class="text-ink-2 text-[.93rem] leading-normal">Open the doors to other communities or the whole social web, your call.</p>
-        </a>
+  <div
+    class="mt-[clamp(34px,5vw,58px)] flex items-start gap-4 overflow-x-auto px-8 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    style="scroll-padding-inline:32px"
+    data-community-rail
+    role="region"
+    aria-label="Community case studies and example configurations"
+  >
+    {% for r in recipes %}
+    <a
+      class="community-case-card group relative isolate flex h-[570px] w-[min(82vw,350px)] shrink-0 snap-start overflow-hidden rounded-xl bg-night-2 min-[681px]:h-[620px] min-[681px]:w-[365px] {{ offsets[loop.index0] }}"
+      style="--acc:{{ r.acc }};--tone:{{ tones[loop.index0] }};--float-duration:{{ floatDurations[loop.index0] }};--float-delay:{{ floatDelays[loop.index0] }};--float-range:{{ floatRanges[loop.index0] }}"
+      href="{{ r.link or '/features' }}"
+      {% if r.link and '//' in r.link %}target="_blank" rel="noopener noreferrer"{% endif %}
+      aria-labelledby="recipe-title-{{ r.id }}"
+      aria-describedby="recipe-meta-{{ r.id }} recipe-outcome-{{ r.id }} recipe-blocks-{{ r.id }}"
+    >
+      <img
+        class="community-case-image absolute inset-0 h-full w-full object-cover saturate-[.82]"
+        src="/img/v2/recipes/{{ r.img }}"
+        alt=""
+        style="object-position:{{ r.imagepos }}"
+        loading="lazy"
+      >
+      <span
+        class="absolute inset-0"
+        style="background:linear-gradient(180deg,transparent 10%,color-mix(in srgb,var(--tone) 20%,transparent) 34%,color-mix(in srgb,var(--tone) 92%,transparent) 58%,var(--tone) 100%)"
+        aria-hidden="true"
+      ></span>
+      <span class="absolute inset-x-0 bottom-0 h-1/2 opacity-[.13] mix-blend-soft-light" style="background:var(--acc)" aria-hidden="true"></span>
+
+      <div class="relative mt-auto flex w-full flex-col p-5 min-[681px]:p-6">
+        <div
+          id="recipe-meta-{{ r.id }}"
+          class="flex w-fit max-w-full items-center gap-2.5 rounded-xl border border-ink/15 bg-night/55 py-2 pl-2 pr-3.5 shadow-[0_12px_32px_-18px_rgba(0,0,0,.9)] backdrop-blur-md"
+        >
+          <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink text-lg text-night" aria-hidden="true">
+            <i class="ph-duotone {{ r.icons[0] }}"></i>
+          </span>
+          <span class="min-w-0">
+            <span class="block truncate text-[.68rem] font-[620] uppercase tracking-[.045em] text-ink/65">{{ r.exampletype }}</span>
+            <span class="block truncate font-disp text-[.92rem] font-[650] text-ink">{{ r.example }}</span>
+          </span>
+        </div>
+
+        <p class="mt-5 text-[.76rem] font-[620] text-[var(--acc)]">{{ r.kind }}</p>
+        <h3 id="recipe-title-{{ r.id }}" class="mt-2 text-balance font-disp text-[1.65rem] font-[620] leading-[1.05]">{{ r.title }}</h3>
+        <p id="recipe-outcome-{{ r.id }}" class="mt-3 text-[.88rem] leading-[1.48] text-ink/80">{{ r.becomes }}</p>
+
+        {# <div id="recipe-blocks-{{ r.id }}" class="mt-4 flex flex-wrap gap-1.5" aria-label="Selected Bonfire building blocks">
+          {% for item in r.items %}
+            {% if loop.index <= 3 and not item.soon %}
+            <span class="rounded-full bg-night/35 px-2.5 py-[5px] text-[.75rem] leading-none text-ink/85">{{ item.t }}</span>
+            {% endif %}
+          {% endfor %}
+        </div> #}
+
+        <span class="mt-5 inline-flex items-center gap-2 text-[.78rem] font-[620] text-ink">
+          {{ r.linklabel or "Explore these building blocks" }}
+          <span class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+    {% endfor %}
+
+    <a
+      class="community-case-card mt-10 flex h-[540px] w-[min(82vw,330px)] shrink-0 snap-start flex-col items-center justify-center rounded-xl border border-dashed border-ink/20 px-8 text-center min-[681px]:h-[580px] min-[681px]:w-[340px]"
+      style="--float-duration:27s;--float-delay:-18s;--float-range:10px"
+      href="/features"
+    >
+      <span class="grid h-12 w-12 place-items-center rounded-full border border-ink/20 text-xl text-flame" aria-hidden="true">+</span>
+      <h3 class="mt-5 max-w-[12ch] text-balance font-disp text-[1.65rem] font-[620] leading-[1.08]">A union, a co-op, a school—or yours.</h3>
+      <p class="mt-3 max-w-[26ch] text-[.88rem] leading-[1.5] text-ink-3">Every community can write a different recipe from the same open building blocks.</p>
+      <span class="mt-6 border-b border-spark/35 pb-1 text-[.78rem] font-[620] text-spark">Browse all building blocks →</span>
+    </a>
+  </div>
+
+  <div class="mx-auto max-w-[1140px] px-7">
+    <div class="mt-[clamp(48px,7vw,78px)] border-t border-ink/[0.09] pt-7">
+      <div class="grid gap-5 min-[821px]:grid-cols-[17rem_minmax(0,1fr)] min-[821px]:items-start">
+        <div>
+          <p class="font-disp text-[1.05rem] font-[620]">Every space takes shape in three acts.</p>
+          <p class="mt-2 text-[.86rem] leading-[1.5] text-ink-3">The community stays the author at every step.</p>
+        </div>
+        <ol class="grid gap-5 min-[681px]:grid-cols-3">
+          <li>
+            <a class="group block" href="#gather">
+              <span class="text-[.7rem] font-[620] text-flame">01 · GATHER</span>
+              <strong class="mt-2 block font-disp text-[1.2rem] font-[620] group-hover:text-spark">Claim your space</strong>
+              <span class="mt-1 block text-[.84rem] leading-[1.5] text-ink-3">A home that is truly yours to govern.</span>
+            </a>
+          </li>
+          <li>
+            <a class="group block" href="#shape">
+              <span class="text-[.7rem] font-[620] text-flame">02 · SHAPE IT</span>
+              <strong class="mt-2 block font-disp text-[1.2rem] font-[620] group-hover:text-spark">Choose the blocks</strong>
+              <span class="mt-1 block text-[.84rem] leading-[1.5] text-ink-3">Fit the tools to how your community works.</span>
+            </a>
+          </li>
+          <li>
+            <a class="group block" href="#connect">
+              <span class="text-[.7rem] font-[620] text-flame">03 · CONNECT</span>
+              <strong class="mt-2 block font-disp text-[1.2rem] font-[620] group-hover:text-spark">Open the doors</strong>
+              <span class="mt-1 block text-[.84rem] leading-[1.5] text-ink-3">Connect to communities or the whole social web.</span>
+            </a>
+          </li>
+        </ol>
       </div>
     </div>
   </div>
-</div></section>
+
+  <script>
+    (() => {
+      const section = document.currentScript.closest("#story");
+      const rail = section?.querySelector("[data-community-rail]");
+      if (!rail) return;
+
+      let userPaused = false;
+
+      section.querySelectorAll("[data-community-scroll]").forEach((button) => {
+        button.addEventListener("click", () => {
+          rail.scrollBy({
+            left: Number(button.dataset.communityScroll),
+            behavior: "smooth"
+          });
+        });
+      });
+
+      const toggle = section.querySelector("[data-community-toggle]");
+      const pauseIcon = toggle?.querySelector("[data-community-pause-icon]");
+      const playIcon = toggle?.querySelector("[data-community-play-icon]");
+      toggle?.addEventListener("click", () => {
+        userPaused = !userPaused;
+        section.classList.toggle("is-motion-paused", userPaused);
+        toggle.setAttribute("aria-pressed", String(userPaused));
+        toggle.setAttribute("aria-label", userPaused ? "Resume card motion" : "Pause card motion");
+        pauseIcon?.classList.toggle("hidden", userPaused);
+        playIcon?.classList.toggle("hidden", !userPaused);
+      });
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reducedMotion) {
+        toggle?.setAttribute("hidden", "");
+        return;
+      }
+
+      const visibilityObserver = new IntersectionObserver(([entry]) => {
+        section.classList.toggle("is-offscreen", !entry.isIntersecting);
+      }, { threshold: 0.04 });
+
+      visibilityObserver.observe(section);
+    })();
+  </script>
+</section>
