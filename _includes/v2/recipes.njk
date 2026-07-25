@@ -143,7 +143,7 @@
 
 <section
   id="story"
-  class="border-t border-ink/[0.07] py-[clamp(72px,9vw,130px)] scroll-mt-[70px]"
+  class="border-t border-ink/[0.07] pb-[clamp(64px,6vw,90px)] pt-[clamp(72px,9vw,130px)] scroll-mt-[70px]"
 >
   <div class="mx-auto max-w-[1140px] px-7">
     <div class="grid items-end gap-8 min-[821px]:grid-cols-[minmax(0,1fr)_19rem]">
@@ -284,36 +284,48 @@
   </div>
 
   <div class="mx-auto max-w-[1140px] px-7">
-    <div class="mt-[clamp(48px,7vw,78px)] border-t border-ink/[0.09] pt-7">
-      <div class="grid gap-5 min-[821px]:grid-cols-[17rem_minmax(0,1fr)] min-[821px]:items-start">
-        <div>
-          <p class="font-disp text-[1.05rem] font-[620]">Every space takes shape in three acts.</p>
-          <p class="mt-2 text-[.86rem] leading-[1.5] text-ink-3">The community stays the author at every step.</p>
-        </div>
-        <ol class="grid gap-5 min-[681px]:grid-cols-3">
-          <li>
-            <a class="group block" href="#gather">
-              <span class="text-[.7rem] font-[620] text-flame">01 · GATHER</span>
-              <strong class="mt-2 block font-disp text-[1.2rem] font-[620] group-hover:text-spark">Claim your space</strong>
-              <span class="mt-1 block text-[.84rem] leading-[1.5] text-ink-3">A home that is truly yours to govern.</span>
-            </a>
-          </li>
-          <li>
-            <a class="group block" href="#shape">
-              <span class="text-[.7rem] font-[620] text-flame">02 · SHAPE IT</span>
-              <strong class="mt-2 block font-disp text-[1.2rem] font-[620] group-hover:text-spark">Choose the blocks</strong>
-              <span class="mt-1 block text-[.84rem] leading-[1.5] text-ink-3">Fit the tools to how your community works.</span>
-            </a>
-          </li>
-          <li>
-            <a class="group block" href="#connect">
-              <span class="text-[.7rem] font-[620] text-flame">03 · CONNECT</span>
-              <strong class="mt-2 block font-disp text-[1.2rem] font-[620] group-hover:text-spark">Open the doors</strong>
-              <span class="mt-1 block text-[.84rem] leading-[1.5] text-ink-3">Connect to communities or the whole social web.</span>
-            </a>
-          </li>
-        </ol>
+    <div class="mt-[clamp(40px,5vw,58px)]">
+      <div class="flex flex-col gap-2 min-[681px]:flex-row min-[681px]:items-end min-[681px]:justify-between min-[681px]:gap-8">
+        <h3 class="max-w-[24ch] text-balance font-disp text-[clamp(1.35rem,2.2vw,1.8rem)] font-[620] leading-[1.12]">
+          Every space takes shape in three acts.
+        </h3>
+        {# <p class="max-w-[34ch] text-[.88rem] leading-[1.5] text-ink-2 min-[681px]:text-right">
+          The community stays the author at every step.
+        </p> #}
       </div>
+
+      <ol class="mt-8 grid gap-7 min-[681px]:grid-cols-3 min-[681px]:gap-8 min-[681px]:border-t min-[681px]:border-ink/[0.12]">
+        <li class="relative min-[681px]:pt-8">
+          <a class="group block" href="#gather">
+            <span class="inline-flex items-center gap-2.5 bg-night pr-3 min-[681px]:absolute min-[681px]:-top-[15px] min-[681px]:left-0">
+              <span class="grid h-7 w-7 place-items-center rounded-full border border-flame/45 bg-night text-[.64rem] font-[650] text-flame transition-colors group-hover:border-flame group-hover:bg-flame group-hover:text-night">01</span>
+              <span class="text-[.68rem] font-[650] uppercase tracking-[.04em] text-flame">Gather</span>
+            </span>
+            <strong class="mt-3 block font-disp text-[1.2rem] font-[620] transition-colors group-hover:text-spark min-[681px]:mt-0">Claim your space</strong>
+            <span class="mt-1.5 block max-w-[28ch] text-[.84rem] leading-[1.5] text-ink-2">A home that is truly yours to govern.</span>
+          </a>
+        </li>
+        <li class="relative min-[681px]:pt-8">
+          <a class="group block" href="#shape">
+            <span class="inline-flex items-center gap-2.5 bg-night pr-3 min-[681px]:absolute min-[681px]:-top-[15px] min-[681px]:left-0">
+              <span class="grid h-7 w-7 place-items-center rounded-full border border-flame/45 bg-night text-[.64rem] font-[650] text-flame transition-colors group-hover:border-flame group-hover:bg-flame group-hover:text-night">02</span>
+              <span class="text-[.68rem] font-[650] uppercase tracking-[.04em] text-flame">Shape it</span>
+            </span>
+            <strong class="mt-3 block font-disp text-[1.2rem] font-[620] transition-colors group-hover:text-spark min-[681px]:mt-0">Choose the blocks</strong>
+            <span class="mt-1.5 block max-w-[28ch] text-[.84rem] leading-[1.5] text-ink-2">Fit the tools to how your community works.</span>
+          </a>
+        </li>
+        <li class="relative min-[681px]:pt-8">
+          <a class="group block" href="#connect">
+            <span class="inline-flex items-center gap-2.5 bg-night pr-3 min-[681px]:absolute min-[681px]:-top-[15px] min-[681px]:left-0">
+              <span class="grid h-7 w-7 place-items-center rounded-full border border-flame/45 bg-night text-[.64rem] font-[650] text-flame transition-colors group-hover:border-flame group-hover:bg-flame group-hover:text-night">03</span>
+              <span class="text-[.68rem] font-[650] uppercase tracking-[.04em] text-flame">Connect</span>
+            </span>
+            <strong class="mt-3 block font-disp text-[1.2rem] font-[620] transition-colors group-hover:text-spark min-[681px]:mt-0">Open the doors</strong>
+            <span class="mt-1.5 block max-w-[28ch] text-[.84rem] leading-[1.5] text-ink-2">Connect to communities or the whole social web.</span>
+          </a>
+        </li>
+      </ol>
     </div>
   </div>
 

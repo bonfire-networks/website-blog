@@ -5,55 +5,520 @@ layout: layouts/base.njk
 ---
 
 <style>
-  /* Code syntax highlighting */
-  .telling-code .tag { color: #F0784A; }
-  .telling-code .attr { color: #7DD3FC; }
-  .telling-code .val { color: #86EFAC; }
-  .telling-code .comment { color: rgba(255,255,255,0.25); font-style: italic; }
-  .telling-code .kw { color: #C4B5FD; }
-  .telling-code .fn { color: #7DD3FC; }
-  .telling-code .str { color: #86EFAC; }
-  .telling-code .cmt { color: rgba(255,255,255,0.25); font-style: italic; }
-  .telling-code .file-label {
-    display: block; font-size: 0.7rem;
-    color: rgba(255,255,255,0.3); margin-bottom: 0.4rem;
+  .telling-page {
+    --telling-border: color-mix(in srgb, var(--color-ink) 11%, transparent);
+    --telling-panel: color-mix(in srgb, var(--color-ink) 3%, var(--color-night));
+    background: var(--color-night);
+    color: var(--color-ink);
+  }
+
+  .telling-page > .relative > section {
+    position: relative;
+    padding-block: clamp(4rem, 8vw, 7rem) !important;
+    padding-inline: 1.75rem !important;
+    background: transparent !important;
+    border-bottom: 1px solid var(--telling-border);
+    scroll-margin-top: 4.5rem;
+  }
+
+  .telling-page > .relative > section > div {
+    width: 100%;
+    max-width: 71.25rem !important;
+  }
+
+  .telling-page > .relative > section > div > p:first-child {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin-bottom: .9rem !important;
+    color: var(--color-flame) !important;
+    font-family: var(--font-smono);
+    font-size: .72rem !important;
+    font-weight: 700;
+    letter-spacing: .14em !important;
+    text-transform: uppercase;
+  }
+
+  .telling-page > .relative > section > div > p:first-child::before {
+    width: .55rem;
+    height: .55rem;
+    flex: none;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    content: "";
+  }
+
+  .telling-page h1,
+  .telling-page h2,
+  .telling-page h3,
+  .telling-page h4 {
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp) !important;
+  }
+
+  .telling-page h1 {
+    max-width: 11ch;
+    font-size: clamp(3rem, 6vw, 5.75rem) !important;
+    font-weight: 620 !important;
+    line-height: .98 !important;
+    letter-spacing: -.035em !important;
+    text-wrap: balance;
+  }
+
+  .telling-page h1 em {
+    color: inherit !important;
     font-style: normal;
   }
-  /* Code window dots */
-  .telling-code-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .telling-code-dot:nth-child(1) { background: #FF6058; }
-  .telling-code-dot:nth-child(2) { background: #FFBD2E; }
-  .telling-code-dot:nth-child(3) { background: #27CA40; }
-  /* Copy button states */
-  .telling-copy-btn.copied { background: rgba(74, 222, 128, 0.2); color: #4ADE80; border-color: rgba(74, 222, 128, 0.3); }
-  /* Guide panel animation */
+
+  .telling-page h2 {
+    max-width: 17ch;
+    margin-bottom: 1rem !important;
+    font-size: clamp(2rem, 4vw, 3.25rem) !important;
+    font-weight: 560 !important;
+    line-height: 1.04;
+    letter-spacing: -.025em !important;
+    text-wrap: balance;
+  }
+
+  .telling-page h3 { font-weight: 620 !important; }
+  .telling-page h4 { font-weight: 620 !important; }
+
+  .telling-page section p,
+  .telling-page section dd,
+  .telling-page section cite {
+    color: var(--color-ink-2) !important;
+  }
+
+  .telling-page section > div > h2 + p {
+    max-width: 64ch !important;
+    margin-bottom: clamp(2rem, 5vw, 3.75rem) !important;
+    font-size: 1.02rem !important;
+    line-height: 1.7;
+  }
+
+  .telling-page .btn {
+    min-height: 0;
+    height: auto;
+    padding: .85rem 1.4rem;
+    border-radius: 999px;
+    font-family: var(--font-smono);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .045em;
+  }
+
+  .telling-page .btn-primary {
+    border: 0;
+    color: #221302;
+    background: linear-gradient(135deg, var(--color-spark), var(--color-flame) 55%, var(--color-ember));
+    box-shadow: 0 10px 28px -14px rgba(232, 145, 43, .72);
+  }
+
+  .telling-page .btn-outline {
+    border: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent) !important;
+    color: var(--color-ink);
+    background: color-mix(in srgb, var(--color-ink) 3%, transparent);
+  }
+
+  .telling-page .btn-primary:hover { filter: brightness(1.08); }
+  .telling-page .btn-outline:hover {
+    border-color: color-mix(in srgb, var(--color-flame) 60%, transparent) !important;
+    color: var(--color-spark);
+  }
+
+  .telling-page a:focus-visible,
+  .telling-page button:focus-visible,
+  .telling-guide-card:focus-visible {
+    outline: 2px solid var(--color-spark);
+    outline-offset: 4px;
+  }
+
+  /* Hero */
+  .telling-page > .relative > section:first-child {
+    padding-top: clamp(3.5rem, 6vw, 6.5rem) !important;
+    padding-bottom: clamp(3.5rem, 6vw, 5.5rem) !important;
+  }
+
+  .telling-hero-grid {
+    grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+    align-items: start !important;
+    column-gap: clamp(3rem, 6vw, 6rem) !important;
+    row-gap: clamp(2.25rem, 4vw, 3.5rem) !important;
+  }
+
+  .telling-hero-copy {
+    padding-top: .25rem;
+  }
+
+  .telling-page .telling-hero-copy h1 {
+    max-width: 10.5ch;
+    font-size: clamp(3.35rem, 5vw, 5rem) !important;
+  }
+
+  .telling-hero-copy h1 + p {
+    max-width: 52ch;
+    margin-top: 1.4rem !important;
+    color: var(--color-ink-2) !important;
+    font-size: clamp(1.02rem, 1.25vw, 1.12rem) !important;
+    line-height: 1.65;
+  }
+
+  .telling-hero-media {
+    margin-top: .4rem;
+  }
+
+  .telling-hero-media img {
+    aspect-ratio: 1570 / 975;
+    border: 1px solid color-mix(in srgb, var(--color-ink) 13%, transparent) !important;
+    border-radius: .75rem !important;
+    object-fit: cover;
+    box-shadow: 0 28px 70px -42px rgba(0, 0, 0, .95);
+  }
+
+  .telling-hero-quote {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.15rem 0 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--telling-border) !important;
+  }
+
+  .telling-hero-quote p {
+    margin: 0;
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp);
+    font-size: 1rem !important;
+    font-style: italic;
+  }
+
+  .telling-hero-quote cite {
+    flex: none;
+    margin: 0 !important;
+    color: var(--color-ink-3) !important;
+    font-family: var(--font-smono);
+    font-size: .7rem !important;
+    letter-spacing: .06em;
+  }
+
+  .telling-hero-media .absolute {
+    top: -.9rem;
+    right: 1rem;
+    padding: .55rem .8rem;
+    border: 1px solid color-mix(in srgb, var(--color-leaf) 28%, transparent);
+    color: var(--color-leaf);
+    background: color-mix(in srgb, var(--color-leaf) 7%, var(--color-night-2));
+    box-shadow: 0 12px 26px -18px #000;
+    font-family: var(--font-smono);
+  }
+
+  /* Sequence, features, and philosophy become editorial rows rather than floating cards. */
+  #telling-how .grid,
+  #telling-features .grid {
+    gap: 0;
+    border-block: 1px solid var(--telling-border);
+  }
+
+  #telling-how .grid > div,
+  #telling-features .grid > div {
+    padding: 1.75rem !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  #telling-how .grid > div {
+    border-right: 1px solid var(--telling-border);
+  }
+
+  #telling-how .grid > div:last-child { border-right: 0; }
+
+  #telling-how .grid > div > div:first-child,
+  #telling-features .grid > div > div:first-child {
+    color: var(--color-flame) !important;
+    background: color-mix(in srgb, var(--color-flame) 8%, transparent) !important;
+    border: 1px solid color-mix(in srgb, var(--color-flame) 22%, transparent);
+    font-family: var(--font-smono) !important;
+  }
+
+  #telling-how .grid > div > div:first-child {
+    border-radius: .55rem;
+  }
+
+  #telling-how .grid h3,
+  #telling-features .grid h3 {
+    margin-bottom: .55rem !important;
+    font-size: 1.12rem !important;
+  }
+
+  #telling-how .grid p,
+  #telling-features .grid p {
+    font-size: .94rem !important;
+    line-height: 1.7;
+  }
+
+  #telling-features .grid > div {
+    border-bottom: 1px solid var(--telling-border);
+  }
+
+  #telling-features .grid > div:nth-child(even):not(:last-child) {
+    border-right: 1px solid var(--telling-border);
+  }
+
+  #telling-features .grid > div:last-child,
+  #telling-features .grid > div:nth-last-child(2) { border-bottom: 0; }
+
+  /* Embed and install guides */
+  .telling-code {
+    color: var(--color-ink-2) !important;
+    background: var(--color-night-2);
+    white-space: nowrap;
+  }
+
+  .telling-code .tag { color: var(--color-flame); }
+  .telling-code .attr,
+  .telling-code .fn { color: var(--color-corn-2); }
+  .telling-code .val,
+  .telling-code .str { color: var(--color-leaf); }
+  .telling-code .comment,
+  .telling-code .cmt { color: var(--color-ink-3); font-style: italic; }
+  .telling-code .kw { color: #c9b8f4; }
+  .telling-code .file-label {
+    display: block;
+    margin-bottom: .4rem;
+    color: var(--color-ink-3);
+    font-size: .7rem;
+    font-style: normal;
+  }
+
+  #telling-embed .bg-base-300,
+  .telling-guide-detail {
+    max-width: none !important;
+    border: 1px solid var(--telling-border);
+    border-radius: .75rem !important;
+    background: var(--color-night-2) !important;
+    box-shadow: 0 28px 70px -48px rgba(0, 0, 0, .95) !important;
+  }
+
+  #telling-embed .mt-10 { max-width: none !important; }
+  #telling-embed dl {
+    border-color: var(--telling-border) !important;
+  }
+
+  #telling-embed dl > div {
+    padding-block: .9rem;
+    border-color: var(--telling-border) !important;
+  }
+
+  #telling-embed dt {
+    color: var(--color-flame) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .telling-copy-btn {
+    border-color: var(--telling-border) !important;
+    color: var(--color-ink-2) !important;
+    background: var(--color-night-3) !important;
+    font-family: var(--font-smono);
+  }
+
+  .telling-copy-btn:hover {
+    border-color: color-mix(in srgb, var(--color-flame) 45%, transparent) !important;
+    color: var(--color-spark) !important;
+  }
+
+  .telling-copy-btn.copied {
+    border-color: color-mix(in srgb, var(--color-leaf) 32%, transparent) !important;
+    color: var(--color-leaf) !important;
+    background: color-mix(in srgb, var(--color-leaf) 8%, var(--color-night-3)) !important;
+  }
+
+  .telling-code-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .telling-code-dot:nth-child(1) { background: var(--color-ember); }
+  .telling-code-dot:nth-child(2) { background: var(--color-flame); }
+  .telling-code-dot:nth-child(3) { background: var(--color-leaf); }
+
+  .telling-guide-card {
+    min-height: 7.5rem;
+    border-color: var(--telling-border) !important;
+    border-radius: .75rem !important;
+    color: var(--color-ink-2) !important;
+    background: var(--telling-panel) !important;
+    font-family: var(--font-smono);
+    font-size: .78rem;
+  }
+
+  .telling-guide-card:hover {
+    border-color: color-mix(in srgb, var(--color-flame) 38%, transparent) !important;
+    color: var(--color-spark) !important;
+    background: color-mix(in srgb, var(--color-flame) 5%, var(--color-night)) !important;
+  }
+
+  .telling-guide-card.active {
+    border-color: var(--color-flame) !important;
+    color: var(--color-spark) !important;
+    background: color-mix(in srgb, var(--color-flame) 8%, var(--color-night)) !important;
+  }
+
   .telling-guide-detail { display: none; }
-  .telling-guide-detail.visible { display: block; animation: telling-guideIn 0.3s ease; }
+  .telling-guide-detail.visible { display: block; animation: telling-guideIn .35s cubic-bezier(.16, 1, .3, 1); }
   @keyframes telling-guideIn {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: .5; transform: translateY(10px); filter: blur(4px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  /* Guide detail typography */
-  .telling-guide-detail h3 { font-family: "Noto Serif", serif; font-weight: 600; font-size: 1.1rem; }
+
+  .telling-guide-detail h3 { font-weight: 620; font-size: 1.1rem; }
   .telling-guide-detail h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.25rem; }
-  .telling-guide-detail p { font-size: 0.82rem; line-height: 1.6; opacity: 0.6; }
-  /* Guide card active state */
-  .telling-guide-card.active { border-color: var(--color-primary) !important; background: color-mix(in srgb, var(--color-primary) 10%, transparent) !important; }
-  /* Federation badge pulse */
+  .telling-guide-detail p { color: var(--color-ink-2) !important; font-size: 0.82rem; line-height: 1.65; }
+  .telling-guide-detail svg { width: 1.5rem; height: 1.5rem; }
+
+  /* Philosophy */
+  #telling-philosophy h2 {
+    max-width: 20ch;
+    margin-bottom: clamp(2.75rem, 5vw, 4.25rem) !important;
+  }
+
+  .telling-philosophy-grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(20rem, .88fr);
+    align-items: start !important;
+    gap: clamp(4rem, 7vw, 6.5rem) !important;
+  }
+
+  .telling-philosophy-quote {
+    position: relative;
+    padding-left: clamp(2.75rem, 4vw, 3.75rem);
+  }
+
+  #telling-philosophy blockquote {
+    max-width: 30ch;
+    margin-bottom: 1rem !important;
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp) !important;
+    font-size: clamp(1.55rem, 2.15vw, 2.15rem) !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.32 !important;
+    letter-spacing: -.02em;
+  }
+
+  #telling-philosophy blockquote span {
+    position: absolute;
+    top: -.1em;
+    left: 0;
+    color: var(--color-flame) !important;
+    font-size: clamp(3.5rem, 5vw, 5rem) !important;
+    line-height: 1;
+  }
+
+  .telling-philosophy-quote cite {
+    display: block;
+    margin-top: 1.25rem;
+    color: var(--color-ink-3) !important;
+    font-family: var(--font-smono);
+    font-size: .74rem !important;
+    letter-spacing: .035em;
+  }
+
+  .telling-philosophy-principles {
+    gap: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .telling-philosophy-principles > div {
+    padding: 0 0 1.65rem !important;
+    margin-bottom: 1.65rem;
+    border: 0 !important;
+    border-bottom: 1px solid var(--telling-border) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .telling-philosophy-principles > div:last-child {
+    margin-bottom: 0;
+  }
+
+  #telling-philosophy h4 {
+    margin-bottom: .55rem !important;
+    color: var(--color-spark) !important;
+    font-size: 1.05rem !important;
+  }
+
+  .telling-philosophy-principles p {
+    max-width: 52ch;
+    font-size: .94rem !important;
+    line-height: 1.65;
+  }
+
+  .telling-page > .relative > section:last-child {
+    border-bottom: 0;
+    background: color-mix(in srgb, var(--color-flame) 4%, var(--color-night)) !important;
+  }
+
   @keyframes telling-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    50% { opacity: .45; }
   }
   .telling-pulse { animation: telling-pulse 2s ease-in-out infinite; }
+
+  @media (max-width: 1099px) {
+    .telling-hero-grid { grid-template-columns: 1fr; }
+    .telling-hero-copy { max-width: 44rem; }
+    .telling-hero-media { margin-top: 0; }
+  }
+
+  @media (max-width: 1149px) {
+    .telling-philosophy-grid {
+      grid-template-columns: 1fr;
+      gap: clamp(3rem, 7vw, 4.5rem) !important;
+    }
+    .telling-philosophy-quote { max-width: 48rem; }
+    .telling-philosophy-principles { max-width: 48rem; }
+  }
+
+  @media (max-width: 767px) {
+    .telling-page > .relative > section { padding-inline: 1.25rem !important; }
+    #telling-how .grid > div {
+      border-right: 0;
+      border-bottom: 1px solid var(--telling-border);
+    }
+    #telling-how .grid > div:last-child { border-bottom: 0; }
+    #telling-features .grid > div { border-right: 0 !important; }
+    #telling-features .grid > div:nth-last-child(2) { border-bottom: 1px solid var(--telling-border); }
+    .telling-hero-media .absolute {
+      position: static;
+      width: fit-content;
+      margin-bottom: .8rem;
+    }
+    .telling-hero-quote {
+      display: block;
+      padding-top: 1rem !important;
+    }
+    .telling-hero-quote cite { margin-top: .45rem !important; }
+    #telling-philosophy h2 {
+      margin-bottom: 2.5rem !important;
+    }
+    .telling-philosophy-quote {
+      padding-left: 2.4rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .telling-pulse,
+    .telling-guide-detail.visible { animation: none; }
+    .telling-page * { scroll-behavior: auto !important; }
+  }
 </style>
 
-<div class="telling-page">
+<div class="telling-page relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+<div class="v2-ambient" aria-hidden="true"></div>
+<div class="relative z-[1]">
 
 <!-- ── HERO ── -->
 <section class="pt-16 pb-12 lg:pt-24 lg:pb-20 px-4 lg:px-0" aria-labelledby="telling-hero-heading">
-  <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-center">
-    <div>
-      <h1 id="telling-hero-heading" class="text-4xl lg:text-6xl lg:leading-[72px] font-bold tracking-tight text-base-content serif-bold">Every site<br/>deserves a <em class="text-primary italic">voice</em></h1>
+  <div class="telling-hero-grid max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16">
+    <div class="telling-hero-copy">
+      <h1 id="telling-hero-heading" class="text-4xl lg:text-6xl lg:leading-[72px] font-bold tracking-tight text-base-content serif-bold">Every site<br/>deserves a <em class="fire-text">voice</em></h1>
       <p class="text-lg lg:text-xl mt-6 text-base-content/80 max-w-lg">
         The Telling adds a comment thread to anything you publish: a blog, a newsroom, a CMS or static site. Readers reply with an account they already have, on Bonfire, Mastodon, or anywhere else on the fediverse or the ATmosphere. The discussion lives on your own server, not a third party's, and you can take it with you.
       </p>
@@ -61,19 +526,20 @@ layout: layouts/base.njk
         <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
         <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
       </div>
-      <div class="mt-10 pl-5 border-l-2 border-primary/40">
-        <p class="serif-regular italic text-base text-base-content/60">"To learn a belief without belief is to sing a song without the tune."</p>
-        <cite class="block mt-2 text-xs tracking-wider text-base-content/40 not-italic">Ursula K. Le Guin - The Telling (2000)</cite>
-      </div>
     </div>
 
-    <div class="relative order-first lg:order-last">
+    <div class="telling-hero-media relative">
       <div class="absolute -top-3 right-5 z-10 bg-base-content text-base-100 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide shadow-lg flex items-center gap-2">
         <span class="w-1.5 h-1.5 rounded-full bg-green-400 telling-pulse"></span>
         Federated via ActivityPub
       </div>
-      <img src="/img/comments.png" alt="The Telling: a federated comment thread embedded under an article, with replies flowing in from Bonfire and Mastodon accounts" class="rounded-2xl shadow-xl border border-base-content/10 w-full" loading="lazy">
+      <img src="/img/comments.png" alt="The Telling: a federated comment thread embedded under an article, with replies flowing in from Bonfire and Mastodon accounts" width="1570" height="975" class="rounded-2xl shadow-xl border border-base-content/10 w-full" loading="eager" fetchpriority="high">
 
+    </div>
+
+    <div class="telling-hero-quote">
+      <p>"To learn a belief without belief is to sing a song without the tune."</p>
+      <cite class="block not-italic">Ursula K. Le Guin - The Telling (2000)</cite>
     </div>
   </div>
 </section>
@@ -714,16 +1180,16 @@ layout: layouts/base.njk
 <section class="py-12 lg:py-20 px-4" id="telling-philosophy" aria-labelledby="telling-philosophy-heading">
   <div class="max-w-screen-lg mx-auto">
     <p class="text-xs font-semibold tracking-widest text-primary mb-3">Philosophy</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-10" id="telling-philosophy-heading">Named for a practice,<br/>not a product</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-10" id="telling-philosophy-heading">Named for a practice, not a product</h2>
+    <div class="telling-philosophy-grid grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="telling-philosophy-quote">
         <blockquote class="serif-regular italic text-2xl lg:text-3xl leading-relaxed text-base-content/80 mb-4">
           <span class="text-5xl leading-none text-primary block mb-2">&ldquo;</span>
           Telling is what people do, what people always did... They tell: they share what they know, their experiences, their feelings, their ideas, in words, in signs, in stories, in songs.
         </blockquote>
         <cite class="text-sm not-italic text-base-content/40">— Ursula K. Le Guin, The Telling (2000)</cite>
       </div>
-      <div class="flex flex-col gap-6">
+      <div class="telling-philosophy-principles flex flex-col gap-6">
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Against enshittification</h4>
           <p class="text-base text-base-content/60">Comment platforms decayed into ad-delivery systems. The Telling has no investors to satisfy, no engagement metrics to optimise, no data to sell. It exists to serve conversation.</p>
@@ -744,8 +1210,8 @@ layout: layouts/base.njk
 <!-- ── CTA ── -->
 <section class="py-12 lg:py-20 px-4 bg-base-300/30">
   <div class="max-w-screen-lg mx-auto text-center">
-    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Join the Telling</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4">Your words, and your readers',<br/>in one conversation.</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3 place-content-center">Join the Telling</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4 mx-auto">Your words, and your readers',<br/>in one conversation.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mx-auto mb-8">
       Free, open source, and ready to embed on any site you publish.
     </p>
@@ -757,10 +1223,11 @@ layout: layouts/base.njk
 </section>
 
 </div>
+</div>
 
 <script>
   // Framework guide tabs
-  function tellingShowGuide(name) {
+  window.tellingShowGuide = function(name) {
     document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
     document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
     const detail = document.getElementById('telling-guide-' + name);
@@ -770,23 +1237,42 @@ layout: layouts/base.njk
     }
     const card = document.querySelector('[data-guide="' + name + '"]');
     if (card) card.classList.add('active');
-  }
+  };
 
-  function tellingHideGuide() {
+  window.tellingHideGuide = function() {
     document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
     document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
-  }
+  };
 
   // Copy embed code
-  function tellingCopyEmbed(btn) {
-    const code = `<!-- Add the Telling to any page -->\n<script\n  src="https://your-instance.social/js/comments_embed.js"\n  data-theme="dark"\n  data-mode="nested"\n  async\n></script>`;
-    navigator.clipboard.writeText(code).then(() => {
+  window.tellingCopyEmbed = async function(btn) {
+    const code = `<!-- Add the Telling to any page -->\n<script\n  src="https://your-instance.social/js/comments_embed.js"\n  data-theme="dark"\n  data-mode="nested"\n  async\n><\/script>`;
+    try {
+      await navigator.clipboard.writeText(code);
       btn.classList.add('copied');
       btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
       setTimeout(() => {
         btn.classList.remove('copied');
         btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
       }, 2000);
-    });
-  }
+    } catch (_) {
+      const textarea = document.createElement('textarea');
+      textarea.value = code;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      const copied = document.execCommand('copy');
+      textarea.remove();
+      if (copied) {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+        }, 2000);
+      }
+    }
+  };
 </script>
