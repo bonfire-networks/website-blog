@@ -106,7 +106,9 @@ description: "Frequently asked questions about Bonfire: licensing, federation, p
         <input type="radio" name="faq" />
         <div class="{{ q }}">Do you have a flagship instance?</div>
         <div class="{{ a }}">
-          No, only a <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">demo instance</a>.
+          <p>No, and that's deliberate. There's a <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">demo instance</a> to try things out, but nothing we'd call the main one.</p>
+          <p class="mt-2">We want an ecosystem: hosting, governance, moderation, and revenue spread across many co-ops and communities, each answering to its own members. The winner-take-all default is that the people who write the software become everyone's landlord: their flagship instance captures the roadmap, moderates the network by default, and collects everyone's hosting fees.</p>
+          <p class="mt-2">So instead of a flagship, there's <a href="/hosting/">a cooperative hosting network</a> we're building with allied co-ops, alongside <a href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">self-hosting</a>. What matters is who governs, not just where the machines sit.</p>
         </div>
       </div>
 
@@ -142,12 +144,24 @@ description: "Frequently asked questions about Bonfire: licensing, federation, p
         <div class="{{ q }}">Who is building Bonfire?</div>
         <div class="{{ a }}">
           <ul>
-            <li>The core team is a small collective of designers and developers who has been cooperating in various forms (and various names, the project was previously known as CommonsPub, itself a fork of what was to be MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.</li>
+            <li>The core team is a small collective of designers and developers who has been cooperating in various forms (and various names, the project was previously known as CommonsPub, itself a fork of what was to be MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020. <a href="/about">Meet the builders and read how we're organised →</a></li>
             <li><strong>You?</strong> Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own. That doesn't mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!</li>
           </ul>
         </div>
       </div>
 
+      <div class="{{ qa }}">
+        <input type="radio" name="faq" />
+        <div class="{{ q }}">How does Bonfire compare to other apps I may be using?</div>
+        <div class="{{ a }}">
+          We've put together a detailed comparison, covering community platforms (Circle, Mighty Networks), team chat (Slack, Discord), messaging (Signal, WhatsApp), open source (Discourse, BuddyPress), and more, across a dozen criteria. <a href="/compare">See how Bonfire compares →</a>
+        </div>
+      </div>
+
+      {# Superseded by /compare (compare.njk). Kept here for reference: the older,
+         broader table (Twitter, Instagram, Pixelfed, Google Apps, Nextcloud…) whose
+         apps aren't all on the compare page yet. Merge them over before deleting. #}
+      {#
       <div class="{{ qa }}">
         <input type="radio" name="faq" />
         <div class="{{ q }}">How does Bonfire compare to other apps I may be using?</div>
@@ -172,6 +186,7 @@ description: "Frequently asked questions about Bonfire: licensing, federation, p
           </div>
         </div>
       </div>
+      #}
 
       {# still stuck? #}
       <div class="flex flex-wrap items-center justify-between gap-4 mt-6 rounded-xl border border-dashed border-ink/15 px-6 py-5">

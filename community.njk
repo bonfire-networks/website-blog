@@ -21,7 +21,7 @@ description: Bonfire isn't a product with users, it's a commons with participant
       <div class="flex flex-col gap-6">
         <div>
           <p class="{{ eyebrow }} text-flame">Community</p>
-          <h1 class="mt-5 max-w-[11ch] font-disp font-[620] text-[clamp(3.35rem,7.4vw,6rem)] leading-[.94] tracking-[-.035em] text-balance">Find your way <span class="italic font-medium text-flame">in.</span></h1>
+          <h1 class="mt-5 font-disp font-[620] text-[clamp(3.35rem,7.4vw,6rem)] leading-[.94] tracking-[-.035em] text-balance">Get involved.</h1>
         </div>
         <p class="max-w-[36rem] pb-1 text-[clamp(1.05rem,1.6vw,1.28rem)] leading-[1.55] text-ink-2">However much you've got, there's a way to take part. Come to listen, lend a hand, bring your community, or sustain the care work.</p>
       </div>
@@ -58,7 +58,7 @@ description: Bonfire isn't a product with users, it's a commons with participant
     <section id="gather" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
       <p class="{{ eyebrow }} text-corn">Where we gather</p>
-      <h2 class="{{ display }} max-w-[20ch]">Three rooms, all of them <span class="italic font-medium">open.</span></h2>
+      <h2 class="{{ display }} ">Three rooms, all of them <span class="italic font-medium">open.</span></h2>
       <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-4 mt-[26px]">
         <div class="card rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6 gap-2">
           <span class="font-smono text-[.66rem] tracking-[.1em] uppercase text-corn">The workshop</span>
@@ -69,13 +69,13 @@ description: Bonfire isn't a product with users, it's a commons with participant
         <div class="card rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6 gap-2">
           <span class="font-smono text-[.66rem] tracking-[.1em] uppercase text-corn">The playground</span>
           <h3 class="font-disp font-[620] text-[1.1rem]">The campground</h3>
-          <p class="text-ink-2 text-[.93rem] m-0">Our open test instance. Make an account, break things, tell us what felt wrong. Data gets reset now and then, don't move in.</p>
+          <p class="text-ink-2 text-[.93rem] m-0">Our open test instance. Make an account, break things, tell us what felt wrong. Data may get reset now and then, don't move in.</p>
           <a class="{{ golink }}" href="https://campground.bonfire.cafe/">Sign up on the campground →</a>
         </div>
         <div class="card rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6 gap-2">
           <span class="font-smono text-[.66rem] tracking-[.1em] uppercase text-corn">The square</span>
           <h3 class="font-disp font-[620] text-[1.1rem]">The fediverse</h3>
-          <p class="text-ink-2 text-[.93rem] m-0">Where we post news, share what we're building, and argue in public. Follow, reply, boost.</p>
+          <p class="text-ink-2 text-[.93rem] m-0">Where we post news, share what we're building, and converse in public. Follow, reply, boost.</p>
           <a class="{{ golink }}" href="https://bonfire.cafe/@Bonfire">Follow @Bonfire →</a>
         </div>
       </div>
@@ -85,7 +85,7 @@ description: Bonfire isn't a product with users, it's a commons with participant
     <section id="help" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
       <p class="{{ eyebrow }} text-flame">Ways to help</p>
-      <h2 class="{{ display }} max-w-[24ch]">Small things count. <span class="italic font-medium">Most of Bonfire is small things.</span></h2>
+      <h2 class="{{ display }} ">Small things count. <span class="italic font-medium">Most of Bonfire is small things.</span></h2>
       {% set ct = "card rounded-xl border border-ink/15 px-[19px] py-5 gap-[7px] hover:border-ink/25" %}
       {% set cttime = "badge h-auto self-start rounded-full bg-transparent border-ink/15 px-2 py-[3px] font-smono text-[.63rem] tracking-[.1em] uppercase text-ink-3" %}
       {% set cth = "font-disp font-[620] text-[1.05rem] mt-1" %}
@@ -100,32 +100,33 @@ description: Bonfire isn't a product with users, it's a commons with participant
         <div class="{{ ct }}">
           {# <span class="{{ cttime }}">30 minutes</span> #}
           <h3 class="{{ cth }}">Translate a screen</h3>
-          <p class="{{ ctp }}">Bonfire speaks English, Italian, French and Catalan. If yours is missing, you can fix that.</p>
+          <p class="{{ ctp }}">Bonfire so far speaks English, German, and a bit of other languages like Italian, French, Catalan, etc. If yours is missing, you can fix that.</p>
           <a class="{{ golink }}" href="https://explore.transifex.com/bonfire/bonfire/">Translate on Transifex →</a>
         </div>
         <div class="{{ ct }}">
           {# <span class="{{ cttime }}">10 minutes</span> #}
           <h3 class="{{ cth }}">Report what broke</h3>
-          <p class="{{ ctp }}">Something felt wrong, confusing, or inaccessible? That's a bug. Tell us, especially the small annoyances.</p>
-          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Open an issue →</a>
+          <p class="{{ ctp }}">Something felt wrong, confusing, or inaccessible? That's may be a bug. Tell us, especially the small annoyances.</p>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new?template=bug_report.md">Open an issue →</a>
         </div>
         <div class="{{ ct }}">
           {# <span class="{{ cttime }}">An evening</span> #}
           <h3 class="{{ cth }}">Write code</h3>
           <p class="{{ ctp }}">Elixir, Phoenix, LiveView. Set up a local environment from the docs and dig into an extension.</p>
-          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app">Read the dev docs →</a>
+          <a class="{{ golink }}" href="https://docs.bonfirenetworks.org/">Read the docs →</a>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app">Get the code →</a>
         </div>
         <div class="{{ ct }}">
           {# <span class="{{ cttime }}">An hour</span> #}
-          <h3 class="{{ cth }}">Improve the docs</h3>
+          <h3 class="{{ cth }}">Improve the docs or website</h3>
           <p class="{{ ctp }}">If something confused you, it'll confuse the next person. Writing it down is a real contribution.</p>
-          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Suggest a doc fix →</a>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new?template=BLANK_ISSUE">Suggest a doc fix →</a>
         </div>
         <div class="{{ ct }}">
           {# <span class="{{ cttime }}">Ongoing</span> #}
           <h3 class="{{ cth }}">Propose an idea</h3>
           <p class="{{ ctp }}">A feature, a better flow, a challenge to an assumption we've made. We'd rather be argued with early.</p>
-          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Open a proposal →</a>
+          <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new?template=feature_request.md">Open a proposal →</a>
         </div>
       </div>
     </div></section>
@@ -137,9 +138,9 @@ description: Bonfire isn't a product with users, it's a commons with participant
       <div class="grid grid-cols-1 min-[881px]:grid-cols-[1.15fr_.85fr] gap-6 min-[881px]:gap-10 items-center mt-[26px] rounded-xl border border-ink/15 px-8 py-[34px]">
         <div>
           <h3 class="font-disp font-[620] text-2xl mb-2.5">Got a community that needs a home?</h3>
-          <p class="text-ink-2 text-base mb-[18px] max-w-[38rem]">This is the contribution we value most. Co-ops, collectives, unions, newsrooms, research groups, care networks... come tell us how you actually work, and we'll shape a space around it together. Everything we build with you goes back into the commons, for whoever needs it next.</p>
+          <p class="text-ink-2 text-base mb-[18px] max-w-[38rem]">Real communities with real needs are what move this project. Co-ops, collectives, unions, newsrooms, research groups, care and mutual aid networks... come tell us how you actually work, and we'll shape a space around it together. Everything we build with you goes back into the commons, for whoever needs it next.</p>
           <div class="flex flex-wrap gap-[11px]">
-            <a class="{{ btnfire }}" href="https://cal.com/bonfire-networks/meet">Let's chat</a>
+            <a class="{{ btnfire }}" href="/mosaic">Learn more</a>
             <a class="{{ btnline }}" href="/case-studies">See how others did it →</a>
           </div>
         </div>
@@ -152,8 +153,8 @@ description: Bonfire isn't a product with users, it's a commons with participant
     <section id="support" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
       <p class="{{ eyebrow }} text-flame">Support the care work</p>
-      <h2 class="{{ display }} max-w-[24ch]">Fund the unglamorous part. <span class="italic font-medium">It's the part that keeps it alive.</span></h2>
-      <p class="{{ bodyp }}">Most funders want to pay for the new and shiny. Almost no one wants to pay for maintenance, like fixing bugs, answering questions, keeping things usable on old phones and slow connections, moderating, translating. That work is what makes software trustworthy. It's what your money buys here.</p>
+      <h2 class="{{ display }} max-w-[22ch]">Fund the unglamorous part. <span class="italic font-medium">It's what keeps the project alive.</span></h2>
+      <p class="{{ bodyp }}">Most funders want to pay for the new and shiny, rather than maintenance, like fixing bugs, answering questions, keeping things usable on old phones and slow connections, moderating, translating. That work is what makes software trustworthy.</p>
 
       {# stats — update from Open Collective (or wire to _data at build time) #}
       {# <div class="grid grid-cols-1 min-[521px]:grid-cols-2 min-[901px]:grid-cols-4 gap-px mt-[26px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
@@ -182,42 +183,42 @@ description: Bonfire isn't a product with users, it's a commons with participant
         <div class="{{ tier }}">
           <div class="font-disp font-bold text-[1.45rem]">€3</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">a month</div>
           <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">Keeps a translation up to date, so someone reads Bonfire in their own language.</p>
-          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks">Back it →</a>
+          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks/donate?interval=month&amount=3&contributeAs=me">Back it →</a>
         </div>
         <div class="{{ tier }} border-flame/60 bg-flame/5">
           <div class="font-disp font-bold text-[1.45rem] text-flame">€6</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">a month · most chosen</div>
-          <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">An hour of the unglamorous work: a bug fixed, a question answered, docs unstuck.</p>
-          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks">Back it →</a>
+          <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">A chunk of unglamorous work: a bug fixed, a question answered, docs unstuck.</p>
+          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks/donate?interval=month&amount=6&contributeAs=me">Back it →</a>
         </div>
         <div class="{{ tier }}">
           <div class="font-disp font-bold text-[1.45rem]">€12</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">a month</div>
           <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">Helps us slow a release when someone's ill or burnt out, instead of pushing through.</p>
-          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks">Back it →</a>
+          <a class="{{ golink }}" href="https://opencollective.com/bonfire-networks/donate?interval=month&amount=12&contributeAs=me">Back it →</a>
         </div>
         <div class="{{ tier }}">
           <div class="font-disp font-bold text-[1.45rem]">Any</div><div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">one-off</div>
           <p class="text-ink-2 text-[.9rem] mt-1.5 m-0">Or fund a specific feature, a circle, or a co-design sprint with your community.</p>
-          <a class="{{ golink }}" href="https://cal.com/bonfire-networks/meet">Let's chat →</a>
+          <a class="{{ golink }}" href="/contact">Let's chat →</a>
         </div>
       </div>
 
       <div class="grid gap-3.5 mt-[34px]">
         <div class="grid grid-cols-[auto_1fr] gap-3.5">
           <span class="w-2 h-2 mt-[7px] bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
-          <div><b class="font-disp font-semibold block mb-0.5">Maintenance first</b><span class="text-ink-2 text-[.95rem]">We made care and maintenance the condition of our crowdfunder's success, before any exciting stretch goal.</span></div>
+          <div><b class="font-disp font-semibold block mb-0.5">Maintenance first</b><span class="text-ink-2 text-[.95rem]">We made care and maintenance the condition of our crowdfunding success, before any exciting stretch goal.</span></div>
         </div>
         <div class="grid grid-cols-[auto_1fr] gap-3.5">
           <span class="w-2 h-2 mt-[7px] bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
-          <div><b class="font-disp font-semibold block mb-0.5">Radically transparent</b><span class="text-ink-2 text-[.95rem]">Every expense is public on Open Collective, fiscally hosted by Open Source Europe. You can see exactly where it goes.</span></div>
+          <div><b class="font-disp font-semibold block mb-0.5">Radically transparent</b><span class="text-ink-2 text-[.95rem]">Expenses are public on Open Collective, fiscally hosted by Open Source Europe. You can see exactly where it goes.</span></div>
         </div>
         <div class="grid grid-cols-[auto_1fr] gap-3.5">
           <span class="w-2 h-2 mt-[7px] bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
-          <div><b class="font-disp font-semibold block mb-0.5">No VC, no ads, nothing to sell</b><span class="text-ink-2 text-[.95rem]">Community-funded means no one can buy us and turn Bonfire against you later.</span></div>
+          <div><b class="font-disp font-semibold block mb-0.5">No investors, no ads, nothing to sell</b><span class="text-ink-2 text-[.95rem]">Community-funded means no one can buy us and turn Bonfire against you later.</span></div>
         </div>
       </div>
 
       <p class="{{ eyebrow }} text-flame mt-10">The 33 who already do</p>
-      <p class="mt-3 text-[.96rem] text-ink-2 max-w-[42rem]">Listed alphabetically. No tiers, no top donors, no gold badges — a commons doesn't rank the people who keep it alive.</p>
+      {# <p class="mt-3 text-[.96rem] text-ink-2 max-w-[42rem]">Listed alphabetically. No tiers, no top donors, no gold badges — a commons doesn't rank the people who keep it alive.</p> #}
       {# every backer identical — no ranking, no featuring, no "+more" #}
       {% set backers = [
         { href: "https://opencollective.com/adrian-garne", ini: "AG", name: "Adrian Garner" },
@@ -389,7 +390,7 @@ description: Bonfire isn't a product with users, it's a commons with participant
         <div class="bg-night px-5 py-[22px]">
           <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Daily</div>
           <h3 class="font-disp font-[620] text-base mt-2 mb-1.5">The fediverse</h3>
-          <p class="text-ink-2 text-[.88rem] mb-2.5">News, updates, and public thinking-out-loud.</p>
+          <p class="text-ink-2 text-[.88rem] mb-2.5">News, updates, and public discourse.</p>
           <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://bonfire.cafe/@Bonfire">Follow @Bonfire →</a>
         </div>
         <div class="bg-night px-5 py-[22px]">
@@ -399,7 +400,7 @@ description: Bonfire isn't a product with users, it's a commons with participant
           <a class="font-smono text-[.7rem] text-spark hover:underline" href="/blog">Read the blog →</a>
         </div>
         <div class="bg-night px-5 py-[22px]">
-          <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Every 2 weeks, max</div>
+          <div class="font-smono text-[.64rem] tracking-[.1em] uppercase text-ink-3">Every few months</div>
           <h3 class="font-disp font-[620] text-base mt-2 mb-1.5">Newsletter</h3>
           <p class="text-ink-2 text-[.88rem] mb-2.5">A short digest. We won't clog your inbox.</p>
           <a class="font-smono text-[.7rem] text-spark hover:underline" href="/subscribe">Subscribe →</a>
@@ -413,7 +414,7 @@ description: Bonfire isn't a product with users, it's a commons with participant
       </div>
 
       <div class="flex flex-wrap items-center justify-between gap-5 mt-[30px] rounded-xl border border-dashed border-ink/15 px-[26px] py-6">
-        <p class="m-0 text-[.96rem] text-ink-2 max-w-[52rem]"><b class="text-ink font-semibold">Everyone here agrees to the code of conduct.</b> It's long, specific, and rooted in care rather than punishment, because a commons only works if people are safe in it.</p>
+        <p class="m-0 text-[.96rem] text-ink-2 max-w-[52rem]"><b class="text-ink font-semibold">Everyone here must abide by the code of conduct.</b> It's long, specific, and rooted in care, because a commons only works if people are safe in it.</p>
         <a class="{{ btnline }}" href="/conduct">Read the code of conduct</a>
       </div>
     </div></section>

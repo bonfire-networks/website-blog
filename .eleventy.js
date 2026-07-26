@@ -179,7 +179,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fediforum");
   eleventyConfig.addPassthroughCopy(".well-known");
 
-  // Ignore CSS output file to prevent watch loop
+  // NOTE: should we instead watch the PostCSS output so regenerated CSS is copied to _site and the browser reloads? 
   eleventyConfig.watchIgnores.add("css/style_v2.css");
 
   const md = new markdownIt();

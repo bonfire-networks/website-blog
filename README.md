@@ -42,15 +42,10 @@ npm install
 
 ### 4. Edit _data/metadata.json
 
-### 5. Run Eleventy
+### 5. Run Eleventy in dev
 
 ```
-npx eleventy --watch --serve
-```
-
-Or in debug mode:
-```
-DEBUG=* npx eleventy --watch --serve
+yarn start
 ```
 
 ### Implementation Notes
