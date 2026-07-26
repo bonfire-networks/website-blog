@@ -270,6 +270,117 @@ description: Bonfire isn't a product with users, it's a commons with participant
       <p class="mt-4 font-smono text-[.68rem] text-ink-3">Fiscal host: Open Source Europe · every expense is public on Open Collective</p>
     </div></section>
 
+    {# crowdfunding contributors who opted in to public credit #}
+    <section id="contributors" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="{{ eyebrow }} text-flame">Thank you</p>
+      <h2 class="{{ display }} max-w-[24ch]">You helped keep this fire <span class="italic font-medium">going.</span></h2>
+      <p class="{{ bodyp }}">These contributors backed our crowdfunding campaign. We're grateful to every one of them.</p>
+
+      {% set creditedContributors = [
+        { name: "+mala", href: "http://3564020356.org/" },
+        { name: "Adam Mizerski", href: "https://etam-software.eu/" },
+        { name: "Adam Rice", href: "http://8stars.org/" },
+        { name: "Adrian Garner", href: "https://adrian.com.au/" },
+        { name: "Adrian-Paul Carrières", href: "" },
+        { name: "Alice Ice", href: "" },
+        { name: "Alison Wilder", href: "https://alisonwilder.com/" },
+        { name: "Allison Clift-Jennings", href: "" },
+        { name: "Andrés Hirunatan", href: "" },
+        { name: "Benjamin Ortiz", href: "" },
+        { name: "BjornW", href: "https://burobjorn.nl/" },
+        { name: "Bryan L. Fordham", href: "https://www.naughtybaptist.com/" },
+        { name: "BT Free", href: "https://btfrer.org/" },
+        { name: "Chris Wood", href: "https://www.chris-wood.design/" },
+        { name: "Csepp", href: "https://trainpats.eu/" },
+        { name: "Dan Ritz", href: "https://www.danritz.com/" },
+        { name: "Daniel Waxweiler", href: "https://www.danielwaxweiler.net/" },
+        { name: "David Edgar", href: "https://aus.social/@gilmae" },
+        { name: "Dawn", href: "" },
+        { name: "Dimitra B", href: "" },
+        { name: "Dom Bonanni", href: "" },
+        { name: "Doubar", href: "" },
+        { name: "Doug Belshaw", href: "https://dougbelshaw.com/" },
+        { name: "Dragan Espenschied", href: "https://despens.digital/" },
+        { name: "Duncan Lock", href: "https://duncanlock.net/" },
+        { name: "Dustin Beltramo", href: "https://mastodon.green/@dtbeltramo" },
+        { name: "Eivind Mork", href: "" },
+        { name: "Eliot Lash", href: "https://social.coop/@Eliot_L" },
+        { name: "Eric Jennings", href: "https://killyour.guru/" },
+        { name: "Erlend Sogge Heggen", href: "https://erlend.sh/" },
+        { name: "Ethan Marcotte", href: "https://ethanmarcotte.com/" },
+        { name: "Evan Hahn", href: "https://evanhahn.com/" },
+        { name: "Freddie Johnson", href: "https://newsmast.social/@FreddieJ" },
+        { name: "Frederik Elwert", href: "https://fedihum.org/@felwert" },
+        { name: "Gjalt-Jorn Peters", href: "https://behaviorchange.eu/" },
+        { name: "Graham", href: "https://www.prograham.net/" },
+        { name: "Grigorios Piperagkas", href: "" },
+        { name: "iexos", href: "" },
+        { name: "Jade Ambrose", href: "https://jade.hopepunk.me/" },
+        { name: "James Suszynski", href: "https://fixforward.org/" },
+        { name: "janusode", href: "https://momou.social/@janusode" },
+        { name: "Jeremiah Lee", href: "https://www.jeremiahlee.com/" },
+        { name: "Johanna B", href: "https://johannab.ca/" },
+        { name: "Jonas Richter", href: "" },
+        { name: "Justin du Coeur", href: "https://social.coop/@jducoeur" },
+        { name: "Kris Arnold", href: "" },
+        { name: "Laurenz Vock", href: "" },
+        { name: "Louis Merlin", href: "https://louismerl.in/" },
+        { name: "Lukas Helebrandt", href: "" },
+        { name: "Marty | DigiGeek", href: "https://digi.geek.nz/" },
+        { name: "Matt McNamara", href: "" },
+        { name: "Melting Voices", href: "https://mastodon.social/@chaosresearchparty" },
+        { name: "Michael Fürstenberg", href: "" },
+        { name: "Miss K. Lorena", href: "" },
+        { name: "mlednor", href: "" },
+        { name: "Nadia.moe", href: "https://nadia.moe/" },
+        { name: "Nathan Hurel", href: "https://ublog.hurel.me/@nathan" },
+        { name: "Nathan Schneider", href: "https://nathanschneider.info/" },
+        { name: "Nicolas Fressengeas", href: "https://www.fressengeas.net/" },
+        { name: "Ole Rauch", href: "https://www.brumaireverlag.de/" },
+        { name: "Oliver Bucher", href: "" },
+        { name: "pfm", href: "https://untalkative.one/" },
+        { name: "pinage404", href: "https://wheretofind.me/@pinage404" },
+        { name: "Real name", href: "" },
+        { name: "Rick Miloch", href: "" },
+        { name: "Robb Knight", href: "https://rknight.me/" },
+        { name: "Robin Riley", href: "https://riley.pub/" },
+        { name: "safonas", href: "https://vkl.world/@safonas" },
+        { name: "Seann Aswell", href: "https://seannaswell.com/" },
+        { name: "Sebbe", href: "" },
+        { name: "Shlee", href: "https://fedicloud.au/" },
+        { name: "Simon Carpentier", href: "https://spacebar.ca/" },
+        { name: "SnowboardTechie", href: "https://snowboardtechie.com/" },
+        { name: "Sohyeon Hwang (Princeton HCI)", href: "https://www.sohyeonhwang.com/" },
+        { name: "Stephen P. Anderson", href: "" },
+        { name: "theothertom", href: "https://epsom.social/@tom" },
+        { name: "Thomas Schwarz", href: "" },
+        { name: "Thorbjörn Sievert", href: "https://tsievert.com/" },
+        { name: "Timothée Goguely", href: "https://mastodon.design/@timotheegoguely" },
+        { name: "Ville Ranki", href: "https://tampere.hacklab.fi/" },
+        { name: "Vincent Bernstein", href: "https://vincent.bernstein.me/" },
+        { name: "Wilhelm Fitzpatrick", href: "http://www.3roses.com/" },
+        { name: "Wouter Tebbens", href: "https://social.coop/@Wtebbens" },
+        { name: "Zack Slayton", href: "" },
+        { name: "Zack W", href: "https://www.owlfolio.org/" },
+        { name: "Zeggo", href: "https://mastodontti.fi/@zeggo" },
+        { name: "zelf", href: "https://www.zelf.site/" }
+      ] %}
+
+      <ul class="mt-8 grid grid-cols-1 min-[561px]:grid-cols-2 min-[761px]:grid-cols-3 min-[901px]:grid-cols-4 gap-x-8 gap-y-3" aria-label="Contributors">
+        {% for contributor in creditedContributors %}
+        <li class="flex min-w-0 items-center gap-2.5">
+          <span class="h-2 w-2 flex-none bg-flame [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
+          {% if contributor.href %}
+          <a class="min-w-0 text-[.94rem] text-ink-2 underline decoration-ink/25 underline-offset-4 transition-colors hover:text-spark hover:decoration-spark focus-visible:outline-2 focus-visible:outline-flame" href="{{ contributor.href }}" target="_blank" rel="noopener noreferrer">{{ contributor.name }}</a>
+          {% else %}
+          <span class="min-w-0 text-[.94rem] text-ink-2">{{ contributor.name }}</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div></section>
+
     {# stay in touch #}
     <section id="touch" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1180px] mx-auto px-7">
