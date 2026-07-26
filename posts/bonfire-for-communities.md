@@ -1,7 +1,7 @@
 ---
 title: "Announcing Bonfire for communities: groups and tools to organise together"
 description: "Groups and topics, community rules and decision-making, events, organisation profiles, federated comments, custom themes: built with the communities who needed them, ready to use as-is, or to shape into a flavour of your community's own."
-date: 2026-07-25
+date: 2026-07-27
 permalink: /posts/bonfire-for-communities/
 tags: announcement
 image: /img/group_over.png
