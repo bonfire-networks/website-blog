@@ -127,8 +127,7 @@ layout: layouts/base.njk
   }
 
   .telling-page a:focus-visible,
-  .telling-page button:focus-visible,
-  .telling-guide-card:focus-visible {
+  .telling-page button:focus-visible {
     outline: 2px solid var(--color-spark);
     outline-offset: 4px;
   }
@@ -250,134 +249,31 @@ layout: layouts/base.njk
 
   .telling-conversation-map path {
     fill: none;
-    stroke: color-mix(in srgb, var(--color-ink) 16%, transparent);
+    stroke: color-mix(in srgb, var(--color-ink) 13%, transparent);
     stroke-width: 1;
     vector-effect: non-scaling-stroke;
   }
 
-  .telling-conversation-map .telling-thread-live {
-    stroke: color-mix(in srgb, var(--color-flame) 72%, transparent);
-    stroke-dasharray: 3 12;
-    stroke-linecap: round;
-    animation: telling-thread-flow 8s linear infinite;
+  .telling-network-node {
+    fill: color-mix(in srgb, var(--color-ink) 34%, transparent);
   }
 
-  .telling-conversation-core {
-    position: absolute;
-    z-index: 2;
-    top: 55%;
-    left: 52%;
-    display: grid;
-    width: 2.5rem;
-    height: 2.5rem;
-    place-items: center;
-    color: var(--color-night);
-    background: var(--color-flame);
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    transform: translate(-50%, -50%);
+  .telling-network-node--warm {
+    fill: var(--color-flame);
   }
 
-  .telling-conversation-core::after {
-    width: .55rem;
-    height: .55rem;
-    border-radius: 50%;
-    background: currentColor;
-    content: "";
+  .telling-network-node--leaf {
+    fill: var(--color-leaf);
   }
 
-  .telling-message {
-    position: absolute;
-    z-index: 4;
-    width: clamp(12.5rem, 19vw, 15rem);
-    padding: .85rem .95rem .9rem;
-    border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
-    border-radius: .9rem .9rem .9rem .28rem;
-    color: var(--color-ink);
-    background: var(--color-night-2);
-    box-shadow: .6rem .8rem 1.8rem -1.35rem rgba(0, 0, 0, .9);
-  }
-
-  .telling-message::after {
-    position: absolute;
-    bottom: -.35rem;
-    left: 1rem;
-    width: .7rem;
-    height: .7rem;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
-    border-left: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
-    background: var(--color-night-2);
-    transform: rotate(-45deg);
-    content: "";
-  }
-
-  .telling-message:nth-of-type(even) {
-    border-radius: .9rem .9rem .28rem .9rem;
-  }
-
-  .telling-message:nth-of-type(even)::after {
-    right: 1rem;
-    left: auto;
-    border-right: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
-    border-left: 0;
-    transform: rotate(45deg);
-  }
-
-  .telling-message-source {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    margin-bottom: .45rem;
-    color: var(--color-leaf);
-    font-family: var(--font-smono);
-    font-size: .62rem;
-    font-weight: 700;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-  }
-
-  .telling-message-source::before {
-    width: .42rem;
-    height: .42rem;
-    flex: none;
-    border-radius: 50%;
-    background: currentColor;
-    content: "";
-  }
-
-  .telling-message p {
-    margin: 0 !important;
-    color: var(--color-ink) !important;
-    font-family: var(--font-disp);
-    font-size: .96rem !important;
-    font-weight: 540;
-    line-height: 1.35;
-  }
-
-  .telling-message--site {
-    top: 18%;
-    left: 0;
-  }
-
-  .telling-message--mastodon {
-    top: 8%;
-    right: 3%;
-  }
-
-  .telling-message--fediverse {
-    right: 0;
-    bottom: 12%;
-  }
-
-  .telling-message--server {
-    bottom: 6%;
-    left: 4%;
+  .telling-network-node--live {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: telling-network-breathe 4.8s cubic-bezier(.16, 1, .3, 1) infinite;
   }
 
   .telling-hero-intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-    gap: 2rem;
+    max-width: 70ch;
     padding-top: clamp(2rem, 4vw, 3rem);
   }
 
@@ -392,12 +288,13 @@ layout: layouts/base.njk
   .telling-hero-actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
     gap: .75rem;
+    margin-top: 1.5rem;
   }
 
-  @keyframes telling-thread-flow {
-    to { stroke-dashoffset: -120; }
+  @keyframes telling-network-breathe {
+    0%, 100% { opacity: .55; transform: scale(.7); }
+    45% { opacity: 1; transform: scale(1.35); }
   }
 
   .telling-hero-quote {
@@ -506,8 +403,7 @@ layout: layouts/base.njk
     font-style: normal;
   }
 
-  #telling-embed .bg-base-300,
-  .telling-guide-detail {
+  #telling-embed .bg-base-300 {
     max-width: none !important;
     border: 1px solid var(--telling-border);
     border-radius: .75rem !important;
@@ -553,39 +449,73 @@ layout: layouts/base.njk
   .telling-code-dot:nth-child(2) { background: var(--color-flame); }
   .telling-code-dot:nth-child(3) { background: var(--color-leaf); }
 
-  .telling-guide-card {
-    min-height: 7.5rem;
-    border-color: var(--telling-border) !important;
-    border-radius: .75rem !important;
-    color: var(--color-ink-2) !important;
-    background: var(--telling-panel) !important;
+  .telling-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    border-top: 1px solid var(--telling-border);
+    border-left: 1px solid var(--telling-border);
+  }
+
+  .telling-stack-item {
+    display: flex;
+    min-height: 8.75rem;
+    padding: 1.2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--telling-border);
+    border-bottom: 1px solid var(--telling-border);
+    color: var(--color-ink-2);
+    background: transparent;
+  }
+
+  .telling-stack-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-ink);
+  }
+
+  .telling-stack-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .6rem;
+  }
+
+  .telling-stack-name {
+    color: var(--color-ink-2);
+    font-family: var(--font-disp);
+    font-size: .9rem;
+    font-weight: 580;
+  }
+
+  .telling-stack-kind {
+    color: var(--color-ink-3);
     font-family: var(--font-smono);
-    font-size: .78rem;
+    font-size: .56rem;
+    font-weight: 650;
+    letter-spacing: .08em;
+    text-transform: uppercase;
   }
 
-  .telling-guide-card:hover {
-    border-color: color-mix(in srgb, var(--color-flame) 38%, transparent) !important;
-    color: var(--color-spark) !important;
-    background: color-mix(in srgb, var(--color-flame) 5%, var(--color-night)) !important;
+  .telling-stack-item:nth-child(3n + 1) .telling-stack-icon { color: var(--color-spark); }
+  .telling-stack-item:nth-child(3n + 2) .telling-stack-icon { color: var(--color-leaf); }
+
+  .telling-stack-note {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 0 0;
+    color: var(--color-ink-3);
+    font-family: var(--font-smono);
+    font-size: .66rem;
+    letter-spacing: .055em;
   }
 
-  .telling-guide-card.active {
-    border-color: var(--color-flame) !important;
-    color: var(--color-spark) !important;
-    background: color-mix(in srgb, var(--color-flame) 8%, var(--color-night)) !important;
+  .telling-stack-note strong {
+    color: var(--color-spark);
+    font-weight: 700;
   }
-
-  .telling-guide-detail { display: none; }
-  .telling-guide-detail.visible { display: block; animation: telling-guideIn .35s cubic-bezier(.16, 1, .3, 1); }
-  @keyframes telling-guideIn {
-    from { opacity: .5; transform: translateY(10px); filter: blur(4px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .telling-guide-detail h3 { font-weight: 620; font-size: 1.1rem; }
-  .telling-guide-detail h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.25rem; }
-  .telling-guide-detail p { color: var(--color-ink-2) !important; font-size: 0.82rem; line-height: 1.65; }
-  .telling-guide-detail svg { width: 1.5rem; height: 1.5rem; }
 
   /* Philosophy */
   #telling-philosophy h2 {
@@ -676,11 +606,8 @@ layout: layouts/base.njk
   .telling-pulse { animation: telling-pulse 2s ease-in-out infinite; }
 
   @media (max-width: 899px) {
-    .telling-hero-intro {
-      grid-template-columns: 1fr;
-      align-items: start;
-    }
-    .telling-hero-actions { justify-content: flex-start; }
+    .telling-hero-intro { max-width: 44rem; }
+    .telling-stack-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
 
   @media (max-width: 1149px) {
@@ -695,8 +622,7 @@ layout: layouts/base.njk
   @media (max-width: 767px) {
     .telling-page > .relative > section { padding-inline: 1.25rem !important; }
     .telling-conversation {
-      min-height: 46rem;
-      overflow: visible;
+      min-height: 37rem;
     }
     .telling-hero-network-label {
       top: 1.15rem;
@@ -722,42 +648,11 @@ layout: layouts/base.njk
       align-self: flex-end;
       margin-top: .1em;
     }
-    .telling-message {
-      width: min(12.5rem, 61vw);
-      padding: .72rem .8rem .75rem;
-    }
-    .telling-message p { font-size: .84rem !important; }
-    .telling-message-source { font-size: .56rem; }
-    .telling-message--site {
-      top: 48%;
-      left: 0;
-    }
-    .telling-message--mastodon {
-      top: 60%;
-      right: 0;
-    }
-    .telling-message--fediverse {
-      right: auto;
-      bottom: 13%;
-      left: 0;
-    }
-    .telling-message--server {
-      right: 0;
-      bottom: 1%;
-      left: auto;
-    }
-    .telling-conversation-core {
-      top: 62%;
-      left: 50%;
-      width: 2rem;
-      height: 2rem;
-    }
     .telling-conversation-map {
-      inset: 15.5rem -1rem 0;
+      inset: 3.1rem -1rem 0;
       width: calc(100% + 2rem);
-      height: calc(100% - 15.5rem);
+      height: calc(100% - 3.1rem);
     }
-    .telling-hero-intro { gap: 1.5rem; }
     .telling-hero-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -766,6 +661,17 @@ layout: layouts/base.njk
     .telling-hero-actions .btn {
       justify-content: center;
       padding-inline: .8rem;
+    }
+    .telling-stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .telling-stack-item {
+      min-height: 7.5rem;
+      padding: 1rem;
+    }
+    .telling-stack-note {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: .3rem;
+      line-height: 1.5;
     }
     #telling-how .grid > div {
       border-right: 0;
@@ -789,8 +695,7 @@ layout: layouts/base.njk
 
   @media (prefers-reduced-motion: reduce) {
     .telling-pulse,
-    .telling-thread-live,
-    .telling-guide-detail.visible { animation: none; }
+    .telling-network-node--live { animation: none; }
     .telling-page * { scroll-behavior: auto !important; }
   }
 </style>
@@ -806,11 +711,46 @@ layout: layouts/base.njk
       <div class="telling-hero-kicker">The Telling</div>
       <div class="telling-hero-network-label">Federated comments for the open web</div>
 
-      <svg class="telling-conversation-map" viewBox="0 0 1140 560" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M118 124 C260 122 310 260 540 270" />
-        <path class="telling-thread-live" d="M1000 76 C835 82 808 220 590 270" />
-        <path d="M1075 392 C875 392 815 318 604 286" />
-        <path class="telling-thread-live" d="M128 490 C322 476 348 350 548 295" />
+      <svg class="telling-conversation-map" viewBox="0 0 1140 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g>
+          <path d="M58 104 L206 68 L352 142 L512 82 L672 152 L842 74 L1064 128" />
+          <path d="M24 314 L176 252 L334 330 L502 236 L676 316 L852 230 L1114 296" />
+          <path d="M54 506 L226 438 L392 512 L556 420 L724 494 L916 414 L1090 486" />
+          <path d="M206 68 L176 252 L226 438" />
+          <path d="M352 142 L334 330 L392 512" />
+          <path d="M512 82 L502 236 L556 420" />
+          <path d="M672 152 L676 316 L724 494" />
+          <path d="M842 74 L852 230 L916 414" />
+          <path d="M1064 128 L1114 296 L1090 486" />
+          <path d="M58 104 L176 252 L54 506" />
+          <path d="M334 330 L512 82" />
+          <path d="M502 236 L724 494" />
+          <path d="M676 316 L842 74" />
+          <path d="M852 230 L1090 486" />
+        </g>
+        <g>
+          <circle class="telling-network-node" cx="58" cy="104" r="3" />
+          <circle class="telling-network-node telling-network-node--warm telling-network-node--live" cx="206" cy="68" r="5" />
+          <circle class="telling-network-node" cx="352" cy="142" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf" cx="512" cy="82" r="4" />
+          <circle class="telling-network-node" cx="672" cy="152" r="3" />
+          <circle class="telling-network-node" cx="842" cy="74" r="3" />
+          <circle class="telling-network-node telling-network-node--warm" cx="1064" cy="128" r="4" />
+          <circle class="telling-network-node" cx="24" cy="314" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf telling-network-node--live" cx="176" cy="252" r="4" />
+          <circle class="telling-network-node" cx="334" cy="330" r="3" />
+          <circle class="telling-network-node telling-network-node--warm" cx="502" cy="236" r="4" />
+          <circle class="telling-network-node" cx="676" cy="316" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf" cx="852" cy="230" r="4" />
+          <circle class="telling-network-node" cx="1114" cy="296" r="3" />
+          <circle class="telling-network-node" cx="54" cy="506" r="3" />
+          <circle class="telling-network-node telling-network-node--warm" cx="226" cy="438" r="4" />
+          <circle class="telling-network-node" cx="392" cy="512" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf" cx="556" cy="420" r="4" />
+          <circle class="telling-network-node" cx="724" cy="494" r="3" />
+          <circle class="telling-network-node telling-network-node--warm telling-network-node--live" cx="916" cy="414" r="5" />
+          <circle class="telling-network-node" cx="1090" cy="486" r="3" />
+        </g>
       </svg>
 
       <h1 id="telling-hero-heading">
@@ -819,24 +759,6 @@ layout: layouts/base.njk
         <span class="telling-hero-line"><em>voice.</em></span>
       </h1>
 
-      <div class="telling-conversation-core" aria-hidden="true"></div>
-
-      <div class="telling-message telling-message--site" aria-hidden="true">
-        <span class="telling-message-source">Your site</span>
-        <p>Anything you publish.</p>
-      </div>
-      <div class="telling-message telling-message--mastodon" aria-hidden="true">
-        <span class="telling-message-source">Mastodon</span>
-        <p>An account they already have.</p>
-      </div>
-      <div class="telling-message telling-message--fediverse" aria-hidden="true">
-        <span class="telling-message-source">The fediverse</span>
-        <p>Readers reply from anywhere.</p>
-      </div>
-      <div class="telling-message telling-message--server" aria-hidden="true">
-        <span class="telling-message-source">Your server</span>
-        <p>The discussion lives on your own server.</p>
-      </div>
     </div>
 
     <div class="telling-hero-intro">
@@ -901,7 +823,7 @@ layout: layouts/base.njk
         <span class="telling-code-dot"></span>
         <span class="telling-code-dot"></span>
         <span class="telling-code-dot"></span>
-        <span class="ml-auto text-xs text-base-content/30">your-blog.html</span>
+        {# <span class="ml-auto text-xs text-base-content/30">your-blog.html</span> #}
       </div>
       <div class="telling-code p-6 font-mono text-sm leading-7 text-base-content/70 overflow-x-auto">
         <span class="comment">&lt;!-- Add the Telling to any page --&gt;</span><br/>
@@ -962,12 +884,68 @@ layout: layouts/base.njk
 <!-- ── FRAMEWORK GUIDES ── -->
 <section class="py-12 lg:py-20 px-4" id="telling-guides" aria-labelledby="telling-guides-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Install guides</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Set it up on your platform</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Works everywhere</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Any stack. One script.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      The same script tag works on any site. These guides just show where it goes in a few common setups.
+      Framework, CMS, static site generator, or plain HTML—the same embed drops into the page and gets out of your way.
     </p>
 
+    <div class="telling-stack-grid" role="list" aria-label="Compatible web platforms">
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--html5] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">HTML</span><span class="telling-stack-kind">Web</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--react] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">React</span><span class="telling-stack-kind">Framework</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--vuedotjs] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Vue</span><span class="telling-stack-kind">Framework</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--svelte] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Svelte</span><span class="telling-stack-kind">Framework</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--nextdotjs] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Next.js</span><span class="telling-stack-kind">Framework</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--astro] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Astro</span><span class="telling-stack-kind">Generator</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--wordpress] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">WordPress</span><span class="telling-stack-kind">CMS</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--ghost] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Ghost</span><span class="telling-stack-kind">CMS</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--drupal] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Drupal</span><span class="telling-stack-kind">CMS</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--eleventy] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Eleventy</span><span class="telling-stack-kind">Generator</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--hugo] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Hugo</span><span class="telling-stack-kind">Generator</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--jekyll] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Jekyll</span><span class="telling-stack-kind">Generator</span></div>
+      </div>
+    </div>
+    <div class="telling-stack-note">
+      <span><strong>One embed</strong> · no SDK · no build plugin</span>
+      <span>If it renders HTML, it works.</span>
+    </div>
+
+    {% if false %}
     <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-10">
       <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="jekyll" role="button" tabindex="0" onclick="tellingShowGuide('jekyll')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('jekyll')}">
         <div class="w-10 h-10 flex items-center justify-center">
@@ -1427,7 +1405,7 @@ layout: layouts/base.njk
       </div>
     </div>
 
-
+    {% endif %}
   </div>
 </section>
 
@@ -1536,24 +1514,6 @@ layout: layouts/base.njk
 </div>
 
 <script>
-  // Framework guide tabs
-  window.tellingShowGuide = function(name) {
-    document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
-    document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
-    const detail = document.getElementById('telling-guide-' + name);
-    if (detail) {
-      detail.classList.add('visible');
-      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-    const card = document.querySelector('[data-guide="' + name + '"]');
-    if (card) card.classList.add('active');
-  };
-
-  window.tellingHideGuide = function() {
-    document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
-    document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
-  };
-
   // Copy embed code
   window.tellingCopyEmbed = async function(btn) {
     const code = `<!-- Add the Telling to any page -->\n<script\n  src="https://your-instance.social/js/comments_embed.js"\n  data-theme="dark"\n  data-mode="nested"\n  async\n><\/script>`;

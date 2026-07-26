@@ -4,7 +4,7 @@ description: "Groups and topics, community rules and decision-making, events, or
 date: 2026-07-25
 permalink: /posts/bonfire-for-communities/
 tags: announcement
-image: /img/jacobin/j09-group-topics.png
+image: /img/group_over.png
 layout: layouts/post.njk
 author: Bonfire Builders
 
@@ -114,7 +114,7 @@ None of this came out of a product planning meeting. It came out of our [Mosaic]
 
 **[Mentaal](https://mentaal.nl)** (a Dutch "public meeting place for mental health") needed spaces where people could speak safely: a network of four instances deliberately kept apart from the open fediverse. It's an initiative by an alliance of mental health organisations ([Ypsilon](https://www.ypsilon.org/), [Stichting Borderline](https://stichtingborderline.nl/), [Boven Jan](https://www.boven-jan.nl/)) within [TheNextSocials](https://thenextsocials.nl/en), a Dutch movement for social media that is truly social, with partners like [Waag](https://waag.org/en/about-waag/) and [PublicSpaces](https://english.publicspaces.net/about-publicspaces/). Co-designing with them shaped [archipelago mode](/posts/bonfire-social-1-0-5-archipelago/): an instance can federate only with a hand-picked, mutually-agreed network of trusted servers, instead of connecting to the whole fediverse by default. For safety-critical communities, federation needs to be a deliberate choice: when the time is right they can decide whether to connect at all, and with whom. They call it "the portal to a different kind of internet", and we intend to live up to that.
 
-![Screenshot of Bonfire's Archipelago federation settings, where an instance allowlists the servers and people it federates with](/img/archi.png)
+![Screenshot of Bonfire's Archipelago federation settings, where an instance allowlists the servers and people it federates with](/img/archipelago.png)
 
 **[Totnes Pulse](https://www.totnespulse.co.uk/about-the-totnes-pulse/)** (a volunteer-run independent local newspaper) curates news and happenings for Totnes, and its events listing already powers the [official town events page](https://visittotnes.co.uk/visit-totnes-events/). Totnes is the Devon market town that launched the [transition towns](https://en.wikipedia.org/wiki/Transition_town) movement, and today neighbours are gathering in [community assemblies](https://timetoassemble.org/totnes) to shape local decisions. That kind of organising (local, deliberate, neighbour to neighbour) is exactly what Bonfire for communities is built to support: it carries the work between in-person gatherings, without replacing them. Together with Lauti on events, we're building it out into social infrastructure for a place: notices, discussions, and gatherings in a space the town owns.
 
