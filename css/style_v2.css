@@ -12,7 +12,6 @@
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-100: oklch(96.2% 0.044 156.743);
-    --color-green-400: oklch(79.2% 0.209 151.711);
     --color-green-800: oklch(44.8% 0.119 151.328);
     --color-blue-100: oklch(93.2% 0.032 255.585);
     --color-blue-800: oklch(42.4% 0.199 265.638);
@@ -337,9 +336,6 @@
   }
   .inset-y-0 {
     inset-block: calc(var(--spacing) * 0);
-  }
-  .-top-3 {
-    top: calc(var(--spacing) * -3);
   }
   .-top-\[9\%\] {
     top: calc(9% * -1);
@@ -2242,9 +2238,6 @@
   .h-0 {
     height: calc(var(--spacing) * 0);
   }
-  .h-1\.5 {
-    height: calc(var(--spacing) * 1.5);
-  }
   .h-1\/2 {
     height: calc(1/2 * 100%);
   }
@@ -2448,9 +2441,6 @@
   }
   .w-1 {
     width: calc(var(--spacing) * 1);
-  }
-  .w-1\.5 {
-    width: calc(var(--spacing) * 1.5);
   }
   .w-2 {
     width: calc(var(--spacing) * 2);
@@ -3662,9 +3652,6 @@
   }
   .bg-green-100 {
     background-color: var(--color-green-100);
-  }
-  .bg-green-400 {
-    background-color: var(--color-green-400);
   }
   .bg-indigo-100 {
     background-color: var(--color-indigo-100);
@@ -7266,11 +7253,6 @@
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }
   }
-  .lg\:grid-cols-\[1fr_1\.3fr\] {
-    @media (width >= 64rem) {
-      grid-template-columns: 1fr 1.3fr;
-    }
-  }
   .lg\:grid-cols-\[1fr_1\.15fr_1fr_1\.65fr\] {
     @media (width >= 64rem) {
       grid-template-columns: 1fr 1.15fr 1fr 1.65fr;
@@ -7319,11 +7301,6 @@
   .lg\:gap-12 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 12);
-    }
-  }
-  .lg\:gap-16 {
-    @media (width >= 64rem) {
-      gap: calc(var(--spacing) * 16);
     }
   }
   .lg\:gap-24 {
@@ -7490,12 +7467,6 @@
     @media (width >= 64rem) {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
-    }
-  }
-  .lg\:text-xl {
-    @media (width >= 64rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .lg\:leading-\[40px\] {

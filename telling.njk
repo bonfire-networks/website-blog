@@ -135,52 +135,277 @@ layout: layouts/base.njk
 
   /* Hero */
   .telling-page > .relative > section:first-child {
-    padding-top: clamp(3.5rem, 6vw, 6.5rem) !important;
+    padding-top: clamp(2.75rem, 5vw, 4.5rem) !important;
     padding-bottom: clamp(3.5rem, 6vw, 5.5rem) !important;
   }
 
-  .telling-hero-grid {
-    grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
-    align-items: start !important;
-    column-gap: clamp(3rem, 6vw, 6rem) !important;
-    row-gap: clamp(2.25rem, 4vw, 3.5rem) !important;
+  .telling-hero-shell {
+    position: relative;
   }
 
-  .telling-hero-copy {
-    padding-top: .25rem;
+  .telling-conversation {
+    position: relative;
+    min-height: clamp(32rem, 49vw, 38rem);
+    overflow: hidden;
+    border-block: 1px solid var(--telling-border);
+    isolation: isolate;
   }
 
-  .telling-page .telling-hero-copy h1 {
-    max-width: 10.5ch;
-    font-size: clamp(3.35rem, 5vw, 5rem) !important;
+  .telling-hero-kicker {
+    position: absolute;
+    z-index: 4;
+    top: 1.2rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    color: var(--color-flame);
+    font-family: var(--font-smono);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
   }
 
-  .telling-hero-copy h1 + p {
-    max-width: 52ch;
-    margin-top: 1.4rem !important;
+  .telling-hero-kicker::before {
+    width: .55rem;
+    height: .55rem;
+    flex: none;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    content: "";
+  }
+
+  .telling-hero-network-label {
+    position: absolute;
+    z-index: 4;
+    top: 1.2rem;
+    right: 0;
+    color: var(--color-ink-3);
+    font-family: var(--font-smono);
+    font-size: .67rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .telling-page .telling-conversation h1 {
+    position: absolute;
+    z-index: 3;
+    top: 25%;
+    left: 50%;
+    display: flex;
+    width: min(58rem, 78%);
+    max-width: none;
+    margin: 0;
+    flex-direction: column;
+    font-size: clamp(4.25rem, 7.8vw, 6rem) !important;
+    font-weight: 620 !important;
+    line-height: .86 !important;
+    letter-spacing: -.035em !important;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .telling-hero-line {
+    display: block;
+    width: fit-content;
+  }
+
+  .telling-hero-line:nth-child(2) {
+    align-self: center;
+    margin-top: .08em;
+  }
+
+  .telling-hero-line:last-child {
+    align-self: flex-end;
+    margin-top: .08em;
+  }
+
+  .telling-page .telling-hero-line em {
+    position: relative;
+    color: var(--color-spark) !important;
+  }
+
+  .telling-page .telling-hero-line em::after {
+    position: absolute;
+    right: .02em;
+    bottom: -.04em;
+    left: .03em;
+    height: .09em;
+    border-radius: 999px;
+    background: var(--color-ember);
+    transform: rotate(-1.3deg);
+    content: "";
+  }
+
+  .telling-conversation-map {
+    position: absolute;
+    z-index: 0;
+    inset: 3.1rem 0 0;
+    width: 100%;
+    height: calc(100% - 3.1rem);
+    overflow: visible;
+  }
+
+  .telling-conversation-map path {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-ink) 16%, transparent);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .telling-conversation-map .telling-thread-live {
+    stroke: color-mix(in srgb, var(--color-flame) 72%, transparent);
+    stroke-dasharray: 3 12;
+    stroke-linecap: round;
+    animation: telling-thread-flow 8s linear infinite;
+  }
+
+  .telling-conversation-core {
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    left: 52%;
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    color: var(--color-night);
+    background: var(--color-flame);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .telling-conversation-core::after {
+    width: .55rem;
+    height: .55rem;
+    border-radius: 50%;
+    background: currentColor;
+    content: "";
+  }
+
+  .telling-message {
+    position: absolute;
+    z-index: 4;
+    width: clamp(12.5rem, 19vw, 15rem);
+    padding: .85rem .95rem .9rem;
+    border: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+    border-radius: .9rem .9rem .9rem .28rem;
+    color: var(--color-ink);
+    background: var(--color-night-2);
+    box-shadow: .6rem .8rem 1.8rem -1.35rem rgba(0, 0, 0, .9);
+  }
+
+  .telling-message::after {
+    position: absolute;
+    bottom: -.35rem;
+    left: 1rem;
+    width: .7rem;
+    height: .7rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+    border-left: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+    background: var(--color-night-2);
+    transform: rotate(-45deg);
+    content: "";
+  }
+
+  .telling-message:nth-of-type(even) {
+    border-radius: .9rem .9rem .28rem .9rem;
+  }
+
+  .telling-message:nth-of-type(even)::after {
+    right: 1rem;
+    left: auto;
+    border-right: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+    border-left: 0;
+    transform: rotate(45deg);
+  }
+
+  .telling-message-source {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .45rem;
+    color: var(--color-leaf);
+    font-family: var(--font-smono);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+
+  .telling-message-source::before {
+    width: .42rem;
+    height: .42rem;
+    flex: none;
+    border-radius: 50%;
+    background: currentColor;
+    content: "";
+  }
+
+  .telling-message p {
+    margin: 0 !important;
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp);
+    font-size: .96rem !important;
+    font-weight: 540;
+    line-height: 1.35;
+  }
+
+  .telling-message--site {
+    top: 18%;
+    left: 0;
+  }
+
+  .telling-message--mastodon {
+    top: 8%;
+    right: 3%;
+  }
+
+  .telling-message--fediverse {
+    right: 0;
+    bottom: 12%;
+  }
+
+  .telling-message--server {
+    bottom: 6%;
+    left: 4%;
+  }
+
+  .telling-hero-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 2rem;
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .telling-hero-intro > p {
+    max-width: 70ch;
+    margin: 0 !important;
     color: var(--color-ink-2) !important;
-    font-size: clamp(1.02rem, 1.25vw, 1.12rem) !important;
-    line-height: 1.65;
+    font-size: clamp(1rem, 1.3vw, 1.12rem) !important;
+    line-height: 1.7;
   }
 
-  .telling-hero-media {
-    margin-top: .4rem;
+  .telling-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .75rem;
   }
 
-  .telling-hero-media img {
-    aspect-ratio: 1570 / 975;
-    border: 1px solid color-mix(in srgb, var(--color-ink) 13%, transparent) !important;
-    border-radius: .75rem !important;
-    object-fit: cover;
-    box-shadow: 0 28px 70px -42px rgba(0, 0, 0, .95);
+  @keyframes telling-thread-flow {
+    to { stroke-dashoffset: -120; }
   }
 
   .telling-hero-quote {
-    grid-column: 1 / -1;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 2rem;
+    margin-top: clamp(2.5rem, 5vw, 4rem);
     padding: 1.15rem 0 0 !important;
     border: 0 !important;
     border-top: 1px solid var(--telling-border) !important;
@@ -201,17 +426,6 @@ layout: layouts/base.njk
     font-family: var(--font-smono);
     font-size: .7rem !important;
     letter-spacing: .06em;
-  }
-
-  .telling-hero-media .absolute {
-    top: -.9rem;
-    right: 1rem;
-    padding: .55rem .8rem;
-    border: 1px solid color-mix(in srgb, var(--color-leaf) 28%, transparent);
-    color: var(--color-leaf);
-    background: color-mix(in srgb, var(--color-leaf) 7%, var(--color-night-2));
-    box-shadow: 0 12px 26px -18px #000;
-    font-family: var(--font-smono);
   }
 
   /* Sequence, features, and philosophy become editorial rows rather than floating cards. */
@@ -461,10 +675,12 @@ layout: layouts/base.njk
   }
   .telling-pulse { animation: telling-pulse 2s ease-in-out infinite; }
 
-  @media (max-width: 1099px) {
-    .telling-hero-grid { grid-template-columns: 1fr; }
-    .telling-hero-copy { max-width: 44rem; }
-    .telling-hero-media { margin-top: 0; }
+  @media (max-width: 899px) {
+    .telling-hero-intro {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    .telling-hero-actions { justify-content: flex-start; }
   }
 
   @media (max-width: 1149px) {
@@ -478,6 +694,79 @@ layout: layouts/base.njk
 
   @media (max-width: 767px) {
     .telling-page > .relative > section { padding-inline: 1.25rem !important; }
+    .telling-conversation {
+      min-height: 46rem;
+      overflow: visible;
+    }
+    .telling-hero-network-label {
+      top: 1.15rem;
+      max-width: 10rem;
+      font-size: .58rem;
+      line-height: 1.4;
+      text-align: right;
+    }
+    .telling-page .telling-conversation h1 {
+      top: 11%;
+      left: 0;
+      width: 100%;
+      font-size: clamp(3.45rem, 16vw, 4.5rem) !important;
+      line-height: .9 !important;
+      transform: none;
+    }
+    .telling-hero-line:nth-child(2) {
+      align-self: flex-start;
+      margin-top: .1em;
+      margin-left: .55em;
+    }
+    .telling-hero-line:last-child {
+      align-self: flex-end;
+      margin-top: .1em;
+    }
+    .telling-message {
+      width: min(12.5rem, 61vw);
+      padding: .72rem .8rem .75rem;
+    }
+    .telling-message p { font-size: .84rem !important; }
+    .telling-message-source { font-size: .56rem; }
+    .telling-message--site {
+      top: 48%;
+      left: 0;
+    }
+    .telling-message--mastodon {
+      top: 60%;
+      right: 0;
+    }
+    .telling-message--fediverse {
+      right: auto;
+      bottom: 13%;
+      left: 0;
+    }
+    .telling-message--server {
+      right: 0;
+      bottom: 1%;
+      left: auto;
+    }
+    .telling-conversation-core {
+      top: 62%;
+      left: 50%;
+      width: 2rem;
+      height: 2rem;
+    }
+    .telling-conversation-map {
+      inset: 15.5rem -1rem 0;
+      width: calc(100% + 2rem);
+      height: calc(100% - 15.5rem);
+    }
+    .telling-hero-intro { gap: 1.5rem; }
+    .telling-hero-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+    .telling-hero-actions .btn {
+      justify-content: center;
+      padding-inline: .8rem;
+    }
     #telling-how .grid > div {
       border-right: 0;
       border-bottom: 1px solid var(--telling-border);
@@ -485,11 +774,6 @@ layout: layouts/base.njk
     #telling-how .grid > div:last-child { border-bottom: 0; }
     #telling-features .grid > div { border-right: 0 !important; }
     #telling-features .grid > div:nth-last-child(2) { border-bottom: 1px solid var(--telling-border); }
-    .telling-hero-media .absolute {
-      position: static;
-      width: fit-content;
-      margin-bottom: .8rem;
-    }
     .telling-hero-quote {
       display: block;
       padding-top: 1rem !important;
@@ -505,6 +789,7 @@ layout: layouts/base.njk
 
   @media (prefers-reduced-motion: reduce) {
     .telling-pulse,
+    .telling-thread-live,
     .telling-guide-detail.visible { animation: none; }
     .telling-page * { scroll-behavior: auto !important; }
   }
@@ -516,25 +801,52 @@ layout: layouts/base.njk
 
 <!-- ── HERO ── -->
 <section class="pt-16 pb-12 lg:pt-24 lg:pb-20 px-4 lg:px-0" aria-labelledby="telling-hero-heading">
-  <div class="telling-hero-grid max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16">
-    <div class="telling-hero-copy">
-      <h1 id="telling-hero-heading" class="text-4xl lg:text-6xl lg:leading-[72px] font-bold tracking-tight text-base-content serif-bold">Every site<br/>deserves a <em class="fire-text">voice</em></h1>
-      <p class="text-lg lg:text-xl mt-6 text-base-content/80 max-w-lg">
-        The Telling adds a comment thread to anything you publish: a blog, a newsroom, a CMS or static site. Readers reply with an account they already have, on Bonfire, Mastodon, or anywhere else on the fediverse or the ATmosphere. The discussion lives on your own server, not a third party's, and you can take it with you.
-      </p>
-      <div class="flex gap-4 mt-8 flex-wrap">
-        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
-        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
+  <div class="telling-hero-shell max-w-screen-xl mx-auto">
+    <div class="telling-conversation">
+      <div class="telling-hero-kicker">The Telling</div>
+      <div class="telling-hero-network-label">Federated comments for the open web</div>
+
+      <svg class="telling-conversation-map" viewBox="0 0 1140 560" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M118 124 C260 122 310 260 540 270" />
+        <path class="telling-thread-live" d="M1000 76 C835 82 808 220 590 270" />
+        <path d="M1075 392 C875 392 815 318 604 286" />
+        <path class="telling-thread-live" d="M128 490 C322 476 348 350 548 295" />
+      </svg>
+
+      <h1 id="telling-hero-heading">
+        <span class="telling-hero-line">Every site</span>
+        <span class="telling-hero-line">deserves a</span>
+        <span class="telling-hero-line"><em>voice.</em></span>
+      </h1>
+
+      <div class="telling-conversation-core" aria-hidden="true"></div>
+
+      <div class="telling-message telling-message--site" aria-hidden="true">
+        <span class="telling-message-source">Your site</span>
+        <p>Anything you publish.</p>
+      </div>
+      <div class="telling-message telling-message--mastodon" aria-hidden="true">
+        <span class="telling-message-source">Mastodon</span>
+        <p>An account they already have.</p>
+      </div>
+      <div class="telling-message telling-message--fediverse" aria-hidden="true">
+        <span class="telling-message-source">The fediverse</span>
+        <p>Readers reply from anywhere.</p>
+      </div>
+      <div class="telling-message telling-message--server" aria-hidden="true">
+        <span class="telling-message-source">Your server</span>
+        <p>The discussion lives on your own server.</p>
       </div>
     </div>
 
-    <div class="telling-hero-media relative">
-      <div class="absolute -top-3 right-5 z-10 bg-base-content text-base-100 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide shadow-lg flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-green-400 telling-pulse"></span>
-        Federated via ActivityPub
+    <div class="telling-hero-intro">
+      <p>
+      The Telling adds a comment thread to anything you publish: a blog, a newsroom, a CMS or static site. Readers reply with an account they already have, on Bonfire, Mastodon, or anywhere else on the fediverse or the ATmosphere. The discussion lives on your own server, not a third party's, and you can take it with you.
+      </p>
+      <div class="telling-hero-actions">
+        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
+        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
       </div>
-      <img src="/img/comments.png" alt="The Telling: a federated comment thread embedded under an article, with replies flowing in from Bonfire and Mastodon accounts" width="1570" height="975" class="rounded-2xl shadow-xl border border-base-content/10 w-full" loading="eager" fetchpriority="high">
-
     </div>
 
     <div class="telling-hero-quote">

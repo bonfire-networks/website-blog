@@ -52,7 +52,7 @@ Deciding things together is a first-class feature. Bonfire for communities ships
 2. **Proposal and consensus**, for decisions that need discussion before a vote, drawing on sociocratic practice: collect proposals, discuss and amend, integrate objections, then move forward.
 3. **Weighted score voting:** voters rate each option rather than picking just one, and objections can optionally count more than approvals (up to outright blocking or veto), so the choice with the strongest support and least resistance wins.
 
-![Screenshot of Bonfire's decision-making: weighted score voting on a group decision, where voters rate each option rather than picking just one](/img/polls.png)
+![Screenshot of Bonfire's decision-making: weighted score voting on a group decision, where voters rate each option rather than picking just one](/img/polls_wsv.png)
 
 The design draws on sociocratic practice and on tools like [Ukuvota](https://ukuvota.xyz/) and [Loomio](https://www.loomio.com). Polls federate as ActivityPub `Question` polls, so people on Mastodon and elsewhere can also take part.
 
