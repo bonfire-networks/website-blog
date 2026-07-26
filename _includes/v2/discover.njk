@@ -7,27 +7,27 @@
 
 {% set feats = [
   { id: "groups",     acc: "var(--color-flame)", icon: "ph-users-three",       name: "Groups & topics", href: "/features#beyond",
-    text: "Spaces with their own members, rules, and calendar. Topics keep conversations findable instead of collapsing into one stream." },
+    text: "Spaces with their own members, rules, and calendar. Topics keep conversations findable instead of collapsing into one feed." },
   { id: "decisions",  acc: "var(--color-corn)",  icon: "ph-scales",            name: "Decide together", href: "/features#beyond",
-    text: "From quick polls to consensus and score voting: the lightest process that fits the decision. Built in from the start." },
+    text: "From quick polls to consensus building and score voting: the lightest process that fits the decision." },
   { id: "telling",    acc: "var(--color-ember)", icon: "ph-chats-circle",      name: "Federated comments", href: "/telling",
     text: "Embed a comment thread on any website. Replies flow in from the whole fediverse and live on in your community." },
-  { id: "post",       acc: "var(--color-flame)", icon: "ph-pen-nib",           name: "Post & converse",
+  { id: "post",       acc: "var(--color-flame)", icon: "ph-pen-nib",           name: "Post & Comment",
     text: "Short updates or long-form, with a composer that adapts and threads that branch, so conversations stay legible as they grow." },
-  { id: "feeds",      acc: "var(--color-corn)",  icon: "ph-funnel",            name: "Feeds & discovery",
-    text: "Build the feeds you want from the filters that matter to you. No mysterious algorithm deciding what you get to see." },
-  { id: "boundaries", acc: "var(--color-flame)", icon: "ph-lock-key",          name: "Circles & boundaries",
-    text: "Every post carries its own rules: who can see, reply or quote. Room for real relationships, beyond one blunt switch." },
-  { id: "safety",     acc: "var(--color-leaf)",  icon: "ph-shield-check",      name: "Safety & moderation",
-    text: "Spread the load across many hands, share blocklists, and switch off the dark patterns that make a place hostile by default." },
+  { id: "feeds",      acc: "var(--color-corn)",  icon: "ph-funnel",            name: "Feeds & Discovery",
+    text: "Build the feeds you want with the filters that matter to you. No mysterious algorithm deciding what you get to see." },
+  { id: "boundaries", acc: "var(--color-flame)", icon: "ph-lock-key",          name: "Circles & Boundaries",
+    text: "Every post carries its own rules: who can see, reply or quote. Room for real relationships, beyond the binary of \"friends\" or followers." },
+  { id: "safety",     acc: "var(--color-leaf)",  icon: "ph-shield-check",      name: "Safety & Moderation",
+    text: "Share the responsibility, import and manage blocklists, and switch off the dark patterns that make a place hostile by default." },
   { id: "shape",      acc: "var(--color-ember)", icon: "ph-puzzle-piece",      name: "Make it yours",
     text: "Pluggable extensions all the way down. Even the core. Add what you need, fork what almost fits, drop the rest." },
-  { id: "connect",    acc: "var(--color-corn)",  icon: "ph-broadcast",         name: "Federation & reach",
-    text: "From quiet and invite-only to the whole fediverse and beyond, you decide how far the doors swing open." },
+  { id: "connect",    acc: "var(--color-corn)",  icon: "ph-broadcast",         name: "Federation & Reach",
+    text: "From quiet and invite-only to the whole fediverse and beyond, you decide how far to open the doors." },
   { id: "data",       acc: "var(--color-leaf)",  icon: "ph-arrows-left-right", name: "Your data",
     text: "Import and export everything, migrate instances without starting from scratch. Nothing here holds you hostage." },
   { id: "beyond",     acc: "var(--color-flame)", icon: "ph-squares-four",      name: "Beyond the microblog",
-    text: "Events, polls, tasks, mutual aid, open science. Blocks for what your community gathers to do." }
+    text: "Events, polls, tasks, mutual aid, open science. Building blocks for what your community needs." }
 ] %}
 
 <section id="discover" class="py-[clamp(72px,9vw,130px)] border-t border-ink/[0.07] scroll-mt-[70px] [--gut:max(28px,calc((100vw-1140px)/2+28px))]">
@@ -37,7 +37,7 @@
       <h2 class="mt-[22px] max-w-[20ch] font-disp font-[560] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Everything your community needs, and <span class="fire-text">nothing it doesn't.</span></h2>
       <a class="shrink-0 inline-flex items-center gap-[9px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/features">See all features <span aria-hidden="true">→</span></a>
     </div>
-    <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[44rem]">A kit of composable blocks: switch on what you need, leave out the rest. Swipe through the toolkit.</p>
+    <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[44rem]">A kit of composable building blocks: switch on what you need, leave out the rest. Swipe through the toolkit.</p>
   </div>
 
   {# full-bleed scroller: left padding aligns the first card to the container edge, cards scroll off to the right #}

@@ -7,7 +7,7 @@
    all read it, so both variants share one class list #}
 {% set cell = "group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-ink/25" %}
 {% set ic = "w-[42px] h-[42px] rounded-[11px] mb-[15px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" %}
-{% set cellk = "font-smono text-[.68rem] tracking-[.13em] text-[var(--acc)]" %}
+{% set cellk = "font-smono text-[.88rem] tracking-[.13em] text-[var(--acc)]" %}
 {% set cellh = "font-disp font-[620] text-[1.28rem] mt-3.5 mb-[9px]" %}
 {% set cellp = "text-ink-2 text-[.96rem]" %}
 {% set more = "inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
@@ -16,8 +16,8 @@
 <div class="max-w-[1140px] mx-auto px-7">
   <p class="flex items-center gap-3 font-smono text-[1rem] font-bold tracking-[.18em] text-flame">Gather</p>
   <h2 class="mt-[22px] font-disp font-[560] text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">First, a place that's <span class="fire-text">truly yours.</span></h2>
-  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">The mythical "global town square" is fine for chatter, and lousy for organising. When you need <em class="text-flame not-italic">specific</em> people to see something, act on it, and follow through, you need a place of your own: with members, rules, a calendar, and a way to decide things.</p>
-  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">From day one, you set the rules, who joins, who sees what, who decides. No mysterious algorithm ranking your people, no landlord who can sell the building. And if you ever want to move, you take everything with you.</p>
+  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">The mythical "global town square" is fine for chatter, but lousy for organising. When you need <em class="text-flame not-italic">specific</em> people to see something, act on it, and follow through, you need a place of your own: with members, shared rules, a calendar, and a way to decide things together.</p>
+  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">From day one, you set the rules, who joins, who sees what, who decides, what features you need, how you configure them. No mysterious algorithm, no landlord who can sell the building from under you. And if you ever want to move, you take everything with you.</p>
 
   <div class="grid grid-cols-1 min-[761px]:grid-cols-2 gap-3.5 mt-[34px]">
     <div class="{{ cell }}" style="--acc:var(--color-flame)">
@@ -34,7 +34,7 @@
     </div>
     <div class="{{ cell }}" style="--acc:var(--color-flame)">
       <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-export"></i></span>
-      <span class="{{ cellk }}">Anti-enshittifiable: no lock-in</span>
+      <span class="{{ cellk }}">Built in anti-enshittification</span>
       <h3 class="{{ cellh }}">Take everything with you</h3>
       <p class="{{ cellp }}">Import and export all your data: posts, relationships, settings. A space can't be turned against its people when everyone is free to leave with everything.</p>
     </div>
@@ -42,7 +42,7 @@
       <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone ph-sliders-horizontal"></i></span>
       <span class="{{ cellk }}">Shining a light on the power of defaults</span>
       <h3 class="{{ cellh }}">Defaults, not dictates</h3>
-      <p class="{{ cellp }}">Admins define the defaults; every member can see exactly how the instance is configured, and override settings for themselves.</p>
+      <p class="{{ cellp }}">Admins define the defaults; every member can see exactly how the space is configured, and override settings for themselves.</p>
     </div>
   </div>
 
