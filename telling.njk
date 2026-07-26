@@ -769,6 +769,9 @@ layout: layouts/base.njk
         <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
         <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
       </div>
+      <p class="mt-5 text-sm text-base-content/60">
+        Try it before you install it: we run the Telling on this very site. Leave a reply on <a href="/blog" class="text-primary hover:underline">any of our posts</a> and watch it federate.
+      </p>
     </div>
 
     <div class="telling-hero-quote">
@@ -871,6 +874,10 @@ layout: layouts/base.njk
         <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
           <dt class="font-mono text-primary">data-post-id</dt>
           <dd class="text-base-content/70">Target a specific Bonfire post/thread ID directly (otherwise the media URI is used).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-published-at</dt>
+          <dd class="text-base-content/70">Publication date of the article (ISO 8601 or <code>YYYY-MM-DD</code>). Backdates a newly created thread, so a backfilled or older article doesn't jump to the top of feeds. Future dates are ignored. Ghost articles are already backdated via the API, so this is mainly for other sites.</dd>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
           <dt class="font-mono text-primary">data-token-max-age</dt>

@@ -60,6 +60,23 @@ templateClass: tmpl-post
       </div>
       {% endif %}
 
+      {# ===== the Telling: federated comments =====
+         TODO: point `src` at the production instance before deploying.
+         
+         data-media-uri="{{ siteRoot }}{{ page.url }}"
+
+          #}
+      {%- set tellingInstance = "http://localhost:4000" %}
+      {%- set siteRoot = "https://bonfirenetworks.org" %}
+      <div class="mt-12">
+        <script
+          src="{{ tellingInstance }}/js/comments_embed.js"
+          data-published-at="{{ date | htmlDateString }}"
+          data-theme="dark"
+          data-mode="nested"
+          async></script>
+      </div>
+
       {# prev / next #}
       {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
       {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
