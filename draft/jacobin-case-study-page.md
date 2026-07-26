@@ -151,6 +151,6 @@ What began as a reader-funded demand for something better than a comments sectio
 Thinking about where your community conversation should live? Everything we built for Jacobin is in the commons and available to build on.
 
 - [Let's chat](https://cal.com/bonfire-networks/meet)
-- [bonfirenetworks.org](https://bonfirenetworks.org)
+<!-- - [bonfirenetworks.org](https://bonfirenetworks.org) -->
 
-Next case study → [Open Science Network](/open_science)
+<!-- Next case study → [Open Science Network](/open_science) -->

@@ -21,6 +21,8 @@ description: "How Bonfire compares to community SaaS (Circle, Mighty Networks, S
 {% set rowlabel = "sticky left-0 z-[2] bg-night w-[150px] min-w-[150px] px-4 py-2.5 text-left font-smono text-[.64rem] font-medium text-ink-2 border-r border-ink/[0.07]" %}
 {% set stickyBonfire = "sticky left-[150px] z-[3] bg-[color-mix(in_srgb,var(--color-flame)_12%,var(--color-night))]" %}
 {% set stickyBonfireCell = "sticky left-[150px] z-[1] bg-[color-mix(in_srgb,var(--color-flame)_9%,var(--color-night))]" %}
+{# Switch to "logos" to restore the original platform-logo headers. #}
+{% set platformHeaderStyle = "names" %}
 
 {# status mark — plain check/minus/x/clock by default. A cell can pass its own icon
    to encode a *different kind* of yes/partial (e.g. the three flavours of mobile app),
@@ -165,8 +167,12 @@ description: "How Bonfire compares to community SaaS (Circle, Mighty Networks, S
             <tr>
               <th class="sticky left-0 z-[4] bg-night-2 w-[150px] min-w-[150px] px-4 py-2 border-b border-ink/15 align-bottom font-smono text-[.6rem] font-bold tracking-[.1em] uppercase text-ink-3">Platform</th>
               {%- for g in groups %}{%- for r in g.rows %}
-              <th title="{{ r.name }}" class="px-2 py-3 align-bottom text-center border-b border-b-ink/[0.07] min-w-[80px] {{ 'border-l border-l-ink/20' if loop.first }} {{ stickyBonfire if r.bonfire else 'bg-night-2' }}">
-                {%- if r.logoImg %}<img src="{{ r.logoImg }}" alt="{{ r.name }}" class="h-6 mx-auto object-contain" loading="lazy">
+              <th title="{{ r.name }}" style="min-width: {{ '112px' if platformHeaderStyle == 'names' else '80px' }}" class="px-2 py-3 align-bottom text-center border-b border-b-ink/[0.07] {{ 'border-l border-l-ink/20' if loop.first }} {{ stickyBonfire if r.bonfire else 'bg-night-2' }}">
+                {%- if platformHeaderStyle == "names" and r.bonfire -%}
+                  <img src="{{ r.logoImg }}" alt="{{ r.name }}" class="h-6 mx-auto object-contain" loading="lazy">
+                {%- elif platformHeaderStyle == "names" -%}
+                  <span class="block max-w-[15ch] mx-auto font-disp font-[620] text-[.74rem] leading-[1.15] text-balance {{ 'text-flame' if r.bonfire else 'text-ink' }}">{{ r.name }}</span>
+                {%- elif r.logoImg %}<img src="{{ r.logoImg }}" alt="{{ r.name }}" class="h-6 mx-auto object-contain" loading="lazy">
                 {%- elif r.logo %}<span class="{{ r.logo }} text-[20px] {{ 'text-flame' if r.bonfire else 'text-ink-2' }}" aria-hidden="true"></span><span class="sr-only">{{ r.name }}</span>
                 {%- elif r.logoChip %}<span class="inline-flex items-center justify-center bg-[#e9e4d6] rounded-[4px] p-[3px] mx-auto"><img src="{{ r.logoChip }}" alt="{{ r.name }}" class="h-[22px] w-[22px] object-contain grayscale" loading="lazy"></span><span class="sr-only">{{ r.name }}</span>
                 {%- elif r.dom %}<span class="inline-flex items-center justify-center bg-[#e9e4d6] rounded-[4px] p-[3px] mx-auto"><img src="{{ r.dom | logo }}" alt="{{ r.name }}" class="h-[22px] w-[22px] object-contain" loading="lazy"></span><span class="sr-only">{{ r.name }}</span>

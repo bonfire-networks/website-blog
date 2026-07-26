@@ -64,8 +64,6 @@
     title: "A fablab becomes one shared workshop, online and off.",
     img: "makerspace-card.webp",
     imagepos: "center 45%",
-    example: "Fablab",
-    exampletype: "Planned",
     starts: "Members running workshops, sharing knowledge and documenting builds.",
     icons: ["ph-toolbox", "ph-cube", "ph-calendar-check", "ph-users-three"],
     items: [{t:"Social basics"}, {t:"Groups"}, {t:"Events & workshops"}, {t:"Tasks & projects", soon:true}, {t:"Equipment bookings", soon:true}],
@@ -79,8 +77,6 @@
     title: "A festival becomes a community that outlasts the weekend.",
     img: "festival-card.webp",
     imagepos: "center 58%",
-    example: "Festival",
-    exampletype: "Planned",
     starts: "Artists, organisers and audiences gathering around a temporary event.",
     icons: ["ph-ticket", "ph-music-notes", "ph-map-pin", "ph-camera"],
     items: [{t:"Social basics"}, {t:"Events"}, {t:"Groups"}, {t:"Live stream integration", soon:true}, {t:"Living archive", soon:true}],
@@ -238,10 +234,10 @@
       <span class="absolute inset-x-0 bottom-0 h-1/2 opacity-[.13] mix-blend-soft-light" style="background:var(--acc)" aria-hidden="true"></span>
 
       <div class="relative mt-auto flex w-full flex-col p-5 min-[681px]:p-6">
-        <div
+        {# <div
           id="recipe-meta-{{ r.id }}"
           class="flex w-fit max-w-full items-center gap-2.5 rounded-xl border border-ink/15 bg-night/55 py-2 pl-2 pr-3.5 shadow-[0_12px_32px_-18px_rgba(0,0,0,.9)] backdrop-blur-md"
-        >
+          >
           <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink text-lg text-night" aria-hidden="true">
             <i class="ph-duotone {{ r.icons[0] }}"></i>
           </span>
@@ -249,7 +245,7 @@
             <span class="block truncate text-[.68rem] font-[620] uppercase tracking-[.045em] text-ink/65">{{ r.exampletype }}</span>
             <span class="block truncate font-disp text-[.92rem] font-[650] text-ink">{{ r.example }}</span>
           </span>
-        </div>
+        </div> #}
 
         <p class="mt-5 text-[.76rem] font-[620] text-[var(--acc)]">{{ r.kind }}</p>
         <h3 id="recipe-title-{{ r.id }}" class="mt-2 text-balance font-disp text-[1.65rem] font-[620] leading-[1.05]">{{ r.title }}</h3>
