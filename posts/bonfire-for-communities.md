@@ -28,6 +28,8 @@ It's the same argument we made when we [put groups on the crowdfunding roadmap](
 
 ## Main community features
 
+These features are available today as **1.0 beta**: ready to use and already running in real communities, though groups are not yet federating between instances. Consider it an invitation for more communities to shape these building blocks into whatever each of them actually needs.
+
 ### Groups and topics
 
 In Bonfire, **groups** are spaces where communities, organisations, and teams can define their own membership, permissions, and rules. Because they're built on our flexible [boundaries](/posts/introducing_boundaries/) system, a group can take whatever shape you need: you can run a public group, an announcement-only space, a private invite-only room, or a group visible only to a particular circle. You're free to change your mind later when the group evolves. 
