@@ -15,51 +15,44 @@ description: Bonfire isn't a product with users, it's a commons with participant
   <div class="v2-ambient" aria-hidden="true"></div>
   <div class="relative z-[1]">
 
-    {# page header #}
-    <header class="pt-[34px] pb-[26px] border-b border-ink/[0.07]">
-    <div class="max-w-[1180px] mx-auto px-7">
-      <h1 class="font-disp font-[620] text-[clamp(1.8rem,3.4vw,2.6rem)] leading-[1.05] tracking-[-.02em]">Bonfire is a commons</h1>
-      <p class="mt-3 text-[1.05rem] text-ink-2 max-w-[52ch]">Bonfire isn't a product with users, it's a <b class="text-ink font-semibold">commons with participants</b>. It's governed by the people who show up, and there's more than one way to be one of them.</p>
-      {# metric slots — fill with real numbers when confirmed #}
-      <div class="grid grid-cols-2 min-[761px]:grid-cols-[repeat(4,minmax(0,180px))] gap-3.5 mt-[26px]">
-        {% for m in ["metric 01", "metric 02", "metric 03", "metric 04"] %}
-        <div class="rounded border border-dashed border-ink/15 px-4 py-4 font-smono text-[.74rem] text-ink-3 bg-[repeating-linear-gradient(135deg,transparent_0_18px,rgba(242,236,219,.02)_18px_36px)]"><b class="block font-disp font-bold text-[1.7rem] text-ink-3 mb-1">—</b>[ {{ m }} ]</div>
-        {% endfor %}
+    {# hero + intent router #}
+    <header class="py-24">
+    <div class="max-w-[1180px] w-full mx-auto px-7">
+      <div class="flex flex-col gap-6">
+        <div>
+          <p class="{{ eyebrow }} text-flame">Community</p>
+          <h1 class="mt-5 max-w-[11ch] font-disp font-[620] text-[clamp(3.35rem,7.4vw,6rem)] leading-[.94] tracking-[-.035em] text-balance">Find your way <span class="italic font-medium text-flame">in.</span></h1>
+        </div>
+        <p class="max-w-[36rem] pb-1 text-[clamp(1.05rem,1.6vw,1.28rem)] leading-[1.55] text-ink-2">However much you've got — an hour or a year — there's a way to take part. Come to listen, lend a hand, bring your community, or sustain the care work.</p>
       </div>
-    </div></header>
 
-    {# intent router #}
-    <section class="pt-11 pb-16">
-    <div class="max-w-[1180px] mx-auto px-7">
-      <p class="{{ eyebrow }} text-flame">Find your way in</p>
-      <h2 class="{{ display }} max-w-[22ch]">However much you've got, <span class="italic font-medium">an hour or a year.</span></h2>
-      <div class="grid grid-cols-1 min-[601px]:grid-cols-2 min-[901px]:grid-cols-4 gap-px mt-[26px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
-        <a class="flex flex-col gap-2 bg-night p-[26px_22px] px-[22px] py-[26px] hover:bg-night-2" href="#gather">
+      {# <nav aria-label="Choose how to participate" class="grid grid-cols-1 min-[601px]:grid-cols-2 min-[901px]:grid-cols-4 gap-px mt-[clamp(2.5rem,5vw,4.5rem)] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
+        <a class="group flex min-h-[15.5rem] flex-col gap-2 bg-night px-[22px] py-[26px] transition-[background-color] duration-200 hover:bg-night-2 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-flame" href="#gather">
           <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">No commitment</span>
-          <h3 class="font-disp font-[620] text-[1.18rem] text-flame">Hang out</h3>
+          <h2 class="font-disp font-[620] text-[1.28rem] text-flame">Hang out</h2>
           <p class="text-ink-2 text-[.94rem] m-0">Come see what it's like. Lurk in the chat, poke at the campground, follow along.</p>
-          <span class="{{ golink }}">Where we gather →</span>
+          <span class="{{ golink }} transition-transform duration-200 group-hover:translate-x-1">Where we gather →</span>
         </a>
-        <a class="flex flex-col gap-2 bg-night px-[22px] py-[26px] hover:bg-night-2" href="#help">
+        <a class="group flex min-h-[15.5rem] flex-col gap-2 bg-night px-[22px] py-[26px] transition-[background-color] duration-200 hover:bg-night-2 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-leaf" href="#help">
           <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">An hour or an afternoon</span>
-          <h3 class="font-disp font-[620] text-[1.18rem] text-leaf">Help out</h3>
+          <h2 class="font-disp font-[620] text-[1.28rem] text-leaf">Help out</h2>
           <p class="text-ink-2 text-[.94rem] m-0">Translate a screen, file a bug, fix a good first issue, improve the docs.</p>
-          <span class="{{ golink }}">Ways to help →</span>
+          <span class="{{ golink }} transition-transform duration-200 group-hover:translate-x-1">Ways to help →</span>
         </a>
-        <a class="flex flex-col gap-2 bg-night px-[22px] py-[26px] hover:bg-night-2" href="#organize">
+        <a class="group flex min-h-[15.5rem] flex-col gap-2 bg-night px-[22px] py-[26px] transition-[background-color] duration-200 hover:bg-night-2 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-spark" href="#organize">
           <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Ongoing</span>
-          <h3 class="font-disp font-[620] text-[1.18rem] text-spark">Shape it</h3>
+          <h2 class="font-disp font-[620] text-[1.28rem] text-spark">Shape it</h2>
           <p class="text-ink-2 text-[.94rem] m-0">Bring a real need from a real community, and co-design what's missing with us.</p>
-          <span class="{{ golink }}">Bring your community →</span>
+          <span class="{{ golink }} transition-transform duration-200 group-hover:translate-x-1">Bring your community →</span>
         </a>
-        <a class="flex flex-col gap-2 bg-night px-[22px] py-[26px] hover:bg-night-2" href="#support">
+        <a class="group flex min-h-[15.5rem] flex-col gap-2 bg-night px-[22px] py-[26px] transition-[background-color] duration-200 hover:bg-night-2 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-corn" href="#support">
           <span class="font-smono text-[.64rem] tracking-[.11em] uppercase text-ink-3">Whatever you can</span>
-          <h3 class="font-disp font-[620] text-[1.18rem] text-corn">Sustain it</h3>
+          <h2 class="font-disp font-[620] text-[1.28rem] text-corn">Sustain it</h2>
           <p class="text-ink-2 text-[.94rem] m-0">Fund the unglamorous work: maintenance, care, and the people who do it.</p>
-          <span class="{{ golink }}">Support the care →</span>
+          <span class="{{ golink }} transition-transform duration-200 group-hover:translate-x-1">Support the care →</span>
         </a>
-      </div>
-    </div></section>
+      </nav> #}
+    </div></header>
 
     {# where we gather #}
     <section id="gather" class="py-16 border-t border-ink/[0.07] scroll-mt-[70px]">
@@ -99,37 +92,37 @@ description: Bonfire isn't a product with users, it's a commons with participant
       {% set ctp = "text-ink-2 text-[.91rem] m-0" %}
       <div class="grid grid-cols-1 min-[621px]:grid-cols-2 min-[901px]:grid-cols-3 gap-3.5 mt-[26px]">
         <div class="{{ ct }} border-leaf/40 bg-leaf/[0.04]">
-          <span class="{{ cttime }} text-leaf border-leaf/40">★ Start here · an afternoon</span>
+          {# <span class="{{ cttime }} text-leaf border-leaf/40">★ Start here · an afternoon</span> #}
           <h3 class="{{ cth }}">Fix a good first issue</h3>
           <p class="{{ ctp }}">We keep a list of small, well-described tasks specifically for newcomers to the codebase.</p>
           <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22">Browse good first issues →</a>
         </div>
         <div class="{{ ct }}">
-          <span class="{{ cttime }}">30 minutes</span>
+          {# <span class="{{ cttime }}">30 minutes</span> #}
           <h3 class="{{ cth }}">Translate a screen</h3>
           <p class="{{ ctp }}">Bonfire speaks English, Italian, French and Catalan. If yours is missing, you can fix that.</p>
           <a class="{{ golink }}" href="https://explore.transifex.com/bonfire/bonfire/">Translate on Transifex →</a>
         </div>
         <div class="{{ ct }}">
-          <span class="{{ cttime }}">10 minutes</span>
+          {# <span class="{{ cttime }}">10 minutes</span> #}
           <h3 class="{{ cth }}">Report what broke</h3>
           <p class="{{ ctp }}">Something felt wrong, confusing, or inaccessible? That's a bug. Tell us, especially the small annoyances.</p>
           <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Open an issue →</a>
         </div>
         <div class="{{ ct }}">
-          <span class="{{ cttime }}">An evening</span>
+          {# <span class="{{ cttime }}">An evening</span> #}
           <h3 class="{{ cth }}">Write code</h3>
           <p class="{{ ctp }}">Elixir, Phoenix, LiveView. Set up a local environment from the docs and dig into an extension.</p>
           <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app">Read the dev docs →</a>
         </div>
         <div class="{{ ct }}">
-          <span class="{{ cttime }}">An hour</span>
+          {# <span class="{{ cttime }}">An hour</span> #}
           <h3 class="{{ cth }}">Improve the docs</h3>
           <p class="{{ ctp }}">If something confused you, it'll confuse the next person. Writing it down is a real contribution.</p>
           <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Suggest a doc fix →</a>
         </div>
         <div class="{{ ct }}">
-          <span class="{{ cttime }}">Ongoing</span>
+          {# <span class="{{ cttime }}">Ongoing</span> #}
           <h3 class="{{ cth }}">Propose an idea</h3>
           <p class="{{ ctp }}">A feature, a better flow, a challenge to an assumption we've made. We'd rather be argued with early.</p>
           <a class="{{ golink }}" href="https://github.com/bonfire-networks/bonfire-app/issues/new/choose">Open a proposal →</a>
@@ -150,7 +143,8 @@ description: Bonfire isn't a product with users, it's a commons with participant
             <a class="{{ btnline }}" href="/case-studies">See how others did it →</a>
           </div>
         </div>
-        <div class="w-full aspect-video rounded-xl border border-dashed border-ink/15 flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)]"><span class="max-w-[30ch]"><span class="text-flame">[ SHOT ]</span><br>a co-design workshop / community session</span></div>
+        <img src="/img/jacobin/j10-boundary-presets.png" alt="A co-design workshop with a community" class="w-full rounded-xl border border-ink/15 object-cover min-h-[14rem] max-h-[22rem]">
+        {# <div class="w-full aspect-video rounded-xl border border-dashed border-ink/15 flex items-center justify-center text-center font-smono text-[.72rem] text-ink-3 leading-[1.6] bg-[repeating-linear-gradient(135deg,transparent_0_22px,rgba(242,236,219,.022)_22px_44px)]"><span class="max-w-[30ch]"><span class="text-flame">[ SHOT ]</span><br>a co-design workshop / community session</span></div> #}
       </div>
     </div></section>
 
