@@ -22,7 +22,7 @@ description: "How Bonfire compares to community SaaS (Circle, Mighty Networks, S
 {% set stickyBonfire = "sticky left-[150px] z-[3] bg-[color-mix(in_srgb,var(--color-flame)_12%,var(--color-night))]" %}
 {% set stickyBonfireCell = "sticky left-[150px] z-[1] bg-[color-mix(in_srgb,var(--color-flame)_9%,var(--color-night))]" %}
 {# Switch to "logos" to restore the original platform-logo headers. #}
-{% set platformHeaderStyle = "names" %}
+{% set platformHeaderStyle = "logos" %}
 
 {# status mark — plain check/minus/x/clock by default. A cell can pass its own icon
    to encode a *different kind* of yes/partial (e.g. the three flavours of mobile app),
@@ -225,7 +225,7 @@ description: "How Bonfire compares to community SaaS (Circle, Mighty Networks, S
     <section class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07]" style="--acc:var(--color-corn)">
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What the table can't show</p>
-      <h2 class="{{ display }}">The honest version.</h2>
+      <h2 class="{{ display }}">The simple and honest facts.</h2>
       <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-4 mt-9">
         <div class="{{ cell }}">
           <h3 class="{{ cellh }}">Open-source forums come closest</h3>
@@ -233,7 +233,7 @@ description: "How Bonfire compares to community SaaS (Circle, Mighty Networks, S
         </div>
         <div class="{{ cell }}">
           <h3 class="{{ cellh }}">Federation is a work in progress, ours included</h3>
-          <p class="{{ cellp }}">Bonfire's social layer federates across the fediverse today; <b class="text-ink font-semibold">group federation is still being built</b>, in the open with the <a href="https://swicg.github.io/" target="_blank" rel="noopener noreferrer">W3C task force</a>. ATproto tools like Acorn and Roundabout hit the same wall: ATproto has no cross-server group primitive yet. We're building it on ActivityPub, the network that's already there.</p>
+          <p class="{{ cellp }}">Bonfire's social layer federates across the fediverse today; <b class="text-ink font-semibold">group federation is still being built</b>, in the open with the <a href="https://swicg.github.io/" target="_blank" rel="noopener noreferrer">W3C task force</a>. ATmosphere tools like Acorn and Roundabout hit the same wall, as ATproto has no cross-server group primitive yet.</p>
         </div>
         <div class="{{ cell }}">
           <h3 class="{{ cellh }}">The SaaS trade is convenience for control</h3>
