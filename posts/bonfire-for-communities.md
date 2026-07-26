@@ -28,7 +28,7 @@ It's the same argument we made when we [put groups on the crowdfunding roadmap](
 
 ## Main community features
 
-These features are available today as **1.0 beta**: ready to use and already running in real communities, though groups are not yet federating between instances. Consider it an invitation for more communities to shape these building blocks into whatever each of them actually needs.
+These features are available today as **1.0 beta**: ready to use and already running in real communities, though groups are not yet federating between instances. Consider it an invitation for more communities to shape these building blocks into whatever each of them actually needs. Want to poke at it first? Groups and everything else below are now live on [the campground](https://campground.bonfire.cafe), our open testing instance.
 
 ### Groups and topics
 
