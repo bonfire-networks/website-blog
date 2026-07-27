@@ -197,7 +197,7 @@ More in [our groups FAQ](/posts/why-community-matters-groups-as-the-next-step-fo
 
 ### When will groups and topics federate?
 
-Not yet. Today they work within an instance. That's a deliberate sequencing choice, not an oversight: we're working through the design with the [W3C task force on federated groups](https://swicg.github.io/) so that when Bonfire groups do federate, they're compatible across the fediverse rather than being one more incompatible dialect. We [wrote about that goal when we started](/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/#faq-(frequently-asked-questions)), and it still holds: maximum compatibility over first-mover speed.
+Not yet. Today they work within an instance. That's a deliberate sequencing choice, not an oversight: we're working through the design with the [W3C task force on federated groups](https://github.com/swicg/groups/issues) so that when Bonfire groups do federate, they're compatible across the fediverse rather than being one more incompatible dialect. We [wrote about that goal when we started](/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/#faq-(frequently-asked-questions)), and it still holds: maximum compatibility over first-mover speed.
 
 ### Do we have to host it ourselves or is this a SaaS service?
 
