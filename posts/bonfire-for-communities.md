@@ -66,6 +66,8 @@ Communities run on gatherings. Bonfire for communities includes events with cale
 
 Rather than create yet-another events management app, we've been working with [Lauti](https://lauti.org/blog/lauti-updates-2026/#cooperation-with-bonfire), an open source community calendar built and maintained by our friends at [Klasse & Methode](https://klasse-methode.it/). Bonfire is modular by design, and that modularity doesn't stop at our own extensions: rather than succumb to "not invented here" syndrome, we interconnect with dedicated tools across the ecosystem, so events can be published and discovered across apps instead of locked inside one.
 
+Klasse & Methode build Lauti on the principle of digital solidarity. As fellow members of [Co-op Cloud](https://coopcloud.tech/), they've been given a second-hand server, and are now [raising money for hard drives](https://www.betterplace.org/en/projects/183080-our-community-server-needs-hard-drives). The drives will host free calendars and websites for self-organised groups such as [Refugees4Refugees](https://refugees4refugees.org/en/), who accompany people through the asylum process and document what happens to those who are deported. A very concrete way to keep infrastructure in community hands. 
+
 ### Organisation profiles
 
 A community is rarely one person. You can now create a **shared organisation profile** (a magazine, a collective, a working group, a moderation team) co-managed by several accounts. From the outside it looks like any other profile: it posts, it can be followed, and it federates as an ActivityPub `Organization`. Behind it, people can come and go without anyone handing over a password.
@@ -101,7 +103,7 @@ When Jacobin's readers arrive at [jacobin.social](https://jacobin.social) they s
 <a class="!no-underline hover:!no-underline" href="https://jacobin.de/social" target="_blank">
 <section class="py-8 rule">
   <blockquote class="display text-2xl md:text-3xl leading-tight text-balance">
-    “Choosing Bonfire wasn't just a technical decision – it was a fundamentally political one. We wanted a platform that couldn't be switched off by a foreign government or bought out by a billionaire. That's exactly what we got: Bonfire built not simply for us, but with us, and the result belongs to our readers as much as it does to us.”
+    “Choosing Bonfire wasn't just a technical decision, it was a fundamentally political one. We wanted a platform that couldn't be switched off by a foreign government or bought out by a billionaire. That's exactly what we got: Bonfire built not simply for us, but with us, and the result belongs to our readers as much as it does to us.”
   </blockquote>
   <figcaption class="mt-8 text-[color:var(--muted)]">— Magdalena Berger, Jacobin DE</figcaption>
 </section>
@@ -113,7 +115,7 @@ Bonfire supports SSO with OpenID Connect and OAuth2 as both a client *and* a pro
 
 ### Fast and reliable
 
-After over a year of real communities putting real load on Bonfire, we've focused heavily on load testing and performance improvements, so a space stays fast and reliable as it grows from a handful of people to thousands.
+After over a year of real communities putting real load on Bonfire, we've focused heavily on load testing and performance improvements, so a space stays fast and reliable as it grows from a handful of people to thousands. Much of that testing was done in collaboration with [CoQuest co-op](https://coquest.coop/en), who is hosting jacobin.social, and pushed the app hard enough to find where it hurt.
 
 ## Built hand in hand with communities
 
@@ -185,7 +187,13 @@ Find us at [@bonfire@bonfire.cafe](https://bonfire.cafe/@Bonfire), on the [issue
 
 ### Doesn't the fediverse already have groups?
 
-Sort of! The threadiverse ([Lemmy](https://join-lemmy.org/), [PieFed](https://piefed.social/), [Mbin](https://joinmbin.org/)) does communities reddit-style: public forums organised around a topic, where strangers gather to discuss a shared interest. That's a valuable shape, but the one communities kept describing to us goes beyond that, closer to the Facebook, Discord, or WhatsApp groups they're trying to leave: membership-first spaces where you know who's in the room, that can be private or public, and that hold your calendar, your decisions, and your running conversations. And there's a third shape both do poorly: the announcement channel, where a few people post and everyone else follows along. Bonfire's groups and topics stretch across all of these: a public forum around a subject, a private room around a set of people, a broadcast channel where only your team posts and other members can follow and respond, and the range in between. We fully intend to interoperate with the threadiverse: the task-force work is about filling in the capabilities ActivityPub still lacks for groups to work like this across platforms. More in [our groups FAQ](/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/#faq-(frequently-asked-questions)).
+Sort of! The threadiverse ([Lemmy](https://join-lemmy.org/), [PieFed](https://piefed.social/), [Mbin](https://joinmbin.org/)) does communities reddit-style: public forums organised around a topic, where strangers gather to discuss a shared interest. 
+
+That's a valuable shape, but the one communities kept describing to us goes beyond that, closer to the Facebook, Discord, or WhatsApp groups they're trying to leave: membership-first spaces where you know who's in the room, that can be private or public, and that hold your calendar, your decisions, and your running conversations. And there's a third shape both do poorly: the announcement channel, where a few people post and everyone else follows along. 
+
+Bonfire's groups and topics stretch across all of these: a public forum around a subject, a private room around a set of people, a broadcast channel where only your team posts and other members can follow and respond, and the range in between. We fully intend to interoperate with the threadiverse: the task-force work is about filling in the capabilities ActivityPub still lacks for groups to work like this across platforms. 
+
+More in [our groups FAQ](/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/#faq-(frequently-asked-questions)).
 
 ### When will groups and topics federate?
 
@@ -193,7 +201,11 @@ Not yet. Today they work within an instance. That's a deliberate sequencing choi
 
 ### Do we have to host it ourselves or is this a SaaS service?
 
-There's no SaaS to sign up for: we don't sell it, and we're not going to become everyone's landlord (see the next question). But that doesn't mean you're on your own with the setup, maintenance, upgrades, and support. You absolutely can [self-host](https://docs.bonfirenetworks.org): it's free software and it always will be, and running your own is a first-class path we support and document. For a community that already has its own technical infrastructure or people with the skills, self-hosting makes real sense (and it's a different proposition from an individual running Bonfire Social solo for themselves). And you needn't figure it out alone: there's free peer support in our community channels, and we can help hands-on (up to setting it up with you, on your own infra) as a paid engagement if you'd rather have us help with it. But not every community has that, and going it alone isn't the only way to have autonomy: what matters is who governs, not just where the machines sit. People fending for themselves often end up renting from some big company's cloud anyway, each instance idling away rare-earth minerals and energy that sharing would spare. So there's a third option between "run everything yourself" and "pay a SaaS landlord": shared community infrastructure. We're members of [Co-op Cloud](https://coopcloud.tech/), a federation sharing deployment tools and recipes, alongside hosting co-ops like [CoQuest](https://coquest.coop/en), who are hosting [jacobin.social](https://jacobin.social). Together we're building a [cooperative hosting network](/hosting/) on the model of community-supported agriculture: communities sustain shared infrastructure, and it sustains them. Self-host, join a co-op, or start one: the point is that it's your call.
+There's no SaaS to sign up for: we don't sell it, and we're not going to become everyone's landlord (see the next question). You can [self-host](https://docs.bonfirenetworks.org): it's a first-class path we support and document, and it makes real sense for a community that already has its own infrastructure, or people with the skills. You needn't figure it out alone either. There's free peer support in our community channels, and we can set it up with you on your own infra as a paid engagement.
+
+But not every community has that, and going it alone isn't the only way to have autonomy: what matters is who governs, not just where the machines sit. People fending for themselves often end up renting from some big company's cloud anyway, each instance idling away rare-earth minerals and energy that sharing would spare.
+
+So there's a third option between "run everything yourself" and "pay a SaaS landlord": shared community infrastructure. We're members of [Co-op Cloud](https://coopcloud.tech/), a federation sharing deployment tools and recipes, alongside hosting co-ops like [CoQuest](https://coquest.coop/en), who host [jacobin.social](https://jacobin.social) and help maintain the Co-op Cloud recipe that makes Bonfire straightforward for any co-op or self-hoster to deploy. Together we're building a [cooperative hosting network](/hosting/) on the model of community-supported agriculture: communities sustain shared infrastructure, and it sustains them. Self-host, join a co-op, or start one: the point is that it's your call.
 
 ### Why don't you run a public flagship instance?
 
