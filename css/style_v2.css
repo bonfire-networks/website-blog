@@ -5389,6 +5389,9 @@
   .decoration-wavy {
     text-decoration-style: wavy;
   }
+  .decoration-1 {
+    text-decoration-thickness: 1px;
+  }
   .decoration-2 {
     text-decoration-thickness: 2px;
   }
@@ -5646,6 +5649,9 @@
     .group-hover\:-translate-y-0\.5:is(:where(.group):hover *) {
       --tw-translate-y: calc(var(--spacing) * -0.5);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+    .group-hover\:scale-\[1\.02\]:is(:where(.group):hover *) {
+      scale: 1.02;
     }
     .group-hover\:scale-\[1\.025\]:is(:where(.group):hover *) {
       scale: 1.025;
@@ -5974,6 +5980,9 @@
     .hover\:to-ember:hover {
       --tw-gradient-to: var(--color-ember);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+    .hover\:text-\[color\:var\(--brand\)\]:hover {
+      color: var(--brand);
     }
     .hover\:text-ink:hover {
       color: var(--color-ink);
@@ -6558,6 +6567,9 @@
     }
     .md\:mb-20 {
       margin-bottom: calc(var(--spacing) * 20);
+    }
+    .md\:mb-24 {
+      margin-bottom: calc(var(--spacing) * 24);
     }
     .md\:h-18 {
       height: calc(var(--spacing) * 18);
