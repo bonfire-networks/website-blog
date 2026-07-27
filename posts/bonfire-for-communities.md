@@ -10,9 +10,9 @@ author: Bonfire Builders
 
 ---
 
-Bonfire was never meant to be one more feed that grabs your attention. Today it takes the shape we've been building toward: **Bonfire for communities**. A tool for groups that need to organise together, not just post at each other. Shipping today: **groups and topics, events, shared organisation profiles, embeddable federated comments, customisable themes, and a first set of governance tools**. It comes as a ready-to-use space with everything included, to then be reshaped block by block: add what's missing, swap or fork what almost fits, switch off what you don't need.
+**Today we're shifting our centre of gravity: from social features to community tools.**
 
-It's also a **shift in focus: from social to community features**.
+Bonfire was never meant to be one more feed that grabs your attention. Today it takes the shape we've been building toward: **Bonfire for communities**. A tool for groups that need to organise together, not just post at each other. Shipping today: **groups and topics, events, shared organisation profiles, embeddable federated comments, customisable themes, and a first set of governance tools**. It comes as a ready-to-use space with everything included, to then be reshaped block by block: add what's missing, swap or fork what almost fits, switch off what you don't need.
 
 ## Why community comes first
 
