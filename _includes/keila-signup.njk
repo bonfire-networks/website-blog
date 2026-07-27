@@ -1,0 +1,55 @@
+{% macro keilaSignup(idPrefix) %}
+<form
+  action="https://app.keila.io/forms/nfrm_o97Ny73p"
+  method="post"
+  class="mx-auto flex w-full max-w-[440px] flex-col items-stretch gap-4 text-left"
+>
+  <div class="flex flex-col gap-1.5">
+    <label class="font-smono text-[.68rem] font-bold tracking-[.08em] text-ink-2" for="{{ idPrefix }}-email">
+      Email address
+    </label>
+    <input
+      id="{{ idPrefix }}-email"
+      name="contact[email]"
+      type="email"
+      autocomplete="email"
+      inputmode="email"
+      placeholder="you@example.org"
+      class="input min-h-11 w-full rounded-full border border-ink/15 bg-night-2 text-ink placeholder:text-ink-3 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/30"
+      required
+    >
+  </div>
+
+  <label class="flex cursor-pointer items-start gap-2.5 text-[.78rem] leading-5 text-ink-2" for="{{ idPrefix }}-optin">
+    <input name="contact[data][newsletter_optin]" type="hidden" value="false">
+    <input
+      id="{{ idPrefix }}-optin"
+      name="contact[data][newsletter_optin]"
+      type="checkbox"
+      value="true"
+      class="checkbox checkbox-sm mt-0.5 shrink-0 rounded border-ink/30 bg-night-2 text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70"
+      required
+    >
+    <span>I consent to receiving a newsletter and/or occasional updates about Bonfire.</span>
+  </label>
+
+  <input
+    aria-hidden="true"
+    autocomplete="off"
+    name="h[url]"
+    tabindex="-1"
+    novalidate
+    class="hidden"
+  >
+
+  <div class="h-captcha" data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de" data-theme="dark" data-size="compact"></div>
+
+  <button
+    type="submit"
+    class="btn h-auto min-h-11 w-full rounded-full border-0 bg-gradient-to-br from-spark via-flame to-ember px-5 py-3 font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] shadow-[0_8px_24px_-10px_rgba(232,145,43,.7)] transition hover:-translate-y-0.5 hover:from-spark hover:via-flame hover:to-ember hover:shadow-[0_12px_28px_-10px_rgba(245,195,68,.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/80 focus-visible:ring-offset-2 focus-visible:ring-offset-night"
+  >
+    Subscribe
+  </button>
+</form>
+<script async defer src="https://hcaptcha.com/1/api.js"></script>
+{% endmacro %}

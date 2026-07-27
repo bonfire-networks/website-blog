@@ -98,6 +98,15 @@ Bonfire comes with different themes, and you can build your own, customising col
 
 When Jacobin's readers arrive at [jacobin.social](https://jacobin.social) they see Jacobin, end to end, with no sign of a different platform underneath. That mattered enough to be one of the reasons they chose Bonfire in the first place: a community space should feel like *their* space, not a precarious corner of a platform you don't control.
 
+<a class="!no-underline hover:!no-underline" href="https://jacobin.de/social" target="_blank">
+<section class="py-8 rule">
+  <blockquote class="display text-2xl md:text-3xl leading-tight text-balance">
+    “Choosing Bonfire wasn't just a technical decision – it was a fundamentally political one. We wanted a platform that couldn't be switched off by a foreign government or bought out by a billionaire. That's exactly what we got: Bonfire built not simply for us, but with us, and the result belongs to our readers as much as it does to us.”
+  </blockquote>
+  <figcaption class="mt-8 text-[color:var(--muted)]">— Magdalena Berger, Jacobin DE</figcaption>
+</section>
+</a>
+
 ### Single sign-on, both directions
 
 Bonfire supports SSO with OpenID Connect and OAuth2 as both a client *and* a provider: members can sign in with an account they already have, or Bonfire can itself act as the identity provider that signs them into other apps. One less barrier to showing up, and one less password to manage.
@@ -114,7 +123,35 @@ None of this came out of a product planning meeting. It came out of our [Mosaic]
 
 **[Jacobin](https://www.jacobin.de/)** (the German edition of a socialist magazine, publishing a daily essay and a quarterly print issue) asked its readers to fund ["Jacobin 2.0"](https://www.startnext.com/jacobin2-0/mehr-infos). 1,015 backers funded the website relaunch and kept going until they'd unlocked the next tier: a community platform, "a calmer, protected space for political debate" where readers go backstage with the editorial team and suggest and discuss topics, free of any tech billionaire's algorithm. Six months of discussions and co-design produced the Ghost integration, the comments widget, and much of the groups-and-topics design. [jacobin.social](https://jacobin.social) opens its doors today to a community of 3,000+ readers, and the collaboration also produced a complete German translation of Bonfire. 
 
-<a href="/case-studies/jacobin" class="btn btn-lg btn-outline border-base-content/30 hover:!no-underline rounded-full">Read the full story in our case study</a>
+<div class="not-prose my-10">
+<a
+  href="/case-studies/jacobin/"
+  aria-label="Read the Jacobin case study: From audience to community"
+  class="group grid w-full overflow-hidden rounded-xl border border-ink/15 bg-night-2 text-ink no-underline transition-colors hover:border-ink/30 hover:!no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-spark md:grid-cols-[minmax(220px,.82fr)_minmax(0,1.18fr)]">
+  <span class="relative min-h-[220px] overflow-hidden bg-[#f23222] md:min-h-full">
+    <img
+      src="/img/jacobin/jacobin-social.png"
+      alt="Jacobin Social, the community space created for Jacobin’s German edition"
+      class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]" />
+  </span>
+  <span class="flex min-w-0 flex-col justify-center px-6 py-7 sm:px-7">
+    <span class="mb-3 flex flex-wrap items-center gap-2">
+      <span class="font-smono text-[.66rem] tracking-[.1em] text-flame">A magazine · Independent media</span>
+      <span class="rounded-full border border-ink/15 px-2 py-1 font-smono text-[.6rem] tracking-[.08em] text-ink-3">◼ Co-designed with us</span>
+    </span>
+    <span class="font-disp text-[clamp(1.45rem,4vw,2rem)] font-[620] leading-[1.08] tracking-[-.02em] text-ink">
+      Jacobin: From audience to community
+    </span>
+    <span class="mt-3 text-[.95rem] leading-[1.55] text-ink-2">
+      How Jacobin gave 3,000+ readers a federated home for debate, organising, and solidarity.
+    </span>
+    <span class="mt-5 inline-flex items-center gap-2 font-smono text-[.72rem] tracking-[.04em] text-spark">
+      Read the full story in our case study
+      <span aria-hidden="true" class="transition-transform duration-300 ease-out group-hover:translate-x-1">→</span>
+    </span>
+  </span>
+</a>
+</div>
 
 **[Mentaal](https://mentaal.nl)** (a Dutch "public meeting place for mental health") needed spaces where people could speak safely: a network of four instances deliberately kept apart from the open fediverse. It's an initiative by an alliance of mental health organisations ([Ypsilon](https://www.ypsilon.org/), [Stichting Borderline](https://stichtingborderline.nl/), [Boven Jan](https://www.boven-jan.nl/)) within [TheNextSocials](https://thenextsocials.nl/en), a Dutch movement for social media that is truly social, with partners like [Waag](https://waag.org/en/about-waag/) and [PublicSpaces](https://english.publicspaces.net/about-publicspaces/). Co-designing with them shaped [archipelago mode](/posts/bonfire-social-1-0-5-archipelago/): an instance can federate only with a hand-picked, mutually-agreed network of trusted servers, instead of connecting to the whole fediverse by default. For safety-critical communities, federation needs to be a deliberate choice: when the time is right they can decide whether to connect at all, and with whom. They call it "the portal to a different kind of internet", and we intend to live up to that.
 
