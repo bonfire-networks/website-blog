@@ -68,14 +68,39 @@ templateClass: tmpl-post
           #}
       {%- set tellingInstance = "http://localhost:4000" %}
       {%- set siteRoot = "https://bonfirenetworks.org" %}
-      <div class="mt-12">
-        <script
-          src="{{ tellingInstance }}/js/comments_embed.js?v1.0"
-          data-published-at="{{ date | htmlDateString }}"
-          data-theme="dark"
-          data-mode="nested"
-          async></script>
-      </div>
+      <section
+        class="mt-16 border-y border-ink/[0.07] bg-night-2 py-12 md:mt-24"
+        style="width: 100vw; margin-left: calc(50% - 50vw);"
+        aria-labelledby="post-discussion-title">
+        <div class="mx-auto px-7" style="max-width: 1440px;">
+          <div class="max-w-[820px] mx-auto">
+          <div class="mb-10">
+            <div class="flex items-end gap-4">
+              <div>
+                <p class="mb-2 font-smono text-[.62rem] tracking-[.1em] text-spark">The Telling</p>
+                <h2 id="post-discussion-title" class="font-disp text-3xl font-[620] leading-[1.12] tracking-[-.02em] text-ink text-balance md:text-5xl">
+                  Continue the conversation.
+                </h2>
+              </div>
+            </div>
+            <p class="mt-5 max-w-[42ch] text-[.95rem] leading-relaxed text-ink-2">
+              Questions, reflections, and additions are welcome. This thread is federated, so the conversation can travel beyond this page.
+            </p>
+            <a
+              class="mt-4 inline-flex items-center gap-2 border-b border-ink/15 pb-0.5 font-smono text-[.68rem] tracking-[.05em] text-ink-3 hover:border-spark hover:text-spark"
+              href="/conduct">
+              Read our Code of Conduct <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <script
+            src="{{ tellingInstance }}/js/comments_embed.js?v1.0"
+            data-published-at="{{ date | htmlDateString }}"
+            data-theme="dark"
+            data-mode="nested"
+            async></script>
+          </div>
+        </div>
+      </section>
 
       {# prev / next #}
       {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
