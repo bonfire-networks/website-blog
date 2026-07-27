@@ -1,0 +1,676 @@
+<!doctype html>
+<html data-theme="dark" class="bg-base-100 w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-host Bonfire: run your own federated community server</title>
+    <meta name="description" content="Host Bonfire yourself: what it takes, the shape of the install (server, domain, mail &amp; DNS, then Co-op Cloud, Docker, bare-metal or Guix), and where to get help. Open source, AGPL, free forever.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- OpenGraph meta tags for social sharing -->
+    <meta property="og:title" content="Self-host Bonfire: run your own federated community server">
+    <meta property="og:description" content="Host Bonfire yourself: what it takes, the shape of the install (server, domain, mail &amp; DNS, then Co-op Cloud, Docker, bare-metal or Guix), and where to get help. Open source, AGPL, free forever.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonfirenetworks.org//self-hosting/">
+    
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Self-host Bonfire: run your own federated community server">
+    <meta name="twitter:description" content="Host Bonfire yourself: what it takes, the shape of the install (server, domain, mail &amp; DNS, then Co-op Cloud, Docker, bare-metal or Guix), and where to get help. Open source, AGPL, free forever.">
+    
+    
+    <link
+    rel="stylesheet" href="/css/style_v2.css?v3.0">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  </head>
+  <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
+  <div class="drawer">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="sticky top-0 z-[70] bg-night/80 backdrop-blur-md border-b border-ink/[0.07] font-body" aria-label="Main">
+<div class="max-w-[1140px] mx-auto px-7 flex items-center h-16 gap-1.5">
+  <a class="flex items-center gap-2.5 flex-none text-ink" href="/" aria-label="Bonfire Networks — home">
+    <div class="bg-center bg-no-repeat bg-cover w-[30px] h-10" style="background-image:url(/img/bonfire.png)"></div>
+    
+  </a>
+  
+  <div class="hidden lg:flex items-center gap-0.5 ml-auto self-stretch">
+    
+    <div class="dropdown place-content-center dropdown-hover ">
+      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Explore <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+          <div class="p-2">
+            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Explore what your community could build.</p>
+          </div>
+          <ul>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/features">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">BUILD</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Features</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Explore the building blocks your community can combine.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/case-studies">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.6rem] font-bold tracking-[.05em] text-leaf">STORIES</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Case studies</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">See how communities are shaping Bonfire for their needs.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/compare">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.59rem] font-bold tracking-[.05em] text-corn-2">COMPARE</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">How Bonfire is different</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">See how Bonfire compares to other community platforms.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/about">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-ink/15 bg-ink/[0.04] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-ink-2">ABOUT</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">About Bonfire</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Meet the project, principles, and people behind it.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-ink" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">
+            <span><b class="font-bold">Want to look around?</b> Try Bonfire at the campground.</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+	    <div class="dropdown place-content-center dropdown-hover self-stretch">
+	      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer relative self-stretch inline-flex items-center !text-ink font-semibold after:content-[&#39;&#39;] after:absolute after:left-[13px] after:right-[13px] after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-spark after:to-ember">Launch your Bonfire <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+	      <div class="dropdown-content z-[80] pt-2">
+	        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+	          <div class="p-2">
+	            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Choose how much you want to run yourself.</p>
+	            
+	          </div>
+	          <ul>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 bg-ink/[0.055]" href="/self-hosting">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">DIY</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Self-host</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Install Bonfire on your own infrastructure.
+                      
+                    </span>
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/hosting">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-corn-2">HOSTED</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Cooperative hosting</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">We handle updates, backups and infrastructure with you. 
+                      
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/mosaic">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-leaf">MOSAIC</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Co-design with us</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Shape a tailored digital space with the Bonfire team. 
+                      
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	          </ul>
+	          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/start">
+	            <span><b class="font-bold">Not sure yet?</b> Compare all three routes.</span>
+	            <span aria-hidden="true">→</span>
+	          </a>
+	        </div>
+	      </div>
+	    </div>
+    <div class="dropdown dropdown-end place-content-center dropdown-hover ">
+      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Ecosystem <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+          <div class="p-2">
+            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Find people, answers, and tools around Bonfire.</p>
+          </div>
+          <ul>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/community">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-leaf">JOIN</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Participate</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Contribute, collaborate, or help sustain the commons.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/faq">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">ASK</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">FAQs</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Answers about licensing, federation, privacy, and governance.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-corn-2">DOCS</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Documentation</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Setup guides and technical reference for hosts and builders.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">
+            <span><b class="font-bold">Want to build with us?</b> Browse the source code.</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+     <a class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 " href="/blog">Blog</a>
+    <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
+  </div>
+  <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+</div></nav>
+
+<div class="hidden sticky top-16 z-[69] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Explore</span>
+  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Explore what your community could build.</p>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/features">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Features</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">BUILD</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Building blocks your community can combine.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/compare">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Comparison table</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">COMPARE</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">How Bonfire differs from other community platforms.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/case-studies">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Case studies</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">STORIES</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">How communities are shaping Bonfire for their needs.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/about">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">About Bonfire</b><span class="font-smono text-[.62rem] tracking-[.08em] text-ink-2">ABOUT</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">The project, principles, and people behind it.</span>
+  </a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try Bonfire at the campground ↗</a>
+	  <span class="block border-t border-ink/[0.07] px-7 pb-1.5 pt-[15px] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Launch your Bonfire</span>
+	  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Choose how much you want to run yourself.</p>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 !text-spark font-semibold" href="/self-hosting">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Self-host</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">DIY</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Your infrastructure and some sysadmin comfort.</span>
+	  </a>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/hosting">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Cooperative hosting</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">HOST</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Your own space without a sysadmin job.</span>
+	  </a>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/mosaic">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Co-design with us</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">WITH</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">For communities, organisations and funders with specific needs.</span>
+	  </a>
+	  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="/start">Compare all three routes →</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Ecosystem</span>
+  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Find people, answers, and tools around Bonfire.</p>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/community">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Participate</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">JOIN</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Contribute, collaborate, or help sustain the commons.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/faq">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">FAQs</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">ASK</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Licensing, federation, privacy, and governance.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70" href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Documentation</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">DOCS</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Setup guides and technical reference for hosts and builders.</span>
+  </a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Browse the source code ↗</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] " href="/blog">Blog</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.78rem] tracking-[.06em] !text-spark" href="/start">Get started</a>
+</div>
+
+<script>
+(function(){
+"use strict";
+var b=document.getElementById('burger'),d=document.getElementById('v2drawer');
+if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hidden');b.setAttribute('aria-expanded',!hidden);});
+})();
+</script>
+
+      
+
+
+
+
+
+
+
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    
+    <header class="pt-10 pb-[clamp(36px,5vw,56px)]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span><a class="hover:text-spark" href="/start">Set up</a><span class="mx-2">/</span>Self-hosting</p>
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>You run it</p>
+      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[18ch] [font-variation-settings:'opsz'_96]">Host Bonfire <span class="fire-text">yourself.</span></h1>
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[60ch] [&_b]:text-ink [&_b]:font-semibold">Bonfire is <b>open source and AGPL, free forever</b>. You can run it on your own infrastructure. Your data, your policies, no fees. It's a first-class route, and it's the right one for communities with the technical capacity (or the appetite to build it). Here's what that involves, and where to turn if you'd rather not.</p>
+    </div>
+    </header>
+
+    <main>
+
+    
+    <section class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-2 gap-4">
+        <div class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7" style="--acc:var(--color-flame)">
+          <span class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What you get</span>
+          <ul class="mt-4 space-y-2.5 text-ink-2 text-[.97rem]">
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Full control, on infrastructure you choose</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Your data, your moderation, your code of conduct</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>No fees, no ads. Open source, free forever</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Full federation with the open social web</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--check-bold] text-leaf mt-1 flex-none" aria-hidden="true"></span>Pick a flavour, or build your own from the extensions you need</li>
+          </ul>
+        </div>
+        <div class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7" style="--acc:var(--color-corn)">
+          <span class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What it takes</span>
+          <ul class="mt-4 space-y-2.5 text-ink-2 text-[.97rem]">
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>A server (or virtual machine) you look after (≈8&nbsp;GB+ RAM depending on how many active users) and SSH access</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>Comfort at the command line</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>Updates, backups and security are your responsibility</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>When a member needs help, you're tech support</li>
+            <li class="flex gap-2.5"><span class="icon-[ph--minus-bold] text-corn-2 mt-1 flex-none" aria-hidden="true"></span>Put aside a few hours for initial set up, and ongoing care after</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-[.9rem] text-ink-3">Not very technical? You needn't do it alone, <a class="text-spark hover:underline" href="#guided">we can help you set it up</a>. Or skip the ops entirely: <a class="text-spark hover:underline" href="#other-routes">two other routes</a> hand the running over to a hosting co-op.</p>
+    </div>
+    </section>
+
+    
+    <section class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The shape of it</p>
+      <h2 class="font-disp font-[560] text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.08] text-balance">Five steps to get <span class="corn-text">up and running.</span></h2>
+      <p class="mt-3.5 text-ink-2 max-w-[62ch]">A bird's-eye view so you can gauge the effort. Every step is covered in detail in the <a class="text-spark hover:underline" href="https://docs.bonfirenetworks.org/setup.html" target="_blank" rel="noopener noreferrer">setup guide</a>, but here's an overview.</p>
+
+      <ol class="mt-8 space-y-3.5 counter-reset-none">
+        
+        <li class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">1</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Get a server you control</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">A machine you can SSH into, with about 8&nbsp;GB+ of RAM. Best of all is your own hardware, or a virtual machine on infrastructure run by friends, allies, or a co-op you trust, keeping it close to home. A rented VPS or dedicated server (Hetzner is a common choice) works as well. Wherever it runs, you hold the keys.</p>
+          </div>
+        </li>
+        
+        <li class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">2</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Set up a domain, email &amp; DNS</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Pick a domain or subdomain, it becomes part of every username, like <code class="font-smono text-[.85em] text-ink bg-ink/[0.06] rounded px-1.5 py-0.5">@you@yourdomain.net</code>. Add an email service (Mailgun, SMTP, or <a href="https://docs.bonfirenetworks.org/Bonfire.Mailer.html" target="_blank">similar</a>) for sign-ups and notifications, and set up DNS records.</p>
+          </div>
+        </li>
+        
+        <li class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 flex gap-5 items-start !py-6" style="--acc:var(--color-corn)">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">3</span>
+          <div class="w-full">
+            <h3 class="font-disp font-[620] text-[1.12rem]">Choose how to run it</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Bonfire can be deployed a few ways, from most hands-off to most hands-on. Pick the one that fits your setup:</p>
+            <div class="mt-3.5 grid grid-cols-1 min-[721px]:grid-cols-2 gap-2.5">
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-leaf mb-1"><a href="https://coopcloud.tech/">Co-op Cloud</a> · recommended</p>
+                <p class="text-ink-2 text-[.9rem]">Tooling built by tech co-ops, with a ready-made Bonfire recipe. Easiest path, and handy if you'll host other open source apps too.</p>
+              </div>
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-ink-3 mb-1">Docker</p>
+                <p class="text-ink-2 text-[.9rem]">Pull our pre-built images (easy mode), or build your own if you want to assemble your own flavour from available extensions.</p>
+              </div>
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-ink-3 mb-1">Bare-metal</p>
+                <p class="text-ink-2 text-[.9rem]">No containers: you run Postgres, Elixir and a process supervisor yourself. Most control, most manual work.</p>
+              </div>
+              <div class="rounded-lg border border-ink/12 bg-ink/[0.02] px-4 py-3">
+                <p class="font-smono text-[.7rem] tracking-[.05em] text-ink-3 mb-1">Guix</p>
+                <p class="text-ink-2 text-[.9rem]">Declarative and reproducible, via the <code class="font-smono text-[.82em]">bonfire-guix</code> channel, for the infrastructure-as-code crowd.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">4</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Pick a flavour &amp; configure</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Choose the flavour that fits: <b class="text-ink font-semibold">community</b>, social, and others each ship a different set of features. Then fill in a <code class="font-smono text-[.85em] text-ink bg-ink/[0.06] rounded px-1.5 py-0.5">.env</code> with your domain, mail keys, etc.</p>
+          </div>
+        </li>
+        
+        <li class="card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 flex gap-5 items-start !py-6">
+          <span class="font-disp font-[620] text-[1.5rem] text-flame/70 leading-none flex-none w-8">5</span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem]">Launch &amp; sign up</h3>
+            <p class="mt-1 text-ink-2 text-[.96rem]">Bring it up behind HTTPS and open your domain. Instances are invite-only by default, the <b class="text-ink font-semibold">first account to sign up skips that and becomes the admin</b>, so you're in control from the first minute.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="flex flex-wrap gap-2.5 mt-8">
+        <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="https://docs.bonfirenetworks.org/setup.html" target="_blank" rel="noopener noreferrer">Full setup guide</a>
+        <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://github.com/bonfire-networks/bonfire-app" target="_blank" rel="noopener noreferrer">Browse the code</a>
+      </div>
+    </div>
+    </section>
+
+    
+    <section id="guided" class="py-[clamp(40px,5vw,64px)] border-t border-ink/[0.07] scroll-mt-[80px]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>You're not on your own</p>
+      <h2 class="font-disp font-[560] text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.08] text-balance max-w-[24ch]">Self-hosting doesn't mean <span class="fire-text">going it alone.</span></h2>
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 rounded-xl border border-ink/15 overflow-hidden mt-7">
+        <div class="p-[22px]">
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Free</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Community support</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Ask for advice in the chat, the easiest door when you hit a snag.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="https://matrix.to/#/%23bonfire-tech:matrix.org" target="_blank" rel="noopener noreferrer">Join us on Matrix →</a>
+        </div>
+        <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Guided</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Set it up together</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">New to servers? We occasionally run <span class="text-ink">community install parties</span> as well as 1-on-1 sessions for clients, to walk you through setup, screen to screen, then hand you the keys.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="/contact">Get in touch →</a>
+        </div>
+        <div class="p-[22px] border-t border-ink/15 min-[821px]:border-t-0 min-[821px]:border-l">
+          <div class="font-smono text-[.64rem] tracking-[.11em] text-ink-3">Hand it off</div>
+          <h3 class="font-disp font-[620] text-[1.05rem] mt-2 mb-1.5">Cooperative hosting</h3>
+          <p class="text-ink-2 text-[.9rem] mb-2.5">Decide the ops aren't for you after all? A co-op can run the whole thing, so you can have your own space without the sysadmin job.</p>
+          <a class="font-smono text-[.7rem] text-spark hover:underline" href="/hosting">Cooperative hosting →</a>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    
+    <section id="other-routes" class="py-[clamp(40px,5vw,72px)] border-t border-ink/[0.07] scroll-mt-[80px]">
+    <div class="max-w-[1180px] mx-auto px-7">
+      <p class="flex items-center gap-3 mb-[18px] font-smono text-[.72rem] font-bold tracking-[.18em] text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Self-hosting not for you?</p>
+      <h2 class="font-disp font-[560] text-[clamp(1.7rem,3.4vw,2.5rem)] leading-[1.08] text-balance max-w-[22ch] mb-8">Three ways in, <span class="corn-text">pick another.</span></h2>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  #routes:has(> article:target) > article:not(:target){opacity:.4;filter:saturate(.55);transition:opacity .35s,filter .35s}
+  #routes > article:target{box-shadow:0 0 0 2px color-mix(in srgb, var(--acc) 60%, transparent);transition:box-shadow .35s}
+</style>
+<div id="routes" class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-4">
+
+  
+  <article id="diy" class="card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[26px] gap-2.5 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)] scroll-mt-[80px] opacity-45 saturate-[.55] hover:!border-ink/15" style="--acc:var(--color-flame)">
+    <span class="flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]"><i class="w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>You run it · you&#39;re here</span>
+    <h2 class="font-disp font-[560] text-[1.4rem] leading-[1.12] mt-0.5">Install Bonfire on your own</h2>
+    <p class="text-ink-2 text-[.97rem]">For those who want to self-host their own Bonfire instance. You'll need to be comfortable with the command line.</p>
+    
+    <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+      <li>Full control, on your own infrastructure</li>
+      <li>AGPL, free forever</li>
+      <li>Docker-based deployment</li>
+    </ul>
+    <span class="font-smono text-[.7rem] text-ink-3 tracking-[.03em] border-t border-ink/[0.07] pt-3.5 mt-1.5">◼ good if: you have a server &amp; some sysadmin comfort</span>
+    <p class="mt-2 font-smono text-[.68rem] text-ink-3 leading-[1.5]">New to servers? We run guided <a class="text-spark hover:underline" href="/self-hosting#guided">install parties &amp; 1-on-1 setup</a>.</p>
+    <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+      
+      <a class="btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="https://docs.bonfirenetworks.org/setup.html">Hosting guide</a>
+      <a class="btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://github.com/bonfire-networks/bonfire-app">Code</a>
+      
+    </div>
+    
+  </article>
+
+  
+  <article id="managed" class="card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[26px] gap-2.5 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)] scroll-mt-[80px] " style="--acc:var(--color-corn)">
+    <span class="flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]"><i class="w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>We run it together</span>
+    <h2 class="font-disp font-[560] text-[1.4rem] leading-[1.12] mt-0.5">Cooperative hosting</h2>
+    <p class="text-ink-2 text-[.97rem]">Join a nascent co-operative ecosystem to operate a sustainable, resilient infrastructure for Bonfire development, hosting, and support.</p>
+    
+    <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+      <li>No servers to look after</li>
+      <li>Updates &amp; backups handled</li>
+      <li>Co-op infrastructure, not a corporate cloud</li>
+    </ul>
+    <span class="font-smono text-[.7rem] text-ink-3 tracking-[.03em] border-t border-ink/[0.07] pt-3.5 mt-1.5">◼ good if: you want your space, not a sysadmin job</span>
+    <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+      <a class="btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="/hosting">Learn more</a>
+      <a class="btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://cal.com/bonfire-networks/meet">Get in touch</a>
+    </div>
+    
+  </article>
+
+  
+  <article id="custom" class="card group rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-[26px] gap-2.5 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)] scroll-mt-[80px] " style="--acc:var(--color-leaf)">
+    <span class="flex items-center gap-[9px] font-smono text-[.66rem] tracking-[.13em] text-[var(--acc)]"><i class="w-2 h-2 flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>We build it with you</span>
+    <h2 class="font-disp font-[560] text-[1.4rem] leading-[1.12] mt-0.5">Go further with Mosaic</h2>
+    <p class="text-ink-2 text-[.97rem]">Rely on the Bonfire team to build a tailored digital space for your community and support you through the whole process.</p>
+    
+    <ul class="list-disc mt-1 pl-[18px] text-ink-2 text-[.9rem] [&_li]:mb-[5px]">
+      <li>Co-design workshops with your people</li>
+      <li>Your identity, governance &amp; integrations</li>
+      <li>Training, ongoing care &amp; co-op hosting</li>
+    </ul>
+    <span class="font-smono text-[.7rem] text-ink-3 tracking-[.03em] border-t border-ink/[0.07] pt-3.5 mt-1.5">◼ good if: your community needs a space shaped around it</span>
+    <div class="flex flex-wrap gap-2.5 mt-auto pt-[18px]">
+      <a class="btn h-auto min-h-0 rounded-full border-0 px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="/mosaic">Learn more</a>
+      <a class="btn btn-ghost h-auto min-h-0 rounded-full px-5 py-[.8rem] font-smono text-[.78rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://cal.com/bonfire-networks/meet">Book a call</a>
+    </div>
+    
+  </article>
+
+</div>
+
+    </div>
+    </section>
+
+    </main>
+  </div>
+</div>
+      
+
+
+
+<div class="bg-night text-ink font-body border-t border-ink/[0.07]">
+  <div class="mx-auto flex flex-col gap-5 px-7 py-7 sm:flex-row sm:items-center sm:justify-between">
+    <a class="group flex items-center gap-3 text-ink focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/" aria-label="Bonfire Networks — home">
+      <span class="block h-10 w-[30px] bg-cover bg-center bg-no-repeat" style="background-image: url(/img/bonfire.png)"></span>
+      <span>
+        <span class="block font-disp text-[1.05rem] font-semibold">Bonfire Networks</span>
+        <span class="block text-[.82rem] text-ink-3 transition-colors group-hover:text-ink-2">Community-owned digital spaces.</span>
+      </span>
+    </a>
+    <div class="flex items-center gap-3">
+      <span class="font-smono text-[.68rem] tracking-[.08em] text-ink-3">OPEN SOURCE</span>
+      <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+    </div>
+  </div>
+
+  <footer class="border-t border-ink/[0.07]">
+    <div class="mx-auto grid grid-cols-2 gap-x-7 gap-y-10 px-7 py-10 sm:grid-cols-4 lg:grid-cols-[1fr_1.15fr_1fr_1fr_1.65fr] lg:py-12">
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-explore">
+        <h2 id="footer-explore" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Explore</h2>
+        <a href="/features" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Features</a>
+        <a href="/compare" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Comparison table</a>
+        <a href="/case-studies" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Case studies</a>
+        <a href="/about" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">About Bonfire</a>
+        <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Try the campground <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-launch">
+        <h2 id="footer-launch" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Launch your Bonfire</h2>
+        <a href="/self-hosting" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Self-host</a>
+        <a href="/hosting" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Cooperative hosting</a>
+        <a href="/mosaic" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Co-design with us</a>
+        <a href="/start" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Compare all three routes</a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-ecosystem">
+        <h2 id="footer-ecosystem" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Ecosystem</h2>
+        <a href="/community" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Participate</a>
+        <a href="/faq" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">FAQs</a>
+        <a href="https://docs.bonfirenetworks.org/" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Documentation <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Browse the source code <span aria-hidden="true">↗</span></a>
+        <a href="/blog" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Blog</a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-integration">
+        <h2 id="footer-integration" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Integration</h2>
+        <a href="/telling" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Telling</a>
+        <a href="/ghost" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Ghost</a>
+      </nav>
+
+      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+        <h2 class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">News from Bonfire</h2>
+        <p class="mb-4 max-w-[34ch] text-[.88rem] leading-6 text-ink-2">Occasional updates about releases, community stories, and ways to take part.</p>
+        <a
+          href="/subscribe"
+          class="inline-flex items-center gap-2 border-b border-spark/35 pb-1 font-smono text-[.74rem] font-bold tracking-[.04em] text-spark transition-[gap,border-color] hover:gap-3 hover:border-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70"
+        >
+          Get Bonfire updates <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="border-y border-ink/[0.07]">
+    <div class="mx-auto flex items-center justify-center px-7 py-8">
+      <div class="flex items-center gap-3">
+        <p class="text-ink-3">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img
+          src="/img/b-nlnet.png"
+          alt="NLNet"
+          width="140"
+          loading="lazy"
+          class="light-img"
+        >
+        <img
+          src="/img/w-nlnet.png"
+          alt="NLNet"
+          width="140"
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto flex max-w-[1140px] flex-col items-center justify-center gap-6 px-7 py-8 sm:flex-row sm:justify-between">
+    <div class="flex items-center gap-8">
+      <a href="https://opencollective.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/oc.svg" alt="Open Collective" width="34" height="34" loading="lazy"></a>
+      <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open source" width="89" height="34" loading="lazy"></a>
+    </div>
+    <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm" aria-label="Legal and contact">
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/contact/">Contact</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/presskit">Press kit</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/conduct">Code of conduct</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/privacy">Privacy</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/">Bonfire Networks 2026</a>
+    </nav>
+  </div>
+</div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
+
+    </div>
+  </div>
+  </body>
+</html>

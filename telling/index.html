@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonfire Telling — Federated Comments for the Open Web</title>
+    <title>The Telling — Federated Comments for the Open Web</title>
     <meta name="description" content="Embed federated comment threads on any static site. Readers reply from Bonfire, Mastodon, or any ActivityPub account. No walled gardens, no surveillance.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,19 +14,19 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <!-- OpenGraph meta tags for social sharing -->
-    <meta property="og:title" content="Bonfire Telling — Federated Comments for the Open Web">
+    <meta property="og:title" content="The Telling — Federated Comments for the Open Web">
     <meta property="og:description" content="Embed federated comment threads on any static site. Readers reply from Bonfire, Mastodon, or any ActivityPub account. No walled gardens, no surveillance.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://bonfirenetworks.org//telling/">
     
     <!-- Twitter card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bonfire Telling — Federated Comments for the Open Web">
+    <meta name="twitter:title" content="The Telling — Federated Comments for the Open Web">
     <meta name="twitter:description" content="Embed federated comment threads on any static site. Readers reply from Bonfire, Mastodon, or any ActivityPub account. No walled gardens, no surveillance.">
     
     
     <link
-    rel="stylesheet" href="/css/style_v2.css?v2">
+    rel="stylesheet" href="/css/style_v2.css?v3.0">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
@@ -34,6 +34,7 @@
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
   </head>
   <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
   <div class="drawer">
@@ -41,239 +42,1026 @@
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
       
-<div class="navbar sticky bg-base-100 top-0 z-10 w-full">
-  <div class="mx-2 flex-1 px-2">
-    <a href="/" class="flex items-center space-x-4">
-      <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-      <span class="lg:flex hidden items-center"><span class="text-base font-bold tracking-wider text-base-content">Bonfire Networks</span> 
-      
-      </span>
-    </a>
-  </div>
-  <div class="hidden flex-none lg:block">
-    <ul class="menu menu-horizontal">
-      <!-- Navbar menu content here -->
-      <li>
-              <a href="/about" role="button" tabindex="0" class="flex font-semiboltext-[15px] items-center gap-2 ">
-                <span>About</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="sticky top-0 z-[70] bg-night/80 backdrop-blur-md border-b border-ink/[0.07] font-body" aria-label="Main">
+<div class="max-w-[1140px] mx-auto px-7 flex items-center h-16 gap-1.5">
+  <a class="flex items-center gap-2.5 flex-none text-ink" href="/" aria-label="Bonfire Networks — home">
+    <div class="bg-center bg-no-repeat bg-cover w-[30px] h-10" style="background-image:url(/img/bonfire.png)"></div>
+    
+  </a>
+  
+  <div class="hidden lg:flex items-center gap-0.5 ml-auto self-stretch">
+    
+    <div class="dropdown place-content-center dropdown-hover ">
+      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Explore <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+          <div class="p-2">
+            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Explore what your community could build.</p>
+          </div>
+          <ul>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/features">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">BUILD</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Features</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Explore the building blocks your community can combine.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
               </a>
             </li>
-            <li class="dropdown">
-                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
-                  <span>Ecosystem</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/20 ml-0! menu mt-2 p-1 bg-base-100 rounded-lg">
-                <li>
-                  <a href="/apps" class="flex flex-col rounded-lg flex-wrap items-start">
-                      <div class="font-bold">Apps</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="/extensions" class="flex flex-col rounded-lg flex-wrap items-start" >
-                      <div class="font-bold">Extensions</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="/hosting" class="flex flex-col rounded-lg flex-wrap items-start" >
-                      <div class="font-bold">Hosting</div>
-                  </a>
-                </li>
-                
-                  
-                
-              </ul>
-            </li>
-            <li class="dropdown">
-                <div tabindex="0" class="flex    font-semiboltext-[15px] items-center gap-2">
-                  <span>Learn</span>
-                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-                </div>
-              <ul tabindex="0" class="dropdown-content min-w-[280px] border border-base-content/30 ml-0! menu mt-2 p-1 bg-base-300 rounded-lg ">
-                <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://doc.bonfirenetworks.org">
-                      <div class="font-semibold">Documentation</div>
-                      <div class="font-light text-sm    -mt-1.5">Dive into using or building on Bonfire</div>
-                  </a>
-                </li>
-                 <li>
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="/design">
-                      <div class="font-semibold">Design</div>
-                      <div class="font-light text-sm    -mt-1.5">Think with Bonfire to create better digital spaces</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/community">
-                      <div class="font-semibold">Community</div>
-                      <div class="font-light text-sm    -mt-1.5">How to participate in the ecosystem</div>
-                  </a>
-                </li>
-                <li>
-                  <a class="flex rounded-lg flex-col flex-wrap items-start" href="/faq">
-                    <div class="font-semibold">FAQ</div>
-                    <div class="text-sm -mt-1.5 font-light   ">Frequently asked questions</div>
-                  </a>
-                </li>
-                
-                
-                <li> 
-                  <a class="flex flex-col rounded-lg flex-wrap items-start" href="https://github.com/bonfire-networks/bonfire-app" target="_blank">
-                    <div class="font-semibold">Get the code</div>
-                    <div class="font-light text-sm    -mt-1.5">Bonfire is open source and AGPL3 licensed</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            
             <li>
-            <a href="/mosaic" class="font-semibold  text-[15px]  ">
-              <span class="">Mosaic</span>
-            </a>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/case-studies">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.6rem] font-bold tracking-[.05em] text-leaf">STORIES</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Case studies</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">See how communities are shaping Bonfire for their needs.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+              </a>
             </li>
-
             <li>
-            <a href="/blog" class="font-semibold  text-[15px]  ">
-              <span class="">News</span>
-            </a>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/compare">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.59rem] font-bold tracking-[.05em] text-corn-2">COMPARE</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">How Bonfire is different</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">See how Bonfire compares to other community platforms.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">→</span>
+              </a>
             </li>
-            <li class="p-0">
-            <a class="p-0" href="/start/" >
-            <span class="btn-sm w-[120px] hidden font-bold normal-case btn btn-primary xl:flex">Get Bonfire</span>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/about">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-ink/15 bg-ink/[0.04] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-ink-2">ABOUT</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">About Bonfire</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Meet the project, principles, and people behind it.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-ink" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">
+            <span><b class="font-bold">Want to look around?</b> Try Bonfire at the campground.</span>
+            <span aria-hidden="true">↗</span>
           </a>
-          </li>
-    </ul>
+        </div>
+      </div>
+    </div>
+	    <div class="dropdown place-content-center dropdown-hover ">
+	      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Launch your Bonfire <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+	      <div class="dropdown-content z-[80] pt-2">
+	        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+	          <div class="p-2">
+	            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Choose how much you want to run yourself.</p>
+	            
+	          </div>
+	          <ul>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/self-hosting">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">DIY</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Self-host</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Install Bonfire on your own infrastructure.
+                      
+                    </span>
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/hosting">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-corn-2">HOSTED</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Cooperative hosting</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">We handle updates, backups and infrastructure with you. 
+                      
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/mosaic">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-leaf">MOSAIC</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Co-design with us</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Shape a tailored digital space with the Bonfire team. 
+                      
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	          </ul>
+	          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/start">
+	            <span><b class="font-bold">Not sure yet?</b> Compare all three routes.</span>
+	            <span aria-hidden="true">→</span>
+	          </a>
+	        </div>
+	      </div>
+	    </div>
+    <div class="dropdown dropdown-end place-content-center dropdown-hover ">
+      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Ecosystem <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+          <div class="p-2">
+            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Find people, answers, and tools around Bonfire.</p>
+          </div>
+          <ul>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/community">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-leaf">JOIN</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Participate</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Contribute, collaborate, or help sustain the commons.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/faq">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">ASK</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">FAQs</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Answers about licensing, federation, privacy, and governance.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-corn-2">DOCS</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Documentation</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Setup guides and technical reference for hosts and builders.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">
+            <span><b class="font-bold">Want to build with us?</b> Browse the source code.</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+     <a class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 " href="/blog">Blog</a>
+    <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
   </div>
-  <div class="flex-none lg:hidden">
-    <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        class="inline-block h-6 w-6 stroke-current"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        ></path>
-      </svg>
-    </label>
-  </div>
+  <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+</div></nav>
+
+<div class="hidden sticky top-16 z-[69] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Explore</span>
+  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Explore what your community could build.</p>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/features">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Features</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">BUILD</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Building blocks your community can combine.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/compare">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Comparison table</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">COMPARE</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">How Bonfire differs from other community platforms.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/case-studies">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Case studies</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">STORIES</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">How communities are shaping Bonfire for their needs.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/about">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">About Bonfire</b><span class="font-smono text-[.62rem] tracking-[.08em] text-ink-2">ABOUT</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">The project, principles, and people behind it.</span>
+  </a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try Bonfire at the campground ↗</a>
+	  <span class="block border-t border-ink/[0.07] px-7 pb-1.5 pt-[15px] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Launch your Bonfire</span>
+	  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Choose how much you want to run yourself.</p>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/self-hosting">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Self-host</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">DIY</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Your infrastructure and some sysadmin comfort.</span>
+	  </a>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/hosting">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Cooperative hosting</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">HOST</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Your own space without a sysadmin job.</span>
+	  </a>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/mosaic">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Co-design with us</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">WITH</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">For communities, organisations and funders with specific needs.</span>
+	  </a>
+	  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="/start">Compare all three routes →</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Ecosystem</span>
+  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Find people, answers, and tools around Bonfire.</p>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/community">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Participate</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">JOIN</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Contribute, collaborate, or help sustain the commons.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/faq">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">FAQs</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">ASK</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Licensing, federation, privacy, and governance.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70" href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Documentation</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">DOCS</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Setup guides and technical reference for hosts and builders.</span>
+  </a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Browse the source code ↗</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] " href="/blog">Blog</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.78rem] tracking-[.06em] !text-spark" href="/start">Get started</a>
 </div>
+
+<script>
+(function(){
+"use strict";
+var b=document.getElementById('burger'),d=document.getElementById('v2drawer');
+if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hidden');b.setAttribute('aria-expanded',!hidden);});
+})();
+</script>
 
       
 <style>
-  /* Code syntax highlighting */
-  .telling-code .tag { color: #F0784A; }
-  .telling-code .attr { color: #7DD3FC; }
-  .telling-code .val { color: #86EFAC; }
-  .telling-code .comment { color: rgba(255,255,255,0.25); font-style: italic; }
-  .telling-code .kw { color: #C4B5FD; }
-  .telling-code .fn { color: #7DD3FC; }
-  .telling-code .str { color: #86EFAC; }
-  .telling-code .cmt { color: rgba(255,255,255,0.25); font-style: italic; }
-  .telling-code .file-label {
-    display: block; font-size: 0.7rem;
-    color: rgba(255,255,255,0.3); margin-bottom: 0.4rem;
+  .telling-page {
+    --telling-border: color-mix(in srgb, var(--color-ink) 11%, transparent);
+    --telling-panel: color-mix(in srgb, var(--color-ink) 3%, var(--color-night));
+    background: var(--color-night);
+    color: var(--color-ink);
+  }
+
+  .telling-page > .relative > section {
+    position: relative;
+    padding-block: clamp(4rem, 8vw, 7rem) !important;
+    padding-inline: 1.75rem !important;
+    background: transparent !important;
+    border-bottom: 1px solid var(--telling-border);
+    scroll-margin-top: 4.5rem;
+  }
+
+  .telling-page > .relative > section > div {
+    width: 100%;
+    max-width: 71.25rem !important;
+  }
+
+  .telling-page > .relative > section > div > p:first-child {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin-bottom: .9rem !important;
+    color: var(--color-flame) !important;
+    font-family: var(--font-smono);
+    font-size: .72rem !important;
+    font-weight: 700;
+    letter-spacing: .14em !important;
+    text-transform: uppercase;
+  }
+
+  .telling-page > .relative > section > div > p:first-child::before {
+    width: .55rem;
+    height: .55rem;
+    flex: none;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    content: "";
+  }
+
+  .telling-page h1,
+  .telling-page h2,
+  .telling-page h3,
+  .telling-page h4 {
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp) !important;
+  }
+
+  .telling-page h1 {
+    max-width: 11ch;
+    font-size: clamp(3rem, 6vw, 5.75rem) !important;
+    font-weight: 620 !important;
+    line-height: .98 !important;
+    letter-spacing: -.035em !important;
+    text-wrap: balance;
+  }
+
+  .telling-page h1 em {
+    color: inherit !important;
     font-style: normal;
   }
-  /* Code window dots */
-  .telling-code-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .telling-code-dot:nth-child(1) { background: #FF6058; }
-  .telling-code-dot:nth-child(2) { background: #FFBD2E; }
-  .telling-code-dot:nth-child(3) { background: #27CA40; }
-  /* Copy button states */
-  .telling-copy-btn.copied { background: rgba(74, 222, 128, 0.2); color: #4ADE80; border-color: rgba(74, 222, 128, 0.3); }
-  /* Guide panel animation */
-  .telling-guide-detail { display: none; }
-  .telling-guide-detail.visible { display: block; animation: telling-guideIn 0.3s ease; }
-  @keyframes telling-guideIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+
+  .telling-page h2 {
+    max-width: 17ch;
+    margin-bottom: 1rem !important;
+    font-size: clamp(2rem, 4vw, 3.25rem) !important;
+    font-weight: 560 !important;
+    line-height: 1.04;
+    letter-spacing: -.025em !important;
+    text-wrap: balance;
   }
-  /* Guide detail typography */
-  .telling-guide-detail h3 { font-family: "Noto Serif", serif; font-weight: 600; font-size: 1.1rem; }
-  .telling-guide-detail h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.25rem; }
-  .telling-guide-detail p { font-size: 0.82rem; line-height: 1.6; opacity: 0.6; }
-  /* Guide card active state */
-  .telling-guide-card.active { border-color: var(--color-primary) !important; background: color-mix(in srgb, var(--color-primary) 10%, transparent) !important; }
-  /* Federation badge pulse */
+
+  .telling-page h3 { font-weight: 620 !important; }
+  .telling-page h4 { font-weight: 620 !important; }
+
+  .telling-page section p,
+  .telling-page section dd,
+  .telling-page section cite {
+    color: var(--color-ink-2) !important;
+  }
+
+  .telling-page section > div > h2 + p {
+    max-width: 64ch !important;
+    margin-bottom: clamp(2rem, 5vw, 3.75rem) !important;
+    font-size: 1.02rem !important;
+    line-height: 1.7;
+  }
+
+  .telling-page .btn {
+    min-height: 0;
+    height: auto;
+    padding: .85rem 1.4rem;
+    border-radius: 999px;
+    font-family: var(--font-smono);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .045em;
+  }
+
+  .telling-page .btn-primary {
+    border: 0;
+    color: #221302;
+    background: linear-gradient(135deg, var(--color-spark), var(--color-flame) 55%, var(--color-ember));
+    box-shadow: 0 10px 28px -14px rgba(232, 145, 43, .72);
+  }
+
+  .telling-page .btn-outline {
+    border: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent) !important;
+    color: var(--color-ink);
+    background: color-mix(in srgb, var(--color-ink) 3%, transparent);
+  }
+
+  .telling-page .btn-primary:hover { filter: brightness(1.08); }
+  .telling-page .btn-outline:hover {
+    border-color: color-mix(in srgb, var(--color-flame) 60%, transparent) !important;
+    color: var(--color-spark);
+  }
+
+  .telling-page a:focus-visible,
+  .telling-page button:focus-visible {
+    outline: 2px solid var(--color-spark);
+    outline-offset: 4px;
+  }
+
+  /* Hero */
+  .telling-page > .relative > section:first-child {
+    padding-top: clamp(2.75rem, 5vw, 4.5rem) !important;
+    padding-bottom: clamp(3.5rem, 6vw, 5.5rem) !important;
+  }
+
+  .telling-hero-shell {
+    position: relative;
+  }
+
+  .telling-conversation {
+    position: relative;
+    min-height: clamp(32rem, 49vw, 38rem);
+    overflow: hidden;
+    border-block: 1px solid var(--telling-border);
+    isolation: isolate;
+  }
+
+  .telling-hero-kicker {
+    position: absolute;
+    z-index: 4;
+    top: 1.2rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    color: var(--color-flame);
+    font-family: var(--font-smono);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+
+  .telling-hero-kicker::before {
+    width: .55rem;
+    height: .55rem;
+    flex: none;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    content: "";
+  }
+
+  .telling-hero-network-label {
+    position: absolute;
+    z-index: 4;
+    top: 1.2rem;
+    right: 0;
+    color: var(--color-ink-3);
+    font-family: var(--font-smono);
+    font-size: .67rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .telling-page .telling-conversation h1 {
+    position: absolute;
+    z-index: 3;
+    top: 25%;
+    left: 50%;
+    display: flex;
+    width: min(58rem, 78%);
+    max-width: none;
+    margin: 0;
+    flex-direction: column;
+    font-size: clamp(4.25rem, 7.8vw, 6rem) !important;
+    font-weight: 620 !important;
+    line-height: .86 !important;
+    letter-spacing: -.035em !important;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .telling-hero-line {
+    display: block;
+    width: fit-content;
+  }
+
+  .telling-hero-line:nth-child(2) {
+    align-self: center;
+    margin-top: .08em;
+  }
+
+  .telling-hero-line:last-child {
+    align-self: flex-end;
+    margin-top: .08em;
+  }
+
+  .telling-page .telling-hero-line em {
+    position: relative;
+    color: var(--color-spark) !important;
+  }
+
+  .telling-page .telling-hero-line em::after {
+    position: absolute;
+    right: .02em;
+    bottom: -.04em;
+    left: .03em;
+    height: .09em;
+    border-radius: 999px;
+    background: var(--color-ember);
+    transform: rotate(-1.3deg);
+    content: "";
+  }
+
+  .telling-conversation-map {
+    position: absolute;
+    z-index: 0;
+    inset: 3.1rem 0 0;
+    width: 100%;
+    height: calc(100% - 3.1rem);
+    overflow: visible;
+  }
+
+  .telling-conversation-map path {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-ink) 13%, transparent);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .telling-network-node {
+    fill: color-mix(in srgb, var(--color-ink) 34%, transparent);
+  }
+
+  .telling-network-node--warm {
+    fill: var(--color-flame);
+  }
+
+  .telling-network-node--leaf {
+    fill: var(--color-leaf);
+  }
+
+  .telling-network-node--live {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: telling-network-breathe 4.8s cubic-bezier(.16, 1, .3, 1) infinite;
+  }
+
+  .telling-hero-intro {
+    max-width: 70ch;
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .telling-hero-intro > p {
+    max-width: 70ch;
+    margin: 0 !important;
+    color: var(--color-ink-2) !important;
+    font-size: clamp(1rem, 1.3vw, 1.12rem) !important;
+    line-height: 1.7;
+  }
+
+  .telling-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 1.5rem;
+  }
+
+  @keyframes telling-network-breathe {
+    0%, 100% { opacity: .55; transform: scale(.7); }
+    45% { opacity: 1; transform: scale(1.35); }
+  }
+
+  .telling-hero-quote {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    padding: 1.15rem 0 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--telling-border) !important;
+  }
+
+  .telling-hero-quote p {
+    margin: 0;
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp);
+    font-size: 1rem !important;
+    font-style: italic;
+  }
+
+  .telling-hero-quote cite {
+    flex: none;
+    margin: 0 !important;
+    color: var(--color-ink-3) !important;
+    font-family: var(--font-smono);
+    font-size: .7rem !important;
+    letter-spacing: .06em;
+  }
+
+  /* Sequence, features, and philosophy become editorial rows rather than floating cards. */
+  #telling-how .grid,
+  #telling-features .grid {
+    gap: 0;
+    border-block: 1px solid var(--telling-border);
+  }
+
+  #telling-how .grid > div,
+  #telling-features .grid > div {
+    padding: 1.75rem !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  #telling-how .grid > div {
+    border-right: 1px solid var(--telling-border);
+  }
+
+  #telling-how .grid > div:last-child { border-right: 0; }
+
+  #telling-how .grid > div > div:first-child,
+  #telling-features .grid > div > div:first-child {
+    color: var(--color-flame) !important;
+    background: color-mix(in srgb, var(--color-flame) 8%, transparent) !important;
+    border: 1px solid color-mix(in srgb, var(--color-flame) 22%, transparent);
+    font-family: var(--font-smono) !important;
+  }
+
+  #telling-how .grid > div > div:first-child {
+    border-radius: .55rem;
+  }
+
+  #telling-how .grid h3,
+  #telling-features .grid h3 {
+    margin-bottom: .55rem !important;
+    font-size: 1.12rem !important;
+  }
+
+  #telling-how .grid p,
+  #telling-features .grid p {
+    font-size: .94rem !important;
+    line-height: 1.7;
+  }
+
+  #telling-features .grid > div {
+    border-bottom: 1px solid var(--telling-border);
+  }
+
+  #telling-features .grid > div:nth-child(odd) {
+    border-right: 1px solid var(--telling-border);
+  }
+
+  #telling-features .grid > div:last-child,
+  #telling-features .grid > div:nth-last-child(2) { border-bottom: 0; }
+
+  /* Embed and install guides */
+  .telling-code {
+    color: var(--color-ink-2) !important;
+    background: var(--color-night-2);
+    white-space: nowrap;
+  }
+
+  .telling-code .tag { color: var(--color-flame); }
+  .telling-code .attr,
+  .telling-code .fn { color: var(--color-corn-2); }
+  .telling-code .val,
+  .telling-code .str { color: var(--color-leaf); }
+  .telling-code .comment,
+  .telling-code .cmt { color: var(--color-ink-3); font-style: italic; }
+  .telling-code .kw { color: #c9b8f4; }
+  .telling-code .file-label {
+    display: block;
+    margin-bottom: .4rem;
+    color: var(--color-ink-3);
+    font-size: .7rem;
+    font-style: normal;
+  }
+
+  #telling-embed .bg-base-300 {
+    max-width: none !important;
+    border: 1px solid var(--telling-border);
+    border-radius: .75rem !important;
+    background: var(--color-night-2) !important;
+    box-shadow: 0 28px 70px -48px rgba(0, 0, 0, .95) !important;
+  }
+
+  #telling-embed .mt-10 { max-width: none !important; }
+  #telling-embed dl {
+    border-color: var(--telling-border) !important;
+  }
+
+  #telling-embed dl > div {
+    padding-block: .9rem;
+    border-color: var(--telling-border) !important;
+  }
+
+  #telling-embed dt {
+    color: var(--color-flame) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .telling-copy-btn {
+    border-color: var(--telling-border) !important;
+    color: var(--color-ink-2) !important;
+    background: var(--color-night-3) !important;
+    font-family: var(--font-smono);
+  }
+
+  .telling-copy-btn:hover {
+    border-color: color-mix(in srgb, var(--color-flame) 45%, transparent) !important;
+    color: var(--color-spark) !important;
+  }
+
+  .telling-copy-btn.copied {
+    border-color: color-mix(in srgb, var(--color-leaf) 32%, transparent) !important;
+    color: var(--color-leaf) !important;
+    background: color-mix(in srgb, var(--color-leaf) 8%, var(--color-night-3)) !important;
+  }
+
+  .telling-code-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .telling-code-dot:nth-child(1) { background: var(--color-ember); }
+  .telling-code-dot:nth-child(2) { background: var(--color-flame); }
+  .telling-code-dot:nth-child(3) { background: var(--color-leaf); }
+
+  .telling-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    border-top: 1px solid var(--telling-border);
+    border-left: 1px solid var(--telling-border);
+  }
+
+  .telling-stack-item {
+    display: flex;
+    min-height: 8.75rem;
+    padding: 1.2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--telling-border);
+    border-bottom: 1px solid var(--telling-border);
+    color: var(--color-ink-2);
+    background: transparent;
+  }
+
+  .telling-stack-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-ink);
+  }
+
+  .telling-stack-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .6rem;
+  }
+
+  .telling-stack-name {
+    color: var(--color-ink-2);
+    font-family: var(--font-disp);
+    font-size: .9rem;
+    font-weight: 580;
+  }
+
+  .telling-stack-kind {
+    color: var(--color-ink-3);
+    font-family: var(--font-smono);
+    font-size: .56rem;
+    font-weight: 650;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .telling-stack-item:nth-child(3n + 1) .telling-stack-icon { color: var(--color-spark); }
+  .telling-stack-item:nth-child(3n + 2) .telling-stack-icon { color: var(--color-leaf); }
+
+  .telling-stack-note {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 0 0;
+    color: var(--color-ink-3);
+    font-family: var(--font-smono);
+    font-size: .66rem;
+    letter-spacing: .055em;
+  }
+
+  .telling-stack-note strong {
+    color: var(--color-spark);
+    font-weight: 700;
+  }
+
+  /* Philosophy */
+  #telling-philosophy h2 {
+    max-width: 20ch;
+    margin-bottom: clamp(2.75rem, 5vw, 4.25rem) !important;
+  }
+
+  .telling-philosophy-grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(20rem, .88fr);
+    align-items: start !important;
+    gap: clamp(4rem, 7vw, 6.5rem) !important;
+  }
+
+  .telling-philosophy-quote {
+    position: relative;
+    padding-left: clamp(2.75rem, 4vw, 3.75rem);
+  }
+
+  #telling-philosophy blockquote {
+    max-width: 30ch;
+    margin-bottom: 1rem !important;
+    color: var(--color-ink) !important;
+    font-family: var(--font-disp) !important;
+    font-size: clamp(1.55rem, 2.15vw, 2.15rem) !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.32 !important;
+    letter-spacing: -.02em;
+  }
+
+  #telling-philosophy blockquote span {
+    position: absolute;
+    top: -.1em;
+    left: 0;
+    color: var(--color-flame) !important;
+    font-size: clamp(3.5rem, 5vw, 5rem) !important;
+    line-height: 1;
+  }
+
+  .telling-philosophy-quote cite {
+    display: block;
+    margin-top: 1.25rem;
+    color: var(--color-ink-3) !important;
+    font-family: var(--font-smono);
+    font-size: .74rem !important;
+    letter-spacing: .035em;
+  }
+
+  .telling-philosophy-principles {
+    gap: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .telling-philosophy-principles > div {
+    padding: 0 0 1.65rem !important;
+    margin-bottom: 1.65rem;
+    border: 0 !important;
+    border-bottom: 1px solid var(--telling-border) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .telling-philosophy-principles > div:last-child {
+    margin-bottom: 0;
+  }
+
+  #telling-philosophy h4 {
+    margin-bottom: .55rem !important;
+    color: var(--color-spark) !important;
+    font-size: 1.05rem !important;
+  }
+
+  .telling-philosophy-principles p {
+    max-width: 52ch;
+    font-size: .94rem !important;
+    line-height: 1.65;
+  }
+
+  .telling-page > .relative > section:last-child {
+    border-bottom: 0;
+    background: color-mix(in srgb, var(--color-flame) 4%, var(--color-night)) !important;
+  }
+
   @keyframes telling-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    50% { opacity: .45; }
   }
   .telling-pulse { animation: telling-pulse 2s ease-in-out infinite; }
+
+  @media (max-width: 899px) {
+    .telling-hero-intro { max-width: 44rem; }
+    .telling-stack-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 1149px) {
+    .telling-philosophy-grid {
+      grid-template-columns: 1fr;
+      gap: clamp(3rem, 7vw, 4.5rem) !important;
+    }
+    .telling-philosophy-quote { max-width: 48rem; }
+    .telling-philosophy-principles { max-width: 48rem; }
+  }
+
+  @media (max-width: 767px) {
+    .telling-page > .relative > section { padding-inline: 1.25rem !important; }
+    .telling-conversation {
+      min-height: 37rem;
+    }
+    .telling-hero-network-label {
+      top: 1.15rem;
+      max-width: 10rem;
+      font-size: .58rem;
+      line-height: 1.4;
+      text-align: right;
+    }
+    .telling-page .telling-conversation h1 {
+      top: 11%;
+      left: 0;
+      width: 100%;
+      font-size: clamp(3.45rem, 16vw, 4.5rem) !important;
+      line-height: .9 !important;
+      transform: none;
+    }
+    .telling-hero-line:nth-child(2) {
+      align-self: flex-start;
+      margin-top: .1em;
+      margin-left: .55em;
+    }
+    .telling-hero-line:last-child {
+      align-self: flex-end;
+      margin-top: .1em;
+    }
+    .telling-conversation-map {
+      inset: 3.1rem -1rem 0;
+      width: calc(100% + 2rem);
+      height: calc(100% - 3.1rem);
+    }
+    .telling-hero-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+    .telling-hero-actions .btn {
+      justify-content: center;
+      padding-inline: .8rem;
+    }
+    .telling-stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .telling-stack-item {
+      min-height: 7.5rem;
+      padding: 1rem;
+    }
+    .telling-stack-note {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: .3rem;
+      line-height: 1.5;
+    }
+    #telling-how .grid > div {
+      border-right: 0;
+      border-bottom: 1px solid var(--telling-border);
+    }
+    #telling-how .grid > div:last-child { border-bottom: 0; }
+    #telling-features .grid > div { border-right: 0 !important; }
+    #telling-features .grid > div:nth-last-child(2) { border-bottom: 1px solid var(--telling-border); }
+    .telling-hero-quote {
+      display: block;
+      padding-top: 1rem !important;
+    }
+    .telling-hero-quote cite { margin-top: .45rem !important; }
+    #telling-philosophy h2 {
+      margin-bottom: 2.5rem !important;
+    }
+    .telling-philosophy-quote {
+      padding-left: 2.4rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .telling-pulse,
+    .telling-network-node--live { animation: none; }
+    .telling-page * { scroll-behavior: auto !important; }
+  }
 </style>
 
-<div class="telling-page">
+<div class="telling-page relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+<div class="v2-ambient" aria-hidden="true"></div>
+<div class="relative z-[1]">
 
 <!-- ── HERO ── -->
 <section class="pt-16 pb-12 lg:pt-24 lg:pb-20 px-4 lg:px-0" aria-labelledby="telling-hero-heading">
-  <div class="max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-    <div>
-      <h1 id="telling-hero-heading" class="text-4xl lg:text-6xl lg:leading-[72px] font-bold tracking-tight text-base-content serif-bold">Every site<br/>deserves a <em class="text-primary italic">voice</em></h1>
-      <p class="text-lg lg:text-xl mt-6 text-base-content/80 max-w-lg">
-        Bonfire Telling brings federated conversations to the open web.
-        Embed a comment thread on any static site — readers reply from
-        their Bonfire, Mastodon, or any ActivityPub account.
-        No walled gardens. No surveillance. Just people talking.
-      </p>
-      <div class="flex gap-4 mt-8 flex-wrap">
-        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the Embed</a>
-        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See How It Works</a>
-      </div>
-      <div class="mt-10 pl-5 border-l-2 border-primary/40">
-        <p class="serif-regular italic text-base text-base-content/60">"To learn a belief without belief is to sing a song without the tune."</p>
-        <cite class="block mt-2 text-xs tracking-wider uppercase text-base-content/40 not-italic">Ursula K. Le Guin — The Telling (2000)</cite>
-      </div>
+  <div class="telling-hero-shell max-w-screen-xl mx-auto">
+    <div class="telling-conversation">
+      <div class="telling-hero-kicker">The Telling</div>
+      <div class="telling-hero-network-label">Federated comments for the open web</div>
+
+      <svg class="telling-conversation-map" viewBox="0 0 1140 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g>
+          <path d="M58 104 L206 68 L352 142 L512 82 L672 152 L842 74 L1064 128" />
+          <path d="M24 314 L176 252 L334 330 L502 236 L676 316 L852 230 L1114 296" />
+          <path d="M54 506 L226 438 L392 512 L556 420 L724 494 L916 414 L1090 486" />
+          <path d="M206 68 L176 252 L226 438" />
+          <path d="M352 142 L334 330 L392 512" />
+          <path d="M512 82 L502 236 L556 420" />
+          <path d="M672 152 L676 316 L724 494" />
+          <path d="M842 74 L852 230 L916 414" />
+          <path d="M1064 128 L1114 296 L1090 486" />
+          <path d="M58 104 L176 252 L54 506" />
+          <path d="M334 330 L512 82" />
+          <path d="M502 236 L724 494" />
+          <path d="M676 316 L842 74" />
+          <path d="M852 230 L1090 486" />
+        </g>
+        <g>
+          <circle class="telling-network-node" cx="58" cy="104" r="3" />
+          <circle class="telling-network-node telling-network-node--warm telling-network-node--live" cx="206" cy="68" r="5" />
+          <circle class="telling-network-node" cx="352" cy="142" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf" cx="512" cy="82" r="4" />
+          <circle class="telling-network-node" cx="672" cy="152" r="3" />
+          <circle class="telling-network-node" cx="842" cy="74" r="3" />
+          <circle class="telling-network-node telling-network-node--warm" cx="1064" cy="128" r="4" />
+          <circle class="telling-network-node" cx="24" cy="314" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf telling-network-node--live" cx="176" cy="252" r="4" />
+          <circle class="telling-network-node" cx="334" cy="330" r="3" />
+          <circle class="telling-network-node telling-network-node--warm" cx="502" cy="236" r="4" />
+          <circle class="telling-network-node" cx="676" cy="316" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf" cx="852" cy="230" r="4" />
+          <circle class="telling-network-node" cx="1114" cy="296" r="3" />
+          <circle class="telling-network-node" cx="54" cy="506" r="3" />
+          <circle class="telling-network-node telling-network-node--warm" cx="226" cy="438" r="4" />
+          <circle class="telling-network-node" cx="392" cy="512" r="3" />
+          <circle class="telling-network-node telling-network-node--leaf" cx="556" cy="420" r="4" />
+          <circle class="telling-network-node" cx="724" cy="494" r="3" />
+          <circle class="telling-network-node telling-network-node--warm telling-network-node--live" cx="916" cy="414" r="5" />
+          <circle class="telling-network-node" cx="1090" cy="486" r="3" />
+        </g>
+      </svg>
+
+      <h1 id="telling-hero-heading">
+        <span class="telling-hero-line">Every site</span>
+        <span class="telling-hero-line">deserves a</span>
+        <span class="telling-hero-line"><em>voice.</em></span>
+      </h1>
+
     </div>
 
-    <div class="relative order-first lg:order-last">
-      <div class="absolute -top-3 right-5 z-10 bg-base-content text-base-100 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide shadow-lg flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-green-400 telling-pulse"></span>
-        Federated via ActivityPub
+    <div class="telling-hero-intro">
+      <p>
+      The Telling adds a comment thread to anything you publish: a blog, a newsroom, a CMS or static site. Readers reply with an account they already have, on Bonfire, Mastodon, or anywhere else on the fediverse or the ATmosphere. The discussion lives on your own server, not a third party's, and you can take it with you.
+      </p>
+      <div class="telling-hero-actions">
+        <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
+        <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
       </div>
-      <div class="bg-base-200 rounded-2xl shadow-xl overflow-hidden border border-base-content/10">
-        <div class="px-5 py-4 border-b border-base-content/10 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-primary" viewBox="0 0 18 18" fill="none"><path d="M9 3 C7.5 5.5, 6 8, 6 10 C6 12.2 7.3 13.5 9 13.5 C10.7 13.5 12 12.2 12 10 C12 8 10.5 5.5 9 3Z" fill="currentColor"/></svg>
-            <span class="serif-bold text-base text-base-content">Bonfire Telling</span>
-          </div>
-          <span class="text-sm text-base-content/50">3 voices</span>
-        </div>
-        <div class="px-5 py-3">
-          <div class="py-3 border-b border-base-content/5">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#5B7FE8;">A</div>
-              <span class="text-sm font-medium text-base-content">ada</span>
-              <span class="text-xs text-base-content/50">@bonfire.cafe</span>
-            </div>
-            <p class="text-sm text-base-content/70 pl-9">This is exactly the kind of tooling the fediverse needs. Finally, blogs can be part of the conversation again.</p>
-          </div>
-          <div class="py-3 border-b border-base-content/5">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#E85B8A;">M</div>
-              <span class="text-sm font-medium text-base-content">mika</span>
-              <span class="text-xs text-base-content/50">@mastodon.social</span>
-            </div>
-            <p class="text-sm text-base-content/70 pl-9">Replied from Mastodon and it just showed up here. Beautiful.</p>
-          </div>
-          <div class="py-3">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold text-white" style="background:#4ADE80;">R</div>
-              <span class="text-sm font-medium text-base-content">river</span>
-              <span class="text-xs text-base-content/50">@community.garden</span>
-            </div>
-            <p class="text-sm text-base-content/70 pl-9">No tracking, no ads, no login wall. This is how the web should work.</p>
-          </div>
-        </div>
-        <div class="px-5 py-3 border-t border-base-content/10 flex gap-3 items-start">
-          <div class="flex-1 px-3 py-2 border border-base-content/10 rounded-lg text-sm text-base-content/40 bg-base-300">Join Bonfire Telling...</div>
-          <button class="btn btn-primary btn-sm" type="button" aria-hidden="true">Reply</button>
-        </div>
-      </div>
+      <p class="mt-5 text-sm text-base-content/60">
+        Try it before you install it: we run the Telling on this very site. Leave a reply on <a href="/blog" class="text-primary hover:underline">any of our posts</a> and watch it federate.
+      </p>
+    </div>
+
+    <div class="telling-hero-quote">
+      <p>"To learn a belief without belief is to sing a song without the tune."</p>
+      <cite class="block not-italic">Ursula K. Le Guin - The Telling (2000)</cite>
     </div>
   </div>
 </section>
@@ -281,22 +1069,21 @@
 <!-- ── HOW IT WORKS ── -->
 <section class="py-12 lg:py-20 px-4 bg-base-300/30" id="telling-how" aria-labelledby="telling-how-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">How It Works</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-how-heading">Three lines of code.<br/>A universe of voices.</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">How it works</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-how-heading">One script tag,<br/>comments on every page.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      Add Bonfire Telling to any blog, documentation site, or static page.
-      Comments flow through the fediverse and appear as threads on your site.
+      Add the Telling to any blog, documentation site, or static page. Comments flow through the fediverse and appear as a thread under your post.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">1</div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Embed the iframe</h3>
-        <p class="text-base text-base-content/70">Paste a single HTML snippet into your page template. Bonfire Telling widget loads in an iframe, fully styled and self-contained — no JavaScript bundles, no build steps.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Embed the script</h3>
+        <p class="text-base text-base-content/70">Paste a single script tag into your page template. The Telling widget loads and renders itself, fully styled and self-contained.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">2</div>
         <h3 class="text-xl font-bold text-base-content mb-2">Readers join from anywhere</h3>
-        <p class="text-base text-base-content/70">Visitors reply using their Bonfire, Mastodon, Pleroma, or any ActivityPub-compatible account. No new signups. No platform lock-in. Their identity travels with them.</p>
+        <p class="text-base text-base-content/70">Visitors reply using their Bonfire, Mastodon, Pleroma, or any ActivityPub-compatible account. Readers keep the identity they already have, with no new sign-up and no lock-in.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center serif-bold text-lg mb-4">3</div>
@@ -310,10 +1097,10 @@
 <!-- ── EMBED CODE ── -->
 <section class="py-12 lg:py-20 px-4" id="telling-embed" aria-labelledby="telling-embed-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Get Started</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-embed-heading">Copy. Paste. Federate.</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Get started</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-embed-heading">One tag, and you're live.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      That's it. No API keys, no tracking scripts, no account required.
+      No API keys, no tracking scripts, no account to create.
     </p>
     <div class="bg-base-300 rounded-2xl overflow-hidden max-w-2xl shadow-xl relative">
       <button class="telling-copy-btn absolute top-3 right-4 bg-base-content/10 border border-base-content/10 text-base-content/60 rounded-lg px-3 py-2 text-xs font-medium cursor-pointer hover:bg-base-content/20 hover:text-base-content transition-all inline-flex items-center gap-1.5" type="button" onclick="tellingCopyEmbed(this)" aria-label="Copy embed code">
@@ -324,17 +1111,64 @@
         <span class="telling-code-dot"></span>
         <span class="telling-code-dot"></span>
         <span class="telling-code-dot"></span>
-        <span class="ml-auto text-xs text-base-content/30">your-blog.html</span>
+        
       </div>
       <div class="telling-code p-6 font-mono text-sm leading-7 text-base-content/70 overflow-x-auto">
-        <span class="comment">&lt;!-- Add Bonfire Telling to any page --&gt;</span><br/>
-        <span class="tag">&lt;iframe</span><br/>
-        &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed"</span><br/>
-        &nbsp;&nbsp;<span class="attr">data-page</span>=<span class="val">"{{ page.url }}"</span><br/>
-        &nbsp;&nbsp;<span class="attr">title</span>=<span class="val">"Bonfire Telling Comments"</span><br/>
-        &nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%; border:none; min-height:400px;"</span><br/>
-        <span class="tag">&gt;&lt;/iframe&gt;</span>
+        <span class="comment">&lt;!-- Add the Telling to any page --&gt;</span><br/>
+        <span class="tag">&lt;script</span><br/>
+        &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://your-instance.social/js/comments_embed.js"</span><br/>
+        &nbsp;&nbsp;<span class="attr">data-theme</span>=<span class="val">"dark"</span><br/>
+        &nbsp;&nbsp;<span class="attr">data-mode</span>=<span class="val">"nested"</span><br/>
+        &nbsp;&nbsp;<span class="attr">async</span><br/>
+        <span class="tag">&gt;&lt;/script&gt;</span>
       </div>
+    </div>
+
+    <div class="mt-10 max-w-2xl">
+      <h3 class="text-lg font-bold text-base-content mb-1">Options</h3>
+      <p class="text-base text-base-content/60 mb-5">Only <code>src</code> is required. The thread defaults to the current page URL, so on most sites the tag above is all you need. Add any of these <code>data-</code> attributes to tune it:</p>
+      <dl class="divide-y divide-base-content/10 border-y border-base-content/10 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-theme</dt>
+          <dd class="text-base-content/70">DaisyUI theme to apply inside the widget, e.g. <code>"dark"</code> or <code>"light"</code>.</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-mode</dt>
+          <dd class="text-base-content/70">Initial thread display: <code>"flat"</code> or <code>"nested"</code> (default: the instance/user setting).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-sort-by</dt>
+          <dd class="text-base-content/70">Initial sort: <code>"latest_reply"</code>, <code>"reply_count"</code>, <code>"boost_count"</code>, <code>"like_count"</code>, <code>"popularity_score"</code>, or <code>"newest"</code> (default: thread order).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-sort-order</dt>
+          <dd class="text-base-content/70">Sort direction for the chosen sort: <code>"asc"</code> or <code>"desc"</code> (default: per sort type).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-media-uri</dt>
+          <dd class="text-base-content/70">Find or create the thread for this URL (default: the current page URL).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-canonical-slug</dt>
+          <dd class="text-base-content/70">Match the thread by the post's slug on your own site (e.g. a Ghost post slug) instead of the URL.</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-canonical-id</dt>
+          <dd class="text-base-content/70">Match the thread by the post's ID on your own site (e.g. a Ghost post ID).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-post-id</dt>
+          <dd class="text-base-content/70">Target a specific Bonfire post/thread ID directly (otherwise the media URI is used).</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-published-at</dt>
+          <dd class="text-base-content/70">Publication date of the article (ISO 8601 or <code>YYYY-MM-DD</code>). Backdates a newly created thread, so a backfilled or older article doesn't jump to the top of feeds. Future dates are ignored. Ghost articles are already backdated via the API, so this is mainly for other sites.</dd>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
+          <dt class="font-mono text-primary">data-token-max-age</dt>
+          <dd class="text-base-content/70">Hours before the stored sign-in token is treated as stale and the reader is asked to re-authenticate (default: <code>720</code>, i.e. 30 days). The server enforces a hard maximum regardless.</dd>
+        </div>
+      </dl>
     </div>
   </div>
 </section>
@@ -342,592 +1176,121 @@
 <!-- ── FRAMEWORK GUIDES ── -->
 <section class="py-12 lg:py-20 px-4" id="telling-guides" aria-labelledby="telling-guides-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Install Guides</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Set up The Telling on your stack</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Works everywhere</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-guides-heading">Any stack. One script.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      Choose your framework or CMS. Each guide walks you through adding
-      federated comments in under five minutes.
+      Framework, CMS, static site generator, or plain HTML—the same embed drops into the page and gets out of your way.
     </p>
 
-    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-10">
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="jekyll" role="button" tabindex="0" onclick="tellingShowGuide('jekyll')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('jekyll')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#CC0000" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="serif" font-size="20" font-weight="700" fill="#CC0000">J</text></svg>
-        </div>
-        <span>Jekyll</span>
+    <div class="telling-stack-grid" role="list" aria-label="Compatible web platforms">
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--html5] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">HTML</span><span class="telling-stack-kind">Web</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="eleventy" role="button" tabindex="0" onclick="tellingShowGuide('eleventy')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('eleventy')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#1A1714" opacity="0.08"/><text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#C4BFB8">11ty</text></svg>
-        </div>
-        <span>Eleventy</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--react] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">React</span><span class="telling-stack-kind">Framework</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="hugo" role="button" tabindex="0" onclick="tellingShowGuide('hugo')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('hugo')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#FF4088" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#FF4088">H</text></svg>
-        </div>
-        <span>Hugo</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--vuedotjs] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Vue</span><span class="telling-stack-kind">Framework</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="ghost" role="button" tabindex="0" onclick="tellingShowGuide('ghost')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('ghost')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff" opacity="0.08"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#C4BFB8">G</text></svg>
-        </div>
-        <span>Ghost</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--svelte] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Svelte</span><span class="telling-stack-kind">Framework</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="wordpress" role="button" tabindex="0" onclick="tellingShowGuide('wordpress')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('wordpress')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#21759B" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#21759B">W</text></svg>
-        </div>
-        <span>WordPress</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--nextdotjs] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Next.js</span><span class="telling-stack-kind">Framework</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="astro" role="button" tabindex="0" onclick="tellingShowGuide('astro')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('astro')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#BC52EE" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#BC52EE">A</text></svg>
-        </div>
-        <span>Astro</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--astro] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Astro</span><span class="telling-stack-kind">Generator</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="nextjs" role="button" tabindex="0" onclick="tellingShowGuide('nextjs')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('nextjs')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff" opacity="0.08"/><text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#C4BFB8">N</text></svg>
-        </div>
-        <span>Next.js</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--wordpress] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">WordPress</span><span class="telling-stack-kind">CMS</span></div>
       </div>
-      <div class="telling-guide-card flex flex-col items-center gap-3 p-4 rounded-xl border border-base-content/10 bg-base-content/5 cursor-pointer transition-all hover:bg-base-content/10 hover:border-primary/30 text-base-content" data-guide="html" role="button" tabindex="0" onclick="tellingShowGuide('html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tellingShowGuide('html')}">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#E8652B" opacity="0.1"/><text x="20" y="26" text-anchor="middle" font-family="monospace" font-size="14" font-weight="700" fill="#E8652B">&lt;/&gt;</text></svg>
-        </div>
-        <span>HTML</span>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--ghost] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Ghost</span><span class="telling-stack-kind">CMS</span></div>
       </div>
-    </div>
-
-    <!-- Guide detail panels -->
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-jekyll">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="serif" font-size="18" font-weight="700" fill="#CC0000">J</text></svg>
-          <h3>Jekyll</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--drupal] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Drupal</span><span class="telling-stack-kind">CMS</span></div>
       </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Create the include</h4>
-            <p>Add a new file in your <code>_includes</code> directory.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">_includes/telling.html</span>
-              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={{ page.url | absolute_url }}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={{ page.title | url_encode }}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
-              <span class="tag">&lt;/section&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Add to your post layout</h4>
-            <p>Include the partial in your post layout, right after the content.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">_layouts/post.html</span>
-              <span class="cmt">&lt;!-- after your post content --&gt;</span><br/>
-              {{ content }}<br/><br/>
-              {% include telling.html %}
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Deploy</h4>
-            <p>Build and deploy as usual. Works with GitHub Pages out of the box.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="fn">$</span> bundle exec jekyll build<br/>
-              <span class="fn">$</span> jekyll serve <span class="cmt"># preview locally</span>
-            </div>
-          </div>
-        </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--eleventy] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Eleventy</span><span class="telling-stack-kind">Generator</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--hugo] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Hugo</span><span class="telling-stack-kind">Generator</span></div>
+      </div>
+      <div class="telling-stack-item" role="listitem">
+        <span class="icon-[simple-icons--jekyll] telling-stack-icon" aria-hidden="true"></span>
+        <div class="telling-stack-meta"><span class="telling-stack-name">Jekyll</span><span class="telling-stack-kind">Generator</span></div>
       </div>
     </div>
-
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-eleventy">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#fff">11ty</text></svg>
-          <h3>Eleventy (11ty)</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Create a shortcode or partial</h4>
-            <p>Add a Nunjucks/Liquid include file in your <code>_includes</code> folder.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">_includes/telling.njk</span>
-              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={{ page.url }}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={{ title | urlencode }}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
-              <span class="tag">&lt;/section&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Include in your post layout</h4>
-            <p>Add the include to your base post template.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">_includes/layouts/post.njk</span>
-              {{ content | safe }}<br/><br/>
-              {% include "telling.njk" %}
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Build &amp; preview</h4>
-            <p>That's it. Run your 11ty build and comments are live on every post.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="fn">$</span> npx @11ty/eleventy --serve
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="telling-stack-note">
+      <span><strong>One embed</strong> · no SDK · no build plugin</span>
+      <span>If it renders HTML, it works.</span>
     </div>
 
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-hugo">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#FF4088">H</text></svg>
-          <h3>Hugo</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Create a partial</h4>
-            <p>Add a comments partial in your theme's <code>layouts/partials</code> directory.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">layouts/partials/telling.html</span>
-              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={{ .Permalink }}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={{ .Title | urlquery }}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
-              <span class="tag">&lt;/section&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Include in single.html</h4>
-            <p>Add the partial to your single post layout after the content block.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">layouts/_default/single.html</span>
-              {{ .Content }}<br/><br/>
-              {{ partial "telling.html" . }}
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Build</h4>
-            <p>Run Hugo. Comments appear on every post page automatically.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="fn">$</span> hugo server <span class="cmt"># dev preview</span><br/>
-              <span class="fn">$</span> hugo <span class="cmt"># production build</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-ghost">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">G</text></svg>
-          <h3>Ghost</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Edit your theme's post template</h4>
-            <p>Open <code>post.hbs</code> in your Ghost theme and add The Telling embed after the post content.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">post.hbs</span>
-              <span class="cmt">&lt;!-- after {{content}} --&gt;</span><br/><br/>
-              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url={{url absolute="true"}}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title={{encode title}}"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
-              <span class="tag">&lt;/section&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Upload your theme</h4>
-            <p>Zip and upload the modified theme via Ghost Admin &rarr; Settings &rarr; Design &rarr; Change theme.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="fn">$</span> cd my-ghost-theme<br/>
-              <span class="fn">$</span> npx gscan . <span class="cmt"># validate</span><br/>
-              <span class="fn">$</span> zip -r theme.zip . <span class="cmt"># package</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Alternative: Code injection</h4>
-            <p>If you can't modify the theme, use Ghost's Code Injection for a site-wide embed.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">Ghost Admin &rarr; Code injection</span>
-              <span class="tag">&lt;script&gt;</span><br/>
-              &nbsp;&nbsp;<span class="kw">const</span> post = document.querySelector(<span class="str">'.post-content'</span>);<br/>
-              &nbsp;&nbsp;<span class="kw">if</span> (post) {<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> f = document.createElement(<span class="str">'iframe'</span>);<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;f.src = <span class="str">`https://telling.bonfire.cafe/embed?url=${location.href}`</span>;<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;f.style.cssText = <span class="str">'width:100%;border:none;min-height:400px'</span>;<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;post.after(f);<br/>
-              &nbsp;&nbsp;}<br/>
-              <span class="tag">&lt;/script&gt;</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-wordpress">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#21759B">W</text></svg>
-          <h3>WordPress</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Add to your theme's single.php</h4>
-            <p>Open your theme's <code>single.php</code> and add the embed after the content loop.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">single.php</span>
-              <span class="cmt">&lt;?php // after the_content() ?&gt;</span><br/><br/>
-              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=&lt;?php the_permalink(); ?&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;title=&lt;?php echo urlencode(get_the_title()); ?&gt;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">&gt;&lt;/iframe&gt;</span><br/>
-              <span class="tag">&lt;/section&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Disable default comments (optional)</h4>
-            <p>Add this to <code>functions.php</code> to replace WordPress comments.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">functions.php</span>
-              <span class="cmt">// Disable default WP comments</span><br/>
-              <span class="kw">add_filter</span>(<span class="str">'comments_open'</span>,<br/>
-              &nbsp;&nbsp;<span class="str">'__return_false'</span>);<br/>
-              <span class="kw">add_filter</span>(<span class="str">'comments_array'</span>,<br/>
-              &nbsp;&nbsp;<span class="str">'__return_empty_array'</span>);
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Alternative: use a shortcode</h4>
-            <p>Register a shortcode and drop <code>[telling]</code> into any post.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">functions.php</span>
-              <span class="kw">add_shortcode</span>(<span class="str">'telling'</span>, <span class="kw">function</span>() {<br/>
-              &nbsp;&nbsp;<span class="kw">return</span> <span class="str">'&lt;iframe src="https://telling.bonfire.cafe<br/>&nbsp;&nbsp;&nbsp;&nbsp;/embed?url='</span> . <span class="fn">get_permalink</span>() . <span class="str">'"<br/>&nbsp;&nbsp;&nbsp;&nbsp;style="width:100%;border:none;min-height:400px;"<br/>&nbsp;&nbsp;&nbsp;&nbsp;loading="lazy"&gt;&lt;/iframe&gt;'</span>;<br/>
-              });
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-astro">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#BC52EE">A</text></svg>
-          <h3>Astro</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Create a Telling component</h4>
-            <p>Add a reusable <code>.astro</code> component for the embed.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">src/components/Telling.astro</span>
-              <span class="kw">---</span><br/>
-              <span class="kw">const</span> { url, title } = <span class="fn">Astro</span>.props;<br/>
-              <span class="kw">---</span><br/><br/>
-              <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"comments"</span><span class="tag">&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>=<span class="val">{`https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=${url}&amp;title=${encodeURIComponent(title)}`}</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;<span class="tag">/&gt;</span><br/>
-              <span class="tag">&lt;/section&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Use in your blog layout</h4>
-            <p>Import and place the component in your blog post layout.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">src/layouts/BlogPost.astro</span>
-              <span class="kw">import</span> Telling <span class="kw">from</span> <span class="str">'../components/Telling.astro'</span>;<br/><br/>
-              <span class="tag">&lt;article&gt;</span><br/>
-              &nbsp;&nbsp;<span class="tag">&lt;slot /&gt;</span><br/>
-              <span class="tag">&lt;/article&gt;</span><br/><br/>
-              <span class="tag">&lt;Telling</span><br/>
-              &nbsp;&nbsp;<span class="attr">url</span>={<span class="fn">Astro</span>.url.href}<br/>
-              &nbsp;&nbsp;<span class="attr">title</span>={frontmatter.title}<br/>
-              <span class="tag">/&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">03</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Build</h4>
-            <p>Works with Astro's static and SSR modes. Zero client-side JS added.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="fn">$</span> npx astro dev <span class="cmt"># preview</span><br/>
-              <span class="fn">$</span> npx astro build <span class="cmt"># production</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-nextjs">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#fff">N</text></svg>
-          <h3>Next.js</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Create a Telling component</h4>
-            <p>Add a React component that renders the iframe. Works as a server component.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">components/Telling.tsx</span>
-              <span class="kw">export default function</span> <span class="fn">Telling</span>({<br/>
-              &nbsp;&nbsp;url, title<br/>
-              }: { url: string; title: string }) {<br/>
-              &nbsp;&nbsp;<span class="kw">return</span> (<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">src</span>={<span class="str">`https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?url=${url}&amp;title=${encodeURIComponent(title)}`</span>}<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">style</span>={{ width:'100%',border:'none',minHeight:400 }}<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">/&gt;</span><br/>
-              &nbsp;&nbsp;);<br/>
-              }
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Use in your blog page</h4>
-            <p>Import and place after your post content in any page or layout.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">app/blog/[slug]/page.tsx</span>
-              <span class="kw">import</span> Telling <span class="kw">from</span> <span class="str">'@/components/Telling'</span>;<br/><br/>
-              <span class="tag">&lt;article&gt;</span>{content}<span class="tag">&lt;/article&gt;</span><br/>
-              <span class="tag">&lt;Telling</span><br/>
-              &nbsp;&nbsp;<span class="attr">url</span>={<span class="str">`https://mysite.com/blog/${slug}`</span>}<br/>
-              &nbsp;&nbsp;<span class="attr">title</span>={post.title}<br/>
-              <span class="tag">/&gt;</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="telling-guide-detail bg-base-300 rounded-2xl overflow-hidden shadow-xl" id="telling-guide-html">
-      <div class="px-5 py-4 flex items-center justify-between border-b border-base-content/10">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none"><text x="12" y="18" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#E8652B">&lt;/&gt;</text></svg>
-          <h3>Plain HTML</h3>
-        </div>
-        <button class="btn btn-ghost btn-sm text-base-content/40 hover:text-base-content text-xl" onclick="tellingHideGuide()" aria-label="Close guide" type="button">&times;</button>
-      </div>
-      <div class="divide-y divide-base-content/5">
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">01</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Paste the iframe</h4>
-            <p>Add this snippet anywhere in your HTML file. No build tools, no dependencies.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="file-label">index.html</span>
-              <span class="tag">&lt;iframe</span><br/>
-              &nbsp;&nbsp;<span class="attr">src</span>=<span class="val">"https://telling.bonfire.cafe/embed<br/>&nbsp;&nbsp;&nbsp;&nbsp;?url=https://mysite.com/my-post<br/>&nbsp;&nbsp;&nbsp;&nbsp;&amp;title=My%20Blog%20Post"</span><br/>
-              &nbsp;&nbsp;<span class="attr">style</span>=<span class="val">"width:100%;border:none;min-height:400px;"</span><br/>
-              &nbsp;&nbsp;<span class="attr">loading</span>=<span class="val">"lazy"</span><br/>
-              <span class="tag">&gt;&lt;/iframe&gt;</span>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-[60px_1fr_1fr]">
-          <div class="flex items-start justify-center pt-5 serif-bold text-base text-primary">02</div>
-          <div class="py-4 px-4 md:pr-4 md:pl-0">
-            <h4>Auto-detect URL (optional)</h4>
-            <p>Use a tiny script to automatically pass the current page URL.</p>
-          </div>
-          <div class="py-4 px-4 md:pr-5 md:pl-0">
-            <div class="telling-code bg-base-content/5 rounded-lg p-4 font-mono text-xs leading-7 text-base-content/60 overflow-x-auto border border-base-content/5">
-              <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="val">"telling"</span><span class="tag">&gt;&lt;/div&gt;</span><br/>
-              <span class="tag">&lt;script&gt;</span><br/>
-              &nbsp;&nbsp;<span class="kw">const</span> f = document.createElement(<span class="str">'iframe'</span>);<br/>
-              &nbsp;&nbsp;f.src = <span class="str">`https://telling.bonfire.cafe/embed?url=${location.href}`</span>;<br/>
-              &nbsp;&nbsp;f.style.cssText = <span class="str">'width:100%;border:none;min-height:400px'</span>;<br/>
-              &nbsp;&nbsp;document.getElementById(<span class="str">'telling'</span>).appendChild(f);<br/>
-              <span class="tag">&lt;/script&gt;</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
   </div>
 </section>
 
 <!-- ── FEATURES ── -->
 <section class="py-12 lg:py-20 px-4 bg-base-300/30" id="telling-features" aria-labelledby="telling-features-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Features</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-features-heading">Built for people,<br/>not for platforms</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Features</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4" id="telling-features-heading">Made for publishers.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mb-12">
-      Everything you need for meaningful conversations — nothing you don't.
+      The essentials for a comment section you run yourself.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="md:col-span-2 bg-base-content/10 rounded-2xl p-8 flex items-center gap-6 hover:bg-base-content/5 transition-all border border-primary/10">
-        <div class="w-14 h-14 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-base-content mb-1">Truly Federated</h3>
-          <p class="text-base text-base-content/70">Comments are ActivityPub posts. Reply from Bonfire, Mastodon, Misskey, or any compatible platform. Your words, your identity, your server.</p>
-        </div>
-      </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Privacy by Design</h3>
-        <p class="text-base text-base-content/70">No tracking pixels. No ad networks. No data harvesting. Bonfire Telling collects nothing about your readers — because it doesn't need to.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Private by design</h3>
+        <p class="text-base text-base-content/70">No tracking pixels, no ad networks, no data harvesting. The Telling collects nothing about your readers.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Moderation You Control</h3>
-        <p class="text-base text-base-content/70">Set your own rules. Block, mute, or defederate. You decide what conversations look like on your site — no corporate content policy imposed from above.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Moderation you control</h3>
+        <p class="text-base text-base-content/70">Set your own rules, and block, mute, or defederate as you see fit. No corporate content policy imposed from above.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Works Everywhere</h3>
-        <p class="text-base text-base-content/70">Jekyll, Hugo, Astro, 11ty, plain HTML — if it renders a page, Bonfire Telling works. One iframe. No JavaScript dependency. No build tooling.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Works on any site</h3>
+        <p class="text-base text-base-content/70">If it renders a web page, the Telling works: Jekyll, Hugo, Astro, 11ty, WordPress, Ghost, plain HTML, anything. One script tag, no build tooling required.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Bonfire Threads</h3>
+        <h3 class="text-xl font-bold text-base-content mb-2">Also a Bonfire thread</h3>
         <p class="text-base text-base-content/70">Every comment thread is also a Bonfire discussion. Communities can continue the conversation in their own space, with full context preserved.</p>
       </div>
       <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
         <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-base-content mb-2">Open Source</h3>
-        <p class="text-base text-base-content/70">Bonfire Telling is part of the Bonfire ecosystem. MIT-licensed, community-governed, and designed to be forked, extended, and made your own.</p>
+        <h3 class="text-xl font-bold text-base-content mb-2">Open source</h3>
+        <p class="text-base text-base-content/70">The Telling is part of the Bonfire ecosystem. AGPL-licensed, community-governed, and designed to be forked, extended, and made your own.</p>
+      </div>
+      <div class="bg-base-content/10 rounded-2xl p-8 hover:bg-base-content/5 transition-all">
+        <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">Federated</h3>
+        <p class="text-base text-base-content/70">Replies federate as ActivityPub comments. Readers reply from Bonfire, Mastodon, Misskey, or any compatible service, and keep their own identity and home server.</p>
       </div>
     </div>
   </div>
@@ -936,28 +1299,28 @@
 <!-- ── PHILOSOPHY ── -->
 <section class="py-12 lg:py-20 px-4" id="telling-philosophy" aria-labelledby="telling-philosophy-heading">
   <div class="max-w-screen-lg mx-auto">
-    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Philosophy</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-10" id="telling-philosophy-heading">Named for a practice,<br/>not a product</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3">Philosophy</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-10" id="telling-philosophy-heading">Named for a practice, not a product</h2>
+    <div class="telling-philosophy-grid grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="telling-philosophy-quote">
         <blockquote class="serif-regular italic text-2xl lg:text-3xl leading-relaxed text-base-content/80 mb-4">
           <span class="text-5xl leading-none text-primary block mb-2">&ldquo;</span>
-          Bonfire Telling is what people do, what people always did... They tell: they share what they know, their experiences, their feelings, their ideas, in words, in signs, in stories, in songs.
+          Telling is what people do, what people always did... They tell: they share what they know, their experiences, their feelings, their ideas, in words, in signs, in stories, in songs.
         </blockquote>
         <cite class="text-sm not-italic text-base-content/40">— Ursula K. Le Guin, The Telling (2000)</cite>
       </div>
-      <div class="flex flex-col gap-6">
+      <div class="telling-philosophy-principles flex flex-col gap-6">
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Against enshittification</h4>
-          <p class="text-base text-base-content/60">Comment platforms decayed into ad-delivery systems. Bonfire Telling has no investors to satisfy, no engagement metrics to optimize, no data to sell. It exists to serve conversation.</p>
+          <p class="text-base text-base-content/60">Comment platforms decayed into ad-delivery systems. The Telling has no investors to satisfy, no engagement metrics to optimise, no data to sell. It exists to serve conversation.</p>
         </div>
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Gather around the fire</h4>
-          <p class="text-base text-base-content/60">Part of the Bonfire ecosystem — tools for communities that want to own their digital spaces. Bonfire Telling extends that warmth to the open web.</p>
+          <p class="text-base text-base-content/60">Part of the Bonfire ecosystem, tools for communities that want to own their digital spaces. The Telling extends that warmth to the open web.</p>
         </div>
         <div class="bg-base-content/10 rounded-2xl p-6 border border-base-content/5">
           <h4 class="text-lg font-bold text-primary mb-1">Voices, not users</h4>
-          <p class="text-base text-base-content/60">People aren't "users" to be monetized. They're voices in a conversation — each carrying their own identity, their own home server, their own autonomy.</p>
+          <p class="text-base text-base-content/60">People aren't "users" to be monetised. They're voices in a conversation, each carrying their own identity, their own home server, their own autonomy.</p>
         </div>
       </div>
     </div>
@@ -967,140 +1330,156 @@
 <!-- ── CTA ── -->
 <section class="py-12 lg:py-20 px-4 bg-base-300/30">
   <div class="max-w-screen-lg mx-auto text-center">
-    <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Join Bonfire Telling</p>
-    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4">Your blog has something to say.<br/>Let your readers say something back.</h2>
+    <p class="text-xs font-semibold tracking-widest text-primary mb-3 place-content-center">Join the Telling</p>
+    <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-base-content serif-bold mb-4 mx-auto">Your words, and your readers',<br/>in one conversation.</h2>
     <p class="text-lg text-base-content/70 max-w-xl mx-auto mb-8">
-      Free, open source, and ready to embed. Bring federated conversations to your corner of the web.
+      Free, open source, and ready to embed on any site you publish.
     </p>
     <div class="flex gap-4 justify-center flex-wrap">
-      <a href="#telling-embed" class="btn btn-lg btn-primary">Get Started</a>
+      <a href="#telling-embed" class="btn btn-lg btn-primary">Get started</a>
       <a href="https://github.com/bonfire-networks" class="btn btn-lg btn-outline border-base-content/30">View on GitHub</a>
     </div>
   </div>
 </section>
 
 </div>
+</div>
 
 <script>
-  // Framework guide tabs
-  function tellingShowGuide(name) {
-    document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
-    document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
-    const detail = document.getElementById('telling-guide-' + name);
-    if (detail) {
-      detail.classList.add('visible');
-      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-    const card = document.querySelector('[data-guide="' + name + '"]');
-    if (card) card.classList.add('active');
-  }
-
-  function tellingHideGuide() {
-    document.querySelectorAll('.telling-guide-detail').forEach(d => d.classList.remove('visible'));
-    document.querySelectorAll('.telling-guide-card').forEach(c => c.classList.remove('active'));
-  }
-
   // Copy embed code
-  function tellingCopyEmbed(btn) {
-    const code = `<!-- Add Bonfire Telling to any page -->\n<iframe\n  src="https://telling.bonfire.cafe/embed"\n  data-page="/telling/"\n  title="Bonfire Telling Comments"\n  style="width:100%; border:none; min-height:400px;"\n></iframe>`;
-    navigator.clipboard.writeText(code).then(() => {
+  window.tellingCopyEmbed = async function(btn) {
+    const code = `<!-- Add the Telling to any page -->\n<script\n  src="https://your-instance.social/js/comments_embed.js"\n  data-theme="dark"\n  data-mode="nested"\n  async\n><\/script>`;
+    try {
+      await navigator.clipboard.writeText(code);
       btn.classList.add('copied');
       btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
       setTimeout(() => {
         btn.classList.remove('copied');
         btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
       }, 2000);
-    });
-  }
+    } catch (_) {
+      const textarea = document.createElement('textarea');
+      textarea.value = code;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      const copied = document.execCommand('copy');
+      textarea.remove();
+      if (copied) {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+        }, 2000);
+      }
+    }
+  };
 </script>
 
-      <div class="bg-base-200">
-  <div class="flex px-8 py-4 mx-auto justify-between items-center">
-    <div class="flex items-start gap-4 flex-row lg:flex-col">
-      <div class="flex items-center gap-2 flex-1 ">
-        <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>
-        <p class="font-bold">Bonfire Networks</p>
-      </div> 
-    </div> 
-    <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
-  </div>
-  <footer class="footer pb-8 sm:footer-horizontal bg-base-200 border-base-content/10 bg-base-200 border-t pt-8 px-8 justify-between text-base-content p-10">
-  <nav>
-    <h6 class="footer-title">Ecosystem</h6>
-    <a href="/apps" class="link link-hover">Apps</a> 
-    <a href="/roadmap" class="link link-hover">Extensions</a> 
-    <a href="/themes" target="_blank" class="link link-hover">Themes</a>
-  </nav>
-  <nav>
-    <h6 class="footer-title">Learn</h6>
- <a href="https://docs.bonfirenetworks.org/" target="_blank" class="link link-hover ">Documentation</a> 
-    <a href="/faq" class="link link-hover">FAQs</a> 
-    <a href="/conduct" class="link link-hover">Code of conduct</a> 
-    
-  </nav>
-  <nav>
-    <h6 class="footer-title">Apps</h6>
-    <a href="/start" class="link link-hover">Get started</a> 
-    <a href="/hosting" class="link link-hover">Hosting</a> 
-    <a href="https://campground.bonfire.cafe" target="_blank" class="link link-hover">Demo instance</a> 
-  </nav>
-  <div>
-    <h6 class="footer-title">More</h6>
-    <a class="link link-hover" href="/contact/">Contact</a>
-    <a href="/presskit" class="link link-hover">Presskit</a>
-    
-    <form action="https://bonfirenetworks.us14.list-manage.com/subscribe/post?u=d878a2618cbfbfec0b70c675a&amp;id=101bb5044b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div class="flex items-center gap-1" id="mc_embed_signup_scroll">
-                <div class="col-span-2 mc-field-group">
-                  <input type="email" value="" name="EMAIL" placeholder="Enter your email" class="w-full required email input input-bordered" id="mce-EMAIL">
-                </div>
-                <div id="mce-responses" class="mt-3 clear foot">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>   
-                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d878a2618cbfbfec0b70c675a_101bb5044b" tabindex="-1" value=""></div>
-                  <div class="optionalParent">
-                      <div class="clear foot">
-                          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="normal-case btn btn-primary">
-                          <p class="sr-only brandingLogo"><a href="http://eepurl.com/h4IZrH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
-                      </div>
-                  </div>
-                </div>
-              </form>
-  </div>
-</footer>
-<div class="flex px-8 border-y border-base-content/10 mx-auto  items-center justify-center py-[4vmin]">
-  <div class="flex items-center place-items-center">
+      
+
+
+
+<div class="bg-night text-ink font-body border-t border-ink/[0.07]">
+  <div class="mx-auto flex flex-col gap-5 px-7 py-7 sm:flex-row sm:items-center sm:justify-between">
+    <a class="group flex items-center gap-3 text-ink focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/" aria-label="Bonfire Networks — home">
+      <span class="block h-10 w-[30px] bg-cover bg-center bg-no-repeat" style="background-image: url(/img/bonfire.png)"></span>
+      <span>
+        <span class="block font-disp text-[1.05rem] font-semibold">Bonfire Networks</span>
+        <span class="block text-[.82rem] text-ink-3 transition-colors group-hover:text-ink-2">Community-owned digital spaces.</span>
+      </span>
+    </a>
     <div class="flex items-center gap-3">
-      <p class="text-base-content/70">Supported by</p>
+      <span class="font-smono text-[.68rem] tracking-[.08em] text-ink-3">OPEN SOURCE</span>
+      <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+    </div>
+  </div>
+
+  <footer class="border-t border-ink/[0.07]">
+    <div class="mx-auto grid grid-cols-2 gap-x-7 gap-y-10 px-7 py-10 sm:grid-cols-4 lg:grid-cols-[1fr_1.15fr_1fr_1fr_1.65fr] lg:py-12">
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-explore">
+        <h2 id="footer-explore" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Explore</h2>
+        <a href="/features" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Features</a>
+        <a href="/compare" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Comparison table</a>
+        <a href="/case-studies" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Case studies</a>
+        <a href="/about" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">About Bonfire</a>
+        <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Try the campground <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-launch">
+        <h2 id="footer-launch" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Launch your Bonfire</h2>
+        <a href="/self-hosting" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Self-host</a>
+        <a href="/hosting" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Cooperative hosting</a>
+        <a href="/mosaic" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Co-design with us</a>
+        <a href="/start" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Compare all three routes</a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-ecosystem">
+        <h2 id="footer-ecosystem" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Ecosystem</h2>
+        <a href="/community" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Participate</a>
+        <a href="/faq" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">FAQs</a>
+        <a href="https://docs.bonfirenetworks.org/" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Documentation <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Browse the source code <span aria-hidden="true">↗</span></a>
+        <a href="/blog" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Blog</a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-integration">
+        <h2 id="footer-integration" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Integration</h2>
+        <a href="/telling" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Telling</a>
+        <a href="/ghost" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Ghost</a>
+      </nav>
+
+      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+        <h2 class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">News from Bonfire</h2>
+        <p class="mb-4 max-w-[34ch] text-[.88rem] leading-6 text-ink-2">Occasional updates about releases, community stories, and ways to take part.</p>
+        <a
+          href="/subscribe"
+          class="inline-flex items-center gap-2 border-b border-spark/35 pb-1 font-smono text-[.74rem] font-bold tracking-[.04em] text-spark transition-[gap,border-color] hover:gap-3 hover:border-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70"
+        >
+          Get Bonfire updates <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="border-y border-ink/[0.07]">
+    <div class="mx-auto flex items-center justify-center px-7 py-8">
+      <div class="flex items-center gap-3">
+        <p class="text-ink-3">Supported by</p>
       <a class="ml-4" href="https://nlnet.nl">
-        <img 
-          src="/img/b-nlnet.png" 
-          alt="NLNet" 
-          width="140" 
+        <img
+          src="/img/b-nlnet.png"
+          alt="NLNet"
+          width="140"
           loading="lazy"
           class="light-img"
         >
-        <img 
-          src="/img/w-nlnet.png" 
-          alt="NLNet" 
-          width="140" 
+        <img
+          src="/img/w-nlnet.png"
+          alt="NLNet"
+          width="140"
           loading="lazy"
           class="dark-img hidden"
         >
       </a>
+      </div>
     </div>
   </div>
-</div>
-<div class="flex px-8  mx-auto  flex-col sm:flex-row items-center justify-center sm:justify-between py-[4vmin]">
-  <div class="flex items-center">
-    <a class="mr-12" href="https://opencollective.com/bonfire-networks"><img src="/img/oc.svg" alt="Open Collective account" width="34" height="34" loading="lazy"></a>
-    <a class="mr-12" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open Source" width="89" height="34" loading="lazy"></a>
-  </div>
-    <nav class="hidden md:flex items-center text-sm">
-      
-      
-      <a class="inline-block pl-2 hover:text-white" href="/">Bonfire Networks 2025</a>
+
+  <div class="mx-auto flex max-w-[1140px] flex-col items-center justify-center gap-6 px-7 py-8 sm:flex-row sm:justify-between">
+    <div class="flex items-center gap-8">
+      <a href="https://opencollective.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/oc.svg" alt="Open Collective" width="34" height="34" loading="lazy"></a>
+      <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open source" width="89" height="34" loading="lazy"></a>
+    </div>
+    <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm" aria-label="Legal and contact">
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/contact/">Contact</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/presskit">Press kit</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/conduct">Code of conduct</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/privacy">Privacy</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/">Bonfire Networks 2026</a>
     </nav>
   </div>
 </div>
@@ -1131,29 +1510,8 @@
 });
 
 </script>
-    </div>
-    <div class="drawer-side">
-      <label for="my-drawer-2" aria-label="close sidebar" class="z-[99999999999999999999999999] drawer-overlay"></label>
-      <ul class="menu  bg-base-200 min-h-full w-80 p-4 relative z-[9999999999999999999]">
-        <li class="mb-4">
-            <a href="/" class="flex items-center space-x-2">
-              <span class="block bg-center bg-no-repeat bg-cover" style="width: 30px; height: 40px; background-image: url(/img/bonfire.png)"></span>  
-              <span class=""><span class="text-base font-semibold tracking-wider text-base-content">Bonfire Networks</span> 
-              
-              </span>
-            </a>
-          </li>
-        <!-- Sidebar content here -->
-        <li><a href="/about">About</a></li>
-        <li><a href="/apps">Apps</a></li>
-        <li><a href="/hosting">Hosting</a></li>
-        <li><a href="https://docs.bonfirenetworks.org">Docs</a></li>
-        <li><a href="/faq">FAQs</a></li>
-        <li><a href="/mosaic">Mosaic</a></li>
-        <li><a href="/blog">News</a></li>
-      </ul>
+
     </div>
   </div>
-  
   </body>
 </html>

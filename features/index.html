@@ -1,142 +1,1157 @@
-<div class="my-6 lg:my-12">   
+<!doctype html>
+<html data-theme="dark" class="bg-base-100 w-full antialiased" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonfire — Features</title>
+    <meta name="description" content="Bonfire&#39;s building blocks, at a glance. Bonfire is a kit of composable blocks, not a one-size-fits all app or platform. Switch on what your community needs, leave out the rest.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<div class="flex gap-6 flex-col" role="tabpanels">
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+    <!-- OpenGraph meta tags for social sharing -->
+    <meta property="og:title" content="Bonfire — Features">
+    <meta property="og:description" content="Bonfire&#39;s building blocks, at a glance. Bonfire is a kit of composable blocks, not a one-size-fits all app or platform. Switch on what your community needs, leave out the rest.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonfirenetworks.org//features/">
+    
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bonfire — Features">
+    <meta name="twitter:description" content="Bonfire&#39;s building blocks, at a glance. Bonfire is a kit of composable blocks, not a one-size-fits all app or platform. Switch on what your community needs, leave out the rest.">
+    
+    
+    <link
+    rel="stylesheet" href="/css/style_v2.css?v3.0">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Bonfire">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  </head>
+  <body data-theme="dark" class="body-theme w-full bg-base-100 antialiased">
+  <div class="drawer">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      
 
 
-    <div style="border-style: dashed; border-opacity: .3" class="border-base-content/70 border-dotted border-t py-8 lg:py-20  lg:py-20 px-4 800:py-20 800:px-8 bg-base-300/30">
-      <section 
-        role="tabpanel"
-        class="flex lg:px-[80px] flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 lg:px-20 mx-auto lg:flex-row-reverse">
-        <div class="w-full order-last lg:w-1/2">
-        <div class="w-full relative mx-auto">
-          <div style="aspect-ratio:467/406; background-image: url(/img/federate.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+
+
+
+
+
+
+
+
+
+
+
+<nav class="sticky top-0 z-[70] bg-night/80 backdrop-blur-md border-b border-ink/[0.07] font-body" aria-label="Main">
+<div class="max-w-[1140px] mx-auto px-7 flex items-center h-16 gap-1.5">
+  <a class="flex items-center gap-2.5 flex-none text-ink" href="/" aria-label="Bonfire Networks — home">
+    <div class="bg-center bg-no-repeat bg-cover w-[30px] h-10" style="background-image:url(/img/bonfire.png)"></div>
+    
+  </a>
+  
+  <div class="hidden lg:flex items-center gap-0.5 ml-auto self-stretch">
+    
+    <div class="dropdown place-content-center dropdown-hover self-stretch">
+      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer relative self-stretch inline-flex items-center !text-ink font-semibold after:content-[&#39;&#39;] after:absolute after:left-[13px] after:right-[13px] after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-spark after:to-ember">Explore <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+          <div class="p-2">
+            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Explore what your community could build.</p>
+          </div>
+          <ul>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 bg-ink/[0.055]" href="/features">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">BUILD</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Features</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Explore the building blocks your community can combine.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/case-studies">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.6rem] font-bold tracking-[.05em] text-leaf">STORIES</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Case studies</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">See how communities are shaping Bonfire for their needs.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/compare">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.59rem] font-bold tracking-[.05em] text-corn-2">COMPARE</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">How Bonfire is different</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">See how Bonfire compares to other community platforms.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/about">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-ink/15 bg-ink/[0.04] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-ink-2">ABOUT</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">About Bonfire</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Meet the project, principles, and people behind it.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-ink" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">
+            <span><b class="font-bold">Want to look around?</b> Try Bonfire at the campground.</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
+      </div>
+    </div>
+	    <div class="dropdown place-content-center dropdown-hover ">
+	      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Launch your Bonfire <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+	      <div class="dropdown-content z-[80] pt-2">
+	        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+	          <div class="p-2">
+	            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Choose how much you want to run yourself.</p>
+	            
+	          </div>
+	          <ul>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/self-hosting">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">DIY</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Self-host</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Install Bonfire on your own infrastructure.
+                      
+                    </span>
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/hosting">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-corn-2">HOSTED</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Cooperative hosting</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">We handle updates, backups and infrastructure with you. 
+                      
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	            <li>
+	              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/mosaic">
+	                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-leaf">MOSAIC</span>
+	                <span class="min-w-0 flex-1">
+	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Co-design with us</span>
+	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Shape a tailored digital space with the Bonfire team. 
+                      
+                    </span>
+	                </span>
+	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+	              </a>
+	            </li>
+	          </ul>
+	          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/start">
+	            <span><b class="font-bold">Not sure yet?</b> Compare all three routes.</span>
+	            <span aria-hidden="true">→</span>
+	          </a>
+	        </div>
+	      </div>
+	    </div>
+    <div class="dropdown dropdown-end place-content-center dropdown-hover ">
+      <div tabindex="0" role="button" class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 flex items-center gap-1.5 cursor-pointer ">Ecosystem <span class="text-[.7em] text-ink-3" aria-hidden="true">▾</span></div>
+      <div class="dropdown-content z-[80] pt-2">
+        <div tabindex="0" class="w-[460px] rounded-xl border border-ink/15 bg-night-2/95 p-2 backdrop-blur-md shadow-[0_22px_54px_-20px_rgba(0,0,0,.88)]">
+          <div class="p-2">
+            <p class="font-disp text-[1.08rem] font-semibold leading-tight text-ink">Find people, answers, and tools around Bonfire.</p>
+          </div>
+          <ul>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/community">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-leaf/25 bg-leaf/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-leaf">JOIN</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Participate</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Contribute, collaborate, or help sustain the commons.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-leaf" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 " href="/faq">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-flame/25 bg-flame/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-spark">ASK</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">FAQs</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Answers about licensing, federation, privacy, and governance.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="group/setup flex items-start gap-4 rounded-lg p-2 text-left transition-colors hover:bg-ink/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">
+                <span class="mt-0.5 flex w-[3.25rem] flex-none justify-center rounded-md border border-corn/25 bg-corn/[0.07] px-2 py-1.5 font-smono text-[.63rem] font-bold tracking-[.08em] text-corn-2">DOCS</span>
+                <span class="min-w-0 flex-1">
+                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Documentation</span>
+                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Setup guides and technical reference for hosts and builders.</span>
+                </span>
+                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-corn-2" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+          <a class="mt-1 flex items-center justify-between rounded-lg border-t border-ink/[0.09] px-4 py-3 font-smono text-[.7rem] tracking-[.04em] text-spark hover:bg-ink/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">
+            <span><b class="font-bold">Want to build with us?</b> Browse the source code.</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
-          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl lg:text-3xl">Connect beyond boundaries</div>
-          <div class="mt-3 prose prose-lg">
-            <p><strong>Join a network of millions</strong> across Mastodon, PeerTube, Mobilizon, and the wider fediverse using ActivityPub. Protocol bridges also connect you with Bluesky and beyond, breaking down walls between social platforms.</p>
+      </div>
+    </div>
+     <a class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 " href="/blog">Blog</a>
+    <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
+  </div>
+  <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+</div></nav>
+
+<div class="hidden sticky top-16 z-[69] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Explore</span>
+  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Explore what your community could build.</p>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 !text-spark font-semibold" href="/features">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Features</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">BUILD</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Building blocks your community can combine.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/compare">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Comparison table</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">COMPARE</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">How Bonfire differs from other community platforms.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/case-studies">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Case studies</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">STORIES</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">How communities are shaping Bonfire for their needs.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/about">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">About Bonfire</b><span class="font-smono text-[.62rem] tracking-[.08em] text-ink-2">ABOUT</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">The project, principles, and people behind it.</span>
+  </a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Try Bonfire at the campground ↗</a>
+	  <span class="block border-t border-ink/[0.07] px-7 pb-1.5 pt-[15px] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Launch your Bonfire</span>
+	  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Choose how much you want to run yourself.</p>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/self-hosting">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Self-host</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">DIY</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Your infrastructure and some sysadmin comfort.</span>
+	  </a>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/hosting">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Cooperative hosting</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">HOST</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Your own space without a sysadmin job.</span>
+	  </a>
+	  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/mosaic">
+	    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Co-design with us</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">WITH</span></span>
+	    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">For communities, organisations and funders with specific needs.</span>
+	  </a>
+	  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="/start">Compare all three routes →</a>
+  <span class="block px-7 pt-[15px] pb-1.5 border-t border-ink/[0.07] font-smono text-[.68rem] tracking-[.13em] text-ink-3">Ecosystem</span>
+  <p class="px-7 pb-3 text-[.84rem] leading-[1.45] text-ink-3">Find people, answers, and tools around Bonfire.</p>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/community">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Participate</b><span class="font-smono text-[.62rem] tracking-[.08em] text-leaf">JOIN</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Contribute, collaborate, or help sustain the commons.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70 " href="/faq">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">FAQs</b><span class="font-smono text-[.62rem] tracking-[.08em] text-spark">ASK</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Licensing, federation, privacy, and governance.</span>
+  </a>
+  <a class="block border-t border-ink/[0.07] px-7 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-flame/70" href="https://docs.bonfirenetworks.org" target="_blank" rel="noopener noreferrer">
+    <span class="flex items-center justify-between gap-3"><b class="font-disp text-[1.02rem] text-ink">Documentation</b><span class="font-smono text-[.62rem] tracking-[.08em] text-corn-2">DOCS</span></span>
+    <span class="mt-1 block text-[.84rem] leading-[1.45] text-ink-3">Setup guides and technical reference for hosts and builders.</span>
+  </a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Browse the source code ↗</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] " href="/blog">Blog</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.78rem] tracking-[.06em] !text-spark" href="/start">Get started</a>
+</div>
+
+<script>
+(function(){
+"use strict";
+var b=document.getElementById('burger'),d=document.getElementById('v2drawer');
+if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hidden');b.setAttribute('aria-expanded',!hidden);});
+})();
+</script>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    
+    <header class="pt-10 pb-[clamp(40px,5vw,60px)]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>Features</p>
+      <h1 class="font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[54ch] [font-variation-settings:'opsz'_96]">Bonfire's <span class="fire-text">building blocks</span>, at a glance.</h1>
+      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[54ch] [&_b]:text-ink [&_b]:font-semibold">There's no single Bonfire app with a fixed feature list. It's a kit of composable blocks: <b>switch on what your community needs, leave out the rest</b>. Here's a tour of some the essential features in the kit, including some of what we haven't finished yet. Weighing it against alternative tools for communities? <a class="text-spark hover:underline" href="/compare">See how Bonfire compares →</a></p>
+
+      <nav class="flex flex-wrap gap-2 mt-9" aria-label="Jump to a section">
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#post">Post &amp; converse</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#feeds">Feeds &amp; discovery</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#boundaries">Circles &amp; boundaries</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#safety">Safety &amp; moderation</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#shape">Make it yours</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#connect">Federation &amp; reach</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#data">Your data</a>
+        <a class="font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" href="#beyond">Beyond the microblog</a>
+      </nav>
+    </div></header>
+
+    
+    <main>
+    
+    <section id="post" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Post &amp; converse</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Room to <span class="fire-text">say it properly.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A composer that fits each kind of post, and threads that let a conversation branch out and stay legible as it grows.</p>
+
+      
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-pen-nib"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">A powerful composer</h3>
+          <p class="text-ink-2 text-[.94rem]">Short updates or long-form posts. Add a title to start a thread, mention people, format your text, and share a quick thought or a full blog post.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-text-aa"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Markdown friendly</h3>
+          <p class="text-ink-2 text-[.94rem]">Rich formatting, so you can emphasise a point and give your writing a structure.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-image-square"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Any media</h3>
+          <p class="text-ink-2 text-[.94rem]">Enrich posts with photos, video, audio, and other files.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-tree-structure"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Branching threads</h3>
+          <p class="text-ink-2 text-[.94rem]">Replies can branch into sub-threads, so you follow a discussion without losing the context it grew from.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-note-pencil"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Edit your posts</h3>
+          <p class="text-ink-2 text-[.94rem]">Made a typo, or want to add context? Edit after publishing instead of deleting and reposting.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-handshake"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Collaborate on posts</h3>
+          <p class="text-ink-2 text-[.94rem]">Some posts are better written together. Write with your peers, or simply invite a trusted friend to check your spelling.</p>
+          
+        </div>
+      </div>
+
+      
+      
+      <figure class="m-0 mt-4">
+        <img class="block mx-auto max-w-full max-h-[500px] w-auto rounded-xl border border-ink/15" src="/img/faeturecomposer.png" alt="The composer: formatting, mentions, and boundary controls in one place" loading="lazy">
+      </figure>
+      
+
+    </div></section>
+    
+    <section id="feeds" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Feeds &amp; discovery</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">The feed is <span class="corn-text">yours to build.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">No mysterious algorithm ranking your people. You assemble the feeds you want, out of the filters that matter to you, and keep the ones that work.</p>
+
+      
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-funnel"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Custom feeds</h3>
+          <p class="text-ink-2 text-[.94rem]">Build ad-hoc feeds with a simple interface: filter and sort by content type, circle, date, engagement, source instance, and more.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-columns"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Saved presets</h3>
+          <p class="text-ink-2 text-[.94rem]">Keep the feeds you built, name them, and arrange them however you like.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-magnifying-glass"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Full-text search</h3>
+          <p class="text-ink-2 text-[.94rem]">Find people, posts, and everything else that has been indexed on your instance.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-hash"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Hashtags &amp; mentions</h3>
+          <p class="text-ink-2 text-[.94rem]">Tag what you post and reach the people you mean, across the whole network.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-bookmarks-simple"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Topics</h3>
+          <p class="text-ink-2 text-[.94rem]">Curated categories to organise conversation, so a subject has a home instead of scrolling past.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-user-plus"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Follow anyone</h3>
+          <p class="text-ink-2 text-[.94rem]">Follow people on any federated platform, at your own pace. Your network isn&#39;t limited to who else signed up here.</p>
+          
+        </div>
+      </div>
+
+      
+      
+      <figure class="m-0 mt-4">
+        <img class="block mx-auto max-w-full max-h-[500px] w-auto rounded-xl border border-ink/15" src="/img/featurefilters.png" alt="The custom feed builder: filtering by content type, circle and source instance" loading="lazy">
+      </figure>
+      
+
+    </div></section>
+    
+    <section id="boundaries" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Circles &amp; boundaries</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Who sees what is <span class="fire-text">your call.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Most networks give you one blunt switch: public, or not. Bonfire helps you foster your relationships, and lets every post carry its own rules.</p>
+
+      <a class="inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/docs/boundaries/">How boundaries work, in the docs →</a>
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-circles-three"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Circles</h3>
+          <p class="text-ink-2 text-[.94rem]">Lists of people: &quot;local friends&quot;, &quot;the team&quot;, &quot;mutual aid crew&quot;. Each circle has its own feed, and represents the many-sided relationships you really have.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-lock-key"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Boundaries</h3>
+          <p class="text-ink-2 text-[.94rem]">Choose who can see, reply, quote, or even edit a post. Make it public but accept replies only from one circle, for instance.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-identification-badge"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Custom roles</h3>
+          <p class="text-ink-2 text-[.94rem]">Create roles and grant them to people or circles: what they can view, how they can interact, and anything else they may do.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-plugs-connected"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Interoperable controls</h3>
+          <p class="text-ink-2 text-[.94rem]">Boundaries speak the same language as GoToSocial interaction controls and Mastodon quote authorisations, so they hold up off your instance too.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-envelope-simple"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Direct messages</h3>
+          <p class="text-ink-2 text-[.94rem]">Private conversations, one to one or with a group.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-user-switch"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Multiple profiles</h3>
+          <p class="text-ink-2 text-[.94rem]">Several separate profiles on one account: different personas, or your org and your project alongside you.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-users-four"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Shared profiles</h3>
+          <p class="text-ink-2 text-[.94rem]">Give an organisation or project its own profile, and share access with the rest of your team.</p>
+          
+        </div>
+      </div>
+
+      
+      
+
+    </div></section>
+    
+    <section id="safety" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Safety &amp; moderation</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Hold the line, <span class="fire-text">together.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Moderation burns people out when it lands on one pair of shoulders. These are tools for spreading the weight, and for refusing the designs that make a place hostile in the first place.</p>
+
+      <a class="inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/moderation-toolkit">Read about the federated moderation toolkit project →</a>
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-flag"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Flag &amp; review</h3>
+          <p class="text-ink-2 text-[.94rem]">Anyone can flag; moderators see a queue and can remove what doesn&#39;t belong.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-ghost"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Silence, ghost, or block</h3>
+          <p class="text-ink-2 text-[.94rem]">Turn someone down, make yourself invisible to them, or cut them off entirely, at the user level or the whole instance.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-list-checks"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Shared blocklists</h3>
+          <p class="text-ink-2 text-[.94rem]">Lean on the work other communities have already done, rather than each of you meeting the same bad actor alone.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-eye-slash"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">No dark patterns</h3>
+          <p class="text-ink-2 text-[.94rem]">Switch off follower counts, reaction counts, and infinite scroll. The things engineered to keep you hooked are optional here.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-scales"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Govern, your way</h3>
+          <p class="text-ink-2 text-[.94rem]">Custom roles, shared profiles, and consent-based tools, so power is distributed the way your community actually decides things.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-sliders-horizontal"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Defaults, not dictates</h3>
+          <p class="text-ink-2 text-[.94rem]">Admins set the defaults; every member can see exactly how the instance is configured, and override it for themselves.</p>
+          
+        </div>
+      </div>
+
+      
+      
+
+    </div></section>
+    
+    <section id="shape" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Make it yours</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Assembled from blocks, <span class="fire-text">by you.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Bonfire is made of pluggable extensions all the way down. Even the core. Add what you need, fork what almost fits, drop what you don&#39;t want. No two communities end up with the same space.</p>
+
+      <a class="inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/extensions">Browse every extension →</a>
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-puzzle-piece"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Extensions</h3>
+          <p class="text-ink-2 text-[.94rem]">Every piece of Bonfire is a composable building block. Users enable and disable them; admins install new ones, fork them, or write their own.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+            <a class="inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/extensions">Browse the extensions <span aria-hidden="true">→</span></a>
+            
           </div>
         </div>
-      </section>
-    </div>
-   
-    <div class="py-6 lg:py-20  lg:py-20 px-4 bg-base-300/30">  
-      <section 
-        role="tabpanel"
-        class="flex lg:px-[80px] flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 lg:px-20 mx-auto lg:flex-row-reverse">
-        <div class="w-full order-last lg:w-1/2">
-        <div class="w-full relative mx-auto">
-          <div style="aspect-ratio:467/406; background-image: url(/img/customfeeds.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-palette"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Themes</h3>
+          <p class="text-ink-2 text-[.94rem]">Change the look and feel: pick a theme, or make your own. No coding required.</p>
+          
         </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-faders"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Granular settings</h3>
+          <p class="text-ink-2 text-[.94rem]">Tune how the app behaves in detail, overriding the choices made by designers, developers, and even your instance admins.</p>
+          
         </div>
-        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
-          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl lg:text-3xl">Custom feeds</div>
-          <div class="mt-3 prose prose-lg">
-            Build ad-hoc feeds with a simple interface: filter and sort by content type, circle, date, engagement, source instance, and more. Save presets and arrange them however you like.</div>
-        </div>
-      </section>
-    </div>
-
-
-    <div class="py-8 px-4 800:py-20 800:px-8">
-      <section 
-        role="tabpanel"
-        class="flex lg:px-[80px] flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 lg:px-20 mx-auto lg:flex-row-reverse">
-        <div class="w-full lg:w-1/2">
-        <div class="w-full relative mx-auto">
-          <div style="aspect-ratio:467/406; background-image: url(/img/circlehome.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
-        </div>
-        </div>
-        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
-          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl lg:text-3xl">Circles</div>
-          <div class="mt-3 prose prose-lg">
-            Circles are lists of people (e.g., “local friends”, “team”, “mutual aid crew”). Each circle has its own feed with posts from members.</div>
-        </div>
-      </section>
-    </div>
-
-
-    <div class="py-8 px-4 800:py-20 800:px-8 bg-base-300/30">
-      <section 
-        role="tabpanel"
-        class="flex lg:px-[80px] flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 lg:px-20 mx-auto lg:flex-row-reverse">
-        <div class="w-full order-last lg:w-1/2">
-        <div class="w-full relative mx-auto">
-          <div style="aspect-ratio:467/406; background-image: url(/img/bound.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
-        </div>
-        </div>
-        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
-          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl lg:text-3xl">Boundaries</div>
-          <div class="mt-3 prose prose-lg">
-            Choose who can see, reply, quote, or even edit a post. For example: make a post public but accept replies only from a specific circle. Boundaries are compatible with GoToSocial interaction controls and Mastodon quote authorisations.</div>
-        </div>
-      </section>
-    </div>
-
-    <div class="py-8 px-4 800:py-20 800:px-8">
-      <section 
-        role="tabpanel"
-        class="flex lg:px-[80px] flex-wrap lg:flex-nowrap items-center max-w-[1200px] gap-16 lg:px-20 mx-auto lg:flex-row-reverse">
-        <div class="w-full lg:w-1/2">
-        <div class="w-full relative mx-auto">
-          <div style="aspect-ratio:467/406; background-image: url(/img/importstatus.png)" class="bg-center bg-cover lg:h-[405px] h-[200px] w-full rounded-2xl"></div>
-        </div>
-        </div>
-        <div class="w-full lg:w-1/2 mt-2 lg:mt-0">
-          <div class="font-bold max-w-(--breakpoint-sm) lg:leading-[40px] text-2xl lg:text-3xl">Your data, your freedom</div>
-          <div class="mt-3 prose prose-lg">
-            <p>Moving between instances shouldn't mean starting from scratch. <strong>Seamlessly migrate your entire social presence</strong> (including posts, follows, circles, and bookmarks) with Bonfire's comprehensive import tools and migration dashboard.</p>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-stack"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Flavours</h3>
+          <p class="text-ink-2 text-[.94rem]">Start from a preset that&#39;s already close to what you need (social, community, coordination, open science), then adjust block by block.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+            <a class="inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/apps">See the flavours <span aria-hidden="true">→</span></a>
+            
           </div>
         </div>
-      </section>
-    </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-chats-circle"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Federated comments</h3>
+          <p class="text-ink-2 text-[.94rem]">Embed the Telling on any static site: readers reply from Bonfire, Mastodon, or any ActivityPub account.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+            <a class="inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/telling">How the Telling works <span aria-hidden="true">→</span></a>
+            
+          </div>
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-sign-in"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Single sign-on</h3>
+          <p class="text-ink-2 text-[.94rem]">Speaks OpenID Connect and OAuth2 as both a client and a provider: members sign in with an account they already have, and your Bonfire can sign them in to your other apps.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-code"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Build your own</h3>
+          <p class="text-ink-2 text-[.94rem]">Documented libraries for accounts, boundaries, social, ActivityPub and economic flows. If it doesn&#39;t exist yet, you can write it.</p>
+          
+        </div>
+      </div>
 
+      
+      
 
-  </div>
+    </div></section>
+    
+    <section id="connect" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
 
-  <div class="flex mt-8 gap-3 flex-col lg:flex-row items-center place-content-center">
-    <a class="btn btn-primary" href="/start">
-    <span>Install Bonfire</span>
-    <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
-    <a class="btn btn-primary" href="https://docs.bonfirenetworks.org">
-    <span>Read the documentation</span>
-    <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
-    <a class="btn btn-primary" href="/mosaic">
-    <span>Learn about Mosaic </span>
-    <span><svg class="w-6 h-6 ml-3" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256z"/></svg></span></a>
-  </div>
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Federation &amp; reach</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Open to the world, <span class="corn-text">as far as you like.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Your space is yours to open wide or keep closed. You decide who&#39;s invited through the door.</p>
 
+      
 
-<div class="max-w-screen-lg my-24 px-4 lg:mx-auto">
-  <div class="text-3xl leading-[70px] text-center font-semibold mt-4">Why Bonfire</div>
-  <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-    <div class="bg-base-content/10 rounded-xl p-8 text-center">
-      <svg class="w-12 h-12 text-base-content fill-[#2474f2] text-center mx-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2474f2" viewBox="0 0 256 256"><path d="M216,96V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V96a8,8,0,0,1,8-8H208A8,8,0,0,1,216,96Z" opacity="0.2"></path><path d="M208,80H96V56a32,32,0,0,1,32-32c15.37,0,29.2,11,32.16,25.59a8,8,0,0,0,15.68-3.18C171.32,24.15,151.2,8,128,8A48.05,48.05,0,0,0,80,56V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm0,128H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"></path></svg>
-      <div class="text-2xl mt-4 font-bold">Open Source</div>
-    </div>
-    <div class="bg-base-content/10 rounded-xl p-8 text-center">
-      <svg class="w-12 h-12 text-base-content fill-[#2474f2] text-center mx-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2474f2" viewBox="0 0 256 256"><path d="M112,168a32,32,0,1,1-32-32A32,32,0,0,1,112,168ZM80,32a32,32,0,1,0,32,32A32,32,0,0,0,80,32Zm96,104a32,32,0,1,0,32,32A32,32,0,0,0,176,136Zm0-40a32,32,0,1,0-32-32A32,32,0,0,0,176,96Z" opacity="0.2"></path><path d="M27.2,126.4a8,8,0,0,0,11.2-1.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,93.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,115.2,8,8,0,0,0,27.2,126.4ZM176,40a24,24,0,1,1-24,24A24,24,0,0,1,176,40ZM80,40A24,24,0,1,1,56,64,24,24,0,0,1,80,40ZM203,197.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,219.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,197.51ZM80,144a24,24,0,1,1-24,24A24,24,0,0,1,80,144Zm96,0a24,24,0,1,1-24,24A24,24,0,0,1,176,144Z"></path></svg>
-      <div class="text-2xl mt-4 font-bold">Community driven</div>
-    </div>
-    <div class="bg-base-content/10 rounded-xl p-8 text-center">
-      <svg class="w-12 h-12 text-base-content fill-[#2474f2] text-center mx-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2474f2" viewBox="0 0 256 256"><path d="M216,128a88,88,0,1,1-88-88A88,88,0,0,1,216,128Z" opacity="0.2"></path><path d="M245.11,60.68c-7.65-13.19-27.84-16.16-58.5-8.66A95.93,95.93,0,0,0,32,128a98,98,0,0,0,.78,12.31C5.09,169,5.49,186,10.9,195.32,16,204.16,26.64,208,40.64,208a124.11,124.11,0,0,0,28.79-4A95.93,95.93,0,0,0,224,128a97.08,97.08,0,0,0-.77-12.25c12.5-13,20.82-25.35,23.65-35.92C248.83,72.51,248.24,66.07,245.11,60.68ZM128,48a80.11,80.11,0,0,1,78,62.2c-17.06,16.06-40.15,32.53-62.07,45.13C116.38,171.14,92.48,181,73.42,186.4A79.94,79.94,0,0,1,128,48ZM24.74,187.29c-1.46-2.51-.65-7.24,2.22-13a79.05,79.05,0,0,1,10.29-15.05,96,96,0,0,0,18,31.32C38,193.46,27.24,191.61,24.74,187.29ZM128,208a79.45,79.45,0,0,1-38.56-9.94,370,370,0,0,0,62.43-28.86c21.58-12.39,40.68-25.82,56.07-39.08A80.07,80.07,0,0,1,128,208ZM231.42,75.69c-1.7,6.31-6.19,13.53-12.63,21.13a95.69,95.69,0,0,0-18-31.35c14.21-2.35,27.37-2.17,30.5,3.24C232.19,70.28,232.24,72.63,231.42,75.69Z"></path></svg>
-      <div class="text-2xl mt-4 font-bold">Federated</div>
-    </div>
-    <div class="bg-base-content/10 rounded-xl p-8 text-center">
-      <svg class="w-12 h-12 text-base-content fill-[#2474f2] text-center mx-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2474f2" viewBox="0 0 256 256"><path d="M240,80v64L80,224V160Z" opacity="0.2"></path><path d="M243.58,72.84,197.29,49.7C191.54,39.24,177.21,32,160,32c-22.43,0-40,12.3-40,28a20.77,20.77,0,0,0,1.06,6.53l-19.52,9.76A53.69,53.69,0,0,0,80,72c-22.43,0-40,12.3-40,28a20.77,20.77,0,0,0,1.06,6.53L12.42,120.84A8,8,0,0,0,8,128v64a8,8,0,0,0,4.42,7.16l64,32a8,8,0,0,0,7.16,0l160-80A8,8,0,0,0,248,144V80A8,8,0,0,0,243.58,72.84ZM80,151.06,33.89,128,51,119.45c7.24,5.29,17.48,8.55,29,8.55,22.43,0,40-12.3,40-28a21.77,21.77,0,0,0-4.35-12.88L131,79.45c7.24,5.29,17.48,8.55,29,8.55,18.38,0,33.49-8.26,38.35-19.88L222.11,80ZM160,48c13.74,0,24,6.34,24,12s-10.26,12-24,12-24-6.34-24-12S146.26,48,160,48ZM80,88c13.74,0,24,6.34,24,12s-10.26,12-24,12c-9.67,0-17.61-3.14-21.47-7a8.29,8.29,0,0,0-.84-.93A6.62,6.62,0,0,1,56,100C56,94.34,66.26,88,80,88ZM24,140.94l48,24v46.12l-48-24Zm64,70.12V164.94l144-72v46.12Z"></path></svg>
-      <div class="text-2xl mt-4 font-bold">Modular</div>
-    </div>
-    <div class="bg-base-content/10 rounded-xl p-8 text-center">
-      <svg class="w-12 h-12 text-base-content fill-[#2474f2] text-center mx-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2474f2" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.56,87.56,0,0,1-20.41,56.28L71.72,60.4A88,88,0,0,1,216,128ZM40,128A87.56,87.56,0,0,1,60.41,71.72L184.28,195.6A88,88,0,0,1,40,128Z"></path></svg>
-      <div class="text-2xl mt-4 font-bold">Not for sale</div>
-    </div>
-    <div class="bg-base-content/10 rounded-xl p-8 text-center">
-      <svg class="w-12 h-12 text-base-content fill-[#2474f2] text-center mx-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2474f2" viewBox="0 0 256 256"><path d="M64,64l40,120H24ZM200,76a44,44,0,1,0-44,44A44,44,0,0,0,200,76Zm-64,76v56h88V152Z" opacity="0.2"></path><path d="M224,144H136a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h88a8,8,0,0,0,8-8V152A8,8,0,0,0,224,144Zm-8,56H144V160h72ZM71.59,61.47a8,8,0,0,0-15.18,0l-40,120A8,8,0,0,0,24,192h80a8,8,0,0,0,7.59-10.53ZM35.1,176,64,89.3,92.9,176ZM208,76a52,52,0,1,0-52,52A52.06,52.06,0,0,0,208,76Zm-88,0a36,36,0,1,1,36,36A36,36,0,0,1,120,76Z"></path></svg>
-      <div class="text-2xl mt-4 font-bold">Plural</div>
-    </div>
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-door"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Local &amp; invite-only</h3>
+          <p class="text-ink-2 text-[.94rem]">Quiet and warm, a space just for your people. Nobody joins your bonfire unless you say so.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-graph"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Archipelago mode</h3>
+          <p class="text-ink-2 text-[.94rem]">Federate only with allies and communities you trust, and form a private interconnected network together.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+            <a class="inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/posts/bonfire-social-1-0-5-archipelago/">About archipelago mode <span aria-hidden="true">→</span></a>
+            
+          </div>
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-broadcast"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Fully federated</h3>
+          <p class="text-ink-2 text-[.94rem]">ActivityPub, so you can follow and be followed across Mastodon, PeerTube, Mobilizon, and every other Bonfire.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-bridge"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Bridges beyond</h3>
+          <p class="text-ink-2 text-[.94rem]">Protocol bridges reach Bluesky and the wider ATmosphere, so nobody is left out.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+            <a class="inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="https://fed.brid.gy/" target="_blank" rel="noopener noreferrer">Bridged via BridgyFed <span aria-hidden="true">→</span></a>
+            
+          </div>
+        </div>
+      </div>
+
+      
+      
+      <figure class="m-0 mt-4">
+        <img class="block mx-auto max-w-full max-h-[500px] w-auto rounded-xl border border-ink/15" src="/img/archi.png" alt="Archipelago mode: choosing exactly which servers and people your instance federates with" loading="lazy">
+      </figure>
+      
+
+    </div></section>
+    
+    <section id="data" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Your data</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Nothing here is <span class="fire-text">holding you hostage.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A space can&#39;t be turned against its people when everyone is free to leave with everything. Moving instances shouldn&#39;t mean starting from scratch, so it doesn&#39;t.</p>
+
+      
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-download-simple"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Import everything</h3>
+          <p class="text-ink-2 text-[.94rem]">Bring your account, your follows, and even your past posts from another instance, whether it runs Bonfire, Mastodon, or another fediverse app. Most tools can&#39;t move your posts across; this one can.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-export"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Export everything</h3>
+          <p class="text-ink-2 text-[.94rem]">Posts, relationships, settings, all of it. Your data belongs to you and you are not locked into any app or instance.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-arrows-left-right"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Identify migration</h3>
+          <p class="text-ink-2 text-[.94rem]">Move your profile to a new home and stay yourself: your followers are redirected, your old address points to the new one, and your identity carries across intact.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-git-fork"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">AGPL, super-forkable</h3>
+          <p class="text-ink-2 text-[.94rem]">No VC, no ads, nothing to sell. If we ever go bad, the code is already yours to take.</p>
+          
+        </div>
+      </div>
+
+      
+      
+      <figure class="m-0 mt-4">
+        <img class="block mx-auto max-w-full max-h-[500px] w-auto rounded-xl border border-ink/15" src="/img/import_status.png" alt="The import dashboard: circles, follows and posts arriving from another instance" loading="lazy">
+      </figure>
+      
+
+    </div></section>
+    
+    <section id="beyond" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Beyond the microblog</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Blocks for what your <span class="corn-text">community does.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Talking is only the start. These blocks create a collaborative place where things get organised, decided, made, and kept. Several are still being built. We&#39;d rather say so than pretend.</p>
+
+      <a class="inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="/apps">See what communities assembled →</a>
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-users-three"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Groups</h3>
+          <p class="text-ink-2 text-[.94rem]">Groups with their own membership, visibility settings and governance. Local-only for now, while federation is designed in the open with the SWICG task force.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-calendar-check"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Events</h3>
+          <p class="text-ink-2 text-[.94rem]">Organise a gathering, and let people know they&#39;re coming.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-chart-bar"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Decisions &amp; consensus</h3>
+          <p class="text-ink-2 text-[.94rem]">More than a quick poll: run proposals, structured consensus, and weighted score voting, so a group picks the lightest process that fits the decision.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-scroll"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">Beta</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Community rules</h3>
+          <p class="text-ink-2 text-[.94rem]">Shared expectations for an instance or a group, so newcomers know the space they&#39;re entering and moderators have something concrete to point to.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-megaphone"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Announcements</h3>
+          <p class="text-ink-2 text-[.94rem]">Broadcast to every member: a call to action, an urgent update, or a downtime warning lands in notifications and as a push, rather than hoping it surfaces in the feed.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-kanban"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">In development</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Tasks &amp; Kanban</h3>
+          <p class="text-ink-2 text-[.94rem]">To-do lists and boards that work across instances, so coordinating doesn&#39;t mean leaving.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-hand-heart"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">In development</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Mutual aid</h3>
+          <p class="text-ink-2 text-[.94rem]">Needs and offers, on a calendar and a map, for communities who look after each other.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-flask"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">In development</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Open science</h3>
+          <p class="text-ink-2 text-[.94rem]">Scholarly identity, citable objects with DOIs, and repository connectors for research networks.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+            <a class="inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" href="https://openscience.network" target="_blank" rel="noopener noreferrer">openscience.network <span aria-hidden="true">→</span></a>
+            
+          </div>
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-arrows-clockwise"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">In development</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Economic flows</h3>
+          <p class="text-ink-2 text-[.94rem]">Inventories, offers and needs, and marketplaces, all built on the ValueFlows open economic vocabulary.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-map-pin"></i></span>
+            <span class="badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3">In development</span>
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Places</h3>
+          <p class="text-ink-2 text-[.94rem]">Put activities on a map, for neighbourhoods and anything else that happens somewhere.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-brackets-curly"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">GraphQL API</h3>
+          <p class="text-ink-2 text-[.94rem]">Build your own clients and integrations on top of your instance.</p>
+          
+        </div>
+        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-code"></i></span>
+            
+          </div>
+          <h3 class="font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]">Mastodon API</h3>
+          <p class="text-ink-2 text-[.94rem]">Interact with your instance using the familiar Mastodon API.</p>
+          
+        </div>
+      </div>
+
+      
+      
+      <figure class="m-0 mt-4">
+        <img class="block mx-auto max-w-full max-h-[500px] w-auto rounded-xl border border-ink/15" src="/img/group_over.png" alt="Discovering groups to join across the fediverse" loading="lazy">
+      </figure>
+      
+
+    </div></section>
+    
+    </main>
+
+    
+    <section class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-ink-3"><i class="w-[9px] h-[9px] flex-none bg-ink-3 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Underneath all of it</p>
+      <div class="flex flex-wrap gap-2.5 mt-[22px]">
+        <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-smono text-[.82rem] text-ink-2">
+          <i class="ph-duotone ph-lock-open text-[18px] text-flame" aria-hidden="true"></i>Open source
+        </span>
+        <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-smono text-[.82rem] text-ink-2">
+          <i class="ph-duotone ph-users-three text-[18px] text-flame" aria-hidden="true"></i>Community driven
+        </span>
+        <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-smono text-[.82rem] text-ink-2">
+          <i class="ph-duotone ph-broadcast text-[18px] text-flame" aria-hidden="true"></i>Federated
+        </span>
+        <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-smono text-[.82rem] text-ink-2">
+          <i class="ph-duotone ph-puzzle-piece text-[18px] text-flame" aria-hidden="true"></i>Modular
+        </span>
+        <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-smono text-[.82rem] text-ink-2">
+          <i class="ph-duotone ph-prohibit text-[18px] text-flame" aria-hidden="true"></i>Not for sale
+        </span>
+        <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-smono text-[.82rem] text-ink-2">
+          <i class="ph-duotone ph-chart-pie-slice text-[18px] text-flame" aria-hidden="true"></i>Plural
+        </span>
+      </div>
+    </div></section>
+
+    
+    <section class="text-center pt-[clamp(60px,8vw,110px)] pb-[clamp(80px,9vw,140px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <h2 class="mx-auto max-w-[20ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Piece together the space <span class="italic font-medium text-flame">your community needs.</span></h2>
+      <div class="flex flex-wrap justify-center gap-3.5 mt-[34px]">
+        <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="/start">Install Bonfire</a>
+        <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://docs.bonfirenetworks.org">Read the documentation</a>
+        <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="/mosaic">Build it with us</a>
+      </div>
+      <p class="mt-[26px] font-smono text-[.82rem] text-ink-3">Missing a block? <a class="text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="/contact">Tell us what your community needs.</a></p>
+    </div></section>
+
   </div>
 </div>
 
+      
 
+
+
+<div class="bg-night text-ink font-body border-t border-ink/[0.07]">
+  <div class="mx-auto flex flex-col gap-5 px-7 py-7 sm:flex-row sm:items-center sm:justify-between">
+    <a class="group flex items-center gap-3 text-ink focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/" aria-label="Bonfire Networks — home">
+      <span class="block h-10 w-[30px] bg-cover bg-center bg-no-repeat" style="background-image: url(/img/bonfire.png)"></span>
+      <span>
+        <span class="block font-disp text-[1.05rem] font-semibold">Bonfire Networks</span>
+        <span class="block text-[.82rem] text-ink-3 transition-colors group-hover:text-ink-2">Community-owned digital spaces.</span>
+      </span>
+    </a>
+    <div class="flex items-center gap-3">
+      <span class="font-smono text-[.68rem] tracking-[.08em] text-ink-3">OPEN SOURCE</span>
+      <a class="github-button" href="https://github.com/bonfire-networks/bonfire-app" data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bonfire-networks/bonfire-app on GitHub">Star</a>
+    </div>
+  </div>
+
+  <footer class="border-t border-ink/[0.07]">
+    <div class="mx-auto grid grid-cols-2 gap-x-7 gap-y-10 px-7 py-10 sm:grid-cols-4 lg:grid-cols-[1fr_1.15fr_1fr_1fr_1.65fr] lg:py-12">
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-explore">
+        <h2 id="footer-explore" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Explore</h2>
+        <a href="/features" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Features</a>
+        <a href="/compare" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Comparison table</a>
+        <a href="/case-studies" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Case studies</a>
+        <a href="/about" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">About Bonfire</a>
+        <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Try the campground <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-launch">
+        <h2 id="footer-launch" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Launch your Bonfire</h2>
+        <a href="/self-hosting" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Self-host</a>
+        <a href="/hosting" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Cooperative hosting</a>
+        <a href="/mosaic" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Co-design with us</a>
+        <a href="/start" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Compare all three routes</a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-ecosystem">
+        <h2 id="footer-ecosystem" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Ecosystem</h2>
+        <a href="/community" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Participate</a>
+        <a href="/faq" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">FAQs</a>
+        <a href="https://docs.bonfirenetworks.org/" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Documentation <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Browse the source code <span aria-hidden="true">↗</span></a>
+        <a href="/blog" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Blog</a>
+      </nav>
+
+      <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-integration">
+        <h2 id="footer-integration" class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">Integration</h2>
+        <a href="/telling" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Telling</a>
+        <a href="/ghost" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Ghost</a>
+      </nav>
+
+      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+        <h2 class="mb-3 font-smono text-[.68rem] font-bold tracking-[.13em] text-ink-3">News from Bonfire</h2>
+        <p class="mb-4 max-w-[34ch] text-[.88rem] leading-6 text-ink-2">Occasional updates about releases, community stories, and ways to take part.</p>
+        <a
+          href="/subscribe"
+          class="inline-flex items-center gap-2 border-b border-spark/35 pb-1 font-smono text-[.74rem] font-bold tracking-[.04em] text-spark transition-[gap,border-color] hover:gap-3 hover:border-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70"
+        >
+          Get Bonfire updates <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="border-y border-ink/[0.07]">
+    <div class="mx-auto flex items-center justify-center px-7 py-8">
+      <div class="flex items-center gap-3">
+        <p class="text-ink-3">Supported by</p>
+      <a class="ml-4" href="https://nlnet.nl">
+        <img
+          src="/img/b-nlnet.png"
+          alt="NLNet"
+          width="140"
+          loading="lazy"
+          class="light-img"
+        >
+        <img
+          src="/img/w-nlnet.png"
+          alt="NLNet"
+          width="140"
+          loading="lazy"
+          class="dark-img hidden"
+        >
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto flex max-w-[1140px] flex-col items-center justify-center gap-6 px-7 py-8 sm:flex-row sm:justify-between">
+    <div class="flex items-center gap-8">
+      <a href="https://opencollective.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/oc.svg" alt="Open Collective" width="34" height="34" loading="lazy"></a>
+      <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer"><img src="/img/opensource.svg" alt="Open source" width="89" height="34" loading="lazy"></a>
+    </div>
+    <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm" aria-label="Legal and contact">
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/contact/">Contact</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/presskit">Press kit</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/conduct">Code of conduct</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/privacy">Privacy</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/">Bonfire Networks 2026</a>
+    </nav>
+  </div>
 </div>
+
+<script async defer>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const lightImg = document.querySelector('.light-img');
+  const darkImg = document.querySelector('.dark-img');
+
+  function updateImage() {
+    const theme = document.body.getAttribute('data-theme');
+    if (theme === 'light') {
+      lightImg.classList.remove('hidden');
+      darkImg.classList.add('hidden');
+    } else {
+      lightImg.classList.add('hidden');
+      darkImg.classList.remove('hidden');
+    }
+  }
+
+  // Initial call
+  updateImage();
+
+  // Set up a MutationObserver to watch for changes to the data-theme attribute
+  const observer = new MutationObserver(updateImage);
+  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+});
+
+</script>
+
+    </div>
+  </div>
+  </body>
+</html>
