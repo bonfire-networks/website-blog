@@ -98,7 +98,7 @@ Bonfire comes with different themes, and you can build your own, customising col
 
 ![Screenshot of jacobin.social and the Jacobin Ghost site side by side: Bonfire carrying Jacobin's branding end to end](/img/jacobin/ghostbonfire.png)
 
-When Jacobin's readers arrive at [jacobin.social](https://jacobin.social) they see Jacobin, end to end, with no sign of a different platform underneath. That mattered enough to be one of the reasons they chose Bonfire in the first place: a community space should feel like *their* space, not a precarious corner of a platform you don't control.
+For example, when Jacobin's readers arrive at [jacobin.social](https://jacobin.social) (which [launched today](http://bonfirenetworks.org/casestudy/jacobin) and is powered by Bonfire) they see Jacobin, end to end, with no sign of a different platform underneath. That mattered enough to be a major reason they chose Bonfire: a community space should feel like *their* space, not a precarious corner of a platform they don't control.
 
 <a class="!no-underline hover:!no-underline" href="https://jacobin.de/social" target="_blank">
 <section class="py-8 rule">
