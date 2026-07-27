@@ -9,23 +9,27 @@ jobs:
   build:
     runs-on: ubuntu-24.04
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      # Activates the Yarn version pinned in package.json's packageManager
+      # field (Yarn 4). Must run before setup-node so its yarn cache works.
+      - name: Enable Corepack
+        run: corepack enable
+
+      # Pinned to the current LTS rather than `lts/*`: Corepack is unbundled
+      # from Node 25+, so auto-tracking a future LTS would break `yarn`.
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24.x
+          cache: yarn
 
       - name: Install dependencies & build
         env:
           API_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          yarn install --frozen-lockfile
+          yarn install --immutable
           yarn build
 
       - name: Deploy
