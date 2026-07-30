@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonfire</title>
-    <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <title>Exploring a Bonfire Geosocial Extension</title>
+    <meta name="description" content="Overview This issue explores implementing a basic geosocial extension for Bonfire that enables location-based social interactions without the privacy concerns, gamification and corporate overhead of foursquare. &#92; Relevant resources --------...">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,17 +14,17 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <!-- OpenGraph meta tags for social sharing -->
-    <meta property="og:title" content="Bonfire">
-    <meta property="og:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <meta property="og:title" content="Exploring a Bonfire Geosocial Extension">
+    <meta property="og:description" content="Overview This issue explores implementing a basic geosocial extension for Bonfire that enables location-based social interactions without the privacy concerns, gamification and corporate overhead of foursquare. &#92; Relevant resources --------...">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://bonfirenetworks.org//posts/bonfire-long-form-content/">
+    <meta property="og:url" content="https://bonfirenetworks.org//posts/exploring-a-bonfire-geosocial-extension/">
     
     <meta property="og:image" content="https://bonfirenetworks.org//img/banner.png">
     
     <!-- Twitter card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bonfire">
-    <meta name="twitter:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
+    <meta name="twitter:title" content="Exploring a Bonfire Geosocial Extension">
+    <meta name="twitter:description" content="Overview This issue explores implementing a basic geosocial extension for Bonfire that enables location-based social interactions without the privacy concerns, gamification and corporate overhead of foursquare. &#92; Relevant resources --------...">
     
     <meta name="twitter:image" content="https://bonfirenetworks.org//img/banner.png">
     
@@ -307,8 +307,8 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
         <div class="flex flex-wrap items-center gap-1.5 mb-4">
         </div>
         
-        <h1 class="font-disp font-semibold text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]"></h1>
-        <p class="mt-4 font-smono text-[.72rem] tracking-[.06em] text-ink-3">Published 27 Jun 2025</p>
+        <h1 class="font-disp font-semibold text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]">Exploring a Bonfire Geosocial Extension</h1>
+        <p class="mt-4 font-smono text-[.72rem] tracking-[.06em] text-ink-3">Published 23 Jul 2025</p>
       </div>
       <div class="max-w-[980px] mx-auto px-7 mt-8">
         
@@ -321,7 +321,7 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
 
       
       <div class="mt-4 mb-8 rounded-xl border border-dashed border-corn/40 bg-corn/5 px-5 py-4 text-[.92rem] text-ink-2">
-        ◼ This article was originally published <a class="text-corn-2 font-semibold hover:underline" href="https://bonfire.cafe/post/01JYRX7HCGME693BGCZF6AGGK1?frontmatter=true" target="_blank" rel="noopener">on the fediverse at bonfire.cafe</a>
+        ◼ This article was originally published <a class="text-corn-2 font-semibold hover:underline" href="https://bonfire.cafe/pub/objects/01K0V1SMG2934JRQC59EQMN620" target="_blank" rel="noopener">on the fediverse at bonfire.cafe</a>
       </div>
       
 
@@ -335,16 +335,72 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
         prose-img:rounded-xl prose-img:border prose-img:border-ink/15
         prose-hr:border-ink/[0.07] prose-figcaption:text-ink-3
         prose-th:text-ink-3 prose-td:text-ink-2">
-        
+        <h2 id="overview">Overview <a class="direct-link" href="#overview" target="_blank" rel="noopener">#</a></h2>
+<p>This issue explores implementing a basic geosocial extension for Bonfire that enables location-based social interactions without the privacy concerns, gamification and corporate overhead of foursquare.</p>
+<h2 id="relevant-resources"><br>
+Relevant resources <a class="direct-link" href="#relevant-resources" target="_blank" rel="noopener">#</a></h2>
+<ul>
+<li>Use cases and proposed implementation approach: <a href="https://hedgedoc.socialweb.coop/kUPvzmd4SjyN1oGxyrzskQ#" target="_blank" rel="noopener">hedgedoc.socialweb.coop/kUPv...</a></li>
+<li>Geosocial task force <a href="https://github.com/swicg/geosocial" target="_blank" rel="noopener">github.com/swicg/geosocial</a> (Issues are particularly relevant)</li>
+<li>Small client for checking in places <a href="https://socialwebfoundation.org/2025/07/14/seeking-interop-testing-for-geosocial-activitypub-client/" target="_blank" rel="noopener">socialwebfoundation.org/2025...</a></li>
+</ul>
+<h2 id="mockups">Mockups <a class="direct-link" href="#mockups" target="_blank" rel="noopener">#</a></h2>
+<h3 id="create-new-activities-in-the-composer">Create new activities in the composer <a class="direct-link" href="#create-new-activities-in-the-composer" target="_blank" rel="noopener">#</a></h3>
+<p>Currently, our composer only supports notes and articles. To enable check-ins/check-outs, we need:</p>
+<ul>
+<li>Activity type selector: Dropdown next to user avatar in composer</li>
+<li>Dynamic fields: Show relevant inputs based on selected activity type</li>
+<li>For check-ins/travel/check-outs: Autocomplete location input</li>
+</ul>
+<p>Here our standard component, but with a dropdown element next the user avatar to select the activity to publish</p>
+<p><br>
+<img src="https://github.com/user-attachments/assets/efc167f9-7bb2-48a8-942e-98f2b68148a7" alt="Image"><br>
+The dropdown shows the activity type available, based on the active extensions</p>
+<p><img src="https://github.com/user-attachments/assets/cbdd2a62-ab0d-4a28-888e-a5e087835713" alt="Image"></p>
+<p>Once the user chooses the activity, the composer includes the needed extra field, in this case for check-in it only adds a autocomplete input for selecting the location.</p>
+<p><em>(I added a dropdown next to checkin for switching between checkin - travel - checkout, maybe it's better to show all the 3 options inline?)</em></p>
+<p><br>
+<img src="https://github.com/user-attachments/assets/335d27e4-9a04-4972-afda-d7deb02a3113" alt="Image"></p>
+<h2 id="the-place-page">The place page <a class="direct-link" href="#the-place-page" target="_blank" rel="noopener">#</a></h2>
+<p>Places should be first-class AP actor.</p>
+<p>This transforms places from simple geotags into active participants in the federated web, allowing physical spaces to build communities and curate their digital presence.</p>
+<p>This means also that a place should be managed by one or more user.</p>
+<p>In the following mockups we envisioned a very basic place page: on the right sidebar there is the About widget, with some extra fields that can be included in the place settings such as: name, address, phone number, email, opening hours, plus some aggregated data if needed, like the amount of check-in in last day/weel/month etc.</p>
+<p>The page would have different tabs based on what's most relevant for the place and the extensions enabled, here the check-in feed</p>
+<p><img src="https://github.com/user-attachments/assets/848fbbef-1ae2-413b-8a88-437659cfcc2e" alt="Image"></p>
+<p>and the events feed</p>
+<p><br>
+<img src="https://github.com/user-attachments/assets/289e91c3-1357-4853-b35f-50f5e8ad8b7d" alt="Image"></p>
+<p>We already have most of the building block ready for implementing this, at least for this basic version (eg. focusing only on &quot;public&quot; spaces, not including the event extension, focus on check-in/check-out functionalities).</p>
+<br/>
+<h2 id="location-pages-for-non-actor-places">Location Pages for Non-Actor Places <a class="direct-link" href="#location-pages-for-non-actor-places" target="_blank" rel="noopener">#</a></h2>
+<p>For locations from <a href="http://places.pub" target="_blank" rel="noopener">places.pub</a> (or similar services) that aren't yet ActivityPub actors, we can create aggregation pages that function like more structured location-specific hashtag pages. Users can follow these locations and explore all related activities in one place.</p>
+<br/>
+<h3 id="see-all-the-check-in-that-belong-to-a-specific-location">See all the check-in that belong to a specific location <a class="direct-link" href="#see-all-the-check-in-that-belong-to-a-specific-location" target="_blank" rel="noopener">#</a></h3>
+<p><img src="https://github.com/user-attachments/assets/bb5d41ef-b15f-4a87-8f7f-c2b7ef78eb63" alt="Image"></p>
+<h3 id="see-the-map-with-all-the-other-locations-nearby">See the map with all the other locations nearby <a class="direct-link" href="#see-the-map-with-all-the-other-locations-nearby" target="_blank" rel="noopener">#</a></h3>
+<p><img src="https://github.com/user-attachments/assets/3ba2b965-a530-4339-81be-c41236a9502f" alt="Image"></p>
+<h3 id="see-all-the-media-published-in-that-location">See all the media published in that location <a class="direct-link" href="#see-all-the-media-published-in-that-location" target="_blank" rel="noopener">#</a></h3>
+<br/>
+<p><img src="https://github.com/user-attachments/assets/9eb5119f-c17c-4d79-bc2f-73db719b981e" alt="Image"><br>
+<br>
+Next steps</p>
+<ul>
+<li>Add a Map view mockup (we do already have one in the bonfire_geolocate extension) to navigate all the places in a interactive way</li>
+<li>Add more geosocial activity preview to see how they appear in other feeds</li>
+<li>Feedback on proposed UX flow</li>
+</ul>
+
       </article>
 
       
       <div class="mt-10 rounded-xl border border-dashed border-ink/15 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
         <p class="m-0 text-[.95rem] text-ink-2">Comments and boosts live on the fediverse.</p>
-        <a class="font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="https://bonfire.cafe/post/01JYRX7HCGME693BGCZF6AGGK1?frontmatter=true" target="_blank" rel="noopener">Join the discussion →</a>
+        <a class="font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="https://bonfire.cafe/pub/objects/01K0V1SMG2934JRQC59EQMN620" target="_blank" rel="noopener">Join the discussion →</a>
       </div>
       
 
+      
       
       <section
         class="mt-16 border-y border-ink/[0.07] bg-night-2 py-12 md:mt-24"
@@ -372,10 +428,10 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
           </div>
           <script
             src="https://bonfire.cafe/js/comments_embed.js?v1.0"
-            data-published-at="2025-06-27"
-            data-media-uri="https://bonfirenetworks.org/posts/bonfire-long-form-content/"
-            data-theme="dark"
-            data-mode="nested"
+            data-published-at="2025-07-23" 
+            data-post-id="01K0V1SMG2934JRQC59EQMN620" data-media-uri="https://bonfirenetworks.org/posts/exploring-a-bonfire-geosocial-extension/" 
+            data-theme="dark" 
+            data-mode="nested" 
             async></script>
           </div>
         </div>
@@ -383,13 +439,13 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
 
       
       <div class="grid grid-cols-1 min-[601px]:grid-cols-2 gap-3.5 mt-12">
-        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 hover:border-ink/25" href="/posts/announcing-the-bonfire-social-1-0-release-candidate/">
+        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 hover:border-ink/25" href="/posts/connect-your-existing-tools-to-the-fediverse-with-mosaic/">
           <span class="font-smono text-[.62rem] tracking-[.1em] text-ink-3">← Previous</span>
-          <span class="font-disp font-[620] text-[1.02rem] leading-snug">Announcing the Bonfire Social 1.0 Release Candidate</span>
+          <span class="font-disp font-[620] text-[1.02rem] leading-snug">Connect your existing tools to the fediverse with Mosaic</span>
         </a>
-        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 items-end text-right hover:border-ink/25" href="/posts/bonfire-social-1.0-rc2/">
+        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 items-end text-right hover:border-ink/25" href="/posts/bonfire-social-1-0rc3/">
           <span class="font-smono text-[.62rem] tracking-[.1em] text-ink-3">Next →</span>
-          <span class="font-disp font-[620] text-[1.02rem] leading-snug"></span>
+          <span class="font-disp font-[620] text-[1.02rem] leading-snug">Bonfire Social 1.0rc3</span>
         </a>
       </div>
 
