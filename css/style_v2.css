@@ -1593,6 +1593,9 @@
       margin-bottom: 0;
     }
   }
+  .\!mt-0 {
+    margin-top: 0px !important;
+  }
   .-mt-1 {
     margin-top: calc(var(--spacing) * -1);
   }
@@ -1703,6 +1706,9 @@
   }
   .mt-\[34px\] {
     margin-top: 34px;
+  }
+  .mt-\[36px\] {
+    margin-top: 36px;
   }
   .mt-\[38px\] {
     margin-top: 38px;
@@ -2451,6 +2457,9 @@
   .h-\[2px\] {
     height: 2px;
   }
+  .h-\[7px\] {
+    height: 7px;
+  }
   .h-\[9px\] {
     height: 9px;
   }
@@ -2657,6 +2666,9 @@
   }
   .w-\[3\.25rem\] {
     width: 3.25rem;
+  }
+  .w-\[7px\] {
+    width: 7px;
   }
   .w-\[9px\] {
     width: 9px;
@@ -2919,6 +2931,9 @@
   }
   .min-w-40 {
     min-width: calc(var(--spacing) * 40);
+  }
+  .min-w-\[16rem\] {
+    min-width: 16rem;
   }
   .min-w-\[150px\] {
     min-width: 150px;
@@ -3217,6 +3232,10 @@
     -moz-column-gap: calc(var(--spacing) * 2);
          column-gap: calc(var(--spacing) * 2);
   }
+  .gap-x-3 {
+    -moz-column-gap: calc(var(--spacing) * 3);
+         column-gap: calc(var(--spacing) * 3);
+  }
   .gap-x-3\.5 {
     -moz-column-gap: calc(var(--spacing) * 3.5);
          column-gap: calc(var(--spacing) * 3.5);
@@ -3489,6 +3508,12 @@
     border-color: var(--acc) !important;
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in srgb,var(--acc) 55%,transparent) !important;
+    }
+  }
+  .\!border-leaf\/30 {
+    border-color: color-mix(in srgb, #b9d96a 30%, transparent) !important;
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-leaf) 30%, transparent) !important;
     }
   }
   .border-\[color-mix\(in_srgb\,var\(--acc\)_24\%\,transparent\)\] {
@@ -3781,6 +3806,12 @@
   }
   .bg-ink-3 {
     background-color: var(--color-ink-3);
+  }
+  .bg-ink-3\/50 {
+    background-color: color-mix(in srgb, #847f6f 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-ink-3) 50%, transparent);
+    }
   }
   .bg-ink-3\/70 {
     background-color: color-mix(in srgb, #847f6f 70%, transparent);
@@ -4556,6 +4587,9 @@
   .text-right {
     text-align: right;
   }
+  .align-\[\.15em\] {
+    vertical-align: .15em;
+  }
   .align-bottom {
     vertical-align: bottom;
   }
@@ -5214,6 +5248,9 @@
   }
   .\!text-ink {
     color: var(--color-ink) !important;
+  }
+  .\!text-leaf {
+    color: var(--color-leaf) !important;
   }
   .\!text-spark {
     color: var(--color-spark) !important;

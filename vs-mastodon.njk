@@ -1,0 +1,328 @@
+---
+layout: layouts/base.njk
+title: "Mastodon vs Bonfire: what a federated community platform adds to the microblog"
+description: "Bonfire federates with Mastodon over ActivityPub. Here's what it adds on top: per-post boundaries and circles, branching threads, custom feeds, groups, events, decisions, extensions, and real post import."
+image: /img/boundaries_post.png
+---
+{# ============================================================
+   BONFIRE VS MASTODON: the delta, and the honest reverse.
+
+   Structure and every class string are lifted from features.njk;
+   nothing new is invented here. Edit the `sections` array below,
+   the markup loops over it. `status` values must match the ones
+   in features.njk and _data/extensions.json. If they drift, the
+   two pages start contradicting each other.
+
+   TWO RULES for this page:
+
+   1. EVERY CARD IS A DELTA. If Mastodon ships it too, it is not a
+      card. Demote it to the section's `parity` line. A card that
+      describes something Mastodon already does is what gets the
+      whole page dismissed by the one reader who knows Mastodon
+      best. Check against *current* Mastodon before adding one.
+   2. #gaps IS NOT OPTIONAL and is not padding. It is the reason
+      this page can be linked in a fediverse thread. Never let a
+      line in it become aspirational.
+
+   Claim provenance: cards trace to bonfire-app: docs/CHANGELOG.md
+   for anything with a status, docs/user_guides/ for anything a user
+   does, docs/topics/federation-interoperability.md for the wire,
+   masto_api_coverage.json for the API. Where the changelog and a
+   user guide disagree, the changelog wins.
+
+   Mastodon side last checked: August 2026 (joinmastodon.org, the
+   public roadmap, and mastodon/mastodon CHANGELOG.md).
+
+   Worked examples of the delta rule, so it doesn't get re-broken:
+   · SSO: Mastodon IS an OAuth 2.0 authorization server ("Sign in
+     with Mastodon" works; /oauth/authorize, /oauth/token,
+     verify_credentials as pseudo-userinfo, and since 4.3 a
+     /.well-known/oauth-authorization-server). It is NOT an OIDC
+     provider: no id_token, no /.well-known/openid-configuration,
+     no `openid` scope, open since mastodon#4800 (2017) and
+     mastodon#26398 (2023). And it HAS been an OIDC client since
+     mastodon#16221. So "SSO provider" is parity; only OIDC
+     specifically is the delta. That's why the card says so.
+   · Archipelago: Mastodon has had LIMITED_FEDERATION_MODE for
+     years, so allow-list federation is not the delta. Granularity
+     (naming people, not just servers) and governance (moderators
+     in the UI, not an env var) are.
+   ⚠️ RE-CHECK AT EACH MASTODON MINOR RELEASE. Several cards are one
+   release away from becoming parity lines.
+   ============================================================ #}
+
+{% set sections = [
+  {
+    id: "boundaries", acc: "var(--color-flame)", link: "/docs/boundaries/", linktext: "How boundaries work, in the docs →",
+    eyebrow: "Circles & boundaries",
+    head: "Who sees what is", headhl: "your call.",
+    intro: "Mastodon gives you four visibility levels, chosen per post. Bonfire keeps those and adds a second axis on top: not just who sees it, but who can do what with it.",
+    shot: "The boundary composer: choosing separately who can see, reply to, and quote a post",
+    cards: [
+      { icon: "ph-lock-key", name: "Per-post boundaries", text: "See, reply, quote, edit: each one decided per post and per audience, instead of a single public-or-not switch." },
+      { icon: "ph-circles-three", name: "Circles are audiences", text: "A named group of people you post <i>to</i> and grant rights <i>to</i>, not just a lens you filter a feed through. The feed is a side effect." },
+      { icon: "ph-identification-badge", name: "Custom roles", text: "Bundle permissions into a role, then grant it to one person or a whole circle." },
+      { icon: "ph-user-switch", name: "Multiple and shared profiles", text: "Several independent profiles on one account, and shared profiles a team co-runs without anyone handing over a password." },
+      { icon: "ph-plugs-connected", name: "They hold off your instance", text: "Boundaries speak the same language as GoToSocial interaction controls and Mastodon quote authorisations, so they don't stop at your server's edge." }
+    ],
+    parity: "You don't have to learn a permission matrix to post. Just as Mastodon leads with visibility levels, Bonfire leads with boundary presets (Public, Local, Mentions, Follows); the per-action controls are there for when you want them."
+  },
+  {
+    id: "conversation", img: "featurefilters.png", acc: "var(--color-corn)", link: false,
+    eyebrow: "Posting, reading, finding",
+    head: "Room to", headhl: "say it properly.",
+    intro: "The composer, the thread, and everything you assemble to decide what reaches you.",
+    shot: "The custom feed builder: filtering by content type, circle and source instance",
+    cards: [
+      { icon: "ph-tree-structure", name: "Branching threads", text: "Replies fork into sub-threads, so a conversation can go three ways at once and each one stays legible." },
+      { icon: "ph-text-aa", name: "Long-form, with titles", text: "Add a title and markdown and you've published an article, in the same composer as a one-line note." },
+      { icon: "ph-handshake", name: "Collaborative posts", text: "Grant edit permission on a post and a co-author, or a friend with a good eye for typos, can work on it with you. It's the boundaries system, not a separate feature.", status: "Beta", link: "/features#boundaries", linktext: "How the edit permission works" },
+      { icon: "ph-squares-four", name: "A home screen of your own", text: "Bonfire opens on a dashboard you can customise, not just more feeds in more columns: a decision closing soon, the thread with the most replies this week, how your instance is actually configured." },
+      { icon: "ph-funnel", name: "Custom feeds", text: "Build a feed from filters (type, circle, date, engagement, source instance), then name it, save it, and arrange the ones you use."},
+      { icon: "ph-rss", name: "RSS out of any feed", text: "Not only profiles and hashtags: publish RSS or Atom for any public feed preset you've built, including a public circle." },
+      { icon: "ph-rss-simple", name: "Reading RSS in", text: "Subscribing to outside feeds from inside Bonfire.", status: "In development", link: "/extensions", linktext: "Browse the extensions" },
+      { icon: "ph-magnifying-glass", name: "Search everything you can see", text: "Full-text search across every public post your instance knows about, not just your own and the ones you touched, plus a private tab over your messages. Inclusion in search is opt-in." },
+      { icon: "ph-clock", name: "Scheduled posts", text: "In the composer, rather than only through the API." },
+      { icon: "ph-eye-slash", name: "Dark patterns are optional", text: "Follower counts, reaction counts and infinite scroll can all be switched off." }
+    ],
+    parity: "Full-text search, post editing, content warnings and polls all work the way you'd expect. This section is about what's added to them."
+  },
+  {
+    id: "beyond", img: "group_over.png", acc: "var(--color-leaf)",
+    link: "/features#beyond", linktext: "Every block in the kit →",
+    eyebrow: "Beyond the timeline",
+    head: "More than", headhl: "a feed.",
+    intro: "Feeds are built around individuals: fine for chatter and discovery, the wrong shape for organising. When specific people need to see something, act on it and follow through, you need a group: with membership, with rules, with a calendar, with a way to decide together.",
+    shot: "Discovering groups to join across the fediverse",
+    cards: [
+      { icon: "ph-users-three", name: "Groups and topics", text: "Spaces with their own membership, permissions and rules: public forum, private room, or announce-only channel. Topics live inside them, and you can follow a single topic rather than the whole group.", status: "1.0 beta" },
+      { icon: "ph-calendar-check", name: "Events", text: "Calendar and list views for what's coming up, built together with Lauti rather than reinvented.", status: "1.0 beta" },
+      { icon: "ph-scales", name: "Decisions", text: "Proposals, structured consensus drawn from sociocratic practice, and weighted score voting where an objection can outweigh an approval. They federate as ActivityPub <code class=\"font-smono text-[.85em]\">Question</code>, so people on Mastodon can take part in the vote itself.", status: "1.0 beta" },
+      { icon: "ph-scroll", name: "Rules, per group", text: "Every group sets out its own expectations, not only the instance. Designed with governance researchers rather than guessed at.", status: "1.0 beta" },
+      { icon: "ph-megaphone", name: "Announcements, per group", text: "Broadcast to every member of a group, landing in notifications and as a push, instead of hoping the feed surfaces it.", status: "1.0 beta" },
+      { icon: "ph-flask", name: "Open science", text: "Scholarly identity, citable objects, and the discussion around a publication.", status: "Beta", link: "/apps", linktext: "See the flavours" },
+      { icon: "ph-compass", name: "Where this is heading", text: "Tasks and kanban, mutual aid, ValueFlows economic flows, geographic places, are some of the extensions we've prototyped.", status: "In development", link: "/extensions", linktext: "Browse the extensions" }
+    ],
+    parity: "Instance-level rules and admin announcements exist on Mastodon too. What's new is that every group gets its own."
+  },
+  {
+    id: "shape", acc: "var(--color-flame)",
+    link: "/extensions", linktext: "Browse every extension →",
+    eyebrow: "Make it yours",
+    head: "Assembled from blocks,", headhl: "by you.",
+    intro: "Bonfire is pluggable extensions all the way down, including the core. Add what you need, fork what almost fits, drop what you don't want.",
+    cards: [
+      { icon: "ph-puzzle-piece", name: "Extensions", text: "Install one, fork one, or write one. Even the core is an extension, which is why forking a piece doesn't mean maintaining a fork of everything.", link: "/extensions", linktext: "Browse the extensions" },
+      { icon: "ph-palette", name: "Themes", text: "Colours, fonts and layout: your domain, your masthead, your typography, with nothing of ours wedged between you and your people. No code required.", link: "/themes", linktext: "See the themes" },
+      { icon: "ph-stack", name: "Flavours", text: "Start from a preset that's already close (social, community, coordination, open science), then adjust block by block.", link: "/apps", linktext: "See the flavours" },
+      { icon: "ph-sign-in", name: "Your instance can be the SSO login", text: "Bonfire is a full OpenID Connect provider, not only a client. Your other tools can put a “sign in with [our community]” button on their front page and it works out of the box, with nothing custom to build."},
+      { icon: "ph-chats-circle", name: "The Telling", text: "A federated comment thread under any page on your own site, not an embedded post, that lives in your community and can outgrow the article it started under. Plus a second widget that drops your pinned posts into a page.", link: "/telling", linktext: "How the Telling works" },
+      { icon: "ph-newspaper", name: "Ghost integration", text: "Members and membership tiers synced into your space, magic-link login, automatic article import, a circle per tier with boundaries to match, and the discussion federated back onto the article.", link: "/ghost", linktext: "How the Ghost integration works" },
+      { icon: "ph-brackets-curly", name: "GraphQL API", text: "A full GraphQL API alongside the Mastodon-compatible one, for building your own clients and integrations." }
+    ]
+  },
+  {
+    id: "control", acc: "var(--color-leaf)",
+    link: "/features#safety", linktext: "Settings and defaults, in the catalogue →",
+    eyebrow: "Who decides how it behaves",
+    head: "Configured in the app,", headhl: "not the terminal.",
+    intro: "On Mastodon a good deal of how an instance behaves lives in <code class=\"font-smono text-[.85em]\">.env.production</code> and <code class=\"font-smono text-[.85em]\">tootctl</code>, which is to say config files and terminal commands on the server. Changing any of it requires access to the server and usually a restart, and it stays invisible to everyone who doesn't have that. In Bonfire those same choices live in the app, and most of them don't stop at the admin either.",
+    cards: [
+      { icon: "ph-sliders-horizontal", name: "Defaults, not dictates", text: "An admin's setting is a starting point, not a verdict. Bonfire takes the first value it finds, in order: your profile, your account, the instance's settings, the server environment, the flavour's config, then the built-in default." },
+      { icon: "ph-shield-check", name: "Moderators are in control", text: "Federation policy, allow-list included, is managed by moderators in the interface. No sysadmin, no restart, no waiting on whoever holds the keys to the server.", link: "#federation", linktext: "See archipelago mode" },
+      { icon: "ph-gauge", name: "How hard the server works, tuned live", text: "An overall speed preset, or per-queue limits, taking effect with no restart. The presets are transforms over your boot config rather than replacements for it, so sizing the server is still yours." },
+      { icon: "ph-arrow-counter-clockwise", name: "Edited in place", text: "Themes, boundary presets, instance rules and feed layouts are all edited in the app, and a theme you've made a mess of can be reset in one click.", link: "/themes", linktext: "See the themes" },
+      { icon: "ph-toggle-right", name: "Turn features off for yourself", text: "Every part of Bonfire is a building block, and your admin isn't the only one who gets to pick them. Don't want likes or boosts? Turn them off for your account, whatever the rest of your instance does.", link: "/extensions", linktext: "Browse the extensions" }
+    ],
+    parity: "Mastodon has an admin settings page too: site info, rules, announcements. The difference is how much lives there rather than in a config file, and who besides the admin gets a say."
+  },
+  {
+    id: "federation", img: "archi.png", acc: "var(--color-corn)", link: false,
+    eyebrow: "Federation & safety",
+    head: "Open to the world,", headhl: "as far as you like.",
+    intro: "Your space is yours to open wide or keep closed, and the tools for holding a line are meant to be shared rather than carried alone.",
+    shot: "Archipelago mode: choosing exactly which servers and people your instance federates with",
+    cards: [
+      { icon: "ph-graph", name: "Archipelago mode", text: "Allow-list federation your moderators run from the interface, and the list can name individual remote people and groups, not only whole servers, so instances can opt into a shared network together.", status: "Beta", link: "/posts/bonfire-social-1-0-5-archipelago/", linktext: "About archipelago mode" },
+      { icon: "ph-ghost", name: "Block, silence or ghost?", text: "Two independent switches instead of one bundled action. Silence hides them from you; ghost hides you from them; block does both, and you can reach for either half on its own.", link: "/moderation-toolkit", linktext: "The moderation toolkit" },
+      { icon: "ph-chats-teardrop", name: "Flags open a mediation", text: "Moderators can easily start a conversation with the author or the flagger before reaching for the hammer, rather than choosing between ignoring it and deleting it.", link: "/moderation-toolkit", linktext: "The moderation toolkit" },
+      { icon: "ph-note-pencil", name: "Content labels", text: "A moderator can attach a label, some context, and up to three links to reliable sources: adding to a post rather than only removing it.", status: "In development", link: "/moderation-toolkit", linktext: "The moderation toolkit" },
+      { icon: "ph-list-checks", name: "Blocklists you import yourself", text: "Curated lists from Garden Fence, Seirdy's or Fediseer, imported by you as a user, not only by your admin.", link: "/moderation-toolkit", linktext: "The moderation toolkit" },
+      { icon: "ph-cube", name: "Shows what others drop", text: "Object types Bonfire doesn't implement are still stored and shown with a fallback preview. Tested against PeerTube, Mobilizon, BookWyrm, Funkwhale, Castopod, and more. More of the fediverse stays legible." }
+    ],
+    parity: "Bridging to Bluesky and the ATmosphere works the same way it does from Mastodon, via fed.brid.gy, and admin-level domain blocks are the same deal."
+  },
+  {
+    id: "data", img: "import_status.png", acc: "var(--color-flame)",
+    link: "/features#data", linktext: "Data portability, in the catalogue →",
+    eyebrow: "Your data",
+    head: "Nothing here is", headhl: "holding you hostage.",
+    intro: "A space can't be turned against its people when everyone is free to leave with everything. Most of that story is the same on both platforms. One part isn't.",
+    shot: "The import dashboard: circles, follows and posts arriving from another instance",
+    cards: [
+      { icon: "ph-download-simple", name: "Bring your posts, not just your follows", text: "Mastodon's own migration carries your followers across. Bonfire imports your account, your follows <i>and</i> your past posts from another instance, keeping their original dates and URLs and re-linking replies across instances." },
+      { icon: "ph-list-magnifying-glass", name: "An import you can watch", text: "A dashboard showing where the migration has got to, rather than a silent background job you hope finished." }
+    ],
+    parity: "And everything you're used to still works: identity migration with follower redirects, full exports, AGPL."
+  }
+] %}
+
+{# ---- the reverse list. One card, one item per line, no elaboration.
+
+   TEST BEFORE ADDING A LINE: is this something Mastodon actually does,
+   or just something of ours that isn't finished? Both belong here, but
+   they are not the same claim and the copy must not blur them. Cut on
+   sight anything that is neither: "no per-user federation allow-list"
+   was here once, and Mastodon has no such thing either, so it was pure
+   padding. A reader who spots one invented difference stops believing
+   the rest of the page.
+
+   `byChoice` marks a deliberate trade-off rather than unfinished work. ---- #}
+{% set gaps = [
+  { text: "<b>Bonfire's Circles don't federate yet; Mastodon's Collections do.</b> 4.6 shipped curated, shareable sets of profiles that travel across servers as ActivityPub <code class=\"font-smono text-[.85em]\">featuredCollections</code>, with consent built in: you opt in to being featured, you're told when you're added, and you can take yourself out. A Bonfire circle stays local, though it can already contain people from any instance, and boundary interaction policies do hold off-instance. Their FEP is the shape ours should grow into." },
+  { text: "<b>Parts of the Mastodon-compatible API are still missing.</b> Scheduled posts, filters, announcements, suggestions, quote-approval requests and the admin surface have no endpoints yet, so some clients will degrade." },
+  { text: "<b>No official native mobile app.</b> Bonfire installs to your home screen as a progressive web app, and third-party fediverse clients are an option, but there's no Bonfire-native iOS or Android app." },
+  { text: "<b>There's more to set up.</b> Bonfire is a kit you assemble rather than one fixed product, and that flexibility costs configuration effort Mastodon doesn't ask of you.", byChoice: true },
+  { text: "<b>A decade less hardening at scale.</b> While Bonfire 1.0 has been load-tested in production, Mastodon has had years of use by instances small and large." }
+] %}
+
+{# shared class strings, all lifted from features.njk / compare.njk #}
+{% set eyebrow = "flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]" %}
+{% set display = "mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set cell = "group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
+{% set flatcell = "card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7" %}
+{% set ic = "w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" %}
+{% set cellh = "font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]" %}
+{% set cellp = "text-ink-2 text-[.94rem]" %}
+{% set soon = "badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3" %}
+{% set more = "inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
+{% set jump = "font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" %}
+{% set cardlink = "inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
+{% set paritybox = "mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-lg border-l-2 border-ink/15 bg-ink/[0.02] px-5 py-4" %}
+{% set paritylabel = "font-smono text-[.6rem] font-bold tracking-[.14em] uppercase text-ink-3" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ---------- hero ---------- #}
+    <header class="pt-10 pb-[clamp(40px,5vw,60px)]" style="--acc:var(--color-flame)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>Mastodon vs Bonfire</p>
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Mastodon vs Bonfire</p>
+      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[22ch] [font-variation-settings:'opsz'_96]">You keep the network. Your community <span class="fire-text">gets a place in it.</span></h1>
+
+      <p class="mt-[36px] text-[1.08rem] text-ink-2 max-w-[58ch] [&_b]:text-ink [&_b]:font-semibold">Already on Mastodon and wondering what Bonfire would actually give you? Not a different network. Bonfire speaks ActivityPub, so you follow and are followed by Mastodon accounts, your polls are votable from Mastodon, and many of the apps you already use work against its <b>Mastodon-compatible API</b>. <b>Nobody gets left behind.</b></p>
+
+      <p class="mt-5 text-[1.08rem] text-ink-2 max-w-[58ch] [&_b]:text-ink [&_b]:font-semibold">Nobody has ever asked us for a better microblog. They ask for somewhere a community can live: with membership, a calendar, rules it wrote itself, a way to decide things together. That's the difference.</p>
+
+      <p class="mt-5 text-[.95rem] text-ink-3 max-w-[58ch]">The two projects build in the open, and often together: Mastodon wrote the FEP for consent-based quoting and Bonfire shipped it alongside them, Bonfire added RFC 9421 message signatures with the wider ActivityPub community, and federated groups are being worked out at the W3C task force rather than as anyone's private dialect.</p>
+
+      <nav class="flex flex-wrap gap-2 mt-9" aria-label="Jump to a section">
+        {%- for s in sections %}
+        <a class="{{ jump }}" href="#{{ s.id }}">{{ s.eyebrow }}</a>
+        {%- endfor %}
+        <a class="{{ jump }}" href="#gaps">What Bonfire doesn't do</a>
+      </nav>
+    </div></header>
+
+    <main>
+
+    {# ---------- the delta ---------- #}
+    {% for s in sections %}
+    <section id="{{ s.id }}" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:{{ s.acc }}">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>{{ s.eyebrow }}</p>
+      <h2 class="{{ display }}">{{ s.head }} <span class="{{ 'corn-text' if s.acc == 'var(--color-corn)' else 'fire-text' }}">{{ s.headhl }}</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">{{ s.intro | safe }}</p>
+
+      {% if s.link %}<a class="{{ more }}" href="{{ s.link }}">{{ s.linktext }}</a>{% endif %}
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 min-[1001px]:grid-cols-3 gap-3.5 mt-[34px]">
+        {%- for c in s.cards %}
+        <div class="{{ cell }}">
+          <div class="flex items-start justify-between gap-3">
+            <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone {{ c.icon }}"></i></span>
+            {% if c.status %}<span class="{{ soon }}">{{ c.status }}</span>{% endif %}
+          </div>
+          <h3 class="{{ cellh }}">{{ c.name }}</h3>
+          <p class="{{ cellp }}">{{ c.text | safe }}</p>
+          {% if c.link %}<div class="mt-3">
+            <a class="{{ cardlink }}" href="{{ c.link }}"{% if '//' in c.link %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ c.linktext or 'Learn more' }} <span aria-hidden="true">→</span></a>
+          </div>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+
+      {# Parity, explicitly labelled. Anything Mastodon also ships belongs
+         HERE and not in a card above. See the rules at the top of the file. #}
+      {% if s.parity %}
+      <p class="{{ paritybox }}">
+        <span class="{{ paritylabel }}">Same as Mastodon</span>
+        <span class="flex-1 min-w-[16rem] text-[.94rem] text-ink-2">{{ s.parity | safe }}</span>
+      </p>
+      {% endif %}
+
+      {% if s.shot and s.img %}
+      <figure class="m-0 mt-8">
+        <img class="block mx-auto max-w-full max-h-[500px] w-auto rounded-xl border border-ink/15" src="/img/{{ s.img }}" alt="{{ s.shot }}" loading="lazy">
+      </figure>
+      {% endif %}
+
+    </div></section>
+    {% endfor %}
+
+    {# ---------- the reverse ---------- #}
+    <section id="gaps" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <div class="max-w-[1140px] mx-auto px-7">
+
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The other direction</p>
+      <h2 class="{{ display }}">What Bonfire <span class="corn-text">doesn't do.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Mastodon has a decade of work behind it, and we federate with it rather than against it. Some of the below is what it does and we don't. Some are on our to-do list, others are deliberate trade-offs.</p>
+
+      <div class="{{ flatcell }} mt-[34px]">
+        <ul class="flex flex-col gap-4">
+          {%- for g in gaps %}
+          <li class="flex items-start gap-3 {{ '' if loop.first else 'pt-4 border-t border-ink/[0.07]' }}">
+            <span class="mt-[9px] w-[7px] h-[7px] flex-none bg-ink-3/50 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></span>
+            <span class="{{ cellp }} [&_b]:text-ink [&_b]:font-semibold">{{ g.text | safe }}{% if g.byChoice %} <span class="{{ soon }} !text-leaf !border-leaf/30 ml-1 align-[.15em]">By choice</span>{% endif %}</span>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <p class="mt-6 font-smono text-[.68rem] text-ink-3 max-w-[62ch] leading-[1.7]">Both sides of this page are checked against Mastodon's changelog and roadmap, and against Bonfire's own. Last checked August 2026. Spotted something wrong or out of date? <a class="text-spark hover:underline" href="/contact">Tell us and we'll fix it.</a></p>
+
+    </div></section>
+
+    {# ---------- coming from mastodon ---------- #}
+    <section class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Coming from Mastodon</p>
+      <h2 class="{{ display }}">You can bring <span class="fire-text">all of it with you.</span></h2>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 mt-8">
+        <a class="{{ more }} !mt-0" href="/features#data">Import your account, follows and posts <span aria-hidden="true">→</span></a>
+        <a class="{{ more }} !mt-0" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Wander the demo first <span aria-hidden="true">↗</span></a>
+        <a class="{{ more }} !mt-0" href="/start">Install an instance <span aria-hidden="true">→</span></a>
+        <a class="{{ more }} !mt-0" href="/compare">How Bonfire compares to non-fediverse tools <span aria-hidden="true">→</span></a>
+      </div>
+    </div></section>
+
+    {# ---------- closing CTA ---------- #}
+    <section class="text-center pt-[clamp(60px,8vw,110px)] pb-[clamp(80px,9vw,140px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <h2 class="mx-auto font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Same fediverse. <span class="italic font-medium text-flame">A world of your own.</span></h2>
+      <div class="flex flex-wrap justify-center gap-3.5 mt-[34px]">
+        <a class="{{ btnfire }}" href="/start">Get started</a>
+        <a class="{{ btnline }}" href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer">Wander the demo</a>
+        <a class="{{ btnline }}" href="/compare">The wider comparison</a>
+      </div>
+      <p class="mt-[26px] font-smono text-[.82rem] text-ink-3">Missing a block? <a class="text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="/contact">Tell us what your community needs.</a></p>
+    </div></section>
+
+    </main>
+  </div>
+</div>
