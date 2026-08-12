@@ -41,7 +41,7 @@ image: /img/osn22.png
 {% set uses = [
   { icon: "ph-users-three", name: "A home for a lab or a society",
     text: "Groups with their own membership and rules, topics inside them, a shared calendar, and a way to decide things together.",
-    status: "1.0 beta", link: "/features#beyond", linktext: "The blocks in full" },
+    status: "1.0 beta", link: "/features#beyond", linktext: "The building blocks in full" },
   { icon: "ph-broadcast", name: "Science communication you own",
     text: "Post from your institution's own domain and reach people across Mastodon and the wider fediverse. Nothing between you and the public that can be sold or switched off." },
   { icon: "ph-shield-check", name: "Rooms that can be closed",
@@ -85,8 +85,8 @@ image: /img/osn22.png
       { name: "Princeton HCI", dom: "princeton.edu", url: "https://hci.princeton.edu/", kind: "Governance research",
         text: "Protocol-based research into community-governed platforms. Together we designed Bonfire's community rules, drawing on <a class=\"text-spark hover:underline\" href=\"http://crowcards.org\" target=\"_blank\" rel=\"noopener noreferrer\">CrowCards</a>. The underlying workshops with fediverse organisers were published at CHI 2026.",
         link: "https://doi.org/10.1145/3772318.3790855", linktext: "The CHI 2026 paper" },
-      { name: "UCL", dom: "ucl.ac.uk", url: "https://www.ucl.ac.uk/bartlett/sustainable-construction/", kind: "PROVIDES Innovation Network",
-        text: "<i>Preventing Online Violence in Digital Education Spaces</i>, a UCL-led network on technology-facilitated harassment and abuse in digital learning. We're one of the partners in its scoping phase, advising on governance and inclusivity and helping test knowledge-exchange tools.",
+      { name: "UCL", dom: "ucl.ac.uk", url: "https://www.ucl.ac.uk/bartlett/sustainable-construction/", kind: "Safety research",
+        text: "Participating in <i>Preventing Online Violence in Digital Education Spaces</i>, a UCL-led network on technology-facilitated harassment and abuse in digital learning. We're one of the partners in its scoping phase, helping shape the research and tools that come out of it.",
         link: "/moderation-toolkit", linktext: "Our moderation work" },
       { name: "Prosocial Design Network", dom: "prosocialdesign.org", url: "https://www.prosocialdesign.org/", kind: "Design research · ongoing",
         text: "A network cataloguing evidence-based design patterns for healthier online spaces. We built one of their patterns, labelling misleading content with links to reliable sources, as a working Bonfire extension in a matter of hours, and we're continuing to work with them.",
@@ -99,7 +99,7 @@ image: /img/osn22.png
     who: "Saturno, Minutillo, de Borniol, Boudes, Fressengeas & Hahn", venue: "EGU General Assembly", year: "2026",
     text: "Where scholarly conversation went after Twitter, why walled gardens are a poor home for it, and the case for ActivityPub as the backbone instead.",
     url: "https://doi.org/10.5194/egusphere-egu26-10224", linktext: "Read the abstract",
-    url2: "https://meetingorganizer.copernicus.org/EGU26/EGU26-10224.html", linktext2: "At the conference" },
+    url2: "#coming-soon", linktext2: "Full text" },
   { title: "Science communication in the fediverse: Mastodon and Open Science Network",
     who: "Asta von Schröder", venue: "winoda.de", year: "2026",
     text: "A working researcher's guide to academic communication on decentralised platforms, and where the Open Science Network fits into it.",
@@ -204,7 +204,7 @@ image: /img/osn22.png
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What they switch on</p>
       <h2 class="{{ display }}">A kit, not <span class="corn-text">a product.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A department, a scholarly society and a science-communication collective each end up with something different. Anything below marked as coming isn't built yet.</p>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A research group, a scholarly society and a science-communication collective each end up with something different. Anything below marked as coming isn't built yet.</p>
 
       <div class="grid grid-cols-1 min-[681px]:grid-cols-2 gap-3.5 mt-[34px]">
         {%- for c in uses %}
@@ -220,15 +220,15 @@ image: /img/osn22.png
         {%- endfor %}
       </div>
 
-      <a class="{{ more }}" href="/features">Every block in the kit →</a>
+      <a class="{{ more }}" href="/features">Every building block in the kit →</a>
     </div></section>
 
     {# ---------- the Open Science Network ---------- #}
     <section id="osn" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The Open Science Network</p>
-      <h2 class="{{ display }}">A flavour built <span class="corn-text">for scholarship.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A flavour is a preset bundle of Bonfire blocks with its own defaults and its own governance. This is the one assembled for research, built with <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>, <a class="text-spark hover:underline" href="https://kcommons.org/" target="_blank" rel="noopener noreferrer">Knowledge Commons</a></b> and <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://sciety.org" target="_blank" rel="noopener noreferrer">Sciety</a></b>. <a class="text-spark hover:underline" href="https://www.univ-lorraine.fr/" target="_blank" rel="noopener noreferrer">Université de Lorraine</a> and the Paris region digital university network <a class="text-spark hover:underline" href="https://unif.fr" target="_blank" rel="noopener noreferrer">UNIF</a> are among the institutions lining up next. Universities run their own instances and stay federated with everyone else.</p>
+      <h2 class="{{ display }}">Bonfire, assembled <span class="corn-text">for scholarship.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">The Open Science Network is a ready-made set of building blocks with its own defaults and its own governance, put together for research and built with <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>, <a class="text-spark hover:underline" href="https://kcommons.org/" target="_blank" rel="noopener noreferrer">Knowledge Commons</a></b> and <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://sciety.org" target="_blank" rel="noopener noreferrer">Sciety</a></b>. <a class="text-spark hover:underline" href="https://www.univ-lorraine.fr/" target="_blank" rel="noopener noreferrer">Université de Lorraine</a> and the Paris region digital university network <a class="text-spark hover:underline" href="https://unif.fr" target="_blank" rel="noopener noreferrer">UNIF</a> are among the institutions lining up next. Universities run their own instances and stay federated with everyone else.</p>
 
       <div class="grid grid-cols-1 lg:grid-cols-6 gap-3.5 mt-[34px]">
         {%- for f in osn.included %}
@@ -265,12 +265,12 @@ image: /img/osn22.png
       <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-3.5 mt-9">
         <div class="{{ cell }}">
           <h3 class="{{ cellh }} !mt-0">Co-design with us</h3>
-          <p class="{{ cellp }}">Everything built through <a class="text-spark hover:underline" href="/mosaic">Mosaic</a> goes back into the commons under a free licence. Grant-funded work fits well: the output is public infrastructure, not a deliverable that rots when the project ends.</p>
+          <p class="{{ cellp }}">Everything we build is free software under the AGPL, so anything designed for you lands in the commons for everyone. The shape is whatever suits: a grant, a consortium, a fellowship, a living lab like Warwick's, or <a class="text-spark hover:underline" href="/mosaic">Mosaic</a>, our co-design programme. Either way the output is public infrastructure, rather than a deliverable that rots when the project ends.</p>
         </div>
         <div class="{{ cell }}">
-          <h3 class="{{ cellh }} !mt-0">A testbed for prosocial design</h3>
-          <p class="{{ cellp }}">A design pattern can ship as an extension and run on a live instance without forking the app. We built one from the <a class="text-spark hover:underline" href="https://www.prosocialdesign.org/" target="_blank" rel="noopener noreferrer">Prosocial Design Network</a> in hours, from planning to packaged extension.</p>
-          <div class="mt-3"><a class="{{ cardlink }}" href="/posts/safer-social-networking-bonfire-s-recent-experiment-with-prosocial-design-patterns/">Read the write-up <span aria-hidden="true">→</span></a></div>
+          <h3 class="{{ cellh }} !mt-0">Software you can change</h3>
+          <p class="{{ cellp }}">Because it's modular the whole way down, an intervention can ship as an extension and run on a live instance without forking the app. Trying one costs hours rather than a research budget, and what works stays in the codebase for everyone.</p>
+          <div class="mt-3"><a class="{{ cardlink }}" href="/posts/safer-social-networking-bonfire-s-recent-experiment-with-prosocial-design-patterns/">One we built in an afternoon <span aria-hidden="true">→</span></a></div>
         </div>
         <div class="{{ cell }}">
           <h3 class="{{ cellh }} !mt-0">Governance you can observe</h3>
@@ -285,7 +285,7 @@ image: /img/osn22.png
     <section id="writing" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Writing &amp; talks</p>
-      <h2 class="{{ display }}">Not our copy. <span class="corn-text">Theirs.</span></h2>
+      <h2 class="{{ display }}">In the <span class="corn-text">words of researchers.</span></h2>
       <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Papers, abstracts and articles by the researchers doing this work.</p>
 
       <div class="flex flex-col gap-3.5 mt-[34px]">
@@ -306,7 +306,7 @@ image: /img/osn22.png
     {# ---------- CTA ---------- #}
     <section class="text-center pt-[clamp(60px,8vw,110px)] pb-[clamp(80px,9vw,140px)] border-t border-ink/[0.07]">
     <div class="max-w-[1140px] mx-auto px-7">
-      <h2 class="mx-auto max-w-[22ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Infrastructure for the long <span class="italic font-medium text-flame">scholarly record.</span></h2>
+      <h2 class="mx-auto max-w-[22ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Give your research community <span class="italic font-medium text-flame">a digital lab of its own.</span></h2>
       <div class="flex flex-wrap justify-center gap-3.5 mt-[34px]">
         <a class="{{ btnfire }}" href="https://openscience.network" target="_blank" rel="noopener noreferrer">Explore the Open Science Network</a>
         <a class="{{ btnline }}" href="https://sandbox.openscience.network" target="_blank" rel="noopener noreferrer">Try the sandbox</a>
