@@ -1596,6 +1596,9 @@
   .\!mt-0 {
     margin-top: 0px !important;
   }
+  .\!mt-7 {
+    margin-top: calc(var(--spacing) * 7) !important;
+  }
   .-mt-1 {
     margin-top: calc(var(--spacing) * -1);
   }
@@ -2869,6 +2872,12 @@
   .max-w-\[74ch\] {
     max-width: 74ch;
   }
+  .max-w-\[140px\] {
+    max-width: 140px;
+  }
+  .max-w-\[210px\] {
+    max-width: 210px;
+  }
   .max-w-\[320px\] {
     max-width: 320px;
   }
@@ -3254,6 +3263,10 @@
     -moz-column-gap: calc(var(--spacing) * 16);
          column-gap: calc(var(--spacing) * 16);
   }
+  .gap-x-24 {
+    -moz-column-gap: calc(var(--spacing) * 24);
+         column-gap: calc(var(--spacing) * 24);
+  }
   .gap-x-\[30px\] {
     -moz-column-gap: 30px;
          column-gap: 30px;
@@ -3313,6 +3326,9 @@
   }
   .gap-y-10 {
     row-gap: calc(var(--spacing) * 10);
+  }
+  .gap-y-14 {
+    row-gap: calc(var(--spacing) * 14);
   }
   .gap-y-16 {
     row-gap: calc(var(--spacing) * 16);
@@ -4336,6 +4352,9 @@
   }
   .py-\[60px\] {
     padding-block: 60px;
+  }
+  .py-\[clamp\(30px\,4vw\,44px\)\] {
+    padding-block: clamp(30px, 4vw, 44px);
   }
   .py-\[clamp\(40px\,5vw\,64px\)\] {
     padding-block: clamp(40px, 5vw, 64px);
@@ -5441,6 +5460,9 @@
   .opacity-70 {
     opacity: 70%;
   }
+  .opacity-75 {
+    opacity: 75%;
+  }
   .opacity-\[\.13\] {
     opacity: .13;
   }
@@ -5586,6 +5608,11 @@
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-opacity {
+    transition-property: opacity;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -5737,6 +5764,12 @@
       .group-hover\/d\:border-\[color-mix\(in_srgb\,var\(--acc\)_45\%\,transparent\)\]:is(:where(.group\/d):hover *) {
         border-color: color-mix(in srgb,var(--acc) 45%,transparent);
       }
+    }
+    .group-hover\/logo\:text-ink:is(:where(.group\/logo):hover *) {
+      color: var(--color-ink);
+    }
+    .group-hover\/logo\:opacity-100:is(:where(.group\/logo):hover *) {
+      opacity: 100%;
     }
     .group-hover\/setup\:translate-x-1:is(:where(.group\/setup):hover *) {
       --tw-translate-x: var(--spacing);
@@ -6123,17 +6156,9 @@
       border-top-left-radius: var(--radius-4xl);
       border-top-right-radius: var(--radius-4xl);
     }
-    .max-lg\:rounded-t-\[calc\(2rem\+1px\)\] {
-      border-top-left-radius: calc(2rem + 1px);
-      border-top-right-radius: calc(2rem + 1px);
-    }
     .max-lg\:rounded-b-4xl {
       border-bottom-right-radius: var(--radius-4xl);
       border-bottom-left-radius: var(--radius-4xl);
-    }
-    .max-lg\:rounded-b-\[calc\(2rem\+1px\)\] {
-      border-bottom-right-radius: calc(2rem + 1px);
-      border-bottom-left-radius: calc(2rem + 1px);
     }
   }
   @media (width >= 521px) {
@@ -6432,9 +6457,6 @@
     }
     .sm\:mt-4 {
       margin-top: calc(var(--spacing) * 4);
-    }
-    .sm\:mt-16 {
-      margin-top: calc(var(--spacing) * 16);
     }
     .sm\:block {
       display: block;
@@ -6905,26 +6927,14 @@
     .lg\:rounded-tl-4xl {
       border-top-left-radius: var(--radius-4xl);
     }
-    .lg\:rounded-tl-\[calc\(2rem\+1px\)\] {
-      border-top-left-radius: calc(2rem + 1px);
-    }
     .lg\:rounded-tr-4xl {
       border-top-right-radius: var(--radius-4xl);
-    }
-    .lg\:rounded-tr-\[calc\(2rem\+1px\)\] {
-      border-top-right-radius: calc(2rem + 1px);
     }
     .lg\:rounded-br-4xl {
       border-bottom-right-radius: var(--radius-4xl);
     }
-    .lg\:rounded-br-\[calc\(2rem\+1px\)\] {
-      border-bottom-right-radius: calc(2rem + 1px);
-    }
     .lg\:rounded-bl-4xl {
       border-bottom-left-radius: var(--radius-4xl);
-    }
-    .lg\:rounded-bl-\[calc\(2rem\+1px\)\] {
-      border-bottom-left-radius: calc(2rem + 1px);
     }
     .lg\:p-8 {
       padding: calc(var(--spacing) * 8);
