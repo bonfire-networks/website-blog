@@ -94,16 +94,53 @@ image: /img/osn22.png
     ] }
 ] %}
 
+{# Testimonials given to the Open Science Network, reused with attribution.
+   Source: openscience.network src/_includes/sections/testimonials.html.
+   Verbatim, trimmed only at sentence boundaries. If you shorten one further,
+   shorten to a full sentence: these are named people with real affiliations. #}
+{% set voices = [
+  { quote: "Science needs digital infrastructure for scientific discourse that is scholar-owned and scholar-led. Only with that can the full potential of open science be fulfilled.",
+    who: "Prof. Ulrike Hahn", where: "Birkbeck, University of London",
+    url: "https://fediscience.org/@UlrikeHahn",
+    avatar: "https://cdn.masto.host/indiewebsocial/cache/accounts/avatars/109/302/986/984/744/366/original/c4e6c67887a68397.jpg" },
+  { quote: "The Open Science Network advances beyond traditional journals by providing federated, community-governed platforms tailored for scientific collaboration.",
+    who: "Prof. Nicolas Fressengeas", where: "Vice-President for digital, data and open science, Université de Lorraine",
+    url: "https://www.fressengeas.net",
+    avatar: "https://cdn.masto.host/indiewebsocial/cache/accounts/avatars/110/395/558/126/305/201/original/a602b743253e89c4.jpg" },
+  { quote: "Integrating open science principles and tools into the Fediverse, Bonfire is poised to reshape public research for the common good.",
+    who: "Dr Pierre Boudes", where: "Sorbonne University, and Head of IT Infrastructure at UNIF",
+    url: "https://universites.social/@pierre",
+    avatar: "https://universites.social/system/accounts/avatars/113/838/770/703/305/677/original/7877eae1c09b1a05.jpg" },
+  { quote: "I strongly encourage research organisations to adopt it and embrace the future of open, interoperable research partnerships.",
+    who: "Dr Jorge Saturno", where: "Physikalisch-Technische Bundesanstalt, and editor at Niboe",
+    url: "https://kumulonimb.us",
+    avatar: "https://cdn.masto.host/indiewebsocial/cache/accounts/avatars/114/104/559/671/046/767/original/b08fc62dfed3d3dd.jpeg" }
+] %}
+
+{# `quote` must be VERBATIM from the source. Checked against the published
+   text, American spellings and all. Paraphrase belongs in `text`, not here. #}
 {% set writing = [
   { title: "Open Science Network: distributed social infrastructure for open scientific discussion",
     who: "Saturno, Minutillo, de Borniol, Boudes, Fressengeas & Hahn", venue: "EGU General Assembly", year: "2026",
-    text: "Where scholarly conversation went after Twitter, why walled gardens are a poor home for it, and the case for ActivityPub as the backbone instead.",
+    quotes: [
+      "Platforms that prioritize engagement over accuracy cannot facilitate reliable scientific communication.",
+      "Using open protocols is the best way to enable scientific communication that both peers and the general public can trust."
+    ],
     url: "https://doi.org/10.5194/egusphere-egu26-10224", linktext: "Read the abstract",
     url2: "#coming-soon", linktext2: "Full text" },
   { title: "Science communication in the fediverse: Mastodon and Open Science Network",
     who: "Asta von Schröder", venue: "winoda.de", year: "2026",
-    text: "A working researcher's guide to academic communication on decentralised platforms, and where the Open Science Network fits into it.",
-    url: "https://winoda.de/en/2026/08/12/science-communication-in-the-fediverse-mastodon-and-open-science-network/", linktext: "Read the article" }
+    quotes: [
+      "[Platforms like Twitter] can hold personal networks hostage at any time and change the rules of the game.",
+      "The vision is a a digital network of researchers—free of advertising and algorithms—that instead provides optimal support for the community's very specific needs."
+    ],
+    url: "https://winoda.de/en/2026/08/12/science-communication-in-the-fediverse-mastodon-and-open-science-network/", linktext: "Read the article" },
+  { title: "Toward an open-science ecosystem",
+    who: "Niboe, Layla Axul (UNAM), Bonfire", venue: "The original Open Science Network proposal", year: "2023",
+    quotes: [
+      "We envision these implementations being crafted in the open, through a co-designing process that unites scientists, researchers, and activists."
+    ],
+    url: "/open_science/", linktext: "Read the proposal" }
 ] %}
 
 {# shared class strings, from features.njk / vs-mastodon.njk #}
@@ -130,9 +167,9 @@ image: /img/osn22.png
     <div class="max-w-[1140px] mx-auto px-7">
       <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[20ch] [font-variation-settings:'opsz'_96]">Open science infrastructure, shaped by the communities who rely on it.</h1>
 
-      <p class="mt-[36px] text-[1.08rem] text-ink-2 max-w-[62ch] [&_b]:text-ink [&_b]:font-semibold">We partner with universities, scholarly networks and science communicators to <b>research how communities work, co-design around real practices, and experiment with new forms of governance and open exchange.</b></p>
+      <p class="mt-[36px] text-[1.08rem] text-ink-2 max-w-[62ch] [&_b]:text-ink [&_b]:font-semibold">We partner with universities, scholarly networks and science communicators who <b>run spaces</b> of their own, <b>co-design around real practice</b>, and <b>research how communities actually work</b>, such as experimenting with new forms of governance and open knowledge exchange.</p>
 
-      <p class="mt-5 text-[1.08rem] text-ink-2 max-w-[62ch]">Our collaborations span living labs at Warwick, governance research with Princeton HCI and design experiments with the Prosocial Design Network. The code, patterns and lessons we develop return to the commons.</p>
+      <p class="mt-5 text-[1.08rem] text-ink-2 max-w-[62ch]">Our collaborations span living labs at Warwick, governance research with Princeton HCI and design experiments with the Prosocial Design Network. The code, design patterns and methods we develop return to the commons, openly licensed.</p>
 
       <div class="flex flex-wrap gap-3.5 mt-9">
         <a class="{{ btnfire }}" href="#who">Explore our collaborations</a>
@@ -149,7 +186,7 @@ image: /img/osn22.png
          falls back to its name set in type. ---------- #}
     <section class="py-[clamp(30px,4vw,44px)] border-t border-ink/[0.07]">
     <div class="max-w-[1140px] mx-auto px-7">
-      <h2 class="font-disp font-[560] text-[clamp(1.55rem,2.5vw,2.15rem)] leading-[1.1] tracking-[-.02em] text-ink text-balance [font-variation-settings:'opsz'_72]">Running it, building it, <span class="corn-text">studying it.</span></h2>
+      <h2 class="font-disp font-[560] text-[clamp(1.55rem,2.5vw,2.15rem)] leading-[1.1] tracking-[-.02em] text-ink text-balance [font-variation-settings:'opsz'_72]">Who's running it, building it, or <span class="corn-text">studying it:</span></h2>
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-8 overflow-hidden rounded-xl border border-ink/[0.09] bg-ink/[0.09]">
         {%- for s in strands %}{%- for p in s.partners %}
         <li class="flex bg-night-2">
@@ -214,7 +251,7 @@ image: /img/osn22.png
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The Open Science Network</p>
       <h2 class="{{ display }}">Bonfire, assembled <span class="corn-text">for scholarship.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">The Open Science Network is a ready-made set of building blocks with its own defaults and its own governance, put together for research and built with <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>, <a class="text-spark hover:underline" href="https://kcommons.org/" target="_blank" rel="noopener noreferrer">Knowledge Commons</a></b> and <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://sciety.org" target="_blank" rel="noopener noreferrer">Sciety</a></b>. <a class="text-spark hover:underline" href="https://www.univ-lorraine.fr/" target="_blank" rel="noopener noreferrer">Université de Lorraine</a> and the Paris region digital university network <a class="text-spark hover:underline" href="https://unif.fr" target="_blank" rel="noopener noreferrer">UNIF</a> are among the institutions lining up next. Universities run their own instances and stay federated with everyone else.</p>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">The Open Science Network is a ready-made set of building blocks, put together for research and governed by the researchers who use it, shaped with the scholarly organisations above. <a class="text-spark hover:underline" href="https://www.univ-lorraine.fr/" target="_blank" rel="noopener noreferrer">Université de Lorraine</a> and the Paris region digital university network (<a class="text-spark hover:underline" href="https://unif.fr" target="_blank" rel="noopener noreferrer">UNIF</a>) are among the institutions lining up next. A university, a scholarly society, a lab or a collective can each run its own instance and stay federated with all the others.</p>
 
       <div class="grid grid-cols-1 lg:grid-cols-6 gap-3.5 mt-[34px]">
         {%- for f in osn.included %}
@@ -271,8 +308,8 @@ image: /img/osn22.png
           <p class="{{ cellp }}">Everything we build is free software under the AGPL, so anything designed for you lands in the commons for everyone. The shape is whatever suits: a grant, a consortium, a fellowship, a living lab like Warwick's, or <a class="text-spark hover:underline" href="/mosaic">Mosaic</a>, our co-design programme. Either way the output is public infrastructure, rather than a deliverable that rots when the project ends.</p>
         </div>
         <div class="{{ cell }}">
-          <h3 class="{{ cellh }} !mt-0">Software you can change</h3>
-          <p class="{{ cellp }}">Because it's modular the whole way down, an intervention can ship as an extension and run on a live instance without forking the app. Trying one costs hours rather than a research budget, and what works stays in the codebase for everyone.</p>
+          <h3 class="{{ cellh }} !mt-0">Software you can shape</h3>
+          <p class="{{ cellp }}">Because it's modular the whole way down, an intervention can ship as an extension and run on a live instance without forking the entire app. Trying something new takes hours rather than months, and what works becomes an extension anyone can install.</p>
           <div class="mt-3"><a class="{{ cardlink }}" href="/posts/safer-social-networking-bonfire-s-recent-experiment-with-prosocial-design-patterns/">One we built in an afternoon <span aria-hidden="true">→</span></a></div>
         </div>
         <div class="{{ cell }}">
@@ -284,20 +321,48 @@ image: /img/osn22.png
       <a class="{{ more }}" href="/contact">Talk to us about a collaboration →</a>
     </div></section>
 
+    {# ---------- voices ---------- #}
+    <section id="voices" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What researchers say</p>
+      <h2 class="{{ display }}">Their pitch, <span class="corn-text">not ours.</span></h2>
+
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-2 gap-3.5 mt-[34px]">
+        {%- for v in voices %}
+        <figure class="{{ cell }} m-0 flex flex-col">
+          <blockquote class="flex-1"><p class="font-disp text-[1.12rem] leading-[1.42] text-ink">“{{ v.quote }}”</p></blockquote>
+          <figcaption class="mt-5 pt-4 border-t border-ink/[0.07] flex items-start gap-3.5">
+            {%- set face = v.avatar | inlineImage %}
+            {% if face %}<img class="h-11 w-11 shrink-0 rounded-full object-cover border border-ink/15" src="{{ face }}" alt="" loading="lazy">{% endif %}
+            <span class="min-w-0">
+              <a class="font-disp font-[620] text-[1.02rem] text-ink hover:text-spark" href="{{ v.url }}"{% if '//' in v.url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ v.who }} <span class="text-ink-2 text-[.8em]" aria-hidden="true">↗</span></a>
+              <span class="block mt-0.5 text-[.86rem] leading-snug text-ink-2">{{ v.where }}</span>
+            </span>
+          </figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+
+      <p class="mt-8 font-smono text-[.7rem] text-ink-3 max-w-[62ch] leading-[1.7]">Given to the <a class="text-spark hover:underline" href="https://openscience.network" target="_blank" rel="noopener noreferrer">Open Science Network</a>, where there are more of them.</p>
+    </div></section>
+
     {# ---------- writing & talks ---------- #}
     <section id="writing" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Writing &amp; talks</p>
       <h2 class="{{ display }}">In the <span class="corn-text">words of researchers.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Papers, abstracts and articles by the researchers doing this work.</p>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Papers, abstracts and articles from researchers: some building this, some sizing it up.</p>
 
       <div class="flex flex-col gap-3.5 mt-[34px]">
         {%- for w in writing %}
         <div class="{{ cell }}">
-          <p class="{{ sector }}">{{ w.who }} · {{ w.venue }} · {{ w.year }}</p>
-          <h3 class="{{ cellh }}">{{ w.title }}</h3>
-          <p class="{{ cellp }}">{{ w.text }}</p>
-          <div class="flex flex-wrap gap-x-5 gap-y-1 mt-3">
+          <h3 class="{{ cellh }} !mt-0 !mb-2">{{ w.title }}</h3>
+          <p class="text-[.86rem] text-ink-2"><b class="font-semibold text-ink">{{ w.who }}</b> · {{ w.venue }} · {{ w.year }}</p>
+          {% if w.quotes %}<blockquote class="mt-3 border-l-2 border-[var(--acc)] pl-4 flex flex-col gap-2.5">
+            {%- for q in w.quotes %}<p class="font-disp text-[1.06rem] leading-[1.4] {{ 'text-ink' if loop.last else 'text-ink-2' }}">“{{ q }}”</p>{%- endfor %}
+          </blockquote>{% endif %}
+          {% if w.text %}<p class="{{ cellp }} mt-3">{{ w.text }}</p>{% endif %}
+          <div class="flex flex-wrap gap-x-5 gap-y-1 mt-4">
             <a class="{{ cardlink }}" href="{{ w.url }}" target="_blank" rel="noopener noreferrer">{{ w.linktext }} <span aria-hidden="true">↗</span></a>
             {% if w.url2 %}<a class="{{ cardlink }}" href="{{ w.url2 }}" target="_blank" rel="noopener noreferrer">{{ w.linktext2 }} <span aria-hidden="true">↗</span></a>{% endif %}
           </div>

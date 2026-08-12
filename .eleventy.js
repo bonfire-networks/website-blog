@@ -34,6 +34,22 @@ module.exports = function(eleventyConfig) {
     }
   });
 
+  // Build-time fetch of an arbitrary remote image → cached, inlined as a data
+  // URI, so nothing loads from a third party at runtime and a dead host can't
+  // break the page. Returns "" on failure, so callers must handle the empty
+  // case. Usage: {{ "https://example.org/avatar.jpg" | inlineImage }}
+  eleventyConfig.addNunjucksAsyncFilter("inlineImage", async function (url, callback) {
+    if (!url) return callback(null, "");
+    const ext = (url.split("?")[0].split(".").pop() || "").toLowerCase();
+    const mime = { png: "png", gif: "gif", webp: "webp", svg: "svg+xml" }[ext] || "jpeg";
+    try {
+      const buffer = await EleventyFetch(url, { duration: "30d", type: "buffer" });
+      callback(null, `data:image/${mime};base64,${buffer.toString("base64")}`);
+    } catch (e) {
+      callback(null, "");
+    }
+  });
+
   eleventyConfig.addNunjucksFilter("keys", function(obj) {
     return Object.keys(obj);
   });
