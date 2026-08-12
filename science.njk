@@ -1,0 +1,320 @@
+---
+layout: layouts/base.njk
+title: "Bonfire for research: federated infrastructure for scholarly communities"
+description: "Universities, research networks and science communicators use Bonfire to run their own federated spaces. Partners include Warwick, Princeton HCI, UCL, SciBeh, Sciety, Knowledge Commons and the Open Science Network."
+image: /img/osn22.png
+---
+{# ============================================================
+   SCIENCE: Bonfire for research communities.
+
+   THIS PAGE IS A SHOP WINDOW, NOT A SPECIFICATION.
+   It does not replace openscience.network. Two audiences:
+   non-scientists, who should learn Bonfire serves researchers
+   and click nothing; and scientists, who should get thirsty and
+   click through to OSN. So: teasers, quotes, name-drops and
+   links, NOT explanatory prose. If a reader finishes this page
+   feeling they now know everything, it has failed. Every claim
+   ends in a destination. When in doubt, hand off.
+
+   Content framing is inherited from the `research` recipe in
+   _includes/v2/recipes.njk (the homepage Community Fit Explorer):
+   same corn accent, same starts/blocks/becomes argument, same
+   block list. If that recipe changes, change this to match, and
+   never claim as shipped anything the recipe flags `soon: true`.
+
+   Class vocabulary is the current house style, shared with
+   features.njk / compare.njk / vs-mastodon.njk.
+
+   NAMING REAL PEOPLE AND INSTITUTIONS, so:
+   · Every partner description must be one they'd endorse. Say
+     what they do and state the connection plainly; never imply
+     endorsement of Bonfire that hasn't been given.
+   · Bonfire is a PARTNER on PROVIDES, not the lead, and it is a
+     scoping phase with no findings yet. Do not upgrade it.
+   · open_science.md (2023) is a funding PROPOSAL. Preprints,
+     Crossref DOIs, journals-as-groups, editor roles and review
+     badging are all proposed there, not built. Don't mine it.
+   · Publications are other people's work. Authors, venue, year,
+     and the DOI where there is one.
+   ============================================================ #}
+
+{% set uses = [
+  { icon: "ph-users-three", name: "A home for a lab or a society",
+    text: "Groups with their own membership and rules, topics inside them, a shared calendar, and a way to decide things together.",
+    status: "1.0 beta", link: "/features#beyond", linktext: "The blocks in full" },
+  { icon: "ph-broadcast", name: "Science communication you own",
+    text: "Post from your institution's own domain and reach people across Mastodon and the wider fediverse. Nothing between you and the public that can be sold or switched off." },
+  { icon: "ph-shield-check", name: "Rooms that can be closed",
+    text: "Not every research conversation should be public. Boundaries decide per post who can see, reply or quote, and archipelago mode lets a group of institutions federate only with each other.",
+    link: "/vs-mastodon#boundaries", linktext: "How boundaries work" },
+  { icon: "ph-database", name: "Scholarly data",
+    text: "ORCID identity, and one-click archiving of a discussion to Zenodo with a DOI.",
+    status: "Soon", link: "https://openscience.network", linktext: "On the Open Science Network" }
+] %}
+
+{# The OSN feature bento comes from _data/osn.json, shared with the
+   "What is included" widget on /app/open-science/ so the two can't
+   drift. Content there, styling here. Deliberately a teaser: it ends
+   on a link out, not on the last cell. #}
+
+{# Partner names and links must stay in sync with the `communities` arrays
+   in _data/apps.json (open-science :119, community :163). Kept here rather
+   than looped from that data because those arrays also carry non-research
+   entries (WeDistribute), and because UCL/PROVIDES belongs to neither
+   flavour. If you add a partner there, add them here too. #}
+{% set strands = [
+  { id: "commons", label: "Scholarly communication",
+    intro: "Building the open alternative to publisher-owned infrastructure.",
+    partners: [
+      { name: "University of Warwick", dom: "warwick.ac.uk", url: "https://warwick.ac.uk/fac/cross_fac/methodshub/methods-fellowships/fellows/mayel/", kind: "Methods Fellowship",
+        text: "<i>Participatory Design: A Living Lab for the Federated Research Commons</i> runs a Bonfire instance at Warwick as a site for co-designing research infrastructure, with academics, students, librarians, data stewards and research software engineers in the room together.",
+        link: "https://warwick.ac.uk/fac/cross_fac/methodshub/methods-fellowships/fellows/mayel/", linktext: "The fellowship" },
+      { name: "SciBeh", dom: "scibeh.org", url: "https://www.scibeh.org/", kind: "Research network",
+        text: "Behavioural scientists building infrastructure for crisis knowledge management: how knowledge gets made, integrated and argued over when it matters quickly. Ulrike Hahn co-authored the Open Science Network paper below." },
+      { name: "Sciety", dom: "sciety.org", url: "https://sciety.org", kind: "Open evaluation · eLife",
+        text: "Curating and discussing preprints, reviews and scholarship across institutions, with evaluation happening in public rather than behind a journal." },
+      { name: "Knowledge Commons", dom: "kcommons.org", url: "https://kcommons.org/", kind: "Scholarly network",
+        text: "A network for researchers and knowledge creators across disciplines: discovering open-access scholarship and teaching materials, sharing work in the repository, and making interdisciplinary connections.",
+        link: "/posts/why-community-matters-groups-as-the-next-step-for-the-fediverse/", linktext: "Why groups matter for them" },
+      { name: "Niboe", dom: "niboe.info", img: "/img/niboe_logo.webp", url: "https://niboe.info", kind: "Co-design",
+        text: "Researchers and activists who use their social presence to share findings and counter disinformation. They shaped the open-science work from the beginning and co-wrote the <a class=\"text-spark hover:underline\" href=\"/open_science/\">original proposal</a>." }
+    ] },
+  { id: "safety", label: "Safety, governance and design research",
+    intro: "Studying what happens when communities own and govern their own infrastructure.",
+    partners: [
+      { name: "Princeton HCI", dom: "princeton.edu", url: "https://hci.princeton.edu/", kind: "Governance research",
+        text: "Protocol-based research into community-governed platforms. Together we designed Bonfire's community rules, drawing on <a class=\"text-spark hover:underline\" href=\"http://crowcards.org\" target=\"_blank\" rel=\"noopener noreferrer\">CrowCards</a>. The underlying workshops with fediverse organisers were published at CHI 2026.",
+        link: "https://doi.org/10.1145/3772318.3790855", linktext: "The CHI 2026 paper" },
+      { name: "UCL", dom: "ucl.ac.uk", url: "https://www.ucl.ac.uk/bartlett/sustainable-construction/", kind: "PROVIDES Innovation Network",
+        text: "<i>Preventing Online Violence in Digital Education Spaces</i>, a UCL-led network on technology-facilitated harassment and abuse in digital learning. We're one of the partners in its scoping phase, advising on governance and inclusivity and helping test knowledge-exchange tools.",
+        link: "/moderation-toolkit", linktext: "Our moderation work" },
+      { name: "Prosocial Design Network", dom: "prosocialdesign.org", url: "https://www.prosocialdesign.org/", kind: "Design research · ongoing",
+        text: "A network cataloguing evidence-based design patterns for healthier online spaces. We built one of their patterns, labelling misleading content with links to reliable sources, as a working Bonfire extension in a matter of hours, and we're continuing to work with them.",
+        link: "/posts/safer-social-networking-bonfire-s-recent-experiment-with-prosocial-design-patterns/", linktext: "How the first experiment went" }
+    ] }
+] %}
+
+{% set writing = [
+  { title: "Open Science Network: distributed social infrastructure for open scientific discussion",
+    who: "Saturno, Minutillo, de Borniol, Boudes, Fressengeas & Hahn", venue: "EGU General Assembly", year: "2026",
+    text: "Where scholarly conversation went after Twitter, why walled gardens are a poor home for it, and the case for ActivityPub as the backbone instead.",
+    url: "https://doi.org/10.5194/egusphere-egu26-10224", linktext: "Read the abstract",
+    url2: "https://meetingorganizer.copernicus.org/EGU26/EGU26-10224.html", linktext2: "At the conference" },
+  { title: "Science communication in the fediverse: Mastodon and Open Science Network",
+    who: "Asta von Schröder", venue: "winoda.de", year: "2026",
+    text: "A working researcher's guide to academic communication on decentralised platforms, and where the Open Science Network fits into it.",
+    url: "https://winoda.de/en/2026/08/12/science-communication-in-the-fediverse-mastodon-and-open-science-network/", linktext: "Read the article" }
+] %}
+
+{# shared class strings, from features.njk / vs-mastodon.njk #}
+{% set eyebrow = "flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] text-[var(--acc)]" %}
+{% set display = "mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set cell = "group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]" %}
+{% set ic = "w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" %}
+{% set cellh = "font-disp font-[620] text-[1.16rem] mt-[15px] mb-[7px]" %}
+{% set cellp = "text-ink-2 text-[.94rem]" %}
+{% set soon = "badge h-auto shrink-0 rounded-full bg-transparent border-ink/15 px-2.5 py-[3px] font-smono text-[.58rem] tracking-[.1em] uppercase text-ink-3" %}
+{% set more = "inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
+{% set jump = "font-smono text-[.72rem] tracking-[.06em] text-ink-2 border border-ink/15 rounded-full px-3.5 py-[7px] hover:text-spark hover:border-flame" %}
+{% set cardlink = "inline-flex items-center gap-1.5 pb-[2px] font-smono text-[.72rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
+{% set sector = "font-smono text-[.64rem] tracking-[.11em] text-ink-3" %}
+{% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
+{% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]" style="--acc:var(--color-corn)">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ---------- hero ---------- #}
+    <header class="pt-10 pb-[clamp(40px,5vw,60px)]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span>For research</p>
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Bonfire for research</p>
+      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[20ch] [font-variation-settings:'opsz'_96]">Everyday exchange becomes an <span class="corn-text">open scholarly commons.</span></h1>
+
+      <p class="mt-[36px] text-[1.08rem] text-ink-2 max-w-[58ch] [&_b]:text-ink [&_b]:font-semibold">Researchers share discussion, datasets and preprints across institutions, mostly on platforms that can restrict access, change the rules, or vanish. Bonfire is a kit for building the alternative: <b>conversation and research objects living together, in a space your institution runs</b>, so a lab can connect to a wider commons without handing its work to a publisher.</p>
+
+      <p class="mt-5 text-[1.08rem] text-ink-2 max-w-[58ch] [&_b]:text-ink [&_b]:font-semibold">Warwick, Princeton, UCL, SciBeh, Sciety, Knowledge Commons and Niboe are already at it, in three different ways: some <b>run a space</b>, some <b>co-design</b> what they need with us, and some <b>study it</b>, because an open modular codebase is rare ground to experiment on.</p>
+
+      <nav class="flex flex-wrap gap-2 mt-9" aria-label="Jump to a section">
+        <a class="{{ jump }}" href="#who">Who's involved</a>
+        <a class="{{ jump }}" href="#uses">What they switch on</a>
+        <a class="{{ jump }}" href="#osn">The Open Science Network</a>
+        <a class="{{ jump }}" href="#codesign">Co-design &amp; research</a>
+        <a class="{{ jump }}" href="#writing">Writing &amp; talks</a>
+      </nav>
+    </div></header>
+
+    <main>
+
+    {# ---------- logo wall. Peers first: for a university reader this band
+         does more persuading than any feature description below it. The
+         `logo` filter (see .eleventy.js) fetches greyscale logos at build
+         time and inlines them, returning "" on failure, so every entry
+         falls back to its name set in type. ---------- #}
+    <section class="py-[clamp(30px,4vw,44px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="font-smono text-[.66rem] tracking-[.14em] uppercase text-ink-3">Running it, building it, studying it</p>
+      <ul class="flex flex-wrap items-center gap-x-24 gap-y-14 mt-10">
+        {%- for s in strands %}{%- for p in s.partners %}
+        <li>
+          {% set src = p.img or (p.dom | logo) %}
+          <a class="group/logo flex items-center" href="{{ p.url or '#who' }}"{% if p.url %} target="_blank" rel="noopener noreferrer"{% endif %} title="{{ p.name }}">
+            {%- if src %}<img class="h-16 w-auto max-w-[210px] object-contain opacity-75 transition-opacity group-hover/logo:opacity-100" src="{{ src }}" alt="{{ p.name }}" loading="lazy">
+            {%- else %}<span class="font-disp font-[620] text-[1.35rem] text-ink-2 transition-colors group-hover/logo:text-ink">{{ p.name }}</span>{% endif -%}
+          </a>
+        </li>
+        {%- endfor %}{%- endfor %}
+      </ul>
+      <a class="{{ more }} !mt-7" href="#who">What each of them is doing →</a>
+    </div></section>
+
+    {# ---------- who's involved ---------- #}
+    <section id="who" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Who's involved</p>
+      <h2 class="{{ display }}">The people <span class="corn-text">shaping it.</span></h2>
+
+      {%- for s in strands %}
+      <div class="mt-[42px]">
+        <h3 class="font-disp font-[620] text-[1.24rem]">{{ s.label }}</h3>
+        <p class="mt-1.5 text-[.98rem] text-ink-2">{{ s.intro }}</p>
+        <div class="grid grid-cols-1 min-[681px]:grid-cols-2 gap-3.5 mt-5">
+          {%- for p in s.partners %}
+          <div class="{{ cell }}">
+            {% set src = p.img or (p.dom | logo) %}
+            <div class="flex items-start justify-between gap-4">
+              <p class="{{ sector }}">{{ p.kind }}</p>
+              {% if src %}<img class="h-11 w-auto max-w-[140px] object-contain opacity-75 shrink-0" src="{{ src }}" alt="" loading="lazy">{% endif %}
+            </div>
+            <h4 class="{{ cellh }}">{% if p.url %}<a class="hover:text-spark" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.name }} <span class="text-ink-3 text-[.8em]" aria-hidden="true">↗</span></a>{% else %}{{ p.name }}{% endif %}</h4>
+            <p class="{{ cellp }}">{{ p.text | safe }}</p>
+            {% if p.link %}<div class="mt-3"><a class="{{ cardlink }}" href="{{ p.link }}"{% if '//' in p.link %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ p.linktext }} <span aria-hidden="true">→</span></a></div>{% endif %}
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+
+      <p class="mt-9 font-smono text-[.7rem] text-ink-3 max-w-[62ch] leading-[1.7]">We also work with <a class="text-spark hover:underline" href="/moderation-toolkit">IFTAS</a> and the <a class="text-spark hover:underline" href="https://socialwebfoundation.org/" target="_blank" rel="noopener noreferrer">Social Web Foundation</a>. Doing research with Bonfire and not listed? <a class="text-spark hover:underline" href="/contact">Tell us and we'll add you.</a></p>
+    </div></section>
+
+    {# ---------- what they switch on ---------- #}
+    <section id="uses" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>What they switch on</p>
+      <h2 class="{{ display }}">A kit, not <span class="corn-text">a product.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A department, a scholarly society and a science-communication collective each end up with something different. Anything below marked as coming isn't built yet.</p>
+
+      <div class="grid grid-cols-1 min-[681px]:grid-cols-2 gap-3.5 mt-[34px]">
+        {%- for c in uses %}
+        <div class="{{ cell }}">
+          <div class="flex items-start justify-between gap-3">
+            <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone {{ c.icon }}"></i></span>
+            {% if c.status %}<span class="{{ soon }}">{{ c.status }}</span>{% endif %}
+          </div>
+          <h3 class="{{ cellh }}">{{ c.name }}</h3>
+          <p class="{{ cellp }}">{{ c.text | safe }}</p>
+          {% if c.link %}<div class="mt-3"><a class="{{ cardlink }}" href="{{ c.link }}"{% if '//' in c.link %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ c.linktext }} <span aria-hidden="true">→</span></a></div>{% endif %}
+        </div>
+        {%- endfor %}
+      </div>
+
+      <a class="{{ more }}" href="/features">Every block in the kit →</a>
+    </div></section>
+
+    {# ---------- the Open Science Network ---------- #}
+    <section id="osn" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The Open Science Network</p>
+      <h2 class="{{ display }}">A flavour built <span class="corn-text">for scholarship.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">A flavour is a preset bundle of Bonfire blocks with its own defaults and its own governance. This is the one assembled for research, built with <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://orcid.org" target="_blank" rel="noopener noreferrer">ORCID</a>, <a class="text-spark hover:underline" href="https://kcommons.org/" target="_blank" rel="noopener noreferrer">Knowledge Commons</a></b> and <b class="text-ink font-semibold"><a class="text-spark hover:underline" href="https://sciety.org" target="_blank" rel="noopener noreferrer">Sciety</a></b>. <a class="text-spark hover:underline" href="https://www.univ-lorraine.fr/" target="_blank" rel="noopener noreferrer">Université de Lorraine</a> and the Paris region digital university network <a class="text-spark hover:underline" href="https://unif.fr" target="_blank" rel="noopener noreferrer">UNIF</a> are among the institutions lining up next. Universities run their own instances and stay federated with everyone else.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-6 gap-3.5 mt-[34px]">
+        {%- for f in osn.included %}
+        <div class="{{ cell }} !p-0 overflow-hidden lg:col-span-{{ f.span }}">
+          <img class="h-56 w-full object-cover {{ f.pos }}" src="{{ f.img }}" alt="" loading="lazy">
+          <div class="px-[26px] py-7">
+            <span class="{{ ic }}" aria-hidden="true"><i class="ph-duotone {{ f.icon }}"></i></span>
+            <h3 class="{{ cellh }}">{{ f.name }}</h3>
+            <p class="{{ cellp }}">{{ f.text }}</p>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <p class="mt-8 text-[1.02rem] text-ink-2 max-w-[44rem]">There's a great deal more of it than fits here, including pilot instances with your own branding and onboarding.</p>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 mt-5">
+        <a class="{{ more }} !mt-0" href="https://openscience.network" target="_blank" rel="noopener noreferrer">Visit openscience.network <span aria-hidden="true">↗</span></a>
+        <a class="{{ more }} !mt-0" href="https://sandbox.openscience.network" target="_blank" rel="noopener noreferrer">Try the sandbox <span aria-hidden="true">↗</span></a>
+        <a class="{{ more }} !mt-0" href="/oscars">Read the OSCARS proposal <span aria-hidden="true">→</span></a>
+      </div>
+    </div></section>
+
+    {# ---------- co-design & research ---------- #}
+    <section id="codesign" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Co-design &amp; research</p>
+      <h2 class="{{ display }}">Something to build on, <span class="corn-text">and to study.</span></h2>
+
+      <blockquote class="mt-9 border-l-2 border-[var(--acc)] pl-[22px] max-w-[46rem]">
+        <p class="font-disp font-normal text-[clamp(1.15rem,2.2vw,1.6rem)] leading-[1.28] text-ink">“We're not just piloting a platform, we're piloting the process.”</p>
+        <footer class="mt-3 font-smono text-[.7rem] tracking-[.06em] text-ink-3">Warwick Methods Fellowship · <span class="text-corn-2">A Living Lab for the Federated Research Commons</span></footer>
+      </blockquote>
+
+      <div class="grid grid-cols-1 min-[821px]:grid-cols-3 gap-3.5 mt-9">
+        <div class="{{ cell }}">
+          <h3 class="{{ cellh }} !mt-0">Co-design with us</h3>
+          <p class="{{ cellp }}">Everything built through <a class="text-spark hover:underline" href="/mosaic">Mosaic</a> goes back into the commons under a free licence. Grant-funded work fits well: the output is public infrastructure, not a deliverable that rots when the project ends.</p>
+        </div>
+        <div class="{{ cell }}">
+          <h3 class="{{ cellh }} !mt-0">A testbed for prosocial design</h3>
+          <p class="{{ cellp }}">A design pattern can ship as an extension and run on a live instance without forking the app. We built one from the <a class="text-spark hover:underline" href="https://www.prosocialdesign.org/" target="_blank" rel="noopener noreferrer">Prosocial Design Network</a> in hours, from planning to packaged extension.</p>
+          <div class="mt-3"><a class="{{ cardlink }}" href="/posts/safer-social-networking-bonfire-s-recent-experiment-with-prosocial-design-patterns/">Read the write-up <span aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="{{ cell }}">
+          <h3 class="{{ cellh }} !mt-0">Governance you can observe</h3>
+          <p class="{{ cellp }}">Custom roles, per-group rules, and decisions from simple polls to structured consensus. Communities governing themselves in ways no commercial platform will let you watch, let alone alter.</p>
+        </div>
+      </div>
+
+      <a class="{{ more }}" href="/contact">Talk to us about a collaboration →</a>
+    </div></section>
+
+    {# ---------- writing & talks ---------- #}
+    <section id="writing" class="py-[clamp(56px,7vw,96px)] border-t border-ink/[0.07] scroll-mt-[70px]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="{{ eyebrow }}"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Writing &amp; talks</p>
+      <h2 class="{{ display }}">Not our copy. <span class="corn-text">Theirs.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[44rem]">Papers, abstracts and articles by the researchers doing this work.</p>
+
+      <div class="flex flex-col gap-3.5 mt-[34px]">
+        {%- for w in writing %}
+        <div class="{{ cell }}">
+          <p class="{{ sector }}">{{ w.who }} · {{ w.venue }} · {{ w.year }}</p>
+          <h3 class="{{ cellh }}">{{ w.title }}</h3>
+          <p class="{{ cellp }}">{{ w.text }}</p>
+          <div class="flex flex-wrap gap-x-5 gap-y-1 mt-3">
+            <a class="{{ cardlink }}" href="{{ w.url }}" target="_blank" rel="noopener noreferrer">{{ w.linktext }} <span aria-hidden="true">↗</span></a>
+            {% if w.url2 %}<a class="{{ cardlink }}" href="{{ w.url2 }}" target="_blank" rel="noopener noreferrer">{{ w.linktext2 }} <span aria-hidden="true">↗</span></a>{% endif %}
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div></section>
+
+    {# ---------- CTA ---------- #}
+    <section class="text-center pt-[clamp(60px,8vw,110px)] pb-[clamp(80px,9vw,140px)] border-t border-ink/[0.07]">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <h2 class="mx-auto max-w-[22ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Infrastructure for the long <span class="italic font-medium text-flame">scholarly record.</span></h2>
+      <div class="flex flex-wrap justify-center gap-3.5 mt-[34px]">
+        <a class="{{ btnfire }}" href="https://openscience.network" target="_blank" rel="noopener noreferrer">Explore the Open Science Network</a>
+        <a class="{{ btnline }}" href="https://sandbox.openscience.network" target="_blank" rel="noopener noreferrer">Try the sandbox</a>
+        <a class="{{ btnline }}" href="/contact">Start a conversation</a>
+      </div>
+      <p class="mt-[26px] font-smono text-[.82rem] text-ink-3">Free software, AGPL, no investors and nothing to sell. <a class="text-spark border-b border-spark/35 pb-0.5 hover:border-spark" href="/mosaic">How co-design works.</a></p>
+    </div></section>
+
+    </main>
+  </div>
+</div>
