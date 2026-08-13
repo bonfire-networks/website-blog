@@ -5653,6 +5653,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -6111,6 +6116,9 @@
     }
     .hover\:decoration-spark:hover {
       text-decoration-color: var(--color-spark);
+    }
+    .hover\:opacity-80:hover {
+      opacity: 80%;
     }
     .hover\:shadow-\[0_12px_28px_-10px_rgba\(245\,195\,68\,\.8\)\]:hover {
       --tw-shadow: 0 12px 28px -10px var(--tw-shadow-color, rgba(245,195,68,.8));

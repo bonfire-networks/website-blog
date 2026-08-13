@@ -111,7 +111,10 @@ image: /img/osn22.png
     avatar: "https://cdn.masto.host/indiewebsocial/cache/accounts/avatars/114/104/559/671/046/767/original/b08fc62dfed3d3dd.jpeg" }
 ] %}
 
-{# `quote` must be VERBATIM from the source. Checked against the published
+{# TODO: the EGU entry wants `url2` + `linktext2: "Full text"` adding once the
+   full paper is published; only the abstract exists so far.
+
+   `quote` must be VERBATIM from the source. Checked against the published
    text, American spellings and all. Paraphrase belongs in `text`, not here. #}
 {% set writing = [
   { title: "Open Science Network: distributed social infrastructure for open scientific discussion",
@@ -120,7 +123,6 @@ image: /img/osn22.png
       "Platforms that prioritize engagement over accuracy cannot facilitate reliable scientific communication.",
       "Using open protocols is the best way to enable scientific communication that both peers and the general public can trust."
     ],
-    {# TODO: add `url2` + `linktext2: "Full text"` once the full paper is published. #}
     url: "https://doi.org/10.5194/egusphere-egu26-10224", linktext: "Read the abstract" },
   { title: "Science communication in the fediverse: Mastodon and Open Science Network",
     who: "Asta von Schröder", venue: "winoda.de", year: "2026",
