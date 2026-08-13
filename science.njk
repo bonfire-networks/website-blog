@@ -120,8 +120,8 @@ image: /img/osn22.png
       "Platforms that prioritize engagement over accuracy cannot facilitate reliable scientific communication.",
       "Using open protocols is the best way to enable scientific communication that both peers and the general public can trust."
     ],
-    url: "https://doi.org/10.5194/egusphere-egu26-10224", linktext: "Read the abstract",
-    url2: "#coming-soon", linktext2: "Full text" },
+    {# TODO: add `url2` + `linktext2: "Full text"` once the full paper is published. #}
+    url: "https://doi.org/10.5194/egusphere-egu26-10224", linktext: "Read the abstract" },
   { title: "Science communication in the fediverse: Mastodon and Open Science Network",
     who: "Asta von Schröder", venue: "winoda.de", year: "2026",
     quotes: [
@@ -241,13 +241,16 @@ image: /img/osn22.png
       {%- for p in partners %}
           <article class="participant-card group overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night transition-colors hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
             {% set src = p.img or (p.remoteImg | inlineImage) or (p.dom | logo) %}
-            <div class="participant-card__logo border-b border-ink/10 bg-ink/[0.035] p-6 md:border-b-0 md:border-r">
+            {# The logo links to the same place as the card's title. aria-hidden
+               plus tabindex=-1 keeps it out of the tab order and off screen
+               readers, so the name link above isn't announced twice. #}
+            <a class="participant-card__logo block border-b border-ink/10 bg-ink/[0.035] p-6 md:border-b-0 md:border-r" href="{{ p.url or p.link }}"{% if '//' in (p.url or p.link) %} target="_blank" rel="noopener noreferrer"{% endif %} tabindex="-1" aria-hidden="true">
               {% if src %}
               <img class="object-contain opacity-75 grayscale transition-all duration-200 group-hover:opacity-100 group-hover:grayscale-0" src="{{ src }}" alt="" loading="lazy">
               {% else %}
               <span class="participant-card__fallback flex items-center justify-center bg-ink/[0.06] font-disp text-4xl font-semibold text-ink-2">{{ p.name | first }}</span>
               {% endif %}
-            </div>
+            </a>
             <div class="flex min-w-0 flex-1 flex-col justify-center px-6 py-7 md:px-9 md:py-6">
               <h3 class="participant-card__name font-disp leading-[1.08] tracking-[-.02em] text-ink">
                 {% if p.url %}<a class="transition-colors hover:text-spark" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.name }} <span class="text-ink-3 text-[.68em]" aria-hidden="true">↗</span></a>{% else %}{{ p.name }}{% endif %}
@@ -385,7 +388,7 @@ image: /img/osn22.png
           <blockquote class="flex-1"><p class="font-disp text-[1.12rem] leading-[1.42] text-ink">“{{ v.quote }}”</p></blockquote>
           <figcaption class="mt-5 pt-4 border-t border-ink/[0.07] flex items-start gap-3.5">
             {%- set face = v.avatar | inlineImage %}
-            {% if face %}<img class="h-11 w-11 shrink-0 rounded-full object-cover border border-ink/15" src="{{ face }}" alt="" loading="lazy">{% endif %}
+            {% if face %}<a class="shrink-0" href="{{ v.url }}"{% if '//' in v.url %} target="_blank" rel="noopener noreferrer"{% endif %} tabindex="-1" aria-hidden="true"><img class="h-11 w-11 rounded-full object-cover border border-ink/15 transition-opacity duration-200 hover:opacity-80" src="{{ face }}" alt="" loading="lazy"></a>{% endif %}
             <span class="min-w-0">
               <a class="font-disp font-[620] text-[1.02rem] text-ink hover:text-spark" href="{{ v.url }}"{% if '//' in v.url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ v.who }} <span class="text-ink-2 text-[.8em]" aria-hidden="true">↗</span></a>
               <span class="block mt-0.5 text-[.86rem] leading-snug text-ink-2">{{ v.where }}</span>
