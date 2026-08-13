@@ -123,7 +123,7 @@ Late last year our community [crowdfunded a maintenance goal](/posts/matters-of-
 
 None of this came out of a product planning meeting. It came out of our [Mosaic](/mosaic/) collaborations, where we co-design a space with a community and everything we build goes back into the commons as free software. What one community funds, every community inherits: Jacobin's readers funded federated comments, and now every publisher can benefit; Mentaal's need for safety produced archipelago mode, and now any community can raise the drawbridge. Whatever gets built next, you inherit too, as another building block you can choose to include or leave out.
 
-**[Jacobin](https://www.jacobin.de/)** (the German edition of a socialist magazine, publishing a daily essay and a quarterly print issue) asked its readers to fund ["Jacobin 2.0"](https://www.startnext.com/jacobin2-0/mehr-infos). 1,015 backers funded the website relaunch and kept going until they'd unlocked the next tier: a community platform, "a calmer, protected space for political debate" where readers go backstage with the editorial team and suggest and discuss topics, free of any tech billionaire's algorithm. Six months of discussions and co-design produced the Ghost integration, the comments widget, and much of the groups-and-topics design. [jacobin.social](https://jacobin.social) opens its doors today to a community of 3,000+ readers, and the collaboration also produced a complete German translation of Bonfire. 
+**[Jacobin](https://www.jacobin.de/)** (the German edition of a socialist magazine, publishing a daily essay and a quarterly print issue) asked its readers to fund ["Jacobin 2.0"](https://www.startnext.com/jacobin2-0/mehr-infos). 1,015 backers funded the website relaunch and kept going until they'd unlocked the next tier: a community platform, "a calmer, protected space for political debate" where readers go backstage with the editorial team and suggest and discuss topics, free of any tech billionaire's algorithm. Six months of discussions and co-design produced the Ghost integration, the comments widget, and much of the groups-and-topics design. [jacobin.social](https://jacobin.social) opens its doors today, and the collaboration also produced a complete German translation of Bonfire. 
 
 <div class="not-prose my-10">
 <a
@@ -145,7 +145,7 @@ None of this came out of a product planning meeting. It came out of our [Mosaic]
       Jacobin: From audience to community
     </span>
     <span class="mt-3 text-[.95rem] leading-[1.55] text-ink-2">
-      How Jacobin gave 3,000+ readers a federated home for debate, organising, and solidarity.
+      How Jacobin gave its readers a federated home for debate, organising, and solidarity.
     </span>
     <span class="mt-5 inline-flex items-center gap-2 font-smono text-[.72rem] tracking-[.04em] text-spark">
       Read the full story in our case study

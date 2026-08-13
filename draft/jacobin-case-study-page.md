@@ -2,7 +2,7 @@
 
 *Plain-text copy of the case study page (`case-studies/jacobin.njk`), broken into sections for reading, review, and translation. Image filenames are noted in italics where the page shows a screenshot.*
 
-**Page description:** How Jacobin's German edition connected Ghost to Bonfire to give 3,000+ readers a federated community space they own. The result is a reusable foundation other publishers can adopt.
+**Page description:** How Jacobin's German edition connected Ghost to Bonfire to give readers a federated community space they own. The result is a reusable foundation other publishers can adopt.
 
 ---
 
@@ -118,7 +118,7 @@ Bonfire offers a different premise. AGPL-licensed, no VC, no ads, no incentive t
 
 ## 6. The launch
 
-**jacobin.social is live, and 3,000+ readers now have a community space of their _own_ — not one they rent.**
+**jacobin.social is live, and its readers now have a community space of their _own_ — not one they rent.**
 
 What began as a reader-funded demand for something better than a comments section is now a working foundation other publishers can adopt, adapt, and fork. We'll share what we learn, and update this page as the community grows and things evolve.
 

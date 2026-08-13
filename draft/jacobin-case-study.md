@@ -8,7 +8,7 @@ date: 2026-07-09
 
 ---
 
-> **A reader-funded magazine wanted more than a comment section. We connected Ghost to Bonfire and gave 3,000+ readers a federated community space they own.**
+> **A reader-funded magazine wanted more than a comment section. We connected Ghost to Bonfire and gave readers a federated community space they own.**
 
 ![Jacobin's community space on Bonfire](/img/jacobin/ghostbonfire.png)
 
@@ -70,7 +70,7 @@ For a publisher, that turns readers from an audience you broadcast to into a com
 
 ## At launch
 
-Jacobin's community space, [jacobin.social](https://jacobin.social), goes live in July 2026 as the home for a community of more than 3,000 readers, running on infrastructure Jacobin controls. Along the way, the collaboration produced a complete German translation of Bonfire — contributed back to the commons and now available to every German-speaking community.
+Jacobin's community space, [jacobin.social](https://jacobin.social), goes live in July 2026 as the home for its readers, running on infrastructure Jacobin controls. Along the way, the collaboration produced a complete German translation of Bonfire — contributed back to the commons and now available to every German-speaking community.
 
 ## What we shipped
 

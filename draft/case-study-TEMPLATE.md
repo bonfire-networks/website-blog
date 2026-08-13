@@ -165,7 +165,7 @@ can check. -->
 
 <!-- The verifiable facts available on day one — scale and scope, not outcomes. -->
 
-{{Concrete, checkable facts: community size (e.g. 3,000+ members), build
+{{Concrete, checkable facts: community size, build
 duration (e.g. 6 months of co-design), what's now live and where, and any
 tangible artefacts (e.g. a complete new language translation contributed
 back to the commons). These are real on day one and need no metrics.}}
