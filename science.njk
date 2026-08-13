@@ -135,6 +135,10 @@ image: /img/osn22.png
       "The vision is a a digital network of researchers—free of advertising and algorithms—that instead provides optimal support for the community's very specific needs."
     ],
     url: "https://winoda.de/en/2026/08/12/science-communication-in-the-fediverse-mastodon-and-open-science-network/", linktext: "Read the article" },
+  { title: "Bridging preprints and the Fediverse: Start discussions on Sciety, and continue them everywhere",
+    who: "Mark Williams", venue: "Sciety", year: "2025",
+    text: "How Sciety connects preprint discussions to its Bonfire-powered space, letting scholarly conversations travel across ActivityPub and the wider decentralised web.",
+    url: "https://blog.sciety.org/bridging-preprints-and-the-fediverse/", linktext: "Read the article" },
   { title: "Toward an open-science ecosystem",
     who: "Niboe, Layla Axul (UNAM), Bonfire", venue: "The original Open Science Network proposal", year: "2023",
     quotes: [
@@ -157,6 +161,46 @@ image: /img/osn22.png
 {% set sector = "font-smono text-[.64rem] tracking-[.11em] text-ink-3" %}
 {% set btnfire = "btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" %}
 {% set btnline = "btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" %}
+
+<style>
+  .participant-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+  }
+  .participant-card__logo {
+    display: flex;
+    width: 100%;
+    height: 144px;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .participant-card__logo img,
+  .participant-card__fallback {
+    width: 96px;
+    height: 96px;
+  }
+  .participant-card__name {
+    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+    font-weight: 650;
+  }
+  @media (min-width: 48rem) {
+    .participant-card {
+      min-height: 240px;
+      flex-direction: row;
+    }
+    .participant-card__logo {
+      width: 240px;
+      height: 240px;
+    }
+    .participant-card__logo img,
+    .participant-card__fallback {
+      width: 160px;
+      height: 160px;
+    }
+  }
+</style>
 
 <div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]" style="--acc:var(--color-corn)">
   <div class="v2-ambient" aria-hidden="true"></div>
@@ -184,10 +228,10 @@ image: /img/osn22.png
          `logo` filter (see .eleventy.js) fetches greyscale logos at build
          time and inlines them, returning "" on failure, so every entry
          falls back to its name set in type. ---------- #}
-    <section class="py-[clamp(30px,4vw,44px)] border-t border-ink/[0.07]">
+    <section id="who" class="py-[clamp(30px,4vw,44px)] border-t border-ink/[0.07] scroll-mt-[70px]">
     <div class="max-w-[1140px] mx-auto px-7">
       <h2 class="font-disp font-[560] text-[clamp(1.55rem,2.5vw,2.15rem)] leading-[1.1] tracking-[-.02em] text-ink text-balance [font-variation-settings:'opsz'_72]">Who's running it, building it, or <span class="corn-text">studying it:</span></h2>
-      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-8 overflow-hidden rounded-xl border border-ink/[0.09] bg-ink/[0.09]">
+      {# <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-8 overflow-hidden rounded-xl border border-ink/[0.09] bg-ink/[0.09]">
         {%- for s in strands %}{%- for p in s.partners %}
         <li class="flex bg-night-2">
           {% set src = p.img or (p.dom | logo) %}
@@ -197,21 +241,29 @@ image: /img/osn22.png
           </a>
         </li>
         {%- endfor %}{%- endfor %}
-      </ul>
-      <div class="mt-[42px]">
-        <div class="grid grid-cols-1 min-[681px]:grid-cols-2 gap-3.5 mt-5">
+      </ul> #}
+      <div class="mt-12">
+        <div class="grid grid-cols-1 gap-3.5 mt-5">
       {%- for s in strands %}
           {%- for p in s.partners %}
-          <div class="{{ cell }}">
+          <article class="participant-card group overflow-hidden rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night transition-colors hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
             {% set src = p.img or (p.dom | logo) %}
-            <div class="flex items-start justify-between gap-4">
-              <p class="{{ sector }}">{{ p.kind }}</p>
-              {% if src %}<img class="h-11 w-auto max-w-[140px] object-contain opacity-75 shrink-0" src="{{ src }}" alt="" loading="lazy">{% endif %}
+            <div class="participant-card__logo border-b border-ink/10 bg-ink/[0.035] p-6 md:border-b-0 md:border-r">
+              {% if src %}
+              <img class="object-contain opacity-75 grayscale transition-all duration-200 group-hover:opacity-100 group-hover:grayscale-0" src="{{ src }}" alt="" loading="lazy">
+              {% else %}
+              <span class="participant-card__fallback flex items-center justify-center bg-ink/[0.06] font-disp text-4xl font-semibold text-ink-2">{{ p.name | first }}</span>
+              {% endif %}
             </div>
-            <h4 class="{{ cellh }}">{% if p.url %}<a class="hover:text-spark" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.name }} <span class="text-ink-3 text-[.8em]" aria-hidden="true">↗</span></a>{% else %}{{ p.name }}{% endif %}</h4>
-            <p class="{{ cellp }}">{{ p.text | safe }}</p>
-            {% if p.link %}<div class="mt-3"><a class="{{ cardlink }}" href="{{ p.link }}"{% if '//' in p.link %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ p.linktext }} <span aria-hidden="true">→</span></a></div>{% endif %}
-          </div>
+            <div class="flex min-w-0 flex-1 flex-col justify-center px-6 py-7 md:px-9 md:py-6">
+              <h3 class="participant-card__name font-disp leading-[1.08] tracking-[-.02em] text-ink">
+                {% if p.url %}<a class="transition-colors hover:text-spark" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.name }} <span class="text-ink-3 text-[.68em]" aria-hidden="true">↗</span></a>{% else %}{{ p.name }}{% endif %}
+              </h3>
+              <p class="{{ sector }} mt-2">{{ p.kind }}</p>
+              <p class="{{ cellp }} mt-5 max-w-[72ch]">{{ p.text | safe }}</p>
+              {% if p.link %}<div class="mt-4"><a class="{{ cardlink }}" href="{{ p.link }}"{% if '//' in p.link %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ p.linktext }} <span aria-hidden="true">→</span></a></div>{% endif %}
+            </div>
+          </article>
           {%- endfor %}
       {%- endfor %}
         </div>
