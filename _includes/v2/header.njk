@@ -98,11 +98,10 @@
 	                <span class="min-w-0 flex-1">
 	                  <span class="{{ setuptitle }}">Self-host</span>
 	                  <span class="{{ setupdesc }}">Install Bonfire on your own infrastructure.
-                      {# <br/>
-	                    <b class="font-bold text-ink-2">Best if:</b> you have a server and some sysadmin comfort. #}
-                    </span>
-                    </span>
-	                </span>
+	                      {# <br/>
+		                    <b class="font-bold text-ink-2">Best if:</b> you have a server and some sysadmin comfort. #}
+	                    </span>
+		                </span>
 	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
 	              </a>
 	            </li>
@@ -187,9 +186,10 @@
       </div>
     </div>
      <a class="{{ navlink }} {{ '!text-spark font-semibold' if '/blog' in page.url }}" href="/blog">Blog</a>
+    <a class="{{ navlink }} {{ '!text-spark font-semibold' if '/shop' in page.url }}" href="/shop/">Shop</a>
     <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
   </div>
-  <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <button type="button" class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
 </div></nav>
 
 <div class="hidden sticky top-16 z-[69] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
@@ -243,6 +243,7 @@
   </a>
   <a class="{{ moblink }} font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Browse the source code ↗</a>
   <a class="{{ moblink }} {{ mobon if '/blog' in page.url }}" href="/blog">Blog</a>
+  <a class="{{ moblink }} {{ mobon if '/shop' in page.url }}" href="/shop/">Shop</a>
   <a class="{{ moblink }} font-smono text-[.78rem] tracking-[.06em] !text-spark" href="/start">Get started</a>
 </div>
 

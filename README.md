@@ -1,5 +1,9 @@
 # Bonfire site + blog
 
+## Shop checkout
+
+The shop uses a Stripe-hosted Payment Link, so no secret Stripe key is included in the static site. Set `STRIPE_ROCCO_POSTER_URL` in `.env` for local development and in the Netlify environment for production. See `.env.example` for the expected format.
+
 Based on a starter repository showing how to build a blog with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
 
 [![Build Status](https://travis-ci.org/11ty/eleventy-base-blog.svg?branch=master)](https://travis-ci.org/11ty/eleventy-base-blog)

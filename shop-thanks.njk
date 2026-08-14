@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+title: Thank you for your order — Bonfire shop
+description: Your Bonfire screen print order has been received.
+permalink: /shop/thanks/index.html
+image: /img/shop/bonfire-release-a3.jpg
+preloadImage: /img/shop/bonfire-release-a3.jpg
+robots: noindex, nofollow
+---
+
+<main class="relative min-h-[70vh] overflow-hidden bg-night px-5 py-16 text-ink font-body sm:px-7 sm:py-20">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <section class="relative mx-auto w-full max-w-[1040px]" aria-labelledby="thanks-title">
+    <header class="mx-auto max-w-[700px] text-center">
+      <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-leaf/30 bg-leaf/10 text-2xl text-leaf shadow-[0_0_32px_-12px_rgba(129,184,120,.8)]" aria-hidden="true">✓</span>
+      <p class="mt-6 font-smono text-[.66rem] font-bold tracking-[.16em] text-leaf">PAYMENT RECEIVED</p>
+      <h1 id="thanks-title" class="mt-4 text-balance font-disp text-[clamp(2.8rem,8vw,5.6rem)] font-semibold leading-[.92] tracking-[-.055em]">Thank you for supporting Rocco’s art.</h1>
+      {% if shop.testMode %}
+        <p class="mx-auto mt-6 max-w-[54ch] text-[1.02rem] leading-7 text-corn-2">This was a Stripe test payment. No card was charged, no order will be shipped, and no real receipt will be sent.</p>
+      {% else %}
+        <p class="mx-auto mt-6 max-w-[54ch] text-[1.02rem] leading-7 text-ink-2">Your payment is complete. Stripe will send a receipt to the email address used at checkout, and we’ll prepare your screen print for shipping.</p>
+      {% endif %}
+    </header>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-[.92fr_1.08fr] lg:gap-8">
+      <section class="rounded-2xl border border-ink/10 bg-night-2/75 p-5 shadow-[0_24px_70px_-38px_rgba(0,0,0,.9)] sm:p-6" aria-labelledby="order-summary-title">
+        <h2 id="order-summary-title" class="font-smono text-[.66rem] font-bold tracking-[.14em] text-ink-3">ORDER SUMMARY</h2>
+        <div class="mt-5 overflow-hidden rounded-xl border border-ink/10 bg-[#dedbd2] p-2">
+          <img
+            src="{{ shop.product.image }}"
+            width="{{ shop.product.imageWidth }}"
+            height="{{ shop.product.imageHeight }}"
+            alt="Black-and-white Bonfire screen print by Rocco Lombardi"
+            class="block h-auto w-full rounded-lg bg-white"
+            decoding="async"
+          >
+        </div>
+        <div class="mt-5 flex items-start justify-between gap-5">
+          <div>
+            <p class="font-disp text-xl font-semibold leading-tight">{{ shop.product.name }}</p>
+            <p class="mt-1 text-sm leading-6 text-ink-3">By <a href="{{ shop.product.artistUrl }}" target="_blank" rel="noopener noreferrer" class="text-ink underline decoration-ink/30 underline-offset-4 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">{{ shop.product.artist }}</a><br>{{ shop.product.dimensions }} · signed and numbered · edition of {{ shop.product.editionSize }}</p>
+          </div>
+          <p class="font-disp text-2xl font-semibold tabular-nums">€{{ shop.product.price }}</p>
+        </div>
+        <div class="mt-5 flex items-center justify-between border-t border-ink/[0.08] pt-4 text-sm">
+          <span class="text-ink-3">Payment</span>
+          <span class="inline-flex items-center gap-2 text-leaf"><span class="h-1.5 w-1.5 rounded-full bg-leaf" aria-hidden="true"></span>{{ 'Test successful' if shop.testMode else 'Paid with Stripe' }}</span>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-ink/10 bg-night-2/45 p-6 sm:p-8" aria-labelledby="next-title">
+        <p class="font-smono text-[.66rem] font-bold tracking-[.14em] text-spark">WHAT HAPPENS NEXT</p>
+        <h2 id="next-title" class="mt-3 text-balance font-disp text-[clamp(2rem,5vw,3rem)] font-semibold leading-none tracking-[-.04em]">From checkout to your wall.</h2>
+        <ol class="mt-8 space-y-6">
+          <li class="grid grid-cols-[2rem_1fr] gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full border border-leaf/30 bg-leaf/10 font-smono text-[.68rem] font-bold text-leaf">1</span>
+            <div>
+              <h3 class="font-disp text-lg font-semibold">Confirmation</h3>
+              <p class="mt-1 max-w-[48ch] text-sm leading-6 text-ink-3">{{ 'The sandbox payment is recorded in Stripe test mode.' if shop.testMode else 'Stripe emails your payment receipt to the checkout address.' }}</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[2rem_1fr] gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full border border-corn/30 bg-corn/10 font-smono text-[.68rem] font-bold text-corn-2">2</span>
+            <div>
+              <h3 class="font-disp text-lg font-semibold">Packing</h3>
+              <p class="mt-1 max-w-[48ch] text-sm leading-6 text-ink-3">{{ 'No print is packed for test orders.' if shop.testMode else 'We pack the signed and numbered print in a protective tube using the delivery address supplied at checkout.' }}</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[2rem_1fr] gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full border border-flame/30 bg-flame/10 font-smono text-[.68rem] font-bold text-spark">3</span>
+            <div>
+              <h3 class="font-disp text-lg font-semibold">Shipping update</h3>
+              <p class="mt-1 max-w-[48ch] text-sm leading-6 text-ink-3">{{ 'Run a live-mode order when you are ready to test fulfilment.' if shop.testMode else 'We’ll contact you at the same email address when your screen print is ready to travel within the EU.' }}</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="mt-8 flex flex-col gap-3 border-t border-ink/[0.08] pt-6 sm:flex-row">
+          <a href="/" class="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-gradient-to-br from-spark via-flame to-ember px-5 py-2.5 font-smono text-[.72rem] font-bold tracking-[.05em] text-[#221302] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark focus-visible:ring-offset-4 focus-visible:ring-offset-night active:translate-y-0">Return to Bonfire</a>
+          <a href="mailto:team@bonfire.cafe?subject=Question%20about%20my%20poster%20order" class="inline-flex min-h-11 flex-1 items-center justify-center rounded-full border border-ink/15 px-5 py-2.5 text-center font-smono text-[.72rem] font-bold tracking-[.05em] text-ink transition-colors hover:border-spark/50 hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Ask about your order</a>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
