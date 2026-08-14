@@ -1,0 +1,31 @@
+const sandboxCheckoutUrl = "https://buy.stripe.com/test_eVq5kE0DVf3C7MObK82cg01";
+const isProductionBuild = process.env.ELEVENTY_PRODUCTION === "true";
+const checkoutUrl = process.env.STRIPE_ROCCO_POSTER_URL || (isProductionBuild ? "" : sandboxCheckoutUrl);
+const emailOrderUrl = [
+  "mailto:team@bonfire.cafe",
+  "?subject=Bonfire%20limited-edition%20screen-print%20order",
+  "&body=Hello%20Bonfire%20team%2C%0A%0AI%27d%20like%20to%20order%20the%20Bonfire%20limited-edition%20screen-print.%0A%0ADelivery%20country%3A%20%0AQuantity%3A%201%0A"
+].join("");
+
+module.exports = {
+  product: {
+    name: "The Bonfire Screen Print",
+    artist: "Rocco Lombardi",
+    artistUrl: "https://www.instagram.com/rocco00073/?hl=en",
+    price: "250",
+    currency: "EUR",
+    format: "Limited-edition 1-colour screen-print",
+    dimensions: "35 × 50 cm",
+    editionSize: 250,
+    paper: "Fine 300gsm stock",
+    packaging: "Protective shipping tube",
+    image: "/img/shop/bonfire-release-a3.jpg",
+    imageWidth: 2000,
+    imageHeight: 1400,
+    url: "/shop/bonfire-poster/"
+  },
+  checkoutUrl,
+  orderUrl: checkoutUrl || emailOrderUrl,
+  stripeEnabled: Boolean(checkoutUrl),
+  testMode: checkoutUrl.includes("/test_")
+};

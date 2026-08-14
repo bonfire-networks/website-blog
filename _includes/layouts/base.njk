@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
+    {% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
 
 
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -16,7 +17,7 @@
     <!-- OpenGraph meta tags for social sharing -->
     <meta property="og:title" content="{{ title or metadata.title }}">
     <meta property="og:description" content="{{ description or metadata.description }}">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="{{ ogType or 'article' }}">
     <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
     {% if image %}
     <meta property="og:image" content="{{ metadata.url }}{{ image }}">
@@ -28,10 +29,13 @@
     {% if image %}
     <meta name="twitter:image" content="{{ metadata.url }}{{ image }}">
     {% endif %}
+    {% if preloadImage %}
+    <link rel="preload" as="image" href="{{ preloadImage }}" fetchpriority="high">
+    {% endif %}
     
     <link
-    rel="stylesheet" href="{{ '/css/style_v2.css?v3.1' | url }}">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    rel="stylesheet" href="{{ '/css/style_v2.css?v3.6' | url }}">
+    {% if '/shop' not in page.url %}<script async defer src="https://buttons.github.io/buttons.js"></script>{% endif %}
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
