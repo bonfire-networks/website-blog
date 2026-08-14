@@ -9,74 +9,75 @@ image: /img/shop/bonfire-release-a3.jpg
 <main class="relative min-h-screen overflow-hidden bg-night text-ink font-body">
   <div class="v2-ambient" aria-hidden="true"></div>
 
-  <section class="relative mx-auto max-w-[1180px] px-5 pb-20 pt-10 sm:px-7 sm:pb-24 sm:pt-14" aria-labelledby="shop-title">
-    <div class="flex flex-col gap-4 border-b border-ink/10 pb-7 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
-      <div>
-        <p class="font-smono text-[.68rem] font-bold tracking-[.1em] text-spark">BONFIRE</p>
-        <h1 id="shop-title" class="mt-2 font-disp text-[clamp(3rem,6vw,4.8rem)] font-semibold leading-none tracking-[-.04em] text-ink">Shop</h1>
-      </div>
-      <p class="max-w-[36rem] text-[1rem] leading-7 text-ink-2">Art prints and objects made with artists around the Bonfire community.</p>
+  <section class="relative mx-auto max-w-[1180px] px-5 pb-20 pt-7 sm:px-7 sm:pb-24 sm:pt-8" aria-labelledby="shop-title">
+    <div class="border-b border-ink/10 pb-7">
+      <h1 id="shop-title" class="font-disp text-[clamp(3.2rem,5vw,4.5rem)] font-semibold leading-none tracking-[-.04em] text-ink">Shop</h1>
+      <p class="mt-3 max-w-[43rem] text-[1rem] leading-7 text-ink-2">Limited-edition prints and objects created with artists around the Bonfire community. Every purchase helps sustain the project.</p>
     </div>
 
-    <div class="mt-8">
+    <div class="mt-6">
       <div class="mb-5 flex items-center justify-between gap-5">
         <h2 id="available-title" class="inline-flex items-center gap-2 text-sm font-semibold text-leaf"><span class="h-2 w-2 rounded-full bg-leaf" aria-hidden="true"></span>Available now</h2>
         <p class="text-sm text-ink-3">1 item</p>
       </div>
 
-      <article class="group grid overflow-hidden rounded-[1rem] bg-night-2/55 shadow-[0_28px_70px_-42px_rgba(0,0,0,.9)] md:grid-cols-[1.1fr_.9fr]">
-        <a href="{{ shop.product.url }}" class="order-1 block overflow-hidden bg-[#dedbd2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-spark" aria-label="View the Bonfire limited-edition screen-print">
+      <article class="group grid min-w-0 overflow-hidden rounded-[1rem] border border-ink/10 bg-night-2/55 shadow-[0_28px_70px_-42px_rgba(0,0,0,.9)] md:grid-cols-[minmax(0,1.16fr)_minmax(20rem,.84fr)]">
+        <a href="{{ shop.product.url }}" class="order-1 flex min-w-0 items-center overflow-hidden bg-[#dedbd2] p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-spark sm:p-5 lg:p-7" aria-label="View the Bonfire limited-edition screen print">
           <img
             src="{{ shop.product.image }}"
             width="{{ shop.product.imageWidth }}"
             height="{{ shop.product.imageHeight }}"
             alt="Black-and-white Bonfire screen print showing forest animals gathered around fires under a crescent moon"
-            class="h-full min-h-[18rem] w-full object-cover transition-transform duration-500 group-hover:scale-[1.012] md:min-h-[34rem]"
+            class="aspect-[10/7] w-full rounded-[.45rem] object-contain shadow-[0_18px_44px_-24px_rgba(0,0,0,.7)] transition-transform duration-500 group-hover:scale-[1.008]"
             fetchpriority="high"
             decoding="async"
           >
         </a>
 
-        <div class="order-2 flex flex-col justify-between gap-8 p-6 sm:p-9 lg:p-12">
+        <div class="order-2 flex min-w-0 flex-col p-6 sm:p-8 lg:p-10">
           <div>
             <p class="font-smono text-[.65rem] font-bold tracking-[.1em] text-spark"><a href="{{ shop.product.artistUrl }}" target="_blank" rel="noopener noreferrer" class="underline decoration-spark/45 underline-offset-4 transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">ROCCO LOMBARDI</a> × BONFIRE</p>
-            <h3 class="mt-4 font-disp text-[clamp(2.5rem,4vw,4rem)] font-semibold leading-[.94] tracking-[-.035em] text-ink">The Bonfire Screen Print</h3>
-            <p class="mt-5 max-w-[31rem] text-[1rem] leading-7 text-ink-2">A handmade, one-colour screen-print on fine 300gsm stock, signed and numbered by <a href="{{ shop.product.artistUrl }}" target="_blank" rel="noopener noreferrer" class="font-medium text-ink underline decoration-ink/30 underline-offset-4 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">Rocco Lombardi</a>.</p>
-
-            <dl class="mt-8 border-y border-ink/10 text-sm">
-              <div class="flex justify-between gap-5 border-b border-ink/10 py-3.5">
-                <dt class="text-ink-3">Edition</dt>
-                <dd class="font-medium text-ink">250 · signed and numbered</dd>
-              </div>
-              <div class="flex justify-between gap-5 border-b border-ink/10 py-3.5">
-                <dt class="text-ink-3">Size</dt>
-                <dd class="font-medium text-ink">{{ shop.product.dimensions }}</dd>
-              </div>
-              <div class="flex justify-between gap-5 py-3.5">
-                <dt class="text-ink-3">Delivery</dt>
-                <dd class="text-right font-medium text-ink">EU only · protective tube</dd>
-              </div>
-            </dl>
+            <h3 class="mt-4 max-w-[10ch] font-disp text-[clamp(2.45rem,4vw,3.6rem)] font-semibold leading-[.94] tracking-[-.035em] text-ink">The Bonfire Screen Print</h3>
+            <p class="mt-5 max-w-[30rem] text-[1rem] leading-7 text-ink-2">A handmade, one-colour screen print on fine 300gsm stock, signed and numbered by <a href="{{ shop.product.artistUrl }}" target="_blank" rel="noopener noreferrer" class="font-medium text-ink underline decoration-ink/30 underline-offset-4 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">Rocco Lombardi</a>.</p>
           </div>
 
-          <div>
-            <div class="mb-5 flex items-end justify-between gap-4">
-              <p class="text-sm text-ink-3">35 × 50 cm</p>
-              <p class="font-disp text-[2.7rem] font-semibold leading-none tracking-[-.035em] text-ink">€{{ shop.product.price }}</p>
+          <div class="mt-7">
+            <div class="mb-4 flex items-end justify-between gap-4">
+              <div>
+                <p class="text-sm text-ink-3">Price</p>
+                <p class="mt-1 font-disp text-[2.7rem] font-semibold leading-none tracking-[-.035em] text-ink">€{{ shop.product.price }}</p>
+              </div>
+              <p class="pb-1 text-right text-sm font-medium text-leaf">Available now</p>
             </div>
             <a
               href="{{ shop.orderUrl }}"
               class="group/buy inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-br from-spark via-flame to-ember px-6 py-4 font-smono text-[.78rem] font-bold tracking-[.04em] text-[#221302] shadow-[0_18px_34px_-18px_rgba(232,145,43,.72)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark focus-visible:ring-offset-4 focus-visible:ring-offset-night active:translate-y-0"
               {% if shop.stripeEnabled %}rel="noopener noreferrer"{% endif %}
             >
-              {{ 'Buy the print' if shop.stripeEnabled else 'Order the print' }} — €{{ shop.product.price }}
+              {{ 'Buy the print' if shop.stripeEnabled else 'Order the print' }}
               <span class="transition-transform group-hover/buy:translate-x-1" aria-hidden="true">→</span>
             </a>
-            <a href="{{ shop.product.url }}" class="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold text-ink-2 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">View the print and its story <span aria-hidden="true">→</span></a>
-            {% if shop.testMode %}
-              <p class="mt-1 text-center font-smono text-[.62rem] leading-5 text-corn-2">STRIPE TEST CHECKOUT · NO REAL CHARGE</p>
-            {% endif %}
           </div>
+
+          <dl class="mt-7 grid grid-cols-2 gap-x-6 gap-y-4 border-y border-ink/10 py-5 text-sm">
+            <div>
+              <dt class="text-ink-3">Edition</dt>
+              <dd class="mt-1 font-medium text-ink">250 · signed</dd>
+            </div>
+            <div>
+              <dt class="text-ink-3">Size</dt>
+              <dd class="mt-1 font-medium text-ink">{{ shop.product.dimensions }}</dd>
+            </div>
+            <div class="col-span-2">
+              <dt class="text-ink-3">Delivery</dt>
+              <dd class="mt-1 font-medium text-ink">EU shipping included · protective tube</dd>
+            </div>
+          </dl>
+
+          <a href="{{ shop.product.url }}" class="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold text-ink-2 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">Explore the artwork and its making <span aria-hidden="true">→</span></a>
+          {% if shop.testMode %}
+            <p class="mt-1 text-center font-smono text-[.62rem] leading-5 text-corn-2">STRIPE TEST CHECKOUT · NO REAL CHARGE</p>
+          {% endif %}
         </div>
       </article>
     </div>

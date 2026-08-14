@@ -55,7 +55,7 @@ ogType: product
         <p class="mt-5 max-w-[32rem] text-[1.02rem] leading-7 text-ink-2">A handmade, one-colour screen-print on fine 300gsm stock. Each print is signed and numbered by artist <a href="{{ shop.product.artistUrl }}" target="_blank" rel="noopener noreferrer" class="font-medium text-ink underline decoration-ink/30 underline-offset-4 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">Rocco Lombardi</a>.</p>
 
         <div class="product-purchase-action mt-8">
-          <div class="flex items-end justify-between gap-5 border-t border-ink/10 pt-7">
+          <div class="flex items-end justify-between gap-5 pt-7">
             <div>
               <p class="text-[.75rem] font-semibold text-ink-3">PRICE</p>
               <p class="mt-1 font-disp text-[2.7rem] font-semibold leading-none tracking-[-.04em] text-ink">€{{ shop.product.price }}</p>
@@ -76,7 +76,7 @@ ogType: product
             class="group mt-3 inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-br from-spark via-flame to-ember px-7 py-4 font-smono text-[.78rem] font-bold tracking-[.04em] text-[#221302] shadow-[0_18px_34px_-18px_rgba(232,145,43,.72)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark focus-visible:ring-offset-4 focus-visible:ring-offset-night active:translate-y-0"
             {% if shop.stripeEnabled %}rel="noopener noreferrer"{% endif %}
           >
-            {{ 'Buy the print' if shop.stripeEnabled else 'Order the print' }} — €{{ shop.product.price }}
+            {{ 'Buy the print' if shop.stripeEnabled else 'Order the print' }}
             <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
           </a>
         </div>
@@ -109,10 +109,30 @@ ogType: product
         <dt class="text-sm text-ink-3">Delivery</dt>
         <dd class="mt-1">
           <span class="block font-disp text-lg font-semibold text-ink">EU delivery only</span>
-          <span class="mt-1 block text-sm leading-6 text-ink-3">Ships in a protective tube.</span>
+          <span class="mt-1 block text-sm leading-6 text-ink-3">Shipping included in €250 · protective tube.</span>
         </dd>
       </div>
     </dl>
+
+    <details class="group border-b border-ink/10" aria-labelledby="shipping-title">
+      <summary class="flex min-h-16 cursor-pointer list-none items-center gap-4 py-5 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-spark [&::-webkit-details-marker]:hidden">
+        <svg class="h-7 w-7 shrink-0" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M3.5 7.5h16v15h-16z"></path>
+          <path d="M19.5 13h5l4 4v5.5h-9z"></path>
+          <circle cx="9" cy="23.5" r="2.5"></circle>
+          <circle cx="24" cy="23.5" r="2.5"></circle>
+        </svg>
+        <span id="shipping-title" class="font-disp text-2xl font-semibold">Shipping</span>
+        <svg class="ml-auto h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="m5 7.5 5 5 5-5"></path>
+        </svg>
+      </summary>
+      <div class="max-w-[48rem] space-y-4 pb-7 text-[1rem] leading-7 text-ink-2 sm:pl-11 sm:text-[1.05rem] sm:leading-8">
+        <p>We currently ship only to addresses within the European Union. Shipping is included in the €250 price.</p>
+        <p>Every print is carefully rolled and sent in a protective shipping tube.</p>
+        <p>At checkout, enter your full delivery address. A phone number and delivery instructions are optional.</p>
+      </div>
+    </details>
 
     {# <aside class="mt-8 grid gap-3 border-y border-leaf/20 bg-leaf/[0.05] px-5 py-6 sm:px-7 md:grid-cols-[.8fr_1.2fr] md:items-center md:gap-10" aria-labelledby="support-bonfire-title">
       <h2 id="support-bonfire-title" class="font-disp text-[clamp(1.6rem,3vw,2.25rem)] font-semibold leading-tight tracking-[-.025em] text-ink">Made by Rocco. Made for Bonfire.</h2>
@@ -426,7 +446,7 @@ ogType: product
       <div class="grid gap-9 md:grid-cols-[1fr_auto] md:items-center md:gap-14">
         <div>
           <h2 id="order-title" class="max-w-[14ch] font-disp text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-[.94] tracking-[-.035em] text-ink">The Bonfire Screen Print</h2>
-          <p class="mt-5 max-w-[38rem] text-[1rem] leading-7 text-ink-2">Handmade one-colour screen print by Beeink Serigrafia · {{ shop.product.dimensions }} · fine 300gsm stock · signed and numbered edition of {{ shop.product.editionSize }} · EU delivery only.</p>
+          <p class="mt-5 max-w-[38rem] text-[1rem] leading-7 text-ink-2">Handmade one-colour screen print by Beeink Serigrafia · {{ shop.product.dimensions }} · fine 300gsm stock · signed and numbered edition of {{ shop.product.editionSize }} · EU shipping included.</p>
         </div>
         <div class="md:min-w-72">
           <p class="mb-5 font-disp text-4xl font-semibold tracking-[-.035em] text-ink">€{{ shop.product.price }}</p>
