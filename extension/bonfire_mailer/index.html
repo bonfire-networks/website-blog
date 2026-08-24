@@ -578,7 +578,7 @@ MAIL_FROM=email@instance.domain
 MAIL_SERVER=your_smtp_server
 MAIL_PORT=587
 MAIL_USER=your_smtp_username
-MAIL_KEY=your_smtp_password
+MAIL_PASSWORD=your_smtp_password
 MAIL_FROM=email@instance.domain
 MAIL_SSL=true
 </code></pre>
@@ -586,6 +586,7 @@ MAIL_SSL=true
 <ul>
 <li><code>MAIL_PORT</code> defaults to <code>587</code> if not specified.</li>
 <li><code>MAIL_SSL</code> defaults to <code>true</code>, set to <code>false</code> if server does not support SSL.</li>
+<li>Use <code>MAIL_PASSWORD</code> for the SMTP password. <code>MAIL_KEY</code> is also accepted for backwards compatibility, but <strong>do not set both</strong>: <code>MAIL_KEY</code> takes precedence over <code>MAIL_PASSWORD</code>, so a leftover <code>MAIL_KEY</code> (eg. from a previously configured API-based backend) will be sent as the SMTP password and authentication will fail with something like <code>535 5.7.8</code>. Remove <code>MAIL_KEY</code> from the environment and redeploy so the runtime config is reloaded.</li>
 </ul>
 <h4 id="sendmail">Sendmail <a class="direct-link" href="#sendmail" target="_blank" rel="noopener">#</a></h4>
 <ul>
@@ -645,7 +646,7 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">12 Aug 2026</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">22 Aug 2026</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">mpl-2.0</span></div>
             
           

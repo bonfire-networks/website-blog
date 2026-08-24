@@ -308,412 +308,115 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.58] antialiased selection:bg-ember selection:text-[#160c02]">
   <div class="v2-ambient" aria-hidden="true"></div>
   <div class="relative z-[1]">
 
     
-    <header class="pt-10 pb-[clamp(44px,5vw,64px)]" style="--acc:var(--color-flame)">
-    <div class="max-w-[1140px] mx-auto px-7">
-      <p class="mb-[26px] font-smono text-[.7rem] tracking-[.08em] text-ink-3"><a class="hover:text-spark" href="/">Bonfire</a><span class="mx-2">/</span><a class="hover:text-spark" href="/integrations">Integrations</a><span class="mx-2">/</span>Ghost</p>
-
-      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Ghost + Bonfire</p>
-
-      <h1 class="mt-[22px] font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] text-balance max-w-[19ch] [font-variation-settings:'opsz'_96]">Your readers can already reach you. Now they can <span class="fire-text">reach each other.</span></h1>
-
-      <p class="mt-[18px] text-[1.08rem] text-ink-2 max-w-[56ch] [&_b]:text-ink [&_b]:font-semibold">Keep publishing exactly as you do. This connects your Ghost publication to a community space where your archive, your writers and your members all land together, and where <b>the people who read you can finally find each other</b>.</p>
-
-      
-      
-
-      <div class="flex flex-wrap gap-3.5 mt-9">
-        <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="#start">Two ways to start</a>
-        <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://github.com/bonfire-networks/bonfire_ghost">Read the extension docs</a>
+    <header class="flex min-h-[clamp(560px,70dvh,680px)] items-center border-b border-ink/[0.09]" style="--acc:var(--color-leaf)">
+      <div class="w-full max-w-[1140px] mx-auto px-7 py-[clamp(64px,9vw,104px)]">
+        <h1 class="mt-[18px] max-w-[16ch] font-disp font-semibold text-[clamp(2.15rem,5.6vw,4.8rem)] leading-[1.02] tracking-[0] text-balance [font-variation-settings:'opsz'_96]">Ghost publishing, with a <span class="corn-text">community around it.</span></h1>
+        <p class="mt-8 max-w-[43ch] text-[1rem] min-[601px]:text-[1.08rem] leading-[1.62] text-ink-2">Keep publishing as usual. Bonfire gives your readers a lasting place to meet between articles.</p>
+        <div class="flex flex-wrap gap-3 mt-[26px]">
+          <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="#reader-journey">See how it works</a>
+          <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="/case-studies/jacobin/">Jacobin case study</a>
+        </div>
       </div>
-
-      
-    </div>
     </header>
 
     <main>
 
     
-    <section id="articles" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
+    <section id="publisher-tension" class="py-[clamp(60px,8vw,104px)] scroll-mt-[70px]" style="--acc:var(--color-corn)">
     <div class="max-w-[1140px] mx-auto px-7">
-      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Archive &amp; topics</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Everything you've published, <span class="fire-text">in one move.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Your whole <b>post history comes with you</b>, imported in the background and sorted into the places where people will talk about it. Ten years of archive ready to become fresh conversations.</p>
-
-      
-      <div class="grid grid-cols-1 min-[721px]:grid-cols-3 gap-3.5 mt-[34px]">
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-download-simple"></i></span>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">The whole archive</h3>
-          <p class="text-ink-2 text-[.94rem]">A background backfill pages through every article you&#39;ve ever published, keeping titles, images, excerpts, original dates and the link home to your site.</p>
-        </div>
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-lightning"></i></span>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">And everything after</h3>
-          <p class="text-ink-2 text-[.94rem]">New posts arrive as you publish them. Edit a piece, change who can read it, unpublish it, bring it back. The Bonfire copy follows along.</p>
-        </div>
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-copy-simple"></i></span>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">Run it as often as you like</h3>
-          <p class="text-ink-2 text-[.94rem]">Imports match on canonical URL, so a second pass updates what&#39;s there instead of leaving you with two of everything.</p>
-        </div>
+      <div>
+        <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>From publishing to participation</p>
+        <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.08] text-balance [font-variation-settings:&#39;opsz&#39;_96] max-w-[850px]">A publication can have thousands of members and still have <span class="corn-text">nowhere they meet.</span></h2>
       </div>
 
       
-      <div class="mt-4 rounded-xl border border-ink/15 px-[26px] py-7 min-[901px]:px-9 min-[901px]:py-9">
-        <div class="grid grid-cols-1 min-[981px]:grid-cols-[1fr_minmax(0,26rem)] gap-8 min-[981px]:gap-12 items-center">
+      <div class="grid grid-cols-1 min-[801px]:grid-cols-2 mt-[clamp(34px,4vw,52px)] border-t border-ink/15">
+        <article class="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-4 min-[601px]:gap-5 py-6 min-[601px]:py-7 border-b border-ink/15 min-[801px]:pr-8" style="--tone:var(--color-corn)">
+          <span class="grid w-9 h-9 mt-0.5 flex-none place-items-center text-[22px] text-[var(--tone)]" aria-hidden="true"><i class="ph-duotone ph-arrows-clockwise"></i></span>
           <div>
-            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-folders"></i></span>
-            <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mt-[15px] mb-3">Your publication gets a room</h3>
-            <p class="text-ink-2 text-[.98rem] max-w-[40rem]">Choose one group or topic, and every imported article lands there. That room becomes the home of the discussion: people join it, follow it, browse everything you've published in one place, and <b class="text-ink font-semibold">carry a discussion on from one article to the next</b>.</p>
-            <p class="text-ink-2 text-[.98rem] max-w-[40rem] mt-3.5">You also decide what comes over at all: everything you publish, or only the articles carrying the Ghost tags you pick.</p>
+            <h3 class="font-disp font-[620] text-[1.12rem] min-[601px]:text-[1.2rem] leading-[1.2] tracking-[0]">Every conversation starts again</h3>
+            <p class="mt-2 text-[.93rem] leading-[1.58] text-ink-2">Comments capture the moment, but each new story starts another isolated conversation.</p>
           </div>
-
-          
-          <div class="rounded-xl border border-ink/15 bg-night-2 px-[22px] py-6">
-            <p class="font-smono text-[.64rem] font-bold tracking-[.12em] uppercase text-ink-3 mb-4">Where an article ends up</p>
-            
-            <div class="flex items-start gap-3.5 " style="--tone:var(--color-ink-3)">
-              <span class="w-8 h-8 mt-[2px] flex-none rounded-[9px] flex items-center justify-center text-[17px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_9%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-article"></i></span>
-              <div>
-                <div class="font-smono text-[.6rem] font-bold tracking-[.12em] uppercase text-ink-3">Ghost article</div>
-                <div class="text-[.96rem] text-ink mt-0.5">“The heat dome, explained”</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3.5 mt-3.5" style="--tone:var(--color-corn)">
-              <span class="w-8 h-8 mt-[2px] flex-none rounded-[9px] flex items-center justify-center text-[17px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_9%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-users-three"></i></span>
-              <div>
-                <div class="font-smono text-[.6rem] font-bold tracking-[.12em] uppercase text-ink-3">lands in</div>
-                <div class="text-[.96rem] text-ink mt-0.5">Your publication&#39;s room</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3.5 mt-3.5" style="--tone:var(--color-flame)">
-              <span class="w-8 h-8 mt-[2px] flex-none rounded-[9px] flex items-center justify-center text-[17px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_9%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-chats-circle"></i></span>
-              <div>
-                <div class="font-smono text-[.6rem] font-bold tracking-[.12em] uppercase text-ink-3">becomes</div>
-                <div class="text-[.96rem] text-ink mt-0.5">A discussion the whole room can join</div>
-              </div>
-            </div>
+        </article>
+        <article class="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-4 min-[601px]:gap-5 py-6 min-[601px]:py-7 border-b border-ink/15 min-[801px]:border-l min-[801px]:pl-8" style="--tone:var(--color-leaf)">
+          <span class="grid w-9 h-9 mt-0.5 flex-none place-items-center text-[22px] text-[var(--tone)]" aria-hidden="true"><i class="ph-duotone ph-ticket"></i></span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem] min-[601px]:text-[1.2rem] leading-[1.2] tracking-[0]">Membership mostly opens content</h3>
+            <p class="mt-2 text-[.93rem] leading-[1.58] text-ink-2">A paid tier opens articles and newsletters, but offers members few ways to contribute or connect.</p>
           </div>
-        </div>
-      </div>
-
-      
-      <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mt-12 mb-1">And it keeps up with you</h3>
-      <p class="text-ink-2 text-[.98rem] max-w-[46rem] mb-6">Every change you make in Ghost has a defined counterpart here, including the ones that take something down, which hide rather than destroy.</p>
-
-      
-      <div class="hidden min-[861px]:grid px-[18px] pb-2.5 font-smono text-[.6rem] font-bold tracking-[.14em] uppercase text-ink-3 grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" aria-hidden="true">
-        <span>In Ghost</span><span class="opacity-0 font-smono text-[.95rem]">→</span><span>In Bonfire</span>
-      </div>
-      <div class="grid gap-2.5">
-        <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-leaf)">
-          <div class="flex items-center gap-3.5">
-            <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-paper-plane-tilt"></i></span>
-            <span class="font-disp font-[620] text-[1rem] text-ink">Article published</span>
+        </article>
+        <article class="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-4 min-[601px]:gap-5 py-6 min-[601px]:py-7 border-b border-ink/15 min-[801px]:pr-8" style="--tone:var(--color-flame)">
+          <span class="grid w-9 h-9 mt-0.5 flex-none place-items-center text-[22px] text-[var(--tone)]" aria-hidden="true"><i class="ph-duotone ph-arrow-square-out"></i></span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem] min-[601px]:text-[1.2rem] leading-[1.2] tracking-[0]">Community lives somewhere else</h3>
+            <p class="mt-2 text-[.93rem] leading-[1.58] text-ink-2">A chat server or commercial platform adds another account, interface and organisation to the relationship.</p>
           </div>
-          <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-          <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-            <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Create or update</span>
-            <span class="text-ink-2 text-[.94rem]">Create the article, or update the one that&#39;s already here</span>
+        </article>
+        <article class="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-4 min-[601px]:gap-5 py-6 min-[601px]:py-7 border-b border-ink/15 min-[801px]:border-l min-[801px]:pl-8" style="--tone:var(--color-spark)">
+          <span class="grid w-9 h-9 mt-0.5 flex-none place-items-center text-[22px] text-[var(--tone)]" aria-hidden="true"><i class="ph-duotone ph-books"></i></span>
+          <div>
+            <h3 class="font-disp font-[620] text-[1.12rem] min-[601px]:text-[1.2rem] leading-[1.2] tracking-[0]">The archive is rich but solitary</h3>
+            <p class="mt-2 text-[.93rem] leading-[1.58] text-ink-2">Years of reporting remain readable, but rarely become living places where old and new conversations meet.</p>
           </div>
-        </div>
-        <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-corn)">
-          <div class="flex items-center gap-3.5">
-            <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-pencil-simple-line"></i></span>
-            <span class="font-disp font-[620] text-[1rem] text-ink">Published article edited</span>
-          </div>
-          <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-          <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-            <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Update</span>
-            <span class="text-ink-2 text-[.94rem]">Update its content, its room and who&#39;s allowed to read it</span>
-          </div>
-        </div>
-        <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-ember)">
-          <div class="flex items-center gap-3.5">
-            <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-eye-slash"></i></span>
-            <span class="font-disp font-[620] text-[1rem] text-ink">Article unpublished</span>
-          </div>
-          <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-          <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-            <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Hide</span>
-            <span class="text-ink-2 text-[.94rem]">Take it out of feeds and close off reading, without deleting anything</span>
-          </div>
-        </div>
-        <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-ink-3)">
-          <div class="flex items-center gap-3.5">
-            <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-trash"></i></span>
-            <span class="font-disp font-[620] text-[1rem] text-ink">Article deleted</span>
-          </div>
-          <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-          <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-            <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Hide, keep record</span>
-            <span class="text-ink-2 text-[.94rem]">Hide it while the discussion around it stays intact</span>
-          </div>
-        </div>
-        <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-flame)">
-          <div class="flex items-center gap-3.5">
-            <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-arrow-counter-clockwise"></i></span>
-            <span class="font-disp font-[620] text-[1rem] text-ink">Article republished</span>
-          </div>
-          <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-          <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-            <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Restore</span>
-            <span class="text-ink-2 text-[.94rem]">Bring back the article and the conversation exactly as they were</span>
-          </div>
-        </div>
+        </article>
       </div>
     </div></section>
 
     
-    <section id="community" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <section id="reader-journey" class="py-[clamp(64px,8vw,104px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-leaf)">
     <div class="max-w-[1140px] mx-auto px-7">
-      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>The community</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Readers meet each other, and <span class="corn-text">the people who write.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">A byline stops being a name at the top of a page. Your writers get profiles people can follow and answer; your readers get profiles, feeds and rooms of their own. <b>Everyone who turns up for one article leaves with people, not just a thread.</b></p>
-
-      
-      <p class="font-smono text-[.64rem] font-bold tracking-[.12em] uppercase text-ink-3 mt-11 mb-4">How far someone can come in</p>
-      
-      <div class="grid grid-cols-1 min-[601px]:grid-cols-2 min-[1051px]:grid-cols-5 gap-3.5">
-        <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:var(--color-ink-3)">
-          
-          <i class="ph-duotone ph-book-open-text text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
-          <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">Read</h3>
-          <p class="text-ink-2 text-[.9rem] m-0">Public pieces stay public. Gated pieces keep their gate, exactly as you set it in Ghost.</p>
+      <div class="grid grid-cols-1 min-[901px]:grid-cols-[minmax(0,1fr)_minmax(16rem,.55fr)] gap-8 min-[901px]:gap-[clamp(44px,7vw,92px)] items-end">
+        <div>
+          <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>A living publication</p>
+          <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.08] text-balance [font-variation-settings:&#39;opsz&#39;_96] max-w-[720px]">What if every article <span class="corn-text">opened a room?</span></h2>
         </div>
-        <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:var(--color-corn)">
-          
-          <i class="ph-duotone ph-chat-teardrop-text text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
-          <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">Reply</h3>
-          <p class="text-ink-2 text-[.9rem] m-0">Under the article on your own site, with an account here, or from another fediverse server they already use.</p>
-        </div>
-        <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:var(--color-corn-2)">
-          
-          <i class="ph-duotone ph-user-plus text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
-          <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">Follow</h3>
-          <p class="text-ink-2 text-[.9rem] m-0">Follow the writer whose beat they care about, get the next piece, and answer them directly.</p>
-        </div>
-        <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:var(--color-flame)">
-          
-          <i class="ph-duotone ph-users-three text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
-          <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">Gather</h3>
-          <p class="text-ink-2 text-[.9rem] m-0">Join the topic where that beat lives and keep talking between articles, with everyone else who reads it.</p>
-        </div>
-        <div class="relative flex flex-col rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-5 py-[22px]" style="--tone:var(--color-spark)">
-          
-          <i class="ph-duotone ph-hand-heart text-[24px] text-[var(--tone)]" aria-hidden="true"></i>
-          <h3 class="font-disp font-[620] text-[1.06rem] mt-3 mb-1.5">Contribute</h3>
-          <p class="text-ink-2 text-[.9rem] m-0">Start a discussion of their own, run a poll, raise something worth covering. Readers become participants.</p>
-        </div>
+        <p class="max-w-[34ch] text-[1rem] leading-[1.55] text-ink-2">Ghost remains the publishing home. Bonfire gives the people around it somewhere to stay.</p>
       </div>
 
-      <div class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-3.5 mt-4">
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-identification-badge"></i></span>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">Bylines become people</h3>
-          <p class="text-ink-2 text-[.94rem]">Importing an article creates its author's profile and keeps the attribution attached to it, so a reader can follow that writer, see everything else they've filed, and reply to them directly.</p>
-        </div>
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-broadcast"></i></span>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">Beyond your own visitors</h3>
-          <p class="text-ink-2 text-[.94rem]">With remote interaction switched on, people can take part from whatever fediverse server they're already on. No new account on your domain to put them off.</p>
-        </div>
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-infinity"></i></span>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">Conversations that stay put</h3>
-          <p class="text-ink-2 text-[.94rem]">A discussion belongs to the whole community. It survives an article being unpublished or removed, and it's still there when the next piece on the subject lands.</p>
-        </div>
-      </div>
+      <figure class="aspect-[4/3] min-[901px]:aspect-[16/8] mt-[clamp(40px,5vw,60px)] overflow-hidden rounded-[6px] border border-ink/15 bg-[#ef0000]">
+        <img class="w-full h-full object-cover object-center" src="/img/jacobin/ghostbonfire.png" alt="Jacobin's Ghost publication connected to its Bonfire community" width="2906" height="1729" loading="lazy" decoding="async">
+      </figure>
 
       
-      
-    </div></section>
-
-    
-    <section id="tiers" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-leaf)">
-    <div class="max-w-[1140px] mx-auto px-7">
-      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Tiers &amp; access</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">What your paid tier <span class="fire-text">can be worth.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Everything you've set in Ghost carries over untouched: what's public stays public, what's paid stays paid. And the tiers you already sell can start <b>opening doors as well as articles</b>.</p>
-
-      
-      <div class="mt-[34px]">
-        <div class="hidden min-[861px]:grid px-[18px] pb-2.5 font-smono text-[.6rem] font-bold tracking-[.14em] uppercase text-ink-3 grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" aria-hidden="true">
-          <span>Ghost visibility</span><span class="opacity-0 font-smono text-[.95rem]">→</span><span>Bonfire access</span>
-        </div>
-        <div class="grid gap-2.5">
-          <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-leaf)">
-            <div class="flex items-center gap-3.5">
-              <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-globe-hemisphere-west"></i></span>
-              <span class="font-disp font-[620] text-[1rem] text-ink">Public</span>
-            </div>
-            <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-              <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Open</span>
-              <span class="text-ink-2 text-[.94rem]">Readable by everyone</span>
-            </div>
-          </div>
-          <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-corn)">
-            <div class="flex items-center gap-3.5">
-              <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-user-circle"></i></span>
-              <span class="font-disp font-[620] text-[1rem] text-ink">Members</span>
-            </div>
-            <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-              <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Logged in</span>
-              <span class="text-ink-2 text-[.94rem]">Readable by logged-in local users</span>
-            </div>
-          </div>
-          <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-corn)">
-            <div class="flex items-center gap-3.5">
-              <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-users-three"></i></span>
-              <span class="font-disp font-[620] text-[1rem] text-ink">Specific tiers, including a free tier</span>
-            </div>
-            <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-              <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Logged in</span>
-              <span class="text-ink-2 text-[.94rem]">Readable by logged-in local users</span>
-            </div>
-          </div>
-          <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-flame)">
-            <div class="flex items-center gap-3.5">
-              <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-lock-key"></i></span>
-              <span class="font-disp font-[620] text-[1rem] text-ink">Paid-only specific tiers</span>
-            </div>
-            <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-              <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Preview + tier</span>
-              <span class="text-ink-2 text-[.94rem]">A preview is visible; full reading goes to the matching tier circles</span>
-            </div>
-          </div>
-          <div class="group items-start min-[861px]:items-center gap-y-2.5 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[18px] py-[14px] transition-colors duration-200 hover:border-[color-mix(in_srgb,var(--tone)_45%,transparent)] grid grid-cols-1 min-[861px]:grid-cols-[minmax(0,17rem)_auto_1fr] gap-x-6" style="--tone:var(--color-flame)">
-            <div class="flex items-center gap-3.5">
-              <span class="w-9 h-9 flex-none rounded-[10px] flex items-center justify-center text-[19px] text-[var(--tone)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)] border border-[color-mix(in_srgb,var(--tone)_26%,transparent)] transition-colors duration-200 group-hover:bg-[color-mix(in_srgb,var(--tone)_16%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-lock-key"></i></span>
-              <span class="font-disp font-[620] text-[1rem] text-ink">Paid</span>
-            </div>
-            <span class="font-smono text-[.95rem] text-ink-3 rotate-90 min-[861px]:rotate-0 ml-[14px] min-[861px]:ml-0 transition-colors duration-200 group-hover:text-[var(--tone)]" aria-hidden="true">→</span>
-            <div class="flex flex-wrap items-center gap-x-3.5 gap-y-2">
-              <span class="inline-flex items-center self-start rounded-full px-2.5 py-[3px] font-smono text-[.6rem] font-bold tracking-[.1em] uppercase whitespace-nowrap text-[var(--tone)] border border-[color-mix(in_srgb,var(--tone)_35%,transparent)] bg-[color-mix(in_srgb,var(--tone)_8%,transparent)]">Preview + tier</span>
-              <span class="text-ink-2 text-[.94rem]">A preview is visible; full reading goes to every paid tier circle</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-4 rounded-xl border border-ink/15 px-[26px] py-7">
-        <div class="grid grid-cols-1 min-[901px]:grid-cols-[1fr_1fr] gap-6 min-[901px]:gap-10">
-          <div>
-            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-circles-three"></i></span>
-            <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mt-[15px] mb-2.5">Each tier becomes a circle that looks after itself</h3>
-            <p class="text-ink-2 text-[.94rem] m-0">Every tier is mirrored as a Bonfire circle, and boundaries do the rest. Subscribers join their tier's circle, lapsed members drop out of it, and you never touch a list. Retire a tier and its circle is archived rather than deleted, so nobody's history disappears. What that circle is <em>allowed to reach</em> stays entirely your decision. This never assumes a policy on your behalf.</p>
-          </div>
-          <div>
-            <p class="font-smono text-[.64rem] font-bold tracking-[.12em] uppercase text-ink-3 mb-3.5">Things you could hand to a tier</p>
-            
-            <div class="flex flex-wrap gap-2.5">
-              <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 text-[.9rem] text-ink-2">
-                <i class="ph-duotone ph-book-open-text text-[18px] text-[var(--acc)]" aria-hidden="true"></i>Read paid articles
-              </span>
-              <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 text-[.9rem] text-ink-2">
-                <i class="ph-duotone ph-chats-circle text-[18px] text-[var(--acc)]" aria-hidden="true"></i>Comment and reply
-              </span>
-              <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 text-[.9rem] text-ink-2">
-                <i class="ph-duotone ph-chart-bar text-[18px] text-[var(--acc)]" aria-hidden="true"></i>Vote in polls
-              </span>
-              <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 text-[.9rem] text-ink-2">
-                <i class="ph-duotone ph-users-three text-[18px] text-[var(--acc)]" aria-hidden="true"></i>Start a group
-              </span>
-              <span class="flex items-center gap-2.5 rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 text-[.9rem] text-ink-2">
-                <i class="ph-duotone ph-lock-simple-open text-[18px] text-[var(--acc)]" aria-hidden="true"></i>Reach a private space
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div></section>
-
-    
-    <section id="signin" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
-    <div class="max-w-[1140px] mx-auto px-7">
-      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Sign-in</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">One member list, <span class="fire-text">kept in sync.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Your Ghost members are the guest list. Nobody has to sign up a second time, and <b>you never maintain a parallel list of who's who</b>.</p>
-
-      
-      <div class="grid grid-cols-1 min-[721px]:grid-cols-3 gap-3.5 mt-[34px]">
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <div class="flex items-center justify-between gap-3">
-            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-envelope-simple"></i></span>
-            <span class="font-disp font-bold text-[1.6rem] leading-none text-[color-mix(in_srgb,var(--acc)_28%,transparent)]">1</span>
-          </div>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">They give their email</h3>
-          <p class="text-ink-2 text-[.94rem]">The same address they subscribed with. No second form, no new password to invent.</p>
-        </div>
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <div class="flex items-center justify-between gap-3">
-            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-magnifying-glass"></i></span>
-            <span class="font-disp font-bold text-[1.6rem] leading-none text-[color-mix(in_srgb,var(--acc)_28%,transparent)]">2</span>
-          </div>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">Ghost is asked about it</h3>
-          <p class="text-ink-2 text-[.94rem]">On your member list? A one-time sign-in link goes out. Not on it? They&#39;re sent to your Portal to subscribe.</p>
-        </div>
-        <div class="group card rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-[26px] py-7 hover:border-[color-mix(in_srgb,var(--acc)_40%,transparent)]">
-          <div class="flex items-center justify-between gap-3">
-            <span class="w-[42px] h-[42px] rounded-[11px] flex items-center justify-center text-[22px] text-[var(--acc)] bg-[color-mix(in_srgb,var(--acc)_7%,transparent)] border border-[color-mix(in_srgb,var(--acc)_24%,transparent)] transition-all duration-[250ms] ease-[cubic-bezier(.22,.8,.3,1)] group-hover:-translate-y-0.5 group-hover:bg-[color-mix(in_srgb,var(--acc)_13%,transparent)]" aria-hidden="true"><i class="ph-duotone ph-hand-waving"></i></span>
-            <span class="font-disp font-bold text-[1.6rem] leading-none text-[color-mix(in_srgb,var(--acc)_28%,transparent)]">3</span>
-          </div>
-          <h3 class="font-disp font-[620] text-[1.14rem] mt-[15px] mb-[7px]">They&#39;re in</h3>
-          <p class="text-ink-2 text-[.94rem]">Their account is set up for them, with whatever their tier unlocks already attached to it.</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 min-[901px]:grid-cols-3 gap-3.5 mt-4">
-        <div class="rounded-xl border border-ink/15 px-[26px] py-6">
-          <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mb-2">You decide who gets in</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Everyone on your member list, or only the tiers you pick. Your writers and editors always get in, tier or not, and the login page carries your own words and a button to wherever you sell memberships.</p>
-        </div>
-        <div class="rounded-xl border border-[color-mix(in_srgb,var(--acc)_38%,transparent)] bg-[color-mix(in_srgb,var(--acc)_5%,transparent)] px-[26px] py-6">
-          <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mb-2">Your member list stays yours</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Every address gets the same neutral answer: subscriber, stranger or lapsed alike. The login form can't be used to work out who does and doesn't pay you.</p>
-        </div>
-        <div class="rounded-xl border border-ink/15 px-[26px] py-6">
-          <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mb-2">A lapse doesn't lock people out</h3>
-          <p class="text-ink-2 text-[.94rem] m-0">Someone who stops paying keeps their account, their posts, their follows and every conversation they've been part of. They lose only what the tier unlocked, and it comes back if they resubscribe.</p>
-        </div>
-      </div>
+      <ol class="grid grid-cols-1 min-[701px]:grid-cols-2 min-[1051px]:grid-cols-4 border-b border-ink/15">
+        <li class="py-6 min-[601px]:py-7 border-t border-ink/15 min-[701px]:px-7 min-[1051px]:px-6   min-[701px]:pl-0 min-[1051px]:pl-6 min-[1051px]:pl-0" style="--tone:var(--color-spark)">
+          <span class="font-smono text-[.66rem] font-bold tracking-[.12em] text-[var(--tone)]">01</span>
+          <p class="mt-2 max-w-[22ch] font-disp font-[580] text-[1.12rem] min-[601px]:text-[1.25rem] leading-[1.2] text-ink">The discussion remains attached to the story.</p>
+        </li>
+        <li class="py-6 min-[601px]:py-7 border-t border-ink/15 min-[701px]:px-7 min-[1051px]:px-6 min-[701px]:border-l min-[1051px]:border-l  " style="--tone:var(--color-leaf)">
+          <span class="font-smono text-[.66rem] font-bold tracking-[.12em] text-[var(--tone)]">02</span>
+          <p class="mt-2 max-w-[22ch] font-disp font-[580] text-[1.12rem] min-[601px]:text-[1.25rem] leading-[1.2] text-ink">The subject becomes a place readers can return to.</p>
+        </li>
+        <li class="py-6 min-[601px]:py-7 border-t border-ink/15 min-[701px]:px-7 min-[1051px]:px-6  min-[1051px]:border-l min-[701px]:pl-0 min-[1051px]:pl-6 " style="--tone:var(--color-flame)">
+          <span class="font-smono text-[.66rem] font-bold tracking-[.12em] text-[var(--tone)]">03</span>
+          <p class="mt-2 max-w-[22ch] font-disp font-[580] text-[1.12rem] min-[601px]:text-[1.25rem] leading-[1.2] text-ink">Membership grows into participation.</p>
+        </li>
+        <li class="py-6 min-[601px]:py-7 border-t border-ink/15 min-[701px]:px-7 min-[1051px]:px-6 min-[701px]:border-l min-[1051px]:border-l  " style="--tone:var(--color-corn)">
+          <span class="font-smono text-[.66rem] font-bold tracking-[.12em] text-[var(--tone)]">04</span>
+          <p class="mt-2 max-w-[22ch] font-disp font-[580] text-[1.12rem] min-[601px]:text-[1.25rem] leading-[1.2] text-ink">The community remains under your identity.</p>
+        </li>
+      </ol>
     </div></section>
 
     
     <section id="wild" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>In the wild</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">A magazine already <span class="corn-text">did this.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Jacobin's German edition wanted readers who debate, organise and build solidarity together. They kept publishing on Ghost and gave that community a home of their own.</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.08] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Jacobin wanted more than <span class="corn-text">a comment section.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Readers of Jacobin's German edition backed a publication they could not only read, but use to debate, organise and build solidarity together. Jacobin kept its Ghost workflow; Bonfire gave the community a home under Jacobin's identity.</p>
 
       <div class="grid grid-cols-1 min-[901px]:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] gap-px mt-[34px] rounded-xl overflow-hidden border border-ink/15 bg-ink/15">
         <div class="bg-night">
           <img class="w-full aspect-[16/9] object-cover object-center" src="/img/jacobin/jacobin-social.png" alt="Jacobin Social, a federated community space for the German edition of Jacobin magazine" loading="lazy">
-          <div class="px-[26px] py-7">
+          <div class="px-[26px] py-7 min-[601px]:px-8 min-[601px]:py-8">
             <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mb-3">From audience to community</h3>
-            <p class="text-ink-2 text-[.94rem]">A comment section wasn't going to be enough, and neither was sending readers to a platform someone else owns. Articles keep coming from Ghost; the conversation happens somewhere their community actually controls: federated, in their own hands, with their own branding on it.</p>
+            <blockquote class="m-0 text-[1rem] leading-[1.65] text-ink-2">“Choosing Bonfire wasn't just a technical decision, it was a fundamentally political one. We wanted a platform that couldn't be switched off by a foreign government or bought out by a billionaire.”</blockquote>
+            <p class="mt-3 font-smono text-[.7rem] tracking-[.05em] text-ink-3">Magdalena Berger · Jacobin DE</p>
             <div class="flex flex-wrap gap-3 mt-6">
               <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="/case-studies/jacobin/">Read the full story</a>
               <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://jacobin.social" target="_blank" rel="noopener noreferrer">Visit jacobin.social ↗</a>
@@ -746,14 +449,76 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
     </div></section>
 
     
-    <section id="everything" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
+    <section id="how-it-works" class="py-[clamp(64px,8vw,104px)] border-t border-ink/[0.07] bg-night-2/35 scroll-mt-[70px]" style="--acc:var(--color-leaf)">
+    <div class="max-w-[1140px] mx-auto px-7">
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>One integrated experience</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.08] text-balance [font-variation-settings:&#39;opsz&#39;_96] max-w-[800px]">Ghost publishes. Bonfire gives the publication <span class="corn-text">a place to gather.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Your editorial team keeps one publishing system and one member relationship. Ghost remains the source of truth; Bonfire turns that foundation into a persistent community.</p>
+
+      <div class="grid grid-cols-1 min-[901px]:grid-cols-[1fr_auto_1fr] mt-[clamp(34px,5vw,52px)] border-y border-ink/15">
+        <div class="py-7 min-[901px]:pr-10">
+          <div class="flex items-center gap-3">
+            <i class="ph-duotone ph-article text-[24px] text-leaf" aria-hidden="true"></i>
+            <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em]">Ghost continues to handle</h3>
+          </div>
+          <ul class="mt-5 grid gap-3 pl-5 list-disc marker:text-leaf text-[.95rem] text-ink-2">
+            <li>Writing, editing, publishing and newsletters</li>
+            <li>Members, payments and membership tiers</li>
+            <li>Article visibility and the publication website</li>
+          </ul>
+        </div>
+
+        <div class="hidden min-[901px]:block w-px bg-ink/15" aria-hidden="true"></div>
+
+        <div class="py-7 border-t border-ink/15 min-[901px]:border-t-0 min-[901px]:pl-10">
+          <div class="flex items-center gap-3">
+            <i class="ph-duotone ph-users-three text-[24px] text-corn" aria-hidden="true"></i>
+            <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em]">Bonfire adds</h3>
+          </div>
+          <ul class="mt-5 grid gap-3 pl-5 list-disc marker:text-corn text-[.95rem] text-ink-2">
+            <li>Persistent discussions connected to articles</li>
+            <li>Groups, topics, profiles and community relationships</li>
+            <li>Participation and private spaces opened by membership</li>
+          </ul>
+        </div>
+      </div>
+
+      
+    </div></section>
+
+    
+    <section id="fit-and-details" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-corn)">
     <div class="max-w-[1140px] mx-auto px-7">
       
       
 
-      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Everything included</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Features that <span class="corn-text">ship today.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">5 areas, and <b>every capability in them ships today</b>, in the extension you can install this afternoon. Open a group to read through it.</p>
+      <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Is this the right fit?</p>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.08] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Do you need more than <span class="corn-text">Ghost comments?</span></h2>
+
+      <div class="grid grid-cols-1 min-[861px]:grid-cols-2 mt-[clamp(34px,5vw,50px)] border-y border-ink/15">
+        <div class="py-7 min-[861px]:pr-9">
+          <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em]">Ghost comments may be enough when</h3>
+          <ul class="mt-5 grid gap-3 pl-5 list-disc marker:text-ink-3 text-[.95rem] text-ink-2">
+            <li>Conversation only needs to happen underneath individual articles.</li>
+            <li>Membership is mainly about access to content and newsletters.</li>
+            <li>Readers do not need persistent profiles, groups or topic spaces.</li>
+          </ul>
+        </div>
+        <div class="py-7 border-t border-ink/15 min-[861px]:border-t-0 min-[861px]:border-l min-[861px]:pl-9">
+          <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em]">Bonfire becomes useful when</h3>
+          <ul class="mt-5 grid gap-3 pl-5 list-disc marker:text-corn text-[.95rem] text-ink-2">
+            <li>Discussions should continue across articles and publishing cycles.</li>
+            <li>Membership should open participation, groups or private spaces.</li>
+            <li>Readers, writers and the publication need lasting relationships.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-[clamp(48px,7vw,76px)]">
+        <p class="font-smono text-[.64rem] font-bold tracking-[.12em] uppercase text-ink-3 text-[var(--acc)]">For your technical team</p>
+        <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mt-3 text-[clamp(1.35rem,2.3vw,1.75rem)]">A deep integration, available for scrutiny.</h3>
+        <p class="mt-4 text-[.98rem] text-ink-2 max-w-[46rem]">Nothing depends on maintaining duplicate editorial or member data by hand. Open an area to inspect what ships today.</p>
+      </div>
 
       
       <div class="grid gap-3 mt-[34px]">
@@ -961,18 +726,18 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
           </div>
         </details>
       </div>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://github.com/bonfire-networks/bonfire_ghost#readme">Read the extension documentation</a>
+        <a class="inline-flex items-center gap-[9px] mt-[30px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark mt-0 self-center" href="https://github.com/bonfire-networks/bonfire_ghost">Browse the source code →</a>
+      </div>
     </div></section>
 
     
     <section id="start" class="py-[clamp(56px,7vw,90px)] border-t border-ink/[0.07] scroll-mt-[70px]" style="--acc:var(--color-flame)">
     <div class="max-w-[1140px] mx-auto px-7">
       <p class="flex items-center gap-3 font-smono text-[.72rem] font-bold tracking-[.18em] uppercase text-[var(--acc)]"><i class="w-[9px] h-[9px] flex-none bg-[var(--acc)] [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]" aria-hidden="true"></i>Getting started</p>
-      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.9rem,4vw,3rem)] leading-[1.06] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Two ways in, and <span class="fire-text">no lock-in either way.</span></h2>
-      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">Build it with us, or build it yourself. It's the <b>same AGPL-licensed software</b> in both cases. The difference is only how much of the work you'd like to do, and how much you want it shaped around your publication.</p>
-
-      <div class="mt-6 max-w-[46rem] rounded-xl border border-dashed border-ink/15 px-[22px] py-[18px]">
-        <p class="m-0 text-[.96rem] text-ink-2"><b class="text-ink font-semibold">Not on Ghost?</b> The comments widget already drops into any site: WordPress, Drupal, a static blog. And the deeper membership integration (single sign-on, tier and member sync) could be extended to other CMSes and Patreon-style membership tools. <a class="text-spark hover:underline" href="/contact">Tell us what you publish on →</a></p>
-      </div>
+      <h2 class="mt-[22px] font-disp font-[560] text-[clamp(1.7rem,3.2vw,2.6rem)] leading-[1.08] text-balance [font-variation-settings:&#39;opsz&#39;_96]">Build it with us or <span class="fire-text">run it yourself.</span></h2>
+      <p class="mt-5 text-[1.02rem] text-ink-2 max-w-[46rem] [&amp;_b]:text-ink [&amp;_b]:font-semibold">It is the <b>same AGPL-licensed software</b> in both cases. The difference is how much implementation, hosting and co-design support your publication wants.</p>
 
       <div class="grid grid-cols-1 min-[941px]:grid-cols-2 gap-4 mt-[34px] items-start">
 
@@ -983,21 +748,18 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
             <span class="font-smono text-[.6rem] tracking-[.1em] uppercase text-ink-3 border border-ink/15 rounded-full px-2.5 py-[3px]">Most publishers start here</span>
           </div>
           <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mt-3.5 mb-2.5">Build it with us</h3>
-          <p class="text-ink-2 text-[.94rem]">We sit down with you, work out how your publication and its readers actually operate, and shape the space around that: your branding, your structure, your rules. We wire up the Ghost side, get your archive in, and hand it over as yours.</p>
+          <p class="text-ink-2 text-[.94rem]">We shape the community around your publication, readers and rules, then connect Ghost, import the archive and prepare it for launch.</p>
 
           
           <div class="grid gap-2.5 mt-5">
             <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>Co-design sessions with your editorial and community people.</span>
+              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>Community research, structure and governance.</span>
             </div>
             <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>Your identity and language throughout, not a template you fill in.</span>
+              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>Ghost connection, tier sync and archive import.</span>
             </div>
             <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>The Ghost connection, tier sync and archive import set up for you.</span>
-            </div>
-            <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>Yours outright when it&#39;s done: forkable, exportable, impossible to take back.</span>
+              <i class="ph-duotone ph-check-circle text-[17px] mt-[3px] text-flame" aria-hidden="true"></i><span>Your branding, language, onboarding and training.</span>
             </div>
           </div>
 
@@ -1005,7 +767,6 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
             <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="https://cal.com/bonfire-networks/meet">Book a call</a>
             <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="/mosaic">How Mosaic works</a>
           </div>
-          <p class="mt-5 font-smono text-[.7rem] text-ink-3 leading-[1.7]">◼ We work closely with a handful of communities a year, so there's a queue. Worth starting the conversation early.</p>
         </div>
 
         
@@ -1015,49 +776,38 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
             <span class="font-smono text-[.6rem] tracking-[.1em] uppercase text-leaf border border-leaf/40 rounded-full px-2.5 py-[3px]">AGPL · free forever</span>
           </div>
           <h3 class="font-disp font-[620] text-[clamp(1.15rem,2vw,1.4rem)] leading-[1.15] tracking-[-.01em] mt-3.5 mb-2.5">Or do it yourself</h3>
-          <p class="text-ink-2 text-[.94rem]">Nothing here is held back for paying customers. The extension is open source, the docs are public, and a technically comfortable team can have it running against their Ghost site in an afternoon. If you'd rather not touch a server, a managed host works too.</p>
+          <p class="text-ink-2 text-[.94rem]">A technically comfortable team can install the same open-source integration directly or work with a managed host.</p>
 
           
           <div class="grid gap-2.5 mt-5">
             <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>No licence fee, no seat pricing, no feature locked behind a plan.</span>
+              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>No licence fee, seat pricing or gated features.</span>
             </div>
             <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>Install it yourself, or point a managed host at it.</span>
+              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>Public source and documentation.</span>
             </div>
             <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>Read the code, change it, fork it. It&#39;s AGPL.</span>
-            </div>
-            <div class="grid grid-cols-[auto_1fr] gap-3 text-[.93rem] text-ink-2">
-              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>Ask questions in the open: we answer in the chat and on the tracker.</span>
+              <i class="ph-duotone ph-terminal-window text-[17px] mt-[3px] text-leaf" aria-hidden="true"></i><span>Self-hosted, managed, forkable and portable.</span>
             </div>
           </div>
 
           <div class="flex flex-wrap gap-3 mt-6">
             <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="/start">Install Bonfire</a>
             <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://github.com/bonfire-networks/bonfire_ghost">The extension on GitHub</a>
-            <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="/hosting">Managed hosting</a>
+            
           </div>
 
-          
-          
         </div>
 
       </div>
 
-      <div class="flex flex-wrap items-center justify-between gap-5 mt-4 rounded-xl border border-dashed border-ink/15 px-[26px] py-6">
-        <p class="m-0 text-[.96rem] text-ink-2 max-w-[54rem]"><b class="text-ink font-semibold">Starting with us doesn't tie you to us.</b> A space we build together runs the same open code as one you install yourself, so you can take it in-house, hand it to another team, or carry on alone whenever you like.</p>
-      </div>
-    </div></section>
-
-    
-    <section class="text-center pt-[clamp(56px,7vw,96px)] pb-[clamp(76px,9vw,130px)] border-t border-ink/[0.07]">
-    <div class="max-w-[1140px] mx-auto px-7">
-      <h2 class="mx-auto max-w-[22ch] font-disp font-[560] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05] text-balance [font-variation-settings:'opsz'_96]">Your readers are already here. <span class="fire-text">Give them a room.</span></h2>
-      <p class="mx-auto mt-5 max-w-[46ch] text-[1.02rem] text-ink-2">Tell us about your publication (how you work, who reads you, what you'd want them doing together) and we'll tell you honestly whether this fits.</p>
-      <div class="flex flex-wrap justify-center gap-3.5 mt-8">
-        <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="https://cal.com/bonfire-networks/meet">Book a call</a>
-        <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="/contact">Send us a note</a>
+      <div class="mt-[clamp(56px,8vw,92px)] pt-[clamp(48px,7vw,76px)] pb-[clamp(20px,3vw,36px)] border-t border-ink/15 text-center">
+        <h3 class="mx-auto max-w-[25ch] font-disp font-[560] text-[clamp(1.75rem,3.5vw,2.7rem)] leading-[1.08] text-balance [font-variation-settings:'opsz'_96]">Your readers are already here. <span class="fire-text">Give them a place to belong.</span></h3>
+        <p class="mx-auto mt-5 max-w-[52ch] text-[1rem] text-ink-2">Tell us what you publish, how readers participate today and what you would want them to do together. We will tell you honestly whether Bonfire fits.</p>
+        <div class="flex flex-wrap justify-center gap-3.5 mt-7">
+          <a class="btn h-auto min-h-0 rounded-full border-0 px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember hover:from-spark hover:via-flame hover:to-ember shadow-[0_6px_26px_-8px_rgba(232,145,43,.55)]" href="https://cal.com/bonfire-networks/meet">Tell us about your publication</a>
+          <a class="btn btn-ghost h-auto min-h-0 rounded-full px-6 py-[.9rem] font-smono text-[.82rem] font-bold tracking-[.05em] text-ink border border-ink/15 bg-ink/[0.03] hover:border-flame hover:text-spark hover:bg-ink/[0.03]" href="https://jacobin.social" target="_blank" rel="noopener noreferrer">Visit Jacobin Social ↗</a>
+        </div>
       </div>
     </div></section>
 
