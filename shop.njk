@@ -1,10 +1,35 @@
 ---
-layout: layouts/base.njk
-title: Shop — Bonfire Networks
-description: Prints and objects created with artists around the Bonfire community.
 permalink: /shop/index.html
-image: /img/shop/bonfire-release-a3.jpg
+eleventyExcludeFromCollections: true
 ---
+{#- The shop stocks a single item, so /shop goes straight to it rather than through
+    an index of one. GitHub Pages has no redirect config, hence the HTML stub below.
+    rel="canonical" keeps the product page as the authoritative URL.
+
+    When a second item is added: delete the stub, restore `layout` and the other
+    front matter keys above, and uncomment the index markup at the bottom. -#}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shop — Bonfire Networks</title>
+<link rel="canonical" href="https://bonfirenetworks.org/shop/bonfire-poster/">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=/shop/bonfire-poster/">
+<script>location.replace("/shop/bonfire-poster/" + location.search + location.hash);</script>
+</head>
+<body>
+<p>Continue to <a href="/shop/bonfire-poster/">The Bonfire Screen Print</a>.</p>
+</body>
+</html>
+
+{# ===== SHOP INDEX (restore when there is more than one item) =====
+   Original front matter was:
+     layout: layouts/base.njk
+     title: Shop — Bonfire Networks
+     description: Prints and objects created with artists around the Bonfire community.
+     permalink: /shop/index.html
+     image: /img/shop/bonfire-release-a3.jpg
 
 <main class="relative min-h-screen overflow-hidden bg-night text-ink font-body">
   <div class="v2-ambient" aria-hidden="true"></div>
@@ -27,7 +52,7 @@ image: /img/shop/bonfire-release-a3.jpg
             src="{{ shop.product.image }}"
             width="{{ shop.product.imageWidth }}"
             height="{{ shop.product.imageHeight }}"
-            alt="Black-and-white Bonfire screen print showing forest animals gathered around fires under a crescent moon"
+            alt="A bear, stag, fox, badger and other animals gathered around a campfire in a night forest, a hawk carrying a burning branch overhead, drawn in fine white lines on black"
             class="aspect-[10/7] w-full rounded-[.45rem] object-contain shadow-[0_18px_44px_-24px_rgba(0,0,0,.7)] transition-transform duration-500 group-hover:scale-[1.008]"
             fetchpriority="high"
             decoding="async"
@@ -83,3 +108,5 @@ image: /img/shop/bonfire-release-a3.jpg
     </div>
   </section>
 </main>
+
+   ===== end shop index ===== #}
