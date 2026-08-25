@@ -1,4 +1,4 @@
-const sandboxCheckoutUrl = "https://buy.stripe.com/test_eVq5kE0DVf3C7MObK82cg01";
+const sandboxCheckoutUrl = "https://donate.stripe.com/fZu7sNffXdQg7TQ7PP8AE00";
 const isProductionBuild = process.env.ELEVENTY_PRODUCTION === "true";
 const checkoutUrl = process.env.STRIPE_ROCCO_POSTER_URL || (isProductionBuild ? "" : sandboxCheckoutUrl);
 const emailOrderUrl = [
