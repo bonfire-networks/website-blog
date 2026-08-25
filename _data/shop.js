@@ -1,6 +1,5 @@
-const sandboxCheckoutUrl = "https://donate.stripe.com/fZu7sNffXdQg7TQ7PP8AE00";
-const isProductionBuild = process.env.ELEVENTY_PRODUCTION === "true";
-const checkoutUrl = process.env.STRIPE_ROCCO_POSTER_URL || (isProductionBuild ? "" : sandboxCheckoutUrl);
+// Set it to "" to fall back to ordering by email.
+const checkoutUrl = "https://donate.stripe.com/fZu7sNffXdQg7TQ7PP8AE00";
 const emailOrderUrl = [
   "mailto:team@bonfire.cafe",
   "?subject=Bonfire%20limited-edition%20screen-print%20order",
