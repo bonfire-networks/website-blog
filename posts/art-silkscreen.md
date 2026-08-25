@@ -73,7 +73,7 @@ The [shop page](/shop/bonfire-poster/) has more photos of the artwork from Rocco
 
 <a href="/shop" class="not-prose btn-xl btn btn-primary">Explore the prints in our shop</a>
 
-<a href="/shop"><img src="/img/shop/bonfire-release-a3.jpg" alt="A bear, stag, fox, badger and other animals gathered around a campfire in a night forest, a hawk carrying a burning branch overhead, drawn in fine white lines on black"></a>
+<a href="/shop" class="m-0 p-0"><img src="/img/on-samvie-wall.jpg" alt="A bear, stag, fox, badger and other animals gathered around a campfire in a night forest, a hawk carrying a burning branch overhead, drawn in fine white lines on black" class="m-0 p-0"></a>*The silkscreen featured on [@samvie@chaos.social](https://chaos.social/users/samvie)'s wall.*
 
 Thank you once again to everyone who backed the campaign, shared it, contributed to the artwork, helped with production, or patiently waited for this moment. We couldn’t have done it without you.
 
