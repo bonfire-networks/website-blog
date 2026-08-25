@@ -6,9 +6,10 @@
     <title>Bonfire</title>
     <meta name="description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
     
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
 
 
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -25,8 +26,9 @@
     <meta name="twitter:description" content="A federated social network for individuals and communities to design, operate and control their own digital lives.">
     
     
+    
     <link
-    rel="stylesheet" href="/css/style_v2.css?v3.1">
+    rel="stylesheet" href="/css/style_v2.css?v3.6">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
@@ -136,10 +138,9 @@
 	                <span class="min-w-0 flex-1">
 	                  <span class="font-disp text-[1.02rem] font-semibold leading-tight text-ink">Self-host</span>
 	                  <span class="block text-[.84rem] leading-[1.45] text-ink-3">Install Bonfire on your own infrastructure.
-                      
-                    </span>
-                    </span>
-	                </span>
+	                      
+	                    </span>
+		                </span>
 	                <span class="mt-1 text-ink-3 transition-transform group-hover/setup:translate-x-1 group-hover/setup:text-spark" aria-hidden="true">→</span>
 	              </a>
 	            </li>
@@ -222,9 +223,10 @@
       </div>
     </div>
      <a class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 " href="/blog">Blog</a>
+    <a class="px-[13px] py-2 rounded-md text-[.92rem] text-ink-2 whitespace-nowrap hover:text-ink hover:bg-ink/5 " href="/shop/">Merch</a>
     <a class="ml-2.5 px-4 py-[9px] rounded-full font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] bg-gradient-to-br from-spark via-flame to-ember" href="/start">Get started</a>
   </div>
-  <button class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  <button type="button" class="lg:hidden ml-auto border border-ink/15 text-ink rounded-md px-3 py-[7px] text-base leading-none cursor-pointer" id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
 </div></nav>
 
 <div class="hidden sticky top-16 z-[69] max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-night-2 border-b border-ink/15 lg:!hidden" id="v2drawer">
@@ -278,6 +280,7 @@
   </a>
   <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.72rem] tracking-[.04em] !text-spark" href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer">Browse the source code ↗</a>
   <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] " href="/blog">Blog</a>
+  <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] " href="/shop/">Merch</a>
   <a class="block px-7 py-[15px] border-t border-ink/[0.07] text-ink-2 text-[.96rem] font-smono text-[.78rem] tracking-[.06em] !text-spark" href="/start">Get started</a>
 </div>
 
@@ -744,6 +747,7 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
         <a href="https://docs.bonfirenetworks.org/" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Documentation <span aria-hidden="true">↗</span></a>
         <a href="https://github.com/bonfire-networks" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Browse the source code <span aria-hidden="true">↗</span></a>
         <a href="/blog" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Blog</a>
+        <a href="/shop/" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Merch</a>
       </nav>
 
       <nav class="flex flex-col items-start gap-1.5" aria-labelledby="footer-integration">
