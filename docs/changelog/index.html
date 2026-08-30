@@ -340,48 +340,86 @@ SPDX-License-Identifier: AGPL-3.0-only
 SPDX-License-Identifier: CC0-1.0
 -->
 <h1 id="changelog%3A-past-releases">Changelog: past releases <a class="direct-link" href="#changelog%3A-past-releases" target="_blank" rel="noopener">#</a></h1>
-<h2 id="%5Bunreleased%5D">[Unreleased] <a class="direct-link" href="#%5Bunreleased%5D" target="_blank" rel="noopener">#</a></h2>
+<h2 id="bonfire-%5B1.0.7-(2026-08-30)%5D">Bonfire [1.0.7 (2026-08-30)] <a class="direct-link" href="#bonfire-%5B1.0.7-(2026-08-30)%5D" target="_blank" rel="noopener">#</a></h2>
 <h3 id="added">Added <a class="direct-link" href="#added" target="_blank" rel="noopener">#</a></h3>
 <ul>
-<li>✨ Added a new &quot;Stream&quot; interface preset: a flatter, content-first look for feeds, threads and widgets — selectable per user or instance in settings, together with the existing &quot;typographic&quot; preset remaining the default (thanks @ivan)</li>
-<li>✨ Long discussion threads now start with heavy reply branches folded behind a compact summary row (replier avatars + reply count) that expands in place, so big conversations are easier to scan (thanks @ivan)</li>
-<li>✨ Added time-gap dividers between thread replies (&quot;2 years later/earlier&quot;), so revived old discussions are easy to spot (thanks @ivan)</li>
-<li>✨ Added a compact context header that appears when the original post scrolls out of view on a discussion, showing the author and a shortcut back to the top  (thanks @ivan)</li>
-<li>✨ Added a compact, horizontally scrollable circles widget to dashboards, with direct links to each circle (thanks @ivan)</li>
-<li>✨ Added an empty state that helps people create their first circle when none exist. (thanks @ivan)</li>
-<li>📝 transfer profile to another account capabality for admins <a href="https://github.com/bonfire-networks/bonfire-app/commit/6b7f50fe4fa489a26cee3a917e52eeada40793cf" target="_blank" rel="noopener"><code>6b7f50f</code></a> (thanks @mayel)</li>
+<li>✨ Added a new &quot;Stream&quot; interface preset: a flatter, content-first look for feeds, threads and widgets — selectable per user or instance in settings, together with the existing &quot;typographic&quot; preset remaining the default (thanks @ivanminutillo)</li>
+<li>✨ Long discussion threads now start with heavy reply branches folded behind a compact summary row (replier avatars + reply count) that expands in place, so big conversations are easier to scan (thanks @ivanminutillo)</li>
+<li>✨ Added time-gap dividers between thread replies (&quot;2 years later/earlier&quot;), so revived old discussions are easy to spot (thanks @ivanminutillo)</li>
+<li>✨ Added a compact context header that appears when the original post scrolls out of view on a discussion, showing the author and a shortcut back to the top  (thanks @ivanminutillo)</li>
+<li>✨ Added a compact, horizontally scrollable circles widget to dashboards, with direct links to each circle <a href="https://github.com/bonfire-networks/bonfire-app/issues/2233" target="_blank" rel="noopener">#2233</a> (thanks @ivanminutillo)</li>
+<li>✨ Added an empty state that helps people create their first circle when none exist. (thanks @ivanminutillo)</li>
+<li>✨ Admins can transfer a profile to another account <a href="https://github.com/bonfire-networks/bonfire-app/commit/6b7f50fe4fa489a26cee3a917e52eeada40793cf" target="_blank" rel="noopener"><code>6b7f50f</code></a> (thanks @mayel)</li>
+<li>✨ Instances using allow-list federation (Archipelago mode) can now show the list of allowed instances and actors on their about page, so anyone can see who the community federates with <a href="https://github.com/bonfire-networks/bonfire-app/issues/2234" target="_blank" rel="noopener">#2234</a> (thanks @mayel)</li>
+<li>✨ Pull down to refresh in the mobile web app (PWA) <a href="https://github.com/bonfire-networks/bonfire-app/issues/2196" target="_blank" rel="noopener">#2196</a> (thanks @ivanminutillo)</li>
+<li>✨ New feed filters and presets: local-instance-only activities, public activities, and activities with custom boundaries <a href="https://github.com/bonfire-networks/bonfire-app/issues/1586" target="_blank" rel="noopener">#1586</a> (thanks @mayel and Gilles)</li>
+<li>🚧 New admin console extension: &quot;under the hood&quot; diagnostics and a terminal in the web UI <a href="https://github.com/bonfire-networks/bonfire_ui_console/commit/0dea9da558c68b739f193682c1a26d530961d705" target="_blank" rel="noopener"><code>0dea9da</code></a> (thanks @mayel)</li>
+<li>🚧 Groundwork for federating public groups, starting with better interop with remote groups, including threadiverse compatibility work, and stronger actor attribution (thanks @mayel)</li>
+<li>📝 New admin monitoring page showing CPU use and running processes (thanks @mayel)</li>
 </ul>
 <h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
 <ul>
-<li>🚧 Make the <code>:local</code>/<code>:remote</code> feeds fast by recording activity locality at write time <a href="https://github.com/bonfire-networks/bonfire-app/issues/2168" target="_blank" rel="noopener">#2168</a> <a href="https://github.com/bonfire-networks/bonfire-app/commit/ec57bc1831eba35c04752e16cb0d9fdd58970a6d" target="_blank" rel="noopener"><code>ec57bc1</code></a> (thanks @mayel)</li>
-<li>💅 Redesigned the &quot;Customize this feed&quot; widget (thanks @ivan)</li>
-<li>💅 Stream layout: accent colour is reserved for the compose button and active navigation (thanks @ivan)</li>
-<li>💅 Stream layout: dividers and hairlines now derive from the text colour instead of the theme's secondary colour (thanks @ivan)</li>
-<li>💅 Stream layout: at in-between window sizes the side columns now shrink before the feed does, keeping the reading column the widest element on the page (thanks @ivan)</li>
-<li>💅 Dashboard section titles (Circles, Spotlight, Top discussions) now share the same typography and left edge in both interface presets (thanks @ivan)</li>
-<li>🎨 Reworked the dark theme palette: neutral dark surfaces with clearer contrast steps, and a blue accent replacing amber as the primary colour, still WIP (thanks @ivan)</li>
-<li>💅 Redesigned the &quot;Top discussions&quot; dashboard widget as a compact ranked list, with reply totals and participant previews that make active conversations easier to scan (thanks @ivan)</li>
-<li>📱 Redesigned the logged-out mobile navigation dock with instance branding (thanks @ivan)</li>
-<li>🎨 Redesigned Circle pages with a stronger identity-focused header, member avatar collage, clearer ownership and visibility details (thanks @ivan)</li>
-<li>🐛 Improved Timeline reading positions UX (thanks @ivan)</li>
-<li>💅 Redesigned the “Recent Articles” sidebar widget in the Stream layout as a compact, single-layer list that is easier to scan (thanks @ivan)</li>
-<li>💅 Discussions now show a single metadata row: reply and boost counts sit alongside the layout and sort controls, instead of in a separate bordered band stacked above them (thanks @ivan)</li>
-<li>💅 The original post of a discussion now reads a step larger than its replies, and top-level replies are joined by a continuous thread line so a conversation reads as one thread rather than stacked cards (thanks @ivan)</li>
+<li>🚀 Local and remote feeds made faster: whether an activity is local is now recorded when it is created instead of calculated on every feed query <a href="https://github.com/bonfire-networks/bonfire-app/issues/2168" target="_blank" rel="noopener">#2168</a> (thanks @mayel)</li>
+<li>💅 Redesigned the &quot;Customize this feed&quot; widget (thanks @ivanminutillo)</li>
+<li>💅 Stream layout: accent colour is reserved for the compose button and active navigation (thanks @ivanminutillo)</li>
+<li>💅 Stream layout: dividers and hairlines now derive from the text colour instead of the theme's secondary colour (thanks @ivanminutillo)</li>
+<li>💅 Stream layout: at in-between window sizes the side columns now shrink before the feed does, keeping the reading column the widest element on the page (thanks @ivanminutillo)</li>
+<li>💅 Dashboard section titles (Circles, Spotlight, Top discussions) now share the same typography and left edge in both interface presets (thanks @ivanminutillo)</li>
+<li>🎨 Reworked the dark theme palette: neutral dark surfaces with clearer contrast steps, and a blue accent replacing amber as the primary colour, still WIP (thanks @ivanminutillo)</li>
+<li>💅 Redesigned the &quot;Top discussions&quot; dashboard widget as a compact ranked list, with reply totals and participant previews that make active conversations easier to scan (thanks @ivanminutillo)</li>
+<li>📱 Redesigned the logged-out mobile navigation dock with instance branding (thanks @ivanminutillo)</li>
+<li>🎨 Redesigned Circle pages with a stronger identity-focused header, member avatar collage, clearer ownership and visibility details (thanks @ivanminutillo)</li>
+<li>🐛 Improved Timeline reading positions UX (thanks @ivanminutillo)</li>
+<li>💅 Redesigned the “Recent Articles” sidebar widget in the Stream layout as a compact, single-layer list that is easier to scan (thanks @ivanminutillo)</li>
+<li>💅 Discussions now show a single metadata row: reply and boost counts sit alongside the layout and sort controls, instead of in a separate bordered band stacked above them (thanks @ivanminutillo)</li>
+<li>💅 The original post of a discussion now reads a step larger than its replies, and top-level replies are joined by a continuous thread line so a conversation reads as one thread rather than stacked cards (thanks @ivanminutillo)</li>
+<li>⚡ More instance performance and resource-usage tuning, continuing the work on running well on small servers <a href="https://github.com/bonfire-networks/bonfire-app/issues/2100" target="_blank" rel="noopener">#2100</a> (thanks @mayel)</li>
+<li>📝 Postgres in Docker now gets a larger shared-memory allocation (<code>shm_size</code>), avoiding crashes on busier instances <a href="https://github.com/bonfire-networks/bonfire-app/commit/28631b45ec0b2022d62f8739aaebf6497655b700" target="_blank" rel="noopener"><code>28631b4</code></a> (thanks @mayel)</li>
+<li>✨ Admins can now prevent members from overriding the instance theme, for communities that want a consistent look <a href="https://github.com/bonfire-networks/bonfire-app/issues/2039" target="_blank" rel="noopener">#2039</a> (thanks @ccamara and @mayel)</li>
+<li>💅 Follow button and profile header UX improvements (thanks @ivanminutillo)</li>
+<li>📝 Ghost integration: article import improvements, including how articles can be imported into topics (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 URLs in direct messages are now converted into links <a href="https://github.com/bonfire-networks/bonfire-app/issues/2195" target="_blank" rel="noopener">#2195</a> (thanks @ivanminutillo)</li>
+<li>📝 Articles now show author bylines and where a piece was published (thanks @ivanminutillo)</li>
+<li>📝 PGP-encrypted system emails (added in 1.0.5) now configurable and off by default (thanks @mayel)</li>
+<li>♿ Accessibility improvements across feeds and threads (thanks @ivanminutillo)</li>
+<li>🌐 Improved localisation coverage throughout the app (thank you translators!)</li>
 </ul>
 <h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
-<p>🐛 Quote-request notifications now show the requester’s comment, so you can review what they want to say before accepting the quote (thanks @ivan)</p>
 <ul>
-<li>🐛 Fixed full-width buttons (like the audience selector) appearing to shift sideways on hover (thanks @ivan)</li>
-<li>🐛 Replies to a deleted or restricted comment no longer silently disappear from discussions: they stay in place under an &quot;unavailable comment&quot; placeholder (thanks @ivan)</li>
-<li>🐛 Fixed thread connector lines not aligning with avatars in the Stream layout, and the missing connector to a folded branch's summary row (thanks @ivan)</li>
-<li>📱 Fixed post previews getting stuck on a blank loading screen when the connection dropped at the wrong moment (e.g. reopening the app on mobile): the preview now waits for the connection to return instead (thanks @ivan)</li>
-<li>🐛 Fixed back navigation sometimes skipping an extra page after reloading while viewing a post opened from a feed (thanks @ivan)</li>
-<li>📱 Fixed mobile back-swipe navigation: swiping back after opening a post from a feed no longer needs a phantom extra swipe, flashes the wrong page, or unexpectedly jumps you back to the feed a moment later (thanks @ivan)</li>
-<li>🐛 Fixed browser back/forward behaving erratically after using post previews, and made back navigation return you to your previous scroll position even on pages that load content progressively (thanks @ivan)</li>
-<li>🐛 Post previews now close instantly and reliably: going back no longer leaves the preview open over the page you returned to, and pressing Escape closes it (thanks @ivan)</li>
-<li>📱 Going back on mobile after the app has been in the background no longer waits on a blank screen and then lands on the wrong page (thanks @ivan)</li>
-<li>🐛 Fixed thread reply and boost counts always reading as plural, so a discussion with one reply no longer says &quot;1 Replies&quot; (thanks @ivan)</li>
-<li>🐛 fix @ mention search <a href="https://github.com/bonfire-networks/bonfire-app/commit/77425c1d2431c79254451442dab4a406a45141d4" target="_blank" rel="noopener"><code>77425c1</code></a>, <a href="https://github.com/bonfire-networks/bonfire-app/commit/5148b51e8962c3a093dba4d9e8c30768f970da29" target="_blank" rel="noopener"><code>5148b51</code></a> (thanks @mayel)</li>
+<li>🐛 Quote-request notifications now show the requester’s comment, so you can review what they want to say before accepting the quote (thanks @ivanminutillo)</li>
+<li>🐛 Fixed full-width buttons (like the audience selector) appearing to shift sideways on hover (thanks @ivanminutillo)</li>
+<li>🐛 Replies to a deleted or restricted comment no longer silently disappear from discussions: they stay in place under an &quot;unavailable comment&quot; placeholder (thanks @ivanminutillo)</li>
+<li>🐛 Fixed thread connector lines not aligning with avatars in the Stream layout, and the missing connector to a folded branch's summary row (thanks @ivanminutillo)</li>
+<li>📱 Fixed post previews getting stuck on a blank loading screen when the connection dropped at the wrong moment (e.g. reopening the app on mobile): the preview now waits for the connection to return instead (thanks @ivanminutillo)</li>
+<li>🐛 Fixed back navigation sometimes skipping an extra page after reloading while viewing a post opened from a feed (thanks @ivanminutillo)</li>
+<li>📱 Fixed mobile back-swipe navigation: swiping back after opening a post from a feed no longer needs a phantom extra swipe, flashes the wrong page, or unexpectedly jumps you back to the feed a moment later (thanks @ivanminutillo)</li>
+<li>🐛 Fixed browser back/forward behaving erratically after using post previews, and made back navigation return you to your previous scroll position even on pages that load content progressively (thanks @ivanminutillo)</li>
+<li>🐛 Post previews now close instantly and reliably: going back no longer leaves the preview open over the page you returned to, and pressing Escape closes it (thanks @ivanminutillo)</li>
+<li>📱 Going back on mobile after the app has been in the background no longer waits on a blank screen and then lands on the wrong page (thanks @ivanminutillo)</li>
+<li>🐛 Fixed thread reply and boost counts always reading as plural, so a discussion with one reply no longer says &quot;1 Replies&quot; (thanks @ivanminutillo)</li>
+<li>🐛 Profile timelines sometimes skipped activities when paginating <a href="https://github.com/bonfire-networks/bonfire-app/issues/2245" target="_blank" rel="noopener">#2245</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 Editing a post now properly federates the update to Mastodon <a href="https://github.com/bonfire-networks/bonfire-app/issues/2218" target="_blank" rel="noopener">#2218</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 Fixed user deletion, including federating it correctly <a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/commit/669aff77a2e1686dfdb86fb1b04df77e687a28b1" target="_blank" rel="noopener"><code>669aff7</code></a> (thanks @mayel)</li>
+<li>🚧 Image descriptions (alt text) now properly federate with the image <a href="https://github.com/bonfire-networks/bonfire-app/issues/2241" target="_blank" rel="noopener">#2241</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 Liking or boosting a post no longer shows the wrong favicon and date on the original post's preview <a href="https://github.com/bonfire-networks/bonfire-app/issues/2217" target="_blank" rel="noopener">#2217</a> (thanks @ivanminutillo)</li>
+<li>🐛 Replying to a post again automatically includes the mentions in the composer <a href="https://github.com/bonfire-networks/bonfire-app/issues/2216" target="_blank" rel="noopener">#2216</a> (thanks @ivanminutillo)</li>
+<li>🐛 Creating a new profile UI fixed on mobile <a href="https://github.com/bonfire-networks/bonfire-app/issues/2199" target="_blank" rel="noopener">#2199</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2178" target="_blank" rel="noopener">#2178</a> (thanks @ju1m, @ruzko and @mayel)</li>
+<li>🐛 &quot;Copy link&quot; on a post now copies the post's URL <a href="https://github.com/bonfire-networks/bonfire-app/issues/2198" target="_blank" rel="noopener">#2198</a> (thanks @ccamara and @ivanminutillo)</li>
+<li>🐛 The Direct Messages button did nothing <a href="https://github.com/bonfire-networks/bonfire-app/issues/2188" target="_blank" rel="noopener">#2188</a> (thanks @btfreeorg, @mayel, and @ivanminutillo)</li>
+<li>🐛 Switch profile page should no longer show phantom notification counts <a href="https://github.com/bonfire-networks/bonfire-app/issues/2220" target="_blank" rel="noopener">#2220</a> (thanks @mayel and @btfreeorg)</li>
+<li>🐛 The poll preview now opens from the dashboard widget <a href="https://github.com/bonfire-networks/bonfire-app/issues/2125" target="_blank" rel="noopener">#2125</a> (thanks @ivanminutillo)</li>
+<li>🐛 Spotlight now follows the theme's colours <a href="https://github.com/bonfire-networks/bonfire-app/issues/2061" target="_blank" rel="noopener">#2061</a> (thanks @ccamara and @ivanminutillo)</li>
+<li>🐛 Toggling dashboard widgets no longer causes an error <a href="https://github.com/bonfire-networks/bonfire-app/issues/1869" target="_blank" rel="noopener">#1869</a> (thanks @1m2lab and @ivanminutillo)</li>
+<li>🐛 The landing page now reflects the instance's default theme <a href="https://github.com/bonfire-networks/bonfire-app/issues/1749" target="_blank" rel="noopener">#1749</a> (thanks @btfreeorg and @ivanminutillo)</li>
+<li>🐛 In theme customisation, colour buttons no longer change the wrong colour <a href="https://github.com/bonfire-networks/bonfire-app/issues/1747" target="_blank" rel="noopener">#1747</a> (thanks @btfreeorg, @ccamara, and @ivanminutillo)</li>
+<li>🐛 Theme colour picker dropdown no longer closes immediately in admin settings <a href="https://github.com/bonfire-networks/bonfire-app/issues/1829" target="_blank" rel="noopener">#1829</a> (thanks @creatinglake and @ivanminutillo)</li>
+<li>🐛 Fixed @ mention search <a href="https://github.com/bonfire-networks/bonfire-app/commit/77425c1d2431c79254451442dab4a406a45141d4" target="_blank" rel="noopener"><code>77425c1</code></a>, <a href="https://github.com/bonfire-networks/bonfire-app/commit/5148b51e8962c3a093dba4d9e8c30768f970da29" target="_blank" rel="noopener"><code>5148b51</code></a> (thanks @mayel)</li>
+<li>🐛 Fixed a missing <code>bonfire_ui_reactions</code> dependency in Ember <a href="https://github.com/bonfire-networks/ember/pull/2" target="_blank" rel="noopener">PR #2</a> (thanks @ju1m)</li>
+<li>🐛 Profile view: the posts tab no longer disappears when viewing followers or following <a href="https://github.com/bonfire-networks/bonfire-app/issues/1862" target="_blank" rel="noopener">#1862</a> (thanks @ivanminutillo)</li>
+<li>🐛 Signing up shows a better error when the mail server is unreachable <a href="https://github.com/bonfire-networks/bonfire_ui_me/commit/adda86fc1d2383eb4b8730f8614da685c4d14c9f" target="_blank" rel="noopener"><code>adda86f</code></a> (thanks @ivanminutillo)</li>
+<li>🐛 Fixed invite link expiry <a href="https://github.com/bonfire-networks/bonfire_invite_links/commit/02f775a79b39ae36fb514bfda4b43560b82f7993" target="_blank" rel="noopener"><code>02f775a</code></a> (thanks @mayel)</li>
+<li>🐛 Quoting a post no longer breaks the composer <a href="https://github.com/bonfire-networks/bonfire_ui_social/commit/670cdc827792565514b775ab2badf137230a3389" target="_blank" rel="noopener"><code>670cdc8</code></a> (thanks @ivanminutillo)</li>
+<li>🐛 Comment embeds (Bonfire Telling): fixed vertical scrolling in the iframe and publishing glitches (thanks @mayel and @ivanminutillo)</li>
 </ul>
 <h2 id="bonfire-community-%5B1.0-beta-(2026-07-27)%5D">Bonfire Community [1.0 beta (2026-07-27)] <a class="direct-link" href="#bonfire-community-%5B1.0-beta-(2026-07-27)%5D" target="_blank" rel="noopener">#</a></h2>
 <p>A new flavour of Bonfire for groups that need to organise together, not just post at each other: groups and topics, community rules, decision-making, events, shared organisation profiles and announcements, all in one space you can reshape block by block.</p>
