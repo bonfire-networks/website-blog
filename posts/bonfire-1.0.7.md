@@ -6,6 +6,8 @@ tags: development
 image: /img/banner107.png
 layout: layouts/post.njk
 author: Bonfire Builders
+aliases:
+  - /posts/bonfire-social-1-0-7-what-s-new-and-what-s-next/
 
 ---
 
