@@ -24,23 +24,33 @@ Long threads should now be easier to scan. Busy reply branches can be folded int
 
 These are mostly small changes on their own, but together they make a noticeable difference once a conversation becomes long, branches in several directions or is picked up again much later.
 
-## Circles and the dashboard
+## Circles, feeds and the dashboard
 
 Circles are now more visible from the dashboard and from there users can edit circles, adding more members to it or create new ones.
+
+You can also build new kinds of feeds, with presets and filters for local-instance-only activities, public activities, and activities with custom boundaries.
+
+## Federation
+
+Instances that federate with an allow-list (Archipelago mode) can now show the list of trusted instances and people on their about page, so anyone can see who the community federates with. There is also better support for the ActivityPub client-to-server API, and editing a post now properly federates the update to Mastodon.
+
+This release also lays groundwork for federating groups: starting with better interop with remote groups and threadiverse apps. Federated groups remain our biggest priority, and we're designing them in the open with the [W3C groups task force](https://github.com/swicg/groups/issues).
+
+## For publishers
+
+For publishers: [Ghost](https://bonfirenetworks.org/ghost/) article import now supports importing into topics, articles show author bylines, and the [Telling](https://bonfirenetworks.org/telling/) embeddable comments got scrolling and publishing fixes.
+
+## For admins 
+
+A new monitoring page shows CPU use for app processes, and administrators can now transfer a profile between accounts when necessary.
 
 ## Reliability and performance
 
 1.0.7 also includes a substantial group of navigation fixes. Back and forward navigation, post previews, mobile back gestures and restoring your place in a feed should all behave more predictably, including after a lost connection or after the app has been in the background.
 
-Local and remote feeds have been made faster, and you can now build new kinds of feeds, with presets and filters for local-instance-only activities, public activities, and activities with custom boundaries. Editing a post now properly federates the update to Mastodon, and the release includes further fixes and maintenance around mentions, quote requests, mobile use and administration.
-
-Instances that federate with an allow-list (Archipelago mode) can now show the list of trusted instances and people on their about page, so anyone can see who the community federates with. There is also better support for the ActivityPub client-to-server API, a new monitoring page showing CPU use for app processes, and administrators can now transfer a profile between accounts when necessary.
-
-For publishers: [Ghost](https://bonfirenetworks.org/ghost/) article import now supports importing into topics, articles show author bylines, and the [Telling](https://bonfirenetworks.org/telling/) embeddable comments got scrolling and publishing fixes.
+Local and remote feeds have been made faster, and the release includes further fixes and maintenance around mentions, quote requests, mobile use and administration.
 
 We continued the ongoing accessibility improvements in feeds and threads and fixed image descriptions (alt text) which were not always federating correctly. Localisation coverage improved throughout the app too (thank you translators!).
-
-This release also lays groundwork for federating groups: starting with better interop with remote groups and threadiverse apps. Federated groups remain our biggest priority, and we're designing them in the open with the [W3C groups task force](https://github.com/swicg/groups/issues).
 
 > That is the overall shape of 1.0.7. The [full changelog](https://docs.bonfirenetworks.org/changelog.html) covers every individual change and fix.
 
