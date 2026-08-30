@@ -1,5 +1,5 @@
 ---
-title: "Bonfire Social 1.0.7: what's new and what's next"
+title: "Bonfire 1.0.7: what's new and what's next"
 description: "A fresh default interface, reworked discussions, faster feeds and dozens of fixes, plus where we're riding next: public federated groups, better notifications, and settings you can find."
 date: 2026-08-30
 tags: development
