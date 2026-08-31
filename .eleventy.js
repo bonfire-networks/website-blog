@@ -192,6 +192,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("archives");
+  eleventyConfig.addPassthroughCopy("prints");
   eleventyConfig.addPassthroughCopy("fediforum");
   eleventyConfig.addPassthroughCopy(".well-known");
 
