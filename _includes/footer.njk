@@ -3,6 +3,56 @@
 {% set flink = "text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" %}
 
 <div class="bg-night text-ink font-body border-t border-ink/[0.07]">
+  <section class="border-b border-ink/[0.07]" aria-labelledby="supporters-heading">
+    {% if page.url == "/" %}
+    <div class="mx-auto max-w-[1140px] px-7 py-10">
+      <h2 id="supporters-heading" class="mx-auto max-w-[760px] text-center font-disp text-[clamp(1.45rem,3vw,2.15rem)] font-[560] leading-[1.15] text-balance">
+        Supported by organisations who believe in community-owned digital infrastructure
+      </h2>
+      <div class="mx-auto mt-7 grid max-w-[780px] gap-4 sm:grid-cols-2">
+        <a
+          class="group flex min-h-[112px] items-center gap-4 rounded-xl border border-ink/15 bg-night-2 px-5 py-4 text-ink transition-colors hover:border-flame/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70"
+          href="{{ commonsSponsor.url }}"
+          rel="sponsored"
+        >
+          <img
+            class="h-[72px] w-[72px] flex-none rounded-[22%] object-contain"
+            src="{{ commonsSponsor.logo }}"
+            alt="{{ commonsSponsor.alt }}"
+            width="512"
+            height="512"
+            loading="lazy"
+          >
+          <span>
+            <span class="block font-smono text-[.62rem] font-bold uppercase tracking-[.13em] text-ink-3">{{ commonsSponsor.tier }}</span>
+            <span class="mt-1.5 block font-disp text-[1.12rem] font-[620] leading-tight transition-colors group-hover:text-spark">{{ commonsSponsor.displayName }}</span>
+          </span>
+        </a>
+
+        <a
+          class="group flex min-h-[112px] items-center justify-center gap-5 rounded-xl border border-ink/15 bg-night-2 px-5 py-4 text-ink transition-colors hover:border-flame/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70 sm:justify-start"
+          href="https://nlnet.nl"
+        >
+          <span>
+            <img src="/img/b-nlnet.png" alt="NLnet" width="140" loading="lazy" class="light-img">
+            <img src="/img/w-nlnet.png" alt="NLnet" width="140" loading="lazy" class="dark-img hidden">
+          </span>
+        </a>
+      </div>
+    </div>
+    {% else %}
+    <div class="mx-auto flex items-center justify-center px-7 py-8">
+      <div class="flex items-center gap-3">
+        <h2 id="supporters-heading" class="text-ink-3">Supported by</h2>
+        <a class="ml-4" href="https://nlnet.nl">
+          <img src="/img/b-nlnet.png" alt="NLnet" width="140" loading="lazy" class="light-img">
+          <img src="/img/w-nlnet.png" alt="NLnet" width="140" loading="lazy" class="dark-img hidden">
+        </a>
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
   <div class="mx-auto flex flex-col gap-5 px-7 py-7 sm:flex-row sm:items-center sm:justify-between">
     <a class="group flex items-center gap-3 text-ink focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70" href="/" aria-label="Bonfire Networks — home">
       <span class="block h-10 w-[30px] bg-cover bg-center bg-no-repeat" style="background-image: url(/img/bonfire.png)"></span>
@@ -64,30 +114,6 @@
       </div>
     </div>
   </footer>
-
-  <div class="border-y border-ink/[0.07]">
-    <div class="mx-auto flex items-center justify-center px-7 py-8">
-      <div class="flex items-center gap-3">
-        <p class="text-ink-3">Supported by</p>
-      <a class="ml-4" href="https://nlnet.nl">
-        <img
-          src="/img/b-nlnet.png"
-          alt="NLNet"
-          width="140"
-          loading="lazy"
-          class="light-img"
-        >
-        <img
-          src="/img/w-nlnet.png"
-          alt="NLNet"
-          width="140"
-          loading="lazy"
-          class="dark-img hidden"
-        >
-      </a>
-      </div>
-    </div>
-  </div>
 
   <div class="mx-auto flex max-w-[1140px] flex-col items-center justify-center gap-6 px-7 py-8 sm:flex-row sm:justify-between">
     <div class="flex items-center gap-8">
