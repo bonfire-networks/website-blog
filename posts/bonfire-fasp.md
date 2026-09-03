@@ -9,7 +9,7 @@ author: Bonfire Builders
 
 ---
 
-We’re happy to share that Bonfire is working with [Mastodon](https://joinmastodon.org/) and a couple of other software projects on two pieces of shared fediverse infrastructure: **remote media storage** and **automated content detection**. This work is part of a [Mastodon grant from the Sovereign Tech Agency](https://blog.joinmastodon.org/2026/04/sovereign-tech-agency-funding/).
+We’re happy to share that Bonfire is working with [Mastodon](https://joinmastodon.org/) and a couple of other free software projects on two pieces of shared fediverse infrastructure: **remote media storage** and **automated content detection**. This work is part of a [Mastodon grant from the Sovereign Tech Agency](https://blog.joinmastodon.org/2026/04/sovereign-tech-agency-funding/).
 
 Both projects will build on the open [Fediverse Auxiliary Service Provider (FASP) API specifications](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications). FASPs give fediverse servers a standardised way to connect to independent external services, so every platform does not have to build and operate the same capabilities on its own.
 
