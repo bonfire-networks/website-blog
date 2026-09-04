@@ -63,15 +63,15 @@ For this edition, Rocco’s artwork travelled from its original form into the ha
 
 <a href="/shop"><img src="https://hackmd.io/_uploads/S1T_em08Mg.png" alt="The Bonfire shop, showing the signed silkscreen listed at 250 euros"></a>
 
-Several people have asked whether it would be possible to buy the prints outside the original crowdfunding campaign. So today we’re also opening a shop on our website. It stocks exactly one thing: this artwork, in a limited number. No factory-produced t-shirts you’d wear once and forget, just a print made properly, by people we know.
+Several people have asked whether they could still get a print, now that the crowdfunding campaign has closed. So from today you can: contribute to Bonfire’s development on our website, and we’ll send you one as a thank-you, exactly as we did for our backers. There’s currently just one thank-you on offer: this artwork, in a limited number. No factory-produced t-shirts you’d wear once and forget, just a print made properly, by people we know.
 
-It’s the silkscreen edition: 35 × 50 cm on fine 300 gsm stock, signed and numbered by Rocco in an edition of 250, rolled into a protective tube. Shipping is included in the price, to addresses in the continental EU and the UK.
+It’s the silkscreen edition: 35 × 50 cm on fine 300 gsm stock, signed and numbered by Rocco in an edition of 250, rolled into a protective tube. Shipping of the reward is included in the contribution, to addresses in the continental EU and the UK.
 
-Every purchase directly supports both the ongoing development of Bonfire and Rocco Lombardi's art and helps us continue building digital infrastructure made for and governed by communities. 
+Every contribution directly supports both the ongoing development of Bonfire and Rocco Lombardi's art, and helps us keep building digital infrastructure made for and governed by communities. 
 
-The [shop page](/shop/bonfire-poster/) has more photos of the artwork from Rocco’s first pencil sketches through to the last sheet pulled at BeeInk, if you'd like the longer story.
+The [print page](/shop/bonfire-poster/) has more photos of the artwork from Rocco’s first pencil sketches through to the last sheet pulled at BeeInk, if you'd like the longer story.
 
-<a href="/shop" class="not-prose btn-xl btn btn-primary">Explore the prints in our shop</a>
+<a href="/shop" class="not-prose btn-xl btn btn-primary">Contribute and get a print</a>
 
 <a href="/shop" class="m-0 p-0"><img src="/img/on-samvie-wall.jpg" alt="A bear, stag, fox, badger and other animals gathered around a campfire in a night forest, a hawk carrying a burning branch overhead, drawn in fine white lines on black" class="m-0 p-0"></a>*The silkscreen featured on [@samvie@chaos.social](https://chaos.social/users/samvie)'s wall.*
 

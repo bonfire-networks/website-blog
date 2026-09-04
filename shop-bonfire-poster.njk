@@ -5,7 +5,7 @@ description: Follow Rocco Lombardi's Bonfire screen print from the first pencil 
 permalink: /shop/bonfire-poster/index.html
 image: /img/shop/bonfire-release-a3.jpg
 preloadImage: /img/shop/bonfire-release-a3.jpg
-ogType: product
+ogType: article
 ---
 
 {% macro carouselControls(total) %}
@@ -46,18 +46,19 @@ ogType: product
         </div>
       </figure>
 
-      <aside class="product-purchase-panel" aria-label="Purchase the Bonfire screen print">
+      <aside class="product-purchase-panel" aria-label="Contribute and receive the Bonfire screen print">
         <div class="flex items-center justify-between gap-4">
           <p class="inline-flex items-center gap-2 text-[.75rem] font-semibold text-leaf"><span class="h-2 w-2 rounded-full bg-leaf" aria-hidden="true"></span>Available · edition of 250</p>
         </div>
 
         <h1 id="product-title" class="mt-5 max-w-[11ch] font-disp text-[clamp(3rem,5vw,4.8rem)] font-semibold leading-[.9] tracking-[-.04em] text-ink">The Bonfire Screen Print</h1>
         <p class="mt-5 max-w-[32rem] text-[1.02rem] leading-7 text-ink-2">A handmade, one-colour screen-print on fine 300gsm stock. Each print is signed and numbered by artist <a href="{{ shop.product.artistUrl }}" target="_blank" rel="noopener noreferrer" class="font-medium text-ink underline decoration-ink/30 underline-offset-4 transition-colors hover:text-spark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark">Rocco Lombardi</a>.</p>
+        <p class="mt-4 max-w-[32rem] text-[.95rem] leading-7 text-ink-3">Your contribution funds Bonfire's development, the same way our crowdfunding campaign did. The print is our thank-you, sent to you wherever you are.</p>
 
         <div class="product-purchase-action mt-8">
           <div class="flex items-end justify-between gap-5 pt-7">
             <div>
-              <p class="text-[.75rem] font-semibold text-ink-3">PRICE</p>
+              <p class="text-[.75rem] font-semibold text-ink-3">CONTRIBUTION</p>
               <p class="mt-1 font-disp text-[2.7rem] font-semibold leading-none tracking-[-.04em] text-ink">€{{ shop.product.price }}</p>
             </div>
             <p class="text-right text-sm leading-6 text-ink-3">35 × 50 cm<br>Signed and numbered</p>
@@ -68,7 +69,7 @@ ogType: product
           {% elif shop.stripeEnabled %}
             <p class="mt-4 text-center text-[.78rem] text-ink-3">Secure checkout by Stripe.</p>
           {% else %}
-            <p class="mt-4 text-center text-[.78rem] text-ink-3">Order by email.</p>
+            <p class="mt-4 text-center text-[.78rem] text-ink-3">Contribute by email.</p>
           {% endif %}
 
           <a
@@ -76,7 +77,7 @@ ogType: product
             class="group mt-3 inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-br from-spark via-flame to-ember px-7 py-4 font-smono text-[.78rem] font-bold tracking-[.04em] text-[#221302] shadow-[0_18px_34px_-18px_rgba(232,145,43,.72)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark focus-visible:ring-offset-4 focus-visible:ring-offset-night active:translate-y-0"
             {% if shop.stripeEnabled %}rel="noopener noreferrer"{% endif %}
           >
-            {{ 'Buy the print' if shop.stripeEnabled else 'Order the print' }}
+            {{ 'Contribute and get the print' if shop.stripeEnabled else 'Contribute by email' }}
             <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
           </a>
         </div>
@@ -109,7 +110,7 @@ ogType: product
         <dt class="text-sm text-ink-3">Delivery</dt>
         <dd class="mt-1">
           <span class="block font-disp text-lg font-semibold text-ink">Continental EU + UK</span>
-          <span class="mt-1 block text-sm leading-6 text-ink-3">Shipping included in €250 · protective tube.</span>
+          <span class="mt-1 block text-sm leading-6 text-ink-3">Shipping of the reward included in the contribution · protective tube.</span>
         </dd>
       </div>
     </dl>
@@ -128,7 +129,7 @@ ogType: product
         </svg>
       </summary>
       <div class="max-w-[48rem] space-y-4 pb-7 text-[1rem] leading-7 text-ink-2 sm:pl-11 sm:text-[1.05rem] sm:leading-8">
-        <p>We currently ship to addresses within the continental European Union and the United Kingdom. Shipping is included in the €250 price.</p>
+        <p>We currently ship to addresses within the continental European Union and the United Kingdom. Shipping of the reward is included in the contribution.</p>
         <p>Every print is carefully rolled and sent in a protective shipping tube.</p>
         <p>At checkout, enter your full delivery address. A phone number and delivery instructions are optional.</p>
       </div>
@@ -455,7 +456,7 @@ ogType: product
             class="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-gradient-to-br from-spark via-flame to-ember px-7 py-4 font-smono text-[.78rem] font-bold tracking-[.04em] text-[#221302] shadow-[0_18px_34px_-18px_rgba(232,145,43,.72)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark focus-visible:ring-offset-4 focus-visible:ring-offset-night active:translate-y-0"
             {% if shop.stripeEnabled %}rel="noopener noreferrer"{% endif %}
           >
-            {{ 'Buy the print' if shop.stripeEnabled else 'Order the print' }} — €{{ shop.product.price }}
+            {{ 'Contribute and get the print' if shop.stripeEnabled else 'Contribute by email' }} — €{{ shop.product.price }}
             <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
           </a>
           {% if shop.testMode %}
@@ -469,7 +470,7 @@ ogType: product
     </div>
   </section>
 
-  <div class="product-mobile-purchase md:hidden" role="region" aria-label="Purchase the Bonfire screen print">
+  <div class="product-mobile-purchase md:hidden" role="region" aria-label="Contribute and receive the Bonfire screen print">
     <div>
       <p class="text-[.7rem] text-ink-3">THE BONFIRE SCREEN PRINT</p>
       <p class="font-disp text-xl font-semibold leading-none text-ink">€{{ shop.product.price }}</p>
@@ -479,7 +480,7 @@ ogType: product
       class="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-br from-spark via-flame to-ember px-6 py-3 font-smono text-[.72rem] font-bold tracking-[.03em] text-[#221302] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark"
       {% if shop.stripeEnabled %}rel="noopener noreferrer"{% endif %}
     >
-      {{ 'Buy print' if shop.stripeEnabled else 'Order print' }}
+      {{ 'Contribute' if shop.stripeEnabled else 'Contribute by email' }}
     </a>
   </div>
 </main>
@@ -551,17 +552,16 @@ ogType: product
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "VisualArtwork",
   "name": "{{ shop.product.name }}",
   "image": "{{ metadata.url }}{{ shop.product.image }}",
-  "description": "A signed and numbered 35 × 50 cm, one-colour screen-print by Rocco Lombardi, handmade by BeeInk Serigrafia on fine 300gsm stock in an edition of 250.",
-  "brand": { "@type": "Brand", "name": "Bonfire Networks" },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "{{ shop.product.currency }}",
-    "price": "{{ shop.product.price }}",
-    "availability": "https://schema.org/InStock",
-    "url": "{{ metadata.url }}shop/bonfire-poster/"
-  }
+  "description": "A signed and numbered 35 × 50 cm, one-colour screen-print by Rocco Lombardi, handmade by BeeInk Serigrafia on fine 300gsm stock in an edition of 250. Sent as a thank-you to supporters who contribute to Bonfire's development and maintainance.",
+  "url": "{{ metadata.url }}shop/bonfire-poster/",
+  "artist": { "@type": "Person", "name": "{{ shop.product.artist }}" },
+  "artform": "Screen print",
+  "artMedium": "Screen print ink on 300gsm paper",
+  "artworkSurface": "Paper",
+  "width": { "@type": "Distance", "name": "35 cm" },
+  "height": { "@type": "Distance", "name": "50 cm" }
 }
 </script>
