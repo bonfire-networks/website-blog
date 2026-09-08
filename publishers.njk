@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+title: Bonfire for Publishers — Give your readers a place to belong
+description: Your publication can be a place people belong. Explore what we built with Jacobin, and build a community connected to your articles, memberships and identity.
+image: /img/jacobin/article.png
+ogType: website
+permalink: /publishers/
+---
+
+<!-- THESIS: Explain the product in one continuous reading column, with a persistent project offer.
+OWN-WORLD: Existing Bonfire dark palette, display face and warm buttons; calm prose and uncropped screenshots.
+STORY: What it is, Jacobin proof, concrete features, scope, hosting and common questions.
+FIRST VIEWPORT: Product name and direct explanation on the left; self-service and supported implementation paths on the right.
+FORM: User-directed Campfire reference structure: reading column plus sticky offer, no tabs or walkthrough controls. -->
+<style>
+.publishers{background:var(--color-night);color:var(--color-ink);font-family:var(--font-body);font-optical-sizing:auto;line-height:1.7}
+.publishers *{box-sizing:border-box}
+.publisher-layout{display:grid;grid-template-columns:minmax(0,740px) 304px;gap:0 72px;max-width:1200px;margin:auto;padding:72px 32px 96px;align-items:start}
+.publisher-copy{min-width:0;grid-column:1}.publisher-layout>header{grid-column:1}
+.publishers h1,.publishers h2,.publishers h3{font-family:var(--font-disp);text-wrap:balance;font-weight:600}
+.publishers h1{font-size:clamp(2.5rem,4.5vw,3.7rem);line-height:1.06;letter-spacing:-.035em;margin:0 0 28px}
+.publisher-layout .publisher-deck{font-family:var(--font-disp);font-size:clamp(1.5rem,2.45vw,2rem);line-height:1.36;letter-spacing:-.015em;text-wrap:pretty;margin:0 0 24px;max-width:35ch}
+.publishers p{margin:0 0 20px;text-wrap:pretty}.publisher-layout>header>p:last-child{font-size:1.0625rem;color:var(--color-ink-2);max-width:60ch}
+.publishers h2{font-size:clamp(1.65rem,2.5vw,1.95rem);line-height:1.2;letter-spacing:-.02em;margin:56px 0 20px}
+.publishers h3{font-size:1.18rem;line-height:1.35;letter-spacing:-.01em;margin:32px 0 10px}
+.publisher-copy section{scroll-margin-top:100px}.publisher-copy p,.publisher-copy li{font-size:1.0625rem;max-width:65ch}
+.publisher-copy a{color:var(--color-spark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.publisher-copy a:hover{color:#fff1c4}
+.publishers a:focus-visible{outline:3px solid var(--color-ember);outline-offset:5px}
+.publisher-copy ul{list-style:disc;padding-left:23px;margin:0 0 26px}.publisher-copy li{padding-left:5px;margin-bottom:14px}
+.publisher-copy figure{margin:36px 0 40px}.publisher-copy img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid #ffffff18}
+.publisher-copy figcaption{font-size:.875rem;line-height:1.6;color:var(--color-ink-2);margin:13px 0 0;max-width:68ch}.publisher-copy figcaption strong{color:var(--color-ink);font-weight:600}
+.publisher-offer{grid-column:2;grid-row:1 / span 2;position:sticky;top:88px;color:#231e17;background:#f2ecdb;border:1px solid #fffaf070;border-radius:8px;overflow:hidden}
+.publisher-offer-header{padding:24px 24px 20px;border-bottom:1px solid #231e1728}
+.publisher-offer-header b{display:block;font-family:var(--font-disp);font-size:1.6rem;line-height:1.2;letter-spacing:-.02em}
+.publisher-offer .publisher-offer-header p{margin:10px 0 0}
+.publisher-offer-body{padding:24px}.publisher-offer h2{font-size:1.15rem;line-height:1.3;letter-spacing:-.01em;margin:0 0 10px}
+.publisher-offer p{font-size:.9375rem;line-height:1.6;margin:0 0 18px;color:#514a3d}
+.publisher-offer-path+.publisher-offer-path{border-top:1px solid #231e1728;padding-top:24px;margin-top:24px}
+.publisher-cta{display:flex;justify-content:center;align-items:center;text-align:center;min-height:48px;background:#ffdf82;color:#231e17;font-size:.9375rem;font-weight:600;padding:11px 14px;border:1px solid #b99538;border-radius:5px;text-decoration:none}
+.publisher-cta:hover{background:#f5c344}.publisher-cta-secondary{background:transparent;border-color:#231e1740}.publisher-cta-secondary:hover{background:#e8dfc9}
+.publisher-offer .publisher-other{display:block;color:#514a3d;text-align:center;font-size:.875rem;text-decoration:underline;text-underline-offset:4px;margin-top:16px;padding:4px}
+.publisher-copy .publisher-price-note{font-size:.9375rem;color:var(--color-ink-2)}
+.publisher-end{border-top:1px solid #ffffff26;margin-top:48px;padding-top:32px}
+@media(min-width:701px) and (max-height:850px){.publisher-offer{position:static}}
+@media(max-width:950px){.publisher-layout{column-gap:36px;grid-template-columns:minmax(0,1fr) 280px;padding-inline:24px}.publisher-offer-body,.publisher-offer-header{padding:20px}}
+@media(max-width:700px){.publisher-layout{display:flex;flex-direction:column;padding:40px 22px 56px;gap:32px}.publisher-copy{order:2;width:100%}.publisher-layout>header{order:0}.publisher-offer{position:static;order:1;width:100%}.publisher-copy h2{margin-top:40px}.publisher-copy figure{margin:24px 0 32px}.publisher-copy>figure:first-child{margin-top:0}.publisher-layout .publisher-deck{font-size:1.6rem}.publisher-copy .publisher-end{margin-top:32px}}
+</style>
+<main class="publishers">
+<div class="publisher-layout">
+<header>
+<h1>Bonfire for Publishers</h1>
+<p class="publisher-deck">A community for your readers, connected to your publication. Under your own brand, on infrastructure you control.</p>
+<p>Give readers and your newsroom a place to meet, discuss articles and share ideas. Set it up yourself with our open-source software, or work with us to connect it to your publication and get ready for launch.</p>
+</header>
+<aside class="publisher-offer" aria-label="Ways to get started">
+<div class="publisher-offer-header"><b>Make it yours.</b><p>Open-source software.<br>Your choice of how to get started.</p></div>
+<div class="publisher-offer-body">
+<div class="publisher-offer-path"><h2>Build it yourself</h2><p>Install, customise and run Bonfire with your own team or technical partner. The software and Ghost integration are free to use.</p><a class="publisher-cta publisher-cta-secondary" href="/self-hosting/">Explore self-hosting</a></div>
+<div class="publisher-offer-path"><h2>Build it with us</h2><p>We take care of your branding, integration, community setup and launch, with support available afterwards.</p><a class="publisher-cta" href="https://cal.com/bonfire-networks/meet">Discuss your project</a><a class="publisher-other" href="#scope">What’s included?</a></div>
+</div>
+</aside>
+<article class="publisher-copy">
+<figure><img src="/img/jacobin/ghostbonfire.png" width="2906" height="1729" alt="Jacobin’s publication and community, carrying the same visual identity" fetchpriority="high"><figcaption>Jacobin’s German-language edition: its publication and Bonfire community, connected.</figcaption></figure>
+<section aria-labelledby="what-title"><h2 id="what-title">What is it?</h2>
+<p>Bonfire is open-source software for running your own community. Readers get profiles, conversations, groups and topics. Your team decides who can join each space and how it is moderated.</p>
+<p>For publishers, we connect that community to the work you already do. Articles become places to talk. Memberships can open access to groups and content. Your branding carries across the experience.</p>
+<p>You can install, configure and customise Bonfire yourself, including the Ghost integration. There is no software licence fee and no requirement to buy our services. <a href="/self-hosting/">Start with the self-hosting guide</a> or <a href="/ghost/">explore the Ghost integration</a>.</p></section>
+<section aria-labelledby="jacobin-title"><h2 id="jacobin-title">Built with Jacobin.</h2>
+<p>Jacobin’s readers asked for a protected place to discuss, bring story ideas to the newsroom and see behind the scenes. They already felt part of a community and wanted a space that reflected it.</p>
+<p>We connected Ghost and Bonfire, imported their archive, mapped subscriptions to access permissions and created a custom interface. Journalists and editors take part directly; Bonfire handles the agreed technical maintenance and support.</p>
+<p><a href="https://jacobin.de/social/">Read why Jacobin built it</a>, or <a href="/case-studies/jacobin/">explore the full case study</a>.</p></section>
+<section aria-labelledby="closer-title"><h2 id="closer-title">Take a closer look.</h2>
+<figure><img src="/img/jacobin/article.png" width="1728" height="1157" loading="lazy" alt="An article in Jacobin’s Bonfire community, with discussion controls and community navigation"><figcaption><strong>Articles and conversations together.</strong> Import your archive and connect comments on the publication with discussions in Bonfire through <a href="/telling/">The Telling</a>.</figcaption></figure>
+<figure><img src="/img/jacobin/j02-sso.png" width="1643" height="1096" loading="lazy" alt="Jacobin’s branded sign-in screen with membership access information"><figcaption><strong>A familiar welcome.</strong> Single sign-on, membership access and a theme that belongs to your publication.</figcaption></figure>
+<figure><img src="/img/jacobin/j09-group-topics.png" width="1728" height="1157" loading="lazy" alt="The Praxis community group in Jacobin, showing its description and membership controls"><figcaption><strong>Places to return to.</strong> Groups and topics for the interests your readers share. Images are from the Jacobin implementation; displayed member counts are not current usage figures.</figcaption></figure></section>
+<section aria-labelledby="fit-title"><h2 id="fit-title">Who is it for?</h2>
+<p>Publishers whose readers want to do more than read, and whose newsroom wants to take part. A few good starting points:</p>
+<ul><li><strong>A home for your members.</strong> Give supporters places to meet each other and your editorial team.</li><li><strong>Conversations beyond individual articles.</strong> Keep discussion going around a subject, reading group or shared interest.</li><li><strong>A connection between events.</strong> Give people who meet at your gatherings somewhere to stay in touch.</li></ul>
+<p>Your team leads participation and moderation. You can handle the technical setup yourselves, bring your own partner or ask us to help.</p></section>
+<section id="scope" aria-labelledby="scope-title"><h2 id="scope-title">What if you’d like us to build it?</h2>
+<p>We can take your community from initial setup to launch. We agree the requirements, scope and price together before work begins. A project using our existing Ghost integration includes:</p>
+<ul><li>Community structure, groups, topics and access rules.</li><li>Ghost integration, membership configuration and article import.</li><li>A custom theme, interface and agreed community widgets.</li><li>Configuration, revisions, testing and guidance through launch.</li></ul>
+<p class="publisher-price-note">As a guide, implementation projects using the existing Ghost integration start at €8,000. Hosting, ongoing support and features outside the agreed scope are quoted separately.</p></section>
+<section id="other-cms" aria-labelledby="cms-title"><h2 id="cms-title">Do we have to use Ghost?</h2>
+<p>No. Ghost is the integration we have already built and used with Jacobin. It gives us a proven starting point for connecting publishing, memberships and community.</p>
+<p>If you use another CMS or membership system, tell us about it. We’ll assess the integration and agree the scope and cost. The Telling comment widget can also be embedded on different websites, independently of a full membership integration.</p>
+<p><a href="/ghost/">See what the Ghost integration includes</a>.</p></section>
+<section id="questions" aria-labelledby="questions-title"><h2 id="questions-title">A few practical questions.</h2>
+<h3>Who controls the data?</h3><p>Your publisher controls its community’s data and hosting arrangements. With our cooperative hosting partner, ongoing backups and access to the database and files let you transfer the instance to another provider. Individual members can export their own data directly from the interface.</p>
+<h3>Who hosts it?</h3><p>Our cooperative hosting partner can run the instance, or you can choose your own infrastructure and provider. We agree the technical responsibilities with you before launch.</p>
+<h3>What happens after launch?</h3><p>We can provide maintenance and technical support and coordinate new releases with your hosting provider. We agree the support capacity and cost with you. Your newsroom continues to lead the community.</p>
+<h3>Can we start small?</h3><p>Yes. We can configure access for an initial group of readers and plan a wider rollout with your team as the community develops.</p>
+<h3>Can we leave or work with another developer?</h3><p>Yes. Bonfire is open source. You can keep running it, adapt it and work with the technical partner you choose. Your relationship with readers should outlast any software provider.</p></section>
+<section class="publisher-end"><p><strong>Tell us about your publication.</strong> We’ll discuss how readers participate today, what you want to make possible and whether Bonfire fits.</p><p><a href="https://cal.com/bonfire-networks/meet">Talk with the Bonfire team →</a></p></section>
+</article>
+
+</div>
+</main>
