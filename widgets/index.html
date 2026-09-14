@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonfire Expeditions - Collaborating to Release Version 1.0</title>
-    <meta name="description" content="Releasing the stable 1.0 version of the Bonfire federated social network requires collaboration with the communities, hackers, tinkerers, and sysadmins who plan to use it.">
+    <title>Widgets</title>
+    <meta name="description" content="Bring Bonfire and federated conversations to your website with The Telling comment widget and Spotlight, a carousel of your community’s highlights.">
     
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,19 +15,15 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <!-- OpenGraph meta tags for social sharing -->
-    <meta property="og:title" content="Bonfire Expeditions - Collaborating to Release Version 1.0">
-    <meta property="og:description" content="Releasing the stable 1.0 version of the Bonfire federated social network requires collaboration with the communities, hackers, tinkerers, and sysadmins who plan to use it.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://bonfirenetworks.org//posts/bonfire-expeditions-collaborating-to-release-version-1-0/">
-    
-    <meta property="og:image" content="https://bonfirenetworks.org//img/surveying.png">
+    <meta property="og:title" content="Widgets">
+    <meta property="og:description" content="Bring Bonfire and federated conversations to your website with The Telling comment widget and Spotlight, a carousel of your community’s highlights.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bonfirenetworks.org//widgets/">
     
     <!-- Twitter card tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bonfire Expeditions - Collaborating to Release Version 1.0">
-    <meta name="twitter:description" content="Releasing the stable 1.0 version of the Bonfire federated social network requires collaboration with the communities, hackers, tinkerers, and sysadmins who plan to use it.">
-    
-    <meta name="twitter:image" content="https://bonfirenetworks.org//img/surveying.png">
+    <meta name="twitter:title" content="Widgets">
+    <meta name="twitter:description" content="Bring Bonfire and federated conversations to your website with The Telling comment widget and Spotlight, a carousel of your community’s highlights.">
     
     
     
@@ -297,201 +293,120 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
 </script>
 
       
+<style>
+.publishers{background:var(--color-night);color:var(--color-ink);font-family:var(--font-body);font-optical-sizing:auto;line-height:1.7}
+.publishers *{box-sizing:border-box}
+.publisher-layout{display:grid;grid-template-columns:minmax(0,740px) 304px;gap:0 72px;max-width:1200px;margin:auto;padding:72px 32px 96px;align-items:start}
+.publisher-copy{min-width:0;grid-column:1}.publisher-layout>header{grid-column:1}
+.publishers h1,.publishers h2,.publishers h3{font-family:var(--font-disp);text-wrap:balance;font-weight:600}
+.publishers h1{font-size:clamp(2.5rem,4.5vw,3.7rem);line-height:1.06;letter-spacing:-.035em;margin:0 0 28px}
+.publisher-layout .publisher-deck{font-family:var(--font-disp);font-size:clamp(1.5rem,2.45vw,2rem);line-height:1.36;letter-spacing:-.015em;text-wrap:pretty;margin:0 0 24px;max-width:35ch}
+.publishers p{margin:0 0 20px;text-wrap:pretty}.publisher-layout>header>p:last-child{font-size:1.0625rem;color:var(--color-ink-2);max-width:60ch}
+.publishers h2{font-size:clamp(1.65rem,2.5vw,1.95rem);line-height:1.2;letter-spacing:-.02em;margin:56px 0 20px}
+.publishers h3{font-size:1.18rem;line-height:1.35;letter-spacing:-.01em;margin:32px 0 10px}
+.publisher-copy section{scroll-margin-top:100px}.publisher-copy p,.publisher-copy li{font-size:1.0625rem;max-width:65ch}
+.publisher-copy a{color:var(--color-spark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.publisher-copy a:hover{color:#fff1c4}
+.publishers a:focus-visible{outline:3px solid var(--color-ember);outline-offset:5px}
+.publisher-copy ul{list-style:disc;padding-left:23px;margin:0 0 26px}.publisher-copy li{padding-left:5px;margin-bottom:14px}
+.publisher-copy figure{margin:36px 0 40px}.publisher-copy img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid #ffffff18}
+.publisher-copy figcaption{font-size:.875rem;line-height:1.6;color:var(--color-ink-2);margin:13px 0 0;max-width:68ch}.publisher-copy figcaption strong{color:var(--color-ink);font-weight:600}
+.publisher-offer{grid-column:2;grid-row:1 / span 2;position:sticky;top:88px;color:#231e17;background:#f2ecdb;border:1px solid #fffaf070;border-radius:8px;overflow:hidden}
+.publisher-offer-header{padding:24px 24px 20px;border-bottom:1px solid #231e1728}
+.publisher-offer-header b{display:block;font-family:var(--font-disp);font-size:1.6rem;line-height:1.2;letter-spacing:-.02em}
+.publisher-offer .publisher-offer-header p{margin:10px 0 0}
+.publisher-offer-body{padding:24px}.publisher-offer h2{font-size:1.15rem;line-height:1.3;letter-spacing:-.01em;margin:0 0 10px}
+.publisher-offer p{font-size:.9375rem;line-height:1.6;margin:0 0 18px;color:#514a3d}
+.publisher-offer-path+.publisher-offer-path{border-top:1px solid #231e1728;padding-top:24px;margin-top:24px}
+.publisher-cta{display:flex;justify-content:center;align-items:center;text-align:center;min-height:48px;background:#ffdf82;color:#231e17;font-size:.9375rem;font-weight:600;padding:11px 14px;border:1px solid #b99538;border-radius:5px;text-decoration:none}
+.publisher-cta:hover{background:#f5c344}.publisher-cta-secondary{background:transparent;border-color:#231e1740}.publisher-cta-secondary:hover{background:#e8dfc9}
+.publisher-offer .publisher-other{display:block;color:#514a3d;text-align:center;font-size:.875rem;text-decoration:underline;text-underline-offset:4px;margin-top:16px;padding:4px}
+.publisher-copy .publisher-scope-note{font-size:.9375rem;color:var(--color-ink-2)}
+.publisher-end{border-top:1px solid #ffffff26;margin-top:48px;padding-top:32px}
+@media(min-width:701px) and (max-height:850px){.publisher-offer{position:static}}
+@media(max-width:950px){.publisher-layout{column-gap:36px;grid-template-columns:minmax(0,1fr) 280px;padding-inline:24px}.publisher-offer-body,.publisher-offer-header{padding:20px}}
+@media(max-width:700px){.publisher-layout{display:flex;flex-direction:column;padding:40px 22px 56px;gap:32px}.publisher-copy{order:2;width:100%}.publisher-layout>header{order:0}.publisher-offer{position:static;order:1;width:100%}.publisher-copy h2{margin-top:40px}.publisher-copy figure{margin:24px 0 32px}.publisher-copy>figure:first-child{margin-top:0}.publisher-layout .publisher-deck{font-size:1.6rem}.publisher-copy .publisher-end{margin-top:32px}}
+</style>
 
+<style>
+.widget-directory{max-width:1200px;margin:auto;padding:72px 32px 96px}
+.widget-directory>header{max-width:650px;margin-bottom:56px}
+.widget-directory>header p{font-size:1.25rem;line-height:1.6;color:var(--color-ink-2)}
+.widget-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:56px;list-style:none;padding:0;margin:0;align-items:start}
+.widget-card{min-width:0}
+.widget-card article{display:grid;grid-template-columns:minmax(0, 300px) minmax(0, 1fr);gap:40px;align-items:start}
+.widget-content{min-width:0}
+.widget-card summary{cursor:pointer;width:fit-content;padding:10px 0;min-height:44px}
+.widget-card details{margin-top:8px}
+.widget-actions{display:grid;grid-template-columns:190px minmax(0,1fr);column-gap:24px;margin-top:8px}
+.widget-actions details{grid-column:1 / -1;grid-row:1;margin-top:0}
+.widget-actions>a{grid-column:2;grid-row:1;align-self:start;justify-self:start;padding:10px 0;min-height:44px}
+@media(max-width:380px){.widget-actions{grid-template-columns:175px minmax(0,1fr);column-gap:12px}.widget-actions summary,.widget-actions>a{font-size:.875rem}}
+.widget-card+.widget-card{border-top:1px solid #ffffff26;padding-top:56px}
+.widget-banner{display:block;width:100%;height:auto;aspect-ratio:2/1;border-radius:8px}
+.widget-card h2{font-size:1.75rem;margin:0 0 12px}
+.widget-card p{font-size:1.0625rem;line-height:1.7;color:var(--color-ink-2);max-width:50ch;margin-bottom:18px}
+.widget-card a,.widget-card summary{color:var(--color-spark);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.widget-card a:hover,.widget-card summary:hover{color:#fff1c4}
+.widget-card summary:focus-visible,.widget-card pre:focus-visible{outline:3px solid var(--color-ember);outline-offset:5px}
+.widget-card .widget-embed-note{font-size:.9375rem;margin-top:20px;margin-bottom:12px}
+.widget-card pre{max-width:100%;overflow-x:auto;padding:20px;border:1px solid #ffffff26;border-radius:6px;font-size:.8125rem;line-height:1.8;margin:16px 0}
+.widget-card code{font-family:var(--font-smono,monospace)}
+@media(max-width:700px){.widget-directory{padding:40px 22px 56px}.widget-directory>header{margin-bottom:36px}.widget-grid{grid-template-columns:minmax(0,1fr);gap:44px}.widget-card article{grid-template-columns:minmax(0,1fr);gap:24px}.widget-banner{max-width:300px}.widget-card+.widget-card{padding-top:44px}}
+</style>
 
-<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.62] antialiased selection:bg-ember selection:text-[#160c02]">
-  <div class="v2-ambient" aria-hidden="true"></div>
-  <div class="relative z-[1]">
-
-    
-    <header class="pt-10 pb-4">
-      <div class="max-w-[820px] mx-auto px-7">
-        
-        <div class="flex flex-wrap items-center gap-1.5 mb-4"><a class="font-smono text-[.62rem] tracking-[.1em] text-ink-3 border border-ink/15 rounded-full px-2.5 py-1 hover:border-flame hover:text-spark" href="/tags/product/">product</a>
-        </div>
-        
-        <h1 class="font-disp font-semibold text-[clamp(1.9rem,4vw,3rem)] leading-[1.1] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]">Bonfire Expeditions - Collaborating to Release Version 1.0</h1>
-        <p class="mt-4 font-smono text-[.72rem] tracking-[.06em] text-ink-3">Published 11 Jun 2024</p>
-      </div>
-      <div class="max-w-[980px] mx-auto px-7 mt-8">
-        
-          <img src="/img/surveying.png" alt="" class="w-full max-h-[520px] rounded-xl border border-ink/15 object-cover" />
-        
-      </div>
+<main class="publishers">
+  <div class="widget-directory">
+    <header>
+      <h1>Widgets</h1>
+      <p>Bring Bonfire stories and federated conversations to your website. Open source, and yours to make your own.</p>
     </header>
 
-    <div class="max-w-[820px] mx-auto px-7 pb-16">
-
-      
-
-      
-      <article class="mt-6 prose prose-invert prose-lg max-w-none
-        prose-headings:font-disp prose-headings:font-[620] prose-headings:text-ink prose-headings:tracking-[-.015em]
-        prose-p:text-ink-2 prose-li:text-ink-2 prose-strong:text-ink prose-em:text-ink
-        prose-a:text-spark prose-a:no-underline hover:prose-a:underline
-        prose-blockquote:border-l-flame prose-blockquote:text-ink prose-blockquote:font-disp prose-blockquote:not-italic
-        prose-code:text-corn-2 prose-pre:bg-night-2 prose-pre:border prose-pre:border-ink/15 prose-pre:rounded-xl
-        prose-img:rounded-xl prose-img:border prose-img:border-ink/15
-        prose-hr:border-ink/[0.07] prose-figcaption:text-ink-3
-        prose-th:text-ink-3 prose-td:text-ink-2">
-        <p>Releasing the stable 1.0 version of the Bonfire federated social network requires collaboration with the communities, hackers, tinkerers, and sysadmins who plan to use it.</p>
-<p>That's why we're thrilled to announce <strong>Bonfire Expeditions</strong> - a series of co-design initiatives aimed at refining and polishing various aspects of the project. These expeditions will ensure that all the moving parts of Bonfire work together seamlessly, making the project safe and enjoyable for both communities and developers.</p>
-<p>Each Bonfire Expedition will focus on one of the following areas:</p>
-<ul>
-<li><strong>Surveying:</strong> Developer Experience, Onboarding and Documentation</li>
-<li><strong>Camp:</strong> Instance Configuration and Tools</li>
-<li><strong>Care:</strong> Safety and Moderation Features and UX</li>
-<li><strong>Party:</strong> Installation and Admin</li>
-</ul>
-<h2 id="surveying-expedition%3A-enhancing-developer-onboarding">Surveying Expedition: Enhancing Developer Onboarding <a class="direct-link" href="#surveying-expedition%3A-enhancing-developer-onboarding" target="_blank" rel="noopener">#</a></h2>
-<p><strong>Challenge</strong>: Bonfire's modularity and architecture can be intimidating, and the current documentation is insufficient to properly guide developers.</p>
-<p><strong>Objective</strong>: Streamline the developer experience for setting up the Bonfire dev environment, manage and create new extensions.</p>
-<p><strong>How to Participate</strong>:</p>
-<ul>
-<li>We are looking for 5 Elixir developers to begin with</li>
-<li>Each developer will have a 1-hour pairing session with the Bonfire team</li>
-<li>During the session, the participant will go through the setup of the bonfire developer environment and the creation of a Hello World extension.</li>
-<li>Developers will vocalize their thoughts, doubts, and suggestions throughout the process</li>
-<li>The Bonfire team will provide support and help overcome any obstacles when necessary</li>
-</ul>
-<p><strong>After each session, the Bonfire team will:</strong></p>
-<ul>
-<li>Compile all feedback and insights</li>
-<li>Incorporate feedback into the codebase and documentation</li>
-<li>Refine the onboarding experience for the next session</li>
-</ul>
-<p><strong>Compensation:</strong></p>
-<ul>
-<li>Participating developers can request compensation of €50 for their time on the <a href="https://opencollective.com/bonfire-networks" target="_blank" rel="noopener">project’s OpenCollective</a></li>
-</ul>
-<p>If you're an Elixir developer who's passionate about the potential of federated social networks and wants to contribute to shaping the future of Bonfire, join us on this expedition! Send a mail to team@bonfire.cafe to participate in the Surveying Expedition, and we'll reach out with all the necessary details.</p>
-<p>Together, we can make Bonfire's 1.0 release a truly landmark moment. Let's embark on this journey and build something extraordinary, one expedition at a time!</p>
-
-      </article>
-
-      
-
-      
-      
-      <section
-        class="mt-16 border-y border-ink/[0.07] bg-night-2 py-12 md:mt-24"
-        style="width: 100vw; margin-left: calc(50% - 50vw);"
-        aria-labelledby="post-discussion-title">
-        <div class="mx-auto px-7" style="max-width: 1440px;">
-          <div class="max-w-[820px] mx-auto">
-          <div class="mb-10">
-            <div class="flex items-end gap-4">
-              <div>
-                <p class="mb-2 font-smono text-[.62rem] tracking-[.1em] text-spark">The Telling</p>
-                <h2 id="post-discussion-title" class="font-disp text-3xl font-[620] leading-[1.12] tracking-[-.02em] text-ink text-balance md:text-5xl">
-                  Continue the conversation.
-                </h2>
-              </div>
-            </div>
-            <p class="mt-5 max-w-[42ch] text-[.95rem] leading-relaxed text-ink-2">
-              Questions, reflections, and additions are welcome. This thread is federated, so the conversation can travel beyond this page.
-            </p>
-            <a
-              class="mt-4 inline-flex items-center gap-2 border-b border-ink/15 pb-0.5 font-smono text-[.68rem] tracking-[.05em] text-ink-3 hover:border-spark hover:text-spark"
-              href="/conduct">
-              Read our Code of Conduct <span aria-hidden="true">→</span>
-            </a>
+    <ul class="widget-grid" aria-label="Bonfire widgets">
+      <li class="widget-card">
+        <article aria-labelledby="telling-title">
+          <img class="widget-banner" src="/img/widgets/telling-placeholder.svg" width="960" height="480" alt="Placeholder illustration of a comment thread">
+          <div class="widget-content">
+          <h2 id="telling-title">The Telling</h2>
+          <p>Add federated comments to anything you publish. Readers reply with their existing fediverse account, and the conversation lives on your Bonfire server.</p>
+          <div class="widget-actions">
+          <details id="telling-embed">
+            <summary>Get the embed code</summary>
+          <p class="widget-embed-note">Replace <code>your-instance.social</code> with your Bonfire address:</p>
+          <pre tabindex="0" aria-label="The Telling embed code"><code>&lt;script
+  src="https://your-instance.social/js/comments_embed.js"
+  data-theme="dark"
+  data-mode="nested"
+  async
+&gt;&lt;/script&gt;</code></pre>
+          </details>
+          <a href="/telling/">Explore The Telling <span aria-hidden="true">→</span></a>
           </div>
-          <script
-            src="https://bonfire.cafe/js/comments_embed.js?v1.0"
-            data-published-at="2024-06-11" 
-             data-media-uri="https://bonfirenetworks.org/posts/bonfire-expeditions-collaborating-to-release-version-1-0/" 
-            data-theme="dark" 
-            data-mode="nested" 
-            async></script>
           </div>
-        </div>
-      </section>
-
-      
-      <div class="grid grid-cols-1 min-[601px]:grid-cols-2 gap-3.5 mt-12">
-        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 hover:border-ink/25" href="/posts/open-source-meets-open-science-announcing-the-open-science-network-initiative/">
-          <span class="font-smono text-[.62rem] tracking-[.1em] text-ink-3">← Previous</span>
-          <span class="font-disp font-[620] text-[1.02rem] leading-snug">Open source meets open science - announcing the Open Science Network initiative</span>
-        </a>
-        <a class="card rounded-xl border border-ink/15 bg-night-2 px-5 py-4 gap-1 items-end text-right hover:border-ink/25" href="/posts/bonfire-expeditions-camp-a-bounty-programme/">
-          <span class="font-smono text-[.62rem] tracking-[.1em] text-ink-3">Next →</span>
-          <span class="font-disp font-[620] text-[1.02rem] leading-snug">Bonfire Expeditions - Camp! A bounty programme</span>
-        </a>
-      </div>
-
-      
-
-<div class="mx-auto mt-14 w-full">
-  <div class="flex flex-col items-center gap-7 rounded-xl border border-ink/15 bg-gradient-to-b from-night-2 to-night px-6 py-10 text-center">
-    <div class="flex max-w-[46ch] flex-col gap-3">
-      <p class="m-0 font-disp text-[clamp(1.3rem,2.4vw,1.8rem)] font-[620] leading-[1.15] text-ink">Sign up to our newsletter for more stories</p>
-      <div class="text-[.95rem] text-ink-2">Your data is private and we will use it only to send you Bonfire news. You may unsubscribe at any time.</div>
-    </div>
-    <div class="w-full">
-      
-<form
-  action="https://app.keila.io/forms/nfrm_o97Ny73p"
-  method="post"
-  class="mx-auto flex w-full max-w-[440px] flex-col items-stretch gap-4 text-left"
->
-  <div class="flex flex-col gap-1.5">
-    <label class="font-smono text-[.68rem] font-bold tracking-[.08em] text-ink-2" for="newsletter-email">
-      Email address
-    </label>
-    <input
-      id="newsletter-email"
-      name="contact[email]"
-      type="email"
-      autocomplete="email"
-      inputmode="email"
-      placeholder="you@example.org"
-      class="input min-h-11 w-full rounded-full border border-ink/15 bg-night-2 text-ink placeholder:text-ink-3 focus:border-flame focus:outline-none focus:ring-2 focus:ring-flame/30"
-      required
-    >
+        </article>
+      </li>
+      <li class="widget-card">
+        <article aria-labelledby="spotlight-title">
+          <img class="widget-banner" src="/img/widgets/spotlight-placeholder.svg" width="960" height="480" alt="Placeholder illustration of a post carousel">
+          <div class="widget-content">
+          <h2 id="spotlight-title">Spotlight</h2>
+          <p>Give your community’s stories a place to shine. Pin posts on Bonfire and display them on your website in a browsable carousel.</p>
+          <details id="spotlight-embed">
+            <summary>Get the embed code</summary>
+            <p class="widget-embed-note">Replace <code>your-instance.social</code> with your Bonfire address:</p>
+            <pre tabindex="0" aria-label="Spotlight embed code"><code>&lt;script
+  src="https://your-instance.social/js/pins_embed.js"
+  data-variant="carousel"
+  data-theme="light"
+  async
+&gt;&lt;/script&gt;</code></pre>
+            <p class="widget-embed-note">Choose <code>light</code> or <code>dark</code> to suit your website.</p>
+          </details>
+          </div>
+        </article>
+      </li>
+    </ul>
   </div>
-
-  <label class="flex cursor-pointer items-start gap-2.5 text-[.78rem] leading-5 text-ink-2" for="newsletter-optin">
-    <input name="contact[data][newsletter_optin]" type="hidden" value="false">
-    <input
-      id="newsletter-optin"
-      name="contact[data][newsletter_optin]"
-      type="checkbox"
-      value="true"
-      class="checkbox checkbox-sm mt-0.5 shrink-0 rounded border-ink/30 bg-night-2 text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70"
-      required
-    >
-    <span>I consent to receiving a newsletter and/or occasional updates about Bonfire.</span>
-  </label>
-
-  <input
-    aria-hidden="true"
-    autocomplete="off"
-    name="h[url]"
-    tabindex="-1"
-    novalidate
-    class="hidden"
-  >
-
-  <div class="h-captcha" data-sitekey="a1c5fab7-71df-4ea4-af75-87a3d07c61de" data-theme="dark" data-size="compact"></div>
-
-  <button
-    type="submit"
-    class="btn h-auto min-h-11 w-full rounded-full border-0 bg-gradient-to-br from-spark via-flame to-ember px-5 py-3 font-smono text-[.72rem] font-bold tracking-[.06em] text-[#221302] shadow-[0_8px_24px_-10px_rgba(232,145,43,.7)] transition hover:-translate-y-0.5 hover:from-spark hover:via-flame hover:to-ember hover:shadow-[0_12px_28px_-10px_rgba(245,195,68,.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/80 focus-visible:ring-offset-2 focus-visible:ring-offset-night"
-  >
-    Subscribe
-  </button>
-</form>
-<script async defer src="https://hcaptcha.com/1/api.js"></script>
-
-    </div>
-  </div>
-</div>
-
-    </div>
-
-  </div>
-</div>
+</main>
 
       
 
