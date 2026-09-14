@@ -1,0 +1,89 @@
+---
+layout: layouts/base.njk
+title: Widgets
+description: Bring Bonfire and federated conversations to your website with The Telling comment widget and Spotlight, a carousel of your community’s highlights.
+ogType: website
+permalink: /widgets/
+---
+
+{% include "publisher-styles.njk" %}
+<style>
+.widget-directory{max-width:1200px;margin:auto;padding:72px 32px 96px}
+.widget-directory>header{max-width:650px;margin-bottom:56px}
+.widget-directory>header p{font-size:1.25rem;line-height:1.6;color:var(--color-ink-2)}
+.widget-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:56px;list-style:none;padding:0;margin:0;align-items:start}
+.widget-card{min-width:0}
+.widget-card article{display:grid;grid-template-columns:minmax(0, 300px) minmax(0, 1fr);gap:40px;align-items:start}
+.widget-content{min-width:0}
+.widget-card summary{cursor:pointer;width:fit-content;padding:10px 0;min-height:44px}
+.widget-card details{margin-top:8px}
+.widget-actions{display:grid;grid-template-columns:190px minmax(0,1fr);column-gap:24px;margin-top:8px}
+.widget-actions details{grid-column:1 / -1;grid-row:1;margin-top:0}
+.widget-actions>a{grid-column:2;grid-row:1;align-self:start;justify-self:start;padding:10px 0;min-height:44px}
+@media(max-width:380px){.widget-actions{grid-template-columns:175px minmax(0,1fr);column-gap:12px}.widget-actions summary,.widget-actions>a{font-size:.875rem}}
+.widget-card+.widget-card{border-top:1px solid #ffffff26;padding-top:56px}
+.widget-banner{display:block;width:100%;height:auto;aspect-ratio:2/1;border-radius:8px}
+.widget-card h2{font-size:1.75rem;margin:0 0 12px}
+.widget-card p{font-size:1.0625rem;line-height:1.7;color:var(--color-ink-2);max-width:50ch;margin-bottom:18px}
+.widget-card a,.widget-card summary{color:var(--color-spark);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.widget-card a:hover,.widget-card summary:hover{color:#fff1c4}
+.widget-card summary:focus-visible,.widget-card pre:focus-visible{outline:3px solid var(--color-ember);outline-offset:5px}
+.widget-card .widget-embed-note{font-size:.9375rem;margin-top:20px;margin-bottom:12px}
+.widget-card pre{max-width:100%;overflow-x:auto;padding:20px;border:1px solid #ffffff26;border-radius:6px;font-size:.8125rem;line-height:1.8;margin:16px 0}
+.widget-card code{font-family:var(--font-smono,monospace)}
+@media(max-width:700px){.widget-directory{padding:40px 22px 56px}.widget-directory>header{margin-bottom:36px}.widget-grid{grid-template-columns:minmax(0,1fr);gap:44px}.widget-card article{grid-template-columns:minmax(0,1fr);gap:24px}.widget-banner{max-width:300px}.widget-card+.widget-card{padding-top:44px}}
+</style>
+
+<main class="publishers">
+  <div class="widget-directory">
+    <header>
+      <h1>Widgets</h1>
+      <p>Bring Bonfire stories and federated conversations to your website. Open source, and yours to make your own.</p>
+    </header>
+
+    <ul class="widget-grid" aria-label="Bonfire widgets">
+      <li class="widget-card">
+        <article aria-labelledby="telling-title">
+          <img class="widget-banner" src="/img/widgets/telling-placeholder.svg" width="960" height="480" alt="Placeholder illustration of a comment thread">
+          <div class="widget-content">
+          <h2 id="telling-title">The Telling</h2>
+          <p>Add federated comments to anything you publish. Readers reply with their existing fediverse account, and the conversation lives on your Bonfire server.</p>
+          <div class="widget-actions">
+          <details id="telling-embed">
+            <summary>Get the embed code</summary>
+          <p class="widget-embed-note">Replace <code>your-instance.social</code> with your Bonfire address:</p>
+          <pre tabindex="0" aria-label="The Telling embed code"><code>&lt;script
+  src="https://your-instance.social/js/comments_embed.js"
+  data-theme="dark"
+  data-mode="nested"
+  async
+&gt;&lt;/script&gt;</code></pre>
+          </details>
+          <a href="/telling/">Explore The Telling <span aria-hidden="true">→</span></a>
+          </div>
+          </div>
+        </article>
+      </li>
+      <li class="widget-card">
+        <article aria-labelledby="spotlight-title">
+          <img class="widget-banner" src="/img/widgets/spotlight-placeholder.svg" width="960" height="480" alt="Placeholder illustration of a post carousel">
+          <div class="widget-content">
+          <h2 id="spotlight-title">Spotlight</h2>
+          <p>Give your community’s stories a place to shine. Pin posts on Bonfire and display them on your website in a browsable carousel.</p>
+          <details id="spotlight-embed">
+            <summary>Get the embed code</summary>
+            <p class="widget-embed-note">Replace <code>your-instance.social</code> with your Bonfire address:</p>
+            <pre tabindex="0" aria-label="Spotlight embed code"><code>&lt;script
+  src="https://your-instance.social/js/pins_embed.js"
+  data-variant="carousel"
+  data-theme="light"
+  async
+&gt;&lt;/script&gt;</code></pre>
+            <p class="widget-embed-note">Choose <code>light</code> or <code>dark</code> to suit your website.</p>
+          </details>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </div>
+</main>
