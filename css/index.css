@@ -5,6 +5,17 @@
 
 @import "daisyui/daisyui.css";
 
+/* Keep inline acronym definitions available on touch and keyboard focus. */
+.article-acronym:focus-within::before,
+.article-acronym:focus-within::after {
+  opacity: 1;
+  --tt-pos: 0rem;
+}
+
+.article-acronym::before {
+  max-width: min(16rem, 80vw);
+}
+
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
