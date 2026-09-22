@@ -22,7 +22,6 @@ We were lucky enough to team up with Bonfire to translate Governance Cards from 
 
 
 **What do people actually need to set up and articulate?** Intuitively, we know that governance isn’t one-size-fits-all! Neither is the language communities use to describe what they do. A big part of this work was simply figuring out which dimensions of governance actually matter to communities and finding vocabulary flexible enough to fit diverse communities that might be wildly different, specific, or distinct. Regular discussions to iterate on the schema pushed us to sync up social and organizational dimensions with the actual affordances the software provides, as well as raised new ideas of what the software might support. 
-The rule-selection interface was a good example of this in practice. We started with the fuzzy question of "what does a community allow or disallow?" After analyzing 200 or so rule sets from a random sample of Fediverse communities, we developed a structured, comparable set of choices, adding options that still made it possible for communities to express nuance about their own specific norms. In a test version, Bonfire was able to implement this interface into the platform software, making it much easier for Bonfire communities to draft an initial set of rules.
 
 ![bonfire screenshot](/img/commrules.png)
 
