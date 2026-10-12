@@ -1,0 +1,117 @@
+<style>
+/* Museum page: storyboard mockups and shift cards, layered on publisher-styles */
+.museums .museum-label{display:inline-block;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--color-spark);margin:0 0 10px}
+.publisher-copy .museum-scenario-intro{color:var(--color-ink-2)}
+.museum-frame-step{display:flex;gap:12px;align-items:baseline;margin:48px 0 0}
+.museum-frame-step span{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#ffdf82;color:#231e17;font-weight:700;font-size:.875rem}
+.museum-frame-step h3{margin:0}
+.publisher-copy .museum-frame-step+p{margin-top:12px}
+
+/* Mockup shell */
+.mk{font-family:var(--font-body);font-size:14px;line-height:1.5;border-radius:10px;overflow:hidden;border:1px solid #ffffff22;background:#faf7f0;color:#1d1a16;text-align:left}
+.publisher-copy .mk p{font-size:inherit;max-width:none;margin:0 0 6px}
+.publisher-copy .mk img{border:0;border-radius:4px}
+.mk b{font-weight:650}
+.mk-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#e9e3d4;color:#6b6252;font-size:12px}
+.mk-bar i{width:9px;height:9px;border-radius:50%;background:#cfc6b1;display:inline-block}
+.mk-url{margin-left:10px;background:#fbf8f1;border-radius:4px;padding:2px 10px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mk-body{padding:20px}
+.mk-muted{color:#6b6252;font-size:12.5px}
+.mk-btn{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;background:#1d1a16;color:#faf7f0;border:1px solid #1d1a16}
+.mk-btn-ghost{background:transparent;color:#1d1a16;border-color:#1d1a1640}
+.mk-tag{display:inline-block;font-size:11px;font-weight:600;border-radius:4px;padding:1px 6px;background:#efe6cf;color:#6b5420;margin-left:6px;vertical-align:1px}
+.mk-tag-blue{background:#e2e8f7;color:#2c4a8c}
+.mk-hr{border:0;border-top:1px solid #1d1a1618;margin:16px 0}
+
+/* Artwork page */
+.mk-art{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:22px}
+.mk-art h4{font-family:var(--font-disp);font-size:20px;line-height:1.25;margin:0 0 4px;font-weight:600}
+.mk-meta{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;font-size:12.5px;margin:12px 0 14px}
+.mk-meta dt{color:#6b6252}.mk-meta dd{margin:0}
+.mk-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* Comments */
+.mk-thread-title{font-weight:650;margin:0 0 12px}
+.mk-c{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;margin:0 0 14px}
+.mk-c-reply{margin-left:42px}
+.mk-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+.mk-av-a{background:#b5543c}.mk-av-b{background:#3d6b8c}.mk-av-c{background:#5d7a3a}.mk-av-d{background:#7a4f8c}.mk-av-e{background:#a8873a}
+.mk-who{font-size:13px}.mk-who b{margin-right:4px}
+
+/* Fediverse app (dark) */
+.mk-dark{background:#17191f;color:#e6e4e0;border-color:#ffffff22}
+.mk-dark .mk-bar{background:#22252d;color:#9a9ca3}.mk-dark .mk-bar i{background:#3a3e48}.mk-dark .mk-url{background:#17191f}
+.mk-dark .mk-muted{color:#9a9ca3}
+.mk-dark .mk-hr{border-top-color:#ffffff1a}
+.mk-dark .mk-btn{background:#e6e4e0;color:#17191f;border-color:#e6e4e0}.mk-dark .mk-btn-ghost{background:transparent;color:#e6e4e0;border-color:#ffffff40}
+.mk-dark .mk-tag{background:#3b3220;color:#f1d48a}.mk-dark .mk-tag-blue{background:#22314f;color:#a9c1f2}
+.mk-post{border:1px solid #ffffff1a;border-radius:8px;padding:14px;margin:0 0 12px}
+.mk-post-img{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;align-items:start;margin-top:10px}
+.mk-icons{display:flex;gap:18px;font-size:12px;margin-top:10px}
+
+/* Profile */
+.mk-cover{height:140px;background:linear-gradient(90deg,#2f6e5a,#c9583b 45%,#e8b33c 70%,#3a5b9a)}
+.mk-prof{display:flex;gap:14px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.mk-prof>.mk-av{margin-top:-46px}
+.mk-prof .mk-av{width:68px;height:68px;font-size:24px;border:3px solid #17191f;background:#c9583b}
+.mk-prof h4{font-family:var(--font-disp);font-size:20px;margin:0;font-weight:600}
+.mk-tabs{display:flex;gap:18px;font-size:13px;border-bottom:1px solid #ffffff1a;margin:16px 0 14px}
+.mk-tabs span{padding:0 0 8px}.mk-tabs .on{border-bottom:2px solid #ffdf82;color:#fff}
+.mk-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.mk-grid>*{aspect-ratio:1;border-radius:4px;overflow:hidden}
+.mk-grid img{width:100%;height:100%;object-fit:cover}
+.mk-swatch-1{background:linear-gradient(135deg,#2f6e5a,#8fb7a3)}.mk-swatch-2{background:linear-gradient(135deg,#c9583b,#e8b33c)}
+.mk-curators{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+
+/* Link card */
+.mk-card{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;border:1px solid #1d1a1622;border-radius:8px;overflow:hidden;background:#fff;margin:8px 0 4px}
+.publisher-copy .mk-card img{width:96px;height:100%;min-height:84px;object-fit:cover;border-radius:0}
+.mk-card div{padding:10px 12px 10px 0;font-size:12.5px}
+
+/* Exhibition + review */
+.mk-carousel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 0}
+.mk-pin{background:#fff;border:1px solid #1d1a1618;border-radius:8px;padding:12px;font-size:12.5px}
+.mk-review{background:#fff;border:1px dashed #b99538;border-radius:8px;padding:14px;margin-top:16px}
+.mk-review-actions{display:flex;gap:8px;margin-top:10px}
+
+/* Exhibition group header */
+.mk-group-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.mk-group-head h4{font-family:var(--font-disp);font-size:20px;line-height:1.25;margin:0 0 2px;font-weight:600}
+.mk-spaces{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;font-size:12.5px}
+.mk-spaces .mk-tag{margin-left:0}
+
+/* Collection becomes: three large blocks */
+.museum-block{border-top:1px solid #ffffff22;padding-top:40px;margin-top:48px}
+.publishers .museum-block h3.museum-block-title{font-size:clamp(1.85rem,3.1vw,2.5rem);line-height:1.1;letter-spacing:-.03em;color:var(--color-ink);margin:0 0 16px;}
+.museum-block-title em{font-style:normal;color:var(--color-spark)}
+.publisher-copy .museum-block .museum-block-lead{font-size:1.125rem;line-height:1.6;color:var(--color-ink-2);margin:0 0 24px}
+.museum-become-eg{position:relative;border-left:4px solid #ffdf8233;padding:22px 24px 20px;margin:0 0 8px}
+.museum-become-eg span{display:block;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-spark);margin:0 0 8px}
+.publisher-copy .museum-become-eg p{font-family:var(--font-disp);font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.45;letter-spacing:-.01em;color:var(--color-ink);margin:0;max-width:none}
+.publisher-copy .museum-block figure{margin:28px 0 0}
+.mk-av-img{width:32px;height:32px;border-radius:50%!important;object-fit:cover;object-position:50% 25%}
+
+.publisher-copy .museum-boundaries{border-top:1px solid #ffffff22;padding-top:32px;margin-top:40px}
+
+.publisher-copy .museum-takeaway{font-family:var(--font-disp);font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;letter-spacing:-.02em;color:var(--color-ink);margin:32px 0 0;max-width:24ch}
+.museum-takeaway span{color:var(--color-spark)}
+
+/* Microblog comparison */
+.museum-compare{border:1px solid #ffffff22;border-radius:8px;overflow:hidden;margin:8px 0 24px}
+.museum-compare-head,.museum-compare-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}
+.museum-compare-head span{padding:12px 18px;font-family:var(--font-disp);font-weight:600;font-size:.9375rem;background:#ffffff0a}
+.museum-compare-head span+span{color:var(--color-spark)}
+.museum-compare-row{border-top:1px solid #ffffff1a}
+.publisher-copy .museum-compare-row p{margin:0;padding:12px 18px;font-size:.9375rem;max-width:none}
+.publisher-copy .museum-compare-row p:first-child{color:var(--color-ink-2)}
+.publisher-copy .museum-compare-row p+p{background:#ffdf820a;color:var(--color-ink)}
+
+@media(max-width:700px){
+.mk-art{grid-template-columns:1fr}.mk-art>img{max-width:220px}
+.mk-carousel{grid-template-columns:1fr}
+.mk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.museum-compare-head span{padding:10px 12px;font-size:.875rem}
+.publisher-copy .museum-compare-row p{padding:10px 12px;font-size:.875rem}
+.mk-c-reply{margin-left:20px}
+}
+</style>
