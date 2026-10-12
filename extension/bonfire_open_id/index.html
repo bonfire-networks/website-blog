@@ -363,13 +363,16 @@ ORCID_CLIENT_SECRET=
 GITHUB_CLIENT_SECRET=
 </code></pre>
 <h4 id="for-openid-connect-providers%3A">For OpenID Connect providers: <a class="direct-link" href="#for-openid-connect-providers%3A" target="_blank" rel="noopener">#</a></h4>
-<pre><code>OPENID_1_DISCOVERY=https://yourprovider.example/.well-known/openid-configuration
+<pre><code>OPENID_1_ISSUER=https://yourprovider.example
 OPENID_1_CLIENT_ID=your-client-id
 OPENID_1_CLIENT_SECRET=your-client-secret
 OPENID_1_DISPLAY_NAME=Your Provider Name
 OPENID_1_SCOPE=openid email profile
+OPENID_1_RESPONSE_TYPE=code
 OPENID_1_ENABLE_SIGNUP=false
 </code></pre>
+<p><code>OPENID_1_ISSUER</code> is the provider's issuer URL, with no path. OpenID Connect Discovery defines the document as the issuer plus <code>/.well-known/openid-configuration</code>, so that is all you need. If a provider serves its document somewhere non-standard, set the full URL in <code>OPENID_1_DISCOVERY</code> instead. When both are set, <code>OPENID_1_DISCOVERY</code> wins.</p>
+<p><code>OPENID_1_RESPONSE_TYPE</code> defaults to <code>code</code> and you will rarely want anything else. Note that <code>code</code> is a <em>response</em> type: <code>authorization_code</code> is a <em>grant</em> type, belongs in a different field, and will be rejected here.</p>
 <h4 id="for-oauth2-providers%3A">For OAuth2 providers: <a class="direct-link" href="#for-oauth2-providers%3A" target="_blank" rel="noopener">#</a></h4>
 <pre><code>OAUTH_1_AUTHORIZE_URI=https://yourprovider.example/authorize_example_path
 OAUTH_1_ACCESS_TOKEN_URI=https://yourprovider.example/token_example_path
@@ -450,11 +453,82 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 <span class="token comment"># List all active tokens</span>
 <span class="token module class-name">Bonfire</span><span class="token punctuation">.</span><span class="token module class-name">OpenID</span><span class="token punctuation">.</span><span class="token module class-name">Provider</span><span class="token punctuation">.</span><span class="token module class-name">ClientApps</span><span class="token punctuation">.</span><span class="token function">list_active_tokens</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h3 id="4.-configure-the-external-app">4. Configure the external app <a class="direct-link" href="#4.-configure-the-external-app" target="_blank" rel="noopener">#</a></h3>
+<p>Use the client ID and secret from step 2 to configure the client app you want to connect (and make sure it uses the redirect URI exactly as registered). An unregistered or mismatched redirect URI is refused, and no code is issued.</p>
+<h4 id="if-the-app-speaks-openid-connect">If the app speaks OpenID Connect <a class="direct-link" href="#if-the-app-speaks-openid-connect" target="_blank" rel="noopener">#</a></h4>
+<p>Most clients need only the issuer, which for a Bonfire instance is its base URL with no path:</p>
+<pre><code>https://your-bonfire-instance.tld
+</code></pre>
+<p>Clients that support discovery derive everything else from <code>&lt;issuer&gt;/.well-known/openid-configuration</code>. Some libraries want that full URL rather than deriving it, in which case give them the whole thing: <code>https://your-bonfire-instance.tld/.well-known/openid-configuration</code>.</p>
+<p>Then set:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>client_id</code> / <code>client_secret</code></td>
+<td>from step 2</td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td>exactly as registered</td>
+</tr>
+<tr>
+<td><code>response_type</code></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>e.g. <code>openid email profile</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="if-the-app-speaks-plain-oauth2">If the app speaks plain OAuth2 <a class="direct-link" href="#if-the-app-speaks-plain-oauth2" target="_blank" rel="noopener">#</a></h4>
+<p>Clients supporting RFC 8414 can instead read <code>/.well-known/oauth-authorization-server</code>, but some OAuth2 clients want each endpoint spelled out. Relative to the same base URL, these are:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>authorize</td>
+<td><code>/oauth/authorize</code></td>
+</tr>
+<tr>
+<td>token</td>
+<td><code>/oauth/token</code></td>
+</tr>
+<tr>
+<td>userinfo</td>
+<td><code>/oauth/userinfo</code></td>
+</tr>
+<tr>
+<td>revoke</td>
+<td><code>/oauth/revoke</code></td>
+</tr>
+<tr>
+<td>introspect</td>
+<td><code>/oauth/introspect</code></td>
+</tr>
+<tr>
+<td>JWKS</td>
+<td><code>/openid/jwks</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="response_type-vs-grant_type">response_type vs grant_type <a class="direct-link" href="#response_type-vs-grant_type" target="_blank" rel="noopener">#</a></h4>
+<p>These are different fields and the values are not interchangeable, which is a common source of confusion:</p>
 <ul>
-<li>In your client app, set the Bonfire instance as the OpenID Connect or OAuth2 provider.</li>
-<li>Use the client ID and secret generated in step 2.</li>
-<li>Make sure the redirect URIs matches what you registered.</li>
+<li><code>response_type=code</code> goes on the request to <code>/oauth/authorize</code> or <code>/openid/authorize</code>.</li>
+<li><code>grant_type=authorization_code</code> goes on the request to <code>/oauth/token</code> or <code>/openid/token</code>.</li>
 </ul>
+<p>Valid response types here are <code>code</code>, <code>id_token</code>, <code>token</code>, <code>id_token token</code>, <code>code id_token</code>, <code>code token</code> and <code>code id_token token</code>. A grant type in the <code>response_type</code> field is rejected, though <code>authorization_code</code> and <code>implicit</code> are mapped to their response-type equivalents for the benefit of clients that send them.</p>
 <h3 id="provider-endpoints">Provider endpoints <a class="direct-link" href="#provider-endpoints" target="_blank" rel="noopener">#</a></h3>
 <table>
 <thead>
@@ -497,22 +571,44 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 <td>Provider: JWKS endpoint</td>
 </tr>
 <tr>
+<td><code>/openid/register</code></td>
+<td>Provider: dynamic client registration</td>
+</tr>
+<tr>
 <td><code>/.well-known/openid-configuration</code></td>
-<td>Provider: discovery endpoint</td>
+<td>Provider: OpenID Connect discovery</td>
+</tr>
+<tr>
+<td><code>/.well-known/oauth-authorization-server</code></td>
+<td>Provider: OAuth2 metadata (RFC 8414)</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="supported-grant-types">Supported Grant Types <a class="direct-link" href="#supported-grant-types" target="_blank" rel="noopener">#</a></h2>
-<p>Bonfire should support all standard OAuth2 and OpenID Connect grant types:</p>
+<p>Sent as <code>grant_type</code> on a request to the token endpoint, <code>/oauth/token</code> or <code>/openid/token</code>:</p>
 <ul>
-<li>Authorization Code</li>
-<li>Implicit</li>
-<li>Hybrid</li>
-<li>Client Credentials</li>
-<li>Resource Owner Password Credentials</li>
+<li><code>authorization_code</code></li>
+<li><code>implicit</code></li>
+<li><code>password</code></li>
+<li><code>client_credentials</code></li>
+<li><code>refresh_token</code></li>
 </ul>
-<p>Redirect URIs must match what is registered for each client.</p>
+<p>Published in the discovery document as <code>grant_types_supported</code>.</p>
+<h2 id="supported-response-types">Supported Response Types <a class="direct-link" href="#supported-response-types" target="_blank" rel="noopener">#</a></h2>
+<p>Sent as <code>response_type</code> on a request to the authorize endpoint, <code>/oauth/authorize</code> or <code>/openid/authorize</code>:</p>
+<ul>
+<li><code>code</code></li>
+<li><code>id_token</code></li>
+<li><code>token</code></li>
+<li><code>id_token token</code></li>
+<li><code>code id_token</code></li>
+<li><code>code token</code></li>
+<li><code>code id_token token</code></li>
+</ul>
+<p>Published in the discovery document as <code>response_types_supported</code>.</p>
+<h2 id="redirect-uris">Redirect URIs <a class="direct-link" href="#redirect-uris" target="_blank" rel="noopener">#</a></h2>
+<p>Must match what is registered for each client, exactly. Bonfire issues no code or token to an unregistered callback.</p>
 <h2 id="supported-scopes-and-claims">Supported Scopes and Claims <a class="direct-link" href="#supported-scopes-and-claims" target="_blank" rel="noopener">#</a></h2>
 <ul>
 <li>Standard scopes like <code>openid</code>, <code>email</code>, and <code>profile</code> are supported.</li>
@@ -524,6 +620,9 @@ To enable Bonfire as an SSO provider, set the following environment variable:</p
 <li><strong>Login not working?</strong> Double-check client IDs, secrets, and redirect URIs.</li>
 <li><strong>Provider not listed?</strong> Make sure the relevant environment variables are set and the Bonfire instance has been restarted.</li>
 <li><strong>Callback errors?</strong> Ensure the callback URL matches exactly between Bonfire and the provider’s configuration.</li>
+<li><strong><code>Invalid response_type param</code>?</strong> The client sent a grant type where a response type belongs. Use <code>response_type=code</code>, see <a href="#response_type-vs-grant_type" target="_blank" rel="noopener">response_type vs grant_type</a>.</li>
+<li><strong>Client refuses to redirect, or reports the response type is unsupported?</strong> Could be a similar mix-up, caught at the client end by comparing its configured response type against <code>response_types_supported</code> in the discovery document.</li>
+<li><strong>Unregistered redirect URI?</strong> Register it first, via the <code>curl</code> or <code>iex</code> commands in step 2. Bonfire issues no code to an unregistered callback, by design.</li>
 </ul>
 <hr>
 <h2 id="copyright-and-license">Copyright and License <a class="direct-link" href="#copyright-and-license" target="_blank" rel="noopener">#</a></h2>
@@ -562,7 +661,7 @@ License along with this program.  If not, see <a href="https://www.gnu.org/licen
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">23 Sep 2026</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">09 Oct 2026</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
             
           
