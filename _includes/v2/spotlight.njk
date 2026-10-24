@@ -1,0 +1,19 @@
+{# ============================================================
+   V2 · 01b · Spotlight carousel of pinned posts from bonfire.cafe
+   pins_embed.js inserts its iframe right after the script tag
+   ============================================================ #}
+{# same link style as gather's "more", without its top margin since it sits in the kicker row #}
+{% set cta = "inline-flex items-center gap-[9px] pb-[3px] font-smono text-[.8rem] tracking-[.05em] text-spark border-b border-spark/35 hover:border-spark" %}
+
+<section id="spotlight" class="py-12 border-t border-ink/[0.07] scroll-mt-[70px]">
+<div class="max-w-[1140px] mx-auto px-7">
+  <div class="flex items-baseline justify-between gap-4">
+    <p class="font-smono text-[1rem] font-bold tracking-[.18em] text-flame">Spotlight</p>
+    <a href="https://bonfire.cafe/@bonfire" class="{{ cta }}">Follow @bonfire@bonfire.cafe <span aria-hidden="true">→</span></a>
+  </div>
+  <p class="mt-5 text-[1.05rem] text-ink-2 max-w-[40rem]">The latest stories and updates from the Bonfire team. Follow along from any fediverse account.</p>
+  <div class="">
+    <script src="https://bonfirenetworks.org/js/pins_embed.js" data-variant="carousel" data-theme="dark" async></script>
+  </div>
+</div>
+</section>
