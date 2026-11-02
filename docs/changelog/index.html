@@ -352,6 +352,8 @@ SPDX-License-Identifier: CC0-1.0
 <li>📝 The app can optionally use a YugabyteDB database (thanks @mayel)</li>
 <li>📝 Communities can use their own vocabulary for widget titles (thanks @mayel)</li>
 <li>📝 International handles, supporting unicode usernames (for remote users, and optionally for creating local ones) and domain names (thanks @mayel)</li>
+<li>🔒 Posts and activities are now signed with object integrity proofs (FEP-8b32), and proofs on what arrives are checked, so a post passed on by a group or another server can be trusted by its author's own signature. Groups pass on their members' activities unchanged, so those proofs still verify. Tested with Mastodon, Mitra and Fedify (thanks @mayel)</li>
+<li>✨ Replies to your posts from people on other servers now reach your followers on other servers too, as do edits and deletions of those replies (inbox forwarding). Only replies signed by their author are passed on, exactly as received, so their followers can trust them. Tested with Mastodon, Mitra and Fedify (thanks @mayel)</li>
 </ul>
 <h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
 <ul>
@@ -368,6 +370,8 @@ SPDX-License-Identifier: CC0-1.0
 <li>✨ Show your password while creating an account <a href="https://github.com/bonfire-networks/bonfire-app/issues/2346" target="_blank" rel="noopener">#2346</a> (thanks @sarahsquirrel and @ivanminutillo)</li>
 <li>🚀 More system tuning, and a database healthcheck (thanks @mayel)</li>
 <li>📝 Mastodon API improvements (thanks @ivanminutillo)</li>
+<li>🚀 Fetching a post again from its server now keeps the newer copy, and a post deleted on its server is deleted here too (thanks @mayel)</li>
+<li>📝 The federation guide documents object integrity proofs and inbox forwarding, with interop results (thanks @mayel)</li>
 <li>👷 Better syntax highlighting in code blocks <a href="https://github.com/bonfire-networks/bonfire-app/issues/1205" target="_blank" rel="noopener">#1205</a> (thanks @mayel)</li>
 <li>📝 Deployment docs, including installing with Co-op Cloud <a href="https://github.com/bonfire-networks/bonfire-app/issues/1512" target="_blank" rel="noopener">#1512</a> <a href="https://github.com/bonfire-networks/bonfire-app/pull/2267" target="_blank" rel="noopener">PR #2267</a> (thanks @mayel and @jeppebundsgaard)</li>
 <li>📝 Revived the nix devShell <a href="https://github.com/bonfire-networks/bonfire-app/pull/2332" target="_blank" rel="noopener">PR #2332</a> (thanks @merutam)</li>
@@ -388,6 +392,7 @@ SPDX-License-Identifier: CC0-1.0
 <li>🐛 Fixed &quot;Sorry, a function didn't receive the data it expected&quot; errors <a href="https://github.com/bonfire-networks/bonfire-app/issues/2158" target="_blank" rel="noopener">#2158</a> (thanks @btfreeorg and @mayel)</li>
 <li>🐛 Fixed topic posts in groups missing where they were published and orphaned replies in threads (thanks @ivanminutillo)</li>
 <li>🐛 Fixed typos <a href="https://github.com/bonfire-networks/bonfire-app/pull/2308" target="_blank" rel="noopener">PR #2308</a> (thanks @btfreeorg)</li>
+<li>🐛 Activities from deactivated remote accounts are now refused cleanly, instead of failing with an error (thanks @mayel)</li>
 </ul>
 <h2 id="bonfire-%5B1.0.7-(2026-08-30)%5D">Bonfire [1.0.7 (2026-08-30)] <a class="direct-link" href="#bonfire-%5B1.0.7-(2026-08-30)%5D" target="_blank" rel="noopener">#</a></h2>
 <h3 id="added-1">Added <a class="direct-link" href="#added-1" target="_blank" rel="noopener">#</a></h3>
