@@ -768,6 +768,7 @@ layout: layouts/base.njk
       <div class="telling-hero-actions">
         <a href="#telling-embed" class="btn btn-lg btn-primary">Get the embed</a>
         <a href="#telling-how" class="btn btn-lg btn-outline border-base-content/30">See how it works</a>
+        <a href="https://docs.bonfirenetworks.org/embedded-comments.html" class="btn btn-lg btn-ghost">Read the docs</a>
       </div>
       <p class="mt-5 text-sm text-base-content/60">
         Try it before you install it: we run the Telling on this very site. Leave a reply on <a href="/blog" class="text-primary hover:underline">any of our posts</a> and watch it federate.
@@ -840,51 +841,8 @@ layout: layouts/base.njk
     </div>
 
     <div class="mt-10 max-w-2xl">
-      <h3 class="text-lg font-bold text-base-content mb-1">Options</h3>
-      <p class="text-base text-base-content/60 mb-5">Only <code>src</code> is required. The thread defaults to the current page URL, so on most sites the tag above is all you need. Add any of these <code>data-</code> attributes to tune it:</p>
-      <dl class="divide-y divide-base-content/10 border-y border-base-content/10 text-sm">
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-theme</dt>
-          <dd class="text-base-content/70">DaisyUI theme to apply inside the widget, e.g. <code>"dark"</code> or <code>"light"</code>.</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-mode</dt>
-          <dd class="text-base-content/70">Initial thread display: <code>"flat"</code> or <code>"nested"</code> (default: the instance/user setting).</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-sort-by</dt>
-          <dd class="text-base-content/70">Initial sort: <code>"latest_reply"</code>, <code>"reply_count"</code>, <code>"boost_count"</code>, <code>"like_count"</code>, <code>"popularity_score"</code>, or <code>"newest"</code> (default: thread order).</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-sort-order</dt>
-          <dd class="text-base-content/70">Sort direction for the chosen sort: <code>"asc"</code> or <code>"desc"</code> (default: per sort type).</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-media-uri</dt>
-          <dd class="text-base-content/70">Find or create the thread for this URL (default: the current page URL).</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-canonical-slug</dt>
-          <dd class="text-base-content/70">Match the thread by the post's slug on your own site (e.g. a Ghost post slug) instead of the URL.</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-canonical-id</dt>
-          <dd class="text-base-content/70">Match the thread by the post's ID on your own site (e.g. a Ghost post ID).</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-post-id</dt>
-          <dd class="text-base-content/70">Target a specific Bonfire post/thread ID directly (otherwise the media URI is used).</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-published-at</dt>
-          <dd class="text-base-content/70">Publication date of the article (ISO 8601 or <code>YYYY-MM-DD</code>). Backdates a newly created thread, so a backfilled or older article doesn't jump to the top of feeds. Future dates are ignored. Ghost articles are already backdated via the API, so this is mainly for other sites.</dd>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[210px_1fr] gap-1 sm:gap-5 py-3">
-          <dt class="font-mono text-primary">data-token-max-age</dt>
-          <dd class="text-base-content/70">Hours before the stored sign-in token is treated as stale and the reader is asked to re-authenticate (default: <code>720</code>, i.e. 30 days). The server enforces a hard maximum regardless.</dd>
-        </div>
-      </dl>
-    </div>
+      <p class="text-base text-base-content/60">Note: Your Bonfire instance needs to list your site as allowed to show the Telling. For docs on that setting, plus all the options (theme, sorting, which thread to show…) and how to help fediverse servers find your threads, see the <a class="link link-primary" href="https://docs.bonfirenetworks.org/embedded-comments.html">Telling documentation</a>.</p>    </div>
+
   </div>
 </section>
 
@@ -1512,6 +1470,7 @@ layout: layouts/base.njk
     </p>
     <div class="flex gap-4 justify-center flex-wrap">
       <a href="#telling-embed" class="btn btn-lg btn-primary">Get started</a>
+      <a href="https://docs.bonfirenetworks.org/embedded-comments.html" class="btn btn-lg btn-outline border-base-content/30">Read the docs</a>
       <a href="https://github.com/bonfire-networks" class="btn btn-lg btn-outline border-base-content/30">View on GitHub</a>
     </div>
   </div>
