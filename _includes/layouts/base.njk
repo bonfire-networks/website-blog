@@ -2,6 +2,13 @@
 <html data-theme="dark" class="bg-base-100 w-full antialiased" lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    {% if templateClass == "tmpl-post" %}
+    {#- Points fediverse servers at this post's Telling thread. embedLookup is the address the Telling uses (data-media-uri in post.njk); posts syndicated from Bonfire look up their existing thread by tellingPostId instead (posts/posts.11tydata.js). The activityThread filter (.eleventy.js) swaps the lookup for the thread's exact ActivityPub address at build time, which Mastodon needs, and falls back to embedLookup when the server doesn't redirect. #}
+    {%- set embedLookup = metadata.telling.instance + "/comments/embed?media_uri=" + ((metadata.telling.siteRoot + page.url) | urlencode) %}
+    {%- set threadLookup = metadata.telling.instance + "/post/" + tellingPostId if tellingPostId else embedLookup %}
+    <link rel="alternate" type="application/activity+json" href="{{ threadLookup | activityThread(embedLookup) }}">
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
@@ -39,7 +46,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">

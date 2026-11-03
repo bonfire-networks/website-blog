@@ -62,13 +62,9 @@ templateClass: tmpl-post
 
       {# ===== the Telling: federated comments =====
           #}
-      {%- set tellingInstance = "https://bonfire.cafe" %}
-      {%- set siteRoot = "https://bonfirenetworks.org" %}
-      {# Posts syndicated from Bonfire already have a thread over there, so target it by
-         id rather than creating a second one keyed to this page's URL. Splitting on the
-         shared "/markdown/" segment covers both /post/markdown/<id> and
-         /discussion/markdown/<id>. #}
-      {%- set tellingPostId = remoteUrl.split("/markdown/")[1].split("?")[0].split("#")[0].split("/")[0] if remoteUrl and "/markdown/" in remoteUrl else false %}
+      {%- set tellingInstance = metadata.telling.instance %}
+      {%- set siteRoot = metadata.telling.siteRoot %}
+      {# tellingPostId is computed in posts/posts.11tydata.js: set for posts syndicated from Bonfire, so the Telling targets their existing thread. #}
       <section
         class="mt-16 border-y border-ink/[0.07] bg-night-2 py-12 md:mt-24"
         style="width: 100vw; margin-left: calc(50% - 50vw);"

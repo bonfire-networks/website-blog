@@ -9,6 +9,8 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const EleventyFetch = require("@11ty/eleventy-fetch");
+const { AssetCache } = EleventyFetch;
+const { resolveActivityThread } = require("./lib/activityThread");
 const axios = require('axios');
 const matter = require('gray-matter');
 
@@ -32,6 +34,26 @@ module.exports = function(eleventyConfig) {
     } catch (e) {
       callback(null, "");
     }
+  });
+
+  /**
+   * Build-time lookup of a Telling thread's exact ActivityPub address, for the activity+json alternate link in base.njk. Mastodon only follows a link that is the thread's exact address, not one that redirects there.
+   *
+   * Resolved addresses are cached for 30 days in .cache/. Failures aren't cached, so a thread that doesn't exist yet gets retried on the next build.
+   *
+   * Usage: {{ lookupUrl | activityThread(fallbackUrl) }}
+   *
+   * @param {string} lookupUrl URL that redirects to the thread, e.g. <instance>/comments/embed?media_uri=<encoded page url> or <instance>/post/<id>.
+   * @param {string} fallbackUrl Returned when lookupUrl doesn't redirect. Bonfire still follows it.
+   * @returns {string} The redirect target, or fallbackUrl.
+   */
+  eleventyConfig.addNunjucksAsyncFilter("activityThread", async function (lookupUrl, fallbackUrl, callback) {
+    if (!lookupUrl) return callback(null, fallbackUrl || "");
+    const cache = new AssetCache(`activityThread:${lookupUrl}`);
+    if (cache.isCacheValid("30d")) return callback(null, await cache.getCachedValue());
+    const resolved = await resolveActivityThread(lookupUrl);
+    if (resolved) await cache.save(resolved, "text");
+    callback(null, resolved || fallbackUrl || lookupUrl);
   });
 
   // Build-time fetch of an arbitrary remote image → cached, inlined as a data

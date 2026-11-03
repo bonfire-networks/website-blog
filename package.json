@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "del-cli _site",
     "start": "npm run clean && concurrently \"eleventy --watch --serve\" \"postcss css/index.css --o _site/css/style_v2.css --watch\"",
-    "build": "npm run clean && ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss css/index.css --o _site/css/style_v2.css"
+    "build": "npm run clean && ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss css/index.css --o _site/css/style_v2.css",
+    "test": "node --test lib/"
   },
   "repository": {
     "type": "git",

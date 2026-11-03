@@ -5,6 +5,20 @@ module.exports = {
   tags: ["posts"],
   layout: "layouts/post.njk",
   eleventyComputed: {
+    /**
+     * Bonfire post id of a post syndicated from Bonfire, or false.
+     *
+     * These posts already have a thread on Bonfire, so the Telling (data-post-id in post.njk) and the activity+json link (base.njk) target it by id instead of creating a second thread keyed to this page's URL. Splitting on the shared "/markdown/" segment covers both /post/markdown/<id> and /discussion/markdown/<id>.
+     *
+     * @param {object} data Eleventy data cascade for the page.
+     * @returns {string|false} The id, e.g. "01K0V1SMG2934JRQC59EQMN620".
+     */
+    tellingPostId: (data) => {
+      const url = data.remoteUrl;
+      if (!url || !url.includes("/markdown/")) return false;
+      return url.split("/markdown/")[1].split(/[?#/]/)[0] || false;
+    },
+
     // Fetch remote content if remoteUrl is specified
 
     canonicalUrl: async (data) => {
