@@ -1,0 +1,32 @@
+<style>
+/* Parks page: layered on publisher-styles and museum-styles */
+
+/* Numbered example */
+.park-steps{list-style:none;counter-reset:step;padding:0;margin:28px 0}
+.publisher-copy .park-steps li{counter-increment:step;position:relative;padding:0 0 22px 50px;margin:0;max-width:65ch}
+.park-steps li::before{content:counter(step);position:absolute;left:0;top:-1px;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#ffdf82;color:#231e17;font-weight:700;font-size:.875rem}
+.park-steps li::after{content:"";position:absolute;left:14.5px;top:33px;bottom:4px;width:1px;background:#ffffff2e}
+.park-steps li:last-child{padding-bottom:0}.park-steps li:last-child::after{display:none}
+
+/* Timeline */
+.park-timeline{border:1px solid #ffffff22;border-radius:8px;overflow:hidden;margin:8px 0 24px}
+.park-timeline div{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr)}
+.park-timeline div+div{border-top:1px solid #ffffff1a}
+.park-timeline dt{padding:14px 18px;font-family:var(--font-disp);font-weight:600;color:var(--color-spark);background:#ffffff0a}
+.park-timeline dd{margin:0;padding:14px 18px}
+
+/* Group mockup */
+.mk-park .mk-post{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px}
+.mk-park .mk-post .mk-actions{margin-top:10px}
+.mk-park .mk-tag{margin-left:0;margin-right:6px}
+.mk-tag-red{background:#4a2420!important;color:#f5b3a8!important}
+.mk-alert{border-color:#c9583b88}
+.mk-album{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:12.5px}
+.mk-album-bar{flex:1;min-width:120px;height:8px;border-radius:999px;background:#ffffff1a;overflow:hidden}
+.mk-album-bar i{display:block;width:62%;height:100%;background:#ffdf82}
+
+@media(max-width:700px){
+.park-timeline div{grid-template-columns:1fr}
+.park-timeline dd{padding-top:10px}
+}
+</style>
