@@ -83,12 +83,13 @@ New to groups? Start with our [guide to groups](https://docs.bonfirenetworks.org
 
 To get things started, we're opening a few groups of our own, each with a mission, and you can join them from your existing fediverse account:
 
-* [Bonfire for Communities](https://bonfire.cafe/pub/group/01M6H0P4N7NBMB6ZNYFCVG1EYZ): the people using and building Bonfire, deciding together where it goes next.
+* [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks): general discussion group
+* [Bonfire for Communities](https://bonfire.cafe/pub/group/01M6H0P4N7NBMB6ZNYFCVG1EYZ): communities who are using and building it, deciding together where it goes next.
 * [Bonfire for Open Science](https://bonfire.cafe/pub/group/01M6H0PS09YC5QXXV1844XJDPK): researchers sharing work and making knowledge in the open.
 * [Bonfire for Mutual Aid](https://bonfire.cafe/pub/group/01M6H0QJK4V8MTR7MT4WBYYZ77): groups organising care, gifts and help in their neighbourhoods, co-designing tools and pushing the boundaries of mutual aid networks.
 * [Bonfire for Publishers](https://bonfire.cafe/pub/group/01M6H0R24Q3JAN0DFHG8TBS6N4): publishers, newsrooms and independent magazines sharing how they turn readers into a community, from conversations around articles to reader groups of their own.
 
-For what applies across all of them, the umbrella group [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks) has topics for different areas:
+For what applies across all of them, the general [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks) group has topics for different areas:
 
 * [Testing & Feedback](https://bonfire.cafe/group/Bonfire_Networks/topic/Testing_Feedback): try new features and tell us what works and what breaks.
 * [UX & Design](https://bonfire.cafe/group/Bonfire_Networks/topic/UX_Design): help shape how Bonfire looks and works.
