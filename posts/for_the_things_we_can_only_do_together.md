@@ -9,11 +9,11 @@ author: Bonfire Builders
 
 ---
 
-In 1895, H. G. Wells [sent a time traveller](https://www.gutenberg.org/ebooks/35) to the year 802,701, where he found childlike, carefree people living in apparent paradise, fed and clothed without ever working or thinking for it, completely unaware of the machinery and labour behind it all, hidden underground.
+In 1895, H. G. Wells [sent a time traveller](https://www.gutenberg.org/ebooks/35) to the year 802,701, where he found childlike, carefree people living in apparent paradise, fed and clothed without ever working or thinking for it, never suspecting that people underground were toiling to provide for them, let alone why.
 
 Half a century later, George [Orwell](https://en.wikipedia.org/wiki/Nineteen_Eighty-Four) showed how authoritarians turn care into control: the omnipresent screen, always watching and shaping us.
 
-In 1984, Apple launched the Macintosh with [an ad](https://www.youtube.com/watch?v=ErwS24cBZPc) that borrowed Orwell's imagery, hurling a hammer through the giant screen and setting the audience free. The ad sold liberation, but three years later Apple showed its vision for the future: the [Knowledge Navigator](https://www.youtube.com/watch?v=umJsITGzXd0) shows a solitary professor in a spacious study, talking to a bow-tied autonomous agent on a tablet that manages his research, his calendar and his calls. Big Brother had been smashed, just to be replaced by a butler, the same screen behind a friendlier mask.
+In 1984, Apple launched the Macintosh with [an ad](https://www.youtube.com/watch?v=ErwS24cBZPc) that borrowed Orwell's imagery, hurling a hammer through the giant screen and setting the audience free. The ad sold liberation, but three years later Apple revealed its vision for the future: the [Knowledge Navigator](https://www.youtube.com/watch?v=umJsITGzXd0) shows a solitary professor in a spacious study, talking to a bow-tied autonomous agent on a tablet that manages his research, his calendar and his calls. Big Brother had been smashed, just to be replaced by a butler, the same screen behind a friendlier mask.
 
 Nearly forty years on, that vision is being delivered almost shot for shot, in every chatbot, agent and AI assistant now offering to run our lives. The gadget arrived, but the life around it didn't: as one commenter under the video points out, today that professor would more likely be an untenured adjunct living in a van than a man with a study bigger than most living rooms.
 
@@ -29,7 +29,7 @@ The release out today is an invitation to start making other futures, together.
 
 This release is built around one idea: equipping groups to organise, from their first conversation to their toughest decision.
 
-### Groups
+### Groups, reworked with their communities
 
 A group is an online space with its own members, goals, rules and moderation team, whether it's for a project, a neighbourhood, a working group or a whole organisation. Since July's launch, we've reworked them with the communities using them. Deciding who takes part, and how, is what turns a group into a real community, so it's theirs to make.
 
@@ -51,7 +51,7 @@ Open networks and announcement channels federate today. Local communities and pr
 
 Compatibility still comes first. With no standard yet, we took the long way round: we studied how many existing apps federate today, and tried to make Bonfire's groups work with them, so that we adapt to them and they don't have to adapt to us. And we're bringing what we learned along the way back to the W3C task force, so the eventual standard fits how groups already work as much as possible.
 
-### Topics
+### A room for every topic
 
 Topics were improved to help groups give every project, question or team its own space, so conversations don't get lost in the noise and newcomers can jump straight into what interests them. Topics in a public group now federate too, so people on other servers can follow and join them.
 
@@ -83,7 +83,7 @@ New to groups? Start with our [guide to groups](https://docs.bonfirenetworks.org
 
 To get things started, we're opening a few groups of our own, each with a mission, and you can join them from your existing fediverse account:
 
-* [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks): general discussion group
+* [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks): general group to share news/discussions/questions about Bonfire
 * [Bonfire for Communities](https://bonfire.cafe/pub/group/01M6H0P4N7NBMB6ZNYFCVG1EYZ): communities who are using and building it, deciding together where it goes next.
 * [Bonfire for Open Science](https://bonfire.cafe/pub/group/01M6H0PS09YC5QXXV1844XJDPK): researchers sharing work and making knowledge in the open.
 * [Bonfire for Mutual Aid](https://bonfire.cafe/pub/group/01M6H0QJK4V8MTR7MT4WBYYZ77): groups organising care, gifts and help in their neighbourhoods, co-designing tools and pushing the boundaries of mutual aid networks.
@@ -115,7 +115,7 @@ Thank you to everyone who chipped in towards the maintenance and groups goals in
 
 ## Human After All
 
-Daft Punk once [said](https://www.npr.org/2013/05/16/184499357/daft-punk-on-the-soul-that-a-musician-can-bring) that computers "could do the music instead of us", and that while they "couldn't have done our project, definitely, without technology", "we don't really feel that's where the fun is". Neither do we. Bonfire is software, of course, but communities decide what it's for, what it becomes and who it serves, and the work itself is something we share.
+Daft Punk once [said](https://www.npr.org/2013/05/16/184499357/daft-punk-on-the-soul-that-a-musician-can-bring) that computers "could do the music instead of us", and that while "we couldn't have done our project, definitely, without technology", "we don't really feel that's where the fun is". Neither do we. Bonfire is software, of course, but communities decide what it's for, what it becomes and who it serves, and the work itself is something we share.
 
 So bring your people. Whether you gather **to learn, to rise up, to organise or to celebrate**, start a group from the account you already have, or set up a Bonfire of your own, and make it yours.
 
