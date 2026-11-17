@@ -60,7 +60,7 @@ description: Bonfire in the news. Press coverage, fact sheet, press kit and medi
     <section id="coverage" aria-labelledby="coverage-heading" class="{{ section }}">
     <div class="{{ wrap }}">
       <p class="{{ eyebrow }} text-corn">Coverage</p>
-      <h2 id="coverage-heading" class="{{ display }}">Everything written about us.</h2>
+      <h2 id="coverage-heading" class="{{ display }}">What people have written about us.</h2>
       <p class="{{ lede }}">Newest first. Missing something? <a href="mailto:team@bonfire.cafe" class="text-spark hover:underline">Let us know</a>.</p>
 
       <div class="mt-10">
@@ -70,7 +70,8 @@ description: Bonfire in the news. Press coverage, fact sheet, press kit and medi
           <ul>
             {% for item in press_coverage.items %}
               {% set year = item.date.slice(0,4) %}
-              {% if (group[1] == "earlier" and year != "2026" and year != "2025") or year == group[1] %}
+              {#- Entries with a "todo" (missing or placeholder link) stay hidden until it's resolved and removed. #}
+              {% if not item.todo and ((group[1] == "earlier" and year != "2026" and year != "2025") or year == group[1]) %}
               <li class="grid grid-cols-[1fr_auto] sm:grid-cols-[14rem_1fr_5.5rem] gap-x-6 py-3 border-b border-ink/[0.07] last:border-b-0">
                 <span class="text-sm text-ink-3 sm:pt-[3px]">{{ item.outlet }}</span>
                 <span class="text-sm text-ink-3 tabular-nums text-right sm:order-last sm:pt-[3px]">{% if item.date.length >= 7 %}{{ dateLabel(item.date) }}{% endif %}</span>
