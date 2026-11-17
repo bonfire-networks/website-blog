@@ -1,0 +1,148 @@
+---
+layout: layouts/base.njk
+title: Press kit
+description: Bonfire press kit. Fact sheet, logos, screenshots and illustrations, free to use when writing about Bonfire Networks.
+---
+
+{# Shares the About page's design tokens (night / ink / flame, font-disp). #}
+{% set wrap = "max-w-[1180px] mx-auto px-7" %}
+{% set eyebrow = "font-smono text-[1rem] font-bold tracking-[.18em]" %}
+{% set display = "mt-4 font-disp font-[560] text-[clamp(1.6rem,3vw,2.3rem)] leading-[1.06] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set lede = "mt-4 text-[1.05rem] text-ink-2 max-w-[42rem]" %}
+{% set section = "py-16 border-t border-ink/[0.07] scroll-mt-24" %}
+{% set tile = "group block rounded-xl overflow-hidden border border-ink/15 hover:border-flame/40 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flame" %}
+{% set dl = "text-sm text-ink-2 hover:text-spark underline underline-offset-4 decoration-ink/25 hover:decoration-spark inline-flex items-center min-h-11" %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ===== header ===== #}
+    <header class="pt-10 pb-16">
+    <div class="{{ wrap }}">
+      <h1 class="mt-4 font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] max-w-[22ch] text-balance [font-variation-settings:'opsz'_96]">Bonfire <span class="fire-text">press kit</span>.</h1>
+      <p class="mt-[18px] font-disp text-[clamp(1.15rem,2.2vw,1.5rem)] leading-[1.3] max-w-[46ch]">The facts, logos, screenshots and artwork you need to write about Bonfire. Free to use.</p>
+      <nav aria-label="On this page" class="mt-8 flex flex-wrap gap-x-6 gap-y-1 text-[.95rem]">
+        <a href="#facts" class="{{ dl }}">Fact sheet</a>
+        <a href="#logo" class="{{ dl }}">Logo</a>
+        <a href="#screenshots" class="{{ dl }}">Screenshots</a>
+        <a href="#illustrations" class="{{ dl }}">Illustrations</a>
+        <a href="#contact" class="{{ dl }}">Media contact</a>
+        <a href="/press/" class="{{ dl }}">Press coverage <span aria-hidden="true">→</span></a>
+      </nav>
+    </div></header>
+
+    {# ===== fact sheet ===== #}
+    <section id="facts" aria-labelledby="facts-heading" class="{{ section }}">
+    <div class="{{ wrap }}">
+      <p class="{{ eyebrow }} text-flame">Fact sheet</p>
+      <h2 id="facts-heading" class="{{ display }}">The essentials, ready to quote.</h2>
+      <dl class="mt-10 grid sm:grid-cols-[11rem_1fr] max-w-[52rem] border-t border-ink/[0.07]">
+        {% for row in [
+          ["What", "Open-source software for building federated, community-governed digital spaces"],
+          ["Started", "2021"],
+          ["Latest release", "Bonfire 1.1 (November 2026)"],
+          ["Protocol", "ActivityPub, with bridging to ATProto (Bluesky)"],
+          ["Stack", "Elixir, Phoenix LiveView, PostgreSQL"],
+          ["License", "AGPL-3.0"],
+          ["Funding", "Commissioned work building features and spaces with partner communities, an NLnet / NGI Zero grant, and community crowdfunding"],
+          ["Founders", "Ivan Minutillo, Mayel de Borniol"]
+        ] %}
+        <dt class="pt-3 sm:py-3 text-sm text-ink-3 sm:border-b border-ink/[0.07]">{{ row[0] }}</dt>
+        <dd class="pb-3 sm:py-3 border-b border-ink/[0.07]">{{ row[1] }}</dd>
+        {% endfor %}
+      </dl>
+    </div></section>
+
+    {# ===== press kit ===== #}
+    <section id="assets" aria-labelledby="kit-heading" class="{{ section }}">
+    <div class="{{ wrap }}">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="{{ eyebrow }} text-corn">Assets</p>
+          <h2 id="kit-heading" class="{{ display }}">Logos, screenshots and artwork.</h2>
+          <p class="{{ lede }}">Click any image for the full-resolution file.</p>
+        </div>
+        <a href="https://drive.google.com/drive/u/0/folders/1QF4ehzEW1JIejp2mCO8nGp-KEh8idEGU" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-11 px-5 rounded-full bg-flame text-[#160c02] font-semibold hover:bg-spark transition-colors">
+          <i class="ph-duotone ph-download-simple text-lg" aria-hidden="true"></i> Full media kit
+        </a>
+      </div>
+      <p class="mt-3 text-sm text-ink-3">Last updated November 5, 2025</p>
+
+      {# Logos #}
+      <h3 id="logo" class="mt-14 scroll-mt-24 font-disp font-[600] text-[1.25rem]">Logo</h3>
+      <ul class="mt-5 grid gap-5 grid-cols-2 lg:grid-cols-4">
+        {% for logo in [
+          { name: "Colour", file: "bonfire_media_kit_logo", bg: "bg-night-2 p-6", img: "w-3/4 h-3/4 object-contain" },
+          { name: "On red", file: "bonfire_media_kit_logo_on_red", bg: "", img: "w-full h-full object-cover" },
+          { name: "Black", file: "bonfire_media_kit_logo_transparent", bg: "bg-ink p-6", img: "w-3/4 h-3/4 object-contain" },
+          { name: "White", file: "bonfire_media_kit_logo_transparent_black_bg", bg: "", img: "w-full h-full object-cover" }
+        ] %}
+        <li>
+          <div class="rounded-xl overflow-hidden border border-ink/15 {{ logo.bg }} aspect-square grid place-items-center">
+            <img src="/img/press/thumbs/{{ logo.file }}.png" alt="Bonfire logo, {{ logo.name | lower }}" width="360" height="360" loading="lazy" class="{{ logo.img }}" />
+          </div>
+          <p class="mt-2 flex items-center justify-between gap-3">
+            <span class="text-sm font-semibold">{{ logo.name }}</span>
+            <span class="flex gap-4">
+              <a href="/img/press/logo/{{ logo.file }}.svg" download class="{{ dl }}" aria-label="{{ logo.name }} logo, SVG">SVG</a>
+              <a href="/img/press/logo/{{ logo.file }}.png" download class="{{ dl }}" aria-label="{{ logo.name }} logo, PNG">PNG</a>
+            </span>
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {# Screenshots #}
+      <h3 id="screenshots" class="mt-14 scroll-mt-24 font-disp font-[600] text-[1.25rem]">Screenshots</h3>
+      <ul class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {% for shot in [
+          ["groups_profile", "Group page", "jpg", 506],
+          ["groups_threads", "Group topics and threads", "jpg", 506],
+          ["groups_create", "Creating a group", "jpg", 506],
+          ["bonfire-1.1-hub-red", "Group page with topics, rules and moderators", "jpg", 506],
+          ["bonfire-1.1-hub-transparent", "Group page with topics, rules and moderators, transparent", "png", 515, "png"],
+          ["bonfire-1.1-topic-red", "A topic inside a group", "jpg", 506],
+          ["bonfire-1.1-topic-transparent", "A topic inside a group, transparent", "png", 515, "png"],
+          ["bonfire-1.1-poll-red", "Deciding together: a group decision", "jpg", 506],
+          ["bonfire-1.1-poll-transparent", "Deciding together: a group decision, transparent", "png", 515, "png"],
+          ["bonfire-1.1-notifications-red", "Notifications: join requests and votes", "jpg", 506],
+          ["bonfire-1.1-notifications-transparent", "Notifications: join requests and votes, transparent", "png", 515, "png"],
+          ["bonfire-1.1-profile-red", "A member's profile", "jpg", 506],
+          ["bonfire-1.1-profile-transparent", "A member's profile, transparent", "png", 515, "png"]
+        ] %}
+        <li>
+          <a href="/img/press/screenshots/{{ shot[0] }}.{{ shot[2] }}" target="_blank" class="{{ tile }} aspect-[16/10]">
+            <img src="/img/press/thumbs/{{ shot[0] }}.{{ shot[4] or 'jpg' }}" alt="{{ shot[1] }}" width="900" height="{{ shot[3] }}" loading="lazy" class="w-full h-full object-cover block" />
+          </a>
+          <p class="mt-2 text-sm text-ink-2">{{ shot[1] }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {# Illustrations #}
+      <h3 id="illustrations" class="mt-14 scroll-mt-24 font-disp font-[600] text-[1.25rem]">Illustrations</h3>
+      <ul class="mt-5 grid gap-5 sm:grid-cols-2">
+        {% for art in [
+          ["rocco_1", "illustrations/rocco_1.png", 540],
+          ["rocco_2", "illustrations/rocco_2.png", 540],
+          ["rocco_3", "illustrations/rocco_3.png", 540],
+          ["rocco_4", "illustrations/rocco_4.png", 540],
+          ["bonfire_release", "illustrations/bonfire_release.jpg", 630],
+          ["bonfire_media_kit_banner", "banner/bonfire_media_kit_banner.png", 472]
+        ] %}
+        <li>
+          <a href="/img/press/{{ art[1] }}" target="_blank" class="{{ tile }} aspect-[5/3]">
+            <img src="/img/press/thumbs/{{ art[0] }}.jpg" alt="" width="900" height="{{ art[2] }}" loading="lazy" class="w-full h-full object-cover block" />
+            <span class="sr-only">Open full-resolution illustration</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div></section>
+
+    {# ===== media contact ===== #}
+    {% include "press-contact.njk" %}
+
+  </div>
+</div>
