@@ -1,267 +1,213 @@
 ---
 layout: layouts/base.njk
+title: Press
+description: Bonfire in the news. Press coverage, fact sheet, press kit and media contact for Bonfire Networks.
 ---
 
-<div class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-lg lg:mx-auto">
-        <h1 class="mt-20 mb-4  text-3xl font-extrabold sm:text-4xl">Bonfire Networks PRESS KIT</h1>
-        <h2 class="text-xl max-w-(--breakpoint-md) text-base-content/70">Download our branding assets, including logos, illustrations, and app screenshots.</h2>
-        <div class="flex items-center gap-4 mt-6"><a href="/" class="btn btn-primary btn-sm">Download Complete Press Kit ZIP</a></div>
-        <div class="mt-4 text-base-content/70 text-sm">Last updated: November 5, 2025</div>
-        <div class="mt-12 border-t border-base-content/10 pt-8">
-        You can also access Bonfire's media kit <a class="link link-primary" href="https://drive.google.com/drive/u/0/folders/1QF4ehzEW1JIejp2mCO8nGp-KEh8idEGU">here</a>. <br/>
-        For media inquiries, please contact <a class="link link-primary" href="mailto:team@bonfire.cafe">team@bonfire.cafe</a></div>
+{# Shares the About page's design tokens (night / ink / flame, font-disp). #}
+{% set wrap = "max-w-[1180px] mx-auto px-7" %}
+{% set eyebrow = "font-smono text-[1rem] font-bold tracking-[.18em]" %}
+{% set display = "mt-4 font-disp font-[560] text-[clamp(1.6rem,3vw,2.3rem)] leading-[1.06] tracking-[-.02em] text-balance [font-variation-settings:'opsz'_96]" %}
+{% set lede = "mt-4 text-[1.05rem] text-ink-2 max-w-[42rem]" %}
+{% set section = "py-16 border-t border-ink/[0.07] scroll-mt-24" %}
+{% set tile = "group block rounded-xl overflow-hidden border border-ink/15 hover:border-flame/40 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flame" %}
+{% set dl = "text-sm text-ink-2 hover:text-spark underline underline-offset-4 decoration-ink/25 hover:decoration-spark inline-flex items-center min-h-11" %}
+
+{% set months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %}
+{% macro dateLabel(d) -%}
+  {%- if d and d.length >= 7 -%}{{ months[d.slice(5,7) | int] }} {{ d.slice(0,4) }}{%- elif d -%}{{ d }}{%- endif -%}
+{%- endmacro %}
+
+<div class="relative overflow-x-clip bg-night text-ink font-body leading-[1.55] antialiased selection:bg-ember selection:text-[#160c02]">
+  <div class="v2-ambient" aria-hidden="true"></div>
+  <div class="relative z-[1]">
+
+    {# ===== header ===== #}
+    <header class="pt-10 pb-16">
+    <div class="{{ wrap }}">
+      <h1 class="mt-4 font-disp font-semibold text-[clamp(2.1rem,5vw,3.7rem)] leading-[1.05] tracking-[-.02em] max-w-[22ch] text-balance [font-variation-settings:'opsz'_96]">Bonfire <span class="fire-text">in the news</span>.</h1>
+      <p class="mt-[18px] font-disp text-[clamp(1.15rem,2.2vw,1.5rem)] leading-[1.3] max-w-[46ch]">Coverage of Bonfire, the open-source software for community-run spaces on the fediverse, plus the facts and assets you need to write about it.</p>
+      <nav aria-label="On this page" class="mt-8 flex flex-wrap gap-x-6 gap-y-1 text-[.95rem]">
+        <a href="#coverage" class="{{ dl }}">Coverage</a>
+        <a href="#facts" class="{{ dl }}">Fact sheet</a>
+        <a href="#press-kit" class="{{ dl }}">Press kit</a>
+        <a href="#contact" class="{{ dl }}">Media contact</a>
+      </nav>
+    </div></header>
+
+    {# ===== featured stories ===== #}
+    <section aria-labelledby="featured-heading" class="pb-16">
+    <div class="{{ wrap }}">
+      <h2 id="featured-heading" class="sr-only">Featured stories</h2>
+      <ul class="grid gap-5 md:grid-cols-3">
+        {% for story in press_coverage.featured %}
+        <li>
+          <a href="{{ story.url }}" target="_blank" rel="noopener" class="{{ tile }} h-full flex flex-col p-6 bg-night-2/60">
+            <p class="flex items-baseline justify-between gap-3 text-sm">
+              <span class="font-semibold text-flame">{{ story.outlet }}</span>
+              <span class="text-ink-3 tabular-nums">{{ dateLabel(story.date) }}</span>
+            </p>
+            <h3 class="mt-4 font-disp font-[600] text-[1.3rem] leading-[1.2] tracking-[-.01em] text-balance group-hover:text-spark transition-colors">{{ story.title }}</h3>
+            <p class="mt-3 flex-1 text-[.95rem] text-ink-2">{{ story.summary }}</p>
+            <span class="mt-5 text-sm text-ink-3 group-hover:text-spark transition-colors">Read the article <span aria-hidden="true">↗</span></span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div></section>
+
+    {# ===== all coverage ===== #}
+    <section id="coverage" aria-labelledby="coverage-heading" class="{{ section }}">
+    <div class="{{ wrap }}">
+      <p class="{{ eyebrow }} text-corn">Coverage</p>
+      <h2 id="coverage-heading" class="{{ display }}">Everything written about us.</h2>
+      <p class="{{ lede }}">Newest first. Missing something? <a href="mailto:team@bonfire.cafe" class="text-spark hover:underline">Let us know</a>.</p>
+
+      <div class="mt-10">
+      {% for group in [["2026", "2026"], ["2025", "2025"], ["Earlier", "earlier"]] %}
+        <div class="grid gap-x-10 md:grid-cols-[9rem_1fr] py-6 border-t border-ink/[0.07] first:border-t-0">
+          <h3 class="font-disp font-[600] text-[1.25rem] text-ink-3 md:pt-3">{{ group[0] }}</h3>
+          <ul>
+            {% for item in press_coverage.items %}
+              {% set year = item.date.slice(0,4) %}
+              {% if (group[1] == "earlier" and year != "2026" and year != "2025") or year == group[1] %}
+              <li class="grid grid-cols-[1fr_auto] sm:grid-cols-[14rem_1fr_5.5rem] gap-x-6 py-3 border-b border-ink/[0.07] last:border-b-0">
+                <span class="text-sm text-ink-3 sm:pt-[3px]">{{ item.outlet }}</span>
+                <span class="text-sm text-ink-3 tabular-nums text-right sm:order-last sm:pt-[3px]">{% if item.date.length >= 7 %}{{ dateLabel(item.date) }}{% endif %}</span>
+                {% if item.url %}
+                <a href="{{ item.url }}" target="_blank" rel="noopener" class="col-span-2 sm:col-span-1 text-ink hover:text-spark transition-colors">{{ item.title }}</a>
+                {% else %}
+                <span class="col-span-2 sm:col-span-1 text-ink-2">{{ item.title }}</span>
+                {% endif %}
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
       </div>
-    </div>
-  <div
-      x-data="{ openPanel: 0 }"
-      class="max-w-screen-lg mb-12 mx-4 2xl:max-w-screen-lg mx-auto">
-      <div class="mx-auto divide-y divide-base-content/10">
-        
-        <dl class="mt-16 space-y-6 divide-y divide-base-content/10">
-          <div class="pt-6">
-          <dt class="text-lg">
-              <!-- Expand/collapse question button -->
-              <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 0 ? null : 0)"
-              class="flex items-start justify-between w-full text-left text-blueGray-400">
-              <span class="font-medium text-blueGray-300">
-                  Bonfire Logo
-              </span>
-              <span class="flex items-center ml-6 h-7">
-                  <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 0, 'rotate-0': !(openPanel === 0) }"
-                  class="w-6 h-6 transform -rotate-180"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-              </span>
-              </button>
-          </dt>
-          <dd
-              x-show="openPanel === 0"
-              class="pr-12 mt-2">
-              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <a href="/img/press/logo/bonfire_media_kit_logo_black_bg.svg" target="_blank" class="link link-primary">
-                  <img src="/img/press/logo/bonfire_media_kit_logo_black_bg.svg" class="w-full h-auto object-cover" />
-                </a>
-                <a href="/img/press/logo/bonfire_media_kit_logo_black_bg.png" target="_blank" class="link link-primary">
-                  <img src="/img/press/logo/bonfire_media_kit_logo_black_bg.png" class="w-full h-auto object-cover" />
-                </a>
-                <a href="/img/press/logo/bonfire_media_kit_logo_on_red.svg" target="_blank" class="link link-primary">
-                  <img src="/img/press/logo/bonfire_media_kit_logo_on_red.svg" class="w-full h-auto object-cover" />
-                </a>
-                <a href="/img/press/logo/bonfire_media_kit_logo_on_red_noisy.png" target="_blank" class="link link-primary">
-                  <img src="/img/press/logo/bonfire_media_kit_logo_on_red_noisy.png" class="w-full h-auto object-cover" />
-                </a>
-                
+    </div></section>
 
-              </div>
-          </dd>
-          </div>
-
-          <div class="pt-6">
-            <dt class="text-lg">
-              <!-- Expand/collapse question button -->
-              <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 1 ? null : 1)"
-              class="flex items-start justify-between w-full text-left text-blueGray-400">
-              <span class="font-medium text-blueGray-300">
-                  Bonfire Banners
-              </span>
-              <span class="flex items-center ml-6 h-7">
-                  <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
-                  class="w-6 h-6 transform -rotate-180"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-              </span>
-              </button>
-            </dt>
-            <dd
-                x-show="openPanel === 1"
-                class="pr-12 mt-2">
-                <div class="prose prose-light text-blueGray-300">
-                <ul>
-                    <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). </li>
-                    <li>Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them. </li>
-                    <li>Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).</li>
-                </ul>
-                </div>
-            </dd>
-          </div>
+    {# ===== fact sheet ===== #}
+    <section id="facts" aria-labelledby="facts-heading" class="{{ section }}">
+    <div class="{{ wrap }}">
+      <p class="{{ eyebrow }} text-flame">Fact sheet</p>
+      <h2 id="facts-heading" class="{{ display }}">The essentials, ready to quote.</h2>
+      <dl class="mt-10 grid sm:grid-cols-[11rem_1fr] max-w-[52rem] border-t border-ink/[0.07]">
+        {% for row in [
+          ["What", "Open-source software for building federated, community-governed digital spaces"],
+          ["Started", "2021"],
+          ["Latest release", "Bonfire 1.1 (November 2026)"],
+          ["Protocol", "ActivityPub, with bridging to ATProto (Bluesky)"],
+          ["Stack", "Elixir, Phoenix LiveView, PostgreSQL"],
+          ["License", "AGPL-3.0"],
+          ["Funding", "Commissioned work building features and spaces with partner communities, an NLnet / NGI Zero grant, and community crowdfunding"],
+          ["Founders", "Ivan Minutillo, Mayel de Borniol"]
+        ] %}
+        <dt class="pt-3 sm:py-3 text-sm text-ink-3 sm:border-b border-ink/[0.07]">{{ row[0] }}</dt>
+        <dd class="pb-3 sm:py-3 border-b border-ink/[0.07]">{{ row[1] }}</dd>
+        {% endfor %}
       </dl>
+    </div></section>
+
+    {# ===== press kit ===== #}
+    <section id="press-kit" aria-labelledby="kit-heading" class="{{ section }}">
+    <div class="{{ wrap }}">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p class="{{ eyebrow }} text-corn">Press kit</p>
+          <h2 id="kit-heading" class="{{ display }}">Logos, screenshots and artwork.</h2>
+          <p class="{{ lede }}">Free to use when writing about Bonfire. Click any image for the full-resolution file.</p>
+        </div>
+        <a href="https://drive.google.com/drive/u/0/folders/1QF4ehzEW1JIejp2mCO8nGp-KEh8idEGU" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-11 px-5 rounded-full bg-flame text-[#160c02] font-semibold hover:bg-spark transition-colors">
+          <i class="ph-duotone ph-download-simple text-lg" aria-hidden="true"></i> Full media kit
+        </a>
       </div>
+      <p class="mt-3 text-sm text-ink-3">Last updated November 5, 2025</p>
+
+      {# Logos #}
+      <h3 class="mt-14 font-disp font-[600] text-[1.25rem]">Logo</h3>
+      <ul class="mt-5 grid gap-5 grid-cols-2 lg:grid-cols-4">
+        {% for logo in [
+          { name: "Colour", file: "bonfire_media_kit_logo", bg: "bg-night-2 p-6", img: "w-3/4 h-3/4 object-contain" },
+          { name: "On red", file: "bonfire_media_kit_logo_on_red", bg: "", img: "w-full h-full object-cover" },
+          { name: "Black", file: "bonfire_media_kit_logo_transparent", bg: "bg-ink p-6", img: "w-3/4 h-3/4 object-contain" },
+          { name: "White", file: "bonfire_media_kit_logo_transparent_black_bg", bg: "", img: "w-full h-full object-cover" }
+        ] %}
+        <li>
+          <div class="rounded-xl overflow-hidden border border-ink/15 {{ logo.bg }} aspect-square grid place-items-center">
+            <img src="/img/press/thumbs/{{ logo.file }}.png" alt="Bonfire logo, {{ logo.name | lower }}" width="360" height="360" loading="lazy" class="{{ logo.img }}" />
+          </div>
+          <p class="mt-2 flex items-center justify-between gap-3">
+            <span class="text-sm font-semibold">{{ logo.name }}</span>
+            <span class="flex gap-4">
+              <a href="/img/press/logo/{{ logo.file }}.svg" download class="{{ dl }}" aria-label="{{ logo.name }} logo, SVG">SVG</a>
+              <a href="/img/press/logo/{{ logo.file }}.png" download class="{{ dl }}" aria-label="{{ logo.name }} logo, PNG">PNG</a>
+            </span>
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {# Screenshots #}
+      <h3 class="mt-14 font-disp font-[600] text-[1.25rem]">Screenshots</h3>
+      <ul class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {% for shot in [
+          ["groups_profile", "Group page", "jpg", 506],
+          ["groups_threads", "Group topics and threads", "jpg", 506],
+          ["groups_create", "Creating a group", "jpg", 506],
+          ["bonfire-1.1-hub-red", "Group page with topics, rules and moderators", "jpg", 506],
+          ["bonfire-1.1-hub-transparent", "Group page with topics, rules and moderators, transparent", "png", 515, "png"],
+          ["bonfire-1.1-topic-red", "A topic inside a group", "jpg", 506],
+          ["bonfire-1.1-topic-transparent", "A topic inside a group, transparent", "png", 515, "png"],
+          ["bonfire-1.1-poll-red", "Deciding together: a group decision", "jpg", 506],
+          ["bonfire-1.1-poll-transparent", "Deciding together: a group decision, transparent", "png", 515, "png"],
+          ["bonfire-1.1-notifications-red", "Notifications: join requests and votes", "jpg", 506],
+          ["bonfire-1.1-notifications-transparent", "Notifications: join requests and votes, transparent", "png", 515, "png"],
+          ["bonfire-1.1-profile-red", "A member's profile", "jpg", 506],
+          ["bonfire-1.1-profile-transparent", "A member's profile, transparent", "png", 515, "png"]
+        ] %}
+        <li>
+          <a href="/img/press/screenshots/{{ shot[0] }}.{{ shot[2] }}" target="_blank" class="{{ tile }} aspect-[16/10]">
+            <img src="/img/press/thumbs/{{ shot[0] }}.{{ shot[4] or 'jpg' }}" alt="{{ shot[1] }}" width="900" height="{{ shot[3] }}" loading="lazy" class="w-full h-full object-cover block" />
+          </a>
+          <p class="mt-2 text-sm text-ink-2">{{ shot[1] }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {# Illustrations #}
+      <h3 class="mt-14 font-disp font-[600] text-[1.25rem]">Illustrations</h3>
+      <ul class="mt-5 grid gap-5 sm:grid-cols-2">
+        {% for art in [
+          ["rocco_1", "illustrations/rocco_1.png", 540],
+          ["rocco_2", "illustrations/rocco_2.png", 540],
+          ["rocco_3", "illustrations/rocco_3.png", 540],
+          ["rocco_4", "illustrations/rocco_4.png", 540],
+          ["bonfire_release", "illustrations/bonfire_release.jpg", 630],
+          ["bonfire_media_kit_banner", "banner/bonfire_media_kit_banner.png", 472]
+        ] %}
+        <li>
+          <a href="/img/press/{{ art[1] }}" target="_blank" class="{{ tile }} aspect-[5/3]">
+            <img src="/img/press/thumbs/{{ art[0] }}.jpg" alt="" width="900" height="{{ art[2] }}" loading="lazy" class="w-full h-full object-cover block" />
+            <span class="sr-only">Open full-resolution illustration</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div></section>
+
+    {# ===== media contact ===== #}
+    <section id="contact" aria-labelledby="contact-heading" class="{{ section }} pb-24">
+    <div class="{{ wrap }}">
+      <p class="{{ eyebrow }} text-flame">Media contact</p>
+      <h2 id="contact-heading" class="{{ display }}">Talk to the team.</h2>
+      <p class="{{ lede }}">Happy to talk about Bonfire, federation, community governance and public-interest technology.</p>
+      <p class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-1">
+        <a href="mailto:team@bonfire.cafe" class="inline-flex items-center min-h-11 font-disp font-[600] text-[1.25rem] text-spark hover:underline underline-offset-4">team@bonfire.cafe</a>
+        <span class="text-sm text-ink-2">Fediverse: @bonfire@bonfire.cafe</span>
+      </p>
+    </div></section>
+
   </div>
-{# <div class="pb-40 mt-16 border-t border-base-content/10">
-  <div class="">
-    <div class="max-w-screen-lg mx-4 mt-16 2xl:max-w-screen-lg lg:mx-auto lg:mt-24">
-        <h2 class="text-[36px] leading-[44px]  font-black tracking-wide">Full Logo</h2>  
-    <ul class="grid grid-cols-1 mt-12 gap-gutter max-w-(--breakpoint-md) mx-auto gap-6">
-      
-      <a href="/img/bonfire_logo_transparent.png" target="_blank">
-      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-        <div class="w-full h-auto"><img src="/img/bonfire_logo_transparent.png" class="w-full h-full object-contain" /></div>
-      </li>
-      </a>
-      <a href="/img/bonfire_brand.png" target="_blank">
-      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-        <div class="w-full h-auto"><img src="/img/bonfire_brand.png" class="w-full h-full object-contain" /></div>
-      </li>
-      </a>
-      <a href="/img/fulllogobn.svg" target="_blank">
-      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-        <div class="w-full h-auto"><img src="/img/fulllogobn.svg" class="w-full h-full object-contain" /></div>
-      </li>
-      </a>
-      <a href="/img/fulllogosimple.svg" target="_blank">
-      <li class="flex h-full w-full items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-        <div class="w-full h-auto"><img src="/img/fulllogosimple.svg" class="w-full h-full object-contain" /></div>
-          </li>
-      </a>
-    
-
-    </ul>  
-</div>  #}
-<div class="pb-40 mt-16 border-base-content/10">
-  <div class="">
-    <div class="max-w-(--breakpoint-md) mx-4 mt-16 2xl:max-w-screen-lg lg:mx-auto lg:mt-24">
-
-  <h2 class="text-3xl text-center font-bold tracking-wide">Bonfire Logo</h2>
-  
-  <ul class="grid grid-cols-3 mt-12 gap-gutter md:px-8 lg:gap-12">
-    
-    <a href="/img/bonfire-icon.svg" target="_blank" title="Colour Icon in SVG">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 p-4 aspect-square">
-      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/bonfire-icon.svg" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/bonfire.png" target="_blank" title="Colour Icon in PNG">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 p-4 aspect-square">
-      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/bonfire.png" class="w-full h-full object-contain" /></div>
-        </li>
-    </a>
-    <a href="/img/logoonwhite.svg" target="_blank" title="Colour Icon in PNG">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 p-4 aspect-square">
-      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/logoonwhite.svg" class="w-full h-full object-contain" /></div>
-        </li>
-    </a>
-    <a href="/img/logobn.png" target="_blank" title="Monochrome Icon in PNG">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 p-4 aspect-square">
-      <div class="md:h-18 relative h-16 w-full lg:h-20"><img src="/img/logobn.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-
-  </ul>  
-</div> 
-
-<div id="screenshots" class="relative z-20 border-base-content/20 border-t max-w-screen-lg px-6 mx-auto py-16 mt-8  xl:px-0">
-  <h2 class="text-[36px] leading-[44px]  font-black tracking-wide">App screenshots</h2>
-  {# <div class="text-xl mt-4 max-w-(--breakpoint-md)  text-base-content/90 font-medium tracking-wider">Bonfire Mosaic empowers your project with</div>   #}
-
-  
-  
-  <ul class="grid grid-cols-3 mt-12 gap-gutter gap-4">
-     <a href="/img/social.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/social.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-     <a href="/img/landing2.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/landing2.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-     <a href="/img/build.jpg" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/build.jpg" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/labelmodal.png" target="_blank">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/labelmodal.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/labelbg.png" target="_blank">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/labelbg.png" class="w-full h-full object-contain" /></div>
-        </li>
-    </a>
-    <a href="/img/labelled.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/labelled.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/ospreview.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/ospreview.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-   
-
-  </ul>   
-</div> 
-
-<div id="illustrations" class="relative z-20 border-base-content/20 border-t max-w-screen-lg px-6 mx-auto py-16 mt-8  xl:px-0">
-  <h2 class="text-[36px] leading-[44px] font-black tracking-wide">Illustrations</h2>
-  {# <div class="text-xl mt-4 max-w-(--breakpoint-md)   text-base-content/90 font-medium tracking-wider">Bonfire Mosaic empowers your project with</div>   #}
-
-  
-  
-  <ul class="grid grid-cols-2 mt-12 gap-gutter gap-4">
-    
-    <a href="/img/1_uncompressed.png" target="_blank">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/1_uncompressed.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/2_uncompressed.png" target="_blank">
-    <li class="flex h-full w-full hover:bg-base-content/5 items-center justify-center rounded-md transition-colors bg-transparent hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/2_uncompressed.png" class="w-full h-full object-contain" /></div>
-        </li>
-    </a>
-    <a href="/img/3_uncompressed.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/3_uncompressed.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/4_uncompressed.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/4_uncompressed.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/BonfireIlluDefLogo1.jpg" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/BonfireIlluDefLogo1.jpg" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-    <a href="/img/banner.png" target="_blank">
-    <li class="flex h-full w-full items-center justify-center hover:bg-base-content/5 rounded-md transition-colors bg-black hocus:bg-gray-5 aspect-auto">
-      <div class=" relative w-full"><img src="/img/banner.png" class="w-full h-full object-contain" /></div>
-    </li>
-    </a>
-
-  </ul>  
-</div> 
-
-</div>
-</div>
-
-</div>
 </div>
