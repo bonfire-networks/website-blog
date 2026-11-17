@@ -10,7 +10,7 @@ author: Bonfire maintainers circle
 
 #### _A reflection on Bonfire’s journey to 1.0 and an open invitation to shape what comes next._
 
-As we approach the release of Bonfire 1.0, this isn’t your typical launch announcement. Instead, it’s a moment to reflect on **how** we’ve built Bonfire, a roadmap of values, methods, and intentions – and an invitation to define what comes next.
+As we approach the release of Bonfire 1.0, this isn’t your typical launch announcement. Instead, it’s a moment to reflect on **how** we’ve built Bonfire, a roadmap of values, methods and intentions, and an invitation to define what comes next.
 
 > _You can [follow Bonfire on the fediverse](https://bonfire.cafe/@Bonfire) for updates on the release, including highlights of unique features we’ll share over the next few days._
 
