@@ -340,52 +340,174 @@ SPDX-License-Identifier: AGPL-3.0-only
 SPDX-License-Identifier: CC0-1.0
 -->
 <h1 id="changelog%3A-past-releases">Changelog: past releases <a class="direct-link" href="#changelog%3A-past-releases" target="_blank" rel="noopener">#</a></h1>
-<h2 id="bonfire-%5B1.1-(unreleased)%5D">Bonfire [1.1 (unreleased)] <a class="direct-link" href="#bonfire-%5B1.1-(unreleased)%5D" target="_blank" rel="noopener">#</a></h2>
+<h2 id="bonfire-%5B1.1-(rc2)%5D">Bonfire [1.1 (RC2)] <a class="direct-link" href="#bonfire-%5B1.1-(rc2)%5D" target="_blank" rel="noopener">#</a></h2>
 <h3 id="added">Added <a class="direct-link" href="#added" target="_blank" rel="noopener">#</a></h3>
 <ul>
-<li>✨ Public groups and announcement channels can now federate: people on other Bonfire instances and fediverse apps can find, join or follow them and take part in the conversation, using plain ActivityPub with FEP-1b12 <a href="https://github.com/bonfire-networks/bonfire-app/issues/745" target="_blank" rel="noopener">#745</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/743" target="_blank" rel="noopener">#743</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/673" target="_blank" rel="noopener">#673</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1390" target="_blank" rel="noopener">#1390</a> (thanks @mayel and @ivanminutillo)</li>
-<li>✨ Rebuilt notifications: a bell to be notified about the latest from people, groups, discussions, or even just the replies to a branch of a nested discussion, with opt-in notifications per type and category, and optional email digests <a href="https://github.com/bonfire-networks/bonfire-app/issues/2314" target="_blank" rel="noopener">#2314</a> (thanks @mayel and @ivanminutillo)</li>
-<li>✨ Pin posts in groups, topics and profiles, shown in a pinned carousel (thanks @ivanminutillo)</li>
-<li>✨ When silencing, ghosting or blocking someone, choose whether to also unfollow them and send a Block to their server <a href="https://github.com/bonfire-networks/bonfire-app/issues/2310" target="_blank" rel="noopener">#2310</a> (thanks @mayel)</li>
-<li>✨ Admins can restrict signups to allowed email domains or SSO providers <a href="https://github.com/bonfire-networks/bonfire-app/issues/2324" target="_blank" rel="noopener">#2324</a> (thanks @mayel)</li>
-<li>🚧 Confirm your identity before sensitive actions (sudo mode) <a href="https://github.com/bonfire-networks/bonfire-app/issues/2281" target="_blank" rel="noopener">#2281</a> (thanks @ivanminutillo and @mayel)</li>
-<li>📝 The app can optionally use a YugabyteDB database (thanks @mayel)</li>
-<li>📝 Communities can use their own vocabulary for widget titles (thanks @mayel)</li>
-<li>📝 International handles, supporting unicode usernames (for remote users, and optionally for creating local ones) and domain names (thanks @mayel)</li>
-<li>🔒 Posts and activities are now signed with object integrity proofs (FEP-8b32), and proofs on what arrives are checked, so a post passed on by a group or another server can be trusted by its author's own signature. Groups pass on their members' activities unchanged, so those proofs still verify. Tested with Mastodon, Mitra and Fedify (thanks @mayel)</li>
-<li>✨ Replies to your posts from people on other servers now reach your followers on other servers too, as do edits and deletions of those replies (inbox forwarding). Only replies signed by their author are passed on, exactly as received, so their followers can trust them. Tested with Mastodon, Mitra and Fedify (thanks @mayel)</li>
+<li>
+<p>✨ Federation for public groups, plus general improvements. See the <a href="user_guides/groups.md" target="_blank" rel="noopener">Groups guide</a> and the <a href="user_guides/group-moderation.md" target="_blank" rel="noopener">Running a Group guide</a> (thanks @mayel and @ivanminutillo):</p>
+<ul>
+<li>Public groups and announcement channels can now federate: people on other Bonfire instances and fediverse apps can find, join or follow them and take part in the conversation, with their topics and subgroups, using plain ActivityPub with FEP-1b12 <a href="https://github.com/bonfire-networks/bonfire-app/issues/745" target="_blank" rel="noopener">#745</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/743" target="_blank" rel="noopener">#743</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/673" target="_blank" rel="noopener">#673</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/1390" target="_blank" rel="noopener">#1390</a></li>
+<li>Groups and topics can now be found in search, with a Groups tab. After upgrading, admins should re-index existing groups, topics and hashtags, in the Elixir (iex) console: <code>Bonfire.Search.Indexer.reindex_from_db(only: [Bonfire.Classify.Reindex, Bonfire.Tag.Reindex])</code>.</li>
+<li>Moderation across instances: a group's removals, locks, bans and reports reach the instances that follow it, and a moderator acting on a group hosted elsewhere sees the action applied once that group confirms it, or at once with <strong>Apply it here now</strong> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2269" target="_blank" rel="noopener">#2269</a></li>
+<li>Moderators can add people from this instance directly, which is how invite-only groups grow, take a post out of a group without deleting it, and archive or restore a group, which other instances follow too; locks, hides and bans are recorded on the group's moderation page <a href="https://github.com/bonfire-networks/bonfire-app/issues/572" target="_blank" rel="noopener">#572</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/601" target="_blank" rel="noopener">#601</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2353" target="_blank" rel="noopener">#2353</a></li>
+<li>Making someone a moderator also makes them a member, so they can read the group's posts <a href="https://github.com/bonfire-networks/bonfire-app/issues/2365" target="_blank" rel="noopener">#2365</a></li>
+<li>Moderators can pin posts to the top of a group or topic, shown in a pinned carousel; other apps such as Lemmy show them as featured <a href="https://github.com/bonfire-networks/bonfire-app/issues/2424" target="_blank" rel="noopener">#2424</a></li>
+<li>The groups page has a <strong>Directory</strong> of groups and feed of <strong>Latest updates</strong> showing posts from your groups or from all known groups; it opens on your groups' updates if you're a member of any, or on the directory, and you can choose which in settings</li>
+<li>Searching the directory finds any public group (not just filtering those on screen), while toggling to <strong>Private only</strong> finds non-public groups you're able to see</li>
+<li>You can look up federated groups by URL or !name in the groups search</li>
+<li>Groups can be marked sensitive, when created or in their settings. Their banner, icon and description are hidden behind a warning until shown, the group page shows a notice before showing the feed, and new posts in the group default to having the content warning on. Groups marked NSFW on Lemmy, PieFed or Mbin arrive marked <a href="https://github.com/bonfire-networks/bonfire-app/issues/2458" target="_blank" rel="noopener">#2458</a></li>
+<li>Your groups' latest updates can be shown on your dashboard</li>
+<li>Instance admins can have new accounts turn on notifications for a group, next to the existing auto-join option in the group's settings, so new members get the group's new posts in their notifications (thanks Mentaal and @mayel)</li>
+<li><strong>View options</strong> on a group's discussions and on the Recent discussions feed: show threads or every post, and order them by recent activity, newest first, or most replies, boosts or likes. The choice lasts for the visit, like a thread's view options (thanks Mentaal and @mayel)</li>
+<li>Following a group, turning its bell on, or joining it offers its sub-topics too, so you can follow or be notified about some or all of them in one step; unfollowing or turning the bell off offers to stop them too. Following or a bell covers only what you explicitly ask: a group's own posts, not those in its sub-topics</li>
+<li>The sidebar lists the groups you pinned: while it's open, a new post moves its group to the top with a dot (or a topic under it, with the group expanded), and adds a followed group you haven't pinned, with a button to pin it</li>
+<li>📖 See the <a href="user_guides/groups.md" target="_blank" rel="noopener">Groups guide</a> and the <a href="user_guides/group-moderation.md" target="_blank" rel="noopener">Running a Group guide</a></li>
+</ul>
+</li>
+<li>
+<p>✨ Rebuilt notifications, see the <a href="user_guides/notifications.md" target="_blank" rel="noopener">Notifications guide</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2314" target="_blank" rel="noopener">#2314</a> (thanks @mayel and @ivanminutillo):</p>
+<ul>
+<li>A bell on a person, a group, a topic or a discussion: <strong>Notify me about new posts</strong> from someone, a group or a topic, or <strong>Notify me about replies</strong> on a discussion, even a single branch of one. It's off until you press it, and following or joining never turns it on. A group's bell doesn't cover its sub-topics, and a post notifies you once even if you rang both</li>
+<li>A group on another instance sharing a post you published in it doesn't notify you about your own post</li>
+<li>For each kind of notification, choose whether it shows in your notifications, whether it's pushed, and whether it's emailed: off, in the digest, or instantly</li>
+<li>Email notifications: kinds set to instant arrive as they happen, and the rest go into one digest per account, daily, weekly or monthly, with a section per profile</li>
+<li>Push notifications to browsers and mobile apps, on every device where you turned them on</li>
+<li>The Replies tab shows replies to your posts and in discussions you started, and <strong>Unsubscribe…</strong> stops every bell in one step</li>
+<li>Choose who you hear from: hide mentions and messages from people you don't follow (unless they're replying to you), or anything from people you don't follow, who don't follow you, or who are new to this instance; what's hidden waits under the <strong>Hidden</strong> tab</li>
+<li>📖 See the <a href="user_guides/notifications.md" target="_blank" rel="noopener">Notifications guide</a></li>
+</ul>
+</li>
+<li>
+<p>✨ Replies to your posts from people on other servers now reach your followers on other servers too, as do edits and deletions of those replies (inbox forwarding). Only replies signed by their author are passed on, exactly as received, so their followers can trust them. Tested with Mastodon, Mitra and Fedify (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Admins can restrict signups to allowed email domains or SSO providers <a href="https://github.com/bonfire-networks/bonfire-app/issues/2324" target="_blank" rel="noopener">#2324</a> (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ When silencing, ghosting or blocking someone, choose whether to also unfollow them and send a Block to their server <a href="https://github.com/bonfire-networks/bonfire-app/issues/2310" target="_blank" rel="noopener">#2310</a> (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Keyword filters now have two lists, for you and for the whole instance: <strong>Hide completely</strong>, where a matching post is gone as if it were deleted, and <strong>Hide behind a warning</strong>, where it shows closed behind a content warning which you can still open. A keyword can be moved from one list to the other with one click. If the instance moderators set a warning keyword list for the instance, posts from other servers are accepted but marked sensitive, and local posts are published with a content warning added. <a href="https://github.com/bonfire-networks/bonfire-app/issues/1001" target="_blank" rel="noopener">#1001</a> (thanks @mayel)</p>
+</li>
+<li>
+<p>🚧 Confirm your identity before sensitive actions (sudo mode), starting with deleting your account <a href="https://github.com/bonfire-networks/bonfire-app/issues/2281" target="_blank" rel="noopener">#2281</a> (thanks @ivanminutillo and @mayel)</p>
+</li>
+<li>
+<p>✨ The app can optionally use a YugabyteDB database (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Communities define their own vocabulary (names and text) for widget titles (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ PWA: Push notification permission prompt (thanks @ivanminutillo)</p>
+</li>
+<li>
+<p>✨ A Feedback widget asks people what they want of the instance. Its button opens a feedback form, or, with no form, the composer to post in a group or topic the admins pick. Admins set its title, text, button and form address in the instance settings, and the &quot;Getting started&quot; checklist's wishes step uses the same ones (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ A &quot;Message the moderators&quot; button to reach the instance's moderators, on the moderators widget, the guest homepage and the About page, and messages and mentions of the instance's federation account reach all its moderators (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Show your password while creating an account <a href="https://github.com/bonfire-networks/bonfire-app/issues/2346" target="_blank" rel="noopener">#2346</a> (thanks @sarahsquirrel and @ivanminutillo)</p>
+</li>
+<li>
+<p>✨ International handles, supporting unicode usernames (for remote users, and optionally for creating local ones) and domain names (thanks @mayel)</p>
+</li>
+<li>
+<p>🔒 Posts and activities are now signed with object integrity proofs (FEP-8b32), and proofs on what arrives are checked, so a post passed on by a group or another server can be trusted by its author's own signature. Groups pass on their members' activities unchanged, so those proofs still verify. Tested with Mastodon, Mitra and Fedify (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Admins can let specific hosts through the protection against requests to internal addresses, with the <code>ssrf_allow_hosts</code> setting <a href="https://github.com/bonfire-networks/bonfire-app/commit/d6f5f274ecfe797d8ea94701fe0fe750b448dd8c" target="_blank" rel="noopener"><code>d6f5f27</code></a> (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Admins can delete a user's data, after confirming their identity, choosing to delete only that profile or the whole account (which says how many profiles go with it) along with all their data <a href="https://github.com/bonfire-networks/bonfire-app/issues/1357" target="_blank" rel="noopener">#1357</a> (thanks @mayel)</p>
+</li>
+<li>
+<p>✨ Import a whole account archive (a zip file) from another Bonfire instance or other apps like Mastodon. After uploading it, you see what it holds and how much of each (content, likes, bookmarks, follows, circles, blocks, profile), and can choose what to import (thanks @mayel):</p>
+<ul>
+<li>Media like images in your posts come from the archive, so they're kept even when your old server is gone</li>
+<li>Your old bio, location, avatar and banner fill in what your profile here doesn't have yet, without overwriting anything</li>
+<li>Boosts come in only if you tick &quot;Also import boosts&quot;</li>
+<li>Posts that only you could see on your old account (a private mention to nobody, or a message to someone whose account is gone) come in visible only to you</li>
+<li>Your imported posts are listed in your outbox, so other servers can find them, without being sent to anyone again</li>
+<li>Posts still come in when your old server is gone or doesn't answer, credited to your old account, and posts this instance already had are imported too</li>
+</ul>
+</li>
+<li>
+<p>✨ A groups carousel widget, and the guest homepage shows groups as compact cards with a Join button (thanks @ivanminutillo)</p>
+</li>
+<li>
+<p>✨ Share a post from its &quot;more actions&quot; menu: on phones it opens the system share sheet, elsewhere it copies the link (thanks @ivanminutillo)</p>
+</li>
 </ul>
 <h3 id="changed">Changed <a class="direct-link" href="#changed" target="_blank" rel="noopener">#</a></h3>
 <ul>
+<li>💅 Mobile app (PWA): menus open as bottom sheets, the status bar takes the theme's colour, feed tabs stay pinned and hide as you scroll, the instance icon fits Android home screens, and replies in the composer show the post they answer, with close and minimise buttons (thanks @ivanminutillo)</li>
+<li>💅 Composer: with the phone keyboard open, the header shrinks to one line, leaving more room to type (thanks @ivanminutillo)</li>
+<li>💅 Mobile: side drawers have larger, evenly spaced rows, and less empty space above page headers (thanks @ivanminutillo)</li>
+<li>💅 Composer (Milkdown): better syncing, works better in the mobile app, and markdown fixes (thanks @ivanminutillo)</li>
 <li>💅 Better UI and UX for groups and topics: new group and topic headers and navigation, posting to a topic from the group composer, a group sidebar with follow and notification options, and a confirmation before leaving a group <a href="https://github.com/bonfire-networks/bonfire-app/issues/2351" target="_blank" rel="noopener">#2351</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2389" target="_blank" rel="noopener">#2389</a> (thanks @sarahsquirrel and @ivanminutillo)</li>
-<li>💅 Redesigned guest homepage, about page and login (thanks @ivanminutillo)</li>
-<li>💅 Configure the dashboard widgets to display (thanks @ivanminutillo)</li>
+<li>🔒 Other servers' requests must now be signed by default, except to look up public profiles, so servers that don't sign them, such as Lemmy, can still find people here; an ActivityPub request to the home page leads to the instance's actor (thanks @mayel)</li>
+<li>💅 Redesigned guest homepage, about page and login <a href="https://github.com/bonfire-networks/bonfire-app/issues/2390" target="_blank" rel="noopener">#2390</a> (thanks @ivanminutillo)</li>
+<li>💅 Configure the dashboard widgets to display, including a feed <a href="https://github.com/bonfire-networks/bonfire_ui_me/commit/b88f1fcf8be850cc4496f5ce3b0040b8a208b563" target="_blank" rel="noopener"><code>b88f1fc</code></a> (thanks @ivanminutillo)</li>
 <li>💅 Dashboard widgets redesigned, including a carousel for top discussions and a community rules widget <a href="https://github.com/bonfire-networks/bonfire-app/issues/2397" target="_blank" rel="noopener">#2397</a> (thanks @ivanminutillo)</li>
-<li>💅 Reworked feed controls, with separate controls for what a feed includes and how it's ordered (thanks @ivanminutillo)</li>
+<li>💅 Redesigned the dashboard's &quot;Getting started&quot; widget <a href="https://github.com/bonfire-networks/bonfire_ui_common/commit/4da1c52201f1ca909b6ffdca62383eb08fbdf1a1" target="_blank" rel="noopener"><code>4da1c52</code></a> (thanks @ivanminutillo)</li>
+<li>💅 Reworked feed controls, with separate controls for what a feed includes and how it's ordered, and filtering by people, hashtags, instances and media from the feed filters editor; extensions can add their own filters <a href="https://github.com/bonfire-networks/bonfire-app/issues/2325" target="_blank" rel="noopener">#2325</a> <a href="https://github.com/bonfire-networks/bonfire_ui_social/commit/bd8947c729de2cd1bae6176a07ddb7f566b7da6f" target="_blank" rel="noopener"><code>bd8947c</code></a> (thanks @ivanminutillo and @mayel)</li>
 <li>💅 All post actions now sit inline in the &quot;more actions&quot; menu, without an &quot;advanced&quot; button (thanks @ivanminutillo)</li>
-<li>💅 Poll UI improvements (thanks @ivanminutillo)</li>
-<li>🔒 Follows and likes are now only sent to the person concerned, not to all your followers (thanks @ivanminutillo)</li>
-<li>🚀 Improvements to search (thanks @mayel and @ivanminutillo)</li>
+<li>💅 Poll UI improvements, and they load vote counts only when you press &quot;See results&quot;, and closed polls' results are cached. Guests get a &quot;Vote&quot; button that leads to voting from their own fediverse account (thanks @ivanminutillo and @mayel)</li>
+<li>🔒 Follows and likes are now only sent to the person concerned, not to all your followers, and cancelling a pending follow request to someone on another instance now tells their server <a href="https://github.com/bonfire-networks/bonfire_social_graph/commit/f26dde65101af4a8a1029049e58913a57fc3c732" target="_blank" rel="noopener"><code>f26dde6</code></a> (thanks @ivanminutillo)</li>
+<li>🚀 Improvements to search (thanks @mayel and @ivanminutillo):
+<ul>
+<li>The <strong>Posts</strong> tab is now <strong>Content</strong> and shows more content types</li>
+<li>Matching hashtags show at the top of results</li>
+</ul>
+</li>
 <li>🚀 Media handling and optimisation improvements (thanks @mayel and @ivanminutillo)</li>
-<li>✨ Show your password while creating an account <a href="https://github.com/bonfire-networks/bonfire-app/issues/2346" target="_blank" rel="noopener">#2346</a> (thanks @sarahsquirrel and @ivanminutillo)</li>
-<li>🚀 More system tuning, and a database healthcheck (thanks @mayel)</li>
+<li>💅 The Stream look is now the default, and the typographic one stays available in settings (thanks @ivanminutillo)</li>
+<li>💅 Hovering a profile shows a preview card, and on a phone tapping opens it as a bottom sheet <a href="https://github.com/bonfire-networks/bonfire-app/issues/2455" target="_blank" rel="noopener">#2455</a> (thanks @ivanminutillo)</li>
+<li>💅 A &quot;Show new activities&quot; button loads posts that arrived since you opened a feed, and they load on their own when you're at the top (thanks @ivanminutillo)</li>
+<li>💅 Join requests: <strong>Pending</strong> lets you withdraw your request, and moderators get a compact row to approve or decline (thanks @ivanminutillo)</li>
+<li>💅 Group discovery: <strong>Joined</strong> lists the groups you're a member of, &quot;Start a discussion in [group]&quot; opens the composer with the group's audience, and the title field shows by default when posting in a group (thanks @ivanminutillo)</li>
+<li>🔒 Keyword filters match whole words of the text people see: <code>spam</code> no longer hides &quot;spammer&quot;, a <code>*</code> catches longer words (<code>spam*</code>, <code>*spam*</code>), links and markup are ignored, and capital letters and look-alike characters (<code>C00L</code> for <code>cool</code>) count as the same. A match is handled wherever a post shows, including quotes, the post a reply answers, threads and posts arriving live, and it's not pushed or emailed to you. Posts from other servers with a word you hide completely don't reach you, and a local post with one of the instance's words to hide stays visible only to its author <a href="https://github.com/bonfire-networks/bonfire-app/issues/1001" target="_blank" rel="noopener">#1001</a> (thanks @mayel)</li>
+<li>🔒 In a group you join by request or invitation, only members see who else is in it, and others see a count; see the <a href="user_guides/groups.md" target="_blank" rel="noopener">Groups guide</a> (thanks @mayel)</li>
+<li>🔒 A post in a group can only use the audiences the group allows, and a reply can't widen its parent's (thanks @mayel)</li>
+<li>💅 &quot;Make admin&quot; and &quot;Revoke admin&quot; ask first, and &quot;Make admin&quot; can also declare the person a moderator; &quot;Moderated by&quot; lists the declared moderators, and reports reach everyone who can moderate the instance (thanks @mayel)</li>
+<li>🚀 Faster pagination, and faster loading of older activities in feeds <a href="https://github.com/bonfire-networks/bonfire_ui_me/commit/adee4137fd477695e8ab9a029f4cdf701173ba16" target="_blank" rel="noopener"><code>adee413</code></a> <a href="https://github.com/bonfire-networks/bonfire_ui_common/commit/fd6f8bfd963b7e1fd3d397eeb604087bd86635cd" target="_blank" rel="noopener"><code>fd6f8bf</code></a> <a href="https://github.com/bonfire-networks/bonfire_social/commit/af7113ee0937b170c092a788e908ea7f43fdd954" target="_blank" rel="noopener"><code>af7113e</code></a> <a href="https://github.com/bonfire-networks/bonfire_social/commit/5d63a76d8d5517550109b405b51708de2eb374e9" target="_blank" rel="noopener"><code>5d63a76</code></a> (thanks @mayel and @ivanminutillo)</li>
+<li>🚀 Followers and other collections are served to other servers in pages <a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/commit/727161d049b4d07b9274ad79196e48aa0322d7c4" target="_blank" rel="noopener"><code>727161d</code></a> <a href="https://github.com/bonfire-networks/activity_pub/commit/f4e693728a3fa188b402d7cd09bbe9a9b680dda4" target="_blank" rel="noopener"><code>f4e6937</code></a> (thanks @ivanminutillo and @mayel)</li>
+<li>🚀 Deploys: more system tuning, and a database healthcheck (thanks @mayel)</li>
 <li>📝 Mastodon API improvements (thanks @ivanminutillo)</li>
 <li>🚀 Fetching a post again from its server now keeps the newer copy, and a post deleted on its server is deleted here too (thanks @mayel)</li>
 <li>📝 The federation guide documents object integrity proofs and inbox forwarding, with interop results (thanks @mayel)</li>
 <li>👷 Better syntax highlighting in code blocks <a href="https://github.com/bonfire-networks/bonfire-app/issues/1205" target="_blank" rel="noopener">#1205</a> (thanks @mayel)</li>
-<li>📝 Deployment docs, including installing with Co-op Cloud <a href="https://github.com/bonfire-networks/bonfire-app/issues/1512" target="_blank" rel="noopener">#1512</a> <a href="https://github.com/bonfire-networks/bonfire-app/pull/2267" target="_blank" rel="noopener">PR #2267</a> (thanks @mayel and @jeppebundsgaard)</li>
+<li>📝 Deployment docs, including installing with Co-op Cloud <a href="https://github.com/bonfire-networks/bonfire-app/issues/1512" target="_blank" rel="noopener">#1512</a> <a href="https://github.com/bonfire-networks/bonfire-app/pull/2267" target="_blank" rel="noopener">PR #2267</a> <a href="https://github.com/bonfire-networks/bonfire-app/pull/2266" target="_blank" rel="noopener">PR #2266</a>, and the dev setup guide no longer gives the wrong advice about yarn <a href="https://github.com/bonfire-networks/bonfire-app/issues/843" target="_blank" rel="noopener">#843</a> (thanks @mayel, @jeppebundsgaard and @lawik)</li>
+<li>📝 Updated the <a href="user_guides/notifications.md" target="_blank" rel="noopener">Notifications guide</a>, and new guides for <a href="user_guides/groups.md" target="_blank" rel="noopener">Groups</a> and <a href="user_guides/group-moderation.md" target="_blank" rel="noopener">Running a Group</a> (thanks @mayel)</li>
 <li>📝 Revived the nix devShell <a href="https://github.com/bonfire-networks/bonfire-app/pull/2332" target="_blank" rel="noopener">PR #2332</a> (thanks @merutam)</li>
 <li>🌐 Improved localisation coverage throughout the app (thank you translators!)</li>
+<li>✨ Upload an instance icon, with a sharp version for high-resolution screens <a href="https://github.com/bonfire-networks/bonfire_files/commit/6a8db47dac1040465f21d50ebb4db052ba8ece2d" target="_blank" rel="noopener"><code>6a8db47</code></a> <a href="https://github.com/bonfire-networks/bonfire_ui_me/commit/bbe5e3ffb9d0cec77faa4db99be08193fc73f4e9" target="_blank" rel="noopener"><code>bbe5e3f</code></a> (thanks @ivanminutillo)</li>
+<li>✨ Distributions (flavours) can have their own name, version and maker <a href="https://github.com/bonfire-networks/bonfire-app/issues/2469" target="_blank" rel="noopener">#2469</a> (thanks @cranioisthinking and @mayel)</li>
+<li>💅 Guests can read deeply nested replies: &quot;more replies&quot; opens the reply's own page with its replies <a href="https://github.com/bonfire-networks/bonfire-app/issues/1281" target="_blank" rel="noopener">#1281</a> (thanks @mayel)</li>
+<li>💅 Dashboard poll widgets show no vote counts, and leave out ended polls and ones you voted on. Refreshing &quot;Polls closing soon&quot; explains that the list updates on reload <a href="https://github.com/bonfire-networks/bonfire-app/issues/2278" target="_blank" rel="noopener">#2278</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2243" target="_blank" rel="noopener">#2243</a> (thanks @ccamara, @wakest and @mayel)</li>
+<li>💅 The Spotlight widget hides itself when nothing is pinned <a href="https://github.com/bonfire-networks/bonfire-app/issues/2059" target="_blank" rel="noopener">#2059</a> (thanks @ccamara and @mayel)</li>
+<li>💅 A scheduled post says &quot;Scheduled for <date>&quot; instead of linking to a page that doesn't exist yet, and doesn't reach feeds or notifications before its time <a href="https://github.com/bonfire-networks/bonfire-app/issues/2486" target="_blank" rel="noopener">#2486</a> (thanks @ccamara and @mayel)</li>
+<li>💅 Composer improvements: it opens ready to type, can be minimised, has a clearer audience picker, and works better in the mobile app (PWA), including offline (thanks @ivanminutillo)</li>
+<li>💅 Members see a compact group header, which expands to the full one (thanks @ivanminutillo)</li>
+<li>💅 Group creation redesigned: presets listed with full descriptions, advanced permissions in tabs with circle chips, and a &quot;Modified&quot; tag on a preset you fine-tuned (thanks @ivanminutillo)</li>
+<li>💅 A group's member list has one &quot;Manage&quot; menu per person, with Remove first (thanks @ivanminutillo)</li>
 </ul>
 <h3 id="fixed">Fixed <a class="direct-link" href="#fixed" target="_blank" rel="noopener">#</a></h3>
 <ul>
+<li>🐛 The dashboard opens on your default feed instead of always on Following (thanks @ivanminutillo)</li>
+<li>🐛 The &quot;Install app&quot; banner no longer blocks taps on the page around it (thanks @ivanminutillo)</li>
+<li>🐛 Links typed inside brackets, eg <code>[text](url)</code>, now become links (thanks @ivanminutillo)</li>
+<li>🐛 Topic feeds redirect correctly; topic placeholder fix (thanks @ivanminutillo)</li>
+<li>🐛 Fixed signing in to third-party apps: returning after giving consent, silent sign-in, and error redirects to apps whose callback address has parameters <a href="https://github.com/bonfire-networks/bonfire_open_id/commit/f6e8c77f256521fa5d96d592e5f5f59e0e89bdb5" target="_blank" rel="noopener"><code>f6e8c77</code></a> (thanks @ivanminutillo)</li>
 <li>🐛 Alt texts federating again <a href="https://github.com/bonfire-networks/bonfire-app/issues/2241" target="_blank" rel="noopener">#2241</a> (thanks @ivanminutillo and @mayel)</li>
 <li>🐛 Fixed timelines loading forever after a websocket issue <a href="https://github.com/bonfire-networks/bonfire-app/issues/2435" target="_blank" rel="noopener">#2435</a> (thanks @DeadSuperHero)</li>
 <li>🐛 Fixed boost and like counters stopping at 2 in feeds <a href="https://github.com/bonfire-networks/bonfire-app/issues/2225" target="_blank" rel="noopener">#2225</a>, and reply and boost counts missing when opening a post directly <a href="https://github.com/bonfire-networks/bonfire-app/issues/1584" target="_blank" rel="noopener">#1584</a> (thanks @daehee, @mayel and @ivanminutillo)</li>
 <li>🐛 Fixed the newest post not showing in the Local feed <a href="https://github.com/bonfire-networks/bonfire-app/issues/1892" target="_blank" rel="noopener">#1892</a> (thanks @jeppebundsgaard)</li>
 <li>🐛 Fixed avatars not loading in the thread participants list <a href="https://github.com/bonfire-networks/bonfire-app/issues/2250" target="_blank" rel="noopener">#2250</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2279" target="_blank" rel="noopener">#2279</a> (thanks @ccamara, @lelehier and @ivanminutillo)</li>
 <li>🐛 Mastodon API: fixed blank avatars <a href="https://github.com/bonfire-networks/bonfire-app/issues/2391" target="_blank" rel="noopener">#2391</a> and markdown showing in notifications <a href="https://github.com/bonfire-networks/bonfire-app/issues/2392" target="_blank" rel="noopener">#2392</a> (thanks @DeadSuperHero, @ccamara, @lelehier and @ivanminutillo)</li>
-<li>🐛 Fixed the profile switcher an incorrect notification count <a href="https://github.com/bonfire-networks/bonfire-app/issues/2220" target="_blank" rel="noopener">#2220</a>, and long usernames overflowing its menu <a href="https://github.com/bonfire-networks/bonfire-app/issues/2393" target="_blank" rel="noopener">#2393</a> (thanks @btfreeorg, @ccamara, @mayel and @ivanminutillo)</li>
+<li>🐛 Fixed the profile switcher showing an incorrect notification count <a href="https://github.com/bonfire-networks/bonfire-app/issues/2220" target="_blank" rel="noopener">#2220</a>, and long usernames overflowing its menu <a href="https://github.com/bonfire-networks/bonfire-app/issues/2393" target="_blank" rel="noopener">#2393</a> (thanks @btfreeorg, @ccamara, @mayel and @ivanminutillo)</li>
 <li>🐛 Fixed a settings error when the connection came back on a notification <a href="https://github.com/bonfire-networks/bonfire-app/issues/2395" target="_blank" rel="noopener">#2395</a> (thanks @ivanminutillo)</li>
 <li>📱 Fixed the right sidebar not showing on narrow screens <a href="https://github.com/bonfire-networks/bonfire-app/issues/2388" target="_blank" rel="noopener">#2388</a>, and thread controls overflowing on mobile <a href="https://github.com/bonfire-networks/bonfire-app/issues/2251" target="_blank" rel="noopener">#2251</a> (thanks @ccamara, @lelehier and @ivanminutillo)</li>
 <li>🐛 Fixed quotes in code blocks getting mangled <a href="https://github.com/bonfire-networks/bonfire-app/issues/2370" target="_blank" rel="noopener">#2370</a> (thanks @mayel)</li>
@@ -393,6 +515,49 @@ SPDX-License-Identifier: CC0-1.0
 <li>🐛 Fixed topic posts in groups missing where they were published and orphaned replies in threads (thanks @ivanminutillo)</li>
 <li>🐛 Fixed typos <a href="https://github.com/bonfire-networks/bonfire-app/pull/2308" target="_blank" rel="noopener">PR #2308</a> (thanks @btfreeorg)</li>
 <li>🐛 Activities from deactivated remote accounts are now refused cleanly, instead of failing with an error (thanks @mayel)</li>
+<li>🐛 Unblocking someone shows their content again straight away <a href="https://github.com/bonfire-networks/bonfire_ui_boundaries/commit/fe5f82aeee6fafed3432ee9909190d1b6d11eae6" target="_blank" rel="noopener"><code>fe5f82a</code></a> (thanks @ivanminutillo)</li>
+<li>🐛 Fixed guest sign-in bouncing back to the same page, and signing in to an account with no profile chosen (eg after a password reset) now leads to picking one <a href="https://github.com/bonfire-networks/bonfire_ui_common/commit/782ebf0389a2410c89f5f61027012994805bb062" target="_blank" rel="noopener"><code>782ebf0</code></a> <a href="https://github.com/bonfire-networks/bonfire_ui_me/commit/2468453e13ae0206d88bd925e0dfb994cccceac1" target="_blank" rel="noopener"><code>2468453</code></a> (thanks @ivanminutillo)</li>
+<li>🐛 Pinning a group to your sidebar no longer appears as an activity in feeds <a href="https://github.com/bonfire-networks/bonfire_social/commit/85be75c917cc36e17ef14e9e95b633e8a25a4b50" target="_blank" rel="noopener"><code>85be75c</code></a> (thanks @ivanminutillo)</li>
+<li>🐛 Fixed YouTube link previews <a href="https://github.com/bonfire-networks/bonfire_files/commit/8b922d0e85b0365a596e3c0e40462d8f0a91020d" target="_blank" rel="noopener"><code>8b922d0</code></a> (thanks @ivanminutillo)</li>
+<li>🐛 Read more comes back after expanding a collapsed reply branch (thanks @ivanminutillo)</li>
+<li>🐛 Database tuning is no longer overwritten when deploying <a href="https://github.com/bonfire-networks/bonfire-app/commit/3b1a00992a80ba61f28f4423c0cc9911f21f364c" target="_blank" rel="noopener"><code>3b1a009</code></a> (thanks @mayel)</li>
+<li>🐛 Groups mirrored from other instances before late August show as groups again, not as topics or missing pages; deleting a group now archives it; and auto-join no longer adds people from other instances (thanks @mayel)</li>
+<li>🐛 Tapping a notification about a reply opens the whole discussion, with the reply shown once, instead of the reply twice without the post it answers <a href="https://github.com/bonfire-networks/bonfire-app/issues/2258" target="_blank" rel="noopener">#2258</a> (thanks @mayel and @ivanminutillo)</li>
+<li>🐛 The notifications page no longer times out for people in many circles (thanks @mayel)</li>
+<li>🐛 Videos, images and documents from other servers keep the date they were published, not the date they reached you <a href="https://github.com/bonfire-networks/bonfire-app/issues/2457" target="_blank" rel="noopener">#2457</a> (thanks @mayel)</li>
+<li>🐛 PeerTube videos no longer pile up duplicate copies each time they get views <a href="https://github.com/bonfire-networks/bonfire-app/issues/2433" target="_blank" rel="noopener">#2433</a> (thanks @mayel)</li>
+<li>🐛 Federation now works with servers whose TLS 1.3 handshake was refused (eg those running h2o): the request is retried with a compatible handshake, and the server is remembered <a href="https://github.com/bonfire-networks/activity_pub/commit/6d6fd75f4706f273f13a330338373bbad1904ad9" target="_blank" rel="noopener"><code>6d6fd75</code></a> <a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/commit/b9c9924079c20b7c7c283e6c154f104a23f66254" target="_blank" rel="noopener"><code>b9c9924</code></a> (thanks @mayel)</li>
+<li>🔒 Replies now carry their author's own boundaries, so people they ghosted or silenced don't see them, and their authors can edit them, including comments in groups from other servers (thanks @mayel)</li>
+<li>🐛 Followers-only posts from other servers now properly reach their author's followers here (thanks @mayel)</li>
+<li>🐛 Copy link now copies the canonical ActivityPub URL of a post, profile or group, so it can be looked up from other fediverse apps (thanks @mayel)</li>
+<li>🐛 The &quot;System&quot; theme works without choosing both a light and a dark theme first (thanks @mayel and @xplosionmind)</li>
+<li>🐛 Posts keep their formatting: Enter starts a paragraph and Shift+Enter a line break, and pasted line breaks, lists, code blocks and quotes come out as written; titles and content warnings are now sanitised too <a href="https://github.com/bonfire-networks/bonfire-app/issues/2348" target="_blank" rel="noopener">#2348</a> <a href="https://github.com/bonfire-networks/bonfire_social/commit/acafd88f5a150cef7767a6b65839b7bcb2d40ecf" target="_blank" rel="noopener"><code>acafd88</code></a> <a href="https://github.com/bonfire-networks/bonfire_editor_milkdown/commit/be137e7b42a6122bf5d440b6481a5a2d6abc235a" target="_blank" rel="noopener"><code>be137e7</code></a> (thanks @ivanminutillo)</li>
+<li>🔒 With federation turned off for the instance, or by a person for themselves, their inboxes refuse incoming activities instead of quietly processing them <a href="https://github.com/bonfire-networks/bonfire-app/issues/754" target="_blank" rel="noopener">#754</a> (thanks @mayel)</li>
+<li>🔒 People who are undiscoverable are not listed to guests on a shared circle's page or embed <a href="https://github.com/bonfire-networks/bonfire-app/issues/1088" target="_blank" rel="noopener">#1088</a> (thanks @mayel)</li>
+<li>🐛 Tuning values saved in the admin settings no longer revert, and are applied again after a restart <a href="https://github.com/bonfire-networks/bonfire-app/issues/2256" target="_blank" rel="noopener">#2256</a> (thanks @btfreeorg and @mayel)</li>
+<li>🐛 Accounts suspended on Mastodon are hidden here, and come back if the suspension is lifted <a href="https://github.com/bonfire-networks/bonfire-app/issues/837" target="_blank" rel="noopener">#837</a> (thanks @mayel)</li>
+<li>🐛 Accepting a quote from someone on Mastodon now shows it as accepted there, and declining one sends a refusal Mastodon understands; tested with mastodon.social <a href="https://github.com/bonfire-networks/bonfire-app/issues/1803" target="_blank" rel="noopener">#1803</a> (thanks @btfreeorg, Mentaal and @mayel)</li>
+<li>🐛 Signing up: the page that asks people signing in with ORCID for their email no longer crashes, login and confirmation links are no longer used up by email scanners (eg in Outlook) and a failed link says why, invites for &quot;2 weeks&quot; last 14 days, and the About page explains how to join this instance and links to its sign-up page <a href="https://github.com/bonfire-networks/bonfire-app/issues/2415" target="_blank" rel="noopener">#2415</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2408" target="_blank" rel="noopener">#2408</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2477" target="_blank" rel="noopener">#2477</a> (thanks @ccamara, Jacobin and @mayel)</li>
+<li>🐛 Flags reach moderators even on an instance with no admin <a href="https://github.com/bonfire-networks/bonfire-app/issues/1176" target="_blank" rel="noopener">#1176</a> (thanks @mayel)</li>
+<li>🐛 Deleting a post no longer removes the link preview from other posts that link to the same page (thanks @mayel)</li>
+<li>🐛 &quot;Quiet public&quot; posts from other servers stay out of the instance-wide feeds <a href="https://github.com/bonfire-networks/bonfire-app/issues/1557" target="_blank" rel="noopener">#1557</a> (thanks @mayel)</li>
+<li>🐛 Notifications show when the like, boost or reply happened, not the age of the post it's about <a href="https://github.com/bonfire-networks/bonfire-app/issues/2219" target="_blank" rel="noopener">#2219</a> (thanks @btfreeorg and @mayel)</li>
+<li>🐛 A push notification about a new follower opens the follower's profile <a href="https://github.com/bonfire-networks/bonfire-app/issues/2260" target="_blank" rel="noopener">#2260</a> (thanks @ivanminutillo and @mayel)</li>
+<li>🐛 Likes of posts and comments from Lemmy now reach Lemmy <a href="https://github.com/bonfire-networks/bonfire-app/issues/2503" target="_blank" rel="noopener">#2503</a> (thanks @sleeping-miyagi and @mayel)</li>
+<li>🐛 Avatars: SVG images are refused for avatars and banners, as Mastodon can't show them <a href="https://github.com/bonfire-networks/bonfire-app/issues/2475" target="_blank" rel="noopener">#2475</a>; bot accounts from Lemmy keep their icons <a href="https://github.com/bonfire-networks/bonfire-app/issues/2489" target="_blank" rel="noopener">#2489</a>; and profile updates from accounts with no display name are no longer lost <a href="https://github.com/bonfire-networks/bonfire-app/issues/1546" target="_blank" rel="noopener">#1546</a> (thanks @xplosionmind, @sleeping-miyagi, @ivanminutillo and @mayel)</li>
+<li>🐛 Interacting from your own fediverse account (remote follow, reply or like) works with Mastodon again using Telling comment embeds, and an unknown address shows an error on the form instead of offering to download a page on phones <a href="https://github.com/bonfire-networks/bonfire-app/issues/2273" target="_blank" rel="noopener">#2273</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2259" target="_blank" rel="noopener">#2259</a> (thanks @wakest, @ccamara and @mayel)</li>
+<li>🐛 Fixed scheduling posts <a href="https://github.com/bonfire-networks/bonfire-app/issues/2470" target="_blank" rel="noopener">#2470</a> (thanks @ccamara and @mayel)</li>
+<li>🐛 Fixed exporting an account to migrate it <a href="https://github.com/bonfire-networks/bonfire-app/issues/2463" target="_blank" rel="noopener">#2463</a>, and the export page no longer fails to open for accounts with two or more aliases (thanks @btfreeorg and @mayel)</li>
+<li>🐛 Private posts from other servers that are addressed only to people this instance doesn't know are no longer dropped (thanks @mayel)</li>
+<li>🌐 More of the interface can be translated, including the logged-out start page and login errors (thanks Mentaal and @mayel)</li>
+<li>🐛 Following a PeerTube account shows its videos <a href="https://github.com/bonfire-networks/bonfire-app/issues/1715" target="_blank" rel="noopener">#1715</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2070" target="_blank" rel="noopener">#2070</a> (thanks @ozonedGH, @btfreeorg, @ivanminutillo and @mayel)</li>
+<li>🐛 Adding a Pixelfed (or any) external account no longer crashes on a pasted link, and a handle that can't be found says &quot;Couldn't find a remote profile with that name&quot;. Linked accounts such as ORCID link to their own page, not to Bonfire <a href="https://github.com/bonfire-networks/bonfire-app/issues/2244" target="_blank" rel="noopener">#2244</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2079" target="_blank" rel="noopener">#2079</a> (thanks @wakest and @mayel)</li>
+<li>🐛 Interacting from your own fediverse account: the field is labelled &quot;Your fediverse username&quot; and asks for the server too, and the comment embed's button reads &quot;Reply&quot; <a href="https://github.com/bonfire-networks/bonfire-app/issues/2274" target="_blank" rel="noopener">#2274</a> <a href="https://github.com/bonfire-networks/bonfire-app/issues/2300" target="_blank" rel="noopener">#2300</a> (thanks @wakest, @ccamara and @mayel)</li>
+<li>🐛 On a flagged person who's already blocked, &quot;Take action&quot; offers &quot;Block or unblock <name>&quot; <a href="https://github.com/bonfire-networks/bonfire-app/issues/1627" target="_blank" rel="noopener">#1627</a> (thanks @jonpincus and @mayel)</li>
+<li>🐛 Composer: A reply now sends the reset only once (thanks @ivanminutillo)</li>
+<li>🐛 After a lost connection, the feed comes back at the post you were reading, instead of empty or at the top (thanks @ivanminutillo)</li>
+<li>🐛 The mobile app no longer freezes for 5–10 seconds and reloads when the connection drops quietly; it reconnects on its own and shows Offline meanwhile (thanks @ivanminutillo)</li>
+<li>🐛 You can't send a post while offline (thanks @ivanminutillo)</li>
 </ul>
 <h2 id="bonfire-%5B1.0.7-(2026-08-30)%5D">Bonfire [1.0.7 (2026-08-30)] <a class="direct-link" href="#bonfire-%5B1.0.7-(2026-08-30)%5D" target="_blank" rel="noopener">#</a></h2>
 <h3 id="added-1">Added <a class="direct-link" href="#added-1" target="_blank" rel="noopener">#</a></h3>

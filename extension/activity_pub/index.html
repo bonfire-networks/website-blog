@@ -326,21 +326,42 @@ if(b&&d)b.addEventListener('click',function(){var hidden=d.classList.toggle('hid
     <div class="border-base-content/30 rounded-lg border p-4 mt-8  prose max-w-full">
       <div class="uppercase tracking-widest mb-6">Readme</div>
         
-        <h1 id="activitypub">ActivityPub <a class="direct-link" href="#activitypub" target="_blank" rel="noopener">#</a></h1>
-<p>ActivityPub Library for elixir.</p>
-<p><strong>WORK IN PROGRESS, TESTING FEDERATION WITH DIFFERENT IMPLEMENTATIONS IS UNDERWAY</strong></p>
+        <h1 id="activitypub-for-elixir">ActivityPub for Elixir <a class="direct-link" href="#activitypub-for-elixir" target="_blank" rel="noopener">#</a></h1>
+<p>An Elixir library that enables a Phoenix app to federate with the fediverse over <a href="https://www.w3.org/TR/activitypub/" target="_blank" rel="noopener">ActivityPub</a>. It is the federation layer used by <a href="https://bonfirenetworks.org" target="_blank" rel="noopener">Bonfire</a> and <a href="https://kazar.ma/" target="_blank" rel="noopener">kazarma</a>, and it is built to be used by other apps too.</p>
+<p>Getting federation right means implementing ActivityPub, ActivityStreams, and many more specs, including signatures, discovery, fetching, delivery and retries. This library does that work, so your app's users can follow and be followed, post, reply, boost and react across servers. It doesn't dictate your app's data model. Incoming activities are normalised and temporarily stored as ActivityStreams JSON objects, and handed to your app through an adapter module. Outgoing ones are queued and delivered to each recipient's inbox. Your app decides what an activity means for its own users, posts and follows.</p>
+<h2 id="status">Status <a class="direct-link" href="#status" target="_blank" rel="noopener">#</a></h2>
+<p>It runs in production on every Bonfire instance. The API is still evolving but in a backwards-compatible way.</p>
+<h2 id="what-it-does">What it does <a class="direct-link" href="#what-it-does" target="_blank" rel="noopener">#</a></h2>
+<ul>
+<li>Serves actors, objects and collections as ActivityStreams JSON, with the ActivityPub server-to-server inbox and outbox.</li>
+<li>The client-to-server (C2S) API is available too.</li>
+<li>Finds and is found through WebFinger, so <code>@user@your.host</code> works from other servers.</li>
+<li>Signs what it sends with HTTP signatures (RFC 9421 or draft-cavage, whichever the receiving server uses) and Data Integrity proofs (FEP-8b32, <code>eddsa-jcs-2022</code>).</li>
+<li>Checks what it receives, with HTTP signatures (RFC 9421 or draft-cavage), Linked Data signatures (<code>RsaSignature2017</code>, the ones Mastodon emits) and Data Integrity proofs (FEP-8b32, <code>eddsa-jcs-2022</code> and <code>mldsa44-jcs-2024</code>, with keys from the actor's <code>assertionMethod</code>, FEP-521a).</li>
+<li>Fetches remote actors and objects, including the objects nested in an activity, and caches them.</li>
+<li>Delivers and receives through <a href="https://hexdocs.pm/oban" target="_blank" rel="noopener">Oban</a> queues, retries failed deliveries, and tracks which instances are unreachable.</li>
+<li>Enforces moderation at the instance level with MRF policies: rejecting or limiting instances, removing media, and filtering keywords.</li>
+</ul>
+<p>It needs Elixir 1.20.2 or later, an Ecto repo and Oban.</p>
+<h2 id="related-libraries">Related libraries <a class="direct-link" href="#related-libraries" target="_blank" rel="noopener">#</a></h2>
+<ul>
+<li><a href="https://github.com/bonfire-networks/nodeinfo" target="_blank" rel="noopener">nodeinfo</a>: serves instance information with the <a href="https://nodeinfo.diaspora.software" target="_blank" rel="noopener">NodeInfo</a> standard, which other servers read to learn what software an instance runs (not a dependency: add it alongside)</li>
+<li><a href="https://github.com/bonfire-networks/http_signatures" target="_blank" rel="noopener">http_signatures</a>: signs and checks HTTP signatures, used by this library (a fork of Akkoma's)</li>
+</ul>
+<p>And for an example of how to integrate this library's adapter into an app, you can look at <a href="https://github.com/bonfire-networks/bonfire_federate_activitypub" target="_blank" rel="noopener">Bonfire's adapter</a>.</p>
+<h2 id="credits-and-licence">Credits and licence <a class="direct-link" href="#credits-and-licence" target="_blank" rel="noopener">#</a></h2>
+<p>Parts of the code come from <a href="https://akkoma.social" target="_blank" rel="noopener">Akkoma</a>. Licensed under the GNU AGPLv3 (see <code>LICENCE</code>).</p>
 <h2 id="installation">Installation <a class="direct-link" href="#installation" target="_blank" rel="noopener">#</a></h2>
 <ol>
 <li>Add this library to your dependencies in <code>mix.exs</code></li>
 </ol>
 <pre><code>defp deps do
   [...]
-  {:activity_pub, git: &quot;https://github.com/bonfire-networks/activity_pub.git&quot;, branch: &quot;stable&quot;} # branch can &quot;stable&quot;, or &quot;develop&quot; for the bleeding edge
+  {:activity_pub, git: &quot;https://github.com/bonfire-networks/activity_pub.git&quot;, branch: &quot;stable&quot;} # branch can be &quot;stable&quot;, or &quot;develop&quot; for the bleeding edge
 end
 </code></pre>
 <ol start="2">
-<li>Create an adapter module. To start, one created at<br>
-<code>lib/my_app/adapter.ex</code> might look like</li>
+<li>Create an adapter module. To start, one created at <code>lib/my_app/adapter.ex</code> might look like this:</li>
 </ol>
 <pre class="language-elixir"><code class="language-elixir"><span class="token keyword">defmodule</span> <span class="token module class-name">MyApp</span><span class="token punctuation">.</span><span class="token module class-name">Adapter</span> <span class="token keyword">do</span>
   <span class="token doc"><span class="token attribute">@moduledoc</span> <span class="token string">"""
@@ -349,27 +370,9 @@ end
 
   <span class="token attribute variable">@behaviour</span> <span class="token module class-name">ActivityPub</span><span class="token punctuation">.</span><span class="token module class-name">Federator</span><span class="token punctuation">.</span><span class="token module class-name">Adapter</span>
 <span class="token keyword">end</span></code></pre>
-<p>Note that, due to the defined <code>@behavior</code>, Elixir will warn you that<br>
-the required functions</p>
-<ul>
-<li><code>base_url/0</code></li>
-<li><code>get_actor_by_id/1</code></li>
-<li><code>get_actor_by_username/1</code></li>
-<li><code>get_follower_local_ids/1</code></li>
-<li><code>get_following_local_ids/1</code></li>
-<li><code>get_redirect_url/1</code></li>
-<li><code>handle_activity/1</code></li>
-<li><code>maybe_create_remote_actor/1</code></li>
-<li><code>maybe_publish_object/2</code></li>
-<li><code>update_local_actor/2</code></li>
-<li><code>update_remote_actor/1</code></li>
-</ul>
-<p>have not yet been implemented though you will be able to start your<br>
-app. Defining these allows <code>ActivityPub</code> to handle ActivityPub HTTP<br>
-and database calls and operations. An example of an implemented<br>
-adaptor can be found<br>
-<a href="https://github.com/bonfire-networks/bonfire_federate_activitypub/tree/main/lib/adapter" title="Link to file hosted on GitHub" target="_blank" rel="noopener">here</a>.</p>
-<p>Then set it in config</p>
+<p>Thanks to the <code>@behaviour</code>, Elixir warns you about each callback of <code>ActivityPub.Federator.Adapter</code> you have not implemented yet, such as <code>base_url/0</code>, <code>get_actor_by_id/1</code>, <code>get_actor_by_username/1</code> and <code>handle_activity/1</code>. Your app still starts.</p>
+<p>The behaviour module documents every callback, and which ones are optional. These callbacks are how the library reads your actors and objects, and how it hands incoming activities to your app.</p>
+<p>Then set it in config:</p>
 <pre><code>config :activity_pub, :adapter, MyApp.Adapter
 </code></pre>
 <ol start="3">
@@ -385,7 +388,7 @@ adaptor can be found<br>
 <p>Inject AP routes to your router by adding <code>use ActivityPub.Web.Router</code> to your app's router module</p>
 </li>
 <li>
-<p>Copy the default AP config to your app's confix.exs</p>
+<p>Copy the default AP config to your app's <code>config.exs</code></p>
 </li>
 </ol>
 <pre><code>config :activity_pub, :mrf_simple,
@@ -421,7 +424,7 @@ config :activity_pub, :http,
 <p>Change the hostname value in the instance config block to your instance's hostname</p>
 </li>
 <li>
-<p>If you don't already have Oban set up, follow the <a href="https://hexdocs.pm/oban/installation.html#content" target="_blank" rel="noopener">Oban installation intructions</a> and add the AP queues:</p>
+<p>If you don't already have Oban set up, follow the <a href="https://hexdocs.pm/oban/installation.html#content" target="_blank" rel="noopener">Oban installation instructions</a> and add the AP queues:</p>
 </li>
 </ol>
 <pre><code>config :my_app, Oban, queues: [federator_incoming: 50, federator_outgoing: 50, remote_fetcher: 20]
@@ -446,7 +449,7 @@ config :activity_pub, :http,
       <div class="uppercase text-xs tracking-widest mb-6">Details</div>
         <div class="gap-2 flex flex-col divide divide-y divide-base-content/30">
           
-          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">03 Nov 2026</span></div>
+          <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">Updated</span> <span class="font-bold">14 Nov 2026</span></div>
           <div class="pt-2 flex justify-between items-center text-sm"><span class="font-light">License</span> <span class="font-bold">agpl-3.0</span></div>
             
           
@@ -512,6 +515,7 @@ config :activity_pub, :http,
         <a href="/compare" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Comparison table</a>
         <a href="/case-studies" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Case studies</a>
         <a href="/about" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">About Bonfire</a>
+        <a href="/press/" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Press</a>
         <a href="https://campground.bonfire.cafe" target="_blank" rel="noopener noreferrer" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Try the campground <span aria-hidden="true">↗</span></a>
       </nav>
 
@@ -539,6 +543,7 @@ config :activity_pub, :http,
         <a href="/telling" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Telling</a>
         <a href="/ghost" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">Ghost</a>
         <a href="/publishers/" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">For publishers</a>
+        <a href="/museums/" class="text-[.92rem] leading-6 text-ink-2 transition-colors hover:text-spark focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame/70">For museums</a>
       </nav>
 
       <div class="col-span-2 sm:col-span-3 lg:col-span-1">
@@ -561,7 +566,7 @@ config :activity_pub, :http,
     </div>
     <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm" aria-label="Legal and contact">
       <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/contact/">Contact</a>
-      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/presskit">Press kit</a>
+      <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/press/#press-kit">Press kit</a>
       <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/conduct">Code of conduct</a>
       <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/privacy">Privacy</a>
       <a class="font-smono text-[.72rem] text-ink-3 hover:text-spark" href="/">Bonfire Networks 2026</a>
