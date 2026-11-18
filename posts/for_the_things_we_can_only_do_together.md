@@ -25,6 +25,8 @@ The things that bring communities together are bigger than any one of us: dealin
 
 The release out today is an invitation to start making other futures, together.
 
+<iframe title="For the things we can only do together - Bonfire 1.1" width="560" height="315" src="https://tube.tchncs.de/videos/embed/2GsfrkL9pVbapiBWssvbxt" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0; display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;"></iframe>
+
 ## What's new in Bonfire for Communities 1.1
 
 This release is built around one idea: equipping groups to organise, from their first conversation to their toughest decision.
