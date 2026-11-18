@@ -121,4 +121,4 @@ Daft Punk once [said](https://www.npr.org/2013/05/16/184499357/daft-punk-on-the-
 
 So bring your people. Whether you gather **to learn, to rise up, to organise or to celebrate**, start or join a group from the account you already have, or set up a Bonfire of your own, and make it yours.
 
-**Get your community back:** [bonfirenetworks.org/start](https://bonfirenetworks.org/start)
+**Take your community back:** [bonfirenetworks.org/start](https://bonfirenetworks.org/start)
