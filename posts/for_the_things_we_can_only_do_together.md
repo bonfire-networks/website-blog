@@ -17,9 +17,9 @@ Half a century later, George [Orwell](https://en.wikipedia.org/wiki/Nineteen_Eig
 
 In 1984, Apple launched the Macintosh with [an ad](https://www.youtube.com/watch?v=ErwS24cBZPc) that borrowed Orwell's imagery, hurling a hammer through the giant screen and setting the audience free. The ad sold liberation, but three years later Apple revealed its vision for the future: the [Knowledge Navigator](https://www.youtube.com/watch?v=umJsITGzXd0) shows a solitary professor in a spacious study, talking to a bow-tied autonomous agent on a tablet that manages his research, his calendar and his calls. Big Brother had been smashed, just to be replaced by a butler, the same screen behind a friendlier mask.
 
-Nearly forty years on, that vision is being delivered almost shot for shot, in every chatbot, agent and AI assistant now offering to run our lives. The gadget arrived, but the life around it didn't: as one commenter under the video points out, today that professor would more likely be an untenured adjunct living in a van than a man with a study bigger than most living rooms.
+Nearly forty years on, that vision is being delivered almost shot for shot, in every chatbot, agent and AI assistant now offering to run our lives. The gadget arrived, but the life around it didn't: as one commenter under the video points out, today that professor would more likely be an untenured adjunct living in a van than a man with a study bigger than most apartments.
 
-Anthropologist Anna Tsing [describes](https://fojournal.org/interview/anna-tsing-noticing-is-my-way-of-opposing/) how certain things get coded as possible futures, and then we develop blinders, walking towards "a stereotyped dream future. And so, we stopped seeing." The personal assistant is one of those futures.
+Anthropologist Anna Tsing [describes](https://fojournal.org/interview/anna-tsing-noticing-is-my-way-of-opposing/) how certain things become encoded as possible futures, and then we develop blinders, walking towards "a stereotyped dream future. And so, we stopped seeing." The personal assistant is one of those futures.
 
 But as David Graeber [put it](https://davidgraeber.org/books/the-ultimate-hidden-truth-of-the-world/), "the ultimate hidden truth of the world is that it is something that we make, and could just as easily make differently". Silicon Valley's future, each of us alone with our personal assistant, is only one way to make the world. We'd rather help make what the Zapatistas [call](https://enlacezapatista.ezln.org.mx/1996/01/01/cuarta-declaracion-de-la-selva-lacandona/) "a world where many worlds fit", with the communities we care about.
 
@@ -91,7 +91,7 @@ To get things started, we're opening a few groups of our own, each with a missio
 * [Bonfire for Mutual Aid](https://bonfire.cafe/pub/group/01M6H0QJK4V8MTR7MT4WBYYZ77): groups organising care, gifts and help in their neighbourhoods, co-designing tools and pushing the boundaries of mutual aid networks.
 * [Bonfire for Publishers](https://bonfire.cafe/pub/group/01M6H0R24Q3JAN0DFHG8TBS6N4): publishers, newsrooms and independent magazines sharing how they turn readers into a community, from conversations around articles to reader groups of their own.
 
-For what applies across all of them, the general [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks) group has topics for different areas:
+For what applies across all of them, the general [Bonfire Networks](https://bonfire.cafe/group/Bonfire_Networks) group has sub-topics for different areas:
 
 * [Testing & Feedback](https://bonfire.cafe/group/Bonfire_Networks/topic/Testing_Feedback): try new features and tell us what works and what breaks.
 * [UX & Design](https://bonfire.cafe/group/Bonfire_Networks/topic/UX_Design): help shape how Bonfire looks and works.
@@ -119,6 +119,6 @@ Thank you to everyone who chipped in towards the maintenance and groups goals in
 
 Daft Punk once [said](https://www.npr.org/2013/05/16/184499357/daft-punk-on-the-soul-that-a-musician-can-bring) that computers "could do the music instead of us", and that while "we couldn't have done our project, definitely, without technology", "we don't really feel that's where the fun is". Neither do we. Bonfire is software, of course, but communities decide what it's for, what it becomes and who it serves, and the work itself is something we share.
 
-So bring your people. Whether you gather **to learn, to rise up, to organise or to celebrate**, start a group from the account you already have, or set up a Bonfire of your own, and make it yours.
+So bring your people. Whether you gather **to learn, to rise up, to organise or to celebrate**, start or join a group from the account you already have, or set up a Bonfire of your own, and make it yours.
 
 **Get your community back:** [bonfirenetworks.org/start](https://bonfirenetworks.org/start)
