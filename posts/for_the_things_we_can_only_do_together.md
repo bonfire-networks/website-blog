@@ -4,6 +4,8 @@ description: "Bonfire 1.1 is built for groups: their own rules and moderation, j
 date: 2026-11-17
 tags: development
 image: /img/bonfire-1.1-cover.jpg
+header_html: >-
+  <iframe title="For the things we can only do together - Bonfire 1.1" src="https://tube.tchncs.de/videos/embed/2GsfrkL9pVbapiBWssvbxt" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" class="w-full rounded-xl border border-ink/15" style="display: block; aspect-ratio: 16 / 9;"></iframe>
 layout: layouts/post.njk
 author: Bonfire Builders
 
@@ -24,8 +26,6 @@ But as David Graeber [put it](https://davidgraeber.org/books/the-ultimate-hidden
 The things that bring communities together are bigger than any one of us: dealing with the climate crisis, keeping a town informed, creating knowledge for everyone, helping someone through a bad year... And no digital butler can take them off our hands. It takes people who learn, rise up, organise, change their minds, regroup, get things done, celebrate, and keep showing up for each other. The things that matter most are the ones we can only do together.
 
 The release out today is an invitation to start making other futures, together.
-
-<iframe title="For the things we can only do together - Bonfire 1.1" width="560" height="315" src="https://tube.tchncs.de/videos/embed/2GsfrkL9pVbapiBWssvbxt" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0; display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;"></iframe>
 
 ## What's new in Bonfire for Communities 1.1
 
